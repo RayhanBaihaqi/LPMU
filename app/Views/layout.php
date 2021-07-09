@@ -30,7 +30,7 @@
             <div class="card-body">RKAT</div>
           </a>
         </div>
-      </div>hhhhhh
+      </div>
       <div class="col-sm-6">
         <div class="card">
           <a class="btn" href="/backend/kpi" role="button">
