@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
@@ -10,35 +11,37 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
+
 <body>
-<nav class="navbar navbar-expand-sm bg-light justify-content-end">
-  <ul class="nav ">
-    <li class="nav-item">
-      <a class="nav-link" href="/auth/logout">LOGOUT</a>
-    </li>
-  </ul>
+  <nav class="navbar navbar-expand-sm bg-light justify-content-end">
+    <ul class="nav ">
+      <li class="nav-item">
+        <a class="nav-link" href="/auth/logout">LOGOUT</a>
+      </li>
+    </ul>
   </nav>
-<br>
-<div class="container">
-  <div class="row">
-    <div class="col-sm-6">
-        <div class="card" >
-        <a class="btn" href="/backend/rkat" role="button">
-        <img class="card-img-top" src="/img/RKAT1.jpg" alt="Card image">
-        <div class="card-body">RKAT</div>
-        </a>
-        </div>
-    </div>
-    <div class="col-sm-6">
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
         <div class="card">
-        <a class="btn" href="/backend/kpi" role="button">
-        <img class="card-img-top" src="/img/KPI1.jpg" alt="Card image">
-        <div class="card-body">KPI</div>
-        </a>
+          <a class="btn" href="/backend/rkat" role="button">
+            <img class="card-img-top" src="/img/RKAT1.jpg" alt="Card image">
+            <div class="card-body">RKAT</div>
+          </a>
         </div>
+      </div>hhhhhh
+      <div class="col-sm-6">
+        <div class="card">
+          <a class="btn" href="/backend/kpi" role="button">
+            <img class="card-img-top" src="/img/KPI1.jpg" alt="Card image">
+            <div class="card-body">KPI</div>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 
 </body>
+
 </html>
