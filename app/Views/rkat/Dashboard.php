@@ -12,13 +12,22 @@
 <body>
   
 <div class="container">
-<nav class="navbar navbar-expand-sm bg-light justify-content-end">
-    <ul class="nav ">
-      <li class="nav-item">
-        <a class="nav-link" href="/auth/logout">LOGOUT</a>
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">Navbar</a>
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
-    </ul>
-  </nav>        
+      <li class="nav-item">
+        <a class="nav-link" href="#">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Pricingg</a>
+      </li>
+    </ul>    
 </div>
 
 </body>
