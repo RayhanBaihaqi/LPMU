@@ -46,6 +46,7 @@
         <div class="row">
             <div class="column">
                 <h1>Judul KPI</h1>
+
             </div>
         </div>
     </div>
