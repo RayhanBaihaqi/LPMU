@@ -23,9 +23,15 @@
 
         <!-- Template Stylesheet -->
         <link rel="stylesheet" href="http://localhost:8080/css/header.css">
+        <link rel="stylesheet" href="http://localhost:8080/css/style2.css">
+        
+        
     </head>
-
+    
     <body onload="startTime()">
+        <div class="pre-loader">
+            <div class="spinner-border text-info"></div>
+        </div>
         <div class="wrapper">
             <!-- Top Bar Start -->
             <div class="top-bar">
@@ -73,15 +79,16 @@
         </div>
             <!-- Top Bar End -->
         <div class="container">
+            <br>
             <!-- Nav Bar Start -->
             <div class="nav-bar">
-                    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-                        <a href=""><i class="fas fa-long-arrow-alt-left"></i></a>
-                        <a href="#" class="navbar-brand">MENU</a>
-                        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+                    <a href=""><i class="fas fa-long-arrow-alt-left"></i></a>
+                    <a href="#" class="navbar-brand">MENU</a>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                        <div class="collapse navbar-collapse justify-content-between" >
                             <div class="navbar-nav mr-auto">
                                 <a href="index.html" class="nav-item nav-link active">Home</a>
                                 <a href="about.html" class="nav-item nav-link">About</a>
@@ -98,13 +105,32 @@
                                 <a href="contact.html" class="nav-item nav-link">Contact</a>
                             </div>
                             <div class="ml-auto">
-                                <a href="#" class="btn">LOGOUT</a>
+                                <div class="user-info-dropdown">
+				                    <div class="dropdown">
+                                        <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+                                            <span class="user-icon">
+                                                <img src="/img/inf-logo.jpg" alt="">
+                                            </span>
+                                            <span class="user-name">
+                                                <?php
+                                                $nama_prodi = session('nama_prodi');
+                                                echo "$nama_prodi"
+                                                ?>
+                                            </span>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+                                            <a class="dropdown-item" href="profile.html"><i class="fas fa-user"></i> Profile</a>
+                                            <a class="dropdown-item" href="profile.html"><i class="fas fa-cog"></i> Setting</a>
+                                            <a class="dropdown-item" href="login.html"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+                                        </div>
+				                    </div>
+			                    </div>
                             </div>
                         </div>
-                    </nav>
+                </nav>
             </div>
-                <br>
             <!-- Nav Bar End -->
+
             <div class="container-fluid">
             <p>Selamat Datang di halaman RKAT </p>
             <!-- ====================================================================================================================== -->
@@ -117,7 +143,7 @@
                                 <p>Dosen</p>
                             </div>
                             <div class="icon">
-                                <i class="fas fa-user"></i>
+                                <i class="fas fa-users"></i>
                             </div>
                             <a href="#" class="small-box-footer">Lihat detail <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
@@ -131,7 +157,7 @@
                                 <p>Tenaga Pendidik</p>
                             </div>
                             <div class="icon">
-                            <i class="fas fa-user"></i>
+                                <i class="fas fa-users"></i>
                             </div>
                             <a href="#" class="small-box-footer">Lihat detail <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
@@ -165,9 +191,110 @@
                         </div>
                     </div>
                 </div>
-            </div>  
             <!-- ====================================================================================================================== --> 
-            
+            <a href="#" class="btn btn-info btn-sm"><i class="fa fa-home"></i> Link Button</a>
+            <a href="#" class="btn btn-info btn-sm"><i class="fa fa-home"></i> Link Button</a>
+            <a href="#" class="btn btn-info btn-sm"><i class="fa fa-home"></i> Link Button</a>
+            <hr>
+                <div class="row clearfix progress-box">
+					<div class="col-lg-3 col-md-6 col-sm-12 mb-30">
+						<div class="card-box pd-30 height-100-p">
+							<div class="progress-box text-center">
+                            <div id="chart" ></div>
+								<h5 class="text-blue padding-top-10 h5">My Earnings</h5>
+								<span class="d-block">80% Average <i class="fa fa-line-chart text-blue"></i></span>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6 col-sm-12 mb-30">
+						<div class="card-box pd-30 height-100-p">
+							<div class="progress-box text-center">
+								 <input type="text" class="knob dial2" value="70" data-width="120" data-height="120" data-linecap="round" data-thickness="0.12" data-bgColor="#fff" data-fgColor="#00e091" data-angleOffset="180" readonly>
+								<h5 class="text-light-green padding-top-10 h5">Business Captured</h5>
+								<span class="d-block">75% Average <i class="fa text-light-green fa-line-chart"></i></span>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6 col-sm-12 mb-30">
+						<div class="card-box pd-30 height-100-p">
+							<div class="progress-box text-center">
+								 <input type="text" class="knob dial3" value="90" data-width="120" data-height="120" data-linecap="round" data-thickness="0.12" data-bgColor="#fff" data-fgColor="#f56767" data-angleOffset="180" readonly>
+								<h5 class="text-light-orange padding-top-10 h5">Projects Speed</h5>
+								<span class="d-block">90% Average <i class="fa text-light-orange fa-line-chart"></i></span>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6 col-sm-12 mb-30">
+						<div class="card-box pd-30 height-100-p">
+							<div class="progress-box text-center">
+								 <input type="text" class="knob dial4" value="65" data-width="120" data-height="120" data-linecap="round" data-thickness="0.12" data-bgColor="#fff" data-fgColor="#a683eb" data-angleOffset="180" readonly>
+								<h5 class="text-light-purple padding-top-10 h5">Panding Orders</h5>
+								<span class="d-block">65% Average <i class="fa text-light-purple fa-line-chart"></i></span>
+							</div>
+						</div>
+					</div>
+				</div>
+                <!-- ====================================================================================================================== -->
+                <div class="row clearfix progress-box">
+					<div class="col-lg-3 col-md-6 col-sm-12 mb-30">
+						<div class="card-box pd-30 height-100-p">
+							<div class="progress-box text-center">
+                            <div id="chart" ></div>
+								<h5 class="text-blue padding-top-10 h5">My Earnings</h5>
+								<span class="d-block">80% Average <i class="fa fa-line-chart text-blue"></i></span>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6 col-sm-12 mb-30">
+						<div class="card-box pd-30 height-100-p">
+							<div class="progress-box text-center">
+								 <input type="text" class="knob dial2" value="70" data-width="120" data-height="120" data-linecap="round" data-thickness="0.12" data-bgColor="#fff" data-fgColor="#00e091" data-angleOffset="180" readonly>
+								<h5 class="text-light-green padding-top-10 h5">Business Captured</h5>
+								<span class="d-block">75% Average <i class="fa text-light-green fa-line-chart"></i></span>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6 col-sm-12 mb-30">
+						<div class="card-box pd-30 height-100-p">
+							<div class="progress-box text-center">
+								 <input type="text" class="knob dial3" value="90" data-width="120" data-height="120" data-linecap="round" data-thickness="0.12" data-bgColor="#fff" data-fgColor="#f56767" data-angleOffset="180" readonly>
+								<h5 class="text-light-orange padding-top-10 h5">Projects Speed</h5>
+								<span class="d-block">90% Average <i class="fa text-light-orange fa-line-chart"></i></span>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6 col-sm-12 mb-30">
+						<div class="card-box pd-30 height-100-p">
+							<div class="progress-box text-center">
+								 <input type="text" class="knob dial4" value="65" data-width="120" data-height="120" data-linecap="round" data-thickness="0.12" data-bgColor="#fff" data-fgColor="#a683eb" data-angleOffset="180" readonly>
+								<h5 class="text-light-purple padding-top-10 h5">Panding Orders</h5>
+								<span class="d-block">65% Average <i class="fa text-light-purple fa-line-chart"></i></span>
+							</div>
+						</div>
+					</div>
+				</div>
+                <!-- ====================================================================================================================== -->
+                <div class="row clearfix progress-box">
+					<div class="col-lg-6 col-md-6 col-sm-12 mb-30">
+						<div class="card-box pd-30 height-100-p">
+							<div class="progress-box text-center">
+								 <input type="text" class="knob dial3" value="90" data-width="120" data-height="120" data-linecap="round" data-thickness="0.12" data-bgColor="#fff" data-fgColor="#f56767" data-angleOffset="180" readonly>
+								<h5 class="text-light-orange padding-top-10 h5">Projects Speed</h5>
+								<span class="d-block">90% Average <i class="fa text-light-orange fa-line-chart"></i></span>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-12 mb-30">
+						<div class="card-box pd-30 height-100-p">
+							<div class="progress-box text-center">
+								 <input type="text" class="knob dial4" value="65" data-width="120" data-height="120" data-linecap="round" data-thickness="0.12" data-bgColor="#fff" data-fgColor="#a683eb" data-angleOffset="180" readonly>
+								<h5 class="text-light-purple padding-top-10 h5">Panding Orders</h5>
+								<span class="d-block">65% Average <i class="fa text-light-purple fa-line-chart"></i></span>
+							</div>
+						</div>
+					</div>
+				</div>
+            </div>  
         </div>    
 
         <!-- JavaScript Libraries -->
@@ -193,5 +320,15 @@
 			  return i;
 			}
 		</script>
+        <script src="http://localhost:8080/chart/apexcharts.min.js"></script>
+        <script src="http://localhost:8080/chart/dashboard.js"></script>
+        <script src="http://localhost:8080/chart/jquery.knob.min.js"></script>
+	    <script src="http://localhost:8080/chart/knob-chart-setting.js"></script>
+        <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+        <script>
+            $(window).load(function() {
+                $(".pre-loader").fadeOut("slow");
+            });
+        </script>
     </body>
 </html>
