@@ -29,7 +29,7 @@
     </head>
     
     <body onload="startTime()">
-        <div class="pre-loader">
+    <div class="pre-loader">
             <div class="spinner-border text-info"></div>
         </div>
         <div class="wrapper">
@@ -79,7 +79,6 @@
         </div>
             <!-- Top Bar End -->
         <div class="container">
-            <br>
             <!-- Nav Bar Start -->
             <div class="nav-bar">
                 <nav class="navbar navbar-expand-lg bg-dark navbar-dark">

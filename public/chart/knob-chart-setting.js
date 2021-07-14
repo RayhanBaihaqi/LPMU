@@ -7,7 +7,7 @@ $({animatedVal: 0}).animate({animatedVal: 66}, {
 	}
 });
 $(".dial2").knob();
-$({animatedVal: 0}).animate({animatedVal: 75}, {
+$({animatedVal: 0}).animate({animatedVal: 50}, {
 	duration: 3000,
 	easing: "swing",
 	step: function() {
