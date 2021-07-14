@@ -101,14 +101,9 @@
                 <div class="collapse navbar-collapse justify-content-between">
                     <div class="navbar-nav mr-auto">
                         <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <a href="inputkpi" class="nav-item nav-link">Tambah KPI</a>
+                        <a href="index.html" class="nav-item nav-link">Update KPI</a>
 
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Master KPI</a>
-                            <div class="dropdown-menu">
-                                <a href="blog.html" class="dropdown-item">Tambah KPI</a>
-                                <a href="single.html" class="dropdown-item">Update KPI</a>
-                            </div>
-                        </div>
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
                     </div>
                     <div class="ml-auto">

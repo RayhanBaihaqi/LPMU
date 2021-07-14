@@ -18,4 +18,8 @@ class Backend extends BaseController
 	{
 		return view('/kpi/Dashboard');
 	}
+	public function inputkpi()
+	{
+		return view('kpi/formkpi');
+	}
 }
