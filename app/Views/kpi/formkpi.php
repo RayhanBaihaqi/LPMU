@@ -97,7 +97,7 @@
         <!-- Nav Bar Start -->
         <div class="nav-bar">
             <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-                <a href=""><i class="fas fa-long-arrow-alt-left"></i></a>
+                <a href="/backend"><i class="fas fa-long-arrow-alt-left"></i></a>
                 <a href="#" class="navbar-brand">MENU</a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
