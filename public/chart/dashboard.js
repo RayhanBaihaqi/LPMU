@@ -1,50 +1,54 @@
 var options = {
-	series: [100],
+	series: [50],
 	grid: {
 		padding: {
 			top: 0,
 			right: 0,
 			bottom: 0,
-			left: 0
+			left: 0,
+
 		},
 	},
 	chart: {
-		height: 100,
+		height: 200,
 		width: 170,
 		type: 'radialBar',
-		size: '50px'
+		size: '50px',
+		
 	},	
 	plotOptions: {
 		radialBar: {
 			hollow: {
-				size: '50%',
+				size: '70%',
+				
 			},
 			dataLabels: {
 				name: {
 					show: false,
-					color: '#fff'
+					color: '#0082c6'
 				},
 				value: {
 					show: true,
-					color: '#333',
+					color: '#0082c6',
 					offsetY: 5,
-					fontSize: '15px'
+					fontSize: '20px'
 				}
 			}
 		}
 	},
-	colors: ['#ecf0f4'],
+	colors: ['#0082c6'],
 	fill: {
 		type: 'gradient',
 		gradient: {
 			shade: 'dark',
 			type: 'diagonal1',
 			shadeIntensity: 0.8,
-			gradientToColors: ['#1b00ff'],
+			gradientToColors: ['#0082c6'],
 			inverseColors: false,
 			opacityFrom: [1, 0.2],
 			opacityTo: 1,
 			stops: [0, 100],
+			
 		}
 	},
 	states: {
