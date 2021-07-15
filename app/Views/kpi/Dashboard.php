@@ -100,7 +100,7 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between">
                     <div class="navbar-nav mr-auto">
-                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <a href="kpi" class="nav-item nav-link active">Home</a>
                         <a href="inputkpi" class="nav-item nav-link">Tambah KPI</a>
                         <a href="index.html" class="nav-item nav-link">Update KPI</a>
 
