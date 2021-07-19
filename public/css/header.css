@@ -307,6 +307,19 @@ a:focus {
     background: rgba(0, 0, 0, 0.15);
     color: #ffffff;
   }
+  .card-box > .small-box-footer {
+    color: rgba(0, 0, 0, 0.8);
+    display: block;
+    padding: 3px 0;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    z-index: 10;
+  }
+  
+  .card-box > .text-blue:hover {
+    color: #0082c6;
+  }
   
   .small-box h3 {
     font-size: 2.2rem;

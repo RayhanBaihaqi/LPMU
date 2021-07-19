@@ -79,6 +79,7 @@
         </div>
             <!-- Top Bar End -->
         <div class="container">
+        <br>
             <!-- Nav Bar Start -->
             <div class="nav-bar">
                 <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
@@ -129,7 +130,7 @@
                 </nav>
             </div>
             <!-- Nav Bar End -->
-
+            
             <div class="container-fluid">
             <p>Selamat Datang di halaman RKAT </p>
             <!-- ====================================================================================================================== -->
@@ -198,11 +199,12 @@
                 <div class="row clearfix progress-box">
 					<div class="col-lg-3 col-md-6 col-sm-12 mb-30">
 						<div class="card-box pd-30 height-100-p">
+                        <a href="#" class="small-box-footer text-blue">
 							<div class="progress-box text-center">
-                            <div id="chart" ></div>
+                                <div id="chart" ></div>
 								<h5 class="text-blue padding-top-10 h5">My Earnings</h5>
-								<span class="d-block">80% Average <i class="fa fa-line-chart text-blue"></i></span>
 							</div>
+                            Lihat detail <i class="fas fa-arrow-circle-right"></i></a>
 						</div>
 					</div>
 					<div class="col-lg-3 col-md-6 col-sm-12 mb-30">
@@ -210,7 +212,7 @@
 							<div class="progress-box text-center">
 								 <input type="text" class="knob dial2" value="70" data-width="120" data-height="120" data-linecap="round" data-thickness="0.12" data-bgColor="#fff" data-fgColor="#00e091" data-angleOffset="180" readonly>
 								<h5 class="text-light-green padding-top-10 h5">Business Captured</h5>
-								<span class="d-block">75% Average <i class="fa text-light-green fa-line-chart"></i></span>
+								<a href="#" class="small-box-footer">Lihat detail <i class="fas fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
 					</div>
