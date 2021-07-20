@@ -204,8 +204,9 @@
                     <div class="card-box pd-30 height-100-p">
                         <div class="progress-box text-center">
                             <div id="chart"></div>
-                            <h5 class="text-blue padding-top-10 h5">My Earnings</h5>
+                            <h5 class="text-blue padding-top-10 h5">Visi, Misi, Tujuan dan Strategi</h5>
                             <span class="d-block">80% Average <i class="fa fa-line-chart text-blue"></i></span>
+                            <a href="detail_visimisi" class="small-box-footer">Lihat detail <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -213,8 +214,10 @@
                     <div class="card-box pd-30 height-100-p">
                         <div class="progress-box text-center">
                             <input type="text" class="knob dial2" value="70" data-width="120" data-height="120" data-linecap="round" data-thickness="0.12" data-bgColor="#fff" data-fgColor="#00e091" data-angleOffset="180" readonly>
-                            <h5 class="text-light-green padding-top-10 h5">Business Captured</h5>
+                            <h5 class="text-light-green padding-top-10 h5">Tata Pamong, Tata Kelola dan Kerjasama</h5>
+
                             <span class="d-block">75% Average <i class="fa text-light-green fa-line-chart"></i></span>
+                            <a href="detail_tatakelola" class="small-box-footer">Lihat detail <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -222,8 +225,9 @@
                     <div class="card-box pd-30 height-100-p">
                         <div class="progress-box text-center">
                             <input type="text" class="knob dial3" value="90" data-width="120" data-height="120" data-linecap="round" data-thickness="0.12" data-bgColor="#fff" data-fgColor="#f56767" data-angleOffset="180" readonly>
-                            <h5 class="text-light-orange padding-top-10 h5">Projects Speed</h5>
+                            <h5 class="text-light-orange padding-top-10 h5">Mahasiswa</h5>
                             <span class="d-block">90% Average <i class="fa text-light-orange fa-line-chart"></i></span>
+                            <a href="detail_mahasiswa" class="small-box-footer">Lihat detail <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -231,8 +235,9 @@
                     <div class="card-box pd-30 height-100-p">
                         <div class="progress-box text-center">
                             <input type="text" class="knob dial4" value="65" data-width="120" data-height="120" data-linecap="round" data-thickness="0.12" data-bgColor="#fff" data-fgColor="#a683eb" data-angleOffset="180" readonly>
-                            <h5 class="text-light-purple padding-top-10 h5">Panding Orders</h5>
+                            <h5 class="text-light-purple padding-top-10 h5">Sumber Daya Manusia</h5>
                             <span class="d-block">65% Average <i class="fa text-light-purple fa-line-chart"></i></span>
+                            <a href="detail_sdm" class="small-box-footer">Lihat detail <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -243,8 +248,9 @@
                     <div class="card-box pd-30 height-100-p">
                         <div class="progress-box text-center">
                             <div id="chart"></div>
-                            <h5 class="text-blue padding-top-10 h5">My Earnings</h5>
+                            <h5 class="text-blue padding-top-10 h5">Keuangan, Sarana dan Prasarana</h5>
                             <span class="d-block">80% Average <i class="fa fa-line-chart text-blue"></i></span>
+                            <a href="detail_keuangan" class="small-box-footer">Lihat detail <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -252,8 +258,9 @@
                     <div class="card-box pd-30 height-100-p">
                         <div class="progress-box text-center">
                             <input type="text" class="knob dial2" value="70" data-width="120" data-height="120" data-linecap="round" data-thickness="0.12" data-bgColor="#fff" data-fgColor="#00e091" data-angleOffset="180" readonly>
-                            <h5 class="text-light-green padding-top-10 h5">Business Captured</h5>
+                            <h5 class="text-light-green padding-top-10 h5">Pendidikan</h5>
                             <span class="d-block">75% Average <i class="fa text-light-green fa-line-chart"></i></span>
+                            <a href="detail_pendidikan" class="small-box-footer">Lihat detail <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -261,8 +268,9 @@
                     <div class="card-box pd-30 height-100-p">
                         <div class="progress-box text-center">
                             <input type="text" class="knob dial3" value="90" data-width="120" data-height="120" data-linecap="round" data-thickness="0.12" data-bgColor="#fff" data-fgColor="#f56767" data-angleOffset="180" readonly>
-                            <h5 class="text-light-orange padding-top-10 h5">Projects Speed</h5>
+                            <h5 class="text-light-orange padding-top-10 h5">Penelitian</h5>
                             <span class="d-block">90% Average <i class="fa text-light-orange fa-line-chart"></i></span>
+                            <a href="detail_penelitian" class="small-box-footer">Lihat detail <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -270,8 +278,9 @@
                     <div class="card-box pd-30 height-100-p">
                         <div class="progress-box text-center">
                             <input type="text" class="knob dial4" value="65" data-width="120" data-height="120" data-linecap="round" data-thickness="0.12" data-bgColor="#fff" data-fgColor="#a683eb" data-angleOffset="180" readonly>
-                            <h5 class="text-light-purple padding-top-10 h5">Panding Orders</h5>
+                            <h5 class="text-light-purple padding-top-10 h5">Pengabdian Masyarakat</h5>
                             <span class="d-block">65% Average <i class="fa text-light-purple fa-line-chart"></i></span>
+                            <a href="detail_pengmas" class="small-box-footer">Lihat detail <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -282,8 +291,9 @@
                     <div class="card-box pd-30 height-100-p">
                         <div class="progress-box text-center">
                             <input type="text" class="knob dial3" value="90" data-width="120" data-height="120" data-linecap="round" data-thickness="0.12" data-bgColor="#fff" data-fgColor="#f56767" data-angleOffset="180" readonly>
-                            <h5 class="text-light-orange padding-top-10 h5">Projects Speed</h5>
+                            <h5 class="text-light-orange padding-top-10 h5">Luaran dan Capaian Tridharma</h5>
                             <span class="d-block">90% Average <i class="fa text-light-orange fa-line-chart"></i></span>
+                            <a href="detail_luarantridharma" class="small-box-footer">Lihat detail <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -291,13 +301,15 @@
                     <div class="card-box pd-30 height-100-p">
                         <div class="progress-box text-center">
                             <input type="text" class="knob dial4" value="65" data-width="120" data-height="120" data-linecap="round" data-thickness="0.12" data-bgColor="#fff" data-fgColor="#a683eb" data-angleOffset="180" readonly>
-                            <h5 class="text-light-purple padding-top-10 h5">Panding Orders</h5>
+                            <h5 class="text-light-purple padding-top-10 h5">Analisis dan Penetapan Program dan Pengembangan</h5>
                             <span class="d-block">65% Average <i class="fa text-light-purple fa-line-chart"></i></span>
+                            <a href="detail_pengembanganprog" class="small-box-footer">Lihat detail <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
         <section class="content">
             <div class="container-fluid">
                 <div class="row">
