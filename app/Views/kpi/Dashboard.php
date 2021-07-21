@@ -66,7 +66,7 @@
                     <div class="col-sm-1">
                         <div class="top-bar-right">
                             <div class="text">
-                                <h2>RKAT</h2>
+                                <h2>KPI</h2>
                             </div>
                         </div>
                     </div>
