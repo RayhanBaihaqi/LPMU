@@ -106,9 +106,11 @@
                     <div class="navbar-nav mr-auto">
                         <a href="kpi" class="nav-item nav-link">Home</a>
                         <a href="inputkpi" class="nav-item nav-link active">Tambah KPI</a>
-                        <a href="index.html" class="nav-item nav-link">Update KPI</a>
+                        <a href="#" class="nav-item nav-link">Update KPI</a>
 
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="#" class="nav-item nav-link">Contact</a>
+
+
                     </div>
                     <div class="ml-auto">
                         <div class="user-info-dropdown">
@@ -127,7 +129,7 @@
                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
                                     <a class="dropdown-item" href="profile.html"><i class="fas fa-user"></i> Profile</a>
                                     <a class="dropdown-item" href="profile.html"><i class="fas fa-cog"></i> Setting</a>
-                                    <a class="dropdown-item" href="login.html"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+                                    <a class="dropdown-item" href="/auth/logout"><i class="fas fa-sign-out-alt"></i> Log Out</a>
                                 </div>
                             </div>
                         </div>
