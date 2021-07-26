@@ -18,6 +18,14 @@ class Backend extends BaseController
 	{
 		return view('/kpi/Dashboard');
 	}
+	public function admin()
+	{
+		return view('/admin/Dashboard');
+	}
+	public function listadmin()
+	{
+		return view('/admin/ListAdmin');
+	}
 	public function inputkpi()
 	{
 		return view('kpi/formkpi');
