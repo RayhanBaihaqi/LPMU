@@ -143,13 +143,9 @@
         <form>
             <div class="container">
 
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Nama kegiatan</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan nama kegiatan">
 
-                </div>
                 <select class="custom-select custom-select-sm">
-                    <option selected>Kriteria</option>
+                    <option selected>Kategori</option>
                     <option value="1">C.1. Visi, Misi, Tujuan dan Strategi</option>
                     <option value="2">C.2. Tata Pamong, Tata Kelola dan Kerjasama
                     </option>
@@ -170,6 +166,30 @@
                     <option value="10">D. Analisis dan Penetapan Program Pengembangan
                     </option>
                 </select>
+                <br>
+                <select class="custom-select custom-select-sm">
+                    <option selected>Standar</option>
+                    <option value="1">C.1. Visi, Misi, Tujuan dan Strategi</option>
+                    <option value="2">C.2. Tata Pamong, Tata Kelola dan Kerjasama
+                    </option>
+                    <option value="3">C.3. Mahasiswa
+                    </option>
+                    <option value="4">C.4. Sumber Daya Manusia
+                    </option>
+                    <option value="5">C.5. Keuangan, Sarana dan Prasarana
+                    </option>
+                    <option value="6">C.6. Pendidikan
+                    </option>
+                    <option value="7">C.7. Penelitian
+                    </option>
+                    <option value="8">C.8 Pengabdian Kepada Masyarakat
+                    </option>
+                    <option value="9">C.9. Luaran dan Capaian Tridharma
+                    </option>
+                    <option value="10">D. Analisis dan Penetapan Program Pengembangan
+                    </option>
+                </select>
+                <br>
                 <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
                     <label class="form-check-label" for="exampleCheck1">Check me out</label>
