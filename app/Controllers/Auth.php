@@ -49,7 +49,7 @@ class Auth extends BaseController
         $row = $model->get_data_login($username, $table);
         //var_dump($row);
         if ($row == NULL) {
-            session()->setFlashdata('pesan', 'username anda salah');
+            session()->setFlashdata('pesan', 'username anda tidak ada');
             return redirect()->to('/');
         }
         if (password_verify($password, $row->password)) {
@@ -63,7 +63,7 @@ class Auth extends BaseController
             session()->setFlashdata('pesan', 'Berhasil Login');
             return redirect()->to('/backend');
         }
-        session()->setFlashdata('pesan', 'Password Salah');
+        session()->setFlashdata('pesan', 'Password anda salah');
         return redirect()->to('/');
     }
     public function logout()

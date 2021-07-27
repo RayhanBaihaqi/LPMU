@@ -2,8 +2,6 @@
 
 namespace App\Controllers;
 
-
-
 class Backend extends BaseController
 {
 	public function index()
@@ -18,6 +16,17 @@ class Backend extends BaseController
 	{
 		return view('/kpi/Dashboard');
 	}
+	//RKAT Koneksi
+	public function detail_chart()
+	{
+		return view('/rkat/detail/detail_chart');
+	}
+	public function form()
+	{
+		return view('/rkat/form');
+	}
+
+	//KPI koneksi
 	public function inputkpi()
 	{
 		return view('kpi/formkpi');

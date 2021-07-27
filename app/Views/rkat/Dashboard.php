@@ -145,7 +145,7 @@
                             <div class="icon">
                                 <i class="fas fa-users"></i>
                             </div>
-                            <a href="#" class="small-box-footer">Lihat detail <i class="fas fa-arrow-circle-right"></i></a>
+                            <a href="" class="small-box-footer">Lihat detail <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
@@ -192,14 +192,14 @@
                     </div>
                 </div>
             <!-- ====================================================================================================================== --> 
-            <a href="#" class="btn btn-info btn-sm"><i class="fa fa-home"></i> Link Button</a>
+            <a href="/backend/form" class="btn btn-info btn-sm"><i class="fa fa-home"></i> Isi formulir</a>
             <a href="#" class="btn btn-info btn-sm"><i class="fa fa-home"></i> Link Button</a>
             <a href="#" class="btn btn-info btn-sm"><i class="fa fa-home"></i> Link Button</a>
             <hr>
                 <div class="row clearfix progress-box">
 					<div class="col-lg-3 col-md-6 col-sm-12 mb-30">
 						<div class="card-box pd-30 height-100-p">
-                        <a href="#" class="small-box-footer text-blue">
+                        <a href="/backend/detail_chart" class="small-box-footer text-blue">
 							<div class="progress-box text-center">
                                 <div id="chart" ></div>
 								<h5 class="text-blue padding-top-10 h5">My Earnings</h5>
@@ -276,7 +276,7 @@
 				</div>
                 <!-- ====================================================================================================================== -->
                 <div class="row clearfix progress-box">
-					<div class="col-lg-6 col-md-6 col-sm-12 mb-30">
+					<div class="col-lg-4 col-md-6 col-sm-12 mb-30">
 						<div class="card-box pd-30 height-100-p">
 							<div class="progress-box text-center">
 								 <input type="text" class="knob dial3" value="90" data-width="120" data-height="120" data-linecap="round" data-thickness="0.12" data-bgColor="#fff" data-fgColor="#f56767" data-angleOffset="180" readonly>
@@ -285,7 +285,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-6 col-md-6 col-sm-12 mb-30">
+					<div class="col-lg-4 col-md-6 col-sm-12 mb-30">
 						<div class="card-box pd-30 height-100-p">
 							<div class="progress-box text-center">
 								 <input type="text" class="knob dial4" value="65" data-width="120" data-height="120" data-linecap="round" data-thickness="0.12" data-bgColor="#fff" data-fgColor="#a683eb" data-angleOffset="180" readonly>
@@ -294,10 +294,20 @@
 							</div>
 						</div>
 					</div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 mb-30">
+						<div class="card-box pd-30 height-100-p">
+							<div class="progress-box text-center">
+								 <input type="text" class="knob dial4" value="65" data-width="120" data-height="120" data-linecap="round" data-thickness="0.12" data-bgColor="#fff" data-fgColor="#a683eb" data-angleOffset="180" readonly>
+								<h5 class="text-light-purple padding-top-10 h5">Grafik total</h5>
+								<span class="d-block">65% Average <i class="fa text-light-purple fa-line-chart"></i></span>
+							</div>
+						</div>
+					</div>
 				</div>
-            </div>  
-        </div>    
-
+        <h3>GRAFIK PERBANDINGAN</h3>
+        <hr>
+    </div>
+    </div>
         <!-- JavaScript Libraries -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
