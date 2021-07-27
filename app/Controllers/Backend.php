@@ -16,7 +16,10 @@ class Backend extends BaseController
 	{
 		return view('/kpi/Dashboard');
 	}
+<<<<<<< HEAD
 
+=======
+>>>>>>> 83bdf7a06d8e7d4590bb946ca1899416917402f5
 	//RKAT Koneksi
 	public function detail_chart()
 	{
@@ -31,7 +34,10 @@ class Backend extends BaseController
 		return view('/rkat/profil');
 	}
 	//KPI koneksi
+<<<<<<< HEAD
 
+=======
+>>>>>>> 83bdf7a06d8e7d4590bb946ca1899416917402f5
 	public function admin()
 	{
 		return view('/admin/Dashboard');
@@ -40,7 +46,10 @@ class Backend extends BaseController
 	{
 		return view('/admin/ListAdmin');
 	}
+<<<<<<< HEAD
 
+=======
+>>>>>>> 83bdf7a06d8e7d4590bb946ca1899416917402f5
 	public function inputkpi()
 	{
 		return view('kpi/formkpi');
