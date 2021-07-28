@@ -108,7 +108,7 @@
                         <a href="listadmin" class="nav-item nav-link">Lihat List</a>
 
 
-                        <a href="#" class="nav-item nav-link">Contact</a>
+                        <a href="users/create" class="nav-item nav-link">Contact</a>
 
 
                     </div>

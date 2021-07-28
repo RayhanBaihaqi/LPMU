@@ -36,14 +36,12 @@ class BaseController extends Controller
 	 *
 	 * @var array
 	 */
-	protected $helpers = ['sis'];
+	protected $helpers = [''];
 
 	/**
 	 * Constructor.
 	 *
-	 * @param RequestInterface  $request
-	 * @param ResponseInterface $response
-	 * @param LoggerInterface   $logger
+
 	 */
 	public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
 	{
