@@ -32,7 +32,7 @@
 							<div class="alert alert-danger"><?= session()->getFlashdata('pesan') ?></div>
 						<?php endif ?>
 						<button class="submit" name="tombol">LOGIN</button>
-						<a class="btn" href="/loginunit" role="button">Masuk sebagai unit</a>
+						<a class="btn" href="/loginunit" role="button">Masuk sebagai ADMIN</a>
 					</form>
 				</div>
 			</div>

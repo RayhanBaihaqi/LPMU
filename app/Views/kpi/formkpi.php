@@ -46,50 +46,53 @@
 <body>
 
     <!-- Top Bar Start -->
-    <div class="top-bar">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-2">
-                    <div class="logo">
-                        <a href="index.html">
-                            <img src="/img/logo-upj.png" alt="Logo">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-5">
-                    <div class="logo">
-                        <h1 class="pertama">Lembaga</h1>
-                        <h1 class="kedua">Penjaminan Mutu</h1>
-                        <h1 class="ketiga">Universitas</h1>
-                    </div>
-                </div>
-                <div class="col-sm-1">
-                    <div class="top-bar-right">
-                        <div class="text">
-                            <h2>KPI</h2>
+    <div>
+        <div class="top-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <div class="logo">
+                            <a href="index.html">
+                                <img src="/img/logo-upj.png" alt="Logo">
+                            </a>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-2">
-                    <div class="top-bar-right">
-                        <div class="text">
-                            <h2>
-                                <div id="txt"></div>
-                            </h2>
+                    <div class="col-sm-5">
+                        <div class="logo">
+                            <h1 class="pertama">Lembaga</h1>
+                            <h1 class="kedua">Penjaminan Mutu</h1>
+                            <h1 class="ketiga">Universitas</h1>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-2">
-                    <div class="social">
-                        <a href=""><i class="fab fa-twitter"></i></a>
-                        <a href=""><i class="fab fa-facebook-f"></i></a>
-                        <a href=""><i class="fab fa-linkedin-in"></i></a>
-                        <a href=""><i class="fab fa-instagram"></i></a>
+                    <div class="col-sm-1">
+                        <div class="top-bar-right">
+                            <div class="text">
+                                <h2>KPI</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="top-bar-right">
+                            <div class="text">
+                                <h2>
+                                    <div id="txt"></div>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="social">
+                            <a href=""><i class="fab fa-twitter"></i></a>
+                            <a href=""><i class="fab fa-facebook-f"></i></a>
+                            <a href=""><i class="fab fa-linkedin-in"></i></a>
+                            <a href=""><i class="fab fa-instagram"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 
     <!-- Top Bar End -->
     <div class="container">
@@ -106,11 +109,6 @@
                     <div class="navbar-nav mr-auto">
                         <a href="kpi" class="nav-item nav-link">Home</a>
                         <a href="inputkpi" class="nav-item nav-link active">Tambah KPI</a>
-                        <a href="#" class="nav-item nav-link">Update KPI</a>
-
-                        <a href="#" class="nav-item nav-link">Contact</a>
-
-
                     </div>
                     <div class="ml-auto">
                         <div class="user-info-dropdown">
@@ -167,6 +165,7 @@
                     </option>
                 </select>
                 <br>
+                <br>
                 <select class="custom-select custom-select-sm">
                     <option selected>Standar</option>
                     <option value="1">C.1. Visi, Misi, Tujuan dan Strategi</option>
@@ -190,10 +189,28 @@
                     </option>
                 </select>
                 <br>
-                <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                <br>
+                <div class="form-group">
+                    <label for="#">Skor</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                        <label class="form-check-label" for="inlineRadio1">1</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                        <label class="form-check-label" for="inlineRadio2">2</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                        <label class="form-check-label" for="inlineRadio2">3</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                        <label class="form-check-label" for="inlineRadio2">4</label>
+                    </div>
                 </div>
+                <br>
+
                 <button type="submit" class="btn btn-primary">Submit</button>
 
             </div>

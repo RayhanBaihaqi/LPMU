@@ -106,9 +106,7 @@
                     <div class="navbar-nav mr-auto">
                         <a href="kpi" class="nav-item nav-link active">Home</a>
                         <a href="inputkpi" class="nav-item nav-link">Tambah KPI</a>
-                        <a href="#" class="nav-item nav-link">Update KPI</a>
 
-                        <a href="#" class="nav-item nav-link">Contact</a>
 
 
                     </div>
