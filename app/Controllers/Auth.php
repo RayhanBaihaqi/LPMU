@@ -53,18 +53,36 @@ class Auth extends BaseController
             return redirect()->to('/');
         }
         if (password_verify($password, $row->password)) {
-            $data = array(
+            
+            $data = [
                 'log' => TRUE,
                 'nama_prodi' => $row->nama_prodi,
                 'username' => $row->username,
                 'level' => $row->level,
-            );
+            ];
             session()->set($data);
-            session()->setFlashdata('pesan', 'Berhasil Login');
-            return redirect()->to('/backend');
+            
+            if (session('level') == 'prodi') {
+                session()->setFlashdata('pesan', 'Berhasil Login');
+                return redirect()->to('/backend');
+            }
+            elseif (session('level') == 'unit') {
+                session()->setFlashdata('pesan', 'Berhasil Login');
+                return redirect()->to('/backend');
+            }
+            else if (session('level') == 'admin') {
+                session()->setFlashdata('pesan', 'Berhasil Login');
+                return redirect()->to('/backend/admin');
+            }
+            else if (session('level') == 'rektorat') {
+                session()->setFlashdata('pesan', 'Berhasil Login');
+                return redirect()->to('/backend');
+            }
         }
-        session()->setFlashdata('pesan', 'Password anda salah');
-        return redirect()->to('/');
+        else {
+            session()->setFlashdata('pesan', 'Password anda salah');
+            return redirect()->to('/');
+        }
     }
     public function logout()
     {

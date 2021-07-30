@@ -20,7 +20,7 @@ class AuthFilter implements FilterInterface
     {
         $session = session();
         if ($session->get('log') == TRUE) {
-            return redirect()->to('/backend');
+            // return redirect()->to('/backend');
         }
     }
 }

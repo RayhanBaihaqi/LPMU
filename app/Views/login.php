@@ -20,7 +20,7 @@
 		<div class="login_box">
 			<div class="left">
 				<div class="contact">
-					<form action="auth/login" method="post">
+					<form action="<?= base_url('auth/login') ?>" method="post">
 						<h3>LOGIN</h3>
 						<input type="text" class="form-control" name="username" placeholder="Username">
 						<input type="password" class="form-control" name="password" placeholder="Password">
@@ -31,8 +31,7 @@
 						<?php if (session()->getFlashdata('pesan')) : ?>
 							<div class="alert alert-danger"><?= session()->getFlashdata('pesan') ?></div>
 						<?php endif ?>
-						<button class="submit" name="tombol">LOGIN</button>
-						<a class="btn" href="/loginunit" role="button">Masuk sebagai ADMIN</a>
+						<button class="submit" type="submit" name="tombol">LOGIN</button>
 					</form>
 				</div>
 			</div>

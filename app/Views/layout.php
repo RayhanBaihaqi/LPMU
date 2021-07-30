@@ -13,6 +13,7 @@
 </head>
 
 <body>
+  <?= session()->getFlashdata('pesan'); ?>
   <nav class="navbar navbar-expand-sm bg-light justify-content-end">
     <ul class="nav ">
       <li class="nav-item">
