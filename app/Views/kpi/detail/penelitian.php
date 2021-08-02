@@ -471,17 +471,11 @@
                         <table class="table table-striped table-hover">
                             <thead>
                                 <tr>
-                                    <th>
-                                        <span class="custom-checkbox">
-                                            <input type="checkbox" id="selectAll">
-                                            <label for="selectAll"></label>
-                                        </span>
-                                    </th>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Address</th>
-                                    <th>Phone</th>
-                                    <th>Actions</th>
+                                    <th>No.</th>
+                                    <th>Keterangan</th>
+                                    <th>Kategori</th>
+                                    <th>Standar</th>
+                                    <th>Skor</th>
                                 </tr>
                             </thead>
                             <tbody>

@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Models\DataModel;
+
 class Backend extends BaseController
 {
 	public function index()
