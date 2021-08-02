@@ -39,7 +39,9 @@ class Auth extends BaseController
         session()->setFlashdata('pesan', 'Selamat Anda berhasil registrasi. Silahkan Login');
         return redirect()->to('/');
     }
-
+    public function login_admin() {
+        return view('/admin/dashboard');
+    }
     public function login()
     {
         $model = new AuthModel;
@@ -53,7 +55,7 @@ class Auth extends BaseController
             return redirect()->to('/');
         }
         if (password_verify($password, $row->password)) {
-            
+
             $data = [
                 'log' => TRUE,
                 'nama_prodi' => $row->nama_prodi,
@@ -72,7 +74,7 @@ class Auth extends BaseController
             }
             else if (session('level') == 'admin') {
                 session()->setFlashdata('pesan', 'Berhasil Login');
-                return redirect()->to('/backend/admin');
+                return redirect()->to('/auth/login_admin');
             }
             else if (session('level') == 'rektorat') {
                 session()->setFlashdata('pesan', 'Berhasil Login');
