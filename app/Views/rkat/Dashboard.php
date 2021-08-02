@@ -118,10 +118,10 @@
 									</span>
 								</a>
 								<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-									<a class="dropdown-item" href="/backend/profil"><i class="fas fa-user"></i>
+									<a class="dropdown-item" href="<?= base_url('backend/profil') ?>"><i class="fas fa-user"></i>
 										Profile</a>
 									<a class="dropdown-item" href="profile.html"><i class="fas fa-cog"></i> Setting</a>
-									<a class="dropdown-item" href="/auth/logout"><i class="fas fa-sign-out-alt"></i> Log
+									<a class="dropdown-item" href="<?= base_url('auth/logout') ?>"><i class="fas fa-sign-out-alt"></i> Log
 										Out</a>
 								</div>
 							</div>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ERROR - 2021-08-01 23:39:16 --> Error connecting to the database: No connection could be made because the target machine actively refused it.
 
 CRITICAL - 2021-08-01 23:39:16 --> Unable to connect to the database.
@@ -13,3 +14,108 @@ Main connection [MySQLi]: No connection could be made because the target machine
 #7 C:\xampp\htdocs\LPMU\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #8 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
 #9 {main}
+=======
+CRITICAL - 2021-08-01 20:17:41 --> Undefined variable: result
+#0 C:\xampp\htdocs\lpmu-web\app\Views\admin\Dashboard.php(149): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 149, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('/admin/Dashboar...', Array, true)
+#4 C:\xampp\htdocs\lpmu-web\app\Controllers\Backend.php(36): view('/admin/Dashboar...')
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Backend->admin()
+#6 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend))
+#7 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2021-08-01 20:21:41 --> Class 'App\Models\AuthModel' not found
+#0 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Auth->login()
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2021-08-01 20:22:00 --> Class 'App\Models\AuthModel' not found
+#0 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Auth->login()
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2021-08-01 20:23:34 --> Class 'App\Models\AuthModel' not found
+#0 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Auth->login()
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2021-08-01 20:23:49 --> Class 'App\Models\AuthModel' not found
+#0 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Auth->login()
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2021-08-01 20:28:21 --> Class 'App\Models\AuthModel' not found
+#0 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Auth->login()
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2021-08-01 20:28:34 --> Class 'App\Models\AuthModel' not found
+#0 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Auth->login()
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2021-08-01 20:28:49 --> Class 'App\Models\AuthModel' not found
+#0 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Auth->login()
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2021-08-01 20:29:04 --> Class 'App\Models\AuthModel' not found
+#0 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Auth->login()
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2021-08-01 20:29:31 --> Class 'App\Models\AuthModel' not found
+#0 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Auth->login()
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2021-08-01 20:29:43 --> Class 'App\Models\AuthModel' not found
+#0 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Auth->login()
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2021-08-01 20:29:55 --> Class 'App\Models\AuthModel' not found
+#0 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Auth->login()
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2021-08-01 20:30:06 --> Class 'App\Models\AuthModel' not found
+#0 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Auth->login()
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2021-08-01 20:31:07 --> Class 'App\Models\AuthModel' not found
+#0 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Auth->login()
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+>>>>>>> 169977df0b6f6f7ecc362b7ebecd8bda3aa99c03
