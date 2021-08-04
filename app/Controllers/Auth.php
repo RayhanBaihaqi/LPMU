@@ -8,6 +8,17 @@ use App\Models\AuthModel;
 
 class Auth extends BaseController
 {
+    public function tabel()
+    {
+        $user = new UsersModel();
+
+        $data = [
+            'users' => $user
+        ];
+
+        return view('admin/ListAdmin', $data);
+
+    }
     public function register()
     {
         $val = $this->validate(
