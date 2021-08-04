@@ -34,7 +34,7 @@
       </div>
       <div class="col-sm-6">
         <div class="card">
-          <a class="btn" href="/backend/kpi" role="button">
+          <a class="btn" href="kpi" role="button">
             <img class="card-img-top" src="/img/KPI1.jpg" alt="Card image">
             <div class="card-body">KPI</div>
           </a>

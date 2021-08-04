@@ -33,6 +33,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Frontend::index');
 $routes->get('/loginunit', 'Frontend::loginunit');
+$routes->post('detail-save', 'Kpi::save');
 
 /*
  * --------------------------------------------------------------------

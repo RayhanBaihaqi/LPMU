@@ -14,10 +14,10 @@ class Backend extends BaseController
 	{
 		return view('/rkat/Dashboard');
 	}
-	public function kpi()
+	/*public function kpi()
 	{
 		return view('/kpi/Dashboard');
-	}
+	}*/
 	//RKAT Koneksi
 	public function detail_chart()
 	{
@@ -33,7 +33,7 @@ class Backend extends BaseController
 	}
 	//KPI koneksi
 
-
+	/*
 	public function listadmin()
 	{
 		return view('/admin/ListAdmin');
@@ -82,4 +82,5 @@ class Backend extends BaseController
 	{
 		return view('kpi/detail/visimisi');
 	}
+	*/
 }

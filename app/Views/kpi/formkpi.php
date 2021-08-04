@@ -107,7 +107,7 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between">
                     <div class="navbar-nav mr-auto">
-                        <a href="kpi" class="nav-item nav-link">Home</a>
+                        <a href="/kpi" class="nav-item nav-link">Home</a>
                         <a href="inputkpi" class="nav-item nav-link active">Tambah KPI</a>
                     </div>
                     <div class="ml-auto">
@@ -136,53 +136,69 @@
             </nav>
         </div>
         <!-- Nav Bar End -->
+        <?php
+        if (session()->getFlashData('status')) {
+            echo "<h4>" . session()->getFlashData('status') . "</h4>";
+        }
+        ?>
         <h3>Silahkan isi form dibawah ini</h3>
         <br>
-        <form>
+        <form action="<?= base_url('detail-save') ?>" method="POST">
             <div class="container">
                 <div class="form-group">
+                    <label for="exampleFormControlSelect1">Kriteria</label>
+                    <select class="form-control" id="exampleFormControlSelect1" name="kriteria">
+                        <option value="" disabled selected>Pilih Indikator standar</option>
+                        <option value="1">1 – Visi Misi Tujuan dan Strategi</option>
+                        <option value="2">2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
+                        <option value="3">3 - Mahasiswa</option>
+                        <option value="4">4 - Sumber Daya Manusia</option>
+                        <option value="5">5 - Keuangan, Sarana dan Prasarana</option>
+                        <option value="6">6 - Pendidikan</option>
+                        <option value="7">7 – Penelitian</option>
+                        <option value="8">8 - Pengabdian kepada Masyarakat (PkM)</option>
+                        <option value="9">9 - Luaran dan Capaian Tridharma</option>
+                    </select>
+                </div>
+                <div class="form-group">
                     <label for="exampleFormControlSelect1">Indikator Standar</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
+                    <select class="form-control" id="exampleFormControlSelect1" name="standar">
                         <option value="" disabled selected>Pilih Indikator standar</option>
                         <option value="1">Standar 1 – Visi Misi Tujuan dan Strategi</option>
                         <option value="2">Standar 2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
                         <option value="3">Standar 3 - Mahasiswa</option>
                         <option value="4">Standar 4 - Sumber Daya Manusia</option>
-                        <option value="5">Standar 5 - Keuangan, Sarana dan Prasarana</option>
-                        <option value="6">Standar 6 - Pendidikan</option>
-                        <option value="7">Standar 7 – Penelitian</option>
-                        <option value="8">Standar 8 - Pengabdian kepada Masyarakat (PkM)</option>
-                        <option value="9">Standar 9 - Luaran dan Capaian Tridharma</option>
+
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">PIC</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan PIC">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="pic" placeholder="Masukkan PIC">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Nama PIC</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Nama PIC">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="nama_pic" placeholder="Masukkan Nama PIC">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">Ketercapaian</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Masukkan Ketercapaian Standar"></textarea>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="ketercapaian" placeholder="Masukkan Ketercapaian Standar"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">Skor</label>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value=1>
                         <label class="form-check-label" for="inlineRadio1">1</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value=2>
                         <label class="form-check-label" for="inlineRadio2">2</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value=3>
                         <label class="form-check-label" for="inlineRadio2">3</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value=4>
                         <label class="form-check-label" for="inlineRadio2">4</label>
                     </div>
                 </div>
