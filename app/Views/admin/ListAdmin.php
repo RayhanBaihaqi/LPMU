@@ -17,7 +17,7 @@
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 	<!-- Custom styles for this template-->
 	<link href="http://localhost:8080/css/style_admin.css" rel="stylesheet">
-    <link href="http://localhost:8080/css/tabel_admin.css" rel="stylesheet">
+	<link href="http://localhost:8080/css/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
@@ -69,7 +69,7 @@
 			<div class="sidebar-heading">
 				KPI
 			</div>
-            <li class="nav-item">
+			<li class="nav-item">
 				<a class="nav-link " href="index.html">
 					<i class="fas fa-fw fa-tachometer-alt"></i>
 					<span>Dashboard</span></a>
@@ -79,7 +79,7 @@
 			<div class="sidebar-heading">
 				User
 			</div>
-            <li class="nav-item active">
+			<li class="nav-item active">
 				<a class="nav-link " href="/auth/tabel">
 					<i class="fas fa-fw fa-tachometer-alt"></i>
 					<span>Tabel User</span></a>
@@ -137,87 +137,80 @@
 
 				</nav>
 				<!-- End of Topbar -->
-
 				<!-- Begin Page Content -->
 				<div class="container-fluid">
-					<div class="row">
-                    <div class="container-fluid">
-            <h1>Daftar Users</h1>
-            <!-- Tabel -->
-            <div class="table-responsive">
-                <div class="table-wrapper">
-                    <div class="table-title">
-                        <div class="row">
-                            <div class="col-xs-6">
-                                <a href="admin/users/create" class="btn btn-success" data-toggle="modal"><span>Tambah Data</span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <table class="table table-striped table-hover">
-                        <thead>
-                            <tr>
-                                <th>Id</th>
-                                <th>Username</th>
-                                <th>Passwoard</th>
-                                <th>Nama Prodi</th>
-                                <th>Level</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php $i = 1; ?>
-                            <?php foreach($users as $user) : ?>
-                            <tr>
-                                <td scope="row"><?= $i++; ?></td>
-                                <td><?= $user['username'];?></td>
-                                <td><?= $user['passwoard'];?></td>
-                                <td><?= $user['nama_prodi'];?></td>
-                                <td><?= $user['level'];?></td>
-                                <td>
-                                    <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                                    <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                                </td>
-                            </tr>
-                            <?php endforeach; ?>
-                        </tbody>
-                    </table>
-                    <div class="clearfix">
-                        <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
-                        <ul class="pagination">
-                            <li class="page-item disabled"><a href="#">Previous</a></li>
-                            <li class="page-item active"><a href="#" class="page-link">1</a></li>
-                            <li class="page-item"><a href="#" class="page-link">2</a></li>
-                            <li class="page-item "><a href="#" class="page-link">3</a></li>
-                            <li class="page-item"><a href="#" class="page-link">4</a></li>
-                            <li class="page-item"><a href="#" class="page-link">5</a></li>
-                            <li class="page-item"><a href="#" class="page-link">Next</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-                    </div>
+
+					<!-- Page Heading -->
+					<h1 class="h3 mb-2 text-gray-800">Daftar User</h1>
+
+					<!-- DataTales Example -->
+					<div class="card shadow mb-4">
+						<div class="card-header py-3">
+							<a href="admin/users/create" class="btn btn-success" data-toggle="modal"><span>Tambah
+									Data</span></a>
+						</div>
+						<div class="card-body">
+							<div class="table-responsive">
+								<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+									<thead>
+										<tr>
+											<th>Id</th>
+											<th>Username</th>
+											<th>Passwoard</th>
+											<th>Nama Prodi</th>
+											<th>Level</th>
+											<th>Actions</th>
+										</tr>
+									</thead>
+									<tbody>
+										<?php $i = 1; ?>
+										<?php foreach($users as $user) : ?>
+										<tr>
+											<td scope="row"><?= $i++; ?></td>
+											<td><?= $user['username'];?></td>
+											<td><?= $user['passwoard'];?></td>
+											<td><?= $user['nama_prodi'];?></td>
+											<td><?= $user['level'];?></td>
+											<td>
+												<a href="#editEmployeeModal" class="edit" data-toggle="modal"><i
+														class="material-icons" data-toggle="tooltip"
+														title="Edit">&#xE254;</i></a>
+												<a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i
+														class="material-icons" data-toggle="tooltip"
+														title="Delete">&#xE872;</i></a>
+											</td>
+										</tr>
+										<?php endforeach; ?>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
 
 				</div>
-				<!-- /.container-fluid -->
+
 
 			</div>
-			<!-- End of Main Content -->
+			<!-- End of Content Wrapper -->
 
 		</div>
-		<!-- End of Content Wrapper -->
+		<!-- End of Page Wrapper -->
 
-	</div>
-	<!-- End of Page Wrapper -->
+		<!-- Scroll to Top Button-->
+		<a class="scroll-to-top rounded" href="#page-top">
+			<i class="fas fa-angle-up"></i>
+		</a>
 
-	<!-- Scroll to Top Button-->
-	<a class="scroll-to-top rounded" href="#page-top">
-		<i class="fas fa-angle-up"></i>
-	</a>
+		<!-- Bootstrap core JavaScript-->
+		<script src="http://localhost:8080/js/jquery.min.js"></script>
+		<script src="http://localhost:8080/js/bootstrap.bundle.min.js"></script>
 
-	<!-- Bootstrap core JavaScript-->
-	<script src="http://localhost:8080/js/jquery.min.js"></script>
-	<script src="http://localhost:8080/js/bootstrap.bundle.min.js"></script>
+		<!-- Page level plugins -->
+		<script src="http://localhost:8080/js/jquery.dataTables.min.js"></script>
+		<script src="http://localhost:8080/js/dataTables.bootstrap4.min.js"></script>
+
+		<!-- Page level custom scripts -->
+		<script src="http://localhost:8080/js/datatables-demo.js"></script>
 
 </body>
 
