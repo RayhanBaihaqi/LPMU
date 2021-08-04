@@ -73,7 +73,7 @@ class Auth extends BaseController
                 return redirect()->to('/backend');
             } else if (session('level') == 'admin') {
                 session()->setFlashdata('pesan', 'Berhasil Login');
-                return redirect()->to('/auth/login_admin');
+                return redirect()->to('/backend/admin/Dashboard');
             } else if (session('level') == 'rektorat') {
                 session()->setFlashdata('pesan', 'Berhasil Login');
                 return redirect()->to('/backend');
