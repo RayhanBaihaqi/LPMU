@@ -105,7 +105,7 @@
                 <div class="collapse navbar-collapse justify-content-between">
                     <div class="navbar-nav mr-auto">
                         <a href="kpi" class="nav-item nav-link active">Home</a>
-                        <a href="inputkpi" class="nav-item nav-link">Tambah KPI</a>
+                        <a href="/kpi/inputkpi" class="nav-item nav-link">Tambah KPI</a>
 
 
 
@@ -205,7 +205,7 @@
             <div class="row clearfix progress-box">
                 <div class="col-lg-3 col-md-6 col-sm-12 mb-30">
                     <div class="card-box pd-30 height-100-p">
-                        <a href="detail_visimisi" class="small-box-footer text-blue">
+                        <a href="kpi/detail_visimisi" class="small-box-footer text-blue">
                             <div class="progress-box text-center">
                                 <div id="chart"></div>
                                 <h5 class="text-blue padding-top-10 h5">Visi, Misi, dan Tujuan</h5>
@@ -216,7 +216,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12 mb-30">
                     <div class="card-box pd-30 height-100-p">
-                        <a href="detail_tatakelola" class="small-box-footer text-blue">
+                        <a href="kpi/detail_tatakelola" class="small-box-footer text-blue">
                             <div class="progress-box text-center">
                                 <div id="chart2"></div>
                                 <h5 class="text-blue padding-top-10 h5">Tata Pamong, Tata Kelola dan Kerjasama</h5>
@@ -227,7 +227,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12 mb-30">
                     <div class="card-box pd-30 height-100-p">
-                        <a href="detail_mahasiswa" class="small-box-footer text-blue">
+                        <a href="kpi/detail_mahasiswa" class="small-box-footer text-blue">
                             <div class="progress-box text-center">
                                 <div id="chart3"></div>
                                 <h5 class="text-blue padding-top-10 h5">Mahasiswa</h5>
@@ -238,7 +238,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12 mb-30">
                     <div class="card-box pd-30 height-100-p">
-                        <a href="detail_sdm" class="small-box-footer text-blue">
+                        <a href="kpi/detail_sdm" class="small-box-footer text-blue">
                             <div class="progress-box text-center">
                                 <div id="chart4"></div>
                                 <h5 class="text-blue padding-top-10 h5">Sumber Daya Manusia</h5>
@@ -253,7 +253,7 @@
             <div class="row clearfix progress-box">
                 <div class="col-lg-3 col-md-6 col-sm-12 mb-30">
                     <div class="card-box pd-30 height-100-p">
-                        <a href="detail_keuangan" class="small-box-footer text-blue">
+                        <a href="kpi/detail_keuangan" class="small-box-footer text-blue">
                             <div class="progress-box text-center">
                                 <div id="chart5"></div>
                                 <h5 class="text-blue padding-top-10 h5">Keuangan, Sarana dan Prasarana</h5>
@@ -264,7 +264,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12 mb-30">
                     <div class="card-box pd-30 height-100-p">
-                        <a href="detail_pendidikan" class="small-box-footer text-blue">
+                        <a href="kpi/detail_pendidikan" class="small-box-footer text-blue">
                             <div class="progress-box text-center">
                                 <div id="chart6"></div>
                                 <h5 class="text-blue padding-top-10 h5">Pendidikan</h5>
@@ -275,7 +275,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12 mb-30">
                     <div class="card-box pd-30 height-100-p">
-                        <a href="detail_penelitian" class="small-box-footer text-blue">
+                        <a href="kpi/detail_penelitian" class="small-box-footer text-blue">
                             <div class="progress-box text-center">
                                 <div id="chart7"></div>
                                 <h5 class="text-blue padding-top-10 h5">Penelitian</h5>
@@ -286,7 +286,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12 mb-30">
                     <div class="card-box pd-30 height-100-p">
-                        <a href="detail_pengmas" class="small-box-footer text-blue">
+                        <a href="kpi/detail_pengmas" class="small-box-footer text-blue">
                             <div class="progress-box text-center">
                                 <div id="chart8"></div>
                                 <h5 class="text-blue padding-top-10 h5">Pengabdian Masyarakat</h5>
@@ -302,7 +302,7 @@
             <div class="row clearfix progress-box">
                 <div class="col-lg-6 col-md-6 col-sm-12 mb-30">
                     <div class="card-box pd-30 height-100-p">
-                        <a href="detail_luarantridharma" class="small-box-footer text-blue">
+                        <a href="kpi/detail_luarantridharma" class="small-box-footer text-blue">
                             <div class="progress-box text-center">
                                 <div id="chart9"></div>
                                 <h5 class="text-blue padding-top-10 h5">Luaran dan Capaian Tridharma</h5>
@@ -314,7 +314,7 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 mb-30">
                     <div class="card-box pd-30 height-100-p">
-                        <a href="detail_pengembanganprog" class="small-box-footer text-blue">
+                        <a href="kpi/detail_pengembanganprog" class="small-box-footer text-blue">
                             <div class="progress-box text-center">
                                 <div id="chart10"></div>
                                 <h5 class="text-blue padding-top-10 h5">Analisis dan Penetapan Program dan Pengembangan</h5>

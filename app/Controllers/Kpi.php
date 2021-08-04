@@ -2,42 +2,17 @@
 
 namespace App\Controllers;
 
-use App\Models\DataModel;
+//use CodeIgniter\Controller;
+use App\Models\DetailKpiModel;
 
-class Backend extends BaseController
+class Kpi extends BaseController
 {
+	
 	public function index()
 	{
-		return view('layout');
-	}
-	public function rkat()
-	{
-		return view('/rkat/Dashboard');
-	}
-	/*public function kpi()
-	{
 		return view('/kpi/Dashboard');
-	}*/
-	//RKAT Koneksi
-	public function detail_chart()
-	{
-		return view('/rkat/detail/detail_chart');
 	}
-	public function form()
-	{
-		return view('/rkat/form');
-	}
-	public function profil()
-	{
-		return view('/rkat/profil');
-	}
-	//KPI koneksi
-
-	/*
-	public function listadmin()
-	{
-		return view('/admin/ListAdmin');
-	}
+	
 	public function inputkpi()
 	{
 		return view('kpi/formkpi');
@@ -82,5 +57,4 @@ class Backend extends BaseController
 	{
 		return view('kpi/detail/visimisi');
 	}
-	*/
 }

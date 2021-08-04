@@ -107,7 +107,7 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between">
                     <div class="navbar-nav mr-auto">
-                        <a href="kpi" class="nav-item nav-link">Home</a>
+                        <a href="/kpi" class="nav-item nav-link">Home</a>
                         <a href="inputkpi" class="nav-item nav-link active">Tambah KPI</a>
                     </div>
                     <div class="ml-auto">
@@ -141,6 +141,21 @@
         <form>
             <div class="container">
                 <div class="form-group">
+                    <label for="exampleFormControlSelect1">Kriteria</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                        <option value="" disabled selected>Pilih Indikator standar</option>
+                        <option value="1">1 – Visi Misi Tujuan dan Strategi</option>
+                        <option value="2">2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
+                        <option value="3">3 - Mahasiswa</option>
+                        <option value="4">4 - Sumber Daya Manusia</option>
+                        <option value="5">5 - Keuangan, Sarana dan Prasarana</option>
+                        <option value="6">6 - Pendidikan</option>
+                        <option value="7">7 – Penelitian</option>
+                        <option value="8">8 - Pengabdian kepada Masyarakat (PkM)</option>
+                        <option value="9">9 - Luaran dan Capaian Tridharma</option>
+                    </select>
+                </div>
+                <div class="form-group">
                     <label for="exampleFormControlSelect1">Indikator Standar</label>
                     <select class="form-control" id="exampleFormControlSelect1">
                         <option value="" disabled selected>Pilih Indikator standar</option>
@@ -148,11 +163,7 @@
                         <option value="2">Standar 2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
                         <option value="3">Standar 3 - Mahasiswa</option>
                         <option value="4">Standar 4 - Sumber Daya Manusia</option>
-                        <option value="5">Standar 5 - Keuangan, Sarana dan Prasarana</option>
-                        <option value="6">Standar 6 - Pendidikan</option>
-                        <option value="7">Standar 7 – Penelitian</option>
-                        <option value="8">Standar 8 - Pengabdian kepada Masyarakat (PkM)</option>
-                        <option value="9">Standar 9 - Luaran dan Capaian Tridharma</option>
+
                     </select>
                 </div>
                 <div class="form-group">
