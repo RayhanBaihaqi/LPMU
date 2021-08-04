@@ -85,4 +85,10 @@ class Backend extends BaseController
 	{
 		return view('kpi/detail/visimisi');
 	}
+
+	//Admin koneksi
+	public function adminkpi()
+	{
+		return view('/admin/AdminKpi');
+	}
 }
