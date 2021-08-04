@@ -41,7 +41,7 @@
 
 			<!-- Nav Item - Dashboard -->
 			<li class="nav-item active">
-				<a class="nav-link " href="index.html">
+				<a class="nav-link " href="/admin">
 					<i class="fas fa-fw fa-tachometer-alt"></i>
 					<span>Dashboard</span></a>
 			</li>
@@ -69,7 +69,7 @@
 				KPI
 			</div>
 			<li class="nav-item">
-				<a class="nav-link " href="adminkpi">
+				<a class="nav-link " href="admin/adminkpi">
 					<i class="fas fa-fw fa-tachometer-alt"></i>
 					<span>Dashboard</span></a>
 			</li>

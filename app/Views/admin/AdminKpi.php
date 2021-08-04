@@ -40,8 +40,8 @@
 			<hr class="sidebar-divider my-0">
 
 			<!-- Nav Item - Dashboard -->
-			<li class="nav-item active">
-				<a class="nav-link " href="index.html">
+			<li class="nav-item">
+				<a class="nav-link " href="/admin">
 					<i class="fas fa-fw fa-tachometer-alt"></i>
 					<span>Dashboard</span></a>
 			</li>
@@ -68,7 +68,7 @@
 			<div class="sidebar-heading">
 				KPI
 			</div>
-			<li class="nav-item">
+			<li class="nav-item active">
 				<a class="nav-link " href="index.html">
 					<i class="fas fa-fw fa-tachometer-alt"></i>
 					<span>Dashboard</span></a>
@@ -124,37 +124,132 @@
 
 				</nav>
 				<!-- End of Topbar -->
+				<div class="container">
+					<h3>Lihat Tabel KPI</h3>
+					<br>
+					<form>
+						<div class="container">
+							<div class="form-group">
+								<label for="exampleFormControlSelect1">Tahun Ajaran</label>
+								<select class="form-control" id="exampleFormControlSelect1">
+									<option selected>2021/2022</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label for="exampleFormControlSelect1">Divisi</label>
+								<select class="form-control" id="exampleFormControlSelect1">
+									<option selected>--Pilih divisi--</option>
+									<option value="1">Prodi</option>
+									<option value="2">Unit</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label for="exampleFormControlSelect1">Prodi</label>
+								<select class="form-control" id="exampleFormControlSelect1">
+									<option selected>--Pilih prodi--</option>
+									<option value="1">Akuntansi</option>
+									<option value="2">Manajemen</option>
+									<option value="3">Psikologi</option>
+									<option value="4">Ilmu Komunikasi</option>
+									<option value="5">Desain Produk</option>
+									<option value="6">Desain Komunikasi Visual</option>
+									<option value="7">Informatika</option>
+									<option value="8">Sistem Informasi</option>
+									<option value="9">Teknik Sipil</option>
+									<option value="10">Arsitektur</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label for="exampleFormControlSelect1">Unit</label>
+								<select class="form-control" id="exampleFormControlSelect1">
+									<option selected>--Pilih unit--</option>
+									<option value="1">Rektorat</option>
+									<option value="2">Fakultas Teknologi dan Desain</option>
+									<option value="3">Fakultas Humaniora dan Bisnis</option>
+									<option value="4">Center for Urban Studies</option>
+									<option value="5">Jaya Center Advanced Learning</option>
+									<option value="6">Jaya Softskills Development Program</option>
+									<option value="7">Jaya Launch Pad</option>
+									<option value="8">KOTA</option>
+									<option value="9">Sustainable Development</option>
+									<option value="10">Lembaga Penelitian dan Pengabdian Masyarakat</option>
+									<option value="11">Lembaga Penjaminan Mutu Universitas</option>
+									<option value="12">Keuangan</option>
+									<option value="13">Biro Pengembangan Sumber Daya Manusia</option>
+									<option value="14">Publikasi Humas dan Admisi</option>
+									<option value="15">Biro Kemahasiswaan dan Alumni</option>
+									<option value="16">Biro Pendidikan</option>
+									<option value="17">Perpustakaan</option>
+									<option value="18">Sarana dan Prasarana</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label for="exampleFormControlSelect1">Standar</label>
+								<select class="form-control" id="exampleFormControlSelect1">
+									<option selected>--Pilih standar--</option>
+									<option value="1">Standar 1 – Visi Misi Tujuan dan Strategi</option>
+									<option value="2">Standar 2 - Tata Pamong Tata Kelola dan Kerjasama</option>
+									<option value="3">Standar 3 - Mahasiswa</option>
+									<option value="4">Standar 4 - Sumber Daya Manusia</option>
+									<option value="5">Standar 5 - Keuangan Sarana dan Prasarana</option>
+									<option value="6">Standar 6 - Pendidikan</option>
+									<option value="7">Standar 7 – Penelitian</option>
+									<option value="8">Standar 8 - Pengabdian kepada Masyarakat (PkM)</option>
+									<option value="9">Standar 9 - Luaran dan Capaian Tridharma</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label for="exampleFormControlSelect1">Standar</label>
+								<select class="form-control" id="exampleFormControlSelect1">
+									<option selected>--Pilih standar--</option>
+									<option value="1">Standar 1 – Visi Misi Tujuan dan Strategi</option>
+									<option value="2">Standar 2 - Tata Pamong Tata Kelola dan Kerjasama</option>
+									<option value="3">Standar 3 - Mahasiswa</option>
+									<option value="4">Standar 4 - Sumber Daya Manusia</option>
+									<option value="5">Standar 5 - Keuangan Sarana dan Prasarana</option>
+									<option value="6">Standar 6 - Pendidikan</option>
+									<option value="7">Standar 7 – Penelitian</option>
+									<option value="8">Standar 8 - Pengabdian kepada Masyarakat (PkM)</option>
+									<option value="9">Standar 9 - Luaran dan Capaian Tridharma</option>
+									<option value="10">Standar HRD</option>
+								</select>
+							</div>
 
-				<!-- Begin Page Content -->
-				<!-- /.container-fluid -->
+
+							<button type="submit" class="btn btn-primary">Cek Tabel</button>
+
+						</div>
+
+					</form>
+
+
+				</div>
+				<!-- End of Main Content -->
+
+				<!-- Footer -->
+				<footer class="sticky-footer bg-white">
+					<div class="container my-auto">
+						<div class="copyright text-center my-auto">
+							<span>Copyright &copy; Your Website 2020</span>
+						</div>
+					</div>
+				</footer>
+				<!-- End of Footer -->
 
 			</div>
-			<!-- End of Main Content -->
-
-			<!-- Footer -->
-			<footer class="sticky-footer bg-white">
-				<div class="container my-auto">
-					<div class="copyright text-center my-auto">
-						<span>Copyright &copy; Your Website 2020</span>
-					</div>
-				</div>
-			</footer>
-			<!-- End of Footer -->
+			<!-- End of Content Wrapper -->
 
 		</div>
-		<!-- End of Content Wrapper -->
+		<!-- End of Page Wrapper -->
 
-	</div>
-	<!-- End of Page Wrapper -->
+		<!-- Scroll to Top Button-->
+		<a class="scroll-to-top rounded" href="#page-top">
+			<i class="fas fa-angle-up"></i>
+		</a>
 
-	<!-- Scroll to Top Button-->
-	<a class="scroll-to-top rounded" href="#page-top">
-		<i class="fas fa-angle-up"></i>
-	</a>
-
-	<!-- Bootstrap core JavaScript-->
-	<script src="http://localhost:8080/js/jquery.min.js"></script>
-	<script src="http://localhost:8080/js/bootstrap.bundle.min.js"></script>
+		<!-- Bootstrap core JavaScript-->
+		<script src="http://localhost:8080/js/jquery.min.js"></script>
+		<script src="http://localhost:8080/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
