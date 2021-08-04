@@ -238,7 +238,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12 mb-30">
                     <div class="card-box pd-30 height-100-p">
-                        <a href="detail_sdma" class="small-box-footer text-blue">
+                        <a href="detail_sdm" class="small-box-footer text-blue">
                             <div class="progress-box text-center">
                                 <div id="chart4"></div>
                                 <h5 class="text-blue padding-top-10 h5">Sumber Daya Manusia</h5>
@@ -314,7 +314,7 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 mb-30">
                     <div class="card-box pd-30 height-100-p">
-                        <a href="detail_pengembangan" class="small-box-footer text-blue">
+                        <a href="detail_pengembanganprog" class="small-box-footer text-blue">
                             <div class="progress-box text-center">
                                 <div id="chart10"></div>
                                 <h5 class="text-blue padding-top-10 h5">Analisis dan Penetapan Program dan Pengembangan</h5>

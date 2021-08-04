@@ -1,3 +1,20 @@
+<<<<<<< HEAD
+ERROR - 2021-08-01 23:39:16 --> Error connecting to the database: No connection could be made because the target machine actively refused it.
+
+CRITICAL - 2021-08-01 23:39:16 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it.
+
+#0 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\BaseConnection.php(625): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1881): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp\htdocs\LPMU\app\Models\AuthModel.php(13): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\xampp\htdocs\LPMU\app\Controllers\Auth.php(49): App\Models\AuthModel->get_data_login('inf007', 'user')
+#4 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Auth->login()
+#5 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#6 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\LPMU\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+=======
 CRITICAL - 2021-08-01 20:17:41 --> Undefined variable: result
 #0 C:\xampp\htdocs\lpmu-web\app\Views\admin\Dashboard.php(149): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 149, Array)
 #1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\xampp\\htdocs...')
@@ -101,3 +118,4 @@ CRITICAL - 2021-08-01 20:31:07 --> Class 'App\Models\AuthModel' not found
 #3 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #4 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
 #5 {main}
+>>>>>>> 169977df0b6f6f7ecc362b7ebecd8bda3aa99c03

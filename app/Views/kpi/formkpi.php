@@ -140,58 +140,35 @@
         <br>
         <form>
             <div class="container">
-
-
-                <select class="custom-select custom-select-sm">
-                    <option selected>Kategori</option>
-                    <option value="1">C.1. Visi, Misi, Tujuan dan Strategi</option>
-                    <option value="2">C.2. Tata Pamong, Tata Kelola dan Kerjasama
-                    </option>
-                    <option value="3">C.3. Mahasiswa
-                    </option>
-                    <option value="4">C.4. Sumber Daya Manusia
-                    </option>
-                    <option value="5">C.5. Keuangan, Sarana dan Prasarana
-                    </option>
-                    <option value="6">C.6. Pendidikan
-                    </option>
-                    <option value="7">C.7. Penelitian
-                    </option>
-                    <option value="8">C.8 Pengabdian Kepada Masyarakat
-                    </option>
-                    <option value="9">C.9. Luaran dan Capaian Tridharma
-                    </option>
-                    <option value="10">D. Analisis dan Penetapan Program Pengembangan
-                    </option>
-                </select>
-                <br>
-                <br>
-                <select class="custom-select custom-select-sm">
-                    <option selected>Standar</option>
-                    <option value="1">C.1. Visi, Misi, Tujuan dan Strategi</option>
-                    <option value="2">C.2. Tata Pamong, Tata Kelola dan Kerjasama
-                    </option>
-                    <option value="3">C.3. Mahasiswa
-                    </option>
-                    <option value="4">C.4. Sumber Daya Manusia
-                    </option>
-                    <option value="5">C.5. Keuangan, Sarana dan Prasarana
-                    </option>
-                    <option value="6">C.6. Pendidikan
-                    </option>
-                    <option value="7">C.7. Penelitian
-                    </option>
-                    <option value="8">C.8 Pengabdian Kepada Masyarakat
-                    </option>
-                    <option value="9">C.9. Luaran dan Capaian Tridharma
-                    </option>
-                    <option value="10">D. Analisis dan Penetapan Program Pengembangan
-                    </option>
-                </select>
-                <br>
-                <br>
                 <div class="form-group">
-                    <label for="#">Skor</label>
+                    <label for="exampleFormControlSelect1">Indikator Standar</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                        <option value="" disabled selected>Pilih Indikator standar</option>
+                        <option value="1">Standar 1 – Visi Misi Tujuan dan Strategi</option>
+                        <option value="2">Standar 2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
+                        <option value="3">Standar 3 - Mahasiswa</option>
+                        <option value="4">Standar 4 - Sumber Daya Manusia</option>
+                        <option value="5">Standar 5 - Keuangan, Sarana dan Prasarana</option>
+                        <option value="6">Standar 6 - Pendidikan</option>
+                        <option value="7">Standar 7 – Penelitian</option>
+                        <option value="8">Standar 8 - Pengabdian kepada Masyarakat (PkM)</option>
+                        <option value="9">Standar 9 - Luaran dan Capaian Tridharma</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">PIC</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan PIC">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Nama PIC</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Nama PIC">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Ketercapaian</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Masukkan Ketercapaian Standar"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Skor</label>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
                         <label class="form-check-label" for="inlineRadio1">1</label>
@@ -209,13 +186,17 @@
                         <label class="form-check-label" for="inlineRadio2">4</label>
                     </div>
                 </div>
-                <br>
-
+                <div class="form-group">
+                    <label for="exampleFormControlFile1">Bukti Pelaksanaan</label>
+                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
+                <br><br>
 
             </div>
 
         </form>
+    </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

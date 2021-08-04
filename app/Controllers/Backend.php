@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Models\DataModel;
+
 class Backend extends BaseController
 {
 	public function index()
@@ -31,10 +33,7 @@ class Backend extends BaseController
 	}
 	//KPI koneksi
 
-	public function admin()
-	{
-		return view('/admin/Dashboard');
-	}
+
 	public function listadmin()
 	{
 		return view('/admin/ListAdmin');

@@ -50,7 +50,8 @@ class Auth extends BaseController
         session()->setFlashdata('pesan', 'Selamat Anda berhasil registrasi. Silahkan Login');
         return redirect()->to('/');
     }
-    public function login_admin() {
+    public function login_admin()
+    {
         return view('/admin/dashboard');
     }
     public function login()
@@ -74,25 +75,21 @@ class Auth extends BaseController
                 'level' => $row->level,
             ];
             session()->set($data);
-            
+
             if (session('level') == 'prodi') {
                 session()->setFlashdata('pesan', 'Berhasil Login');
                 return redirect()->to('/backend');
-            }
-            elseif (session('level') == 'unit') {
+            } elseif (session('level') == 'unit') {
+                session()->setFlashdata('pesan', 'Berhasil Login');
+                return redirect()->to('/backend');
+            } else if (session('level') == 'admin') {
+                session()->setFlashdata('pesan', 'Berhasil Login');
+                return redirect()->to('/admin');
+            } else if (session('level') == 'rektorat') {
                 session()->setFlashdata('pesan', 'Berhasil Login');
                 return redirect()->to('/backend');
             }
-            else if (session('level') == 'admin') {
-                session()->setFlashdata('pesan', 'Berhasil Login');
-                return redirect()->to('/auth/login_admin');
-            }
-            else if (session('level') == 'rektorat') {
-                session()->setFlashdata('pesan', 'Berhasil Login');
-                return redirect()->to('/backend');
-            }
-        }
-        else {
+        } else {
             session()->setFlashdata('pesan', 'Password anda salah');
             return redirect()->to('/');
         }
