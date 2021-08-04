@@ -17,6 +17,22 @@ class Kpi extends BaseController
 	{
 		return view('kpi/formkpi');
 	}
+	public function save()
+	{
+		$detail = new  DetailKpiModel();
+		$data = [
+			'kriteria' => $this->request->getPost('kriteria'),
+			'standar' => $this->request->getPost('standar'),
+			'pic' => $this->request->getPost('pic'),
+			'nama_pic' => $this->request->getPost('nama_pic'),
+			'ketercapaian' => $this->request->getPost('ketercapaian'),
+			'skor' => $this->request->getPost('skor'),
+			'file' => $this->request->getPost('file'),
+			'created_at' => $this->request->getPost('created_at')
+		];
+		$detail->save($data);
+		return redirect()->to(base_url('kpi/inputkpi'))->with('status', 'Data Berhasil ditambah');
+	}
 	public function detail_keuangan()
 	{
 		$detail_keuangan = new DetailKpiModel();
