@@ -141,68 +141,14 @@
         <form>
             <div class="container">
                 <div class="form-group">
-                    <label for="exampleFormControlSelect1">Tahun Ajaran</label>
+                    <label for="exampleFormControlSelect1">Indikator Standar</label>
                     <select class="form-control" id="exampleFormControlSelect1">
-                        <option selected>2021/2022</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlSelect1">Divisi</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                        <option selected>--Pilih divisi--</option>
-                        <option value="1">Prodi</option>
-                        <option value="2">Unit</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlSelect1">Prodi</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                        <option selected>--Pilih prodi--</option>
-                        <option value="1">Akuntansi</option>
-                        <option value="2">Manajemen</option>
-                        <option value="3">Psikologi</option>
-                        <option value="4">Ilmu Komunikasi</option>
-                        <option value="5">Desain Produk</option>
-                        <option value="6">Desain Komunikasi Visual</option>
-                        <option value="7">Informatika</option>
-                        <option value="8">Sistem Informasi</option>
-                        <option value="9">Teknik Sipil</option>
-                        <option value="10">Arsitektur</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlSelect1">Unit</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                        <option selected>--Pilih unit--</option>
-                        <option value="1">Rektorat</option>
-                        <option value="2">Fakultas Teknologi dan Desain</option>
-                        <option value="3">Fakultas Humaniora dan Bisnis</option>
-                        <option value="4">Center for Urban Studies</option>
-                        <option value="5">Jaya Center Advanced Learning</option>
-                        <option value="6">Jaya Softskills Development Program</option>
-                        <option value="7">Jaya Launch Pad</option>
-                        <option value="8">KOTA</option>
-                        <option value="9">Sustainable Development</option>
-                        <option value="10">Lembaga Penelitian dan Pengabdian Masyarakat</option>
-                        <option value="11">Lembaga Penjaminan Mutu Universitas</option>
-                        <option value="12">Keuangan</option>
-                        <option value="13">Biro Pengembangan Sumber Daya Manusia</option>
-                        <option value="14">Publikasi Humas dan Admisi</option>
-                        <option value="15">Biro Kemahasiswaan dan Alumni</option>
-                        <option value="16">Biro Pendidikan</option>
-                        <option value="17">Perpustakaan</option>
-                        <option value="18">Sarana dan Prasarana</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlSelect1">Standar</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                        <option selected>--Pilih standar--</option>
+                        <option value="" disabled selected>Pilih Indikator standar</option>
                         <option value="1">Standar 1 – Visi Misi Tujuan dan Strategi</option>
-                        <option value="2">Standar 2 - Tata Pamong Tata Kelola dan Kerjasama</option>
+                        <option value="2">Standar 2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
                         <option value="3">Standar 3 - Mahasiswa</option>
                         <option value="4">Standar 4 - Sumber Daya Manusia</option>
-                        <option value="5">Standar 5 - Keuangan Sarana dan Prasarana</option>
+                        <option value="5">Standar 5 - Keuangan, Sarana dan Prasarana</option>
                         <option value="6">Standar 6 - Pendidikan</option>
                         <option value="7">Standar 7 – Penelitian</option>
                         <option value="8">Standar 8 - Pengabdian kepada Masyarakat (PkM)</option>
@@ -210,24 +156,42 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlSelect1">Standar</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                        <option selected>--Pilih standar--</option>
-                        <option value="1">Standar 1 – Visi Misi Tujuan dan Strategi</option>
-                        <option value="2">Standar 2 - Tata Pamong Tata Kelola dan Kerjasama</option>
-                        <option value="3">Standar 3 - Mahasiswa</option>
-                        <option value="4">Standar 4 - Sumber Daya Manusia</option>
-                        <option value="5">Standar 5 - Keuangan Sarana dan Prasarana</option>
-                        <option value="6">Standar 6 - Pendidikan</option>
-                        <option value="7">Standar 7 – Penelitian</option>
-                        <option value="8">Standar 8 - Pengabdian kepada Masyarakat (PkM)</option>
-                        <option value="9">Standar 9 - Luaran dan Capaian Tridharma</option>
-                        <option value="10">Standar HRD</option>
-                    </select>
+                    <label for="exampleFormControlInput1">PIC</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan PIC">
                 </div>
-
-
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Nama PIC</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Nama PIC">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Ketercapaian</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Masukkan Ketercapaian Standar"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Skor</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                        <label class="form-check-label" for="inlineRadio1">1</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                        <label class="form-check-label" for="inlineRadio2">2</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                        <label class="form-check-label" for="inlineRadio2">3</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                        <label class="form-check-label" for="inlineRadio2">4</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlFile1">Bukti Pelaksanaan</label>
+                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
+                <br><br>
 
             </div>
 
