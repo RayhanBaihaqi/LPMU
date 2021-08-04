@@ -13,7 +13,7 @@ class DetailKpiModel extends Model
     protected $useAutoIncrement = true;
 
     protected $returnType     = 'array';
-    protected $useSoftDeletes = true;
+    //protected $useSoftDeletes = true;
 
     protected $allowedFields = ['kriteria', 'standar', 'pic', 'nama_pic', 'ketercapaian', 'skor', 'file', 'created_at'];
 

@@ -482,7 +482,18 @@
                                 </tr>
                             </thead>
                             <tbody>
-
+                                <?php foreach ($detail_luarantridharma as $row) : ?>
+                                    <tr>
+                                        <td><?= $row['id'] ?></td>
+                                        <td><?= $row['kriteria'] ?></td>
+                                        <td><?= $row['standar'] ?></td>
+                                        <td><?= $row['pic'] ?></td>
+                                        <td><?= $row['nama_pic'] ?></td>
+                                        <td><?= $row['ketercapaian'] ?></td>
+                                        <td><?= $row['skor'] ?></td>
+                                        <td><?= $row['file'] ?></td>
+                                    </tr>
+                                <?php endforeach; ?>
                             </tbody>
                         </table>
                         <div class="clearfix">
