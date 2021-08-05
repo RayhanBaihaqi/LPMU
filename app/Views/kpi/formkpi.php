@@ -138,7 +138,7 @@
         <!-- Nav Bar End -->
         <?php
         if (session()->getFlashData('status')) {
-            echo "<h4>" . session()->getFlashData('status') . "</h4>";
+            echo "<h4>" . session()->getFlashData('status') . "</h4><br>";
         }
         ?>
         <h3>Silahkan isi form dibawah ini</h3>
@@ -149,15 +149,15 @@
                     <label for="exampleFormControlSelect1">Kriteria</label>
                     <select class="form-control" id="exampleFormControlSelect1" name="kriteria">
                         <option value="" disabled selected>Pilih Indikator standar</option>
-                        <option value="1">1 – Visi Misi Tujuan dan Strategi</option>
-                        <option value="2">2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
-                        <option value="3">3 - Mahasiswa</option>
-                        <option value="4">4 - Sumber Daya Manusia</option>
-                        <option value="5">5 - Keuangan, Sarana dan Prasarana</option>
-                        <option value="6">6 - Pendidikan</option>
-                        <option value="7">7 – Penelitian</option>
-                        <option value="8">8 - Pengabdian kepada Masyarakat (PkM)</option>
-                        <option value="9">9 - Luaran dan Capaian Tridharma</option>
+                        <option value="visimisi">1 – Visi Misi Tujuan dan Strategi</option>
+                        <option value="tatakelola">2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
+                        <option value="mahasiswa">3 - Mahasiswa</option>
+                        <option value="sdm">4 - Sumber Daya Manusia</option>
+                        <option value="keuangan">5 - Keuangan, Sarana dan Prasarana</option>
+                        <option value="pendidikan">6 - Pendidikan</option>
+                        <option value="penelitian">7 – Penelitian</option>
+                        <option value="pengmas">8 - Pengabdian kepada Masyarakat (PkM)</option>
+                        <option value="luarantridharma">9 - Luaran dan Capaian Tridharma</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -186,19 +186,19 @@
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">Skor</label>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value=1>
+                        <input class="form-check-input" type="radio" name="skor" id="inlineRadio1" value=1>
                         <label class="form-check-label" for="inlineRadio1">1</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value=2>
+                        <input class="form-check-input" type="radio" name="skor" id="inlineRadio2" value=2>
                         <label class="form-check-label" for="inlineRadio2">2</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value=3>
+                        <input class="form-check-input" type="radio" name="skor" id="inlineRadio2" value=3>
                         <label class="form-check-label" for="inlineRadio2">3</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value=4>
+                        <input class="form-check-input" type="radio" name="skor" id="inlineRadio2" value=4>
                         <label class="form-check-label" for="inlineRadio2">4</label>
                     </div>
                 </div>
