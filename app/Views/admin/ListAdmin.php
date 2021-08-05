@@ -161,7 +161,6 @@
 										</tr>
 									</thead>
 									<tbody>
-<<<<<<< HEAD
 									<?php if($user): ?>
                                     <?php foreach ($user as $reading): ?>
 										<tr>
@@ -179,21 +178,6 @@
 														title="Delete">&#xE872;</i></a>
 											</td>
 										</tr>
-=======
-										<?php $i = 1; ?>
-										<?php foreach ($users as $user) : ?>
-											<tr>
-												<td scope="row"><?= $i++; ?></td>
-												<td><?= $user['username']; ?></td>
-												<td><?= $user['passwoard']; ?></td>
-												<td><?= $user['nama_prodi']; ?></td>
-												<td><?= $user['level']; ?></td>
-												<td>
-													<a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-													<a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-												</td>
-											</tr>
->>>>>>> d68fb84603f90f4935cd301619a56844a5a4a3ae
 										<?php endforeach; ?>
                                     <?php endif; ?>
 									</tbody>
