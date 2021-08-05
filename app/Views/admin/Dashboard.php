@@ -79,7 +79,7 @@
 				User
 			</div>
             <li class="nav-item">
-				<a class="nav-link " href="/auth/tabel">
+				<a class="nav-link " href="/auth/index">
 					<i class="fas fa-fw fa-tachometer-alt"></i>
 					<span>Tabel User</span></a>
 			</li>
