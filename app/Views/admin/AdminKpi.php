@@ -74,6 +74,15 @@
 					<span>Dashboard</span></a>
 			</li>
 
+			<!-- Heading -->
+			<div class="sidebar-heading">
+				User
+			</div>
+			<li class="nav-item">
+				<a class="nav-link " href="/auth/tabel">
+					<i class="fas fa-fw fa-tachometer-alt"></i>
+					<span>Tabel User</span></a>
+			</li>
 		</ul>
 		<!-- End of Sidebar -->
 

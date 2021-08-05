@@ -482,9 +482,10 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php $i = 1; ?>
                                 <?php foreach ($detail_keuangan as $row) : ?>
                                     <tr>
-                                        <td><?= $row['id'] ?></td>
+                                        <td scope="row"><?= $i++; ?></td>
                                         <td><?= $row['kriteria'] ?></td>
                                         <td><?= $row['standar'] ?></td>
                                         <td><?= $row['pic'] ?></td>
