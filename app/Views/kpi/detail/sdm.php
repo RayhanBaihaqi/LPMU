@@ -482,9 +482,10 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php $i = 1; ?>
                                 <?php foreach ($detail_sdm as $row) : ?>
                                     <tr>
-                                        <td><?= $row['id'] ?></td>
+                                        <td scope="row"><?= $i++; ?></td>
                                         <td><?= $row['kriteria'] ?></td>
                                         <td><?= $row['standar'] ?></td>
                                         <td><?= $row['pic'] ?></td>
@@ -494,7 +495,6 @@
                                         <td><?= $row['file'] ?></td>
                                     </tr>
                                 <?php endforeach; ?>
-                            </tbody>
                         </table>
                         <div class="clearfix">
                             <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
