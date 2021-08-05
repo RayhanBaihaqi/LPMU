@@ -8,47 +8,32 @@ use App\Models\AuthModel;
 
 class Auth extends BaseController
 {
-    public function tabel()
+    public function index()
     {
-        $user = new UsersModel();
+        $model = new UsersModel();
 
-        $data = [
-            'users' => $user
-        ];
+        $data['user'] = $model->orderBy('id','DESC')->findAll();
 
         return view('admin/ListAdmin', $data);
 
     }
-    public function register()
-    {
-        $val = $this->validate(
-            [
-                'nama_prodi' => 'required',
-                'username' => [
-                    'rules' => 'required|is_unique[user.username]',
-                    'errors' => [
-                        'is_unique' => '{field} Sudah dipakai'
-                    ]
-                ],
-                'password' => 'required',
-                'level' => 'required',
-            ],
-        );
+    public function create() {
+        $model = new UsersModel();
+        $data['user'] = $model->orderBy('id','ASC')->findAll();
+        return view('admin/TambahUsers', $data);
+    }
+    public function store() {
+        $model = new UsersModel();
+        
+        $data = [
+            'username' => $this->request->getVar('username'),
+            'nama_prodi' => $this->request->getVar('nama_prodi'),
+            'level' => $this->request->getVar('level'),
+            'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
+        ];
+        $save = $model->insert($data);
 
-        if (!$val) {
-            $pesanvalidasi = \Config\Services::validation();
-            return redirect()->to('/register')->withInput()->with('validate', $pesanvalidasi);
-        }
-        $data = array(
-            'nama_prodi' => $this->request->getPost('nama_prodi'),
-            'username' => $this->request->getPost('username'),
-            'password' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
-            'level' => $this->request->getPost('level')
-        );
-        $model = new UsersModel;
-        $model->insert($data);
-        session()->setFlashdata('pesan', 'Selamat Anda berhasil registrasi. Silahkan Login');
-        return redirect()->to('/');
+        return redirect()->to(base_url('admin/ListAdmin'));
     }
     public function login_admin()
     {

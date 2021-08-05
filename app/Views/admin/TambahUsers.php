@@ -2,202 +2,210 @@
 <html lang="en">
 
 <head>
+
 	<meta charset="utf-8">
-	<title>Dashboard RKAT</title>
-	<meta content="width=device-width, initial-scale=1.0" name="viewport">
-	<meta content="Law Firm Website Template" name="keywords">
-	<meta content="Law Firm Website Template" name="description">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
 
-	<!-- Favicon -->
-	<link rel="shortcut icon" type="image/png" href="/favicon.ico" />
+	<title>Admin</title>
 
-	<!-- Google Font -->
-	<link
-		href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,600;1,700;1,800&family=Roboto:wght@400;500&display=swap"
-		rel="stylesheet">
-
-	<!-- CSS Libraries -->
+	<!-- Custom fonts for this template-->
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-	<link href="lib/animate/animate.min.css" rel="stylesheet">
-	<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-
-	<!-- Template Stylesheet -->
-	<link rel="stylesheet" href="http://localhost:8080/css/header.css">
-	<link rel="stylesheet" href="http://localhost:8080/css/style2.css">
-
+	<!-- Custom styles for this template-->
+	<link href="http://localhost:8080/css/style_admin.css" rel="stylesheet">
+	<link href="http://localhost:8080/css/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
-<body onload="startTime()">
-	<div class="pre-loader">
-		<div class="spinner-border text-info"></div>
-	</div>
-	<div class="wrapper">
-		<!-- Top Bar Start -->
-		<div class="top-bar">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-2">
-						<div class="logo">
-							<a href="index.html">
-								<img src="/img/logo-upj.png" alt="Logo">
-							</a>
-						</div>
-					</div>
-					<div class="col-sm-5">
-						<div class="logo">
-							<h1 class="pertama">Lembaga</h1>
-							<h1 class="kedua">Penjaminan Mutu</h1>
-							<h1 class="ketiga">Universitas</h1>
-						</div>
-					</div>
-					<div class="col-sm-1">
-						<div class="top-bar-right">
-							<div class="text">
-								<h2>ADMIN</h2>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-2">
-						<div class="top-bar-right">
-							<div class="text">
-								<h2>
-									<div id="txt"></div>
-								</h2>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-2">
-						<div class="social">
-							<a href=""><i class="fab fa-twitter"></i></a>
-							<a href=""><i class="fab fa-facebook-f"></i></a>
-							<a href=""><i class="fab fa-linkedin-in"></i></a>
-							<a href=""><i class="fab fa-instagram"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- Top Bar End -->
-	<div class="container">
-		<br>
-		<!-- Nav Bar Start -->
-		<div class="nav-bar">
-			<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-				<a href="/backend/rkat"><i class="fas fa-long-arrow-alt-left"></i></a>
-				<a href="#" class="navbar-brand">MENU</a>
-				<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse justify-content-between">
+<body id="page-top">
 
-					<div class="ml-auto">
-						<div class="user-info-dropdown">
-							<div class="dropdown">
-								<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-									<span class="user-icon">
-										<img src="/img/inf-logo.jpg" alt="">
-									</span>
-									<span class="user-name">
-										<?php
+	<!-- Page Wrapper -->
+	<div id="wrapper">
+
+		<!-- Sidebar -->
+		<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+			<!-- Sidebar - Brand -->
+			<a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
+				<div class="sidebar-brand-icon rotate-n-15">
+					<i class="fas fa-laugh-wink"></i>
+				</div>
+				<div class="sidebar-brand-text mx-3">Admin</div>
+			</a>
+
+			<!-- Divider -->
+			<hr class="sidebar-divider my-0">
+
+			<!-- Nav Item - Dashboard -->
+			<li class="nav-item ">
+				<a class="nav-link " href="index.html">
+					<i class="fas fa-fw fa-tachometer-alt"></i>
+					<span>Dashboard</span></a>
+			</li>
+
+			<!-- Divider -->
+			<hr class="sidebar-divider">
+
+			<!-- Heading -->
+			<div class="sidebar-heading">
+				RKAT
+			</div>
+
+			<!-- Nav Item - Pages Collapse Menu -->
+			<li class="nav-item">
+				<a class="nav-link " href="index.html">
+					<i class="fas fa-fw fa-tachometer-alt"></i>
+					<span>Dashboard</span></a>
+			</li>
+
+			<!-- Divider -->
+			<hr class="sidebar-divider">
+
+			<!-- Heading -->
+			<div class="sidebar-heading">
+				KPI
+			</div>
+			<li class="nav-item">
+				<a class="nav-link " href="index.html">
+					<i class="fas fa-fw fa-tachometer-alt"></i>
+					<span>Dashboard</span></a>
+			</li>
+
+			<!-- Heading -->
+			<div class="sidebar-heading">
+				User
+			</div>
+			<li class="nav-item active">
+				<a class="nav-link " href="/auth/tabel">
+					<i class="fas fa-fw fa-tachometer-alt"></i>
+					<span>Tabel User</span></a>
+			</li>
+
+		</ul>
+		<!-- End of Sidebar -->
+
+		<!-- Content Wrapper -->
+		<div id="content-wrapper" class="d-flex flex-column">
+
+			<!-- Main Content -->
+			<div id="content">
+
+				<!-- Topbar -->
+				<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+					<!-- Topbar Navbar -->
+					<ul class="navbar-nav ml-auto">
+
+						<div class="topbar-divider d-none d-sm-block"></div>
+
+						<!-- Nav Item - User Information -->
+						<li class="nav-item dropdown no-arrow">
+							<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<span class="mr-2 d-none d-lg-inline text-gray-600 small">
+									<?php
                                             $nama_prodi = session('nama_prodi');
                                             echo "$nama_prodi"
                                         ?>
-									</span>
+								</span>
+								<img class="img-profile rounded-circle" src="/img/inf-logo.jpg">
+							</a>
+							<!-- Dropdown - User Information -->
+							<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+								aria-labelledby="userDropdown">
+								<a class="dropdown-item" href="#">
+									<i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+									Profile
 								</a>
-								<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-									<a class="dropdown-item" href="profile.html"><i class="fas fa-user"></i> Profile</a>
-									<a class="dropdown-item" href="profile.html"><i class="fas fa-cog"></i> Setting</a>
-									<a class="dropdown-item" href="/auth/logout"><i class="fas fa-sign-out-alt"></i> Log
-										Out</a>
-								</div>
+								<a class="dropdown-item" href="#">
+									<i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+									Settings
+								</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="<?= base_url('auth/logout') ?>">
+									<i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+									Logout
+								</a>
+							</div>
+						</li>
+
+					</ul>
+
+				</nav>
+				<!-- End of Topbar -->
+				<!-- Begin Page Content -->
+				<div class="container-fluid">
+
+					<!-- Page Heading -->
+					<h1 class="h3 mb-2 text-gray-800">Tambah User</h1>
+
+					<!-- DataTales Example -->
+					<div class="card shadow mb-4">
+						<div class="card-body">
+							<div class="table-responsive">
+								<form action="<?= base_url('auth/store'); ?>" method="POST"
+									enctype="multipart/form-data">
+									<div class="form-group">
+										<label for="username">Username</label>
+										<input required type="text" name="username" class="form-control" id="username"
+											placeholder="Masukkan Nama">
+									</div>
+									<div class="form-group">
+										<label for="password">Password</label>
+										<input type="password" class="form-control" name="password"
+											placeholder="Password" id='password'>
+									</div>
+									<div class="form-group">
+										<label for="nama_prodi">Nama Prodi/Unit</label>
+										<input required type="text" name="name" class="form-control" id="nama_prodi"
+											name='nama_prodi' placeholder="Masukkan Nama Prodi/Unit">
+									</div>
+									<div class="form-group">
+										<label for="level">Kategori User</label>
+										<select required class="form-control" id="level" name="level">
+											<option value="prodi">Prodi</option>
+											<option value="unit">Unit</option>
+											<option value="rektorat">Rektorat</option>
+											<option value="admin">Admin</option>
+										</select>
+									</div>
+									<div class="form-group">
+                                    <button type="submit" id="tambah" class="btn btn-success">Tambahkan</button>
+                                </div>
+								</form>
 							</div>
 						</div>
 					</div>
+
 				</div>
-			</nav>
-		</div>
-		<!-- Nav Bar End -->
-		<br>
-		<!-- Responsive tables Start -->
-		<section class="h-100">
-		<div class="container h-100">
-			<div class="row justify-content-md-center h-100">
-				<div class="card-wrapper">
-					<div class="card fat">
-						<div class="card-body">
-							<h4 class="card-title">Create account admin</h4>
-							<form action="<?= base_url('admin/users/store'); ?>" method="POST">
-                                <div class="form-grup">
-                                    <label for="name">Nama</label>
-                                    <input type="text" name="name" class="form-control" id="name" placeholder="Masukkan Nama">
-                                </div>
-								<div class="form-grup">
-                                    <label for="email">Email</label>
-                                    <input type="text" name="email" class="form-control" id="email" placeholder="Masukkan Email">
-                                </div>
-                                <div class="form-grup">
-                                    <label for="password">Password</label>
-                                    <input type="password" name="password" class="form-control" id="password" placeholder="Masukkan Password">
-                                </div>
-								<div class="form-group m-0">
-									<button type="submit" id="send_form" class="btn btn-primary btn-block">Create</button>
-                                    <button action="<?= base_url('admin/login/auth')?>" class="btn btn-danger btn-block">Back</button>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
+
+
 			</div>
+			<!-- End of Content Wrapper -->
+
 		</div>
-    </section>
-		<!-- Responsive tables End -->
+		<!-- End of Page Wrapper -->
 
-	</div>
+		<!-- Scroll to Top Button-->
+		<a class="scroll-to-top rounded" href="#page-top">
+			<i class="fas fa-angle-up"></i>
+		</a>
 
-	<!-- JavaScript Libraries -->
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-	<script src="lib/easing/easing.min.js"></script>
-	<script src="lib/owlcarousel/owl.carousel.min.js"></script>
-	<script src="lib/isotope/isotope.pkgd.min.js"></script>
-	<script>
-		function startTime() {
-			var today = new Date();
-			var h = today.getHours();
-			var m = today.getMinutes();
-			var s = today.getSeconds();
-			m = checkTime(m);
-			s = checkTime(s);
-			document.getElementById('txt').innerHTML =
-				h + ":" + m + ":" + s;
-			var t = setTimeout(startTime, 500);
-		}
+		<!-- Bootstrap core JavaScript-->
+		<script src="http://localhost:8080/js/jquery.min.js"></script>
+		<script src="http://localhost:8080/js/bootstrap.bundle.min.js"></script>
 
-		function checkTime(i) {
-			if (i < 10) {
-				i = "0" + i
-			}; // add zero in front of numbers < 10
-			return i;
-		}
+		<!-- Page level plugins -->
+		<script src="http://localhost:8080/js/jquery.dataTables.min.js"></script>
+		<script src="http://localhost:8080/js/dataTables.bootstrap4.min.js"></script>
 
-	</script>
-	<script src="http://localhost:8080/chart/apexcharts.min.js"></script>
-	<script src="http://localhost:8080/chart/dashboard.js"></script>
-	<script src="http://localhost:8080/chart/jquery.knob.min.js"></script>
-	<script src="http://localhost:8080/chart/knob-chart-setting.js"></script>
-	<script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
-	<script>
-		$(window).load(function () {
-			$(".pre-loader").fadeOut("slow");
-		});
+		<!-- Page level custom scripts -->
+		<script src="http://localhost:8080/js/datatables-demo.js"></script>
 
-	</script>
 </body>
 
 </html>

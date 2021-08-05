@@ -144,7 +144,7 @@
 					<!-- DataTales Example -->
 					<div class="card shadow mb-4">
 						<div class="card-header py-3">
-							<a href="admin/users/create" class="btn btn-success" data-toggle="modal"><span>Tambah
+							<a href="<?= base_url('/auth/create') ?>" class="btn btn-success"><span>Tambah
 									Data</span></a>
 						</div>
 						<div class="card-body">
@@ -161,20 +161,25 @@
 										</tr>
 									</thead>
 									<tbody>
-										<?php $i = 1; ?>
-										<?php foreach ($users as $user) : ?>
-											<tr>
-												<td scope="row"><?= $i++; ?></td>
-												<td><?= $user['username']; ?></td>
-												<td><?= $user['passwoard']; ?></td>
-												<td><?= $user['nama_prodi']; ?></td>
-												<td><?= $user['level']; ?></td>
-												<td>
-													<a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-													<a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-												</td>
-											</tr>
+									<?php if($user): ?>
+                                    <?php foreach ($user as $reading): ?>
+										<tr>
+											<td scope="row"><?= $reading['id']; ?></td>
+											<td><?= $reading['username'];?></td>
+											<td><?= $reading['password'];?></td>
+											<td><?= $reading['nama_prodi'];?></td>
+											<td><?= $reading['level'];?></td>
+											<td>
+												<a href="#editEmployeeModal" class="edit" data-toggle="modal"><i
+														class="material-icons" data-toggle="tooltip"
+														title="Edit">&#xE254;</i></a>
+												<a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i
+														class="material-icons" data-toggle="tooltip"
+														title="Delete">&#xE872;</i></a>
+											</td>
+										</tr>
 										<?php endforeach; ?>
+                                    <?php endif; ?>
 									</tbody>
 								</table>
 							</div>
