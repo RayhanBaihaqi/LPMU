@@ -22,19 +22,18 @@ class Auth extends BaseController
         $data['user'] = $model->orderBy('id','ASC')->findAll();
         return view('admin/TambahUsers', $data);
     }
-    public function store() {
-        $model = new UsersModel();
-        
-        $data = [
-            'username' => $this->request->getVar('username'),
+    public function store()
+	{
+		$model = new UsersModel();
+		$data = [
+			'username' => $this->request->getVar('username'),
             'nama_prodi' => $this->request->getVar('nama_prodi'),
             'level' => $this->request->getVar('level'),
             'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
-        ];
-        $save = $model->insert($data);
-
-        return redirect()->to(base_url('admin/ListAdmin'));
-    }
+		];
+		$model->save($data);
+		return redirect()->to(base_url('auth/index'))->with('status', 'Data Berhasil ditambah');
+	}
     public function login_admin()
     {
         return view('/admin/dashboard');
