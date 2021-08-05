@@ -148,7 +148,7 @@
 								<form action="<?= base_url('auth/store'); ?>" method="POST" enctype="multipart/form-data">
 									<div class="form-group">
 										<label for="username">Username</label>
-										<input required type="text" name="username" class="form-control" id="username" placeholder="Masukkan Nama">
+										<input required type="text" name="username" class="form-control" id="username" placeholder="Masukkan Username">
 									</div>
 									<div class="form-group">
 										<label for="password">Password</label>

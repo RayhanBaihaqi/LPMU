@@ -80,7 +80,7 @@
 				User
 			</div>
 			<li class="nav-item active">
-				<a class="nav-link " href="auth/index">
+				<a class="nav-link " href="/auth/index">
 					<i class="fas fa-fw fa-tachometer-alt"></i>
 					<span>Tabel User</span></a>
 			</li>
@@ -104,8 +104,7 @@
 
 						<!-- Nav Item - User Information -->
 						<li class="nav-item dropdown no-arrow">
-							<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<span class="mr-2 d-none d-lg-inline text-gray-600 small">
 									<?php
 									$nama_prodi = session('nama_prodi');
@@ -115,8 +114,7 @@
 								<img class="img-profile rounded-circle" src="/img/inf-logo.jpg">
 							</a>
 							<!-- Dropdown - User Information -->
-							<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-								aria-labelledby="userDropdown">
+							<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
 								<a class="dropdown-item" href="#">
 									<i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
 									Profile
@@ -141,47 +139,40 @@
 				<div class="container-fluid">
 
 					<!-- Page Heading -->
-					<h1 class="h3 mb-2 text-gray-800">Daftar User</h1>
+					<h1 class="h3 mb-2 text-gray-800">Tambah User</h1>
 
 					<!-- DataTales Example -->
 					<div class="card shadow mb-4">
-						<div class="card-header py-3">
-							<a href="<?= base_url('/auth/create') ?>" class="btn btn-success"><span>Tambah
-									Data</span></a>
-						</div>
 						<div class="card-body">
 							<div class="table-responsive">
-								<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-									<thead>
-										<tr>
-											<th>Id</th>
-											<th>Username</th>
-											<th>Passwoard</th>
-											<th>Nama Prodi</th>
-											<th>Level</th>
-											<th>Actions</th>
-										</tr>
-									</thead>
-									<tbody>
-										<?php if ($user) : ?>
-										<?php foreach ($user as $reading) : ?>
-										<tr>
-											<td scope="row"><?= $reading['id']; ?></td>
-											<td><?= $reading['username']; ?></td>
-											<td><?= $reading['password']; ?></td>
-											<td><?= $reading['nama_prodi']; ?></td>
-											<td><?= $reading['level']; ?></td>
-											<td>
-												<a href="<?= base_url('auth/edit/'.$reading['id']); ?>"
-													class="button button2"><i class="fas fa-edit"></i></a>
-												<a href="<?= base_url('auth/delete/'.$reading['id']); ?>"
-													class="button button2"><i class="fas fa-trash-alt"></i></a>
-											</td>
-										</tr>
-										<?php endforeach; ?>
-										<?php endif; ?>
-									</tbody>
-								</table>
+								<form action="<?= base_url('auth/update'); ?>" method="POST" enctype="multipart/form-data">
+                                    <input required type="hidden" name="id" value="<?= $user['id']; ?>">
+									<div class="form-group">
+										<label for="username">Username</label>
+										<input required type="text" name="username" class="form-control" id="username" placeholder="Masukkan Username" value="<?= $user['username']; ?>">
+									</div>
+									<div class="form-group">
+										<label for="password">Password</label>
+										<input type="password" class="form-control" name="password" placeholder="Password" id='password'>
+									</div>
+									<div class="form-group">
+										<label for="nama_prodi">Nama Prodi/Unit</label>
+										<input required type="text" name="nama_prodi" class="form-control" id="nama_prodi" name='nama_prodi' placeholder="Masukkan Nama Prodi/Unit" value="<?= $user['nama_prodi']; ?>">
+									</div>
+									<div class="form-group">
+										<label for="level">Kategori User</label>
+										<select required class="form-control" id="level" name="level">
+                                            <option value="<?= $user['level']; ?>"><?= $user['level']; ?></option>
+											<option value="prodi">Prodi</option>
+											<option value="unit">Unit</option>
+											<option value="rektorat">Rektorat</option>
+											<option value="admin">Admin</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<button type="submit" id="tambah" class="btn btn-success">edit</button>
+									</div>
+								</form>
 							</div>
 						</div>
 					</div>

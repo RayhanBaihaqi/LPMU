@@ -34,6 +34,34 @@ class Auth extends BaseController
 		$model->save($data);
 		return redirect()->to(base_url('auth/index'))->with('status', 'Data Berhasil ditambah');
 	}
+    public function edit($id = null) {
+        $model = new UsersModel();
+        $data['user'] = $model->where('id',$id)->first();
+
+        return view('/admin/EditUsers',$data);
+    }
+    public function update() {
+        $model = new UsersModel();
+        $id = $this->request->getVar('id');
+
+        $data = [
+			'username' => $this->request->getVar('username'),
+            'nama_prodi' => $this->request->getVar('nama_prodi'),
+            'level' => $this->request->getVar('level'),
+            'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
+        ];
+        $save = $model->update($id,$data);
+
+        return redirect()->to(base_url('auth/index'));
+    }
+    public function delete($id = null) {
+        $model = new UsersModel();
+        $data['user'] = $model->where('id',$id)->delete();
+
+        return redirect()->to(base_url('auth/index'));
+    }
+
+    //kontroler login
     public function login_admin()
     {
         return view('/admin/dashboard');

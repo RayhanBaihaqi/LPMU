@@ -1066,3 +1066,10 @@ CRITICAL - 2021-08-04 20:02:04 --> Column 'nama_prodi' cannot be null
 #11 C:\xampp\htdocs\LPMU\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #12 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
 #13 {main}
+CRITICAL - 2021-08-04 22:40:01 --> Class 'App\Controllers\MasteruserModel' not found
+#0 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Auth->update()
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#5 {main}
