@@ -80,7 +80,7 @@
 				User
 			</div>
 			<li class="nav-item active">
-				<a class="nav-link " href="/auth/index">
+				<a class="nav-link " href="auth/index">
 					<i class="fas fa-fw fa-tachometer-alt"></i>
 					<span>Tabel User</span></a>
 			</li>
