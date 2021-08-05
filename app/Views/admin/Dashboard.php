@@ -69,7 +69,7 @@
 				KPI
 			</div>
 			<li class="nav-item">
-				<a class="nav-link " href="admin/adminkpi">
+				<a class="nav-link " href="/admin/adminkpi">
 					<i class="fas fa-fw fa-tachometer-alt"></i>
 					<span>Dashboard</span></a>
 			</li>
@@ -78,7 +78,7 @@
 			<div class="sidebar-heading">
 				User
 			</div>
-            <li class="nav-item">
+			<li class="nav-item">
 				<a class="nav-link " href="/auth/index">
 					<i class="fas fa-fw fa-tachometer-alt"></i>
 					<span>Tabel User</span></a>

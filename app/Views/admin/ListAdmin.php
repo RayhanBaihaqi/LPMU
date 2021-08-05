@@ -41,8 +41,8 @@
 			<hr class="sidebar-divider my-0">
 
 			<!-- Nav Item - Dashboard -->
-			<li class="nav-item ">
-				<a class="nav-link " href="index.html">
+			<li class="nav-item">
+				<a class="nav-link " href="/admin">
 					<i class="fas fa-fw fa-tachometer-alt"></i>
 					<span>Dashboard</span></a>
 			</li>
@@ -70,7 +70,7 @@
 				KPI
 			</div>
 			<li class="nav-item">
-				<a class="nav-link " href="index.html">
+				<a class="nav-link " href="/admin/adminkpi">
 					<i class="fas fa-fw fa-tachometer-alt"></i>
 					<span>Dashboard</span></a>
 			</li>
@@ -80,7 +80,7 @@
 				User
 			</div>
 			<li class="nav-item active">
-				<a class="nav-link " href="/auth/tabel">
+				<a class="nav-link " href="/auth/index">
 					<i class="fas fa-fw fa-tachometer-alt"></i>
 					<span>Tabel User</span></a>
 			</li>
@@ -161,25 +161,21 @@
 										</tr>
 									</thead>
 									<tbody>
-									<?php if($user): ?>
-                                    <?php foreach ($user as $reading): ?>
-										<tr>
-											<td scope="row"><?= $reading['id']; ?></td>
-											<td><?= $reading['username'];?></td>
-											<td><?= $reading['password'];?></td>
-											<td><?= $reading['nama_prodi'];?></td>
-											<td><?= $reading['level'];?></td>
-											<td>
-												<a href="#editEmployeeModal" class="edit" data-toggle="modal"><i
-														class="material-icons" data-toggle="tooltip"
-														title="Edit">&#xE254;</i></a>
-												<a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i
-														class="material-icons" data-toggle="tooltip"
-														title="Delete">&#xE872;</i></a>
-											</td>
-										</tr>
-										<?php endforeach; ?>
-                                    <?php endif; ?>
+										<?php if ($user) : ?>
+											<?php foreach ($user as $reading) : ?>
+												<tr>
+													<td scope="row"><?= $reading['id']; ?></td>
+													<td><?= $reading['username']; ?></td>
+													<td><?= $reading['password']; ?></td>
+													<td><?= $reading['nama_prodi']; ?></td>
+													<td><?= $reading['level']; ?></td>
+													<td>
+														<a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+														<a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+													</td>
+												</tr>
+											<?php endforeach; ?>
+										<?php endif; ?>
 									</tbody>
 								</table>
 							</div>

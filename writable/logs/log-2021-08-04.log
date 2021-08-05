@@ -1034,3 +1034,35 @@ CRITICAL - 2021-08-04 19:47:02 --> Trying to access array offset on value of typ
 =======
 >>>>>>> d68fb84603f90f4935cd301619a56844a5a4a3ae
 >>>>>>> 0825cba8dfe88ccd9de3c80df9054208a106ee3f
+ERROR - 2021-08-04 20:01:29 --> Column 'nama_prodi' cannot be null
+CRITICAL - 2021-08-04 20:01:29 --> Column 'nama_prodi' cannot be null
+#0 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('INSERT INTO `us...')
+#1 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2277): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Model.php(259): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\BaseModel.php(774): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Model.php(686): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\LPMU\app\Controllers\Auth.php(34): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Auth->store()
+#9 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#10 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\LPMU\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+ERROR - 2021-08-04 20:02:04 --> Column 'nama_prodi' cannot be null
+CRITICAL - 2021-08-04 20:02:04 --> Column 'nama_prodi' cannot be null
+#0 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('INSERT INTO `us...')
+#1 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2277): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Model.php(259): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\BaseModel.php(774): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Model.php(686): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\LPMU\app\Controllers\Auth.php(34): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Auth->store()
+#9 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#10 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\LPMU\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#13 {main}

@@ -104,19 +104,17 @@
 
 						<!-- Nav Item - User Information -->
 						<li class="nav-item dropdown no-arrow">
-							<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<span class="mr-2 d-none d-lg-inline text-gray-600 small">
 									<?php
-                                            $nama_prodi = session('nama_prodi');
-                                            echo "$nama_prodi"
-                                        ?>
+									$nama_prodi = session('nama_prodi');
+									echo "$nama_prodi"
+									?>
 								</span>
 								<img class="img-profile rounded-circle" src="/img/inf-logo.jpg">
 							</a>
 							<!-- Dropdown - User Information -->
-							<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-								aria-labelledby="userDropdown">
+							<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
 								<a class="dropdown-item" href="#">
 									<i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
 									Profile
@@ -147,22 +145,18 @@
 					<div class="card shadow mb-4">
 						<div class="card-body">
 							<div class="table-responsive">
-								<form action="<?= base_url('auth/store'); ?>" method="POST"
-									enctype="multipart/form-data">
+								<form action="<?= base_url('auth/store'); ?>" method="POST" enctype="multipart/form-data">
 									<div class="form-group">
 										<label for="username">Username</label>
-										<input required type="text" name="username" class="form-control" id="username"
-											placeholder="Masukkan Nama">
+										<input required type="text" name="username" class="form-control" id="username" placeholder="Masukkan Nama">
 									</div>
 									<div class="form-group">
 										<label for="password">Password</label>
-										<input type="password" class="form-control" name="password"
-											placeholder="Password" id='password'>
+										<input type="password" class="form-control" name="password" placeholder="Password" id='password'>
 									</div>
 									<div class="form-group">
 										<label for="nama_prodi">Nama Prodi/Unit</label>
-										<input required type="text" name="name" class="form-control" id="nama_prodi"
-											name='nama_prodi' placeholder="Masukkan Nama Prodi/Unit">
+										<input required type="text" name="nama_prodi" class="form-control" id="nama_prodi" name='nama_prodi' placeholder="Masukkan Nama Prodi/Unit">
 									</div>
 									<div class="form-group">
 										<label for="level">Kategori User</label>
@@ -174,8 +168,8 @@
 										</select>
 									</div>
 									<div class="form-group">
-                                    <button type="submit" id="tambah" class="btn btn-success">Tambahkan</button>
-                                </div>
+										<button type="submit" id="tambah" class="btn btn-success">Tambahkan</button>
+									</div>
 								</form>
 							</div>
 						</div>
