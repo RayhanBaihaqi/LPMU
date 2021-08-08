@@ -9,7 +9,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>Admin</title>
+	<title>List data user</title>
 
 	<!-- Custom fonts for this template-->
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
@@ -106,7 +106,8 @@
 
 						<!-- Nav Item - User Information -->
 						<li class="nav-item dropdown no-arrow">
-							<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<span class="mr-2 d-none d-lg-inline text-gray-600 small">
 									<?php
 									$nama_prodi = session('nama_prodi');
@@ -116,7 +117,8 @@
 								<img class="img-profile rounded-circle" src="/img/inf-logo.jpg">
 							</a>
 							<!-- Dropdown - User Information -->
-							<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+							<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+								aria-labelledby="userDropdown">
 								<a class="dropdown-item" href="#">
 									<i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
 									Profile
@@ -141,40 +143,60 @@
 				<div class="container-fluid">
 
 					<!-- Page Heading -->
-					<h1 class="h3 mb-2 text-gray-800">Tambah User</h1>
+					<h1 class="h3 mb-2 text-gray-800">Daftar RKAT</h1>
 
 					<!-- DataTales Example -->
 					<div class="card shadow mb-4">
+						<div class="card-header py-3">
+							<a href="<?= base_url('rkat/createbyadmin') ?>" class="btn btn-success"><span>Tambah
+									Data</span></a>
+						</div>
 						<div class="card-body">
 							<div class="table-responsive">
-								<form action="<?= base_url('auth/update'); ?>" method="POST" enctype="multipart/form-data">
-                                    <input required type="hidden" name="id" value="<?= $user['id']; ?>">
-									<div class="form-group">
-										<label for="username">Username</label>
-										<input required type="text" name="username" class="form-control" id="username" placeholder="Masukkan Username" value="<?= $user['username']; ?>">
-									</div>
-									<div class="form-group">
-										<label for="password">Password</label>
-										<input type="password" class="form-control" name="password" placeholder="Password" id='password'>
-									</div>
-									<div class="form-group">
-										<label for="nama_prodi">Nama Prodi/Unit</label>
-										<input required type="text" name="nama_prodi" class="form-control" id="nama_prodi" name='nama_prodi' placeholder="Masukkan Nama Prodi/Unit" value="<?= $user['nama_prodi']; ?>">
-									</div>
-									<div class="form-group">
-										<label for="level">Kategori User</label>
-										<select required class="form-control" id="level" name="level">
-                                            <option value="<?= $user['level']; ?>"><?= $user['level']; ?></option>
-											<option value="prodi">Prodi</option>
-											<option value="unit">Unit</option>
-											<option value="rektorat">Rektorat</option>
-											<option value="admin">Admin</option>
-										</select>
-									</div>
-									<div class="form-group">
-										<button type="submit" id="tambah" class="btn btn-success">edit</button>
-									</div>
-								</form>
+								<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+									<thead>
+										<tr>
+											<th>Id</th>
+											<th>Nama Kegiatan</th>
+											<th>Jenis Biaya</th>
+											<th>Anggaran</th>
+											<th>Keterangan</th>
+                                            <th>Jenis KPI</th>
+											<th>Butir</th>
+											<th>Jenis Anggaran</th>
+											<th>Tahun Akademik</th>
+                                            <th>Pagu</th>
+											<th>Semester</th>
+											<th>Actions</th>
+										</tr>
+									</thead>
+									<tbody>
+									<?php $i = 1;?>
+										<?php if ($detail_rkat) : ?>
+										<?php foreach ($detail_rkat as $reading) : ?>
+										<tr>
+											<td scope="row"><?= $i++; ?></td>
+											<td><?= $reading['nama_kegiatan']; ?></td>
+											<td><?= $reading['jenis_biaya']; ?></td>
+											<td><?= $reading['anggaran']; ?></td>
+											<td><?= $reading['keterangan']; ?></td>
+                                            <td><?= $reading['jenis_kpi']; ?></td>
+											<td><?= $reading['butir']; ?></td>
+											<td><?= $reading['jenis_anggaran']; ?></td>
+											<td><?= $reading['tahun_akademik']; ?></td>
+                                            <td><?= $reading['pagu']; ?></td>
+											<td><?= $reading['semester']; ?></td>
+											<td>
+												<a href="<?= base_url('rkat/editbyadmin/'.$reading['id']); ?>"
+													class="button button2"><i class="fas fa-edit"></i></a>
+												<a href="<?= base_url('rkat/deletebyadmin/'.$reading['id']); ?>"
+													class="button button2"><i class="fas fa-trash-alt"></i></a>
+											</td>
+										</tr>
+										<?php endforeach; ?>
+										<?php endif; ?>
+									</tbody>
+								</table>
 							</div>
 						</div>
 					</div>
