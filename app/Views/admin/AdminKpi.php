@@ -148,7 +148,7 @@
 							<div class="form-group">
 								<label for="exampleFormControlSelect1">Divisi</label>
 								<select class="form-control" id="exampleFormControlSelect1">
-									<option selected>--Pilih divisi--</option>
+									<option value="" disabled selected>Pilih Divisi</option>
 									<option value="1">Prodi</option>
 									<option value="2">Unit</option>
 								</select>
@@ -156,7 +156,7 @@
 							<div class="form-group">
 								<label for="exampleFormControlSelect1">Prodi</label>
 								<select class="form-control" id="exampleFormControlSelect1">
-									<option selected>--Pilih prodi--</option>
+									<option value="" disabled selected>Pilih Prodi</option>
 									<option value="1">Akuntansi</option>
 									<option value="2">Manajemen</option>
 									<option value="3">Psikologi</option>
@@ -172,7 +172,7 @@
 							<div class="form-group">
 								<label for="exampleFormControlSelect1">Unit</label>
 								<select class="form-control" id="exampleFormControlSelect1">
-									<option selected>--Pilih unit--</option>
+									<option value="" disabled selected>Pilih Unit</option>
 									<option value="1">Rektorat</option>
 									<option value="2">Fakultas Teknologi dan Desain</option>
 									<option value="3">Fakultas Humaniora dan Bisnis</option>
@@ -195,33 +195,33 @@
 							</div>
 							<div class="form-group">
 								<label for="exampleFormControlSelect1">Standar</label>
-								<select class="form-control" id="exampleFormControlSelect1">
+								<select class="form-control" id="exampleFormControlSelect1" name="kriteria">
 									<option value="" disabled selected>Pilih Indikator standar</option>
-									<option value="1">Standar 1 – Visi Misi Tujuan dan Strategi</option>
-									<option value="2">Standar 2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
-									<option value="3">Standar 3 - Mahasiswa</option>
-									<option value="4">Standar 4 - Sumber Daya Manusia</option>
-									<option value="5">Standar 5 - Keuangan, Sarana dan Prasarana</option>
-									<option value="6">Standar 6 - Pendidikan</option>
-									<option value="7">Standar 7 – Penelitian</option>
-									<option value="8">Standar 8 - Pengabdian kepada Masyarakat (PkM)</option>
-									<option value="9">Standar 9 - Luaran dan Capaian Tridharma</option>
+									<option value="visimisi">1 – Visi Misi Tujuan dan Strategi</option>
+									<option value="tatakelola">2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
+									<option value="mahasiswa">3 - Mahasiswa</option>
+									<option value="sdm">4 - Sumber Daya Manusia</option>
+									<option value="keuangan">5 - Keuangan, Sarana dan Prasarana</option>
+									<option value="pendidikan">6 - Pendidikan</option>
+									<option value="penelitian">7 – Penelitian</option>
+									<option value="pengmas">8 - Pengabdian kepada Masyarakat (PkM)</option>
+									<option value="luarantridharma">9 - Luaran dan Capaian Tridharma</option>
 								</select>
 							</div>
 							<div class="form-group">
 								<label for="exampleFormControlSelect1">Standar</label>
-								<select class="form-control" id="exampleFormControlSelect1">
+								<select class="form-control" id="exampleFormControlSelect1" name="kriteria">
 									<option value="" disabled selected>Pilih Indikator standar</option>
-									<option value="1">Standar 1 – Visi Misi Tujuan dan Strategi</option>
-									<option value="2">Standar 2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
-									<option value="3">Standar 3 - Mahasiswa</option>
-									<option value="4">Standar 4 - Sumber Daya Manusia</option>
-									<option value="5">Standar 5 - Keuangan, Sarana dan Prasarana</option>
-									<option value="6">Standar 6 - Pendidikan</option>
-									<option value="7">Standar 7 – Penelitian</option>
-									<option value="8">Standar 8 - Pengabdian kepada Masyarakat (PkM)</option>
-									<option value="9">Standar 9 - Luaran dan Capaian Tridharma</option>
-									<option value="10">Standar HRD</option>
+									<option value="visimisi">1 – Visi Misi Tujuan dan Strategi</option>
+									<option value="tatakelola">2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
+									<option value="mahasiswa">3 - Mahasiswa</option>
+									<option value="sdm">4 - Sumber Daya Manusia</option>
+									<option value="keuangan">5 - Keuangan, Sarana dan Prasarana</option>
+									<option value="pendidikan">6 - Pendidikan</option>
+									<option value="penelitian">7 – Penelitian</option>
+									<option value="pengmas">8 - Pengabdian kepada Masyarakat (PkM)</option>
+									<option value="luarantridharma">9 - Luaran dan Capaian Tridharma</option>
+									<option value="hrd">10 - Standar HRD</option>
 								</select>
 							</div>
 
