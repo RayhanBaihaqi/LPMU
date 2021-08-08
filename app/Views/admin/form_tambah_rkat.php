@@ -59,7 +59,6 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="<?= base_url('rkat/createbyadmin') ?>">Tambah RKAT</a>
                         <a class="collapse-item" href="<?= base_url('rkat/indexbyadmin') ?>">Data RKAT</a>
                     </div>
                 </div>
