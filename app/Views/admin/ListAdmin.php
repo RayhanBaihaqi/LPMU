@@ -163,10 +163,11 @@
 										</tr>
 									</thead>
 									<tbody>
+									<?php $i = 1;?>
 										<?php if ($user) : ?>
 										<?php foreach ($user as $reading) : ?>
 										<tr>
-											<td scope="row"><?= $reading['id']; ?></td>
+											<td scope="row"><?= $i++; ?></td>
 											<td><?= $reading['username']; ?></td>
 											<td><?= $reading['password']; ?></td>
 											<td><?= $reading['nama_prodi']; ?></td>
