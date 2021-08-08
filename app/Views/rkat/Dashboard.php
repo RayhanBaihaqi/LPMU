@@ -193,7 +193,7 @@
                 </div>
             </div>
             <!-- ====================================================================================================================== -->
-            <a href="/backend/form" class="btn btn-info btn-sm"><i class="fa fa-home"></i> Isi formulir</a>
+            <a href="<?= base_url('/rkat/create') ?>" class="btn btn-info btn-sm"><i class="fa fa-home"></i> Isi formulir</a>
 			<a href="#" class="btn btn-info btn-sm"><i class="fa fa-home"></i> Link Button</a>
 			<a href="#" class="btn btn-info btn-sm"><i class="fa fa-home"></i> Link Button</a>
             <hr>
