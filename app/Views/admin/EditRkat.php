@@ -52,17 +52,20 @@
 
 			<!-- Heading -->
 			<li class="nav-item">
-				<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-					aria-expanded="true" aria-controls="collapseTwo">
-					<i class="fas fa-fw fa-cog"></i>
-					<span>RKAT</span>
-				</a>
-				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-					<div class="bg-white py-2 collapse-inner rounded">
-						<a class="collapse-item" href="<?= base_url('rkat/indexbyadmin') ?>">Data RKAT</a>
-					</div>
-				</div>
-			</li>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>RKAT</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+						<a class="collapse-item" href="<?= base_url('rkat/createbyadmin') ?>">Tambah RKAT</a>
+                        <a class="collapse-item" href="<?= base_url('rkat/indexbyadmin') ?>">Lihat Data</a>
+						<a class="collapse-item" href="<?= base_url('setrkat/create') ?>">Atur Semster dan Pagu</a>
+						<a class="collapse-item" href="<?= base_url('setrkat/index') ?>">Lihat Data Set Rkat</a>
+                    </div>
+                </div>
+            </li>
 
 			<!-- Divider -->
 			<hr class="sidebar-divider">
@@ -82,14 +85,13 @@
 				User
 			</div>
 			<li class="nav-item ">
-				<a class="nav-link " href="auth/index">
+				<a class="nav-link " href="<?= base_url('auth/index') ?>">
 					<i class="fas fa-fw fa-tachometer-alt"></i>
 					<span>Tabel User</span></a>
 			</li>
 
 		</ul>
 		<!-- End of Sidebar -->
-
 		<!-- Content Wrapper -->
 		<div id="content-wrapper" class="d-flex flex-column">
 
@@ -152,30 +154,6 @@
 								<form action="<?= base_url('rkat/updatebyadmin'); ?>" method="POST"
 									enctype="multipart/form-data">
 									<input required type="hidden" name="id" value="<?= $detail_rkat['id']; ?>">
-									<div class="form-group">
-										<label for="tahun_akademik">Tahun Ajaran</label>
-										<select class="form-control" id="tahun_akademik" name="tahun_akademik">
-											<option value="<?= $detail_rkat['tahun_akademik']; ?>" disabled selected>
-												<?= $detail_rkat['tahun_akademik']; ?></option>
-											<option value="20211">2021/2022</option>
-											<option value="20212">2022/2023</option>
-										</select>
-									</div>
-									<div class="form-group">
-										<label for="pagu">Jumlah Pagu</label>
-										<input type="text" class="form-control" id="pagu"
-											placeholder="Masukan Nilai Pagu" name="pagu" required
-											value="<?= $detail_rkat['pagu']; ?>">
-									</div>
-									<div class="form-group">
-										<label for="semester">Semester</label>
-										<select class="form-control" id="semester" name="semester">
-											<option value="<?= $detail_rkat['semester']; ?>" disabled selected>
-												<?= $detail_rkat['semester']; ?></option>
-											<option value="ganjil">Ganjil</option>
-											<option value="genap">Genap</option>
-										</select>
-									</div>
 
 									<!-- Akan Dilooping -->
 									<div class="form-group">

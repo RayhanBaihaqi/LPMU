@@ -9,7 +9,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>List data user</title>
+	<title>Admin</title>
 
 	<!-- Custom fonts for this template-->
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
@@ -146,48 +146,49 @@
 				<div class="container-fluid">
 
 					<!-- Page Heading -->
-					<h1 class="h3 mb-2 text-gray-800">Daftar User</h1>
+					<h1 class="h3 mb-2 text-gray-800">Tambah User</h1>
 
 					<!-- DataTales Example -->
 					<div class="card shadow mb-4">
-						<div class="card-header py-3">
-							<a href="<?= base_url('/auth/create') ?>" class="btn btn-success"><span>Tambah
-									Data</span></a>
-						</div>
 						<div class="card-body">
 							<div class="table-responsive">
-								<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-									<thead>
-										<tr>
-											<th>Id</th>
-											<th>Username</th>
-											<th>Passwoard</th>
-											<th>Nama Prodi</th>
-											<th>Level</th>
-											<th>Actions</th>
-										</tr>
-									</thead>
-									<tbody>
-									<?php $i = 1;?>
-										<?php if ($user) : ?>
-										<?php foreach ($user as $reading) : ?>
-										<tr>
-											<td scope="row"><?= $i++; ?></td>
-											<td><?= $reading['username']; ?></td>
-											<td><?= $reading['password']; ?></td>
-											<td><?= $reading['nama_prodi']; ?></td>
-											<td><?= $reading['level']; ?></td>
-											<td>
-												<a href="<?= base_url('auth/edit/'.$reading['id']); ?>"
-													class="button button2"><i class="fas fa-edit"></i></a>
-												<a href="<?= base_url('auth/delete/'.$reading['id']); ?>"
-													class="button button2"><i class="fas fa-trash-alt"></i></a>
-											</td>
-										</tr>
-										<?php endforeach; ?>
-										<?php endif; ?>
-									</tbody>
-								</table>
+								<form action="<?= base_url('setrkat/store'); ?>" method="POST"
+									enctype="multipart/form-data">
+									<div class="container">
+									<div class="form-group">
+											<label for="tahun_akademik">Tahun Ajaran</label>
+											<select class="form-control" id="tahun_akademik" name="tahun_akademik">
+												<option selected>Pilih Tahun Ajaran</option>
+												<option value="20211">2021/2022</option>
+												<option value="20222">2022/2023</option>
+											</select>
+										</div>
+										<div class="form-group">
+											<label for="semester">Semester</label>
+											<select class="form-control" id="semester" name="semester">
+												<option selected>Pilih Semester</option>
+												<option value="ganjil">Ganjil</option>
+												<option value="genap">Genap</option>
+											</select>
+										</div>
+										<div class="form-group">
+											<label for="semester">Prodi/Unit</label>
+											<select class="form-control" id="id_user" name="id_user">
+												<option selected>Pilih Semester</option>
+												<option value="1">Akuntansi</option>
+												<option value="2">Desain Komunikasi Visual</option>
+												<option value="3">Informatika</option>
+												<option value="4">Ilmu Komunikasi</option>
+											</select>
+										</div>
+										<div class="form-group">
+											<label for="pagu">Jumlah Pagu (Rp)</label>
+											<input type="text" class="form-control" id="pagu"
+												placeholder="Masukan Nilai Pagu" name="pagu" required>
+										</div>
+										<button type="submit" class="btn btn-primary" id="tambah">Tambah Data</button>
+									</div>
+								</form>
 							</div>
 						</div>
 					</div>

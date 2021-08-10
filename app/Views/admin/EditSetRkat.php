@@ -17,6 +17,7 @@
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 	<!-- Custom styles for this template-->
 	<link href="http://localhost:8080/css/style_admin.css" rel="stylesheet">
+	<link href="http://localhost:8080/css/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
@@ -139,117 +140,58 @@
 
 				</nav>
 				<!-- End of Topbar -->
-				<div class="container">
-					<h3>Lihat Tabel KPI</h3>
-					<br>
-					<form>
-						<div class="container">
-							<div class="form-group">
-								<label for="exampleFormControlSelect1">Tahun Ajaran</label>
-								<select class="form-control" id="exampleFormControlSelect1">
-									<option selected>2021/2022</option>
-								</select>
+				<!-- Begin Page Content -->
+				<div class="container-fluid">
+
+					<!-- Page Heading -->
+					<h1 class="h3 mb-2 text-gray-800">Tambah User</h1>
+
+					<!-- DataTales Example -->
+					<div class="card shadow mb-4">
+						<div class="card-body">
+							<div class="table-responsive">
+								<form action="<?= base_url('setrkat/update'); ?>" method="POST" enctype="multipart/form-data">
+                                    <input required type="hidden" name="id" value="<?= $set_rkat['id_setrkat']; ?>">
+									<div class="form-group">
+											<label for="tahun_akademik">Tahun Ajaran</label>
+											<select class="form-control" id="tahun_akademik" name="tahun_akademik">
+												<option value="<?= $set_rkat['tahun_akademik']; ?>"><?= $set_rkat['tahun_akademik']; ?></option>
+												<option value="20211">2021/2022</option>
+												<option value="20222">2022/2023</option>
+											</select>
+										</div>
+										<div class="form-group">
+											<label for="semester">Semester</label>
+											<select class="form-control" id="semester" name="semester">
+												<option value="<?= $set_rkat['semester']; ?>"><?= $set_rkat['semester']; ?></option>
+												<option value="ganjil">Ganjil</option>
+												<option value="genap">Genap</option>
+											</select>
+										</div>
+										<div class="form-group">
+											<label for="semester">Prodi/Unit</label>
+											<select class="form-control" id="id_user" name="id_user">
+												<option value="<?= $set_rkat['id_user']; ?>"><?= $set_rkat['id_user']; ?></option>
+												<option value="1">Akuntansi</option>
+												<option value="2">Desain Komunikasi Visual</option>
+												<option value="3">Informatika</option>
+												<option value="4">Ilmu Komunikasi</option>
+											</select>
+										</div>
+										<div class="form-group">
+											<label for="pagu">Jumlah Pagu (Rp)</label>
+											<input required type="text" name="pagu" class="form-control" id="pagu" name='pagu' placeholder="Masukkan Nama Prodi/Unit" value="<?= $set_rkat['pagu']; ?>">
+										</div>
+									<div class="form-group">
+										<button type="submit" id="tambah" class="btn btn-success">edit</button>
+									</div>
+								</form>
 							</div>
-							<div class="form-group">
-								<label for="exampleFormControlSelect1">Divisi</label>
-								<select class="form-control" id="exampleFormControlSelect1">
-									<option selected>--Pilih divisi--</option>
-									<option value="1">Prodi</option>
-									<option value="2">Unit</option>
-								</select>
-							</div>
-							<div class="form-group">
-								<label for="exampleFormControlSelect1">Prodi</label>
-								<select class="form-control" id="exampleFormControlSelect1">
-									<option selected>--Pilih prodi--</option>
-									<option value="1">Akuntansi</option>
-									<option value="2">Manajemen</option>
-									<option value="3">Psikologi</option>
-									<option value="4">Ilmu Komunikasi</option>
-									<option value="5">Desain Produk</option>
-									<option value="6">Desain Komunikasi Visual</option>
-									<option value="7">Informatika</option>
-									<option value="8">Sistem Informasi</option>
-									<option value="9">Teknik Sipil</option>
-									<option value="10">Arsitektur</option>
-								</select>
-							</div>
-							<div class="form-group">
-								<label for="exampleFormControlSelect1">Unit</label>
-								<select class="form-control" id="exampleFormControlSelect1">
-									<option selected>--Pilih unit--</option>
-									<option value="1">Rektorat</option>
-									<option value="2">Fakultas Teknologi dan Desain</option>
-									<option value="3">Fakultas Humaniora dan Bisnis</option>
-									<option value="4">Center for Urban Studies</option>
-									<option value="5">Jaya Center Advanced Learning</option>
-									<option value="6">Jaya Softskills Development Program</option>
-									<option value="7">Jaya Launch Pad</option>
-									<option value="8">KOTA</option>
-									<option value="9">Sustainable Development</option>
-									<option value="10">Lembaga Penelitian dan Pengabdian Masyarakat</option>
-									<option value="11">Lembaga Penjaminan Mutu Universitas</option>
-									<option value="12">Keuangan</option>
-									<option value="13">Biro Pengembangan Sumber Daya Manusia</option>
-									<option value="14">Publikasi Humas dan Admisi</option>
-									<option value="15">Biro Kemahasiswaan dan Alumni</option>
-									<option value="16">Biro Pendidikan</option>
-									<option value="17">Perpustakaan</option>
-									<option value="18">Sarana dan Prasarana</option>
-								</select>
-							</div>
-							<div class="form-group">
-								<label for="exampleFormControlSelect1">Standar</label>
-								<select class="form-control" id="exampleFormControlSelect1">
-									<option value="" disabled selected>Pilih Indikator standar</option>
-									<option value="1">Standar 1 – Visi Misi Tujuan dan Strategi</option>
-									<option value="2">Standar 2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
-									<option value="3">Standar 3 - Mahasiswa</option>
-									<option value="4">Standar 4 - Sumber Daya Manusia</option>
-									<option value="5">Standar 5 - Keuangan, Sarana dan Prasarana</option>
-									<option value="6">Standar 6 - Pendidikan</option>
-									<option value="7">Standar 7 – Penelitian</option>
-									<option value="8">Standar 8 - Pengabdian kepada Masyarakat (PkM)</option>
-									<option value="9">Standar 9 - Luaran dan Capaian Tridharma</option>
-								</select>
-							</div>
-							<div class="form-group">
-								<label for="exampleFormControlSelect1">Standar</label>
-								<select class="form-control" id="exampleFormControlSelect1">
-									<option value="" disabled selected>Pilih Indikator standar</option>
-									<option value="1">Standar 1 – Visi Misi Tujuan dan Strategi</option>
-									<option value="2">Standar 2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
-									<option value="3">Standar 3 - Mahasiswa</option>
-									<option value="4">Standar 4 - Sumber Daya Manusia</option>
-									<option value="5">Standar 5 - Keuangan, Sarana dan Prasarana</option>
-									<option value="6">Standar 6 - Pendidikan</option>
-									<option value="7">Standar 7 – Penelitian</option>
-									<option value="8">Standar 8 - Pengabdian kepada Masyarakat (PkM)</option>
-									<option value="9">Standar 9 - Luaran dan Capaian Tridharma</option>
-									<option value="10">Standar HRD</option>
-								</select>
-							</div>
-
-
-							<button type="submit" class="btn btn-primary">Cek Tabel</button>
-
-						</div>
-
-					</form>
-
-
-				</div>
-				<!-- End of Main Content -->
-
-				<!-- Footer -->
-				<footer class="sticky-footer bg-white">
-					<div class="container my-auto">
-						<div class="copyright text-center my-auto">
-							<span>Copyright &copy; Your Website 2020</span>
 						</div>
 					</div>
-				</footer>
-				<!-- End of Footer -->
+
+				</div>
+
 
 			</div>
 			<!-- End of Content Wrapper -->
@@ -265,6 +207,13 @@
 		<!-- Bootstrap core JavaScript-->
 		<script src="http://localhost:8080/js/jquery.min.js"></script>
 		<script src="http://localhost:8080/js/bootstrap.bundle.min.js"></script>
+
+		<!-- Page level plugins -->
+		<script src="http://localhost:8080/js/jquery.dataTables.min.js"></script>
+		<script src="http://localhost:8080/js/dataTables.bootstrap4.min.js"></script>
+
+		<!-- Page level custom scripts -->
+		<script src="http://localhost:8080/js/datatables-demo.js"></script>
 
 </body>
 

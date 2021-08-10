@@ -15,7 +15,7 @@ class DetailRkatModel extends Model
     protected $returnType     = 'array';
     //protected $useSoftDeletes = true;
 
-    protected $allowedFields = ['nama_kegiatan','jenis_biaya' ,'anggaran' ,'keterangan' ,'jenis_kpi' ,'butir','jenis_anggaran' ,'tahun_akademik' ,'pagu' ,'semester'];
+    protected $allowedFields = ['nama_kegiatan','jenis_biaya' ,'anggaran' ,'keterangan' ,'jenis_kpi' ,'butir','jenis_anggaran'];
 
 }
 

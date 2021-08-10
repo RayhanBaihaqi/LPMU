@@ -59,7 +59,10 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="<?= base_url('rkat/indexbyadmin') ?>">Data RKAT</a>
+						<a class="collapse-item" href="<?= base_url('rkat/createbyadmin') ?>">Tambah RKAT</a>
+                        <a class="collapse-item" href="<?= base_url('rkat/indexbyadmin') ?>">Lihat Data</a>
+						<a class="collapse-item" href="<?= base_url('setrkat/create') ?>">Atur Semster dan Pagu</a>
+						<a class="collapse-item" href="<?= base_url('setrkat/index') ?>">Lihat Data Set Rkat</a>
                     </div>
                 </div>
             </li>
@@ -82,7 +85,7 @@
 				User
 			</div>
 			<li class="nav-item ">
-				<a class="nav-link " href="auth/index">
+				<a class="nav-link " href="<?= base_url('auth/index') ?>">
 					<i class="fas fa-fw fa-tachometer-alt"></i>
 					<span>Tabel User</span></a>
 			</li>
@@ -147,10 +150,6 @@
 
 					<!-- DataTales Example -->
 					<div class="card shadow mb-4">
-						<div class="card-header py-3">
-							<a href="<?= base_url('rkat/createbyadmin') ?>" class="btn btn-success"><span>Tambah
-									Data</span></a>
-						</div>
 						<div class="card-body">
 							<div class="table-responsive">
 								<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -164,9 +163,6 @@
                                             <th>Jenis KPI</th>
 											<th>Butir</th>
 											<th>Jenis Anggaran</th>
-											<th>Tahun Akademik</th>
-                                            <th>Pagu</th>
-											<th>Semester</th>
 											<th>Actions</th>
 										</tr>
 									</thead>
@@ -183,9 +179,6 @@
                                             <td><?= $reading['jenis_kpi']; ?></td>
 											<td><?= $reading['butir']; ?></td>
 											<td><?= $reading['jenis_anggaran']; ?></td>
-											<td><?= $reading['tahun_akademik']; ?></td>
-                                            <td><?= $reading['pagu']; ?></td>
-											<td><?= $reading['semester']; ?></td>
 											<td>
 												<a href="<?= base_url('rkat/editbyadmin/'.$reading['id']); ?>"
 													class="button button2"><i class="fas fa-edit"></i></a>

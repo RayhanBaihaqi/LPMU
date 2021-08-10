@@ -169,18 +169,18 @@
 									</thead>
 									<tbody>
 									<?php $i = 1;?>
-										<?php if ($user) : ?>
-										<?php foreach ($user as $reading) : ?>
+										<?php if ($set_rkat) : ?>
+										<?php foreach ($set_rkat as $reading) : ?>
 										<tr>
 											<td scope="row"><?= $i++; ?></td>
-											<td><?= $reading['username']; ?></td>
-											<td><?= $reading['password']; ?></td>
-											<td><?= $reading['nama_prodi']; ?></td>
-											<td><?= $reading['level']; ?></td>
+											<td><?= $reading['tahun_akademik']; ?></td>
+											<td><?= $reading['semester']; ?></td>
+											<td><?= $reading['pagu']; ?></td>
+											<td><?= $reading['id_user']; ?></td>
 											<td>
-												<a href="<?= base_url('auth/edit/'.$reading['id']); ?>"
+												<a href="<?= base_url('setrkat/edit/'.$reading['id_setrkat']); ?>"
 													class="button button2"><i class="fas fa-edit"></i></a>
-												<a href="<?= base_url('auth/delete/'.$reading['id']); ?>"
+												<a href="<?= base_url('setrkat/delete/'.$reading['id_setrkat']); ?>"
 													class="button button2"><i class="fas fa-trash-alt"></i></a>
 											</td>
 										</tr>

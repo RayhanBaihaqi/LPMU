@@ -59,7 +59,10 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="<?= base_url('rkat/indexbyadmin') ?>">Data RKAT</a>
+						<a class="collapse-item" href="<?= base_url('rkat/createbyadmin') ?>">Tambah RKAT</a>
+                        <a class="collapse-item" href="<?= base_url('rkat/indexbyadmin') ?>">Lihat Data</a>
+						<a class="collapse-item" href="<?= base_url('setrkat/create') ?>">Atur Semster dan Pagu</a>
+						<a class="collapse-item" href="<?= base_url('setrkat/index') ?>">Lihat Data Set Rkat</a>
                     </div>
                 </div>
             </li>
@@ -82,7 +85,7 @@
 				User
 			</div>
 			<li class="nav-item ">
-				<a class="nav-link " href="auth/index">
+				<a class="nav-link " href="<?= base_url('auth/index') ?>">
 					<i class="fas fa-fw fa-tachometer-alt"></i>
 					<span>Tabel User</span></a>
 			</li>
@@ -151,7 +154,7 @@
                                     <input required type="hidden" name="id" value="<?= $user['id']; ?>">
 									<div class="form-group">
 										<label for="username">Username</label>
-										<input required type="text" name="username" class="form-control" id="username" placeholder="Masukkan Username" value="<?= $user['username']; ?>">
+										<input required type="text" name="username" class="form-control" id="username" placeholder="Masukkan Username" value="<?= $user['username']; ?>" >
 									</div>
 									<div class="form-group">
 										<label for="password">Password</label>
