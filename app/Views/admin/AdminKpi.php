@@ -51,20 +51,19 @@
 
 			<!-- Heading -->
 			<li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>RKAT</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
+				<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+					<i class="fas fa-fw fa-cog"></i>
+					<span>RKAT</span>
+				</a>
+				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+					<div class="bg-white py-2 collapse-inner rounded">
 						<a class="collapse-item" href="<?= base_url('rkat/createbyadmin') ?>">Tambah RKAT</a>
-                        <a class="collapse-item" href="<?= base_url('rkat/indexbyadmin') ?>">Lihat Data</a>
+						<a class="collapse-item" href="<?= base_url('rkat/indexbyadmin') ?>">Lihat Data</a>
 						<a class="collapse-item" href="<?= base_url('setrkat/create') ?>">Atur Semster dan Pagu</a>
 						<a class="collapse-item" href="<?= base_url('setrkat/index') ?>">Lihat Data Set Rkat</a>
-                    </div>
-                </div>
-            </li>
+					</div>
+				</div>
+			</li>
 
 			<!-- Divider -->
 			<hr class="sidebar-divider">
@@ -145,88 +144,88 @@
 					<form>
 						<div class="container">
 							<div class="form-group">
-								<label for="exampleFormControlSelect1">Tahun Ajaran</label>
-								<select class="form-control" id="exampleFormControlSelect1">
+								<label for="tahun_akademik">Tahun Akademik</label>
+								<select class="form-control" id="tahun_akademik" name="tahun_akademik">
 									<option selected>2021/2022</option>
 								</select>
 							</div>
 							<div class="form-group">
-								<label for="exampleFormControlSelect1">Divisi</label>
-								<select class="form-control" id="exampleFormControlSelect1">
+								<label for="divisi">Divisi</label>
+								<select class="form-control" id="divisi">
 									<option value="" disabled selected>Pilih Divisi</option>
-									<option value="1">Prodi</option>
-									<option value="2">Unit</option>
+									<option value="Prodi">Prodi</option>
+									<option value="Unit">Unit</option>
 								</select>
 							</div>
-							<div class="form-group">
-								<label for="exampleFormControlSelect1">Prodi</label>
-								<select class="form-control" id="exampleFormControlSelect1">
+							<div class="form-group" id="prodiDiv">
+								<label for="prodi">Prodi</label>
+								<select class="form-control" id="prodi" name="nama_prodi">
 									<option value="" disabled selected>Pilih Prodi</option>
-									<option value="1">Akuntansi</option>
-									<option value="2">Manajemen</option>
-									<option value="3">Psikologi</option>
-									<option value="4">Ilmu Komunikasi</option>
-									<option value="5">Desain Produk</option>
-									<option value="6">Desain Komunikasi Visual</option>
-									<option value="7">Informatika</option>
-									<option value="8">Sistem Informasi</option>
-									<option value="9">Teknik Sipil</option>
-									<option value="10">Arsitektur</option>
+									<option value="Akuntansi">Akuntansi</option>
+									<option value="Manajemen">Manajemen</option>
+									<option value="Psikologi">Psikologi</option>
+									<option value="Ilmu Komunikasi">Ilmu Komunikasi</option>
+									<option value="Desain Produk">Desain Produk</option>
+									<option value="Desain Komunikasi Visual">Desain Komunikasi Visual</option>
+									<option value="Informatika">Informatika</option>
+									<option value="Sistem Informasi">Sistem Informasi</option>
+									<option value="Teknik Sipil">Teknik Sipil</option>
+									<option value="Arsitektur">Arsitektur</option>
 								</select>
 							</div>
-							<div class="form-group">
-								<label for="exampleFormControlSelect1">Unit</label>
-								<select class="form-control" id="exampleFormControlSelect1">
+							<div class="form-group" id="unitDiv">
+								<label for="unit">Unit</label>
+								<select class="form-control" id="unit" name="nama_prodi">
 									<option value="" disabled selected>Pilih Unit</option>
-									<option value="1">Rektorat</option>
-									<option value="2">Fakultas Teknologi dan Desain</option>
-									<option value="3">Fakultas Humaniora dan Bisnis</option>
-									<option value="4">Center for Urban Studies</option>
-									<option value="5">Jaya Center Advanced Learning</option>
-									<option value="6">Jaya Softskills Development Program</option>
-									<option value="7">Jaya Launch Pad</option>
-									<option value="8">KOTA</option>
-									<option value="9">Sustainable Development</option>
-									<option value="10">Lembaga Penelitian dan Pengabdian Masyarakat</option>
-									<option value="11">Lembaga Penjaminan Mutu Universitas</option>
-									<option value="12">Keuangan</option>
-									<option value="13">Biro Pengembangan Sumber Daya Manusia</option>
-									<option value="14">Publikasi Humas dan Admisi</option>
-									<option value="15">Biro Kemahasiswaan dan Alumni</option>
-									<option value="16">Biro Pendidikan</option>
-									<option value="17">Perpustakaan</option>
-									<option value="18">Sarana dan Prasarana</option>
+									<option value="Rektorat">Rektorat</option>
+									<option value="Fakultas Teknologi dan Desain">Fakultas Teknologi dan Desain</option>
+									<option value="Fakultas Humaniora dan Bisnis">Fakultas Humaniora dan Bisnis</option>
+									<option value="Center for Urban Studies">Center for Urban Studies</option>
+									<option value="Jaya Center Advanced Learning">Jaya Center Advanced Learning</option>
+									<option value="Jaya Softskills Development Program">Jaya Softskills Development Program</option>
+									<option value="Jaya Launch Pad">Jaya Launch Pad</option>
+									<option value="KOTA">KOTA</option>
+									<option value="Sustainable Development">Sustainable Development</option>
+									<option value="Lembaga Penelitian dan Pengabdian Masyarakat">Lembaga Penelitian dan Pengabdian Masyarakat</option>
+									<option value="Lembaga Penjaminan Mutu Universitas">Lembaga Penjaminan Mutu Universitas</option>
+									<option value="Keuangan">Keuangan</option>
+									<option value="Biro Pengembangan Sumber Daya Manusia">Biro Pengembangan Sumber Daya Manusia</option>
+									<option value="Publikasi Humas dan Admisi">Publikasi Humas dan Admisi</option>
+									<option value="Biro Kemahasiswaan dan Alumni">Biro Kemahasiswaan dan Alumni</option>
+									<option value="Biro Pendidikan">Biro Pendidikan</option>
+									<option value="Perpustakaan">Perpustakaan</option>
+									<option value="Sarana dan Prasarana">Sarana dan Prasarana</option>
 								</select>
 							</div>
-							<div class="form-group">
-								<label for="exampleFormControlSelect1">Standar</label>
-								<select class="form-control" id="exampleFormControlSelect1" name="kriteria">
+							<div class="form-group" id="kriteriaProdiDiv">
+								<label for="kriteriaProdi">Standar</label>
+								<select class="form-control" id="standarProdi" name="kriteria">
 									<option value="" disabled selected>Pilih Indikator standar</option>
-									<option value="visimisi">1 – Visi Misi Tujuan dan Strategi</option>
-									<option value="tatakelola">2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
-									<option value="mahasiswa">3 - Mahasiswa</option>
-									<option value="sdm">4 - Sumber Daya Manusia</option>
-									<option value="keuangan">5 - Keuangan, Sarana dan Prasarana</option>
-									<option value="pendidikan">6 - Pendidikan</option>
-									<option value="penelitian">7 – Penelitian</option>
-									<option value="pengmas">8 - Pengabdian kepada Masyarakat (PkM)</option>
-									<option value="luarantridharma">9 - Luaran dan Capaian Tridharma</option>
+									<option value="Visi Misi Tujuan dan Strategi">1 – Visi Misi Tujuan dan Strategi</option>
+									<option value="Tata Pamong, Tata Kelola, dan Kerjasama">2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
+									<option value="Mahasiswa">3 - Mahasiswa</option>
+									<option value="Sumber Daya Manusia">4 - Sumber Daya Manusia</option>
+									<option value="Keuangan, Sarana dan Prasarana">5 - Keuangan, Sarana dan Prasarana</option>
+									<option value="Pendidikan">6 - Pendidikan</option>
+									<option value="Penelitian">7 – Penelitian</option>
+									<option value="Pengabdian kepada Masyarakat (PkM)">8 - Pengabdian kepada Masyarakat (PkM)</option>
+									<option value="Luaran dan Capaian Tridharma">9 - Luaran dan Capaian Tridharma</option>
 								</select>
 							</div>
-							<div class="form-group">
-								<label for="exampleFormControlSelect1">Standar</label>
-								<select class="form-control" id="exampleFormControlSelect1" name="kriteria">
+							<div class="form-group" id="kriteriaUnitDiv">
+								<label for="kriteriaUnit">Standar</label>
+								<select class="form-control" id="kriteriaUnit" name="kriteria">
 									<option value="" disabled selected>Pilih Indikator standar</option>
-									<option value="visimisi">1 – Visi Misi Tujuan dan Strategi</option>
-									<option value="tatakelola">2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
-									<option value="mahasiswa">3 - Mahasiswa</option>
-									<option value="sdm">4 - Sumber Daya Manusia</option>
-									<option value="keuangan">5 - Keuangan, Sarana dan Prasarana</option>
-									<option value="pendidikan">6 - Pendidikan</option>
-									<option value="penelitian">7 – Penelitian</option>
-									<option value="pengmas">8 - Pengabdian kepada Masyarakat (PkM)</option>
-									<option value="luarantridharma">9 - Luaran dan Capaian Tridharma</option>
-									<option value="hrd">10 - Standar HRD</option>
+									<option value="Visi Misi Tujuan dan Strategi">1 – Visi Misi Tujuan dan Strategi</option>
+									<option value="Tata Pamong, Tata Kelola, dan Kerjasama">2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
+									<option value="Mahasiswa">3 - Mahasiswa</option>
+									<option value="Sumber Daya Manusia">4 - Sumber Daya Manusia</option>
+									<option value="Keuangan, Sarana dan Prasarana">5 - Keuangan, Sarana dan Prasarana</option>
+									<option value="Pendidikan">6 - Pendidikan</option>
+									<option value="Penelitian">7 – Penelitian</option>
+									<option value="Pengabdian kepada Masyarakat (PkM)">8 - Pengabdian kepada Masyarakat (PkM)</option>
+									<option value="Luaran dan Capaian Tridharma">9 - Luaran dan Capaian Tridharma</option>
+									<option value="Standar HRD">10 - Standar HRD</option>
 								</select>
 							</div>
 
@@ -265,6 +264,57 @@
 		<!-- Bootstrap core JavaScript-->
 		<script src="http://localhost:8080/js/jquery.min.js"></script>
 		<script src="http://localhost:8080/js/bootstrap.bundle.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script>
+			$(document).ready(function() {
+				$("#divisi").change(function() {
+					if ($(this).val() == "Prodi") {
+						$('#prodiDiv').show();
+						$('#prodi').attr('required', '');
+						$('#prodi').attr('data-error', 'This field is required.');
+						$('#unitDiv').hide();
+						$('#unit').removeAttr('required');
+						$('#unit').removeAttr('data-error');
+						$('#kriteriaProdiDiv').show();
+						$('#kriteriaProdi').attr('required', '');
+						$('#kriteriaProdi').attr('data-error', 'This field is required.');
+						$('#kriteriaUnitDiv').hide();
+						$('#kriteriaUnit').removeAttr('required');
+						$('#kriteriaUnit').removeAttr('data-error');
+
+					} else if ($(this).val() == "Unit") {
+						$('#prodiDiv').hide();
+						$('#prodi').removeAttr('required');
+						$('#prodi').removeAttr('data-error');
+						$('#unitDiv').show();
+						$('#unit').attr('required', '');
+						$('#unit').attr('data-error', 'This field is required.');
+						$('#kriteriaProdiDiv').hide();
+						$('#kriteriaProdi').removeAttr('required');
+						$('#kriteriaProdi').removeAttr('data-error');
+						$('#kriteriaUnitDiv').show();
+						$('#kriteriaUnit').attr('required', '');
+						$('#kriteriaUnit').attr('data-error', 'This field is required.');
+					} else {
+						$('#prodiDiv').hide();
+						$('#prodi').removeAttr('required');
+						$('#prodi').removeAttr('data-error');
+						$('#unitDiv').hide();
+						$('#unit').removeAttr('required');
+						$('#unit').removeAttr('data-error');
+						$('#kriteriaUnitDiv').hide();
+						$('#kriteriaUnit').removeAttr('required');
+						$('#kriteriaUnit').removeAttr('data-error');
+						$('#kriteriaProdiDiv').hide();
+						$('#kriteriaProdi').removeAttr('required');
+						$('#kriteriaProdi').removeAttr('data-error');
+
+					}
+
+				});
+				$("#divisi").trigger("change");
+			});
+		</script>
 
 </body>
 
