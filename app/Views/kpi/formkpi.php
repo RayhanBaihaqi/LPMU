@@ -146,29 +146,34 @@
         <form action="<?= base_url('detail-save') ?>" method="POST">
             <div class="container">
                 <div class="form-group">
+                    <label for="exampleFormControlSelect1">Pilih tahun ajaran</label>
+                    <select class="form-control" id="exampleFormControlSelect1" name="kriteria">
+                        <option value="2021/2022" disabled selected>2021/2022</option>
+                    </select>
+                </div>
+                <div class="form-group">
                     <label for="exampleFormControlSelect1">Kriteria</label>
                     <select class="form-control" id="exampleFormControlSelect1" name="kriteria">
                         <option value="" disabled selected>Pilih Indikator standar</option>
-                        <option value="visimisi">1 – Visi Misi Tujuan dan Strategi</option>
-                        <option value="tatakelola">2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
-                        <option value="mahasiswa">3 - Mahasiswa</option>
-                        <option value="sdm">4 - Sumber Daya Manusia</option>
-                        <option value="keuangan">5 - Keuangan, Sarana dan Prasarana</option>
-                        <option value="pendidikan">6 - Pendidikan</option>
-                        <option value="penelitian">7 – Penelitian</option>
-                        <option value="pengmas">8 - Pengabdian kepada Masyarakat (PkM)</option>
-                        <option value="luarantridharma">9 - Luaran dan Capaian Tridharma</option>
+                        <option value="Visi Misi Tujuan dan Strategi">1 – Visi Misi Tujuan dan Strategi</option>
+                        <option value="Tata Pamong, Tata Kelola, dan Kerjasama">2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
+                        <option value="Mahasiswa">3 - Mahasiswa</option>
+                        <option value="Sumber Daya Manusia">4 - Sumber Daya Manusia</option>
+                        <option value="Keuangan, Sarana dan Prasarana">5 - Keuangan, Sarana dan Prasarana</option>
+                        <option value="Pendidikan">6 - Pendidikan</option>
+                        <option value="Penelitian">7 – Penelitian</option>
+                        <option value="Pengabdian kepada Masyarakat (PkM)">8 - Pengabdian kepada Masyarakat (PkM)</option>
+                        <option value="Luaran dan Capaian Tridharma">9 - Luaran dan Capaian Tridharma</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Indikator Standar</label>
                     <select class="form-control" id="exampleFormControlSelect1" name="standar">
                         <option value="" disabled selected>Pilih Indikator standar</option>
-                        <option value="1">Standar 1 – Visi Misi Tujuan dan Strategi</option>
-                        <option value="2">Standar 2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
-                        <option value="3">Standar 3 - Mahasiswa</option>
-                        <option value="4">Standar 4 - Sumber Daya Manusia</option>
-
+                        <option value="1">Visi UPJ diturunkan ke dalam visi Fakultas/ Program Studi/Unit Kerja. (korelasi VMTS Universitas dan Prodi)</option>
+                        <option value="2">Adanya keterlibatan pemangku kepentingan dalam penyusunan Visi Misi Universitas, Fakultas dan Program Studi. (mekanisme penyusunan VMTS yang terdokumentasi dan melibatkan stakeholder)</option>
+                        <option value="3">Adanya sosialisasi Visi-misi dan Nilai-Nilai Jaya kepada mahasiswa dan pemangku kepentingan melalui presentasi, video animasi, mars dan hymne universitas serta bentuk lain yang dipandang perlu (minimal 1x per TA)</option>
+                        </option>
                     </select>
                 </div>
                 <div class="form-group">
