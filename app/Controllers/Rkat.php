@@ -23,7 +23,7 @@ class Rkat extends BaseController
         $data['detail_rkat'] = $model->orderBy('id','ASC')->findAll();
         return view('admin/TambahRkat', $data);
     }
-    public function seve()
+    public function save()
 	{
 		$model = new DetailRkatModel();
 		$data = [
@@ -34,6 +34,7 @@ class Rkat extends BaseController
             'jenis_kpi' => $this->request->getVar('jenis_kpi'),
             'jenis_anggaran' => $this->request->getVar('jenis_anggaran'),
             'butir' => $this->request->getVar('butir'),
+            'id_set' => $this->request->getVar('id_set'),
 		];
 		$model->save($data);
 		return redirect()->to(base_url('rkat/createbyadmin'))->with('status', 'Data Berhasil ditambah');

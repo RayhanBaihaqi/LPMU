@@ -151,19 +151,20 @@
 						<div class="card-body">
 							<div class="table-responsive">
 								<form action="<?= base_url('setrkat/update'); ?>" method="POST" enctype="multipart/form-data">
-                                    <input required type="hidden" name="id" value="<?= $set_rkat['id_setrkat']; ?>">
+									<?php foreach ($set_rkat as $key => $value):?>
+                                    <input required type="hidden" name="id_setrkat" value="<?= $value['id_setrkat']; ?>">
 									<div class="form-group">
 											<label for="tahun_akademik">Tahun Ajaran</label>
 											<select class="form-control" id="tahun_akademik" name="tahun_akademik">
-												<option value="<?= $set_rkat['tahun_akademik']; ?>"><?= $set_rkat['tahun_akademik']; ?></option>
-												<option value="20211">2021/2022</option>
-												<option value="20222">2022/2023</option>
+												<option value="<?= $value['tahun_akademik']; ?>"><?= $value['tahun_akademik']; ?></option>
+												<option value="2021/2022">2021/2022</option>
+												<option value="2022/2023">2022/2023</option>
 											</select>
 										</div>
 										<div class="form-group">
 											<label for="semester">Semester</label>
 											<select class="form-control" id="semester" name="semester">
-												<option value="<?= $set_rkat['semester']; ?>"><?= $set_rkat['semester']; ?></option>
+												<option value="<?= $value['semester']; ?>"><?= $value['semester']; ?></option>
 												<option value="ganjil">Ganjil</option>
 												<option value="genap">Genap</option>
 											</select>
@@ -171,17 +172,17 @@
 										<div class="form-group">
 											<label for="semester">Prodi/Unit</label>
 											<select class="form-control" id="id_user" name="id_user">
-												<option value="<?= $set_rkat['id_user']; ?>"><?= $set_rkat['id_user']; ?></option>
-												<option value="1">Akuntansi</option>
-												<option value="2">Desain Komunikasi Visual</option>
-												<option value="3">Informatika</option>
-												<option value="4">Ilmu Komunikasi</option>
+												<option value="<?= $value['id_user']; ?>"><b><?= $value['nama_prodi']; ?></b></option>
+												<?php foreach ($list_prodi as $key => $prodi) : ?>
+													<option value="<?= $prodi['id'] ?>"><?= $prodi['nama_prodi'] ?></option>
+												<?php endforeach ?>
 											</select>
 										</div>
 										<div class="form-group">
 											<label for="pagu">Jumlah Pagu (Rp)</label>
-											<input required type="text" name="pagu" class="form-control" id="pagu" name='pagu' placeholder="Masukkan Nama Prodi/Unit" value="<?= $set_rkat['pagu']; ?>">
+											<input required type="text" name="pagu" class="form-control" id="pagu" name='pagu' placeholder="Masukkan Nama Prodi/Unit" value="<?= $value['pagu']; ?>">
 										</div>
+										<?php endforeach;?>
 									<div class="form-group">
 										<button type="submit" id="tambah" class="btn btn-success">edit</button>
 									</div>

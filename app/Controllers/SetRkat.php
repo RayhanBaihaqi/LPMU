@@ -4,18 +4,18 @@ namespace App\Controllers;
 
 use CodeIgniter\Controller;
 use App\Models\SetRkatModel;
+use App\Models\UsersModel;
 use App\Models\AuthModel;
 
 class SetRkat extends BaseController
 {
+    public function __construct(){
+        $this->SetRkatModel= new SetRkatModel();
+    }
     public function index()
     {
-        $model = new SetRkatModel();
-        $data['set_rkat'] = $model->orderBy('id_setrkat','DESC')->findAll();
-        $model = new AuthModel;
-        $table = 'user';
-        $username = $this->request->getPost('username');
-        $row = $model->get_data_login($username, $table);
+
+        $data['set_rkat'] = $this->SetRkatModel->gabung();
 
         return view('admin/ListSetRkat', $data);
 
@@ -38,9 +38,11 @@ class SetRkat extends BaseController
 		return redirect()->to(base_url('setrkat/create'))->with('status', 'Data Berhasil ditambah');
 	}
     public function edit($id_setrkat = null) {
-        $model = new SetRkatModel();
-        $data['set_rkat'] = $model->where('id_setrkat',$id_setrkat)->first();
-
+        $model = new UsersModel();
+        $data = [
+            'set_rkat' => $this->SetRkatModel->edit($id_setrkat),
+            'list_prodi' => $model->orderBy('id', 'ASC')->findAll(),
+        ]; 
         return view('/admin/EditSetRkat',$data);
     }
     public function update() {
@@ -75,9 +77,12 @@ class SetRkat extends BaseController
     }
     public function createbyuser() {
         $model = new SetRkatModel();
-        $data['set_rkat'] = $model->orderBy('id_setrkat','ASC')->findAll();
+        $username = session('username');
+        $data = [
+            'set_rkat' => $this->SetRkatModel->tampilRKAT($username),
+        ]; 
 
-        return view('rkat/form');
+        return view('rkat/form', $data);
     }
     public function storebyuser()
 	{
@@ -89,7 +94,7 @@ class SetRkat extends BaseController
             'id_user' => $this->request->getVar('id_user'),
 		];
 		$model->save($data);
-		return redirect()->to(base_url('setrkat/create'))->with('status', 'Data Berhasil ditambah');
+		return redirect()->to(base_url('setrkat/createbyuser'))->with('status', 'Data Berhasil ditambah');
 	}
     public function editbyuser($id_setrkat = null) {
         $model = new SetRkatModel();

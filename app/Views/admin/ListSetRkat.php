@@ -160,10 +160,10 @@
 									<thead>
 										<tr>
 											<th>Id</th>
-											<th>Username</th>
-											<th>Passwoard</th>
-											<th>Nama Prodi</th>
-											<th>Level</th>
+											<th>Tahun Akademik</th>
+											<th>Semester</th>
+											<th>Pagu</th>
+											<th>Nama Prodi/Unit</th>
 											<th>Actions</th>
 										</tr>
 									</thead>
@@ -176,7 +176,7 @@
 											<td><?= $reading['tahun_akademik']; ?></td>
 											<td><?= $reading['semester']; ?></td>
 											<td><?= $reading['pagu']; ?></td>
-											<td><?= $reading['id_user']; ?></td>
+											<td><?= $reading['nama_prodi']; ?></td>
 											<td>
 												<a href="<?= base_url('setrkat/edit/'.$reading['id_setrkat']); ?>"
 													class="button button2"><i class="fas fa-edit"></i></a>
