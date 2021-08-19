@@ -148,7 +148,8 @@
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Pilih tahun ajaran</label>
                     <select class="form-control" id="exampleFormControlSelect1" name="tahun_akademik">
-                        <option value="2021/2022" disabled selected>2021/2022</option>
+                        <option value="" disabled selected>Pilih tahun</option>
+                        <option value="2021/2022">2021/2022</option>
                     </select>
                 </div>
                 <div class="form-group">

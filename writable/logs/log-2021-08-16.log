@@ -1,0 +1,20 @@
+CRITICAL - 2021-08-16 00:13:59 --> Undefined variable: id_set
+#0 C:\xampp\htdocs\LPMU\app\Views\rkat\form.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 160, Array)
+#1 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('rkat/form', Array, true)
+#4 C:\xampp\htdocs\LPMU\app\Controllers\SetRkat.php(85): view('rkat/form', Array)
+#5 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\SetRkat->createbyuser()
+#6 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SetRkat))
+#7 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\LPMU\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2021-08-16 00:16:59 --> Undefined variable: id
+#0 C:\xampp\htdocs\LPMU\app\Controllers\SetRkat.php(64): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 64, Array)
+#1 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\SetRkat->delete('4')
+#2 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SetRkat))
+#3 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\LPMU\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}

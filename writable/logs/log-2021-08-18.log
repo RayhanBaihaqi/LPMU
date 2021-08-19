@@ -284,3 +284,11 @@ CRITICAL - 2021-08-18 21:20:26 --> Column 'id_set' cannot be null
 #12 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #13 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
 #14 {main}
+CRITICAL - 2021-08-18 22:29:22 --> Undefined variable: id
+#0 C:\xampp\htdocs\LPMU\app\Controllers\SetRkat.php(62): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 62, Array)
+#1 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\SetRkat->delete('5')
+#2 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SetRkat))
+#3 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\LPMU\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
