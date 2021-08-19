@@ -164,14 +164,6 @@
 											</select>
 										</div>
 										<div class="form-group">
-											<label for="semester">Semester</label>
-											<select class="form-control" id="semester" name="semester">
-												<option selected>Pilih Semester</option>
-												<option value="ganjil">Ganjil</option>
-												<option value="genap">Genap</option>
-											</select>
-										</div>
-										<div class="form-group">
 											<label for="semester">Prodi/Unit</label>
 											<select class="form-control" id="id_user" name="id_user">
 												<option selected>Pilih Semester</option>

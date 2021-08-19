@@ -173,7 +173,7 @@
 										<tr>
 											<td scope="row"><?= $i++; ?></td>
 											<td><?= $reading['nama_kegiatan']; ?></td>
-											<td><?= $reading['jenis_biaya']; ?></td>
+											<td><?= $reading['semester']; ?></td>
 											<td><?= $reading['anggaran']; ?></td>
 											<td><?= $reading['keterangan']; ?></td>
                                             <td><?= $reading['jenis_kpi']; ?></td>

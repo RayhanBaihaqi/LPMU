@@ -169,12 +169,6 @@
 											value="<?= $detail_rkat['anggaran']; ?>">
 									</div>
 									<div class="form-group">
-										<label for="jenis_biaya">Jenis Biaya Kegiatan</label>
-										<input type="text" class="form-control" id="jenis_biaya"
-											placeholder="Masukan Jenis Biaya" name="jenis_biaya" required
-											value="<?= $detail_rkat['jenis_biaya']; ?>">
-									</div>
-									<div class="form-group">
 										<label for="keterangan">Keterangan Kegiatan</label>
 										<input type="text" class="form-control" id="keterangan"
 											placeholder="Masukan Keterangan Kegiatan" name="keterangan" required

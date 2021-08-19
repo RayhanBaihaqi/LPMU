@@ -15,7 +15,7 @@ class SetRkatModel extends Model
     protected $returnType     = 'array';
     //protected $useSoftDeletes = true;
 
-    protected $allowedFields = ['tahun_akademik','semester' ,'pagu' ,'id_user'];
+    protected $allowedFields = ['tahun_akademik' ,'pagu' ,'id_user'];
 
     public function gabung(){
         return $this->db->table('set_rkat')

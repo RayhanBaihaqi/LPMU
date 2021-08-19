@@ -162,14 +162,6 @@
 											</select>
 										</div>
 										<div class="form-group">
-											<label for="semester">Semester</label>
-											<select class="form-control" id="semester" name="semester">
-												<option value="<?= $value['semester']; ?>"><?= $value['semester']; ?></option>
-												<option value="ganjil">Ganjil</option>
-												<option value="genap">Genap</option>
-											</select>
-										</div>
-										<div class="form-group">
 											<label for="semester">Prodi/Unit</label>
 											<select class="form-control" id="id_user" name="id_user">
 												<option value="<?= $value['id_user']; ?>"><b><?= $value['nama_prodi']; ?></b></option>

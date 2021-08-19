@@ -30,7 +30,6 @@ class SetRkat extends BaseController
 		$model = new SetRkatModel();
 		$data = [
 			'tahun_akademik' => $this->request->getVar('tahun_akademik'),
-            'semester' => $this->request->getVar('semester'),
             'pagu' => $this->request->getVar('pagu'),
             'id_user' => $this->request->getVar('id_user'),
 		];
@@ -51,7 +50,6 @@ class SetRkat extends BaseController
 
         $data = [
 			'tahun_akademik' => $this->request->getVar('tahun_akademik'),
-            'semester' => $this->request->getVar('semester'),
             'pagu' => $this->request->getVar('pagu'),
             'id_user' => $this->request->getVar('id_user'),
         ];
@@ -84,12 +82,20 @@ class SetRkat extends BaseController
 
         return view('rkat/form', $data);
     }
+    public function inputbyuser() {
+        $model = new SetRkatModel();
+        $username = session('username');
+        $data = [
+            'set_rkat' => $this->SetRkatModel->tampilRKAT($username),
+        ]; 
+
+        return view('rkat/inputData', $data);
+    }
     public function storebyuser()
 	{
 		$model = new SetRkatModel();
 		$data = [
 			'tahun_akademik' => $this->request->getVar('tahun_akademik'),
-            'semester' => $this->request->getVar('semester'),
             'pagu' => $this->request->getVar('pagu'),
             'id_user' => $this->request->getVar('id_user'),
 		];
@@ -108,7 +114,6 @@ class SetRkat extends BaseController
 
         $data = [
 			'tahun_akademik' => $this->request->getVar('tahun_akademik'),
-            'semester' => $this->request->getVar('semester'),
             'pagu' => $this->request->getVar('pagu'),
             'id_user' => $this->request->getVar('id_user'),
         ];

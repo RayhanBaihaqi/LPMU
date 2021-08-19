@@ -161,7 +161,6 @@
 										<tr>
 											<th>Id</th>
 											<th>Tahun Akademik</th>
-											<th>Semester</th>
 											<th>Pagu</th>
 											<th>Nama Prodi/Unit</th>
 											<th>Actions</th>
@@ -174,7 +173,6 @@
 										<tr>
 											<td scope="row"><?= $i++; ?></td>
 											<td><?= $reading['tahun_akademik']; ?></td>
-											<td><?= $reading['semester']; ?></td>
 											<td><?= $reading['pagu']; ?></td>
 											<td><?= $reading['nama_prodi']; ?></td>
 											<td>

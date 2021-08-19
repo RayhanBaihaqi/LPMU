@@ -126,7 +126,7 @@
 			if(isset($_POST['jumlah']))
 			{
 			?>
-		<form action="<?= base_url('rkat/save'); ?>" method="POST" enctype="multipart/form-data">
+		<form action="<?= base_url('rkat/savebyuser'); ?>" method="POST" enctype="multipart/form-data">
 			<div class="card">
 				<div class="card-header">Tambah Data</div>
 				<div class="card-body">
@@ -182,7 +182,7 @@
 							</select>
 						</div>
 						<div class="col-sm-2">
-							<label for="anggaran" class="mr-sm-2">Total Biaya Kegiatan</label>
+							<label for="anggaran" class="mr-sm-2">Anggaran Kegiatan</label>
 							<input type="text" class="form-control mb-2 mr-sm-2" id="anggaran<?= $a ?>"
 								placeholder="Masukan Total Biaya" name="anggaran" required>
 						</div>
@@ -215,22 +215,34 @@
 							<table class="table">
 								<?php for ($i=1; $i <= $jumlah; $i++) : ?>
 								<h4>Data Ke-<?= $i ?></h4>
-								<tr>
-									<th>Nama Kegiatan</th>
-									<td id="jsnama_kegiatan<?= $i ?>"></td>
-								</tr>
-								<tr>
-									<th>Anggaran</th>
-									<td id="jsanggaran<?= $i ?>"></td>
-								</tr>
-								<tr>
-									<th>Janis Biaya</th>
-									<td id="jsjenis_biaya<?= $i ?>"></td>
-								</tr>
-								<tr>
-									<th>Keterangan</th>
-									<td id="jsketerangan<?= $i ?>"></td>
-								</tr>
+								<table class="table">
+    								<thead>
+										<tr>
+											<th>NO</th>
+											<th>Nama Kegiatan</th>
+											<th>Jenis anggaran</th>
+											<th>Standart KPI</th>
+											<th>Butir</th>
+											<th>Semester</th>
+											<th>Anggaran Kegiatan</th>
+											<th>Keterangan Kegiatan</th>
+											<th>Aksi</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><?= $i ?></td>
+											<td id="jsnama_kegiatan<?= $i ?>"></td>
+											<td id="jsjenis_anggaran<?= $i ?>"></td>
+											<td id="jsjenis_kpi<?= $i ?>"></td>
+											<td id="jsbutir<?= $i ?>"></td>
+											<td id="jssemester<?= $i ?>"></td>
+											<td id="jsanggaran<?= $i ?>"></td>
+											<td id="jsketerangan<?= $i ?>"></td>
+											<td>
+											</td>
+										</tr>
+									</tbody>
 								<?php endfor; ?>
 							</table>
 						</div>
@@ -250,12 +262,18 @@
 				php
 				for ($i = 1; $i <= $jumlah; $i++): ? >
 					var nama_kegiatan < ? = $i ? > = document.getElementById("nama_kegiatan<?= $i ?>").value;
-				var anggaran < ? = $i ? > = document.getElementById("anggaran<?= $i ?>").value;
-				var jenis_biaya < ? = $i ? > = document.getElementById("jenis_biaya<?= $i ?>").value;
-				var keterangan < ? = $i ? > = document.getElementById("keterangan<?= $i ?>").value;
+					var jenis_anggaran < ? = $i ? > = document.getElementById("jenis_anggaran<?= $i ?>").value;
+					var jenis_kpi < ? = $i ? > = document.getElementById("jenis_kpi<?= $i ?>").value;
+					var butir < ? = $i ? > = document.getElementById("butir<?= $i ?>").value;
+					var semester < ? = $i ? > = document.getElementById("semester<?= $i ?>").value;
+					var anggaran < ? = $i ? > = document.getElementById("anggaran<?= $i ?>").value;
+					var keterangan < ? = $i ? > = document.getElementById("keterangan<?= $i ?>").value;
 				document.getElementById("jsnama_kegiatan<?= $i ?>").innerHTML = "<b>" + nama_kegiatan < ? = $i ? > +"</b>";
+				document.getElementById("jsjenis_anggaran<?= $i ?>").innerHTML = "<b>" + jenis_anggaran < ? = $i ? > +"</b>";
+				document.getElementById("jsjenis_kpi<?= $i ?>").innerHTML = "<b>" + jenis_kpi < ? = $i ? > +"</b>";
+				document.getElementById("jsbutir<?= $i ?>").innerHTML = "<b>" + butir < ? = $i ? > +"</b>";
+				document.getElementById("jssemester<?= $i ?>").innerHTML = "<b>" + semester < ? = $i ? > +"</b>";
 				document.getElementById("jsanggaran<?= $i ?>").innerHTML = "<b>" + anggaran < ? = $i ? > +"</b>";
-				document.getElementById("jsjenis_biaya<?= $i ?>").innerHTML = "<b>" + jenis_biaya < ? = $i ? > +"</b>";
 				document.getElementById("jsketerangan<?= $i ?>").innerHTML = "<b>" + keterangan < ? = $i ? > +"</b>"; <
 				?
 				php endfor; ? >

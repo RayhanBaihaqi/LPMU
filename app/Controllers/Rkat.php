@@ -28,7 +28,7 @@ class Rkat extends BaseController
 		$model = new DetailRkatModel();
 		$data = [
 			'nama_kegiatan' => $this->request->getVar('nama_kegiatan'),
-            'jenis_biaya' => $this->request->getVar('jenis_biaya'),
+            'semester' => $this->request->getVar('semester'),
             'anggaran' => $this->request->getVar('anggaran'),
             'keterangan' => $this->request->getVar('keterangan'),
             'jenis_kpi' => $this->request->getVar('jenis_kpi'),
@@ -51,7 +51,7 @@ class Rkat extends BaseController
 
         $data = [
 			'nama_kegiatan' => $this->request->getVar('nama_kegiatan'),
-            'jenis_biaya' => $this->request->getVar('jenis_biaya'),
+            'semester' => $this->request->getVar('semester'),
             'anggaran' => $this->request->getVar('anggaran'),
             'keterangan' => $this->request->getVar('keterangan'),
             'jenis_kpi' => $this->request->getVar('jenis_kpi'),

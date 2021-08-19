@@ -167,11 +167,6 @@
 												placeholder="Masukan Total Biaya" name="anggaran" required>
 										</div>
 										<div class="form-group">
-											<label for="jenis_biaya">Jenis Biaya Kegiatan</label>
-											<input type="text" class="form-control" id="jenis_biaya"
-												placeholder="Masukan Jenis Biaya" name="jenis_biaya" required>
-										</div>
-										<div class="form-group">
 											<label for="keterangan">Keterangan Kegiatan</label>
 											<input type="text" class="form-control" id="keterangan"
 												placeholder="Masukan Keterangan Kegiatan" name="keterangan" required>
