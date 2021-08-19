@@ -12,9 +12,7 @@
 	<link rel="shortcut icon" type="image/png" href="/favicon.ico" />
 
 	<!-- Google Font -->
-	<link
-		href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,600;1,700;1,800&family=Roboto:wght@400;500&display=swap"
-		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,600;1,700;1,800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
 	<!-- CSS Libraries -->
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
@@ -103,9 +101,9 @@
 									</span>
 									<span class="user-name">
 										<?php
-                                                $nama_prodi = session('nama_prodi');
-                                                echo "$nama_prodi"
-                                                ?>
+										$nama_prodi = session('nama_prodi');
+										echo "$nama_prodi"
+										?>
 									</span>
 								</a>
 								<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
@@ -123,202 +121,193 @@
 		<!-- Nav Bar End -->
 		<br>
 		<?php
-			if(isset($_POST['jumlah']))
-			{
-			?>
-		<form action="<?= base_url('rkat/savebyuser'); ?>" method="POST" enctype="multipart/form-data">
-			<div class="card">
-				<div class="card-header">Tambah Data</div>
-				<div class="card-body">
-					<?php
+		if (isset($_POST['jumlah'])) {
+		?>
+			<form action="<?= base_url('rkat/savebyuser'); ?>" method="POST" enctype="multipart/form-data">
+				<div class="card">
+					<div class="card-header">Tambah Data</div>
+					<div class="card-body">
+						<?php
 						$jumlah = $_POST['jumlah'];
-						for($a=1;$a<=$jumlah;$a++)
-						{
+						for ($a = 1; $a <= $jumlah; $a++) {
 						?>
-					<!-- Akan Dilooping -->
-					<h6 class="bg-dark text-white">Kegiatan <?= $a ?></h6><br>
-					<div class="form-row">
-						<div class="col-sm-2">
-							<label for="nama_kegiatan" class="mr-sm-2">Nama Kegiatan</label>
-							<input type="text" class="form-control mb-2 mr-sm-2" id="nama_kegiatan<?= $a ?>"
-								placeholder="Maksukan Nama Kegiatan" name="nama_kegiatan" required>
-						</div>
-						<div class="col-sm-2">
-							<label for="jenis_anggaran">Jenis Anggaran</label>
-							<select class="form-control" id="jenis_anggaran<?= $a ?>" name="jenis_anggaran">
-								<option value="" disabled selected>Pilih Jenis Anggaran</option>
-								<option value="Program Kerja">Program Kerja</option>
-								<option value="Oprasional">Oprasional</option>
-								<option value="Investasi">Investasi</option>
-							</select>
-						</div>
-						<div class="col-sm-2">
-							<label for="jenis_kpi">Standar KPI</label>
-							<select class="form-control" id="jenis_kpi<?= $a ?>" name="jenis_kpi">
-								<option value="" disabled selected>Pilih Indikator standar</option>
-								<option value="1">Standar 1 – Visi Misi Tujuan dan Strategi</option>
-								<option value="2">Standar 2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
-								<option value="3">Standar 3 - Mahasiswa</option>
-								<option value="4">Standar 4 - Sumber Daya Manusia</option>
-								<option value="5">Standar 5 - Keuangan, Sarana dan Prasarana</option>
-								<option value="6">Standar 6 - Pendidikan</option>
-								<option value="7">Standar 7 – Penelitian</option>
-								<option value="8">Standar 8 - Pengabdian kepada Masyarakat (PkM)</option>
-								<option value="9">Standar 9 - Luaran dan Capaian Tridharma</option>
-							</select>
-						</div>
-						<div class="col-sm-1">
-							<label for="butir">Butir</label>
-							<input type="text" class="form-control" id="butir<?= $a ?>" placeholder="Masukan Butir"
-								name="butir" required>
-						</div>
-						<div class="col-sm-1">
-							<label for="semester">Semester</label>
-							<select class="form-control" id="semester<?= $a ?>" name="semester">
-								<option value="" disabled selected>Pilih Semester</option>
-								<option value="Gasal">Gasal</option>
-								<option value="Genap">Genap</option>
-								<option value="Gasal dan Genap">Gasal dan Genap</option>
-							</select>
-						</div>
-						<div class="col-sm-2">
-							<label for="anggaran" class="mr-sm-2">Anggaran Kegiatan</label>
-							<input type="text" class="form-control mb-2 mr-sm-2" id="anggaran<?= $a ?>"
-								placeholder="Masukan Total Biaya" name="anggaran" required>
-						</div>
-						<div class="col-sm-2">
-							<label for="keterangan" class="mr-sm-2">Keterangan Kegiatan</label>
-							<input type="text" class="form-control mb-2 mr-sm-2" id="keterangan<?= $a ?>"
-								placeholder="Masukan Keterangan Kegiatan" name="keterangan" required>
-						</div>
-					</div>
-					<hr>
-					<?php
+							<!-- Akan Dilooping -->
+							<h6 class="bg-dark text-white">Kegiatan <?= $a ?></h6><br>
+							<div class="form-row">
+								<div class="col-sm-2">
+									<label for="nama_kegiatan" class="mr-sm-2">Nama Kegiatan</label>
+									<input type="text" class="form-control mb-2 mr-sm-2" id="nama_kegiatan<?= $a ?>" placeholder="Maksukan Nama Kegiatan" name="nama_kegiatan" required>
+								</div>
+								<div class="col-sm-2">
+									<label for="jenis_anggaran">Jenis Anggaran</label>
+									<select class="form-control" id="jenis_anggaran<?= $a ?>" name="jenis_anggaran">
+										<option value="" disabled selected>Pilih Jenis Anggaran</option>
+										<option value="Program Kerja">Program Kerja</option>
+										<option value="Oprasional">Oprasional</option>
+										<option value="Investasi">Investasi</option>
+									</select>
+								</div>
+								<div class="col-sm-2">
+									<label for="jenis_kpi">Standar KPI</label>
+									<select class="form-control" id="jenis_kpi<?= $a ?>" name="jenis_kpi">
+										<option value="" disabled selected>Pilih Indikator standar</option>
+										<option value="1">Standar 1 – Visi Misi Tujuan dan Strategi</option>
+										<option value="2">Standar 2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
+										<option value="3">Standar 3 - Mahasiswa</option>
+										<option value="4">Standar 4 - Sumber Daya Manusia</option>
+										<option value="5">Standar 5 - Keuangan, Sarana dan Prasarana</option>
+										<option value="6">Standar 6 - Pendidikan</option>
+										<option value="7">Standar 7 – Penelitian</option>
+										<option value="8">Standar 8 - Pengabdian kepada Masyarakat (PkM)</option>
+										<option value="9">Standar 9 - Luaran dan Capaian Tridharma</option>
+									</select>
+								</div>
+								<div class="col-sm-1">
+									<label for="butir">Butir</label>
+									<input type="text" class="form-control" id="butir<?= $a ?>" placeholder="Masukan Butir" name="butir" required>
+								</div>
+								<div class="col-sm-1">
+									<label for="semester">Semester</label>
+									<select class="form-control" id="semester<?= $a ?>" name="semester">
+										<option value="" disabled selected>Pilih Semester</option>
+										<option value="Gasal">Gasal</option>
+										<option value="Genap">Genap</option>
+										<option value="Gasal dan Genap">Gasal dan Genap</option>
+									</select>
+								</div>
+								<div class="col-sm-2">
+									<label for="anggaran" class="mr-sm-2">Anggaran Kegiatan</label>
+									<input type="text" class="form-control mb-2 mr-sm-2" id="anggaran<?= $a ?>" placeholder="Masukan Total Biaya" name="anggaran" required>
+								</div>
+								<div class="col-sm-2">
+									<label for="keterangan" class="mr-sm-2">Keterangan Kegiatan</label>
+									<input type="text" class="form-control mb-2 mr-sm-2" id="keterangan<?= $a ?>" placeholder="Masukan Keterangan Kegiatan" name="keterangan" required>
+								</div>
+							</div>
+							<hr>
+						<?php
 						}
 						?>
 					<?php
-					} else { $jumlah = 0; }
+				} else {
+					$jumlah = 0;
+				}
 					?>
-					<input type="button" onclick="cetak()" name="btn" value="Submit" id="submitBtn" data-toggle="modal"
-						data-target="#confirm-submit" class="btn btn-default" />
+					<input type="button" onclick="cetak()" name="btn" value="Submit" id="submitBtn" data-toggle="modal" data-target="#confirm-submit" class="btn btn-default" />
+					</div>
 				</div>
-			</div>
-			<div class="modal fade" id="confirm-submit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-				aria-hidden="true">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							Confirm Submit
-						</div>
-						<div class="modal-body">
-							Are you sure you want to submit the following details?
-							<table class="table">
-								<?php for ($i=1; $i <= $jumlah; $i++) : ?>
-								<h4>Data Ke-<?= $i ?></h4>
+				<div class="modal fade" id="confirm-submit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								Confirm Submit
+							</div>
+							<div class="modal-body">
+								Are you sure you want to submit the following details?
 								<table class="table">
-    								<thead>
-										<tr>
-											<th>NO</th>
-											<th>Nama Kegiatan</th>
-											<th>Jenis anggaran</th>
-											<th>Standart KPI</th>
-											<th>Butir</th>
-											<th>Semester</th>
-											<th>Anggaran Kegiatan</th>
-											<th>Keterangan Kegiatan</th>
-											<th>Aksi</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td><?= $i ?></td>
-											<td id="jsnama_kegiatan<?= $i ?>"></td>
-											<td id="jsjenis_anggaran<?= $i ?>"></td>
-											<td id="jsjenis_kpi<?= $i ?>"></td>
-											<td id="jsbutir<?= $i ?>"></td>
-											<td id="jssemester<?= $i ?>"></td>
-											<td id="jsanggaran<?= $i ?>"></td>
-											<td id="jsketerangan<?= $i ?>"></td>
-											<td>
-											</td>
-										</tr>
-									</tbody>
-								<?php endfor; ?>
-							</table>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-							<button type="submit" class="btn btn-primary" id="tambah">Tambah Data</button>
+									<?php for ($i = 1; $i <= $jumlah; $i++) : ?>
+										<h4>Data Ke-<?= $i ?></h4>
+										<table class="table">
+											<thead>
+												<tr>
+													<th>NO</th>
+													<th>Nama Kegiatan</th>
+													<th>Jenis anggaran</th>
+													<th>Standart KPI</th>
+													<th>Butir</th>
+													<th>Semester</th>
+													<th>Anggaran Kegiatan</th>
+													<th>Keterangan Kegiatan</th>
+													<th>Aksi</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td><?= $i ?></td>
+													<td id="jsnama_kegiatan<?= $i ?>"></td>
+													<td id="jsjenis_anggaran<?= $i ?>"></td>
+													<td id="jsjenis_kpi<?= $i ?>"></td>
+													<td id="jsbutir<?= $i ?>"></td>
+													<td id="jssemester<?= $i ?>"></td>
+													<td id="jsanggaran<?= $i ?>"></td>
+													<td id="jsketerangan<?= $i ?>"></td>
+													<td>
+													</td>
+												</tr>
+											</tbody>
+										<?php endfor; ?>
+										</table>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+								<button type="submit" class="btn btn-primary" id="tambah">Tambah Data</button>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		</form>
+			</form>
 	</div>
-		<script>
-			function cetak() {
-				<
-				?
-				php
-				for ($i = 1; $i <= $jumlah; $i++): ? >
-					var nama_kegiatan < ? = $i ? > = document.getElementById("nama_kegiatan<?= $i ?>").value;
-					var jenis_anggaran < ? = $i ? > = document.getElementById("jenis_anggaran<?= $i ?>").value;
-					var jenis_kpi < ? = $i ? > = document.getElementById("jenis_kpi<?= $i ?>").value;
-					var butir < ? = $i ? > = document.getElementById("butir<?= $i ?>").value;
-					var semester < ? = $i ? > = document.getElementById("semester<?= $i ?>").value;
-					var anggaran < ? = $i ? > = document.getElementById("anggaran<?= $i ?>").value;
-					var keterangan < ? = $i ? > = document.getElementById("keterangan<?= $i ?>").value;
-				document.getElementById("jsnama_kegiatan<?= $i ?>").innerHTML = "<b>" + nama_kegiatan < ? = $i ? > +"</b>";
-				document.getElementById("jsjenis_anggaran<?= $i ?>").innerHTML = "<b>" + jenis_anggaran < ? = $i ? > +"</b>";
-				document.getElementById("jsjenis_kpi<?= $i ?>").innerHTML = "<b>" + jenis_kpi < ? = $i ? > +"</b>";
-				document.getElementById("jsbutir<?= $i ?>").innerHTML = "<b>" + butir < ? = $i ? > +"</b>";
-				document.getElementById("jssemester<?= $i ?>").innerHTML = "<b>" + semester < ? = $i ? > +"</b>";
-				document.getElementById("jsanggaran<?= $i ?>").innerHTML = "<b>" + anggaran < ? = $i ? > +"</b>";
-				document.getElementById("jsketerangan<?= $i ?>").innerHTML = "<b>" + keterangan < ? = $i ? > +"</b>"; <
-				?
-				php endfor; ? >
-			}
+	<script>
+		function cetak() {
+			<
+			?
+			php
+			for ($i = 1; $i <= $jumlah; $i++): ? >
+				var nama_kegiatan < ? = $i ? > = document.getElementById("nama_kegiatan<?= $i ?>").value;
+			var jenis_anggaran < ? = $i ? > = document.getElementById("jenis_anggaran<?= $i ?>").value;
+			var jenis_kpi < ? = $i ? > = document.getElementById("jenis_kpi<?= $i ?>").value;
+			var butir < ? = $i ? > = document.getElementById("butir<?= $i ?>").value;
+			var semester < ? = $i ? > = document.getElementById("semester<?= $i ?>").value;
+			var anggaran < ? = $i ? > = document.getElementById("anggaran<?= $i ?>").value;
+			var keterangan < ? = $i ? > = document.getElementById("keterangan<?= $i ?>").value;
+			document.getElementById("jsnama_kegiatan<?= $i ?>").innerHTML = "<b>" + nama_kegiatan < ? = $i ? > +"</b>";
+			document.getElementById("jsjenis_anggaran<?= $i ?>").innerHTML = "<b>" + jenis_anggaran < ? = $i ? > +"</b>";
+			document.getElementById("jsjenis_kpi<?= $i ?>").innerHTML = "<b>" + jenis_kpi < ? = $i ? > +"</b>";
+			document.getElementById("jsbutir<?= $i ?>").innerHTML = "<b>" + butir < ? = $i ? > +"</b>";
+			document.getElementById("jssemester<?= $i ?>").innerHTML = "<b>" + semester < ? = $i ? > +"</b>";
+			document.getElementById("jsanggaran<?= $i ?>").innerHTML = "<b>" + anggaran < ? = $i ? > +"</b>";
+			document.getElementById("jsketerangan<?= $i ?>").innerHTML = "<b>" + keterangan < ? = $i ? > +"</b>"; <
+			?
+			php endfor; ? >
+		}
+	</script>
+	<!-- JavaScript Libraries -->
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+	<script src="lib/easing/easing.min.js"></script>
+	<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+	<script src="lib/isotope/isotope.pkgd.min.js"></script>
+	<script>
+		function startTime() {
+			var today = new Date();
+			var h = today.getHours();
+			var m = today.getMinutes();
+			var s = today.getSeconds();
+			m = checkTime(m);
+			s = checkTime(s);
+			document.getElementById('txt').innerHTML =
+				h + ":" + m + ":" + s;
+			var t = setTimeout(startTime, 500);
+		}
 
-		</script>
-		<!-- JavaScript Libraries -->
-		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-		<script src="lib/easing/easing.min.js"></script>
-		<script src="lib/owlcarousel/owl.carousel.min.js"></script>
-		<script src="lib/isotope/isotope.pkgd.min.js"></script>
-		<script>
-			function startTime() {
-				var today = new Date();
-				var h = today.getHours();
-				var m = today.getMinutes();
-				var s = today.getSeconds();
-				m = checkTime(m);
-				s = checkTime(s);
-				document.getElementById('txt').innerHTML =
-					h + ":" + m + ":" + s;
-				var t = setTimeout(startTime, 500);
-			}
+		function checkTime(i) {
+			if (i < 10) {
+				i = "0" + i
+			}; // add zero in front of numbers < 10
+			return i;
+		}
+	</script>
 
-			function checkTime(i) {
-				if (i < 10) {
-					i = "0" + i
-				}; // add zero in front of numbers < 10
-				return i;
-			}
-
-		</script>
-
-		<script src="http://localhost:8080/chart/apexcharts.min.js"></script>
-		<script src="http://localhost:8080/chart/dashboard.js"></script>
-		<script src="http://localhost:8080/chart/jquery.knob.min.js"></script>
-		<script src="http://localhost:8080/chart/knob-chart-setting.js"></script>
-		<script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
-		<script>
-			$(window).load(function () {
-				$(".pre-loader").fadeOut("slow");
-			});
-
-		</script>
+	<script src="http://localhost:8080/chart/apexcharts.min.js"></script>
+	<script src="http://localhost:8080/chart/dashboard.js"></script>
+	<script src="http://localhost:8080/chart/jquery.knob.min.js"></script>
+	<script src="http://localhost:8080/chart/knob-chart-setting.js"></script>
+	<script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+	<script>
+		$(window).load(function() {
+			$(".pre-loader").fadeOut("slow");
+		});
+	</script>
 </body>
 
 </html>
