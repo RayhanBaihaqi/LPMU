@@ -152,59 +152,29 @@
 					<div class="card shadow mb-4">
 						<div class="card-body">
 							<div class="table-responsive">
-								<form action="<?= base_url('rkat/seve'); ?>" method="POST"
-									enctype="multipart/form-data">
 									<div class="container">
 										<!-- Akan Dilooping -->
+										<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat'];?>
 										<div class="form-group">
-											<label for="nama_kegiatan">Nama Kegiatan</label>
-											<input type="text" class="form-control" id="nama_kegiatan"
-												placeholder="Maksukan Nama Kegiatan" name="nama_kegiatan" required>
-										</div>
-										<div class="form-group">
-											<label for="anggaran">Total Biaya Kegiatan</label>
-											<input type="text" class="form-control" id="anggaran"
-												placeholder="Masukan Total Biaya" name="anggaran" required>
-										</div>
-										<div class="form-group">
-											<label for="keterangan">Keterangan Kegiatan</label>
-											<input type="text" class="form-control" id="keterangan"
-												placeholder="Masukan Keterangan Kegiatan" name="keterangan" required>
-										</div>
-										<div class="form-group">
-											<label for="butir">butir</label>
-											<input type="text" class="form-control" id="butir"
-												placeholder="Masukan Jumlah Butir" name="butir" required>
-										</div>
-										<div class="form-group">
-											<label for="jenis_kpi">Standar KPI</label>
-											<select class="form-control" id="jenis_kpi" name="jenis_kpi">
-												<option value="" disabled selected>Pilih Indikator standar</option>
-												<option value="1">Standar 1 – Visi Misi Tujuan dan Strategi</option>
-												<option value="2">Standar 2 - Tata Pamong, Tata Kelola, dan Kerjasama
+											<label for="exampleFormControlSelect1">Tahun Ajaran</label>
+											<select class="form-control" id="exampleFormControlSelect1" disabled>
+												<option value="<?= $value['tahun_akademik'] ?>" selected><?= $value['tahun_akademik'] ?>
 												</option>
-												<option value="3">Standar 3 - Mahasiswa</option>
-												<option value="4">Standar 4 - Sumber Daya Manusia</option>
-												<option value="5">Standar 5 - Keuangan, Sarana dan Prasarana</option>
-												<option value="6">Standar 6 - Pendidikan</option>
-												<option value="7">Standar 7 – Penelitian</option>
-												<option value="8">Standar 8 - Pengabdian kepada Masyarakat (PkM)
-												</option>
-												<option value="9">Standar 9 - Luaran dan Capaian Tridharma</option>
 											</select>
 										</div>
 										<div class="form-group">
-											<label for="jenis_anggaran">Jenis Anggaran</label>
-											<select class="form-control" id="jenis_anggaran" name="jenis_anggaran">
-												<option value="" disabled selected>Pilih Jenis Anggaran</option>
-												<option value="Program Kerja">Program Kerja</option>
-												<option value="Oprasional">Oprasional</option>
-												<option value="Investasi">Investasi</option>
-											</select>
+											<label for="uname">Jumlah Pagu</label>
+											<input type="hidden" class="form-control" id="uname" name="uname" value="<?= $value['pagu'] ?>"
+												required disabled>
 										</div>
-										<button type="submit" class="btn btn-primary" id="tambah">Tambah Data</button>
+										<?php endforeach; ?>
+										<form action="<?= base_url('setrkat/tambahbyadmin'); ?>" method="post">
+											<div class="input-group mb-3">
+												<input type="text" class="form-control" placeholder="Jumlah Kegiatan" name="jumlah">
+											</div>
+											<input class="btn btn-primary" type="submit" name="tambah" value="Tambah">
+										</form>
 									</div>
-								</form>
 							</div>
 						</div>
 					</div>

@@ -122,33 +122,94 @@
 		</div>
 		<!-- Nav Bar End -->
 		<br>
-		<div class="card">
-			<div class="card-header">Tambah Data</div>
-				<div class="card-body">
-					<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat'];?>
-					<div class="form-group">
-						<label for="exampleFormControlSelect1">Tahun Ajaran</label>
-						<select class="form-control" id="exampleFormControlSelect1" disabled>
-							<option value="<?= $value['tahun_akademik'] ?>" selected><?= $value['tahun_akademik'] ?>
-							</option>
-						</select>
+		<form action="<?= base_url('rkat/save'); ?>" method="POST" enctype="multipart/form-data">	
+			<div class="card">
+					<div class="card-header">Tambah Data</div>
+				
+					<div class="card-body">
+						<h6 class="bg-dark text-white">Kegiatan <?= $a ?></h6><br>
+						<!-- Akan Dilooping -->
+						<table class="table">
+										<thead>
+											<tr>
+												<th>Data Ke</th>
+												<th>Nama Kegiatan</th>
+												<th>Jenis anggaran</th>
+												<th>Standart KPI</th>
+												<th>Butir</th>
+												<th>Semester</th>
+												<th>Anggaran Kegiatan</th>
+												<th>Keterangan Kegiatan</th>
+												<th>Aksi</th>
+											</tr>
+										</thead>
+										<?php for ($i=1; $i <= $jumlah; $i++) : ?>
+										<tbody>
+											<tr>
+												<td><?= $i ?></td>
+												<td id="jsnama_kegiatan<?= $i ?>"></td>
+												<td id="jsjenis_anggaran<?= $i ?>"></td>
+												<td id="jsjenis_kpi<?= $i ?>"></td>
+												<td id="jsbutir<?= $i ?>"></td>
+												<td id="jssemester<?= $i ?>"></td>
+												<td id="jsanggaran<?= $i ?>"></td>
+												<td id="jsketerangan<?= $i ?>"></td>
+												<td>
+												<a href=""
+													class="button button2"><i class="fas fa-edit"></i></a>
+												<a href="<?= base_url('rkat/deletebyadmin/'.$i); ?>"
+													class="button button2"><i class="fas fa-trash-alt"></i></a>
+											</td>
+											</tr>
+										</tbody>
+									<?php endfor; ?>
+                				</table>
 					</div>
-					<div class="form-group">
-						<label for="uname">Jumlah Pagu</label>
-						<input type="text" class="form-control" id="uname" name="uname" value="<?= $value['pagu'] ?>"
-							required disabled>
+					<div class="card-footer">
+						<input type="button" onclick="cetak()" name="btn" value="Submit" id="submitBtn" data-toggle="modal" data-target="#confirm-submit" class="btn btn-primary" />
 					</div>
-					<?php endforeach; ?>
-					<form action="<?= base_url('setrkat/tambah'); ?>" method="post">
-						<div class="input-group mb-3">
-							<input type="text" class="form-control" placeholder="Jumlah Kegiatan" name="jumlah">
-						</div>
-						<input class="btn btn-primary" type="submit" name="tambah" value="Tambah">
-					</form>
 				</div>
-			</div>
-		</div>
-	
+				<div class="modal fade" id="confirm-submit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    				<div class="modal-dialog modal-xl">
+        				<div class="modal-content">
+            				<div class="modal-header">
+                				Confirm Submit
+            				</div>
+            				<div class="modal-body">
+                				Are you sure you want to submit the following details?
+                				
+            				</div>
+            				<div class="modal-footer">
+                				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                				<button type="submit" class="btn btn-primary" id="tambah">Tambah Data</button>
+            				</div>
+        				</div>
+    				</div>
+				</div>
+		</form>
+	<script>
+		function cetak(){
+			<?php for ($i=1; $i <= $jumlah; $i++) : ?>
+			var nama_kegiatan<?= $i ?> = document.getElementById("nama_kegiatan<?= $i ?>").value ;
+			var anggaran<?= $i ?> = document.getElementById("anggaran<?= $i ?>").value ;
+			var semester<?= $i ?> = document.getElementById("semester<?= $i ?>").value ;
+			var keterangan<?= $i ?> = document.getElementById("keterangan<?= $i ?>").value ;
+			var jenis_kpi<?= $i ?> = document.getElementById("jenis_kpi<?= $i ?>").value ;
+			var butir<?= $i ?> = document.getElementById("butir<?= $i ?>").value ;
+			var jenis_anggaran<?= $i ?> = document.getElementById("jenis_anggaran<?= $i ?>").value ;
+			document.getElementById("jsnama_kegiatan<?= $i ?>").innerHTML = "<b>" + nama_kegiatan<?= $i ?> +"</b>";
+			document.getElementById("jsanggaran<?= $i ?>").innerHTML = "<b>" + anggaran<?= $i ?> +"</b>";
+			document.getElementById("jssemester<?= $i ?>").innerHTML = "<b>" + semester<?= $i ?> +"</b>";
+			document.getElementById("jsketerangan<?= $i ?>").innerHTML = "<b>" + keterangan<?= $i ?> +"</b>";
+			document.getElementById("jsjenis_kpi<?= $i ?>").innerHTML = "<b>" + jenis_kpi<?= $i ?> +"</b>";
+			document.getElementById("jsbutir<?= $i ?>").innerHTML = "<b>" + butir<?= $i ?> +"</b>";
+			document.getElementById("jsjenis_anggaran<?= $i ?>").innerHTML = "<b>" + jenis_anggaran<?= $i ?> +"</b>";
+			<?php endfor; ?>
+		}
+		function hapus(){
+			
+		}
+	</script>
 	<!-- JavaScript Libraries -->
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>

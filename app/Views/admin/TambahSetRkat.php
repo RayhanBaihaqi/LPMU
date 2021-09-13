@@ -164,9 +164,9 @@
 											</select>
 										</div>
 										<div class="form-group">
-											<label for="semester">Prodi/Unit</label>
+											<label for="id_user">Prodi/Unit</label>
 											<select class="form-control" id="id_user" name="id_user">
-												<option selected>Pilih Semester</option>
+												<option selected>Pilih Prodi/Unit</option>
 												<option value="1">Akuntansi</option>
 												<option value="2">Desain Komunikasi Visual</option>
 												<option value="3">Informatika</option>

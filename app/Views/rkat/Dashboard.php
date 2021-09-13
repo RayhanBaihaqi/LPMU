@@ -194,7 +194,7 @@
             </div>
             <!-- ====================================================================================================================== -->
             <a href="<?= base_url('/setrkat/createbyuser') ?>" class="btn btn-info btn-sm"><i class="fa fa-home"></i> Isi formulir</a>
-			<a href="#" class="btn btn-info btn-sm"><i class="fa fa-home"></i> Link Button</a>
+			<a href="<?= base_url('/rkat/indexbyuser') ?>" class="btn btn-info btn-sm"><i class="fa fa-home"></i> Lihat List Data</a>
 			<a href="#" class="btn btn-info btn-sm"><i class="fa fa-home"></i> Link Button</a>
             <hr>
             <div class="row clearfix progress-box">

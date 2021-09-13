@@ -94,6 +94,7 @@
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse justify-content-between">
+
 					<div class="ml-auto">
 						<div class="user-info-dropdown">
 							<div class="dropdown">
@@ -103,15 +104,15 @@
 									</span>
 									<span class="user-name">
 										<?php
-                                                $nama_prodi = session('nama_prodi');
-                                                echo "$nama_prodi"
-                                                ?>
+                                            $nama_prodi = session('nama_prodi');
+                                            echo "$nama_prodi"
+                                        ?>
 									</span>
 								</a>
 								<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
 									<a class="dropdown-item" href="profile.html"><i class="fas fa-user"></i> Profile</a>
 									<a class="dropdown-item" href="profile.html"><i class="fas fa-cog"></i> Setting</a>
-									<a class="dropdown-item" href="login.html"><i class="fas fa-sign-out-alt"></i> Log
+									<a class="dropdown-item" href="/auth/logout"><i class="fas fa-sign-out-alt"></i> Log
 										Out</a>
 								</div>
 							</div>
@@ -122,33 +123,59 @@
 		</div>
 		<!-- Nav Bar End -->
 		<br>
-		<div class="card">
-			<div class="card-header">Tambah Data</div>
-				<div class="card-body">
-					<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat'];?>
-					<div class="form-group">
-						<label for="exampleFormControlSelect1">Tahun Ajaran</label>
-						<select class="form-control" id="exampleFormControlSelect1" disabled>
-							<option value="<?= $value['tahun_akademik'] ?>" selected><?= $value['tahun_akademik'] ?>
-							</option>
-						</select>
-					</div>
-					<div class="form-group">
-						<label for="uname">Jumlah Pagu</label>
-						<input type="text" class="form-control" id="uname" name="uname" value="<?= $value['pagu'] ?>"
-							required disabled>
-					</div>
-					<?php endforeach; ?>
-					<form action="<?= base_url('setrkat/tambah'); ?>" method="post">
-						<div class="input-group mb-3">
-							<input type="text" class="form-control" placeholder="Jumlah Kegiatan" name="jumlah">
-						</div>
-						<input class="btn btn-primary" type="submit" name="tambah" value="Tambah">
-					</form>
-				</div>
-			</div>
-		</div>
-	
+		<!-- Responsive tables Start -->
+		<div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Striped Table</h4>
+                  <p class="card-description">
+                    Add class <code>.table-striped</code>
+                  </p>
+                  <div class="table-responsive">
+                  <table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+										<tr>
+											<th>Id</th>
+											<th>Nama Kegiatan</th>
+											<th>Jenis Biaya</th>
+											<th>Anggaran</th>
+											<th>Keterangan</th>
+                                            <th>Jenis KPI</th>
+											<th>Butir</th>
+											<th>Jenis Anggaran</th>
+											<th>Actions</th>
+										</tr>
+									</thead>
+                                    <tbody>
+									<?php $i = 1;?>
+                                        <?php foreach ($detail_rkat as $key => $value) : ?>
+										<tr>
+											<td scope="row"><?= $i++; ?></td>
+											<td><?= $value['nama_kegiatan']; ?></td>
+											<td><?= $value['semester']; ?></td>
+											<td><?= $value['anggaran']; ?></td>
+											<td><?= $value['keterangan']; ?></td>
+                                            <td><?= $value['jenis_kpi']; ?></td>
+											<td><?= $value['butir']; ?></td>
+											<td><?= $value['jenis_anggaran']; ?></td>
+											<td>
+												<a href="<?= base_url('rkat/editbyadmin/'.$value['id']); ?>"
+													class="button button2"><i class="fas fa-edit"></i></a>
+												<a href="<?= base_url('rkat/deletebyadmin/'.$value['id']); ?>"
+													class="button button2"><i class="fas fa-trash-alt"></i></a>
+											</td>
+										</tr>
+										<?php endforeach; ?>
+									</tbody>
+                  </table>
+                </div>
+                </div>
+              </div>
+            </div>
+		<!-- Responsive tables End -->
+
+	</div>
+
 	<!-- JavaScript Libraries -->
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
@@ -176,7 +203,6 @@
 		}
 
 	</script>
-
 	<script src="http://localhost:8080/chart/apexcharts.min.js"></script>
 	<script src="http://localhost:8080/chart/dashboard.js"></script>
 	<script src="http://localhost:8080/chart/jquery.knob.min.js"></script>

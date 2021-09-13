@@ -82,15 +82,15 @@ class SetRkat extends BaseController
 
         return view('rkat/form', $data);
     }
-    public function inputbyuser() {
+    public function tambah()
+	{
         $model = new SetRkatModel();
         $username = session('username');
         $data = [
             'set_rkat' => $this->SetRkatModel->tampilRKAT($username),
         ]; 
-
-        return view('rkat/inputData', $data);
-    }
+		return view('/rkat/inputData', $data);
+	}
     public function storebyuser()
 	{
 		$model = new SetRkatModel();
@@ -127,4 +127,24 @@ class SetRkat extends BaseController
 
         return redirect()->to(base_url('setrkat/index'));
     }
+
+    // admin
+    public function createbyadmin() {
+        $model = new SetRkatModel();
+        $username = session('username');
+        $data = [
+            'set_rkat' => $this->SetRkatModel->tampilRKAT($username),
+        ]; 
+
+        return view('admin/tambahRkat', $data);
+    }
+    public function tambahbyadmin()
+	{
+        $model = new SetRkatModel();
+        $username = session('username');
+        // $data = [
+        //     'set_rkat' => $this->SetRkatModel->tampilRKAT($username),
+        // ]; 
+		return view('admin/InputData');
+	}
 }
