@@ -21,6 +21,9 @@ class Kpi extends BaseController
 	{
 		$detail = new  DetailKpiModel();
 		$data = [
+			'tahun_akademik' => $this->request->getPost('tahun_akademik'),
+			'prodi_unit' => $this->request->getPost('prodi_unit'),
+			'nama_prodi_unit' => $this->request->getPost('nama_prodi_unit'),
 			'kriteria' => $this->request->getPost('kriteria'),
 			'standar' => $this->request->getPost('standar'),
 			'pic' => $this->request->getPost('pic'),

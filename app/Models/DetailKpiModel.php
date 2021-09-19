@@ -15,7 +15,7 @@ class DetailKpiModel extends Model
     protected $returnType     = 'array';
     //protected $useSoftDeletes = true;
 
-    protected $allowedFields = ['tahun_akademik', 'kriteria', 'standar', 'pic', 'nama_pic', 'ketercapaian', 'skor', 'file'];
+    protected $allowedFields = ['tahun_akademik', 'prodi_unit', 'nama_prodi_unit', 'kriteria', 'standar', 'pic', 'nama_pic', 'rencana_realisasi', 'ketercapaian', 'skor', 'file'];
 
     protected $useTimestamps = true;
     protected $createdField  = 'created_at';

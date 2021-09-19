@@ -472,6 +472,8 @@
                             <thead>
                                 <tr>
                                     <th>No.</th>
+                                    <th>Tahun</th>
+
                                     <th>Kriteria</th>
                                     <th>Standar</th>
                                     <th>PIC</th>
@@ -486,6 +488,8 @@
                                 <?php foreach ($detail_luarantridharma as $row) : ?>
                                     <tr>
                                         <td scope="row"><?= $i++; ?></td>
+                                        <td><?= $row['tahun_akademik'] ?></td>
+
                                         <td><?= $row['kriteria'] ?></td>
                                         <td><?= $row['standar'] ?></td>
                                         <td><?= $row['pic'] ?></td>

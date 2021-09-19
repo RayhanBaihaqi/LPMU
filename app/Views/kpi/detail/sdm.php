@@ -472,6 +472,8 @@
                             <thead>
                                 <tr>
                                     <th>No.</th>
+                                    <th>Tahun</th>
+
                                     <th>Kriteria</th>
                                     <th>Standar</th>
                                     <th>PIC</th>
@@ -486,6 +488,8 @@
                                 <?php foreach ($detail_sdm as $row) : ?>
                                     <tr>
                                         <td scope="row"><?= $i++; ?></td>
+                                        <td><?= $row['tahun_akademik'] ?></td>
+
                                         <td><?= $row['kriteria'] ?></td>
                                         <td><?= $row['standar'] ?></td>
                                         <td><?= $row['pic'] ?></td>
@@ -495,6 +499,7 @@
                                         <td><?= $row['file'] ?></td>
                                     </tr>
                                 <?php endforeach; ?>
+                            </tbody>
                         </table>
                         <div class="clearfix">
                             <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>

@@ -18,6 +18,274 @@
 	<!-- Custom styles for this template-->
 	<link href="http://localhost:8080/css/style_admin.css" rel="stylesheet">
 
+	<style>
+		.table-responsive {
+			margin: 30px 0;
+		}
+
+		.table-wrapper {
+			min-width: 1000px;
+			background: #fff;
+			padding: 20px 25px;
+			border-radius: 3px;
+			box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+		}
+
+		.table-title {
+			padding-bottom: 15px;
+			background: #435d7d;
+			color: #fff;
+			padding: 16px 30px;
+			margin: -20px -25px 10px;
+			border-radius: 3px 3px 0 0;
+		}
+
+		.table-title h2 {
+			margin: 5px 0 0;
+			font-size: 24px;
+		}
+
+		.table-title .btn-group {
+			float: right;
+		}
+
+		.table-title .btn {
+			color: #fff;
+			float: right;
+			font-size: 13px;
+			border: none;
+			min-width: 50px;
+			border-radius: 2px;
+			border: none;
+			outline: none !important;
+			margin-left: 10px;
+		}
+
+		.table-title .btn i {
+			float: left;
+			font-size: 21px;
+			margin-right: 5px;
+		}
+
+		.table-title .btn span {
+			float: left;
+			margin-top: 2px;
+		}
+
+		table.table tr th,
+		table.table tr td {
+			border-color: #e9e9e9;
+			padding: 12px 15px;
+			vertical-align: middle;
+		}
+
+		table.table tr th:first-child {
+			width: 60px;
+		}
+
+		table.table tr th:last-child {
+			width: 100px;
+		}
+
+		table.table-striped tbody tr:nth-of-type(odd) {
+			background-color: #fcfcfc;
+		}
+
+		table.table-striped.table-hover tbody tr:hover {
+			background: #f5f5f5;
+		}
+
+		table.table th i {
+			font-size: 13px;
+			margin: 0 5px;
+			cursor: pointer;
+		}
+
+		table.table td:last-child i {
+			opacity: 0.9;
+			font-size: 22px;
+			margin: 0 5px;
+		}
+
+		table.table td a {
+			font-weight: bold;
+			color: #566787;
+			display: inline-block;
+			text-decoration: none;
+			outline: none !important;
+		}
+
+		table.table td a:hover {
+			color: #2196F3;
+		}
+
+		table.table td a.edit {
+			color: #FFC107;
+		}
+
+		table.table td a.delete {
+			color: #F44336;
+		}
+
+		table.table td i {
+			font-size: 19px;
+		}
+
+		table.table .avatar {
+			border-radius: 50%;
+			vertical-align: middle;
+			margin-right: 10px;
+		}
+
+		.pagination {
+			float: right;
+			margin: 0 0 5px;
+		}
+
+		.pagination li a {
+			border: none;
+			font-size: 13px;
+			min-width: 30px;
+			min-height: 30px;
+			color: #999;
+			margin: 0 2px;
+			line-height: 30px;
+			border-radius: 2px !important;
+			text-align: center;
+			padding: 0 6px;
+		}
+
+		.pagination li a:hover {
+			color: #666;
+		}
+
+		.pagination li.active a,
+		.pagination li.active a.page-link {
+			background: #03A9F4;
+		}
+
+		.pagination li.active a:hover {
+			background: #0397d6;
+		}
+
+		.pagination li.disabled i {
+			color: #ccc;
+		}
+
+		.pagination li i {
+			font-size: 16px;
+			padding-top: 6px
+		}
+
+		.hint-text {
+			float: left;
+			margin-top: 10px;
+			font-size: 13px;
+		}
+
+		/* Custom checkbox */
+		.custom-checkbox {
+			position: relative;
+		}
+
+		.custom-checkbox input[type="checkbox"] {
+			opacity: 0;
+			position: absolute;
+			margin: 5px 0 0 3px;
+			z-index: 9;
+		}
+
+		.custom-checkbox label:before {
+			width: 18px;
+			height: 18px;
+		}
+
+		.custom-checkbox label:before {
+			content: '';
+			margin-right: 10px;
+			display: inline-block;
+			vertical-align: text-top;
+			background: white;
+			border: 1px solid #bbb;
+			border-radius: 2px;
+			box-sizing: border-box;
+			z-index: 2;
+		}
+
+		.custom-checkbox input[type="checkbox"]:checked+label:after {
+			content: '';
+			position: absolute;
+			left: 6px;
+			top: 3px;
+			width: 6px;
+			height: 11px;
+			border: solid #000;
+			border-width: 0 3px 3px 0;
+			transform: inherit;
+			z-index: 3;
+			transform: rotateZ(45deg);
+		}
+
+		.custom-checkbox input[type="checkbox"]:checked+label:before {
+			border-color: #03A9F4;
+			background: #03A9F4;
+		}
+
+		.custom-checkbox input[type="checkbox"]:checked+label:after {
+			border-color: #fff;
+		}
+
+		.custom-checkbox input[type="checkbox"]:disabled+label:before {
+			color: #b8b8b8;
+			cursor: auto;
+			box-shadow: none;
+			background: #ddd;
+		}
+
+		/* Modal styles */
+		.modal .modal-dialog {
+			max-width: 400px;
+		}
+
+		.modal .modal-header,
+		.modal .modal-body,
+		.modal .modal-footer {
+			padding: 20px 30px;
+		}
+
+		.modal .modal-content {
+			border-radius: 3px;
+		}
+
+		.modal .modal-footer {
+			background: #ecf0f1;
+			border-radius: 0 0 3px 3px;
+		}
+
+		.modal .modal-title {
+			display: inline-block;
+		}
+
+		.modal .form-control {
+			border-radius: 2px;
+			box-shadow: none;
+			border-color: #dddddd;
+		}
+
+		.modal textarea.form-control {
+			resize: vertical;
+		}
+
+		.modal .btn {
+			border-radius: 2px;
+			min-width: 100px;
+		}
+
+		.modal form label {
+			font-weight: normal;
+		}
+	</style>
+
 </head>
 
 <body id="page-top">
@@ -140,101 +408,68 @@
 				<!-- End of Topbar -->
 				<div class="container">
 					<h3>Lihat Tabel KPI</h3>
-					<br>
-					<form>
-						<div class="container">
-							<div class="form-group">
-								<label for="tahun_akademik">Tahun Akademik</label>
-								<select class="form-control" id="tahun_akademik" name="tahun_akademik">
-									<option selected>2021/2022</option>
-								</select>
-							</div>
-							<div class="form-group">
-								<label for="divisi">Divisi</label>
-								<select class="form-control" id="divisi">
-									<option value="" disabled selected>Pilih Divisi</option>
-									<option value="Prodi">Prodi</option>
-									<option value="Unit">Unit</option>
-								</select>
-							</div>
-							<div class="form-group" id="prodiDiv">
-								<label for="prodi">Prodi</label>
-								<select class="form-control" id="prodi" name="nama_prodi">
-									<option value="" disabled selected>Pilih Prodi</option>
-									<option value="Akuntansi">Akuntansi</option>
-									<option value="Manajemen">Manajemen</option>
-									<option value="Psikologi">Psikologi</option>
-									<option value="Ilmu Komunikasi">Ilmu Komunikasi</option>
-									<option value="Desain Produk">Desain Produk</option>
-									<option value="Desain Komunikasi Visual">Desain Komunikasi Visual</option>
-									<option value="Informatika">Informatika</option>
-									<option value="Sistem Informasi">Sistem Informasi</option>
-									<option value="Teknik Sipil">Teknik Sipil</option>
-									<option value="Arsitektur">Arsitektur</option>
-								</select>
-							</div>
-							<div class="form-group" id="unitDiv">
-								<label for="unit">Unit</label>
-								<select class="form-control" id="unit" name="nama_prodi">
-									<option value="" disabled selected>Pilih Unit</option>
-									<option value="Rektorat">Rektorat</option>
-									<option value="Fakultas Teknologi dan Desain">Fakultas Teknologi dan Desain</option>
-									<option value="Fakultas Humaniora dan Bisnis">Fakultas Humaniora dan Bisnis</option>
-									<option value="Center for Urban Studies">Center for Urban Studies</option>
-									<option value="Jaya Center Advanced Learning">Jaya Center Advanced Learning</option>
-									<option value="Jaya Softskills Development Program">Jaya Softskills Development Program</option>
-									<option value="Jaya Launch Pad">Jaya Launch Pad</option>
-									<option value="KOTA">KOTA</option>
-									<option value="Sustainable Development">Sustainable Development</option>
-									<option value="Lembaga Penelitian dan Pengabdian Masyarakat">Lembaga Penelitian dan Pengabdian Masyarakat</option>
-									<option value="Lembaga Penjaminan Mutu Universitas">Lembaga Penjaminan Mutu Universitas</option>
-									<option value="Keuangan">Keuangan</option>
-									<option value="Biro Pengembangan Sumber Daya Manusia">Biro Pengembangan Sumber Daya Manusia</option>
-									<option value="Publikasi Humas dan Admisi">Publikasi Humas dan Admisi</option>
-									<option value="Biro Kemahasiswaan dan Alumni">Biro Kemahasiswaan dan Alumni</option>
-									<option value="Biro Pendidikan">Biro Pendidikan</option>
-									<option value="Perpustakaan">Perpustakaan</option>
-									<option value="Sarana dan Prasarana">Sarana dan Prasarana</option>
-								</select>
-							</div>
-							<div class="form-group" id="kriteriaProdiDiv">
-								<label for="kriteriaProdi">Standar</label>
-								<select class="form-control" id="standarProdi" name="kriteria">
-									<option value="" disabled selected>Pilih Indikator standar</option>
-									<option value="Visi Misi Tujuan dan Strategi">1 – Visi Misi Tujuan dan Strategi</option>
-									<option value="Tata Pamong, Tata Kelola, dan Kerjasama">2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
-									<option value="Mahasiswa">3 - Mahasiswa</option>
-									<option value="Sumber Daya Manusia">4 - Sumber Daya Manusia</option>
-									<option value="Keuangan, Sarana dan Prasarana">5 - Keuangan, Sarana dan Prasarana</option>
-									<option value="Pendidikan">6 - Pendidikan</option>
-									<option value="Penelitian">7 – Penelitian</option>
-									<option value="Pengabdian kepada Masyarakat (PkM)">8 - Pengabdian kepada Masyarakat (PkM)</option>
-									<option value="Luaran dan Capaian Tridharma">9 - Luaran dan Capaian Tridharma</option>
-								</select>
-							</div>
-							<div class="form-group" id="kriteriaUnitDiv">
-								<label for="kriteriaUnit">Standar</label>
-								<select class="form-control" id="kriteriaUnit" name="kriteria">
-									<option value="" disabled selected>Pilih Indikator standar</option>
-									<option value="Visi Misi Tujuan dan Strategi">1 – Visi Misi Tujuan dan Strategi</option>
-									<option value="Tata Pamong, Tata Kelola, dan Kerjasama">2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
-									<option value="Mahasiswa">3 - Mahasiswa</option>
-									<option value="Sumber Daya Manusia">4 - Sumber Daya Manusia</option>
-									<option value="Keuangan, Sarana dan Prasarana">5 - Keuangan, Sarana dan Prasarana</option>
-									<option value="Pendidikan">6 - Pendidikan</option>
-									<option value="Penelitian">7 – Penelitian</option>
-									<option value="Pengabdian kepada Masyarakat (PkM)">8 - Pengabdian kepada Masyarakat (PkM)</option>
-									<option value="Luaran dan Capaian Tridharma">9 - Luaran dan Capaian Tridharma</option>
-									<option value="Standar HRD">10 - Standar HRD</option>
-								</select>
-							</div>
 
 
-							<button type="submit" class="btn btn-primary">Cek Tabel</button>
-
+					<div class="table-responsive">
+						<div class="table-wrapper">
+							<table class="table table-striped table-hover">
+								<thead>
+									<tr>
+										<th>No.</th>
+										<th>Tahun</th>
+										<th>Kriteria</th>
+										<th>Bagian</th>
+										<th>Nama Prodi/Unit</th>
+										<th>Standar</th>
+										<th>PIC</th>
+										<th>Nama PIC</th>
+										<th>Ketercapaian</th>
+										<th>Skor</th>
+										<th>Bukti Pelaksanaan</th>
+										<th>Aksi</th>
+									</tr>
+								</thead>
+								<tbody>
+									<?php $i = 1; ?>
+									<?php foreach ($adminkpi as $row) : ?>
+										<tr>
+											<td scope="row"><?= $i++; ?></td>
+											<td><?= $row['tahun_akademik'] ?></td>
+											<td><?= $row['kriteria'] ?></td>
+											<td><?= $row['prodi_unit'] ?></td>
+											<td><?= $row['nama_prodi_unit'] ?></td>
+											<td><?= $row['standar'] ?></td>
+											<td><?= $row['pic'] ?></td>
+											<td><?= $row['nama_pic'] ?></td>
+											<td><?= $row['ketercapaian'] ?></td>
+											<td><?= $row['skor'] ?></td>
+											<td><?= $row['file'] ?></td>
+											<td>
+												<a href="<?= base_url('admin/editadminkpi/' . $row['id']); ?>" class="button button2"><i class="fas fa-edit"></i></a>
+												<a href="<?= base_url('admin/deleteadminkpi/' . $row['id']); ?>" class="button button2"><i class="fas fa-trash-alt"></i></a>
+											</td>
+										</tr>
+									<?php endforeach; ?>
+								</tbody>
+							</table>
+							<div class="clearfix">
+								<div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
+								<ul class="pagination">
+									<li class="page-item disabled"><a href="#">Previous</a></li>
+									<li class="page-item"><a href="#" class="page-link">1</a></li>
+									<li class="page-item"><a href="#" class="page-link">2</a></li>
+									<li class="page-item active"><a href="#" class="page-link">3</a></li>
+									<li class="page-item"><a href="#" class="page-link">4</a></li>
+									<li class="page-item"><a href="#" class="page-link">5</a></li>
+									<li class="page-item"><a href="#" class="page-link">Next</a></li>
+								</ul>
+							</div>
 						</div>
+					</div>
 
-					</form>
+
+
+
 
 
 				</div>
@@ -265,56 +500,7 @@
 		<script src="http://localhost:8080/js/jquery.min.js"></script>
 		<script src="http://localhost:8080/js/bootstrap.bundle.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-		<script>
-			$(document).ready(function() {
-				$("#divisi").change(function() {
-					if ($(this).val() == "Prodi") {
-						$('#prodiDiv').show();
-						$('#prodi').attr('required', '');
-						$('#prodi').attr('data-error', 'This field is required.');
-						$('#unitDiv').hide();
-						$('#unit').removeAttr('required');
-						$('#unit').removeAttr('data-error');
-						$('#kriteriaProdiDiv').show();
-						$('#kriteriaProdi').attr('required', '');
-						$('#kriteriaProdi').attr('data-error', 'This field is required.');
-						$('#kriteriaUnitDiv').hide();
-						$('#kriteriaUnit').removeAttr('required');
-						$('#kriteriaUnit').removeAttr('data-error');
 
-					} else if ($(this).val() == "Unit") {
-						$('#prodiDiv').hide();
-						$('#prodi').removeAttr('required');
-						$('#prodi').removeAttr('data-error');
-						$('#unitDiv').show();
-						$('#unit').attr('required', '');
-						$('#unit').attr('data-error', 'This field is required.');
-						$('#kriteriaProdiDiv').hide();
-						$('#kriteriaProdi').removeAttr('required');
-						$('#kriteriaProdi').removeAttr('data-error');
-						$('#kriteriaUnitDiv').show();
-						$('#kriteriaUnit').attr('required', '');
-						$('#kriteriaUnit').attr('data-error', 'This field is required.');
-					} else {
-						$('#prodiDiv').hide();
-						$('#prodi').removeAttr('required');
-						$('#prodi').removeAttr('data-error');
-						$('#unitDiv').hide();
-						$('#unit').removeAttr('required');
-						$('#unit').removeAttr('data-error');
-						$('#kriteriaUnitDiv').hide();
-						$('#kriteriaUnit').removeAttr('required');
-						$('#kriteriaUnit').removeAttr('data-error');
-						$('#kriteriaProdiDiv').hide();
-						$('#kriteriaProdi').removeAttr('required');
-						$('#kriteriaProdi').removeAttr('data-error');
-
-					}
-
-				});
-				$("#divisi").trigger("change");
-			});
-		</script>
 
 </body>
 
