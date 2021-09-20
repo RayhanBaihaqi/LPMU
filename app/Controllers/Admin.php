@@ -38,6 +38,7 @@ class Admin extends BaseController
             'standar' => $this->request->getPost('standar'),
             'pic' => $this->request->getPost('pic'),
             'nama_pic' => $this->request->getPost('nama_pic'),
+            'rencana_realisasi' => $this->request->getPost('rencana_realisasi'),
             'ketercapaian' => $this->request->getPost('ketercapaian'),
             'skor' => $this->request->getPost('skor'),
             'file' => $this->request->getPost('file'),

@@ -660,11 +660,11 @@
                         </div>
                         <div class="form-group" id="rencana_realisasiDiv">
                             <label for="rencana_realisasi">Rencana Realisasi</label>
-                            <textarea class="form-control" id="rencana_realisasi" rows="3" name="rencana_realisasi" placeholder="Masukkan Rencana Realisasi" required value="<?= $detail_kpi['rencana_realisasi']; ?>"></textarea>
+                            <textarea class="form-control" id="rencana_realisasi" rows="3" name="rencana_realisasi" placeholder="Masukkan Rencana Realisasi"><?php echo $detail_kpi['rencana_realisasi'] ?></textarea>
                         </div>
                         <div class="form-group" id="ketercapaianDiv">
                             <label for="ketercapaian">Ketercapaian</label>
-                            <textarea class="form-control" id="ketercapaian" rows="3" name="ketercapaian" placeholder="Masukkan Ketercapaian Standar" required value="<?= $detail_kpi['ketercapaian']; ?>"></textarea>
+                            <textarea class="form-control" id="ketercapaian" rows="3" name="ketercapaian" placeholder="Masukkan Ketercapaian Standar"><?php echo $detail_kpi['ketercapaian'] ?></textarea>
                         </div>
                         <div class="form-group" id="skorDiv">
                             <label for="exampleFormControlTextarea1">Skor</label>
