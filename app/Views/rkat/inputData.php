@@ -32,9 +32,6 @@
 </head>
 
 <body onload="startTime()">
-	<div class="pre-loader">
-		<div class="spinner-border text-info"></div>
-	</div>
 	<div class="wrapper">
 		<!-- Top Bar Start -->
 		<div class="top-bar">
@@ -189,7 +186,7 @@
 							</div>
 							<div class="col-sm-2">
 								<label for="keterangan" class="mr-sm-2">Keterangan Kegiatan</label>
-								<input type="text" class="form-control mb-2 mr-sm-2" id="keterangan<?= $a ?>" placeholder="Masukan Keterangan Kegiatan" name="keterangan[]" required>
+								<textarea class="form-control mb-2 mr-sm-2" rows="5" id="keterangan<?= $a ?>" placeholder="Masukan Keterangan Kegiatan" name="keterangan[]" required></textarea>
 							</div>
 						</div>
 					</div>

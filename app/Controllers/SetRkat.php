@@ -127,7 +127,15 @@ class SetRkat extends BaseController
 
         return redirect()->to(base_url('setrkat/index'));
     }
+    public function updateRkat() {
+        $model = new SetRkatModel();
+        $username = session('username');
+        $data = [
+            'set_rkat' => $this->SetRkatModel->tampilRKAT($username),
+        ]; 
 
+        return view('rkat/ListData', $data);
+    }
     // admin
     public function createbyadmin() {
         $model = new SetRkatModel();

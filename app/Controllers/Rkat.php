@@ -73,6 +73,7 @@ class Rkat extends BaseController
             'jenis_kpi' => $this->request->getVar('jenis_kpi'),
             'jenis_anggaran' => $this->request->getVar('jenis_anggaran'),
             'butir' => $this->request->getVar('butir'),
+            'id_set' => $this->request->getVar('id_set'),
         ];
         $save = $model->update($id,$data);
 
@@ -125,5 +126,35 @@ class Rkat extends BaseController
             }
 		return redirect()->to(base_url('setrkat/createbyuser'))->with('status', 'Data Berhasil ditambah');
 	}
+    public function editbyuser($id = null) {
+        $model = new DetailRkatModel();
+        $data['detail_rkat'] = $model->where('id',$id)->first();
+
+        return view('rkat/EditDataRkat',$data);
+    }
+    public function updatebyuser() {
+        $model = new DetailRkatModel();
+        $id = $this->request->getVar('id');
+        $data = [
+			'nama_kegiatan' => $this->request->getVar('nama_kegiatan'),
+            'semester' => $this->request->getVar('semester'),
+            'anggaran' => $this->request->getVar('anggaran'),
+            'keterangan' => $this->request->getVar('keterangan'),
+            'jenis_kpi' => $this->request->getVar('jenis_kpi'),
+            'jenis_anggaran' => $this->request->getVar('jenis_anggaran'),
+            'butir' => $this->request->getVar('butir'),
+            'id_set' => $this->request->getVar('id_set'),
+
+        ];
+        $save = $model->update($id,$data);
+
+        return redirect()->to(base_url('rkat/indexbyuser'));
+    }
+    public function deletebyuser($id = null) {
+        $model = new DetailRkatModel();
+        $data['detail_rkat'] = $model->where('id',$id)->delete();
+
+        return redirect()->to(base_url('rkat/indexbyuser'));
+    }
 
 }
