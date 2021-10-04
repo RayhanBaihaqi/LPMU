@@ -472,10 +472,12 @@
                             <thead>
                                 <tr>
                                     <th>No.</th>
+                                    <th>Tahun</th>
                                     <th>Kriteria</th>
                                     <th>Standar</th>
                                     <th>PIC</th>
                                     <th>Nama PIC</th>
+                                    <th>Rencana Realisasi</th>
                                     <th>Ketercapaian</th>
                                     <th>Skor</th>
                                     <th>Bukti Pelaksanaan</th>
@@ -486,15 +488,18 @@
                                 <?php foreach ($detail_pendidikan as $row) : ?>
                                     <tr>
                                         <td scope="row"><?= $i++; ?></td>
+                                        <td><?= $row['tahun_akademik'] ?></td>
                                         <td><?= $row['kriteria'] ?></td>
                                         <td><?= $row['standar'] ?></td>
                                         <td><?= $row['pic'] ?></td>
                                         <td><?= $row['nama_pic'] ?></td>
+                                        <td><?= $row['rencana_realisasi'] ?></td>
                                         <td><?= $row['ketercapaian'] ?></td>
                                         <td><?= $row['skor'] ?></td>
                                         <td><?= $row['file'] ?></td>
                                     </tr>
                                 <?php endforeach; ?>
+                            </tbody>
                         </table>
                         <div class="clearfix">
                             <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>

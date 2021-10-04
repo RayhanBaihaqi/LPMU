@@ -152,7 +152,59 @@
                         <option value="2021/2022">2021/2022</option>
                     </select>
                 </div>
+
                 <div class="form-group">
+                    <label for="prodi_unit">Bagian</label>
+                    <select class="form-control" id="prodi_unit" name="prodi_unit">
+                        <option value="" disabled selected>Pilih prodi/unit</option>
+                        <option value="Prodi">Prodi</option>
+                        <option value="Unit">Unit</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="nama_prodiDiv">
+                    <label for="nama_prodi_unit">Nama prodi</label>
+                    <select class="form-control" id="nama_prodi" name="nama_prodi_unit">
+                        <option value="" disabled selected>Pilih prodi</option>
+                        <option value="Akuntansi">Akuntansi</option>
+                        <option value="Manajemen">Manajemen</option>
+                        <option value="Psikologi">Psikologi</option>
+                        <option value="Ilmu Komunikasi">Ilmu Komunikasi</option>
+                        <option value="Desain Produk">Desain Produk</option>
+                        <option value="Desain Komunikasi Visual">Desain Komunikasi Visual</option>
+                        <option value="Informatika">Informatika</option>
+                        <option value="Sistem Informasi">Sistem Informasi</option>
+                        <option value="Teknik Sipil">Teknik Sipil</option>
+                        <option value="Arsitektur">Arsitektur</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="nama_unitDiv">
+                    <label for="nama_prodi_unit">Nama unit</label>
+                    <select class="form-control" id="nama_unit" name="nama_prodi_unit">
+                        <option value="" disabled selected>Pilih unit</option>
+                        <option value="Rektorat">Rektorat</option>
+                        <option value="FTD">Fakultas Teknologi dan Desain</option>
+                        <option value="FHB">Fakultas Humaniora dan Bisnis</option>
+                        <option value="Center For Urban Studies">Center For Urban Studies</option>
+                        <option value="JCAL">Jaya Center Advanced Learning</option>
+                        <option value="JSDP">Jaya Softskill Development Program</option>
+                        <option value="JLP">Jaya Launch Pad</option>
+                        <option value="KOTA">KOTA</option>
+                        <option value="Sustainable Development">Sustainable Development</option>
+                        <option value="Lembaga Penelitian dan Pengabdian Masyarakat">Lembaga Penelitian dan Pengabdian Masyarakat</option>
+                        <option value="LPMU">Lembaga Penjamin Mutu Universitas</option>
+                        <option value="Keuangan">Keuangan</option>
+                        <option value="Biro PSDM">Biro Pengembangan Sumber Daya Manusia</option>
+                        <option value="Publikasi Humas dan Admisi">Publikasi Humas dan Admisi</option>
+                        <option value="BKAL">Biro Kemahasiswaan dan Alumni</option>
+                        <option value="BP">Biro Pendidikan</option>
+                        <option value="Perpustakaan">Perpustakaan</option>
+                        <option value="Sarana dan Prasarana">Sarana dan Prasarana</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="kriteriaDiv">
                     <label for="kriteria">Kriteria</label>
                     <select class="form-control" id="kriteria" name="kriteria">
                         <option value="Pilih Kriteria" disabled selected>Pilih Kriteria</option>
@@ -207,6 +259,7 @@
 
                     </select>
                 </div>
+
                 <div class="form-group" id="standar3Div">
                     <label for="standar3">Indikator Standar</label>
                     <select class="form-control" id="standar3" name="standar">
@@ -326,29 +379,52 @@
                     <label for="standar9">Indikator Standar</label>
                     <select class="form-control" id="standar9" name="standar">
                         <option value="" disabled selected>Pilih Indikator standar Sumber Daya Manusia</option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
+                        <option value="Lulusan yang bekerja, mendapat Gaji >1.2 kali lipat upah minimum Kota/Kabupaten">Lulusan yang bekerja, mendapat Gaji >1.2 kali lipat upah minimum Kota/Kabupaten</option>
+                        <option value="Persentase lulusan yang melanjutkan studi < 12 bulan setelah tanggal ijazah">Persentase lulusan yang melanjutkan studi < 12 bulan setelah tanggal ijazah</option>
+                        <option value="Persentase mahasiswa yang mengikuti program Merdeka Belajar di Luar UPJ">Persentase mahasiswa yang mengikuti program Merdeka Belajar di Luar UPJ</option>
                         </option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
+                        <option value="Jumlah dosen berkegiatan tridarma di perguruan tinggi dalam negeri">Jumlah dosen berkegiatan tridarma di perguruan tinggi dalam negeri</option>
+                        <option value="Jumlah Dosen berkegiatan tridarma di perguruan tinggi yang termasuk dalam daftar QS100 berdasarkan ilmu">Jumlah Dosen berkegiatan tridarma di perguruan tinggi yang termasuk dalam daftar QS100 berdasarkan ilmu</option>
+                        <option value="Jumlah Dosen yang mempunyai Perjanjian Kerja PKWT, PKWTT, PKPW, atau bekerja sebagai konsultan atau tenaga ahli independen ">Jumlah Dosen yang mempunyai Perjanjian Kerja PKWT, PKWTT, PKPW, atau bekerja sebagai konsultan atau tenaga ahli independen </option>
+                        <option value="Jumlah Dosen yang membimbing mahasiswa meraih prestasi minimal tingkat nasional">Jumlah Dosen yang membimbing mahasiswa meraih prestasi minimal tingkat nasional</option>
+                        <option value="Jumlah dosen praktisi S3 yang memiliki sertifikasi dari LSP yang diakui Kementerian Pendidikan dan Kebudayaan ">Jumlah dosen praktisi S3 yang memiliki sertifikasi dari LSP yang diakui Kementerian Pendidikan dan Kebudayaan </option>
+                        <option value="Persentase mata kuliah program sarjana yang mencantumkan bentuk pembelajaran Student Centered Learning jenis PBL dalam RPS">Persentase mata kuliah program sarjana yang mencantumkan bentuk pembelajaran Student Centered Learning jenis PBL dalam RPS</option>
+
                     </select>
                 </div>
 
 
-                <div class="form-group" id="picDiv">
-                    <label for="pic">PIC</label>
-                    <input type="text" class="form-control" id="pic" name="pic" placeholder="Masukkan PIC">
+                <div class="form-group" id="pic_prodiDiv">
+                    <label for="pic_prodi">PIC</label>
+                    <select class="form-control" id="pic" name="pic">
+                        <option value="Pilih Kriteria" disabled selected>Pilih Jabatan PIC</option>
+                        <option value="Kaprodi">Ketua Prodi</option>
+                        <option value="Sekprodi">Sekretaris Prodi</option>
+                        <option value="Koor Keilmuan">Koordinator Keilmuan</option>
+                        <option value="Koor Kemahasiswaan">Koordinator Kemahasiswaan</option>
+                        <option value="Koor TA">Koordinator TA</option>
+                        <option value="Koor KP">Koordinator KP</option>
+                    </select>
                 </div>
+
+                <div class="form-group" id="pic_unitDiv">
+                    <label for="pic_unit">PIC</label>
+                    <select class="form-control" id="pic" name="pic">
+                        <option value="Pilih Kriteria" disabled selected>Pilih Jabatan PIC</option>
+                        <option value="Kabag">Kepala Bagian</option>
+                        <option value="Kasubbag">Kepala Sub Bagian</option>
+                        <option value="Staff">Staff</option>
+
+                    </select>
+                </div>
+
                 <div class="form-group" id="nama_picDiv">
                     <label for="nama_pic">Nama PIC</label>
                     <input type="text" class="form-control" id="nama_pic" name="nama_pic" placeholder="Masukkan Nama PIC">
+                </div>
+                <div class="form-group" id="rencana_realisasiDiv">
+                    <label for="rencana_realisasi">Rencana Realisasi</label>
+                    <textarea class="form-control" id="rencana_realisasi" rows="3" name="rencana_realisasi" placeholder="Masukkan Rencana Realisasi"></textarea>
                 </div>
                 <div class="form-group" id="ketercapaianDiv">
                     <label for="ketercapaian">Ketercapaian</label>
@@ -391,6 +467,195 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
     $(document).ready(function() {
+        $("#prodi_unit").change(function() {
+            if ($(this).val() == "Prodi") {
+                $('#nama_prodiDiv').show();
+                $('#nama_prodi').attr('required', '');
+                $('#nama_prodi').attr('data-error', 'This field is required.');
+                $('#nama_unitDiv').hide();
+                $('#nama_unit').removeAttr('required');
+                $('#nama_unit').removeAttr('data-error');
+                $('#kriteriaDiv').show();
+                $('#kriteria').attr('required', '');
+                $('#kriteria').attr('data-error', 'This field is required.');
+                $('#pic_prodiDiv').show();
+                $('#pic_prodi').attr('required', '');
+                $('#pic_prodi').attr('data-error', 'This field is required.');
+                $('#pic_unitDiv').hide();
+                $('#pic_unit').removeAttr('required');
+                $('#pic_unit').removeAttr('data-error');
+                $('#standar1Div').hide();
+                $('#standar1').removeAttr('required');
+                $('#standar1').removeAttr('data-error');
+                $('#standar2Div').hide();
+                $('#standar2').removeAttr('required');
+                $('#standar2').removeAttr('data-error');
+                $('#standar3Div').hide();
+                $('#standar3').removeAttr('required');
+                $('#standar3').removeAttr('data-error');
+                $('#standar4Div').hide();
+                $('#standar4').removeAttr('required');
+                $('#standar4').removeAttr('data-error');
+                $('#standar5Div').hide();
+                $('#standar5').removeAttr('required');
+                $('#standar5').removeAttr('data-error');
+                $('#standar6Div').hide();
+                $('#standar6').removeAttr('required');
+                $('#standar6').removeAttr('data-error');
+                $('#standar7Div').hide();
+                $('#standar7').removeAttr('required');
+                $('#standar7').removeAttr('data-error');
+                $('#standar8Div').hide();
+                $('#standar8').removeAttr('required');
+                $('#standar8').removeAttr('data-error');
+                $('#standar9Div').hide();
+                $('#standar9').removeAttr('required');
+                $('#standar9').removeAttr('data-error');
+                $('#nama_picDiv').hide();
+                $('#nama_pic').removeAttr('required');
+                $('#nama_pic').removeAttr('data-error');
+                $('#rencana_realisasiDiv').hide();
+                $('#rencana_realisasi').removeAttr('required');
+                $('#rencana_realisasi').removeAttr('data-error');
+                $('#ketercapaianDiv').hide();
+                $('#ketercapaian').removeAttr('required');
+                $('#ketercapaian').removeAttr('data-error');
+                $('#skorDiv').hide();
+                $('#skor').removeAttr('required');
+                $('#skor').removeAttr('data-error');
+                $('#buktiDiv').hide();
+                $('#bukti').removeAttr('required');
+                $('#bukti').removeAttr('data-error');
+                $('#standarDiv').hide();
+                $('#standar').removeAttr('required');
+                $('#standar').removeAttr('data-error');
+            } else if ($(this).val() == "Unit") {
+                $('#nama_prodiDiv').hide();
+                $('#nama_prodi').removeAttr('required');
+                $('#nama_prodi').removeAttr('data-error');
+                $('#nama_unitDiv').show();
+                $('#nama_unit').attr('required', '');
+                $('#nama_unit').attr('data-error', 'This field is required.');
+                $('#kriteriaDiv').show();
+                $('#kriteria').attr('required', '');
+                $('#kriteria').attr('data-error', 'This field is required.');
+                $('#pic_prodiDiv').hide();
+                $('#pic_prodi').removeAttr('required');
+                $('#pic_prodi').removeAttr('data-error');
+                $('#pic_unitDiv').show();
+                $('#pic_unit').attr('required', '');
+                $('#pic_unit').attr('data-error', 'This field is required.');
+                $('#standar1Div').hide();
+                $('#standar1').removeAttr('required');
+                $('#standar1').removeAttr('data-error');
+                $('#standar2Div').hide();
+                $('#standar2').removeAttr('required');
+                $('#standar2').removeAttr('data-error');
+                $('#standar3Div').hide();
+                $('#standar3').removeAttr('required');
+                $('#standar3').removeAttr('data-error');
+                $('#standar4Div').hide();
+                $('#standar4').removeAttr('required');
+                $('#standar4').removeAttr('data-error');
+                $('#standar5Div').hide();
+                $('#standar5').removeAttr('required');
+                $('#standar5').removeAttr('data-error');
+                $('#standar6Div').hide();
+                $('#standar6').removeAttr('required');
+                $('#standar6').removeAttr('data-error');
+                $('#standar7Div').hide();
+                $('#standar7').removeAttr('required');
+                $('#standar7').removeAttr('data-error');
+                $('#standar8Div').hide();
+                $('#standar8').removeAttr('required');
+                $('#standar8').removeAttr('data-error');
+                $('#standar9Div').hide();
+                $('#standar9').removeAttr('required');
+                $('#standar9').removeAttr('data-error');
+                $('#nama_picDiv').hide();
+                $('#nama_pic').removeAttr('required');
+                $('#nama_pic').removeAttr('data-error');
+                $('#rencana_realisasiDiv').hide();
+                $('#rencana_realisasi').removeAttr('required');
+                $('#rencana_realisasi').removeAttr('data-error');
+                $('#ketercapaianDiv').hide();
+                $('#ketercapaian').removeAttr('required');
+                $('#ketercapaian').removeAttr('data-error');
+                $('#skorDiv').hide();
+                $('#skor').removeAttr('required');
+                $('#skor').removeAttr('data-error');
+                $('#buktiDiv').hide();
+                $('#bukti').removeAttr('required');
+                $('#bukti').removeAttr('data-error');
+                $('#standarDiv').hide();
+                $('#standar').removeAttr('required');
+                $('#standar').removeAttr('data-error');
+            } else {
+                $('#nama_prodiDiv').hide();
+                $('#nama_prodi').removeAttr('required');
+                $('#nama_prodi').removeAttr('data-error');
+                $('#nama_unitDiv').hide();
+                $('#nama_unit').removeAttr('required');
+                $('#nama_unit').removeAttr('data-error');
+                $('#kriteriaDiv').hide();
+                $('#kriteria').removeAttr('required');
+                $('#kriteria').removeAttr('data-error');
+                $('#pic_prodiDiv').hide();
+                $('#pic_prodi').removeAttr('required');
+                $('#pic_prodi').removeAttr('data-error');
+                $('#pic_unitDiv').hide();
+                $('#pic_unit').removeAttr('required');
+                $('#pic_unit').removeAttr('data-error');
+                $('#standar1Div').hide();
+                $('#standar1').removeAttr('required');
+                $('#standar1').removeAttr('data-error');
+                $('#standar2Div').hide();
+                $('#standar2').removeAttr('required');
+                $('#standar2').removeAttr('data-error');
+                $('#standar3Div').hide();
+                $('#standar3').removeAttr('required');
+                $('#standar3').removeAttr('data-error');
+                $('#standar4Div').hide();
+                $('#standar4').removeAttr('required');
+                $('#standar4').removeAttr('data-error');
+                $('#standar5Div').hide();
+                $('#standar5').removeAttr('required');
+                $('#standar5').removeAttr('data-error');
+                $('#standar6Div').hide();
+                $('#standar6').removeAttr('required');
+                $('#standar6').removeAttr('data-error');
+                $('#standar7Div').hide();
+                $('#standar7').removeAttr('required');
+                $('#standar7').removeAttr('data-error');
+                $('#standar8Div').hide();
+                $('#standar8').removeAttr('required');
+                $('#standar8').removeAttr('data-error');
+                $('#standar9Div').hide();
+                $('#standar9').removeAttr('required');
+                $('#standar9').removeAttr('data-error');
+                $('#nama_picDiv').hide();
+                $('#nama_pic').removeAttr('required');
+                $('#nama_pic').removeAttr('data-error');
+                $('#rencana_realisasiDiv').hide();
+                $('#rencana_realisasi').removeAttr('required');
+                $('#rencana_realisasi').removeAttr('data-error');
+                $('#ketercapaianDiv').hide();
+                $('#ketercapaian').removeAttr('required');
+                $('#ketercapaian').removeAttr('data-error');
+                $('#skorDiv').hide();
+                $('#skor').removeAttr('required');
+                $('#skor').removeAttr('data-error');
+                $('#buktiDiv').hide();
+                $('#bukti').removeAttr('required');
+                $('#bukti').removeAttr('data-error');
+                $('#standarDiv').hide();
+                $('#standar').removeAttr('required');
+                $('#standar').removeAttr('data-error');
+            }
+
+        });
+        $("#prodi_unit").trigger("change");
+
         $("#kriteria").change(function() {
             if ($(this).val() == "Visi Misi Tujuan dan Strategi") {
                 $('#standar1Div').show();
@@ -420,12 +685,12 @@
                 $('#standar9Div').hide();
                 $('#standar9').removeAttr('required');
                 $('#standar9').removeAttr('data-error');
-                $('#picDiv').show();
-                $('#pic').attr('required', '');
-                $('#pic').attr('data-error', 'This field is required.');
                 $('#nama_picDiv').show();
                 $('#nama_pic').attr('required', '');
                 $('#nama_pic').attr('data-error', 'This field is required.');
+                $('#rencana_realisasiDiv').show();
+                $('#rencana_realisasi').attr('required', '');
+                $('#rencana_realisasi').attr('data-error', 'This field is required.');
                 $('#ketercapaianDiv').show();
                 $('#ketercapaian').attr('required', '');
                 $('#ketercapaian').attr('data-error', 'This field is required.');
@@ -466,12 +731,12 @@
                 $('#standar9Div').hide();
                 $('#standar9').removeAttr('required');
                 $('#standar9').removeAttr('data-error');
-                $('#picDiv').show();
-                $('#pic').attr('required', '');
-                $('#pic').attr('data-error', 'This field is required.');
                 $('#nama_picDiv').show();
                 $('#nama_pic').attr('required', '');
                 $('#nama_pic').attr('data-error', 'This field is required.');
+                $('#rencana_realisasiDiv').show();
+                $('#rencana_realisasi').attr('required', '');
+                $('#rencana_realisasi').attr('data-error', 'This field is required.');
                 $('#ketercapaianDiv').show();
                 $('#ketercapaian').attr('required', '');
                 $('#ketercapaian').attr('data-error', 'This field is required.');
@@ -490,7 +755,7 @@
                 $('#standar1').removeAttr('data-error');
                 $('#standar2Div').hide();
                 $('#standar2').removeAttr('required');
-                $('#standar2').removeAttr('data-error')
+                $('#standar2').removeAttr('data-error');
                 $('#standar3Div').show();
                 $('#standar3').attr('required', '');
                 $('#standar3').attr('data-error', 'This field is required.');
@@ -512,12 +777,12 @@
                 $('#standar9Div').hide();
                 $('#standar9').removeAttr('required');
                 $('#standar9').removeAttr('data-error');
-                $('#picDiv').show();
-                $('#pic').attr('required', '');
-                $('#pic').attr('data-error', 'This field is required.');
                 $('#nama_picDiv').show();
                 $('#nama_pic').attr('required', '');
                 $('#nama_pic').attr('data-error', 'This field is required.');
+                $('#rencana_realisasiDiv').show();
+                $('#rencana_realisasi').attr('required', '');
+                $('#rencana_realisasi').attr('data-error', 'This field is required.');
                 $('#ketercapaianDiv').show();
                 $('#ketercapaian').attr('required', '');
                 $('#ketercapaian').attr('data-error', 'This field is required.');
@@ -558,12 +823,12 @@
                 $('#standar9Div').hide();
                 $('#standar9').removeAttr('required');
                 $('#standar9').removeAttr('data-error');
-                $('#picDiv').show();
-                $('#pic').attr('required', '');
-                $('#pic').attr('data-error', 'This field is required.');
                 $('#nama_picDiv').show();
                 $('#nama_pic').attr('required', '');
                 $('#nama_pic').attr('data-error', 'This field is required.');
+                $('#rencana_realisasiDiv').show();
+                $('#rencana_realisasi').attr('required', '');
+                $('#rencana_realisasi').attr('data-error', 'This field is required.');
                 $('#ketercapaianDiv').show();
                 $('#ketercapaian').attr('required', '');
                 $('#ketercapaian').attr('data-error', 'This field is required.');
@@ -576,7 +841,6 @@
                 $('#standarDiv').hide();
                 $('#standar').removeAttr('required');
                 $('#standar').removeAttr('data-error');
-
             } else if ($(this).val() == "Keuangan, Sarana dan Prasarana") {
                 $('#standar1Div').hide();
                 $('#standar1').removeAttr('required');
@@ -605,12 +869,12 @@
                 $('#standar9Div').hide();
                 $('#standar9').removeAttr('required');
                 $('#standar9').removeAttr('data-error');
-                $('#picDiv').show();
-                $('#pic').attr('required', '');
-                $('#pic').attr('data-error', 'This field is required.');
                 $('#nama_picDiv').show();
                 $('#nama_pic').attr('required', '');
                 $('#nama_pic').attr('data-error', 'This field is required.');
+                $('#rencana_realisasiDiv').show();
+                $('#rencana_realisasi').attr('required', '');
+                $('#rencana_realisasi').attr('data-error', 'This field is required.');
                 $('#ketercapaianDiv').show();
                 $('#ketercapaian').attr('required', '');
                 $('#ketercapaian').attr('data-error', 'This field is required.');
@@ -623,7 +887,6 @@
                 $('#standarDiv').hide();
                 $('#standar').removeAttr('required');
                 $('#standar').removeAttr('data-error');
-
             } else if ($(this).val() == "Pendidikan") {
                 $('#standar1Div').hide();
                 $('#standar1').removeAttr('required');
@@ -652,12 +915,12 @@
                 $('#standar9Div').hide();
                 $('#standar9').removeAttr('required');
                 $('#standar9').removeAttr('data-error');
-                $('#picDiv').show();
-                $('#pic').attr('required', '');
-                $('#pic').attr('data-error', 'This field is required.');
                 $('#nama_picDiv').show();
                 $('#nama_pic').attr('required', '');
                 $('#nama_pic').attr('data-error', 'This field is required.');
+                $('#rencana_realisasiDiv').show();
+                $('#rencana_realisasi').attr('required', '');
+                $('#rencana_realisasi').attr('data-error', 'This field is required.');
                 $('#ketercapaianDiv').show();
                 $('#ketercapaian').attr('required', '');
                 $('#ketercapaian').attr('data-error', 'This field is required.');
@@ -670,7 +933,6 @@
                 $('#standarDiv').hide();
                 $('#standar').removeAttr('required');
                 $('#standar').removeAttr('data-error');
-
             } else if ($(this).val() == "Penelitian") {
                 $('#standar1Div').hide();
                 $('#standar1').removeAttr('required');
@@ -699,12 +961,12 @@
                 $('#standar9Div').hide();
                 $('#standar9').removeAttr('required');
                 $('#standar9').removeAttr('data-error');
-                $('#picDiv').show();
-                $('#pic').attr('required', '');
-                $('#pic').attr('data-error', 'This field is required.');
                 $('#nama_picDiv').show();
                 $('#nama_pic').attr('required', '');
                 $('#nama_pic').attr('data-error', 'This field is required.');
+                $('#rencana_realisasiDiv').show();
+                $('#rencana_realisasi').attr('required', '');
+                $('#rencana_realisasi').attr('data-error', 'This field is required.');
                 $('#ketercapaianDiv').show();
                 $('#ketercapaian').attr('required', '');
                 $('#ketercapaian').attr('data-error', 'This field is required.');
@@ -717,7 +979,6 @@
                 $('#standarDiv').hide();
                 $('#standar').removeAttr('required');
                 $('#standar').removeAttr('data-error');
-
             } else if ($(this).val() == "Pengabdian kepada Masyarakat (PkM)") {
                 $('#standar1Div').hide();
                 $('#standar1').removeAttr('required');
@@ -746,12 +1007,12 @@
                 $('#standar9Div').hide();
                 $('#standar9').removeAttr('required');
                 $('#standar9').removeAttr('data-error');
-                $('#picDiv').show();
-                $('#pic').attr('required', '');
-                $('#pic').attr('data-error', 'This field is required.');
                 $('#nama_picDiv').show();
                 $('#nama_pic').attr('required', '');
                 $('#nama_pic').attr('data-error', 'This field is required.');
+                $('#rencana_realisasiDiv').show();
+                $('#rencana_realisasi').attr('required', '');
+                $('#rencana_realisasi').attr('data-error', 'This field is required.');
                 $('#ketercapaianDiv').show();
                 $('#ketercapaian').attr('required', '');
                 $('#ketercapaian').attr('data-error', 'This field is required.');
@@ -764,8 +1025,7 @@
                 $('#standarDiv').hide();
                 $('#standar').removeAttr('required');
                 $('#standar').removeAttr('data-error');
-
-            } else {
+            } else if ($(this).val() == "Luaran dan Capaian Tridharma") {
                 $('#standar1Div').hide();
                 $('#standar1').removeAttr('required');
                 $('#standar1').removeAttr('data-error');
@@ -790,30 +1050,33 @@
                 $('#standar8Div').hide();
                 $('#standar8').removeAttr('required');
                 $('#standar8').removeAttr('data-error');
-                $('#standar9Div').hide();
-                $('#standar9').removeAttr('required');
-                $('#standar9').removeAttr('data-error');
-                $('#picDiv').hide();
-                $('#pic').removeAttr('required');
-                $('#pic').removeAttr('data-error');
-                $('#nama_picDiv').hide();
-                $('#nama_pic').removeAttr('required');
-                $('#nama_pic').removeAttr('data-error');
-                $('#ketercapaianDiv').hide();
-                $('#ketercapaian').removeAttr('required');
-                $('#ketercapaian').removeAttr('data-error');
-                $('#skorDiv').hide();
-                $('#skor').removeAttr('required');
-                $('#skor').removeAttr('data-error');
-                $('#buktiDiv').hide();
-                $('#bukti').removeAttr('required');
-                $('#bukti').removeAttr('data-error');
+                $('#standar9Div').show();
+                $('#standar9').attr('required', '');
+                $('#standar9').attr('data-error', 'This field is required.');
+                $('#nama_picDiv').show();
+                $('#nama_pic').attr('required', '');
+                $('#nama_pic').attr('data-error', 'This field is required.');
+                $('#rencana_realisasiDiv').show();
+                $('#rencana_realisasi').attr('required', '');
+                $('#rencana_realisasi').attr('data-error', 'This field is required.');
+                $('#ketercapaianDiv').show();
+                $('#ketercapaian').attr('required', '');
+                $('#ketercapaian').attr('data-error', 'This field is required.');
+                $('#skorDiv').show();
+                $('#skor').attr('required', '');
+                $('#skor').attr('data-error', 'This field is required.');
+                $('#buktiDiv').show();
+                $('#bukti').attr('required', '');
+                $('#bukti').attr('data-error', 'This field is required.');
                 $('#standarDiv').hide();
                 $('#standar').removeAttr('required');
                 $('#standar').removeAttr('data-error');
+            } else {
+
             }
         });
-        $("#kriteria").trigger("change");
+        $("kriteria").trigger("change");
+
     });
 </script>
 
