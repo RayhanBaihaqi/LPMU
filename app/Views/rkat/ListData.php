@@ -81,7 +81,7 @@
 		</div>
 	</div>
 	<!-- Top Bar End -->
-	<div class="container">
+	<div class="container-fluid">
 		<br>
 		<!-- Nav Bar Start -->
 		<div class="nav-bar">
@@ -133,7 +133,7 @@
 						</h4>
                   <div class="table-responsive">
                   <table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
+                  	<thead>
 										<tr>
 											<th>No</th>
 											<th>Nama Kegiatan</th>

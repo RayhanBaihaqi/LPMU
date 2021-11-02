@@ -80,7 +80,7 @@
 		</div>
 	</div>
 	<!-- Top Bar End -->
-	<div class="container">
+	<div class="container-fluid">
 		<br>
 		<!-- Nav Bar Start -->
 		<div class="nav-bar">
@@ -186,7 +186,7 @@
 							</div>
 							<div class="col-sm-2">
 								<label for="keterangan" class="mr-sm-2">Keterangan Kegiatan</label>
-								<textarea class="form-control mb-2 mr-sm-2" rows="5" id="keterangan<?= $a ?>" placeholder="Masukan Keterangan Kegiatan" name="keterangan[]" required></textarea>
+								<input type="text" class="form-control mb-2 mr-sm-2" rows="5" id="keterangan<?= $a ?>" placeholder="Masukan Keterangan Kegiatan" name="keterangan[]" required></textarea>
 							</div>
 						</div>
 					</div>
