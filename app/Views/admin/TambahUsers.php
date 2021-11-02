@@ -52,32 +52,34 @@
 
 			<!-- Heading -->
 			<li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>RKAT</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
+				<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+					<i class="fas fa-fw fa-cog"></i>
+					<span>RKAT</span>
+				</a>
+				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+					<div class="bg-white py-2 collapse-inner rounded">
 						<a class="collapse-item" href="<?= base_url('rkat/createbyadmin') ?>">Tambah RKAT</a>
-                        <a class="collapse-item" href="<?= base_url('rkat/indexbyadmin') ?>">Lihat Data</a>
+						<a class="collapse-item" href="<?= base_url('rkat/indexbyadmin') ?>">Lihat Data</a>
 						<a class="collapse-item" href="<?= base_url('setrkat/create') ?>">Atur Semster dan Pagu</a>
 						<a class="collapse-item" href="<?= base_url('setrkat/index') ?>">Lihat Data Set Rkat</a>
-                    </div>
-                </div>
-            </li>
+					</div>
+				</div>
+			</li>
 
 			<!-- Divider -->
 			<hr class="sidebar-divider">
 
 			<!-- Heading -->
-			<div class="sidebar-heading">
-				KPI
-			</div>
 			<li class="nav-item">
-				<a class="nav-link " href="/admin/adminkpi">
+				<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 					<i class="fas fa-fw fa-tachometer-alt"></i>
-					<span>Dashboard</span></a>
+					<span>KPI</span></a>
+				<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
+					<div class="bg-white py-2 collapse-inner rounded">
+						<a class="collapse-item" href="<?= base_url('/admin/adminkpi') ?>">Lihat Rencana</a>
+						<a class="collapse-item" href="<?= base_url('#') ?>">Lihat Capaian</a>
+					</div>
+				</div>
 			</li>
 
 			<!-- Heading -->
@@ -146,8 +148,8 @@
 					<!-- Page Heading -->
 					<h1 class="h3 mb-2 text-gray-800">Tambah User</h1>
 					<?php if (session()->getFlashdata('success')) : ?>
-							<div class="alert alert-danger"><?= session()->getFlashdata('status') ?></div>
-						<?php endif ?>
+						<div class="alert alert-danger"><?= session()->getFlashdata('status') ?></div>
+					<?php endif ?>
 					<!-- DataTales Example -->
 					<div class="card shadow mb-4">
 						<div class="card-body">

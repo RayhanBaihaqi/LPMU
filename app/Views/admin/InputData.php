@@ -52,32 +52,34 @@
 
 			<!-- Heading -->
 			<li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>RKAT</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
+				<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+					<i class="fas fa-fw fa-cog"></i>
+					<span>RKAT</span>
+				</a>
+				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+					<div class="bg-white py-2 collapse-inner rounded">
 						<a class="collapse-item" href="<?= base_url('rkat/createbyadmin') ?>">Tambah RKAT</a>
-                        <a class="collapse-item" href="<?= base_url('rkat/indexbyadmin') ?>">Lihat Data</a>
+						<a class="collapse-item" href="<?= base_url('rkat/indexbyadmin') ?>">Lihat Data</a>
 						<a class="collapse-item" href="<?= base_url('setrkat/create') ?>">Atur Semster dan Pagu</a>
 						<a class="collapse-item" href="<?= base_url('setrkat/index') ?>">Lihat Data Set Rkat</a>
-                    </div>
-                </div>
-            </li>
+					</div>
+				</div>
+			</li>
 
 			<!-- Divider -->
 			<hr class="sidebar-divider">
 
 			<!-- Heading -->
-			<div class="sidebar-heading">
-				KPI
-			</div>
 			<li class="nav-item">
-				<a class="nav-link " href="/admin/adminkpi">
+				<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 					<i class="fas fa-fw fa-tachometer-alt"></i>
-					<span>Dashboard</span></a>
+					<span>KPI</span></a>
+				<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
+					<div class="bg-white py-2 collapse-inner rounded">
+						<a class="collapse-item" href="<?= base_url('/admin/adminkpi') ?>">Lihat Rencana</a>
+						<a class="collapse-item" href="<?= base_url('#') ?>">Lihat Capaian</a>
+					</div>
+				</div>
 			</li>
 
 			<!-- Heading -->
@@ -109,8 +111,7 @@
 
 						<!-- Nav Item - User Information -->
 						<li class="nav-item dropdown no-arrow">
-							<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<span class="mr-2 d-none d-lg-inline text-gray-600 small">
 									<?php
 									$nama_prodi = session('nama_prodi');
@@ -120,8 +121,7 @@
 								<img class="img-profile rounded-circle" src="/img/inf-logo.jpg">
 							</a>
 							<!-- Dropdown - User Information -->
-							<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-								aria-labelledby="userDropdown">
+							<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
 								<a class="dropdown-item" href="#">
 									<i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
 									Profile
@@ -152,137 +152,138 @@
 					<div class="card shadow mb-4">
 						<div class="card-body">
 							<div class="table-responsive">
-                            <?php
-			if(isset($_POST['jumlah'])){
-		?>
-		<form action="<?= base_url('rkat/savebyadmin'); ?>" method="POST" enctype="multipart/form-data">	
-			<div class="card">
-					<div class="card-header">Tambah Data</div>
-				<?php
-					$jumlah = $_POST['jumlah'];
-					for($a=1;$a<=$jumlah;$a++)
-					{
-				?>
-				
-					<div class="card-body">
-						<h6 class="bg-dark text-white">Kegiatan <?= $a ?></h6><br>
-						<!-- Akan Dilooping -->
-						<div class="form-row">
-							<div class="col-sm-2">
-								<input type="hidden" name="jumlah" value="<?= $jumlah ?>">
-								<label for="id_prodi">Prodi</label>
-								<select class="form-control" id="id_prodi<?= $a ?>" name="id_prodi[]">
-									<option disabled selected>Pilih Prodi/Unit</option>
-									<option value="1">Akuntansi</option>
-									<option value="2">Desain Komunikasi Visual</option>
-									<option value="3">Informatika</option>
-									<option value="4">Ilmu Komunikasi</option>
-								</select>
-							</div>
-							<div class="col-sm-2">
-								<label for="nama_kegiatan" class="mr-sm-2">Nama Kegiatan</label>
-								<input type="text" class="form-control mb-2 mr-sm-2" id="nama_kegiatan<?= $a ?>" placeholder="Maksukan Nama Kegiatan" name="nama_kegiatan[]" required>
-							</div>
-							<div class="col-sm-2">
-								<label for="jenis_anggaran">Jenis Anggaran</label>
-								<select class="form-control" id="jenis_anggaran<?= $a ?>" name="jenis_anggaran[]">
-									<option value="" disabled selected>Pilih Jenis Anggaran</option>
-									<option value="Program Kerja">Program Kerja</option>
-									<option value="Oprasional">Oprasional</option>
-									<option value="Investasi">Investasi</option>
-								</select>
-							</div>
-							<div class="col-sm-2">
-								<label for="jenis_kpi">Standar KPI</label>
-								<select class="form-control" id="jenis_kpi<?= $a ?>" name="jenis_kpi[]">
-									<option value="" disabled selected>Pilih Indikator standar</option>
-									<option value="1">Standar 1 – Visi Misi Tujuan dan Strategi</option>
-									<option value="2">Standar 2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
-									<option value="3">Standar 3 - Mahasiswa</option>
-									<option value="4">Standar 4 - Sumber Daya Manusia</option>
-									<option value="5">Standar 5 - Keuangan, Sarana dan Prasarana</option>
-									<option value="6">Standar 6 - Pendidikan</option>
-									<option value="7">Standar 7 – Penelitian</option>
-									<option value="8">Standar 8 - Pengabdian kepada Masyarakat (PkM)</option>
-									<option value="9">Standar 9 - Luaran dan Capaian Tridharma</option>
-								</select>
-							</div>
-							<div class="col-sm-1">
-								<label for="butir">Butir</label>
-								<input type="text" class="form-control" id="butir<?= $a ?>" placeholder="Masukan Butir" name="butir[]" required>
-							</div>
-							<div class="col-sm-1">
-								<label for="semester">Semester</label>
-								<select class="form-control" id="semester<?= $a ?>" name="semester[]">
-									<option value="" disabled selected>Pilih Semester</option>
-									<option value="Gasal">Gasal</option>
-									<option value="Genap">Genap</option>
-									<option value="Gasal dan Genap">Gasal dan Genap</option>
-								</select>
-							</div>
-							<div class="col-sm-2">
-								<label for="anggaran" class="mr-sm-2">Anggaran Kegiatan</label>
-								<input type="text" class="form-control mb-2 mr-sm-2" id="anggaran<?= $a ?>" placeholder="Masukan Total Biaya" name="anggaran[]" required>
-							</div>
-							<div class="col-sm-2">
-								<label for="keterangan" class="mr-sm-2">Keterangan Kegiatan</label>
-								<input type="text" class="form-control mb-2 mr-sm-2" id="keterangan<?= $a ?>" placeholder="Masukan Keterangan Kegiatan" name="keterangan[]" required>
-							</div>
-						</div>
-					</div>
-				<?php } ?>
-				<?php
-					} else { $jumlah = 0; }
-				?>
-					<div class="card-footer">
-						<input type="button" onclick="cetak()" name="btn" value="Submit" id="submitBtn" data-toggle="modal" data-target="#confirm-submit" class="btn btn-primary" />
-					</div>
-				</div>
-				<div class="modal fade" id="confirm-submit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    				<div class="modal-dialog modal-xl">
-        				<div class="modal-content">
-            				<div class="modal-header">
-                				Confirm Submit
-            				</div>
-            				<div class="modal-body">
-                				Are you sure you want to submit the following details?
-                				<table class="table">
-										<thead>
-											<tr>
-												<th>Data Ke</th>
-												<th>Nama Kegiatan</th>
-												<th>Jenis anggaran</th>
-												<th>Standart KPI</th>
-												<th>Butir</th>
-												<th>Semester</th>
-												<th>Anggaran Kegiatan</th>
-												<th>Keterangan Kegiatan</th>
-											</tr>
-										</thead>
-										<?php for ($i=1; $i <= $jumlah; $i++) : ?>
-										<tbody>
-											<tr>
-												<td><?= $i ?></td>
-												<td id="jsnama_kegiatan<?= $i ?>"></td>
-												<td id="jsjenis_anggaran<?= $i ?>"></td>
-												<td id="jsjenis_kpi<?= $i ?>"></td>
-												<td id="jsbutir<?= $i ?>"></td>
-												<td id="jssemester<?= $i ?>"></td>
-												<td id="jsanggaran<?= $i ?>"></td>
-												<td id="jsketerangan<?= $i ?>"></td>
-											</tr>
-										</tbody>
-									<?php endfor; ?>
-                				</table>
-            				</div>
-            				<div class="modal-footer">
-                				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                				<button type="submit" class="btn btn-primary" id="tambah">Tambah Data</button>
-            				</div>
-        				</div>
-    				</div>
-				</div>
-		</form>
+								<?php
+								if (isset($_POST['jumlah'])) {
+								?>
+									<form action="<?= base_url('rkat/savebyadmin'); ?>" method="POST" enctype="multipart/form-data">
+										<div class="card">
+											<div class="card-header">Tambah Data</div>
+											<?php
+											$jumlah = $_POST['jumlah'];
+											for ($a = 1; $a <= $jumlah; $a++) {
+											?>
+
+												<div class="card-body">
+													<h6 class="bg-dark text-white">Kegiatan <?= $a ?></h6><br>
+													<!-- Akan Dilooping -->
+													<div class="form-row">
+														<div class="col-sm-2">
+															<input type="hidden" name="jumlah" value="<?= $jumlah ?>">
+															<label for="id_prodi">Prodi</label>
+															<select class="form-control" id="id_prodi<?= $a ?>" name="id_prodi[]">
+																<option disabled selected>Pilih Prodi/Unit</option>
+																<option value="1">Akuntansi</option>
+																<option value="2">Desain Komunikasi Visual</option>
+																<option value="3">Informatika</option>
+																<option value="4">Ilmu Komunikasi</option>
+															</select>
+														</div>
+														<div class="col-sm-2">
+															<label for="nama_kegiatan" class="mr-sm-2">Nama Kegiatan</label>
+															<input type="text" class="form-control mb-2 mr-sm-2" id="nama_kegiatan<?= $a ?>" placeholder="Maksukan Nama Kegiatan" name="nama_kegiatan[]" required>
+														</div>
+														<div class="col-sm-2">
+															<label for="jenis_anggaran">Jenis Anggaran</label>
+															<select class="form-control" id="jenis_anggaran<?= $a ?>" name="jenis_anggaran[]">
+																<option value="" disabled selected>Pilih Jenis Anggaran</option>
+																<option value="Program Kerja">Program Kerja</option>
+																<option value="Oprasional">Oprasional</option>
+																<option value="Investasi">Investasi</option>
+															</select>
+														</div>
+														<div class="col-sm-2">
+															<label for="jenis_kpi">Standar KPI</label>
+															<select class="form-control" id="jenis_kpi<?= $a ?>" name="jenis_kpi[]">
+																<option value="" disabled selected>Pilih Indikator standar</option>
+																<option value="1">Standar 1 – Visi Misi Tujuan dan Strategi</option>
+																<option value="2">Standar 2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
+																<option value="3">Standar 3 - Mahasiswa</option>
+																<option value="4">Standar 4 - Sumber Daya Manusia</option>
+																<option value="5">Standar 5 - Keuangan, Sarana dan Prasarana</option>
+																<option value="6">Standar 6 - Pendidikan</option>
+																<option value="7">Standar 7 – Penelitian</option>
+																<option value="8">Standar 8 - Pengabdian kepada Masyarakat (PkM)</option>
+																<option value="9">Standar 9 - Luaran dan Capaian Tridharma</option>
+															</select>
+														</div>
+														<div class="col-sm-1">
+															<label for="butir">Butir</label>
+															<input type="text" class="form-control" id="butir<?= $a ?>" placeholder="Masukan Butir" name="butir[]" required>
+														</div>
+														<div class="col-sm-1">
+															<label for="semester">Semester</label>
+															<select class="form-control" id="semester<?= $a ?>" name="semester[]">
+																<option value="" disabled selected>Pilih Semester</option>
+																<option value="Gasal">Gasal</option>
+																<option value="Genap">Genap</option>
+																<option value="Gasal dan Genap">Gasal dan Genap</option>
+															</select>
+														</div>
+														<div class="col-sm-2">
+															<label for="anggaran" class="mr-sm-2">Anggaran Kegiatan</label>
+															<input type="text" class="form-control mb-2 mr-sm-2" id="anggaran<?= $a ?>" placeholder="Masukan Total Biaya" name="anggaran[]" required>
+														</div>
+														<div class="col-sm-2">
+															<label for="keterangan" class="mr-sm-2">Keterangan Kegiatan</label>
+															<input type="text" class="form-control mb-2 mr-sm-2" id="keterangan<?= $a ?>" placeholder="Masukan Keterangan Kegiatan" name="keterangan[]" required>
+														</div>
+													</div>
+												</div>
+											<?php } ?>
+										<?php
+									} else {
+										$jumlah = 0;
+									}
+										?>
+										<div class="card-footer">
+											<input type="button" onclick="cetak()" name="btn" value="Submit" id="submitBtn" data-toggle="modal" data-target="#confirm-submit" class="btn btn-primary" />
+										</div>
+										</div>
+										<div class="modal fade" id="confirm-submit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+											<div class="modal-dialog modal-xl">
+												<div class="modal-content">
+													<div class="modal-header">
+														Confirm Submit
+													</div>
+													<div class="modal-body">
+														Are you sure you want to submit the following details?
+														<table class="table">
+															<thead>
+																<tr>
+																	<th>Data Ke</th>
+																	<th>Nama Kegiatan</th>
+																	<th>Jenis anggaran</th>
+																	<th>Standart KPI</th>
+																	<th>Butir</th>
+																	<th>Semester</th>
+																	<th>Anggaran Kegiatan</th>
+																	<th>Keterangan Kegiatan</th>
+																</tr>
+															</thead>
+															<?php for ($i = 1; $i <= $jumlah; $i++) : ?>
+																<tbody>
+																	<tr>
+																		<td><?= $i ?></td>
+																		<td id="jsnama_kegiatan<?= $i ?>"></td>
+																		<td id="jsjenis_anggaran<?= $i ?>"></td>
+																		<td id="jsjenis_kpi<?= $i ?>"></td>
+																		<td id="jsbutir<?= $i ?>"></td>
+																		<td id="jssemester<?= $i ?>"></td>
+																		<td id="jsanggaran<?= $i ?>"></td>
+																		<td id="jsketerangan<?= $i ?>"></td>
+																	</tr>
+																</tbody>
+															<?php endfor; ?>
+														</table>
+													</div>
+													<div class="modal-footer">
+														<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+														<button type="submit" class="btn btn-primary" id="tambah">Tambah Data</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</form>
 							</div>
 						</div>
 					</div>
@@ -300,27 +301,27 @@
 		<a class="scroll-to-top rounded" href="#page-top">
 			<i class="fas fa-angle-up"></i>
 		</a>
-        
-        <script>
-		function cetak(){
-			<?php for ($i=1; $i <= $jumlah; $i++) : ?>
-			var nama_kegiatan<?= $i ?> = document.getElementById("nama_kegiatan<?= $i ?>").value ;
-			var anggaran<?= $i ?> = document.getElementById("anggaran<?= $i ?>").value ;
-			var semester<?= $i ?> = document.getElementById("semester<?= $i ?>").value ;
-			var keterangan<?= $i ?> = document.getElementById("keterangan<?= $i ?>").value ;
-			var jenis_kpi<?= $i ?> = document.getElementById("jenis_kpi<?= $i ?>").value ;
-			var butir<?= $i ?> = document.getElementById("butir<?= $i ?>").value ;
-			var jenis_anggaran<?= $i ?> = document.getElementById("jenis_anggaran<?= $i ?>").value ;
-			document.getElementById("jsnama_kegiatan<?= $i ?>").innerHTML = "<b>" + nama_kegiatan<?= $i ?> +"</b>";
-			document.getElementById("jsanggaran<?= $i ?>").innerHTML = "<b>" + anggaran<?= $i ?> +"</b>";
-			document.getElementById("jssemester<?= $i ?>").innerHTML = "<b>" + semester<?= $i ?> +"</b>";
-			document.getElementById("jsketerangan<?= $i ?>").innerHTML = "<b>" + keterangan<?= $i ?> +"</b>";
-			document.getElementById("jsjenis_kpi<?= $i ?>").innerHTML = "<b>" + jenis_kpi<?= $i ?> +"</b>";
-			document.getElementById("jsbutir<?= $i ?>").innerHTML = "<b>" + butir<?= $i ?> +"</b>";
-			document.getElementById("jsjenis_anggaran<?= $i ?>").innerHTML = "<b>" + jenis_anggaran<?= $i ?> +"</b>";
-			<?php endfor; ?>
-		}
-	</script>
+
+		<script>
+			function cetak() {
+				<?php for ($i = 1; $i <= $jumlah; $i++) : ?>
+					var nama_kegiatan<?= $i ?> = document.getElementById("nama_kegiatan<?= $i ?>").value;
+					var anggaran<?= $i ?> = document.getElementById("anggaran<?= $i ?>").value;
+					var semester<?= $i ?> = document.getElementById("semester<?= $i ?>").value;
+					var keterangan<?= $i ?> = document.getElementById("keterangan<?= $i ?>").value;
+					var jenis_kpi<?= $i ?> = document.getElementById("jenis_kpi<?= $i ?>").value;
+					var butir<?= $i ?> = document.getElementById("butir<?= $i ?>").value;
+					var jenis_anggaran<?= $i ?> = document.getElementById("jenis_anggaran<?= $i ?>").value;
+					document.getElementById("jsnama_kegiatan<?= $i ?>").innerHTML = "<b>" + nama_kegiatan<?= $i ?> + "</b>";
+					document.getElementById("jsanggaran<?= $i ?>").innerHTML = "<b>" + anggaran<?= $i ?> + "</b>";
+					document.getElementById("jssemester<?= $i ?>").innerHTML = "<b>" + semester<?= $i ?> + "</b>";
+					document.getElementById("jsketerangan<?= $i ?>").innerHTML = "<b>" + keterangan<?= $i ?> + "</b>";
+					document.getElementById("jsjenis_kpi<?= $i ?>").innerHTML = "<b>" + jenis_kpi<?= $i ?> + "</b>";
+					document.getElementById("jsbutir<?= $i ?>").innerHTML = "<b>" + butir<?= $i ?> + "</b>";
+					document.getElementById("jsjenis_anggaran<?= $i ?>").innerHTML = "<b>" + jenis_anggaran<?= $i ?> + "</b>";
+				<?php endfor; ?>
+			}
+		</script>
 		<!-- Bootstrap core JavaScript-->
 		<script src="http://localhost:8080/js/jquery.min.js"></script>
 		<script src="http://localhost:8080/js/bootstrap.bundle.min.js"></script>

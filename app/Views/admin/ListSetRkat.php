@@ -52,32 +52,34 @@
 
 			<!-- Heading -->
 			<li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>RKAT</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
+				<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+					<i class="fas fa-fw fa-cog"></i>
+					<span>RKAT</span>
+				</a>
+				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+					<div class="bg-white py-2 collapse-inner rounded">
 						<a class="collapse-item" href="<?= base_url('rkat/createbyadmin') ?>">Tambah RKAT</a>
-                        <a class="collapse-item" href="<?= base_url('rkat/indexbyadmin') ?>">Lihat Data</a>
+						<a class="collapse-item" href="<?= base_url('rkat/indexbyadmin') ?>">Lihat Data</a>
 						<a class="collapse-item" href="<?= base_url('setrkat/create') ?>">Atur Semster dan Pagu</a>
 						<a class="collapse-item" href="<?= base_url('setrkat/index') ?>">Lihat Data Set Rkat</a>
-                    </div>
-                </div>
-            </li>
+					</div>
+				</div>
+			</li>
 
 			<!-- Divider -->
 			<hr class="sidebar-divider">
 
 			<!-- Heading -->
-			<div class="sidebar-heading">
-				KPI
-			</div>
 			<li class="nav-item">
-				<a class="nav-link " href="/admin/adminkpi">
+				<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 					<i class="fas fa-fw fa-tachometer-alt"></i>
-					<span>Dashboard</span></a>
+					<span>KPI</span></a>
+				<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
+					<div class="bg-white py-2 collapse-inner rounded">
+						<a class="collapse-item" href="<?= base_url('/admin/adminkpi') ?>">Lihat Rencana</a>
+						<a class="collapse-item" href="<?= base_url('#') ?>">Lihat Capaian</a>
+					</div>
+				</div>
 			</li>
 
 			<!-- Heading -->
@@ -109,8 +111,7 @@
 
 						<!-- Nav Item - User Information -->
 						<li class="nav-item dropdown no-arrow">
-							<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<span class="mr-2 d-none d-lg-inline text-gray-600 small">
 									<?php
 									$nama_prodi = session('nama_prodi');
@@ -120,8 +121,7 @@
 								<img class="img-profile rounded-circle" src="/img/inf-logo.jpg">
 							</a>
 							<!-- Dropdown - User Information -->
-							<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-								aria-labelledby="userDropdown">
+							<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
 								<a class="dropdown-item" href="#">
 									<i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
 									Profile
@@ -167,22 +167,20 @@
 										</tr>
 									</thead>
 									<tbody>
-									<?php $i = 1;?>
+										<?php $i = 1; ?>
 										<?php if ($set_rkat) : ?>
-										<?php foreach ($set_rkat as $reading) : ?>
-										<tr>
-											<td scope="row"><?= $i++; ?></td>
-											<td><?= $reading['tahun_akademik']; ?></td>
-											<td><?= $reading['pagu']; ?></td>
-											<td><?= $reading['nama_prodi']; ?></td>
-											<td>
-												<a href="<?= base_url('setrkat/edit/'.$reading['id_setrkat']); ?>"
-													class="button button2"><i class="fas fa-edit"></i></a>
-												<a href="<?= base_url('setrkat/delete/'.$reading['id_setrkat']); ?>"
-													class="button button2"><i class="fas fa-trash-alt"></i></a>
-											</td>
-										</tr>
-										<?php endforeach; ?>
+											<?php foreach ($set_rkat as $reading) : ?>
+												<tr>
+													<td scope="row"><?= $i++; ?></td>
+													<td><?= $reading['tahun_akademik']; ?></td>
+													<td><?= $reading['pagu']; ?></td>
+													<td><?= $reading['nama_prodi']; ?></td>
+													<td>
+														<a href="<?= base_url('setrkat/edit/' . $reading['id_setrkat']); ?>" class="button button2"><i class="fas fa-edit"></i></a>
+														<a href="<?= base_url('setrkat/delete/' . $reading['id_setrkat']); ?>" class="button button2"><i class="fas fa-trash-alt"></i></a>
+													</td>
+												</tr>
+											<?php endforeach; ?>
 										<?php endif; ?>
 									</tbody>
 								</table>

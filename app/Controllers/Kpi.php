@@ -17,6 +17,10 @@ class Kpi extends BaseController
 	{
 		return view('kpi/formkpi');
 	}
+	public function inputcapaian()
+	{
+		return view('kpi/form_capaian');
+	}
 	public function save()
 	{
 		$detail = new  DetailKpiModel();

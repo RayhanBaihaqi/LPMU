@@ -52,32 +52,34 @@
 
 			<!-- Heading -->
 			<li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>RKAT</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
+				<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+					<i class="fas fa-fw fa-cog"></i>
+					<span>RKAT</span>
+				</a>
+				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+					<div class="bg-white py-2 collapse-inner rounded">
 						<a class="collapse-item" href="<?= base_url('rkat/createbyadmin') ?>">Tambah RKAT</a>
-                        <a class="collapse-item" href="<?= base_url('rkat/indexbyadmin') ?>">Lihat Data</a>
+						<a class="collapse-item" href="<?= base_url('rkat/indexbyadmin') ?>">Lihat Data</a>
 						<a class="collapse-item" href="<?= base_url('setrkat/create') ?>">Atur Semster dan Pagu</a>
 						<a class="collapse-item" href="<?= base_url('setrkat/index') ?>">Lihat Data Set Rkat</a>
-                    </div>
-                </div>
-            </li>
+					</div>
+				</div>
+			</li>
 
 			<!-- Divider -->
 			<hr class="sidebar-divider">
 
 			<!-- Heading -->
-			<div class="sidebar-heading">
-				KPI
-			</div>
 			<li class="nav-item">
-				<a class="nav-link " href="/admin/adminkpi">
+				<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 					<i class="fas fa-fw fa-tachometer-alt"></i>
-					<span>Dashboard</span></a>
+					<span>KPI</span></a>
+				<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
+					<div class="bg-white py-2 collapse-inner rounded">
+						<a class="collapse-item" href="<?= base_url('/admin/adminkpi') ?>">Lihat Rencana</a>
+						<a class="collapse-item" href="<?= base_url('#') ?>">Lihat Capaian</a>
+					</div>
+				</div>
 			</li>
 
 			<!-- Heading -->
@@ -151,9 +153,9 @@
 						<div class="card-body">
 							<div class="table-responsive">
 								<form action="<?= base_url('setrkat/update'); ?>" method="POST" enctype="multipart/form-data">
-									<?php foreach ($set_rkat as $key => $value):?>
-                                    <input required type="hidden" name="id_setrkat" value="<?= $value['id_setrkat']; ?>">
-									<div class="form-group">
+									<?php foreach ($set_rkat as $key => $value) : ?>
+										<input required type="hidden" name="id_setrkat" value="<?= $value['id_setrkat']; ?>">
+										<div class="form-group">
 											<label for="tahun_akademik">Tahun Ajaran</label>
 											<select class="form-control" id="tahun_akademik" name="tahun_akademik">
 												<option value="<?= $value['tahun_akademik']; ?>"><?= $value['tahun_akademik']; ?></option>
@@ -174,7 +176,7 @@
 											<label for="pagu">Jumlah Pagu (Rp)</label>
 											<input required type="text" name="pagu" class="form-control" id="pagu" name='pagu' placeholder="Masukkan Nama Prodi/Unit" value="<?= $value['pagu']; ?>">
 										</div>
-										<?php endforeach;?>
+									<?php endforeach; ?>
 									<div class="form-group">
 										<button type="submit" id="tambah" class="btn btn-success">edit</button>
 									</div>
