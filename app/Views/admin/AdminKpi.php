@@ -337,13 +337,17 @@
 			<hr class="sidebar-divider">
 
 			<!-- Heading -->
-			<div class="sidebar-heading">
-				KPI
-			</div>
+
 			<li class="nav-item">
-				<a class="nav-link " href="/admin/adminkpi">
+				<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 					<i class="fas fa-fw fa-tachometer-alt"></i>
-					<span>Dashboard</span></a>
+					<span>KPI</span></a>
+				<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
+					<div class="bg-white py-2 collapse-inner rounded">
+						<a class="collapse-item" href="<?= base_url('/admin/adminkpi') ?>">Lihat Rencana</a>
+						<a class="collapse-item" href="<?= base_url('#') ?>">Lihat Capaian</a>
+					</div>
+				</div>
 			</li>
 
 			<!-- Heading -->

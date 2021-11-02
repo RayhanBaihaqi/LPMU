@@ -108,7 +108,8 @@
                 <div class="collapse navbar-collapse justify-content-between">
                     <div class="navbar-nav mr-auto">
                         <a href="/kpi" class="nav-item nav-link">Home</a>
-                        <a href="inputkpi" class="nav-item nav-link active">Tambah KPI</a>
+                        <a href="inputkpi" class="nav-item nav-link active">Input Rencana</a>
+                        <a href="/kpi/inputcapaian" class="nav-item nav-link">Input Capaian</a>
                     </div>
                     <div class="ml-auto">
                         <div class="user-info-dropdown">
@@ -430,25 +431,7 @@
                     <label for="ketercapaian">Ketercapaian</label>
                     <textarea class="form-control" id="ketercapaian" rows="3" name="ketercapaian" placeholder="Masukkan Ketercapaian Standar"></textarea>
                 </div>
-                <div class="form-group" id="skorDiv">
-                    <label for="exampleFormControlTextarea1">Skor</label>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="skor" id="skor" value=1>
-                        <label class="form-check-label" for="inlineRadio1">1</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="skor" id="skor" value=2>
-                        <label class="form-check-label" for="inlineRadio2">2</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="skor" id="skor" value=3>
-                        <label class="form-check-label" for="inlineRadio2">3</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="skor" id="skor" value=4>
-                        <label class="form-check-label" for="inlineRadio2">4</label>
-                    </div>
-                </div>
+
                 <div class="form-group" id="buktiDiv">
                     <label for="exampleFormControlFile1">Bukti Pelaksanaan</label>
                     <input type="file" class="form-control-file" id="bukti" name="bukti">
