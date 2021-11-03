@@ -138,34 +138,63 @@
         </div>
         <!-- Nav Bar End -->
         <h3>Silahkan isi form capaian</h3>
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">List KPI</h5>
-                        <p class="card-text">List 1.</p>
-                        <p class="card-text">List 2.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">List Rencana</h5>
-                        <p class="card-text">Rencana 1.</p>
-                        <p class="card-text">Rencana 1.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Skor</h5>
-
-                    </div>
-                </div>
-            </div>
+        <br>
+        <div class="form-group" id="kriteriaDiv">
+            <select class="form-control" id="kriteria" name="kriteria">
+                <option value="Pilih Kriteria" disabled selected>Pilih Kategori KPI</option>
+                <option value="Visi Misi Tujuan dan Strategi">1 – Visi Misi Tujuan dan Strategi</option>
+                <option value="Tata Pamong, Tata Kelola, dan Kerjasama">2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
+                <option value="Mahasiswa">3 - Mahasiswa</option>
+                <option value="Sumber Daya Manusia">4 - Sumber Daya Manusia</option>
+                <option value="Keuangan, Sarana dan Prasarana">5 - Keuangan, Sarana dan Prasarana</option>
+                <option value="Pendidikan">6 - Pendidikan</option>
+                <option value="Penelitian">7 – Penelitian</option>
+                <option value="Pengabdian kepada Masyarakat (PkM)">8 - Pengabdian kepada Masyarakat (PkM)</option>
+                <option value="Luaran dan Capaian Tridharma">9 - Luaran dan Capaian Tridharma</option>
+            </select>
         </div>
+        <form>
+            <div class="container">
+                <div class="row clearfix">
+                    <div class="col-md-12 column">
+                        <table class="table table-bordered table-hover" id="tab_logic">
+                            <thead>
+                                <tr>
+
+                                    <th class="text-center">Butir</th>
+                                    <th class="text-center">Rencana</th>
+                                    <th class="text-center">Realisasi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr id='kpi11'>
+
+                                    <td>Visi UPJ diturunkan ke dalam visi Fakultas/ Program Studi/Unit Kerja</td>
+                                    <td>Visi UPJ diturunkan ke dalam visi Fakultas/ Program Studi/Unit Kerja</td>
+                                    <td>
+                                        <input type="number" name='mobile[]' placeholder='Iya=1, Tidak=0' class="form-control" />
+                                    </td>
+                                </tr>
+                                <tr id='kpi12'></tr>
+                                <td>Adanya keterlibatan pemangku kepentingan dalam penyusunan Visi Misi Universitas, Fakultas dan Program Studi</td>
+                                <td>mekanisme penyusunan VMTS yang terdokumentasi dan melibatkan stakeholder</td>
+                                <td>
+                                    <input type="number" name='mobile[]' placeholder='Iya=1, Tidak=0' class="form-control" />
+                                </td>
+                                <tr id='kpi13'></tr>
+                                <td>Sosialisasi Visi-misi dan Nilai-Nilai Jaya</td>
+                                <td>minimal 1x per TA</td>
+                                <td>
+                                    <input type="number" name='mobile[]' placeholder='Iya=1, Tidak=0' class="form-control" />
+                                </td>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+        </form>
     </div>
 </body>
 

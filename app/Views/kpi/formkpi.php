@@ -225,9 +225,9 @@
                     <label for="standar1">Indikator Standar</label>
                     <select class="form-control" id="standar1" name="standar">
                         <option value="" disabled selected>Pilih Indikator standar Visi Misi</option>
-                        <option value="Visi UPJ diturunkan ke dalam visi Fakultas/ Program Studi/Unit Kerja. (korelasi VMTS Universitas dan Prodi)">Visi UPJ diturunkan ke dalam visi Fakultas/ Program Studi/Unit Kerja. (korelasi VMTS Universitas dan Prodi)</option>
+                        <option value="Visi UPJ diturunkan ke dalam visi Fakultas/ Program Studi/Unit Kerja.">Visi UPJ diturunkan ke dalam visi Fakultas/ Program Studi/Unit Kerja</option>
                         <option value="Adanya keterlibatan pemangku kepentingan dalam penyusunan Visi Misi Universitas, Fakultas dan Program Studi. (mekanisme penyusunan VMTS yang terdokumentasi dan melibatkan stakeholder)">Adanya keterlibatan pemangku kepentingan dalam penyusunan Visi Misi Universitas, Fakultas dan Program Studi. (mekanisme penyusunan VMTS yang terdokumentasi dan melibatkan stakeholder)</option>
-                        <option value="Adanya sosialisasi Visi-misi dan Nilai-Nilai Jaya kepada mahasiswa dan pemangku kepentingan melalui presentasi, video animasi, mars dan hymne universitas serta bentuk lain yang dipandang perlu (minimal 1x per TA)">Adanya sosialisasi Visi-misi dan Nilai-Nilai Jaya kepada mahasiswa dan pemangku kepentingan melalui presentasi, video animasi, mars dan hymne universitas serta bentuk lain yang dipandang perlu (minimal 1x per TA)</option>
+                        <option value="Sosialisasi Visi-misi dan Nilai-Nilai Jaya (minimal 1x per TA)">Sosialisasi Visi-misi dan Nilai-Nilai Jaya (minimal 1x per TA)</option>
                         </option>
                     </select>
                 </div>
@@ -238,21 +238,22 @@
                         <option value="" disabled selected>Pilih Indikator standar Tata Pamong</option>
                         <option value="Adanya struktur organisasi universitas yang mengakomodasi struktur organisasi: Fakultas, Program Studi dan Unit dan memenuhi 5 pilar struktur tata pamong (SK SO, Pejabat dan SK Pengangkatan)">Adanya struktur organisasi universitas yang mengakomodasi struktur organisasi: Fakultas, Program Studi dan Unit dan memenuhi 5 pilar struktur tata pamong (SK SO, Pejabat dan SK Pengangkatan)</option>
                         <option value="Adanya kegiatan-kegiatan yang dilakukan sebagai bentuk hasil kerjasama, yang memenuhi 3 aspek
-                            (> 2 kegiatan (nasional dan atau internasional) dari MoA/smst/prodi)">Adanya kegiatan-kegiatan yang dilakukan sebagai bentuk hasil kerjasama, yang memenuhi 3 aspek :
-                            a. Memberikan manfaat prodi di bidang Tridharma
-                            b. Memberikan peningkatan kinerja Tridharma dan fasilitas pendukung prodi
-                            c. Memberikan kepuasan pada mitra industri/lainnya
-                            Ada keberlanjutan kerjasama dan hasilnya
-                            (> 2 kegiatan (nasional dan atau internasional) dari MoA/smst/prodi)</option>
+                        (> 5 kegiatan, 1 kegiatan internasional dan memenuhi 3 aspek)">Adanya kegiatan-kegiatan yang dilakukan sebagai bentuk hasil kerjasama, yang memenuhi 3 aspek
+                            (> 5 kegiatan, 1 kegiatan internasional dan memenuhi 3 aspek)</option>
                         <option value="Adanya MoU kerjasama UPJ Bidang Tridharma (> 2/tahun MoU baru)">Adanya MoU kerjasama UPJ Bidang Tridharma (> 2/tahun MoU baru)</option>
                         <option value="Adanya MoU kerjasama UPJ Tingkat internasional (> 1/tahun MoU baru)">Adanya MoU kerjasama UPJ Tingkat internasional (> 1/tahun MoU baru)</option>
                         <option value="Adanya MoU kerjasama UPJ Tingkat nasional (> 2/tahun MoU baru)">Adanya MoU kerjasama UPJ Tingkat nasional (> 2/tahun MoU baru)</option>
-                        <option value="Monitoring terhadap tercapainya standar (Terlaksananya monitoring dan evaluasi implementasi SN DIKTI dan SPT)">Monitoring terhadap tercapainya standar (Terlaksananya monitoring dan evaluasi implementasi SN DIKTI dan SPT)</option>
-                        <option value="Terlaksananya Proses PPEPP 3 SN DIKTI dan 2 SPT UPJ">Terlaksananya Proses PPEPP 3 SN DIKTI dan 2 SPT UPJ</option>
-                        <option value="Adanya evaluasi dosen oleh mahasiswa (EDOM) yang diisi oleh mahasiswa minimal 1 (satu) kali dalam 1 (satu) semester.">Adanya evaluasi dosen oleh mahasiswa (EDOM) yang diisi oleh mahasiswa minimal 1 (satu) kali dalam 1 (satu) semester.</option>
-                        <option value="Pelaporan proses pembelajaran, berupa kompilasi laporan proses pembelajaran yang diperoleh dari pihak terkait">Pelaporan proses pembelajaran, berupa kompilasi laporan proses pembelajaran yang diperoleh dari pihak terkait</option>
-                        <option value="Laporan Akademik Program Studi dan unit setiap TA.">Laporan Akademik Program Studi dan unit setiap TA.</option>
-                        <option value="Adanya laporan evaluasi tahunan berdasarkan matriks penilaian instrumen akreditasi yang berlaku serta ada tindak lanjut hasilnya.">Adanya laporan evaluasi tahunan berdasarkan matriks penilaian instrumen akreditasi yang berlaku serta ada tindak lanjut hasilnya.</option>
+                        <option value="Monitoring terhadap tercapainya standar">Monitoring terhadap tercapainya standar (Terlaksananya monitoring dan evaluasi implementasi SN DIKTI dan SPT 1x/semester)</option>
+                        <option value="Terlaksananya Proses PPEPP 3 SN DIKTI dan 2 SPT UPJ">Terlaksananya Proses PPEPP 3 SN DIKTI dan 2 SPT UPJ (1x/TA)</option>
+                        <option value="Evaluasi Pendidikan dan pengajaran">Evaluasi Pendidikan pengajaran (1x/TA)</option>
+                        <option value="Evaluasi Penelitian">Evaluasi Penelitian (1x/TA)</option>
+                        <option value="Evaluasi Pengabdian Kemasyarakatan">Evaluasi Pengabdian Masyarakat (1x/TA)</option>
+                        <option value="Evaluasi Tata Kelola">Evaluasi Tata Kelola (1x/TA)</option>
+                        <option value="Evaluasi Kemahasiswaan dan Alumni">Evaluasi Kemahasiswaan dan Alumni (1x/TA)</option>
+                        <option value="Adanya evaluasi dosen oleh mahasiswa (EDOM) yang diisi oleh mahasiswa minimal 1 (satu) kali dalam 1 (satu) semester.">Adanya evaluasi dosen oleh mahasiswa (EDOM) yang diisi oleh mahasiswa minimal 1 (satu) kali dalam 1 (satu) semester. (2x/semester)</option>
+                        <option value="Pelaporan proses pembelajaran, berupa kompilasi laporan proses pembelajaran yang diperoleh dari pihak terkait">Pelaporan proses pembelajaran, berupa kompilasi laporan proses pembelajaran yang diperoleh dari pihak terkait (1x/semester)</option>
+                        <option value="Laporan Akademik Program Studi dan unit setiap TA.">Laporan Akademik Program Studi dan unit setiap TA. (1x per semester)</option>
+                        <option value="Adanya laporan evaluasi tahunan berdasarkan matriks penilaian instrumen akreditasi yang berlaku serta ada tindak lanjut hasilnya.">Adanya laporan evaluasi tahunan berdasarkan matriks penilaian instrumen akreditasi yang berlaku serta ada tindak lanjut hasilnya. (1x/semester)</option>
                         <option value="Universitas melakukan akreditasi Internasional setelah mendapatkan peringkat akreditasi tertinggi dari BAN-PT/LAM dan telah memenuhi persyaratan yang ditetapkan oleh Lembaga Akreditasi internasional yang dituju.">Universitas melakukan akreditasi Internasional setelah mendapatkan peringkat akreditasi tertinggi dari BAN-PT/LAM dan telah memenuhi persyaratan yang ditetapkan oleh Lembaga Akreditasi internasional yang dituju.</option>
                         <option value="Peningkatan Akreditasi Perguruan Tinggi (APT 3.0)">Peningkatan Akreditasi Perguruan Tinggi (APT 3.0)</option>
                         <option value="Peningkatan Akreditasi Program Studi (APS 4.0)">Peningkatan Akreditasi Program Studi (APS 4.0)</option>
@@ -265,18 +266,18 @@
                     <label for="standar3">Indikator Standar</label>
                     <select class="form-control" id="standar3" name="standar">
                         <option value="" disabled selected>Pilih Indikator standar Mahasiswa</option>
-                        <option value="Program Studi membantu panitia penerimaan mahasiswa baru dalam pelaksanaan dan penilaian seleksi persyaratan khusus. (Rasio maba pendaftar : diterima > 5)">Program Studi membantu panitia penerimaan mahasiswa baru dalam pelaksanaan dan penilaian seleksi persyaratan khusus. (Rasio maba pendaftar : diterima > 5)</option>
-                        <option value="Adanya evaluasi tahunan terhadap Program Studi dengan jumlah mahasiswa baru di bawah 30 selama 3 tahun berturut-turut. (peningkatan animo calon maba > 10% per TA)">Adanya evaluasi tahunan terhadap Program Studi dengan jumlah mahasiswa baru di bawah 30 selama 3 tahun berturut-turut. (peningkatan animo calon maba > 10% per TA)</option>
-                        <option value="Adanya kegiatan dan usaha-usaha serta bukti peningkatan animo calon mahasiswa. (10 kegiatan marketing/TA)">Adanya kegiatan dan usaha-usaha serta bukti peningkatan animo calon mahasiswa. (10 kegiatan marketing/TA)</option>
+                        <option value="Program Studi membantu panitia penerimaan mahasiswa baru dalam pelaksanaan dan penilaian seleksi persyaratan khusus. (Rasio maba pendaftar : diterima > 5)">Program Studi membantu panitia penerimaan mahasiswa baru dalam pelaksanaan dan penilaian seleksi persyaratan khusus. (Rasio maba pendaftar : diterima > 1:5)</option>
+                        <option value="Adanya evaluasi tahunan terhadap Program Studi dengan jumlah mahasiswa baru di bawah 30 selama 3 tahun berturut-turut.">Adanya evaluasi tahunan terhadap Program Studi dengan jumlah mahasiswa baru di bawah 30 selama 3 tahun berturut-turut. (peningkatan animo calon maba > 10% per TA)</option>
+                        <option value="Adanya kegiatan dan usaha-usaha serta bukti peningkatan animo calon mahasiswa.">Adanya kegiatan dan usaha-usaha serta bukti peningkatan animo calon mahasiswa. (10 kegiatan marketing/TA)</option>
                         </option>
-                        <option value="Pencapaian target mahasiswa baru (non blended learning) (peningkatan intake maba > 10% per TA)">Pencapaian target mahasiswa baru (non blended learning) (peningkatan intake maba > 10% per TA)</option>
-                        <option value="Jumlah student body aktif per semester (>95%)">Jumlah student body aktif per semester (>95%)</option>
-                        <option value="Jumlah mahasiswa asing (> 1% student body)">Jumlah mahasiswa asing (> 1% student body)</option>
-                        <option value="Jumlah maksimal mahasiswa bimbingan setiap dosen adalah 20 orang mahasiswa setiap semester. (rasio dosen PA 1:20)">Jumlah maksimal mahasiswa bimbingan setiap dosen adalah 20 orang mahasiswa setiap semester. (rasio dosen PA 1:20)</option>
-                        <option value="Jumlah pertemuan Pembimbingan Akademik minimal 4 (empat) kali setiap semester.(4x per semester)">Jumlah pertemuan Pembimbingan Akademik minimal 4 (empat) kali setiap semester.(4x per semester)</option>
-                        <option value="Sertifikat kompetensi diberikan kepada lulusan yang mengikuti dan lulus ujian kompetensi (Sertifikasi kompetensi)">Sertifikat kompetensi diberikan kepada lulusan yang mengikuti dan lulus ujian kompetensi (Sertifikasi kompetensi)</option>
-                        <option value="Skor TOEIC lulusan ≥ 550 (Persentase lulusan yang memiliki Sertifikasi TOEIC dengan skor ≥ 550)">Skor TOEIC lulusan ≥ 550 (Persentase lulusan yang memiliki Sertifikasi TOEIC dengan skor ≥ 550)</option>
-                        <option value="Adanya Produk wirausaha berbasis inovasi (Jumlah produk wirausaha berbasis inovasi)">Adanya Produk wirausaha berbasis inovasi (Jumlah produk wirausaha berbasis inovasi)</option>
+                        <option value="Pencapaian target mahasiswa baru (non blended learning)">Pencapaian target mahasiswa baru (non blended learning) (peningkatan intake maba > 10% per TA)</option>
+                        <option value="Jumlah student body aktif per semester">Jumlah student body aktif per semester (>95%)</option>
+                        <option value="Jumlah mahasiswa asing">Jumlah mahasiswa asing (> 1% student body)</option>
+                        <option value="Jumlah maksimal mahasiswa bimbingan setiap dosen adalah 20 orang mahasiswa setiap semester.">Jumlah maksimal mahasiswa bimbingan setiap dosen adalah 20 orang mahasiswa setiap semester. (1 dosen memberikan bimbingan terhadap max 20 mahasiswa)</option>
+                        <option value="Jumlah pertemuan Pembimbingan Akademik minimal 4 (empat) kali setiap semester.">Jumlah pertemuan Pembimbingan Akademik minimal 4 (empat) kali setiap semester.(4x per semester)</option>
+                        <option value="Sertifikat kompetensi diberikan kepada lulusan yang mengikuti dan lulus ujian kompetensi">Sertifikat kompetensi diberikan kepada lulusan yang mengikuti dan lulus ujian kompetensi (Lulusan yg memiliki sertifat kompetensi >50%)</option>
+                        <option value="Skor TOEIC lulusan ≥ 550">Skor TOEIC lulusan ≥ 550 (Persentase lulusan yang memiliki Sertifikasi TOEIC dengan minimal skor 550 ≥ 50%)</option>
+                        <option value="Adanya Produk wirausaha berbasis inovasi (Jumlah produk wirausaha berbasis inovasi)">Adanya Produk wirausaha berbasis inovasi (2 produk)</option>
                     </select>
                 </div>
 
@@ -284,7 +285,7 @@
                     <label for="standar4">Indikator Standar</label>
                     <select class="form-control" id="standar4" name="standar">
                         <option value="" disabled selected>Pilih Indikator standar Sumber Daya Manusia</option>
-                        <option value="Jumlah dosen tetap setiap Program Studi minimal 6 (enam) orang * (NDTPS > 12)">Jumlah dosen tetap setiap Program Studi minimal 6 (enam) orang * (NDTPS > 12)</option>
+                        <option value="Jumlah dosen tetap setiap Program Studi minimal 8 orang">Jumlah dosen tetap setiap Program Studi minimal 8 orang * (NDTPS > 12)</option>
                         <option value="10% peningkatan jumlah dosen S3 setiap 2 (dua) tahun. (>50% dosen S3)">10% peningkatan jumlah dosen S3 setiap 2 (dua) tahun. (>50% dosen S3)</option>
                         <option value="20% dosen memiliki Jabatan Akademik Dosen (JAD) minimal 2 (dua) tahun. (>70% GB-LK-L)">20% dosen memiliki Jabatan Akademik Dosen (JAD) minimal 2 (dua) tahun. (>70% GB-LK-L)</option>
                         <option value="Jumlah dosen tetap memiliki rasio 1:25 (eksakta) dan 1:35 (sosial) untuk setiap Program Studi. (< 25 (FTD); < 35 (FHB))">Jumlah dosen tetap memiliki rasio 1:25 (eksakta) dan 1:35 (sosial) untuk setiap Program Studi. (< 25 (FTD); < 35 (FHB))</option>
@@ -423,19 +424,8 @@
                     <label for="nama_pic">Nama PIC</label>
                     <input type="text" class="form-control" id="nama_pic" name="nama_pic" placeholder="Masukkan Nama PIC">
                 </div>
-                <div class="form-group" id="rencana_realisasiDiv">
-                    <label for="rencana_realisasi">Rencana Realisasi</label>
-                    <textarea class="form-control" id="rencana_realisasi" rows="3" name="rencana_realisasi" placeholder="Masukkan Rencana Realisasi"></textarea>
-                </div>
-                <div class="form-group" id="ketercapaianDiv">
-                    <label for="ketercapaian">Ketercapaian</label>
-                    <textarea class="form-control" id="ketercapaian" rows="3" name="ketercapaian" placeholder="Masukkan Ketercapaian Standar"></textarea>
-                </div>
 
-                <div class="form-group" id="buktiDiv">
-                    <label for="exampleFormControlFile1">Bukti Pelaksanaan</label>
-                    <input type="file" class="form-control-file" id="bukti" name="bukti">
-                </div>
+
                 <button type="submit" class="btn btn-primary">Submit</button>
                 <br><br>
 
