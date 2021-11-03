@@ -104,7 +104,7 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between">
                     <div class="navbar-nav mr-auto">
-                        <a href="kpi" class="nav-item nav-link active">Home</a>
+                        <a href="/kpi" class="nav-item nav-link active">Home</a>
                         <a href="/kpi/inputkpi" class="nav-item nav-link">Input Rencana</a>
                         <a href="/kpi/inputcapaian" class="nav-item nav-link">Input Capaian</a>
 
@@ -139,104 +139,12 @@
         <!-- Nav Bar End -->
 
         <div class="container-fluid">
-            <h1>Selamat Datang di halaman KPI </h1>
-            <!-- ====================================================================================================================== -->
-            <div class="row">
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-info">
-                        <div class="inner">
-                            <h3>150</h3>
-                            <p>Dosen</p>
-                        </div>
-                        <div class="icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <a href="#" class="small-box-footer">Lihat detail <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-success">
-                        <div class="inner">
-                            <h3>53<sup style="font-size: 20px">%</sup></h3>
-                            <p>Tenaga Pendidik</p>
-                        </div>
-                        <div class="icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <a href="#" class="small-box-footer">Lihat detail <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-warning">
-                        <div class="inner">
-                            <h3>44</h3>
-                            <p>Program Studi</p>
-                        </div>
-                        <div class="icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <a href="#" class="small-box-footer">Lihat detail <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-danger">
-                        <div class="inner">
-                            <h3>65</h3>
-                            <p>Unit Universitas</p>
-                        </div>
-                        <div class="icon">
-                            <i class="fas fa-university"></i>
-                        </div>
-                        <a href="#" class="small-box-footer">Lihat detail <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-            </div>
-            <!-- ====================================================================================================================== -->
-            <a href="#" class="btn btn-info btn-sm"><i class="fa fa-home"></i> Link Button</a>
-            <a href="#" class="btn btn-info btn-sm"><i class="fa fa-home"></i> Link Button</a>
-            <a href="#" class="btn btn-info btn-sm"><i class="fa fa-home"></i> Link Button</a>
-            <hr>
+            <h1>Grafik KPI </h1>
+            <br>
+
+
             <div class="row clearfix progress-box">
-                <div class="col-lg-4 col-md-6 col-sm-12 mb-30">
-                    <div class="card-box pd-30 height-100-p">
-                        <a href="kpi/inputkpi" class="small-box-footer text-blue">
-                            <div class="progress-box text-center">
 
-                                <h5 class="text-blue padding-top-10 h5">Input Rencana</h5>
-                            </div>
-
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 mb-30">
-                    <div class="card-box pd-30 height-100-p">
-                        <a href="kpi/inputcapaian" class="small-box-footer text-blue">
-                            <div class="progress-box text-center">
-
-                                <h5 class="text-blue padding-top-10 h5">Input Realisasi</h5>
-                            </div>
-
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 mb-30">
-                    <div class="card-box pd-30 height-100-p">
-                        <a href="kpi/grafik_kpi" class="small-box-footer text-blue">
-                            <div class="progress-box text-center">
-
-                                <h5 class="text-blue padding-top-10 h5">Lihat grafik</h5>
-                            </div>
-
-                        </a>
-                    </div>
-                </div>
 
 
                 <section class="content">

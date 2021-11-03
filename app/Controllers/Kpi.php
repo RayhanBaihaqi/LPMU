@@ -21,6 +21,10 @@ class Kpi extends BaseController
 	{
 		return view('kpi/form_capaian');
 	}
+	public function grafik_kpi()
+	{
+		return view('kpi/grafik');
+	}
 	public function save()
 	{
 		$detail = new  DetailKpiModel();
@@ -32,10 +36,6 @@ class Kpi extends BaseController
 			'standar' => $this->request->getPost('standar'),
 			'pic' => $this->request->getPost('pic'),
 			'nama_pic' => $this->request->getPost('nama_pic'),
-			'rencana_realisasi' => $this->request->getPost('rencana_realisasi'),
-			'ketercapaian' => $this->request->getPost('ketercapaian'),
-			'skor' => $this->request->getPost('skor'),
-			'file' => $this->request->getPost('file'),
 			'created_at' => $this->request->getPost('created_at')
 		];
 		$detail->save($data);
