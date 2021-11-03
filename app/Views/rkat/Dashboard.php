@@ -88,7 +88,7 @@
         </div>
     </div>
     <!-- Top Bar End -->
-    <div class="container">
+    <div class="container-fluid">
         <br>
         <!-- Nav Bar Start -->
 		<div class="nav-bar">
@@ -101,7 +101,9 @@
 				<div class="collapse navbar-collapse justify-content-between">
 					<div class="navbar-nav mr-auto">
 						<a href="/backend/rkat" class="nav-item nav-link active">Home</a>
-						<a href="" class="nav-item nav-link">Tambah rkat</a>
+						<a href="<?= base_url('/setrkat/createbyuser') ?>" class="nav-item nav-link">Rancang Rkat</a>
+                        <a href="<?= base_url('/rkat/indexbyuser') ?>" class="nav-item nav-link">List Rancangan Rkat</a>
+                        <a href="<?= base_url('/CapaianRkat/createcapaianbyuser') ?>" class="nav-item nav-link">Tambah Rkat</a>
 					</div>
 					<div class="ml-auto">
 						<div class="user-info-dropdown">
@@ -168,7 +170,7 @@
                     <!-- small box -->
                     <div class="small-box bg-warning">
                         <div class="inner">
-                            <h3>44</h3>
+                            <h3>10</h3>
                             <p>Program Studi</p>
                         </div>
                         <div class="icon">
@@ -182,7 +184,7 @@
                     <!-- small box -->
                     <div class="small-box bg-danger">
                         <div class="inner">
-                            <h3>65</h3>
+                            <h3>12</h3>
                             <p>Unit Universitas</p>
                         </div>
                         <div class="icon">
@@ -193,9 +195,8 @@
                 </div>
             </div>
             <!-- ====================================================================================================================== -->
-            <a href="<?= base_url('/setrkat/createbyuser') ?>" class="btn btn-info btn-sm"><i class="fa fa-home"></i> Isi formulir</a>
-			<a href="<?= base_url('/rkat/indexbyuser') ?>" class="btn btn-info btn-sm"><i class="fa fa-home"></i> Lihat List Data</a>
-			<a href="#" class="btn btn-info btn-sm"><i class="fa fa-home"></i> Link Button</a>
+            <!--<a href="<?= base_url('/setrkat/createbyuser') ?>" class="btn btn-info btn-sm"><i class="fa fa-home"></i> Rencana RKAT</a> 
+			<a href="<?= base_url('/rkat/indexbyuser') ?>" class="btn btn-info btn-sm"><i class="fa fa-home"></i> Lihat List Rencana</a>-->
             <hr>
             <div class="row clearfix progress-box">
 				<div class="col-lg-3 col-md-6 col-sm-12 mb-30">

@@ -83,7 +83,7 @@
 		</div>
 	</div>
 	<!-- Top Bar End -->
-	<div class="container">
+	<div class="container-fluid">
 		<br>
 		<!-- Nav Bar Start -->
 		<div class="nav-bar">
