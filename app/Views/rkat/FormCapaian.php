@@ -121,97 +121,75 @@
 		<br>
     </div>
     <div class="container-fluid">
-    <div class="row">
-        <div class="col-md-3">
-            <div class="card">
-                <div class="card-body">
-                    <div class="table-responsive">
-						<table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
-							<tbody>
-								<?php $i = 1;?>
-									<?php if ($detail_rkat) : ?>
-								        <?php foreach ($detail_rkat as $reading) : ?>
-								<tr>
-                                    <td><a class="nav-link" href="#"><?= $reading['nama_kegiatan']; ?></a></td>
-								</tr>
-									    <?php endforeach; ?>
-									<?php endif; ?>
-									</tbody>
-								</table>
+		<div class="card">
+			<div class="card-body">
+				<h4 class="card-title">Formulir Target Capaian</h4>
+				<div class="form-group">
+					<label for="sel1">Standar KPI:</label>
+					<select class="form-control" id="sel1">
+						<option>A</option>
+						<option>B</option>
+						<option>C</option>
+						<option>D</option>
+					</select>
+				</div>
+				<table class="table table-hover">
+					<thead>
+					<tr>
+						<th>KPI</th>
+						<th>Butir</th>
+						<th>Kegiatan</th>
+						<th>Rencana Anggaran</th>
+						<th>Realisasi Anggaran</th>
+						<th>Upload Bukti</th>
+						<th>Aksi</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td>A</td>
+						<td>1</td>
+						<td>john@example.com</td>
+						<td>2.000.000</td>
+						<td>
+							<div class="form-group">
+								<input type="email" class="form-control" placeholder="Masukan Realisasi Anggaran" id="email">
 							</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="card">
-                <div class="card-header">RENCANA RKAT</div>
-                <div class="card-body">Content</div>
-            </div>
-        </div>
-        <div class="col-lg-5">
-            <div class="card">
-                <div class="card-header">INPUT CAPAIAN RKAT</div>
-                <div class="card-body">
-                    <form action="<?= base_url('rkat/save'); ?>" method="POST" enctype="multipart/form-data">	
-                        <div class="form-group">
-                            <label for="nama_kegiatan" class="mr-sm-2">Nama Kegiatan</label>
-                            <input type="text" class="form-control mb-2 mr-sm-2" id="nama_kegiata" placeholder="Maksukan Nama Kegiatan" name="nama_kegiatan[]" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="jenis_anggaran">Jenis Anggaran</label>
-                            <select class="form-control" id="jenis_anggara" name="jenis_anggaran[]">
-                                <option value="" disabled selected>Pilih Jenis Anggaran</option>
-                                <option value="Program Kerja">Program Kerja</option>
-                                <option value="Oprasional">Oprasional</option>
-                                <option value="Investasi">Investasi</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="jenis_kpi">Standar KPI</label>
-                            <select class="form-control" id="jenis_kp" name="jenis_kpi[]">
-                                <option value="" disabled selected>Pilih Indikator standar</option>
-                                <option value="1">Standar 1 – Visi Misi Tujuan dan Strategi</option>
-                                <option value="2">Standar 2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
-                                <option value="3">Standar 3 - Mahasiswa</option>
-                                <option value="4">Standar 4 - Sumber Daya Manusia</option>
-                                <option value="5">Standar 5 - Keuangan, Sarana dan Prasarana</option>
-                                <option value="6">Standar 6 - Pendidikan</option>
-                                <option value="7">Standar 7 – Penelitian</option>
-                                <option value="8">Standar 8 - Pengabdian kepada Masyarakat (PkM)</option>
-                                <option value="9">Standar 9 - Luaran dan Capaian Tridharma</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="butir">Butir</label>
-                            <input type="text" class="form-control" id="buti" placeholder="Masukan Butir" name="butir[]" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="semester">Semester</label>
-                            <select class="form-control" id="semeste" name="semester[]">
-                                <option value="" disabled selected>Pilih Semester</option>
-                                <option value="Gasal">Gasal</option>
-                                <option value="Genap">Genap</option>
-                                <option value="Gasal dan Genap">Gasal dan Genap</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="anggaran" class="mr-sm-2">Anggaran Kegiatan</label>
-                            <input type="text" class="form-control mb-2 mr-sm-2" id="anggara" placeholder="Masukan Total Biaya" name="anggaran[]" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="keterangan" class="mr-sm-2">Keterangan Kegiatan</label>
-                            <input type="text" class="form-control mb-2 mr-sm-2" rows="5" id="keteranga" placeholder="Masukan Keterangan Kegiatan" name="keterangan[]" required></textarea>
-                        </div>
-                    </div>
-                        <div class="card-footer">
-                            <input type="button" onclick="cetak()" name="btn" value="Submit" id="submitBtn" data-toggle="modal" data-target="#confirm-submit" class="btn btn-primary" />
-                        </div>
-                    </div>
-            </form>
-                </div>
-            </div>
-        </div>
-    </div>
+						</td>
+						<td><input type="file" id="myFile" name="filename2"></td>
+						<td><a href="<?= base_url('rkat/editbyadmin/'); ?>" class="button button2"><i class="fas fa-edit"></i></a></td>
+					</tr>
+					<tr>
+						<td>A</td>
+						<td>2</td>
+						<td>john@example.com</td>
+						<td>2.000.000</td>
+						<td>
+							<div class="form-group">
+								<input type="email" class="form-control" placeholder="Masukan Realisasi Anggaran" id="email">
+							</div>
+						</td>
+						<td><input type="file" id="myFile" name="filename2"></td>
+						<td><a href="<?= base_url('rkat/editbyadmin/'); ?>" class="button button2"><i class="fas fa-edit"></i></a></td>
+					</tr>
+					<tr>
+						<td>A</td>
+						<td>3</td>
+						<td>john@example.com</td>
+						<td>2.000.000</td>
+						<td>
+							<div class="form-group">
+								<input type="email" class="form-control" placeholder="Masukan Realisasi Anggaran" id="email">
+							</div>
+						</td>
+						<td><input type="file" id="myFile" name="filename2"></td>
+						<td><a href="<?= base_url('rkat/editbyadmin/'); ?>" class="button button2"><i class="fas fa-edit"></i></a></td>
+					</tr>
+					</tbody>
+				</table>
+				<button type="button" class="btn btn-primary">Submit</button>
+			</div>
+		</div>
     </div>
 	<!-- JavaScript Libraries -->
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -219,6 +197,13 @@
 	<script src="lib/easing/easing.min.js"></script>
 	<script src="lib/owlcarousel/owl.carousel.min.js"></script>
 	<script src="lib/isotope/isotope.pkgd.min.js"></script>
+	<script>
+		// Add the following code if you want the name of the file appear on select
+		$(".custom-file-input").on("change", function() {
+		var fileName = $(this).val().split("\\").pop();
+		$(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+		});
+	</script>
 	<script>
 		function startTime() {
 			var today = new Date();
