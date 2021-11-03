@@ -156,8 +156,9 @@
         <form>
             <div class="container">
                 <div class="row clearfix">
-                    <div class="col-md-12 column">
-                        <table class="table table-bordered table-hover" id="tab_logic">
+                    <div class="form-group" id="kpi1Div">
+                        <!-- Tabel Visi Misi !-->
+                        <table class="table table-bordered table-hover" id="kpi1">
                             <thead>
                                 <tr>
 
@@ -168,25 +169,78 @@
                             </thead>
                             <tbody>
                                 <tr id='kpi11'>
-
                                     <td>Visi UPJ diturunkan ke dalam visi Fakultas/ Program Studi/Unit Kerja</td>
                                     <td>Visi UPJ diturunkan ke dalam visi Fakultas/ Program Studi/Unit Kerja</td>
                                     <td>
                                         <input type="number" name='mobile[]' placeholder='Iya=1, Tidak=0' class="form-control" />
                                     </td>
                                 </tr>
-                                <tr id='kpi12'></tr>
-                                <td>Adanya keterlibatan pemangku kepentingan dalam penyusunan Visi Misi Universitas, Fakultas dan Program Studi</td>
-                                <td>mekanisme penyusunan VMTS yang terdokumentasi dan melibatkan stakeholder</td>
-                                <td>
-                                    <input type="number" name='mobile[]' placeholder='Iya=1, Tidak=0' class="form-control" />
-                                </td>
-                                <tr id='kpi13'></tr>
-                                <td>Sosialisasi Visi-misi dan Nilai-Nilai Jaya</td>
-                                <td>minimal 1x per TA</td>
-                                <td>
-                                    <input type="number" name='mobile[]' placeholder='Iya=1, Tidak=0' class="form-control" />
-                                </td>
+                                <tr id='kpi12'>
+                                    <td>Adanya keterlibatan pemangku kepentingan dalam penyusunan Visi Misi Universitas, Fakultas dan Program Studi</td>
+                                    <td>mekanisme penyusunan VMTS yang terdokumentasi dan melibatkan stakeholder</td>
+                                    <td>
+                                        <input type="number" name='mobile[]' placeholder='Iya=1, Tidak=0' class="form-control" />
+                                    </td>
+                                </tr>
+
+                                <tr id='kpi13'>
+                                    <td>Sosialisasi Visi-misi dan Nilai-Nilai Jaya</td>
+                                    <td>minimal 1x per TA</td>
+                                    <td>
+                                        <input type="number" name='mobile[]' placeholder='Sosialisasi >1x, masukkan angka 1' class="form-control" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="form-group" id="kpi2Div">
+                        <!-- Tabel Visi Misi !-->
+                        <table class="table table-bordered table-hover" id="kpi2">
+                            <thead>
+                                <tr>
+
+                                    <th class="text-center">Butir</th>
+                                    <th class="text-center">Rencana</th>
+                                    <th class="text-center">Realisasi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr id='kpi21'>
+                                    <td>Adanya struktur organisasi universitas yang mengakomodasi struktur organisasi: Fakultas, Program Studi dan Unit dan memenuhi 5 pilar struktur tata pamong</td>
+                                    <td>SK SO, Pejabat dan SK Pengangkatan Lengkap</td>
+                                    <td>
+                                        <input type="number" name='mobile[]' placeholder='Iya=1, Tidak=0' class="form-control" />
+                                    </td>
+                                </tr>
+                                <tr id='kpi22'>
+                                    <td>Adanya kegiatan-kegiatan yang dilakukan sebagai bentuk hasil kerjasama, yang memenuhi 3 aspek</td>
+                                    <td>> 5 kegiatan, 1 kegiatan internasional dan memenuhi 3 aspek</td>
+                                    <td>
+
+                                        <input type="number" name='mobile[]' placeholder='Masukkan jumlah kegiatan' class="form-control" />
+                                    </td>
+                                </tr>
+                                <tr id='kpi23'>
+                                    <td>Adanya MoU kerjasama UPJ Bidang Tridharma</td>
+                                    <td>> 2/tahun MoU baru</td>
+                                    <td>
+                                        <input type="number" name='mobile[]' placeholder='Masukkan jumlah maks 2' class="form-control" />
+                                    </td>
+                                </tr>
+                                <tr id='kpi24'>
+                                    <td>Adanya MoU kerjasama UPJ Tingkat internasional</td>
+                                    <td>> 1/tahun MoU baru</td>
+                                    <td>
+                                        <input type="number" name='mobile[]' placeholder='Masukkan jumlah maks 1' class="form-control" />
+                                    </td>
+                                </tr>
+                                <tr id='kpi25'>
+                                    <td>Adanya MoU kerjasama UPJ Tingkat nasional</td>
+                                    <td>> 2/tahun MoU baru</td>
+                                    <td>
+                                        <input type="number" name='mobile[]' placeholder='Masukkan jumlah maks 2' class="form-control" />
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -197,5 +251,35 @@
         </form>
     </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $("#kriteria").change(function() {
+            if ($(this).val() == "Visi Misi Tujuan dan Strategi") {
+                $('#kpi1Div').show();
+                $('#kpi1').attr('required', '');
+                $('#kpi1').attr('data-error', 'This field is required.');
+                $('#kpi2Div').hide();
+                $('#kpi2').removeAttr('required');
+                $('#kpi2').removeAttr('data-error');
+            } else if ($(this).val() == "Tata Pamong, Tata Kelola, dan Kerjasama") {
+                $('#kpi1Div').hide();
+                $('#kpi1').removeAttr('required');
+                $('#kpi1').removeAttr('data-error');
+                $('#kpi2Div').show();
+                $('#kpi2').attr('required', '');
+                $('#kpi2').attr('data-error', 'This field is required.');
+
+            } else {
+
+
+            }
+        });
+        $("kriteria").trigger("change");
+    })
+</script>
 
 </html>

@@ -380,7 +380,7 @@
                 <div class="form-group" id="standar9Div">
                     <label for="standar9">Indikator Standar</label>
                     <select class="form-control" id="standar9" name="standar">
-                        <option value="" disabled selected>Pilih Indikator standar Sumber Daya Manusia</option>
+                        <option value="" disabled selected>Pilih Indikator standar luaran dan capaian tridharma</option>
                         <option value="Lulusan yang bekerja, mendapat Gaji >1.2 kali lipat upah minimum Kota/Kabupaten">Lulusan yang bekerja, mendapat Gaji >1.2 kali lipat upah minimum Kota/Kabupaten</option>
                         <option value="Persentase lulusan yang melanjutkan studi < 12 bulan setelah tanggal ijazah">Persentase lulusan yang melanjutkan studi < 12 bulan setelah tanggal ijazah</option>
                         <option value="Persentase mahasiswa yang mengikuti program Merdeka Belajar di Luar UPJ">Persentase mahasiswa yang mengikuti program Merdeka Belajar di Luar UPJ</option>
