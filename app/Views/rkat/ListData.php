@@ -155,8 +155,7 @@
 											<td><?= $value['semester']; ?></td>
 											<td><?= $value['anggaran']; ?></td>
 											<td><?= $value['keterangan']; ?></td>
-                                            <td><?= $value['jenis_kpi']; ?></td>
-											<td><?= $value['butir']; ?></td>
+                                            <td><?= $value['id_kpi']; ?></td>
 											<td><?= $value['jenis_anggaran']; ?></td>
 											<td>
 												<a href="<?= base_url('rkat/editbyuser/'.$value['id']); ?>"

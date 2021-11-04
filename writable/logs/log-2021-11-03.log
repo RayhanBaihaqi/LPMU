@@ -10,3 +10,63 @@ CRITICAL - 2021-11-03 01:37:05 --> Undefined variable: reading
 #8 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #9 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
 #10 {main}
+CRITICAL - 2021-11-03 04:13:54 --> Undefined index: jenis_kpi
+#0 C:\xampp\htdocs\lpmu-web\app\Views\rkat\ListData.php(158): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 158, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('rkat/ListData', Array, true)
+#4 C:\xampp\htdocs\lpmu-web\app\Controllers\Rkat.php(95): view('rkat/ListData', Array)
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Rkat->indexbyuser()
+#6 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rkat))
+#7 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2021-11-03 04:14:35 --> Undefined index: jenis_kpi
+#0 C:\xampp\htdocs\lpmu-web\app\Views\rkat\ListData.php(158): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 158, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('rkat/ListData', Array, true)
+#4 C:\xampp\htdocs\lpmu-web\app\Controllers\Rkat.php(95): view('rkat/ListData', Array)
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Rkat->indexbyuser()
+#6 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rkat))
+#7 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2021-11-03 04:14:38 --> Undefined index: jenis_kpi
+#0 C:\xampp\htdocs\lpmu-web\app\Views\rkat\ListData.php(158): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 158, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('rkat/ListData', Array, true)
+#4 C:\xampp\htdocs\lpmu-web\app\Controllers\Rkat.php(95): view('rkat/ListData', Array)
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Rkat->indexbyuser()
+#6 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rkat))
+#7 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2021-11-03 04:14:40 --> Undefined index: jenis_kpi
+#0 C:\xampp\htdocs\lpmu-web\app\Views\rkat\ListData.php(158): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 158, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('rkat/ListData', Array, true)
+#4 C:\xampp\htdocs\lpmu-web\app\Controllers\Rkat.php(95): view('rkat/ListData', Array)
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Rkat->indexbyuser()
+#6 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rkat))
+#7 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2021-11-03 04:14:41 --> Undefined index: jenis_kpi
+#0 C:\xampp\htdocs\lpmu-web\app\Views\rkat\ListData.php(158): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 158, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('rkat/ListData', Array, true)
+#4 C:\xampp\htdocs\lpmu-web\app\Controllers\Rkat.php(95): view('rkat/ListData', Array)
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Rkat->indexbyuser()
+#6 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rkat))
+#7 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#10 {main}
