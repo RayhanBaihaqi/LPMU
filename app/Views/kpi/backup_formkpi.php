@@ -207,23 +207,23 @@
 
                 <div class="form-group" id="kriteriaDiv">
                     <label for="kriteria">Kriteria</label>
-                    <select class="form-control" id="kriteria" name="nama_kpi">
-                        <option value="" disabled selected>Pilih Kriteria</option>
-                        <option value="1">1 – Visi Misi Tujuan dan Strategi</option>
-                        <option value="2">2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
-                        <option value="3">3 - Mahasiswa</option>
-                        <option value="4">4 - Sumber Daya Manusia</option>
-                        <option value="5">5 - Keuangan, Sarana dan Prasarana</option>
-                        <option value="6">6 - Pendidikan</option>
-                        <option value="7">7 – Penelitian</option>
-                        <option value="8">8 - Pengabdian kepada Masyarakat (PkM)</option>
-                        <option value="9">9 - Luaran dan Capaian Tridharma</option>
+                    <select class="form-control" id="kriteria" name="kriteria">
+                        <option value="Pilih Kriteria" disabled selected>Pilih Kriteria</option>
+                        <option value="Visi Misi Tujuan dan Strategi">1 – Visi Misi Tujuan dan Strategi</option>
+                        <option value="Tata Pamong, Tata Kelola, dan Kerjasama">2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
+                        <option value="Mahasiswa">3 - Mahasiswa</option>
+                        <option value="Sumber Daya Manusia">4 - Sumber Daya Manusia</option>
+                        <option value="Keuangan, Sarana dan Prasarana">5 - Keuangan, Sarana dan Prasarana</option>
+                        <option value="Pendidikan">6 - Pendidikan</option>
+                        <option value="Penelitian">7 – Penelitian</option>
+                        <option value="Pengabdian kepada Masyarakat (PkM)">8 - Pengabdian kepada Masyarakat (PkM)</option>
+                        <option value="Luaran dan Capaian Tridharma">9 - Luaran dan Capaian Tridharma</option>
                     </select>
                 </div>
 
                 <div class="form-group" id="standar1Div">
                     <label for="standar1">Indikator Standar</label>
-                    <select class="form-control" id="standar1" name="nama_butir">
+                    <select class="form-control" id="standar1" name="standar">
                         <option value="" disabled selected>Pilih Indikator standar Visi Misi</option>
                         <option value="Visi UPJ diturunkan ke dalam visi Fakultas/ Program Studi/Unit Kerja.">Visi UPJ diturunkan ke dalam visi Fakultas/ Program Studi/Unit Kerja</option>
                         <option value="Adanya keterlibatan pemangku kepentingan dalam penyusunan Visi Misi Universitas, Fakultas dan Program Studi. (mekanisme penyusunan VMTS yang terdokumentasi dan melibatkan stakeholder)">Adanya keterlibatan pemangku kepentingan dalam penyusunan Visi Misi Universitas, Fakultas dan Program Studi. (mekanisme penyusunan VMTS yang terdokumentasi dan melibatkan stakeholder)</option>
@@ -630,7 +630,7 @@
         $("#prodi_unit").trigger("change");
 
         $("#kriteria").change(function() {
-            if ($(this).val() == "1") {
+            if ($(this).val() == "Visi Misi Tujuan dan Strategi") {
                 $('#standar1Div').show();
                 $('#standar1').attr('required', '');
                 $('#standar1').attr('data-error', 'This field is required.');
@@ -676,7 +676,7 @@
                 $('#standarDiv').hide();
                 $('#standar').removeAttr('required');
                 $('#standar').removeAttr('data-error');
-            } else if ($(this).val() == "2") {
+            } else if ($(this).val() == "Tata Pamong, Tata Kelola, dan Kerjasama") {
                 $('#standar1Div').hide();
                 $('#standar1').removeAttr('required');
                 $('#standar1').removeAttr('data-error');
@@ -722,7 +722,7 @@
                 $('#standarDiv').hide();
                 $('#standar').removeAttr('required');
                 $('#standar').removeAttr('data-error');
-            } else if ($(this).val() == "3") {
+            } else if ($(this).val() == "Mahasiswa") {
                 $('#standar1Div').hide();
                 $('#standar1').removeAttr('required');
                 $('#standar1').removeAttr('data-error');
@@ -768,7 +768,7 @@
                 $('#standarDiv').hide();
                 $('#standar').removeAttr('required');
                 $('#standar').removeAttr('data-error');
-            } else if ($(this).val() == "4") {
+            } else if ($(this).val() == "Sumber Daya Manusia") {
                 $('#standar1Div').hide();
                 $('#standar1').removeAttr('required');
                 $('#standar1').removeAttr('data-error');
@@ -814,7 +814,7 @@
                 $('#standarDiv').hide();
                 $('#standar').removeAttr('required');
                 $('#standar').removeAttr('data-error');
-            } else if ($(this).val() == "5") {
+            } else if ($(this).val() == "Keuangan, Sarana dan Prasarana") {
                 $('#standar1Div').hide();
                 $('#standar1').removeAttr('required');
                 $('#standar1').removeAttr('data-error');
@@ -860,7 +860,7 @@
                 $('#standarDiv').hide();
                 $('#standar').removeAttr('required');
                 $('#standar').removeAttr('data-error');
-            } else if ($(this).val() == "6") {
+            } else if ($(this).val() == "Pendidikan") {
                 $('#standar1Div').hide();
                 $('#standar1').removeAttr('required');
                 $('#standar1').removeAttr('data-error');
@@ -906,7 +906,7 @@
                 $('#standarDiv').hide();
                 $('#standar').removeAttr('required');
                 $('#standar').removeAttr('data-error');
-            } else if ($(this).val() == "7") {
+            } else if ($(this).val() == "Penelitian") {
                 $('#standar1Div').hide();
                 $('#standar1').removeAttr('required');
                 $('#standar1').removeAttr('data-error');
@@ -952,7 +952,7 @@
                 $('#standarDiv').hide();
                 $('#standar').removeAttr('required');
                 $('#standar').removeAttr('data-error');
-            } else if ($(this).val() == "8") {
+            } else if ($(this).val() == "Pengabdian kepada Masyarakat (PkM)") {
                 $('#standar1Div').hide();
                 $('#standar1').removeAttr('required');
                 $('#standar1').removeAttr('data-error');
@@ -998,7 +998,7 @@
                 $('#standarDiv').hide();
                 $('#standar').removeAttr('required');
                 $('#standar').removeAttr('data-error');
-            } else if ($(this).val() == "9") {
+            } else if ($(this).val() == "Luaran dan Capaian Tridharma") {
                 $('#standar1Div').hide();
                 $('#standar1').removeAttr('required');
                 $('#standar1').removeAttr('data-error');
