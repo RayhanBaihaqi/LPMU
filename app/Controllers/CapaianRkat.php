@@ -16,13 +16,13 @@ class CapaianRkat extends BaseController
     public function indexcapaianbyuser()
     {
         $model = new DetailRkatModel();
-        $data['detail_rkat'] = $this->DetailRkatModel->gabung();
+        $data['detail_rkat'] = $this->DetailRkatModel->gabungkpi();
 
         return view('rkat/ListData', $data);
     }
     public function createcapaianbyuser() {
         $model = new DetailRkatModel();
-        $data['detail_rkat'] = $model->orderBy('id','ASC')->findAll();
+        $data['detail_rkat'] = $this->DetailRkatModel->gabungkpi();
         return view('rkat/FormCapaian', $data);
     }
     public function savecapaian()
@@ -31,9 +31,8 @@ class CapaianRkat extends BaseController
         $semester = $this->request->getVar('semester');
         $anggaran = $this->request->getVar('anggaran');
         $keterangan = $this->request->getVar('keterangan');
-        $jenis_kpi = $this->request->getVar('jenis_kpi');
+        $id_kpi = $this->request->getVar('id_kpi');
         $jenis_anggaran = $this->request->getVar('jenis_anggaran');
-        $butir = $this->request->getVar('butir');
         $id_set = $this->request->getVar('id_set');
         $jumlah = $this->request->getVar('jumlah');
 
@@ -43,9 +42,8 @@ class CapaianRkat extends BaseController
                     'semester'=>$semester[$i],  
                     'anggaran'=>$anggaran[$i],  
                     'keterangan'=>$keterangan[$i],  
-                    'jenis_kpi'=>$jenis_kpi[$i],  
+                    'id_kpi'=>$id_kpi[$i],  
                     'jenis_anggaran'=>$jenis_anggaran[$i],  
-                    'butir'=>$butir[$i],  
                     'id_set'=>$id_set[$i],  
                 ]);
             }
@@ -65,9 +63,8 @@ class CapaianRkat extends BaseController
             'semester' => $this->request->getVar('semester'),
             'anggaran' => $this->request->getVar('anggaran'),
             'keterangan' => $this->request->getVar('keterangan'),
-            'jenis_kpi' => $this->request->getVar('jenis_kpi'),
+            'id_kpi' => $this->request->getVar('id_kpi'),
             'jenis_anggaran' => $this->request->getVar('jenis_anggaran'),
-            'butir' => $this->request->getVar('butir'),
             'id_set' => $this->request->getVar('id_set'),
 
         ];

@@ -125,20 +125,6 @@
 		<div class="card">
 			<div class="card-header">Tambah Data</div>
 				<div class="card-body">
-					<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat'];?>
-					<div class="form-group">
-						<label for="exampleFormControlSelect1">Tahun Ajaran</label>
-						<select class="form-control" id="exampleFormControlSelect1" disabled>
-							<option value="<?= $value['tahun_akademik'] ?>" selected><?= $value['tahun_akademik'] ?>
-							</option>
-						</select>
-					</div>
-					<div class="form-group">
-						<label for="uname">Jumlah Pagu</label>
-						<input type="text" class="form-control" id="uname" name="uname" value="<?= $value['pagu'] ?>"
-							required disabled>
-					</div>
-					<?php endforeach; ?>
 					<form action="<?= base_url('setrkat/tambah'); ?>" method="post">
 						<div class="input-group mb-3">
 							<input type="text" class="form-control" placeholder="Jumlah Kegiatan" name="jumlah">
