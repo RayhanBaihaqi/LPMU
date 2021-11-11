@@ -124,38 +124,48 @@
 		?>
 		<form action="<?= base_url('rkat/save'); ?>" method="POST" enctype="multipart/form-data">	
 			<div class="card">
-					<div class="card-header">Tambah Data</div>
+					<div class="card-header">Tambah Rencana RKAT</div>
+					<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat'];?>
+						<input type="hidden" class="form-control" id="id_set" value="<?= $id_set ?>" name="id_set[]" 
+						required>
+					<br>
+					<div class="form-inline">
+						<label class="mb-2 mr-sm-2" for="exampleFormControlSelect1" style="width: 150px;">Tahun Ajaran</label>
+						<select class="form-control mb-2 mr-sm-2" id="exampleFormControlSelect1">
+							<option value="<?= $value['tahun_akademik'] ?>" selected><?= $value['tahun_akademik'] ?>
+							</option>
+						</select>
+					</div>
+					<div class="form-inline">
+						<label for="prodiunit" class="mb-2 mr-sm-2" style="width: 150px;">Program Studi/Unit</label>
+						<input type="text" class="form-control mb-2 mr-sm-2" id="prodiunit" value="<?= $value['nama_prodi'] ?>" name="prodiunit"required disabled>
+						<label for=pagu" class="mb-2 mr-sm-2">Jumlah Pagu</label>
+						<input type="text" class="form-control mb-2 mr-sm-2" id=pagu" name="pagu" value="RP. <?= $value['pagu'] ?>" required disabled>
+					</div>
+					<?php endforeach; ?>
 				<?php
 					$jumlah = $_POST['jumlah'];
 					for($a=1;$a<=$jumlah;$a++)
 					{
 				?>
-				
 					<div class="card-body">
-					<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat'];?>
-						<input type="hidden" class="form-control" id="id_set" value="<?= $id_set ?>" name="id_set[]" required>	
-					<?php endforeach; ?>
 						<h6 class="bg-dark text-white">Kegiatan <?= $a ?></h6><br>
 						<!-- Akan Dilooping -->
 						<div class="form-row">
 							<div class="col-sm-2">
 								<input type="hidden" name="jumlah" value="<?= $jumlah ?>">
-								<label for="nama_kegiatan" class="mr-sm-2">Nama Kegiatan</label>
-								<input type="text" class="form-control mb-2 mr-sm-2" id="nama_kegiatan<?= $a ?>" placeholder="Maksukan Nama Kegiatan" name="nama_kegiatan[]" required>
-							</div>
-							<div class="col-sm-2">
-								<label for="jenis_anggaran">Jenis Anggaran</label>
+								<label for="jenis_anggaran">Kategori</label>
 								<select class="form-control" id="jenis_anggaran<?= $a ?>" name="jenis_anggaran[]">
-									<option value="" disabled selected>Pilih Jenis Anggaran</option>
+									<option value="" disabled selected>Pilih Kategori</option>
 									<option value="Program Kerja">Program Kerja</option>
 									<option value="Oprasional">Oprasional</option>
 									<option value="Investasi">Investasi</option>
 								</select>
 							</div>
 							<div class="col-sm-2">
-								<label for="jenis_kpi">Standar KPI</label>
+								<label for="jenis_kpi">Kategori KPI</label>
 								<select class="form-control" id="jenis_kpi<?= $a ?>" name="jenis_kpi[]">
-									<option value="" disabled selected>Pilih Indikator standar</option>
+									<option value="" disabled selected>Pilih Kategori KPI</option>
 									<option value="1">Standar 1 – Visi Misi Tujuan dan Strategi</option>
 									<option value="2">Standar 2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
 									<option value="3">Standar 3 - Mahasiswa</option>
@@ -169,24 +179,39 @@
 							</div>
 							<div class="col-sm-1">
 								<label for="butir">Butir</label>
-								<input type="text" class="form-control" id="butir<?= $a ?>" placeholder="Masukan Butir" name="butir[]" required>
-							</div>
-							<div class="col-sm-1">
-								<label for="semester">Semester</label>
-								<select class="form-control" id="semester<?= $a ?>" name="semester[]">
-									<option value="" disabled selected>Pilih Semester</option>
-									<option value="Gasal">Gasal</option>
-									<option value="Genap">Genap</option>
-									<option value="Gasal dan Genap">Gasal dan Genap</option>
+								<select class="form-control" id="butir<?= $a ?>" name="butir[]">
+									<option value="" disabled selected>Pilih butir</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
 								</select>
 							</div>
-							<div class="col-sm-2">
-								<label for="anggaran" class="mr-sm-2">Anggaran Kegiatan</label>
-								<input type="text" class="form-control mb-2 mr-sm-2" id="anggaran<?= $a ?>" placeholder="Masukan Total Biaya" name="anggaran[]" required>
+							<div class="col-sm-1">
+								<label for="nokegiatan">No Kegiatan</label>
+								<input type="text" class="form-control" id="nokegiatan<?= $a ?>" placeholder="Masukan No Kegiatan" name="nokegiatan[]" required>
 							</div>
 							<div class="col-sm-2">
-								<label for="keterangan" class="mr-sm-2">Keterangan Kegiatan</label>
-								<input type="text" class="form-control mb-2 mr-sm-2" rows="5" id="keterangan<?= $a ?>" placeholder="Masukan Keterangan Kegiatan" name="keterangan[]" required></textarea>
+								<label for="indikator">Indikator</label>
+								<input type="text" class="form-control" id="indikator<?= $a ?>" placeholder="Masukan Indikator" name="indikator[]" required>
+							</div>
+							<div class="col-sm-1">
+								<label for="target">Target</label>
+								<input type="text" class="form-control" id="target<?= $a ?>" placeholder="Masukan Target" name="target[]" required>
+							</div>
+							<div class="col-sm-3">
+								<label for="nama_kegiatan" class="mr-sm-2">Nama Kegiatan</label>
+								<input type="text" class="form-control mb-2 mr-sm-2" id="nama_kegiatan<?= $a ?>" 
+								placeholder="Maksukan Nama Kegiatan" name="nama_kegiatan[]" required>
+							</div>
+							<div class="col-sm-6">
+								<label for="anggarangasal" class="mr-sm-2">Anggaran Kegiatan Gasal</label>
+								<input type="text" class="form-control mb-2 mr-sm-2" id="anggarangasal<?= $a ?>" 
+								placeholder="Masukan Total Biaya" name="anggarangasal[]" required>
+							</div>
+							<div class="col-sm-6">
+								<label for="anggarangenap" class="mr-sm-2">Anggaran Kegiatan Genap</label>
+								<input type="text" class="form-control mb-2 mr-sm-2" rows="5" id="anggarangenap<?= $a ?>" 
+								placeholder="Masukan anggarangenap Kegiatan" name="anggarangenap[]" required></textarea>
 							</div>
 						</div>
 					</div>
@@ -195,7 +220,8 @@
 					} else { $jumlah = 0; }
 				?>
 					<div class="card-footer">
-						<input type="button" onclick="cetak()" name="btn" value="Submit" id="submitBtn" data-toggle="modal" data-target="#confirm-submit" class="btn btn-primary" />
+						<input type="button" onclick="cetak()" name="btn" value="Submit" id="submitBtn" 
+						data-toggle="modal" data-target="#confirm-submit" class="btn btn-primary" />
 					</div>
 				</div>
 				<div class="modal fade" id="confirm-submit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

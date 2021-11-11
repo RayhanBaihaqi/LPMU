@@ -124,16 +124,16 @@
 		<div class="card">
 			<div class="card-body">
 				<h4 class="card-title">Formulir Target Capaian</h4>
-				<div class="form-group">
+				<div class="form-group ">
 					<label for="sel1">Standar KPI:</label>
-					<select class="form-control" id="sel1">
+					<select class="form-control kpi" id="sel1">
 						<option>A</option>
 						<option>B</option>
 						<option>C</option>
-						<option>D</option>
+						<option></option>
 					</select>
 				</div>
-				<table class="table table-hover">
+				<table  class="table table-hover">
 					<thead>
 					<tr>
 						<th>KPI</th>
@@ -145,12 +145,14 @@
 						<th>Aksi</th>
 					</tr>
 					</thead>
-					<tbody>
+					<tbody id="tabelData">
+						<?php if ($detail_rkat) : ?>
+							<?php foreach ($detail_rkat as $reading) : ?>
 					<tr>
-						<td>A</td>
-						<td>1</td>
-						<td>john@example.com</td>
-						<td>2.000.000</td>
+						<td><?= $reading['huruf_kpi']; ?></td>
+						<td><?= $reading['angka_butir']; ?></td>
+						<td><?= $reading['nama_kegiatan']; ?></td>
+						<td><?= $reading['anggaran']; ?></td>
 						<td>
 							<div class="form-group">
 								<input type="email" class="form-control" placeholder="Masukan Realisasi Anggaran" id="email">
@@ -159,32 +161,8 @@
 						<td><input type="file" id="myFile" name="filename2"></td>
 						<td><a href="<?= base_url('rkat/editbyadmin/'); ?>" class="button button2"><i class="fas fa-edit"></i></a></td>
 					</tr>
-					<tr>
-						<td>A</td>
-						<td>2</td>
-						<td>john@example.com</td>
-						<td>2.000.000</td>
-						<td>
-							<div class="form-group">
-								<input type="email" class="form-control" placeholder="Masukan Realisasi Anggaran" id="email">
-							</div>
-						</td>
-						<td><input type="file" id="myFile" name="filename2"></td>
-						<td><a href="<?= base_url('rkat/editbyadmin/'); ?>" class="button button2"><i class="fas fa-edit"></i></a></td>
-					</tr>
-					<tr>
-						<td>A</td>
-						<td>3</td>
-						<td>john@example.com</td>
-						<td>2.000.000</td>
-						<td>
-							<div class="form-group">
-								<input type="email" class="form-control" placeholder="Masukan Realisasi Anggaran" id="email">
-							</div>
-						</td>
-						<td><input type="file" id="myFile" name="filename2"></td>
-						<td><a href="<?= base_url('rkat/editbyadmin/'); ?>" class="button button2"><i class="fas fa-edit"></i></a></td>
-					</tr>
+					<?php endforeach; ?>
+						<?php endif; ?>
 					</tbody>
 				</table>
 				<button type="button" class="btn btn-primary">Submit</button>
@@ -225,7 +203,19 @@
 		}
 
 	</script>
-
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#tabelData').DataTable();
+			function filterData () {
+				$('#tabelData').DataTable().search(
+					$('.kpi').val()
+					).draw();
+			}
+			$('.kpi').on('change', function () {
+				filterData();
+			});
+		});
+	</script>
 	<script src="http://localhost:8080/chart/apexcharts.min.js"></script>
 	<script src="http://localhost:8080/chart/dashboard.js"></script>
 	<script src="http://localhost:8080/chart/jquery.knob.min.js"></script>

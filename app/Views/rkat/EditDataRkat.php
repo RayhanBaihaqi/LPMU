@@ -127,7 +127,8 @@
 				<input required type="hidden" name="id_set" value="<?= $detail_rkat['id_set']; ?>">
 				<div class="form-group">
 					<label for="nama_kegiatan">Nama Kegiatan</label>
-					<input type="text" class="form-control" id="nama_kegiatan" placeholder="Maksukan Nama Kegiatan" name="nama_kegiatan" required value="<?= $detail_rkat['nama_kegiatan']; ?>">
+					<input type="text" class="form-control" id="nama_kegiatan" placeholder="Maksukan Nama Kegiatan" 
+					name="nama_kegiatan" required value="<?= $detail_rkat['nama_kegiatan']; ?>">
 				</div>
                 <div class="form-group">
                     <label for="jenis_anggaran">Jenis Anggaran</label>
@@ -157,7 +158,8 @@
 				</div>
                 <div class="form-group">
 					<label for="butir">Butir</label>
-					<input type="text" class="form-control" id="butir" placeholder="Masukan Butir Ke-" name="butir" required value="<?= $detail_rkat['butir']; ?>">
+					<input type="text" class="form-control" id="butir" placeholder="Masukan Butir Ke-" name="butir" 
+					required value="<?= $detail_rkat['butir']; ?>">
 				</div>
                 <div class="form-group">
                     <label for="semester">Semester</label>
@@ -171,11 +173,13 @@
                 </div>
                 <div class="form-group">
 					<label for="anggaran">Anggaran Kegiatan</label>
-					<input type="text" class="form-control" id="anggaran" placeholder="Masukan Total Anggaran" name="anggaran" required value="<?= $detail_rkat['anggaran']; ?>">
+					<input type="text" class="form-control" id="anggaran" placeholder="Masukan Total Anggaran" 
+					name="anggaran" required value="<?= $detail_rkat['anggaran']; ?>">
 				</div>
 				<div class="form-group">
 					<label for="keterangan">Keterangan Kegiatan</label>
-					<textarea class="form-control" rows="5" id="keterangan" placeholder="Masukan Total Biaya" name="keterangan" required ><?= $detail_rkat['keterangan']; ?></textarea>
+					<textarea class="form-control" rows="5" id="keterangan" placeholder="Masukan Total Biaya" 
+					name="keterangan" required ><?= $detail_rkat['keterangan']; ?></textarea>
 				</div>
                 <div class="form-group">
 					<button type="submit" id="edit" class="btn btn-success">edit</button>

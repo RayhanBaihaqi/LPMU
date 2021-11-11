@@ -148,14 +148,16 @@
 									</thead>
                                     <tbody>
 									<?php $i = 1;?>
-                                        <?php foreach ($detail_rkat as $key => $value) : ?>
+									<?php if ($detail_rkat) : ?>
+                                        <?php foreach ($detail_rkat as $value) : ?>
 										<tr>
 											<td scope="row"><?= $i++; ?></td>
 											<td><?= $value['nama_kegiatan']; ?></td>
 											<td><?= $value['semester']; ?></td>
 											<td><?= $value['anggaran']; ?></td>
 											<td><?= $value['keterangan']; ?></td>
-                                            <td><?= $value['id_kpi']; ?></td>
+                                            <td><?= $value['huruf_kpi']; ?></td>
+											<td><?= $value['angka_butir']; ?></td>
 											<td><?= $value['jenis_anggaran']; ?></td>
 											<td>
 												<a href="<?= base_url('rkat/editbyuser/'.$value['id']); ?>"
@@ -165,6 +167,7 @@
 											</td>
 										</tr>
 										<?php endforeach; ?>
+										<?php endif; ?>
 									</tbody>
                   </table>
                 </div>

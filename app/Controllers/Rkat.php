@@ -90,13 +90,13 @@ class Rkat extends BaseController
     public function indexbyuser()
     {
         $model = new DetailRkatModel();
-        $data['detail_rkat'] = $this->DetailRkatModel->gabung();
+        $data['detail_rkat'] = $this->DetailRkatModel->gabungkpi();
 
         return view('rkat/ListData', $data);
     }
     public function createbyuser() {
         $model = new DetailRkatModel();
-        $data['detail_rkat'] = $model->orderBy('id','ASC')->findAll();
+        $data['detail_rkat'] = $this->DetailRkatModel->gabungkpi()->$model->orderBy('id','ASC')->findAll();
         return view('rkat/inputData', $data);
     }
     public function save()
