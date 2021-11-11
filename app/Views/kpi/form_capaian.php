@@ -95,7 +95,7 @@
 
 
     <!-- Top Bar End -->
-    <div class="container">
+    <div class="container-fluid">
         <br>
         <!-- Nav Bar Start -->
         <div class="nav-bar">
@@ -154,17 +154,20 @@
             </select>
         </div>
         <form>
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row clearfix">
                     <div class="form-group" id="kpi1Div">
                         <!-- Tabel Visi Misi !-->
                         <table class="table table-bordered table-hover" id="kpi1">
                             <thead>
                                 <tr>
-
+                                    <th class="text-center">No.KPI</th>
+                                    <th class="text-center">Huruf butir</th>
                                     <th class="text-center">Butir</th>
                                     <th class="text-center">Rencana</th>
                                     <th class="text-center">Realisasi</th>
+                                    <th class="text-center">Upload File</th>
+                                    <th class="text-center">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>

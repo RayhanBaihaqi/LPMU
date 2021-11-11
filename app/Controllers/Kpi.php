@@ -32,8 +32,8 @@ class Kpi extends BaseController
 			'tahun_akademik' => $this->request->getPost('tahun_akademik'),
 			'prodi_unit' => $this->request->getPost('prodi_unit'),
 			'nama_prodi_unit' => $this->request->getPost('nama_prodi_unit'),
-			'kriteria' => $this->request->getPost('kriteria'),
-			'standar' => $this->request->getPost('standar'),
+			'nama_kpi' => $this->request->getPost('nama_kpi'),
+			'nama_butir' => $this->request->getPost('nama_butir'),
 			'pic' => $this->request->getPost('pic'),
 			'nama_pic' => $this->request->getPost('nama_pic'),
 			'created_at' => $this->request->getPost('created_at')

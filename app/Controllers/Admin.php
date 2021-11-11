@@ -19,6 +19,21 @@ class Admin extends BaseController
         return view('/admin/AdminKpi', $data);
     }
 
+    public function tambahkpi()
+    {
+        return view('/admin/TambahKpi');
+    }
+
+    public function tambahbutirkpi()
+    {
+        return view('/admin/TambahButirKpi');
+    }
+
+    public function listbutirkpi()
+    {
+        return view('/admin/ListKpiButir');
+    }
+
     public function editadminkpi($id = null)
     {
         $model = new DetailKpiModel();
@@ -34,8 +49,8 @@ class Admin extends BaseController
             'tahun_akademik' => $this->request->getPost('tahun_akademik'),
             'prodi_unit' => $this->request->getPost('prodi_unit'),
             'nama_prodi_unit' => $this->request->getPost('nama_prodi_unit'),
-            'kriteria' => $this->request->getPost('kriteria'),
-            'standar' => $this->request->getPost('standar'),
+            'nama_kpi' => $this->request->getPost('nama_kpi'),
+            'nama_butir' => $this->request->getPost('nama_butir'),
             'pic' => $this->request->getPost('pic'),
             'nama_pic' => $this->request->getPost('nama_pic'),
             'rencana_realisasi' => $this->request->getPost('rencana_realisasi'),

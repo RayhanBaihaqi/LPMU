@@ -344,6 +344,9 @@
 					<span>KPI</span></a>
 				<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
+						<a class="collapse-item" href="<?= base_url('/admin/tambahkpi') ?>">Tambah KPI</a>
+						<a class="collapse-item" href="<?= base_url('/admin/tambahbutirkpi') ?>">Tambah Butir KPI</a>
+						<a class="collapse-item" href="<?= base_url('/admin/listbutirkpi') ?>">Lihat KPI & Butir KPI</a>
 						<a class="collapse-item" href="<?= base_url('/admin/adminkpi') ?>">Lihat Rencana</a>
 						<a class="collapse-item" href="<?= base_url('#') ?>">Lihat Capaian</a>
 					</div>
@@ -440,10 +443,10 @@
 										<tr>
 											<td scope="row"><?= $i++; ?></td>
 											<td><?= $row['tahun_akademik'] ?></td>
-											<td><?= $row['kriteria'] ?></td>
+											<td><?= $row['nama_kpi'] ?></td>
 											<td><?= $row['prodi_unit'] ?></td>
 											<td><?= $row['nama_prodi_unit'] ?></td>
-											<td><?= $row['standar'] ?></td>
+											<td><?= $row['nama_butir'] ?></td>
 											<td><?= $row['pic'] ?></td>
 											<td><?= $row['nama_pic'] ?></td>
 											<td><?= $row['rencana_realisasi'] ?></td>
@@ -458,18 +461,7 @@
 									<?php endforeach; ?>
 								</tbody>
 							</table>
-							<div class="clearfix">
-								<div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
-								<ul class="pagination">
-									<li class="page-item disabled"><a href="#">Previous</a></li>
-									<li class="page-item"><a href="#" class="page-link">1</a></li>
-									<li class="page-item"><a href="#" class="page-link">2</a></li>
-									<li class="page-item active"><a href="#" class="page-link">3</a></li>
-									<li class="page-item"><a href="#" class="page-link">4</a></li>
-									<li class="page-item"><a href="#" class="page-link">5</a></li>
-									<li class="page-item"><a href="#" class="page-link">Next</a></li>
-								</ul>
-							</div>
+
 						</div>
 					</div>
 
