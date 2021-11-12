@@ -1,0 +1,28 @@
+List Pengerjaan RKAT
+ADMIN
+1. Membuat kategori pada Rencana RKAT
+2. Perbaikan pada halaman formulir rencana
+3. Membuat halaman lihat data Rencana RKAT
+4. Hapus kolom password pada halaman table user
+5. halaman profil dan seting dihapus
+
+USER
+1. Menampilkan nama kolom dari kategori Rencana RKAT
+2. Membuat tambah dan hapus data
+3. Menampilkan grafik capaian kinerja prodi atau unit
+4. membuat backand di halaman tambah rencana RKAT ( memasukan data ke dalam database )
+5. membuat perhitungan penambahan pada bagian halaman Tambah Rencana RKAT
+6. Tambahkan linkpada tombol sosmet di kanan atas (Selesai)
+7. dari halaman dashboard klik Rencana Anggaran langsung menuju formulir tambah
+8. Buat perhitungan dan memasukan ke databae formulir realisasi RKAT
+9. perbaikan pada tabel isian realisasi
+10. membuat halaman edit pada formulir realisasi
+11. Pada kesimpulan menambahkan dua grafik 
+12. Membuat menampilkan setiap data user by login
+13. Tambahkan Halaman Ubah Password
+14. Tambahan Kata-kata sapaan pada halaman setelah login (Selesai)
+
+Catatan
+1. Mencari tau apa saja yang akan di tampilkan pada halaman dashboard
+2. Hapus Halaman profil (Selesai)
+3. Selesaikan semua list di atas kemusian gabung databes menjadi satu

@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 //use CodeIgniter\Controller;
 use App\Models\DetailKpiModel;
+use App\Models\ModelKpiAdmin;
 
 class Kpi extends BaseController
 {
@@ -27,7 +28,7 @@ class Kpi extends BaseController
 	}
 	public function save()
 	{
-		$detail = new  DetailKpiModel();
+		$detail = new DetailKpiModel();
 		$data = [
 			'tahun_akademik' => $this->request->getPost('tahun_akademik'),
 			'prodi_unit' => $this->request->getPost('prodi_unit'),

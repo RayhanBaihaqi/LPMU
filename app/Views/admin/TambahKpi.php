@@ -148,7 +148,14 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <h2>Tambah KPI</h2>
-
+                    <br>
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Masukkan nama KPI baru</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
 
                 </div>
 

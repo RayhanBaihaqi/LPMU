@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\DataModel;
 use App\Models\DetailKpiModel;
+use App\Models\ModelKpiAdmin;
 
 class Admin extends BaseController
 {
@@ -17,6 +18,13 @@ class Admin extends BaseController
         $adminkpi = new DetailKpiModel();
         $data['adminkpi'] = $adminkpi->findAll();
         return view('/admin/AdminKpi', $data);
+    }
+
+    public function listkpi()
+    {
+        $listkpi = new ModelKpiAdmin();
+        $data['listkpi'] = $listkpi->findAll();
+        return view('/admin/ListKpiButir', $data);
     }
 
     public function tambahkpi()
