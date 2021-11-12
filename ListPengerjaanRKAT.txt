@@ -20,7 +20,7 @@ USER
 11. Pada kesimpulan menambahkan dua grafik 
 12. Membuat menampilkan setiap data user by login
 13. Tambahkan Halaman Ubah Password
-14. Tambahan Kata-kata sapaan pada halaman setelah login
+14. Tambahan Kata-kata sapaan pada halaman setelah login (Selesai)
 
 Catatan
 1. Mencari tau apa saja yang akan di tampilkan pada halaman dashboard
