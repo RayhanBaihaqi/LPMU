@@ -68,13 +68,13 @@
 						</div>
 					</div>
 					<div class="col-sm-2">
-						<div class="social">
-							<a href=""><i class="fab fa-twitter"></i></a>
-							<a href=""><i class="fab fa-facebook-f"></i></a>
-							<a href=""><i class="fab fa-linkedin-in"></i></a>
-							<a href=""><i class="fab fa-instagram"></i></a>
-						</div>
-					</div>
+                        <div class="social">
+                            <a href="https://www.upj.ac.id/"><i class="fas fa-globe"></i></i></a>
+                            <a href="https://twitter.com/upj_bintaro"><i class="fab fa-twitter"></i></a>
+                            <a href="https://web.facebook.com/universitas.pembangunan.jaya?_rdc=1&_rdr"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/upj_bintaro/"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
 				</div>
 			</div>
 		</div>
@@ -106,9 +106,8 @@
 									</span>
 								</a>
 								<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-									<a class="dropdown-item" href="profile.html"><i class="fas fa-user"></i> Profile</a>
-									<a class="dropdown-item" href="profile.html"><i class="fas fa-cog"></i> Setting</a>
-									<a class="dropdown-item" href="login.html"><i class="fas fa-sign-out-alt"></i> Log
+									<a class="dropdown-item" href="profile.html"><i class="fas fa-cog"></i> Ubah Password</a>
+									<a class="dropdown-item" href="<?= base_url('/auth/logout') ?>"><i class="fas fa-sign-out-alt"></i> Log
 										Out</a>
 								</div>
 							</div>
@@ -132,8 +131,10 @@
 					<div class="form-inline">
 						<label class="mb-2 mr-sm-2" for="exampleFormControlSelect1" style="width: 150px;">Tahun Ajaran</label>
 						<select class="form-control mb-2 mr-sm-2" id="exampleFormControlSelect1">
-							<option value="<?= $value['tahun_akademik'] ?>" selected><?= $value['tahun_akademik'] ?>
-							</option>
+							<!-- <option value="<?= $value['tahun_akademik'] ?>" selected><?= $value['tahun_akademik'] ?> </option>-->
+							<option value="" disabled selected>Pilih Tahun</option>
+							<option value="2019/2020">2019/2020</option>
+							<option value="2020/2021">2020/2021</option>
 						</select>
 					</div>
 					<div class="form-inline">
@@ -143,82 +144,100 @@
 						<input type="text" class="form-control mb-2 mr-sm-2" id=pagu" name="pagu" value="RP. <?= $value['pagu'] ?>" required disabled>
 					</div>
 					<?php endforeach; ?>
-				<?php
-					$jumlah = $_POST['jumlah'];
-					for($a=1;$a<=$jumlah;$a++)
-					{
-				?>
-					<div class="card-body">
-						<h6 class="bg-dark text-white">Kegiatan <?= $a ?></h6><br>
-						<!-- Akan Dilooping -->
-						<div class="form-row">
-							<div class="col-sm-2">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Kategori</th>
+								<th>Kriteria</th>
+								<th>Butir</th>
+								<th>No Kegiatan</th>
+								<th>Indikator</th>
+								<th>Target</th>
+								<th>Nama Kegiatan</th>
+								<th>Anggaran Gasal</th>
+								<th>Anggaran Genap</th>
+								<th>Total</th>
+							</tr>
+						</thead>
+						<tbody>
+						<?php
+							$jumlah = $_POST['jumlah'];
+							for($a=1;$a<=$jumlah;$a++)
+							{
+						?>
+							<tr>
 								<input type="hidden" name="jumlah" value="<?= $jumlah ?>">
-								<label for="jenis_anggaran">Kategori</label>
-								<select class="form-control" id="jenis_anggaran<?= $a ?>" name="jenis_anggaran[]">
-									<option value="" disabled selected>Pilih Kategori</option>
-									<option value="Program Kerja">Program Kerja</option>
-									<option value="Oprasional">Oprasional</option>
-									<option value="Investasi">Investasi</option>
-								</select>
-							</div>
-							<div class="col-sm-2">
-								<label for="jenis_kpi">Kategori KPI</label>
-								<select class="form-control" id="jenis_kpi<?= $a ?>" name="jenis_kpi[]">
-									<option value="" disabled selected>Pilih Kategori KPI</option>
-									<option value="1">Standar 1 – Visi Misi Tujuan dan Strategi</option>
-									<option value="2">Standar 2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
-									<option value="3">Standar 3 - Mahasiswa</option>
-									<option value="4">Standar 4 - Sumber Daya Manusia</option>
-									<option value="5">Standar 5 - Keuangan, Sarana dan Prasarana</option>
-									<option value="6">Standar 6 - Pendidikan</option>
-									<option value="7">Standar 7 – Penelitian</option>
-									<option value="8">Standar 8 - Pengabdian kepada Masyarakat (PkM)</option>
-									<option value="9">Standar 9 - Luaran dan Capaian Tridharma</option>
-								</select>
-							</div>
-							<div class="col-sm-1">
-								<label for="butir">Butir</label>
-								<select class="form-control" id="butir<?= $a ?>" name="butir[]">
-									<option value="" disabled selected>Pilih butir</option>
-									<option value="1">1</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
-								</select>
-							</div>
-							<div class="col-sm-1">
-								<label for="nokegiatan">No Kegiatan</label>
-								<input type="text" class="form-control" id="nokegiatan<?= $a ?>" placeholder="Masukan No Kegiatan" name="nokegiatan[]" required>
-							</div>
-							<div class="col-sm-2">
-								<label for="indikator">Indikator</label>
-								<input type="text" class="form-control" id="indikator<?= $a ?>" placeholder="Masukan Indikator" name="indikator[]" required>
-							</div>
-							<div class="col-sm-1">
-								<label for="target">Target</label>
-								<input type="text" class="form-control" id="target<?= $a ?>" placeholder="Masukan Target" name="target[]" required>
-							</div>
-							<div class="col-sm-3">
-								<label for="nama_kegiatan" class="mr-sm-2">Nama Kegiatan</label>
-								<input type="text" class="form-control mb-2 mr-sm-2" id="nama_kegiatan<?= $a ?>" 
-								placeholder="Maksukan Nama Kegiatan" name="nama_kegiatan[]" required>
-							</div>
-							<div class="col-sm-6">
-								<label for="anggarangasal" class="mr-sm-2">Anggaran Kegiatan Gasal</label>
-								<input type="text" class="form-control mb-2 mr-sm-2" id="anggarangasal<?= $a ?>" 
-								placeholder="Masukan Total Biaya" name="anggarangasal[]" required>
-							</div>
-							<div class="col-sm-6">
-								<label for="anggarangenap" class="mr-sm-2">Anggaran Kegiatan Genap</label>
-								<input type="text" class="form-control mb-2 mr-sm-2" rows="5" id="anggarangenap<?= $a ?>" 
-								placeholder="Masukan anggarangenap Kegiatan" name="anggarangenap[]" required></textarea>
-							</div>
-						</div>
-					</div>
-				<?php } ?>
-				<?php
-					} else { $jumlah = 0; }
-				?>
+								<td>
+									<select class="form-control" style="width: 80px;" id="jenis_anggaran" name="jenis_anggaran[]">
+										<option value="" disabled selected>Pilih Kategori</option>
+										<option value="PK">PK</option>
+										<option value="OPS">OPS</option>
+										<option value="INV">INV</option>
+									</select>
+								</td>
+								<td>
+									<select class="form-control" style="width: 80px;" id="jenis_kpi" name="jenis_kpi[]">
+										<option value="" disabled selected>Pilih Kategori KPI</option>
+										<option value="1">1 – Visi Misi Tujuan dan Strategi</option>
+										<option value="2">2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
+										<option value="3">3 - Mahasiswa</option>
+										<option value="4">4 - Sumber Daya Manusia</option>
+										<option value="5">5 - Keuangan, Sarana dan Prasarana</option>
+										<option value="6">6 - Pendidikan</option>
+										<option value="7">7 – Penelitian</option>
+										<option value="8">8 - Pengabdian kepada Masyarakat (PkM)</option>
+										<option value="9">9 - Luaran dan Capaian Tridharma</option>
+									</select>
+								</td>
+								<td>
+									<select class="form-control" style="width: 80px;" id="butir" name="butir[]">
+										<option value="" disabled selected>Pilih butir</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+									</select>
+								</td>
+								<td>
+									<input type="text" class="form-control" style="width: 90px;" id="nokegiatan" placeholder="Masukan No Kegiatan" name="nokegiatan[]" required>
+								</td>
+								<td>
+									<input type="text" class="form-control" style="width: 120px;" id="indikator" placeholder="Masukan Indikator" name="indikator[]" required>
+								</td>
+								<td>
+									<input type="text" class="form-control" style="width: 50px;" id="target" placeholder="Masukan Target" name="target[]" required>
+								</td>
+								<td>
+									<input type="text" class="form-control" style="width: 120px;" id="nama_kegiatan" placeholder="Maksukan Nama Kegiatan" name="nama_kegiatan[]" required>
+								</td>
+								<td>
+									<input type="text" class="form-control" style="width: 150px;" id="anggarangasal" placeholder="Masukan Total Biaya" name="anggarangasal[]" required>
+								</td>
+								<td>
+									<input type="text" class="form-control" style="width: 150px;" id="anggarangenap" placeholder="Masukan anggarangenap Kegiatan" name="anggarangenap[]" required>
+								</td>
+								<td>
+									<input type="text" class="form-control" style="width: 150px;" id=pagu" name="pagu" value="RP. 100000000" required disabled>
+								</td>
+							</tr>
+							<?php } ?>
+							<?php
+								} else { $jumlah = 0; }
+							?>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>Total Keseluruhan</td>
+								<td><input type="text" class="form-control" style="width: 150px;" id=pagu" name="pagu" value="RP. 100000000" required disabled></td>
+								<td><input type="text" class="form-control" style="width: 150px;" id=pagu" name="pagu" value="RP. 100000000" required disabled></td>
+								<td><input type="text" class="form-control" style="width: 150px;" id=pagu" name="pagu" value="RP. 100000000" required disabled></td>
+							</tr>
+						</tbody>
+  					</table>
+				
 					<div class="card-footer">
 						<input type="button" onclick="cetak()" name="btn" value="Submit" id="submitBtn" 
 						data-toggle="modal" data-target="#confirm-submit" class="btn btn-primary" />

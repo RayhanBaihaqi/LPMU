@@ -68,13 +68,13 @@
 						</div>
 					</div>
 					<div class="col-sm-2">
-						<div class="social">
-							<a href=""><i class="fab fa-twitter"></i></a>
-							<a href=""><i class="fab fa-facebook-f"></i></a>
-							<a href=""><i class="fab fa-linkedin-in"></i></a>
-							<a href=""><i class="fab fa-instagram"></i></a>
-						</div>
-					</div>
+                        <div class="social">
+                            <a href="https://www.upj.ac.id/"><i class="fas fa-globe"></i></i></a>
+                            <a href="https://twitter.com/upj_bintaro"><i class="fab fa-twitter"></i></a>
+                            <a href="https://web.facebook.com/universitas.pembangunan.jaya?_rdc=1&_rdr"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/upj_bintaro/"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
 				</div>
 			</div>
 		</div>
@@ -106,9 +106,8 @@
 									</span>
 								</a>
 								<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-									<a class="dropdown-item" href="profile.html"><i class="fas fa-user"></i> Profile</a>
-									<a class="dropdown-item" href="profile.html"><i class="fas fa-cog"></i> Setting</a>
-									<a class="dropdown-item" href="login.html"><i class="fas fa-sign-out-alt"></i> Log
+									<a class="dropdown-item" href="profile.html"><i class="fas fa-cog"></i> Ubah Password</a>
+									<a class="dropdown-item" href="<?= base_url('/auth/logout') ?>"><i class="fas fa-sign-out-alt"></i> Log
 										Out</a>
 								</div>
 							</div>

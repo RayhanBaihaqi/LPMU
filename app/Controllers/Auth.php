@@ -89,16 +89,32 @@ class Auth extends BaseController
             session()->set($data);
 
             if (session('level') == 'prodi') {
-                session()->setFlashdata('pesan', 'Berhasil Login');
+                session()->setFlashdata('pesan', '
+                <div class="alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>Login Success!</strong> Selamat anda telah berhasil login.
+                </div>');
                 return redirect()->to('/backend');
             } elseif (session('level') == 'unit') {
-                session()->setFlashdata('pesan', 'Berhasil Login');
+                session()->setFlashdata('pesan', '
+                <div class="alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>Login Success!</strong> Selamat anda telah berhasil login.
+                </div>');
                 return redirect()->to('/backend');
             } else if (session('level') == 'admin') {
-                session()->setFlashdata('pesan', 'Berhasil Login');
+                session()->setFlashdata('pesan', '
+                <div class="alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>Login Success!</strong> Selamat anda telah berhasil login.
+                </div>');
                 return redirect()->to('/admin');
             } else if (session('level') == 'rektorat') {
-                session()->setFlashdata('pesan', 'Berhasil Login');
+                session()->setFlashdata('pesan', '
+                <div class="alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>Login Success!</strong> Selamat anda telah berhasil login.
+                </div>');
                 return redirect()->to('/backend');
             }
         } else {
