@@ -1,5 +1,0 @@
-__ci_last_regenerate|i:1636609815;_ci_previous_url|s:29:"http://localhost:8080/backend";log|b:1;nama_prodi|s:10:"Informatik";username|s:6:"INF007";level|s:5:"prodi";pesan|s:258:"
-                <div class="alert alert-success">
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                    <strong>Login Success!</strong> Selamat anda telah berhasil login.
-                </div>";__ci_vars|a:1:{s:5:"pesan";s:3:"old";}
