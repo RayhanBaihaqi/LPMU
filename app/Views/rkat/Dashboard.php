@@ -132,10 +132,16 @@
 		</div>
 		<!-- Nav Bar End -->
 
-        <div class="container-fluid">
-            <p>Selamat Datang di halaman RKAT </p>
+        <div class="container">
+            <div class="row" style="margin: 15px auto;">
+				<div class="col-md-12">
+					<div class="card-box pd-30 height-100-p">
+                        <h5>Selamat Datang di halaman RKAT </h5>
+					</div>
+				</div>
+            </div>
             <!-- ====================================================================================================================== -->
-            <div class="row">
+            <div class="row" style="margin: 15px auto;">
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
                     <div class="small-box bg-info">
@@ -189,9 +195,12 @@
                 </div>
             </div>
             <!-- ====================================================================================================================== -->
-            <!--<a href="<?= base_url('/setrkat/createbyuser') ?>" class="btn btn-info btn-sm"><i class="fa fa-home"></i> Rencana RKAT</a> 
-			<a href="<?= base_url('/rkat/indexbyuser') ?>" class="btn btn-info btn-sm"><i class="fa fa-home"></i> Lihat List Rencana</a>-->
-            <hr>
+
+            
+
+            <!--<a href="<-?= base_url('/setrkat/createbyuser') ?>" class="btn btn-info btn-sm"><i class="fa fa-home"></i> Rencana RKAT</a> 
+			<a href="<-?= base_url('/rkat/indexbyuser') ?>" class="btn btn-info btn-sm"><i class="fa fa-home"></i> Lihat List Rencana</a>-->
+            <!-- <hr>
             <div class="row clearfix progress-box">
 				<div class="col-lg-3 col-md-6 col-sm-12 mb-30">
 					<div class="card-box pd-30 height-100-p">
@@ -238,7 +247,7 @@
 					</div>
 				</div>
 			</div>
-            <!-- ====================================================================================================================== -->
+            <-!-- ====================================================================================================================== --
             <div class="row clearfix progress-box">
 				<div class="col-lg-3 col-md-6 col-sm-12 mb-30">
 					<div class="card-box pd-30 height-100-p">
@@ -285,7 +294,7 @@
 					</div>
 				</div>
 			</div>
-            <!-- ====================================================================================================================== -->
+            <-!-- ====================================================================================================================== --
             <div class="row clearfix progress-box">
 				<div class="col-lg-4 col-md-6 col-sm-12 mb-30">
 					<div class="card-box pd-30 height-100-p">
@@ -321,7 +330,7 @@
 					</div>
 				</div>
 			</div>
-			<!-- ====================================================================================================================== -->
+			<-!-- ====================================================================================================================== --
 			<h3>GRAFIK PERBANDINGAN</h3>
 			<hr>
 			<div class="row clearfix progress-box">
@@ -341,7 +350,7 @@
 							</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
         <section class="content">
                 <div class="row">
                     <div class="col-md-6">

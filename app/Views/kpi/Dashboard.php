@@ -139,10 +139,16 @@
         </div>
         <!-- Nav Bar End -->
 
-        <div class="container-fluid">
-            <h1>Selamat Datang di halaman KPI </h1>
+        <div class="container">
+            <div class="row" style="margin: 15px auto;">
+				<div class="col-md-12">
+					<div class="card-box pd-30 height-100-p">
+                        <h5>Selamat Datang di halaman KPI </h5>
+					</div>
+				</div>
+            </div>
             <!-- ====================================================================================================================== -->
-            <div class="row">
+            <div class="row" style="margin: 15px auto;">
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
                     <div class="small-box bg-info">
@@ -153,7 +159,6 @@
                         <div class="icon">
                             <i class="fas fa-users"></i>
                         </div>
-                        <a href="#" class="small-box-footer">Lihat detail <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -167,7 +172,6 @@
                         <div class="icon">
                             <i class="fas fa-users"></i>
                         </div>
-                        <a href="#" class="small-box-footer">Lihat detail <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -181,7 +185,6 @@
                         <div class="icon">
                             <i class="fas fa-graduation-cap"></i>
                         </div>
-                        <a href="#" class="small-box-footer">Lihat detail <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -195,24 +198,24 @@
                         <div class="icon">
                             <i class="fas fa-university"></i>
                         </div>
-                        <a href="#" class="small-box-footer">Lihat detail <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
             </div>
             <!-- ====================================================================================================================== -->
+            
+            
+
+            <!-- <a href="#" class="btn btn-info btn-sm"><i class="fa fa-home"></i> Link Button</a>
             <a href="#" class="btn btn-info btn-sm"><i class="fa fa-home"></i> Link Button</a>
-            <a href="#" class="btn btn-info btn-sm"><i class="fa fa-home"></i> Link Button</a>
-            <a href="#" class="btn btn-info btn-sm"><i class="fa fa-home"></i> Link Button</a>
+            <a href="#" class="btn btn-info btn-sm"><i class="fa fa-home"></i> Link Button</a> -->
             <hr>
             <div class="row clearfix progress-box">
                 <div class="col-lg-4 col-md-6 col-sm-12 mb-30">
                     <div class="card-box pd-30 height-100-p">
                         <a href="kpi/inputkpi" class="small-box-footer text-blue">
                             <div class="progress-box text-center">
-
                                 <h5 class="text-blue padding-top-10 h5">Input Rencana</h5>
                             </div>
-
                         </a>
                     </div>
                 </div>
@@ -240,11 +243,11 @@
                 </div>
 
 
-                <section class="content">
+                <!-- <section class="col-lg-12 content">
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-6">
-                                <!-- AREA CHART -->
+                                <-!-- AREA CHART --
                                 <div class="card card-primary">
                                     <div class="card-header">
                                         <h3 class="card-title">Area Chart</h3>
@@ -263,11 +266,11 @@
                                             <canvas id="areaChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                                         </div>
                                     </div>
-                                    <!-- /.card-body -->
+                                    <-!-- /.card-body --
                                 </div>
-                                <!-- /.card -->
+                                <-!-- /.card --
 
-                                <!-- DONUT CHART -->
+                                <-!-- DONUT CHART --
                                 <div class="card card-danger">
                                     <div class="card-header">
                                         <h3 class="card-title">Donut Chart</h3>
@@ -284,11 +287,11 @@
                                     <div class="card-body">
                                         <canvas id="donutChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                                     </div>
-                                    <!-- /.card-body -->
+                                    <-!-- /.card-body --
                                 </div>
-                                <!-- /.card -->
+                                <-!-- /.card --
 
-                                <!-- PIE CHART -->
+                                <-!-- PIE CHART --
                                 <div class="card card-danger">
                                     <div class="card-header">
                                         <h3 class="card-title">Pie Chart</h3>
@@ -305,14 +308,14 @@
                                     <div class="card-body">
                                         <canvas id="pieChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                                     </div>
-                                    <!-- /.card-body -->
+                                    <-!-- /.card-body --
                                 </div>
-                                <!-- /.card -->
+                                <-!-- /.card --
 
                             </div>
-                            <!-- /.col (LEFT) -->
+                            <-!-- /.col (LEFT) --
                             <div class="col-md-6">
-                                <!-- LINE CHART -->
+                                <-!-- LINE CHART --
                                 <div class="card card-info">
                                     <div class="card-header">
                                         <h3 class="card-title">Line Chart</h3>
@@ -331,11 +334,11 @@
                                             <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                                         </div>
                                     </div>
-                                    <!-- /.card-body -->
+                                    <-!-- /.card-body --
                                 </div>
-                                <!-- /.card -->
+                                <-!-- /.card --
 
-                                <!-- BAR CHART -->
+                                <-!-- BAR CHART --
                                 <div class="card card-success">
                                     <div class="card-header">
                                         <h3 class="card-title">Bar Chart</h3>
@@ -354,11 +357,11 @@
                                             <canvas id="barChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                                         </div>
                                     </div>
-                                    <!-- /.card-body -->
+                                    <-!-- /.card-body --
                                 </div>
-                                <!-- /.card -->
+                                <-!-- /.card --
 
-                                <!-- STACKED BAR CHART -->
+                                <-!-- STACKED BAR CHART --
                                 <div class="card card-success">
                                     <div class="card-header">
                                         <h3 class="card-title">Stacked Bar Chart</h3>
@@ -377,17 +380,17 @@
                                             <canvas id="stackedBarChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                                         </div>
                                     </div>
-                                    <!-- /.card-body -->
+                                    <-!-- /.card-body --
                                 </div>
-                                <!-- /.card -->
+                                <-!-- /.card --
 
                             </div>
-                            <!-- /.col (RIGHT) -->
+                            <-!-- /.col (RIGHT) --
                         </div>
-                        <!-- /.row -->
-                    </div><!-- /.container-fluid -->
+                        <-!-- /.row --
+                    </div><-!-- /.container-fluid --
                 </section>
-            </div>
+            </div> -->
 
             <!-- JavaScript Libraries -->
             <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -395,6 +398,24 @@
             <script src="lib/easing/easing.min.js"></script>
             <script src="lib/owlcarousel/owl.carousel.min.js"></script>
             <script src="lib/isotope/isotope.pkgd.min.js"></script>
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+            <!-- jQuery -->
+            <script src="../../plugins/jquery/jquery.min.js"></script>
+            <!-- Bootstrap 4 -->
+            <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+            <!-- ChartJS -->
+            <script src="../../plugins/chart.js/Chart.min.js"></script>
+            <!-- AdminLTE App -->
+            <script src="../../dist/js/adminlte.min.js"></script>
+            <!-- AdminLTE for demo purposes -->
+            <script src="../../dist/js/demo.js"></script>
+            <script src="http://localhost:8080/chart/apexcharts.min.js"></script>
+            <script src="http://localhost:8080/chart/dashboard.js"></script>
+            <script src="http://localhost:8080/chart/jquery.knob.min.js"></script>
+            <script src="http://localhost:8080/chart/knob-chart-setting.js"></script>
+            <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
             <script>
                 function startTime() {
                     var today = new Date();
@@ -415,24 +436,6 @@
                     return i;
                 }
             </script>
-            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-            <!-- jQuery -->
-            <script src="../../plugins/jquery/jquery.min.js"></script>
-            <!-- Bootstrap 4 -->
-            <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-            <!-- ChartJS -->
-            <script src="../../plugins/chart.js/Chart.min.js"></script>
-            <!-- AdminLTE App -->
-            <script src="../../dist/js/adminlte.min.js"></script>
-            <!-- AdminLTE for demo purposes -->
-            <script src="../../dist/js/demo.js"></script>
-            <script src="http://localhost:8080/chart/apexcharts.min.js"></script>
-            <script src="http://localhost:8080/chart/dashboard.js"></script>
-            <script src="http://localhost:8080/chart/jquery.knob.min.js"></script>
-            <script src="http://localhost:8080/chart/knob-chart-setting.js"></script>
-            <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
             <script>
                 $(window).load(function() {
                     $(".pre-loader").fadeOut("slow");
