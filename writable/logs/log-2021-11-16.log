@@ -1,3 +1,79 @@
+<<<<<<< HEAD
+CRITICAL - 2021-11-16 02:29:42 --> Undefined variable: set_rkat
+#0 C:\xampp\htdocs\lpmu-web\app\Views\admin\TambahRkat.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 160, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('admin/TambahRka...', Array, true)
+#4 C:\xampp\htdocs\lpmu-web\app\Controllers\Rkat.php(201): view('admin/TambahRka...', Array)
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Rkat->createbyadmin()
+#6 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rkat))
+#7 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2021-11-16 02:30:28 --> Undefined variable: set_rkat
+#0 C:\xampp\htdocs\lpmu-web\app\Views\admin\TambahRkat.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 160, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('admin/TambahRka...', Array, true)
+#4 C:\xampp\htdocs\lpmu-web\app\Controllers\Rkat.php(201): view('admin/TambahRka...', Array)
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Rkat->createbyadmin()
+#6 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rkat))
+#7 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2021-11-16 02:30:35 --> Undefined variable: set_rkat
+#0 C:\xampp\htdocs\lpmu-web\app\Views\admin\TambahRkat.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 160, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('admin/TambahRka...', Array, true)
+#4 C:\xampp\htdocs\lpmu-web\app\Controllers\Rkat.php(201): view('admin/TambahRka...', Array)
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Rkat->createbyadmin()
+#6 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rkat))
+#7 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2021-11-16 02:30:37 --> Undefined variable: set_rkat
+#0 C:\xampp\htdocs\lpmu-web\app\Views\admin\TambahRkat.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 160, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('admin/TambahRka...', Array, true)
+#4 C:\xampp\htdocs\lpmu-web\app\Controllers\Rkat.php(201): view('admin/TambahRka...', Array)
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Rkat->createbyadmin()
+#6 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rkat))
+#7 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2021-11-16 02:30:43 --> Undefined variable: set_rkat
+#0 C:\xampp\htdocs\lpmu-web\app\Views\admin\TambahRkat.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 160, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('admin/TambahRka...', Array, true)
+#4 C:\xampp\htdocs\lpmu-web\app\Controllers\Rkat.php(201): view('admin/TambahRka...', Array)
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Rkat->createbyadmin()
+#6 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rkat))
+#7 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+ERROR - 2021-11-16 04:01:21 --> Table 'db_lpmu.data_kpi' doesn't exist
+CRITICAL - 2021-11-16 04:01:21 --> Table 'db_lpmu.data_kpi' doesn't exist
+#0 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1881): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\lpmu-web\app\Models\DetailRkatModel.php(42): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\lpmu-web\app\Controllers\CapaianRkat.php(25): App\Models\DetailRkatModel->gabungkpi()
+#6 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\CapaianRkat->createcapaianbyuser()
+#7 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CapaianRkat))
+#8 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+=======
 ERROR - 2021-11-16 00:06:43 --> Table 'db_lpmu.detail_kpi' doesn't exist
 CRITICAL - 2021-11-16 00:06:43 --> Table 'db_lpmu.detail_kpi' doesn't exist
 #0 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('SELECT *\nFROM `...')
@@ -308,6 +384,7 @@ CRITICAL - 2021-11-16 01:51:01 --> Undefined index: semester
 #8 C:\xampp\htdocs\LPMU\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #9 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
 #10 {main}
+<<<<<<< HEAD
 CRITICAL - 2021-11-16 02:20:34 --> Call to undefined function form_open()
 #0 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\View\View.php(230): include()
 #1 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
@@ -587,3 +664,6 @@ CRITICAL - 2021-11-16 03:56:22 --> Undefined property: stdClass::$angka_butir
 #8 C:\xampp\htdocs\LPMU\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #9 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
 #10 {main}
+=======
+>>>>>>> 29f57b1869f05c06dd0c1b735bee3c426f8c50d0
+>>>>>>> c03e7ac2eccc2e0c352ad519a03903c4fbc6a7a8

@@ -119,7 +119,8 @@
 		<!-- Nav Bar End -->
 		<br>
 		
-		<form action="<?= base_url('rkat/save'); ?>" method="POST" enctype="multipart/form-data">	
+		<form id="formD" name="formD" action="<?= base_url('rkat/save'); ?>" method="POST" enctype="multipart/form-data">
+		<?= session()->getFlashdata('status'); ?>	
 			<div class="card">
 					<div class="card-header">Tambah Rencana RKAT</div>
 					<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat'];?>
@@ -138,7 +139,7 @@
 					<div class="form-inline">
 						<label for="prodiunit" class="mb-2 mr-sm-2" style="width: 150px;">Program Studi/Unit</label>
 						<input type="text" class="form-control mb-2 mr-sm-2" id="prodiunit" value="<?= $value['nama_prodi'] ?>" name="prodiunit"required disabled>
-						<label for=pagu" class="mb-2 mr-sm-2">Jumlah Pagu</label>
+						<label for="pagu" class="mb-2 mr-sm-2">Jumlah Pagu</label>
 						<input type="text" class="form-control mb-2 mr-sm-2" id=pagu" name="pagu" value="RP. <?= $value['pagu'] ?>" required disabled>
 					</div>
 					<?php endforeach; ?>
@@ -162,11 +163,8 @@
 								for($baris=1;$baris<=1;$baris++){
 							?>
 							<tr id="<?= $baris ?>">
-							<?php
-								for($t=1;$t<=1;$t++){
-							?>
 								<td>
-									<select class="form-control" style="width: 80px;" id="kategori<?= $t ?>" name="kategori">
+									<select class="form-control" style="width: 80px;" id="kategori" name="kategori">
 										<option value="" disabled selected>Pilih Kategori</option>
 										<option value="PK">PK</option>
 										<option value="OPS">OPS</option>
@@ -174,7 +172,7 @@
 									</select>
 								</td>
 								<td>
-									<select class="form-control" style="width: 80px;" id="kpi<?= $t ?>" name="kpi">
+									<select class="form-control" style="width: 80px;" id="kpi" name="kpi">
 										<option value="" disabled selected>Pilih Kategori KPI</option>
 										<option value="1">1 – Visi Misi Tujuan dan Strategi</option>
 										<option value="2">2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
@@ -188,7 +186,7 @@
 									</select>
 								</td>
 								<td>
-									<select class="form-control" style="width: 80px;" id="butir<?= $t ?>" name="butir">
+									<select class="form-control" style="width: 80px;" id="butir" name="butir">
 										<option value="" disabled selected>Pilih butir</option>
 										<option value="1">1</option>
 										<option value="2">2</option>
@@ -196,38 +194,35 @@
 									</select>
 								</td>
 								<td>
-									<input type="text" class="form-control" style="width: 90px;" id="no_kegiatan<?= $t ?>" placeholder="Masukan No Kegiatan" name="no_kegiatan" required>
+									<input type="text" class="form-control" style="width: 90px;" id="no_kegiatan" placeholder="Masukan No Kegiatan" name="no_kegiatan" required>
 								</td>
 								<td>
-									<input type="text" class="form-control" style="width: 120px;" id="indikator<?= $t ?>" placeholder="Masukan Indikator" name="indikator" required>
+									<input type="text" class="form-control" style="width: 120px;" id="indikator" placeholder="Masukan Indikator" name="indikator" required>
 								</td>
 								<td>
-									<input type="text" class="form-control" style="width: 50px;" id="target<?= $t ?>" placeholder="Masukan Target" name="target" required>
+									<input type="text" class="form-control" style="width: 50px;" id="target" placeholder="Masukan Target" name="target" required>
 								</td>
 								<td>
-									<input type="text" class="form-control" style="width: 120px;" id="nama_kegiatan<?= $t ?>" placeholder="Maksukan Nama Kegiatan" name="nama_kegiatan" required>
+									<input type="text" class="form-control" style="width: 120px;" id="nama_kegiatan" placeholder="Maksukan Nama Kegiatan" name="nama_kegiatan" required>
 								</td>
 								<td>
-									<input type="text" class="form-control" style="width: 150px;" id="anggaranGasal<?= $t ?>" placeholder="Masukan Anggaran Gasal" name="anggaranGasal" required>
+									<input type="text" class="form-control" style="width: 150px;" id="anggaranGasal" placeholder="Masukan Anggaran Gasal" name="anggaranGasal" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" required>
 								</td>
 								<td>
-									<input type="text" class="form-control" style="width: 150px;" id="anggaranGenap<?= $t ?>" placeholder="Masukan Anggaran Genap" name="anggaranGenap" required>
+									<input type="text" class="form-control" style="width: 150px;" id="anggaranGenap" placeholder="Masukan Anggaran Genap" name="anggaranGenap" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" required>
 								</td>
 								<td>
-									<input type="text" class="form-control" style="width: 150px;" id="total_perkegiatan<?= $t ?>" name="total_perkegiatan" value="<?php if(isset($_POST['total_perkegiatan']))?>" required disabled>
+									<input type="text" class="form-control" style="width: 150px;" id="total" name="total" placeholder="Total" readonly="readonly" required>
 								</td>
 								<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat'];?>
 									<input type="hidden" class="form-control" id="id_set" value="<?= $id_set ?>" name="id_set" required>	
 								<?php endforeach; ?>
-								<?php
-								}
-								?>
 							</tr>
 							<?php
 							}
 							?>
 							<tr>
-								<td></td>
+								<td><button class="btn btn-success btn-block" id="BarisBaru"><i class="fa fa-plus"></i> Baris Baru</button></td>
 								<td></td>
 								<td></td>
 								<td></td>
@@ -248,7 +243,16 @@
 
 		</form>
 	<script>
-		
+		anggaranGasal = document.formD.anggaranGasal.value;
+   		document.formD.total.value = anggaranGasal;
+		anggaranGenap = document.formD.anggaranGenap.value;
+   		document.formD.total.value = anggaranGenap;
+		function OnChange(value){
+			anggaranGasal = document.formD.anggaranGasal.value;
+			anggaranGenap = document.formD.anggaranGenap.value;
+			total = parseInt(anggaranGasal) + parseInt(anggaranGenap);
+     		document.formD.total.value = total;
+		}
 	</script>
 	<!-- JavaScript Libraries -->
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
