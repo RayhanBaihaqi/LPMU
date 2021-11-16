@@ -81,10 +81,10 @@
                     </div>
                     <div class="col-sm-2">
                         <div class="social">
-                            <a href=""><i class="fab fa-twitter"></i></a>
-                            <a href=""><i class="fab fa-facebook-f"></i></a>
-                            <a href=""><i class="fab fa-linkedin-in"></i></a>
-                            <a href=""><i class="fab fa-instagram"></i></a>
+                              <a href="https://www.upj.ac.id/"><i class="fas fa-globe"></i></i></a>
+                              <a href="https://twitter.com/upj_bintaro"><i class="fab fa-twitter"></i></a>
+                              <a href="https://web.facebook.com/universitas.pembangunan.jaya?_rdc=1&_rdr"><i class="fab fa-facebook-f"></i></a>
+                              <a href="https://www.instagram.com/upj_bintaro/"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
