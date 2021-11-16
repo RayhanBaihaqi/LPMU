@@ -104,9 +104,10 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between">
                     <div class="navbar-nav mr-auto">
-                        <a href="kpi" class="nav-item nav-link active">Home</a>
-                        <a href="/kpi/inputkpi" class="nav-item nav-link">Input Rencana</a>
-                        <a href="/kpi/inputcapaian" class="nav-item nav-link">Input Capaian</a>
+                        <a href="/kpi" class="nav-item nav-link active">Home</a>
+                        <a href="/kpi/rencana" class="nav-item nav-link">Rencana</a>
+                        <a href="/kpi/inputcapaian" class="nav-item nav-link">Input Realisasi</a>
+                        <a href="/kpi/kesimpulan" class="nav-item nav-link">Kesimpulan</a>
 
 
 

@@ -14,19 +14,21 @@ class Kpi extends BaseController
 		return view('/kpi/Dashboard');
 	}
 
-	public function inputkpi()
+	public function rencana()
 	{
-		return view('kpi/formkpi');
+		return view('kpi/rencana');
 	}
 	public function inputcapaian()
 	{
 		return view('kpi/form_capaian');
 	}
-	public function grafik_kpi()
+	public function kesimpulan()
 	{
 		return view('kpi/grafik');
 	}
-	public function save()
+
+
+	/*public function save()
 	{
 		$detail = new DetailKpiModel();
 		$data = [
@@ -101,5 +103,5 @@ class Kpi extends BaseController
 		$detail_visimisi = new DetailKpiModel();
 		$data['detail_visimisi'] = $detail_visimisi->findAll();
 		return view('kpi/detail/visimisi', $data);
-	}
+	}*/
 }
