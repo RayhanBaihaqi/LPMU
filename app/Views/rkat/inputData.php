@@ -119,7 +119,7 @@
 		<!-- Nav Bar End -->
 		<br>
 		
-		<form id="formD" name="formD" action="<?= base_url('rkat/save'); ?>" method="POST" enctype="multipart/form-data">
+		<form id="satuan" name="formD" action="<?= base_url('rkat/save'); ?>" method="POST" enctype="multipart/form-data">
 		<?= session()->getFlashdata('status'); ?>	
 			<div class="card">
 					<div class="card-header">Tambah Rencana RKAT</div>
@@ -140,12 +140,13 @@
 						<label for="prodiunit" class="mb-2 mr-sm-2" style="width: 150px;">Program Studi/Unit</label>
 						<input type="text" class="form-control mb-2 mr-sm-2" id="prodiunit" value="<?= $value['nama_prodi'] ?>" name="prodiunit"required disabled>
 						<label for="pagu" class="mb-2 mr-sm-2">Jumlah Pagu</label>
-						<input type="text" class="form-control mb-2 mr-sm-2" id=pagu" name="pagu" value="RP. <?= $value['pagu'] ?>" required disabled>
+						<input type="text" class="form-control mb-2 mr-sm-2" id= "pagu" name="pagu" value="RP. <?= $value['pagu'] ?>" required disabled>
 					</div>
 					<?php endforeach; ?>
 					<table class="table">
 						<thead>
 							<tr>
+								<th>cek</th>
 								<th>Kategori</th>
 								<th>Kriteria</th>
 								<th>Butir</th>
@@ -158,13 +159,13 @@
 								<th>Total</th>
 							</tr>
 						</thead>
-						<tbody>
-							<?php
-								for($baris=1;$baris<=1;$baris++){
-							?>
-							<tr id="<?= $baris ?>">
+						<tbody id="tbody">
+							<tr>
 								<td>
-									<select class="form-control" style="width: 80px;" id="kategori" name="kategori">
+								<input name="chk_a[]" type="checkbox" class="checkall_a" value=""/>
+								</td>
+								<td>
+									<select class="form-control" style="width: 80px;" id="kategori" name="kategori[]">
 										<option value="" disabled selected>Pilih Kategori</option>
 										<option value="PK">PK</option>
 										<option value="OPS">OPS</option>
@@ -172,7 +173,7 @@
 									</select>
 								</td>
 								<td>
-									<select class="form-control" style="width: 80px;" id="kpi" name="kpi">
+									<select class="form-control" style="width: 80px;" id="kpi" name="kpi[]">
 										<option value="" disabled selected>Pilih Kategori KPI</option>
 										<option value="1">1 – Visi Misi Tujuan dan Strategi</option>
 										<option value="2">2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
@@ -186,7 +187,7 @@
 									</select>
 								</td>
 								<td>
-									<select class="form-control" style="width: 80px;" id="butir" name="butir">
+									<select class="form-control" style="width: 80px;" id="butir" name="butir[]">
 										<option value="" disabled selected>Pilih butir</option>
 										<option value="1">1</option>
 										<option value="2">2</option>
@@ -194,37 +195,37 @@
 									</select>
 								</td>
 								<td>
-									<input type="text" class="form-control" style="width: 90px;" id="no_kegiatan" placeholder="Masukan No Kegiatan" name="no_kegiatan" required>
+									<input type="text" class="form-control" style="width: 90px;" id="no_kegiatan" placeholder="Masukan No Kegiatan" name="no_kegiatan[]" required>
 								</td>
 								<td>
-									<input type="text" class="form-control" style="width: 120px;" id="indikator" placeholder="Masukan Indikator" name="indikator" required>
+									<input type="text" class="form-control" style="width: 120px;" id="indikator" placeholder="Masukan Indikator" name="indikator[]" required>
 								</td>
 								<td>
-									<input type="text" class="form-control" style="width: 50px;" id="target" placeholder="Masukan Target" name="target" required>
+									<input type="text" class="form-control" style="width: 50px;" id="target" placeholder="Masukan Target" name="target[]" required>
 								</td>
 								<td>
-									<input type="text" class="form-control" style="width: 120px;" id="nama_kegiatan" placeholder="Maksukan Nama Kegiatan" name="nama_kegiatan" required>
+									<input type="text" class="form-control" style="width: 120px;" id="nama_kegiatan" placeholder="Maksukan Nama Kegiatan" name="nama_kegiatan[]" required>
 								</td>
 								<td>
-									<input type="text" class="form-control" style="width: 150px;" id="anggaranGasal" placeholder="Masukan Anggaran Gasal" name="anggaranGasal" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" required>
+									<input type="text" class="form-control" style="width: 150px;" id="anggaranGasal" placeholder="Masukan Anggaran Gasal" name="anggaranGasal[]" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" required>
 								</td>
 								<td>
-									<input type="text" class="form-control" style="width: 150px;" id="anggaranGenap" placeholder="Masukan Anggaran Genap" name="anggaranGenap" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" required>
+									<input type="text" class="form-control" style="width: 150px;" id="anggaranGenap" placeholder="Masukan Anggaran Genap" name="anggaranGenap[]" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" required>
 								</td>
 								<td>
-									<input type="text" class="form-control" style="width: 150px;" id="total" name="total" placeholder="Total" readonly="readonly" required>
+									<input type="text" class="form-control" style="width: 150px;" id="total" name="total[]" placeholder="Total" readonly="readonly" required>
 								</td>
 								<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat'];?>
-									<input type="hidden" class="form-control" id="id_set" value="<?= $id_set ?>" name="id_set" required>	
+									<input type="hidden" class="form-control" id="id_set" value="<?= $id_set ?>" name="id_set[]" required>	
 								<?php endforeach; ?>
 							</tr>
-							<?php
-							}
-							?>
-							<tr>
-								<td><button class="btn btn-success btn-block" id="BarisBaru"><i class="fa fa-plus"></i> Baris Baru</button></td>
-								<td></td>
-								<td></td>
+
+							
+						</tbody>
+						<tfoot>
+						<td><button class="btn btn-success btn-block" onclick="addRow('tbody')" id="BarisBaru"><i class="fa fa-plus"></i> Baris Baru</button></td>
+								<td><button type="button" class="btn btn-warning" onclick="InsertRow('tbody')">Sisip Baris</button></td>
+								<td><button type="button" class="btn btn-danger" onclick="deleteRow('tbody')">Hapus Baris</button></td>
 								<td></td>
 								<td></td>
 								<td></td>
@@ -232,10 +233,9 @@
 								<td><input type="text" class="form-control" style="width: 150px;" id="pagu" name="pagu" value="RP. 100000000" required disabled></td>
 								<td><input type="text" class="form-control" style="width: 150px;" id="pagu" name="pagu" value="RP. 100000000" required disabled></td>
 								<td><input type="text" class="form-control" style="width: 150px;" id="pagu" name="pagu" value="RP. 100000000" required disabled></td>
-							</tr>
-						</tbody>
+						</tfoot>
   					</table>
-				
+
 					<div class="card-footer">
 					<button type="submit" class="btn btn-primary" id="tambah">Tambah Data</button>
 					</div>
@@ -254,6 +254,106 @@
      		document.formD.total.value = total;
 		}
 	</script>
+	<script>
+	// JavaScript Document
+ 	function addRow(tableID) {
+	 	var table = document.getElementById(tableID);
+	 	var rowCount = table.rows.length;
+	 	var row = table.insertRow(rowCount);
+	 	var colCount = table.rows[0].cells.length;
+	 	for(var i=0; i<colCount; i++) {
+		 var newcell = row.insertCell(i);
+		 newcell.innerHTML = table.rows[0].cells[i].innerHTML;
+		 var child = newcell.children;
+		 for(var i2=0; i2<child.length; i2++) {
+			 var test = newcell.children[i2].tagName;
+			 switch(test) {
+				 case "INPUT":
+					 if(newcell.children[i2].type=='checkbox'){
+						 newcell.children[i2].value = "";
+						 newcell.children[i2].checked = false;
+					 }else{
+						 newcell.children[i2].value = "";
+					 }
+				 break;
+				 case "SELECT":
+					 newcell.children[i2].value = "";
+				 break;
+				 default:
+				 break;
+			 }
+		 }
+	 }
+ }
+	 
+ function deleteRow(tableID)
+ {
+
+		 var table = document.getElementById(tableID);
+		 var rowCount = table.rows.length;
+			 for(var i=0; i<rowCount; i++)
+				 {
+				 var row = table.rows[i];
+				 var chkbox = row.cells[0].childNodes[0];
+				 if (null != chkbox && true == chkbox.checked)
+					 {
+					 if (rowCount <= 1)
+						 {
+						 alert("Tidak dapat menghapus semua baris.");
+						 break;
+						 }
+					 table.deleteRow(i);
+					 rowCount--;
+					 i--;
+					 }
+				 }
+  }
+ 
+ function InsertRow(tableID)
+ {
+	 try{
+		 var table = document.getElementById(tableID);
+		 var rowCount = table.rows.length;
+			 for(var i=0; i<rowCount; i++)
+				 {
+				 var row = table.rows[i];
+				 var chkbox = row.cells[0].childNodes[0];
+				 if (null != chkbox && true == chkbox.checked)
+					 {
+					 var newRow = table.insertRow(i+1);
+					 var colCount = table.rows[0].cells.length;
+						 for (h=0; h<colCount; h++){
+							 var newCell = newRow.insertCell(h);
+							 newCell.innerHTML = table.rows[0].cells[h].innerHTML;
+							 var child = newCell.children;
+							 for(var i2=0; i2<child.length; i2++) {
+								 var test = newCell.children[i2].tagName;
+								 switch(test) {
+									 case "INPUT":
+										 if(newCell.children[i2].type=='checkbox'){
+											 newCell.children[i2].value = "";
+											 newCell.children[i2].checked = false;
+										 }else{
+											 newCell.children[i2].value = "";
+										 }
+									 break;
+									 case "SELECT":
+										 newCell.children[i2].value = "";
+									 break;
+									 default:
+									 break;
+								 }
+							 }
+						 }
+					 }
+					 
+				 }
+			 } catch(e)
+	 {
+	 alert(e);
+	 }
+  }
+ </script>
 	<!-- JavaScript Libraries -->
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
