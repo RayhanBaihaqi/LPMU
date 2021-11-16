@@ -152,7 +152,7 @@
                     <form>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Masukkan nama KPI baru</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan nama KPI Baru">
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>

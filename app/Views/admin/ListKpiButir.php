@@ -148,7 +148,10 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <h2>List KPI + Butir</h2>
-
+                    <div class="card-header py-3">
+                        <a href="<?= base_url('/auth/create') ?>" class="btn btn-success"><span>Tambah
+                                KPI</span></a>
+                    </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect2">Tahun Ajaran</label>
                         <select class="form-control" id="exampleFormControlSelect2">
@@ -156,14 +159,7 @@
                             <option>2020/2021</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label for="disabledTextInput">Nama Prodi/Unit</label>
-                        <input type="text" id="disabledTextInput" class="form-control" placeholder="nama prodi/unit" disabled>
-                    </div>
-                    <div class="form-group">
-                        <label for="disabledTextInput">KPI</label>
-                        <input type="text" id="disabledTextInput" class="form-control" placeholder="kpi" disabled>
-                    </div>
+
                     <div class="table-responsive">
                         <div class="table-wrapper">
                             <table class="table table-striped table-hover">
