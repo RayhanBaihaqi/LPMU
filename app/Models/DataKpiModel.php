@@ -13,6 +13,10 @@ class DataKpiModel extends Model
 
     function tampildata()
     {
-        return $this->db->table('tabel_butir_kpi')->get();
+        return $this->db->table('tabel_kpi')->get();
+    }
+    function save1($data)
+    {
+        return $this->db->table('tabel_kpi')->insert($data);
     }
 }
