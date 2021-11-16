@@ -13,7 +13,7 @@ ADMIN :
 USER : 
 1. menampilkan tabel daftar kpi + butirnya
 2. menampilkan grafik kesimpulan
-3. menambah link sosmed
+
 4. buat perhitungan antara target dan realisasi
 5. Tambah halaman ubah password
 6. Hapus pilihan "profil"
@@ -29,3 +29,4 @@ notes :
 
 
 DONE
+3. menambah link sosmed
