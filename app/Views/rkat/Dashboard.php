@@ -101,7 +101,7 @@
 				<div class="collapse navbar-collapse justify-content-between">
 					<div class="navbar-nav mr-auto">
 						<a href="/backend/rkat" class="nav-item nav-link active">Home</a>
-						<a href="<?= base_url('/setrkat/createbyuser') ?>" class="nav-item nav-link">Rencana Anggaran</a>
+						<a href="<?= base_url('/rkat/createbyuser') ?>" class="nav-item nav-link">Rencana Anggaran</a>
                         <a href="<?= base_url('/CapaianRkat/createcapaianbyuser') ?>" class="nav-item nav-link">Realisasi Anggaran</a>
                         <a href="<?= base_url('/rkat/indexbyuser') ?>" class="nav-item nav-link">Kesimpulan</a>
 					</div>

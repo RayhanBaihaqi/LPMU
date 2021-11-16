@@ -118,9 +118,7 @@
 		</div>
 		<!-- Nav Bar End -->
 		<br>
-		<?php
-			if(isset($_POST['jumlah'])){
-		?>
+		
 		<form action="<?= base_url('rkat/save'); ?>" method="POST" enctype="multipart/form-data">	
 			<div class="card">
 					<div class="card-header">Tambah Rencana RKAT</div>
@@ -160,15 +158,15 @@
 							</tr>
 						</thead>
 						<tbody>
-						<?php
-							$jumlah = $_POST['jumlah'];
-							for($a=1;$a<=$jumlah;$a++)
-							{
-						?>
-							<tr>
-								<input type="hidden" name="jumlah" value="<?= $jumlah ?>">
+							<?php
+								for($baris=1;$baris<=1;$baris++){
+							?>
+							<tr id="<?= $baris ?>">
+							<?php
+								for($t=1;$t<=1;$t++){
+							?>
 								<td>
-									<select class="form-control" style="width: 80px;" id="jenis_anggaran" name="jenis_anggaran[]">
+									<select class="form-control" style="width: 80px;" id="kategori<?= $t ?>" name="kategori">
 										<option value="" disabled selected>Pilih Kategori</option>
 										<option value="PK">PK</option>
 										<option value="OPS">OPS</option>
@@ -176,7 +174,7 @@
 									</select>
 								</td>
 								<td>
-									<select class="form-control" style="width: 80px;" id="jenis_kpi" name="jenis_kpi[]">
+									<select class="form-control" style="width: 80px;" id="kpi<?= $t ?>" name="kpi">
 										<option value="" disabled selected>Pilih Kategori KPI</option>
 										<option value="1">1 – Visi Misi Tujuan dan Strategi</option>
 										<option value="2">2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
@@ -190,7 +188,7 @@
 									</select>
 								</td>
 								<td>
-									<select class="form-control" style="width: 80px;" id="butir" name="butir[]">
+									<select class="form-control" style="width: 80px;" id="butir<?= $t ?>" name="butir">
 										<option value="" disabled selected>Pilih butir</option>
 										<option value="1">1</option>
 										<option value="2">2</option>
@@ -198,30 +196,35 @@
 									</select>
 								</td>
 								<td>
-									<input type="text" class="form-control" style="width: 90px;" id="nokegiatan" placeholder="Masukan No Kegiatan" name="nokegiatan[]" required>
+									<input type="text" class="form-control" style="width: 90px;" id="no_kegiatan<?= $t ?>" placeholder="Masukan No Kegiatan" name="no_kegiatan" required>
 								</td>
 								<td>
-									<input type="text" class="form-control" style="width: 120px;" id="indikator" placeholder="Masukan Indikator" name="indikator[]" required>
+									<input type="text" class="form-control" style="width: 120px;" id="indikator<?= $t ?>" placeholder="Masukan Indikator" name="indikator" required>
 								</td>
 								<td>
-									<input type="text" class="form-control" style="width: 50px;" id="target" placeholder="Masukan Target" name="target[]" required>
+									<input type="text" class="form-control" style="width: 50px;" id="target<?= $t ?>" placeholder="Masukan Target" name="target" required>
 								</td>
 								<td>
-									<input type="text" class="form-control" style="width: 120px;" id="nama_kegiatan" placeholder="Maksukan Nama Kegiatan" name="nama_kegiatan[]" required>
+									<input type="text" class="form-control" style="width: 120px;" id="nama_kegiatan<?= $t ?>" placeholder="Maksukan Nama Kegiatan" name="nama_kegiatan" required>
 								</td>
 								<td>
-									<input type="text" class="form-control" style="width: 150px;" id="anggarangasal" placeholder="Masukan Total Biaya" name="anggarangasal[]" required>
+									<input type="text" class="form-control" style="width: 150px;" id="anggaranGasal<?= $t ?>" placeholder="Masukan Anggaran Gasal" name="anggaranGasal" required>
 								</td>
 								<td>
-									<input type="text" class="form-control" style="width: 150px;" id="anggarangenap" placeholder="Masukan anggarangenap Kegiatan" name="anggarangenap[]" required>
+									<input type="text" class="form-control" style="width: 150px;" id="anggaranGenap<?= $t ?>" placeholder="Masukan Anggaran Genap" name="anggaranGenap" required>
 								</td>
 								<td>
-									<input type="text" class="form-control" style="width: 150px;" id=pagu" name="pagu" value="RP. 100000000" required disabled>
+									<input type="text" class="form-control" style="width: 150px;" id="total_perkegiatan<?= $t ?>" name="total_perkegiatan" value="<?php if(isset($_POST['total_perkegiatan']))?>" required disabled>
 								</td>
+								<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat'];?>
+									<input type="hidden" class="form-control" id="id_set" value="<?= $id_set ?>" name="id_set" required>	
+								<?php endforeach; ?>
+								<?php
+								}
+								?>
 							</tr>
-							<?php } ?>
 							<?php
-								} else { $jumlah = 0; }
+							}
 							?>
 							<tr>
 								<td></td>
@@ -231,82 +234,21 @@
 								<td></td>
 								<td></td>
 								<td>Total Keseluruhan</td>
-								<td><input type="text" class="form-control" style="width: 150px;" id=pagu" name="pagu" value="RP. 100000000" required disabled></td>
-								<td><input type="text" class="form-control" style="width: 150px;" id=pagu" name="pagu" value="RP. 100000000" required disabled></td>
-								<td><input type="text" class="form-control" style="width: 150px;" id=pagu" name="pagu" value="RP. 100000000" required disabled></td>
+								<td><input type="text" class="form-control" style="width: 150px;" id="pagu" name="pagu" value="RP. 100000000" required disabled></td>
+								<td><input type="text" class="form-control" style="width: 150px;" id="pagu" name="pagu" value="RP. 100000000" required disabled></td>
+								<td><input type="text" class="form-control" style="width: 150px;" id="pagu" name="pagu" value="RP. 100000000" required disabled></td>
 							</tr>
 						</tbody>
   					</table>
 				
 					<div class="card-footer">
-						<input type="button" onclick="cetak()" name="btn" value="Submit" id="submitBtn" 
-						data-toggle="modal" data-target="#confirm-submit" class="btn btn-primary" />
+					<button type="submit" class="btn btn-primary" id="tambah">Tambah Data</button>
 					</div>
 				</div>
-				<div class="modal fade" id="confirm-submit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    				<div class="modal-dialog modal-xl">
-        				<div class="modal-content">
-            				<div class="modal-header">
-                				Confirm Submit
-            				</div>
-            				<div class="modal-body">
-                				Are you sure you want to submit the following details?
-                				<table class="table">
-										<thead>
-											<tr>
-												<th>Data Ke</th>
-												<th>Nama Kegiatan</th>
-												<th>Jenis anggaran</th>
-												<th>Standart KPI</th>
-												<th>Butir</th>
-												<th>Semester</th>
-												<th>Anggaran Kegiatan</th>
-												<th>Keterangan Kegiatan</th>
-											</tr>
-										</thead>
-										<?php for ($i=1; $i <= $jumlah; $i++) : ?>
-										<tbody>
-											<tr>
-												<td><?= $i ?></td>
-												<td id="jsnama_kegiatan<?= $i ?>"></td>
-												<td id="jsjenis_anggaran<?= $i ?>"></td>
-												<td id="jsjenis_kpi<?= $i ?>"></td>
-												<td id="jsbutir<?= $i ?>"></td>
-												<td id="jssemester<?= $i ?>"></td>
-												<td id="jsanggaran<?= $i ?>"></td>
-												<td id="jsketerangan<?= $i ?>"></td>
-											</tr>
-										</tbody>
-									<?php endfor; ?>
-                				</table>
-            				</div>
-            				<div class="modal-footer">
-                				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                				<button type="submit" class="btn btn-primary" id="tambah">Tambah Data</button>
-            				</div>
-        				</div>
-    				</div>
-				</div>
+
 		</form>
 	<script>
-		function cetak(){
-			<?php for ($i=1; $i <= $jumlah; $i++) : ?>
-			var nama_kegiatan<?= $i ?> = document.getElementById("nama_kegiatan<?= $i ?>").value ;
-			var anggaran<?= $i ?> = document.getElementById("anggaran<?= $i ?>").value ;
-			var semester<?= $i ?> = document.getElementById("semester<?= $i ?>").value ;
-			var keterangan<?= $i ?> = document.getElementById("keterangan<?= $i ?>").value ;
-			var jenis_kpi<?= $i ?> = document.getElementById("jenis_kpi<?= $i ?>").value ;
-			var butir<?= $i ?> = document.getElementById("butir<?= $i ?>").value ;
-			var jenis_anggaran<?= $i ?> = document.getElementById("jenis_anggaran<?= $i ?>").value ;
-			document.getElementById("jsnama_kegiatan<?= $i ?>").innerHTML = "<b>" + nama_kegiatan<?= $i ?> +"</b>";
-			document.getElementById("jsanggaran<?= $i ?>").innerHTML = "<b>" + anggaran<?= $i ?> +"</b>";
-			document.getElementById("jssemester<?= $i ?>").innerHTML = "<b>" + semester<?= $i ?> +"</b>";
-			document.getElementById("jsketerangan<?= $i ?>").innerHTML = "<b>" + keterangan<?= $i ?> +"</b>";
-			document.getElementById("jsjenis_kpi<?= $i ?>").innerHTML = "<b>" + jenis_kpi<?= $i ?> +"</b>";
-			document.getElementById("jsbutir<?= $i ?>").innerHTML = "<b>" + butir<?= $i ?> +"</b>";
-			document.getElementById("jsjenis_anggaran<?= $i ?>").innerHTML = "<b>" + jenis_anggaran<?= $i ?> +"</b>";
-			<?php endfor; ?>
-		}
+		
 	</script>
 	<!-- JavaScript Libraries -->
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
