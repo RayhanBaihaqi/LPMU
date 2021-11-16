@@ -22,7 +22,7 @@ USER
 
 Catatan
 1. Mencari tau apa saja yang akan di tampilkan pada halaman dashboard
-3. Selesaikan semua list di atas kemusian gabung databes menjadi satu
+3. Selesaikan semua list di atas kemudian gabung databes menjadi satu
 
 DONE
 6. Tambahkan linkpada tombol sosmet di kanan atas (Selesai)
