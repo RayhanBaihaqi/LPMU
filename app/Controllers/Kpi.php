@@ -5,6 +5,8 @@ namespace App\Controllers;
 //use CodeIgniter\Controller;
 use App\Models\DetailKpiModel;
 use App\Models\ModelKpiAdmin;
+use App\Models\DataKpiModel;
+use App\Models\DataKpiButirModel;
 
 class Kpi extends BaseController
 {
@@ -16,7 +18,11 @@ class Kpi extends BaseController
 
 	public function rencana()
 	{
-		return view('kpi/rencana');
+		$listbutirkpi = new DataKpiButirModel();
+		$data = [
+			'tampildata' => $listbutirkpi->tampildatabutir()->getResult()
+		];
+		return view('kpi/rencana', $data);
 	}
 	public function inputcapaian()
 	{

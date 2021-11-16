@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Form Tambah Butir KPI</title>
+    <title>List KPI</title>
 
     <!-- Custom fonts for this template-->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
@@ -147,71 +147,82 @@
                 <!-- End of Topbar -->
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    <h2>Tambah Butir KPI</h2>
-                    <?= form_open('admin/simpanbutirkpi') ?>
-                    <div class="form-group">
-                        <label for="inputkpi">ID KPI</label>
-                        <input type="text" class="form-control" id="idkpi" name="idkpi" placeholder="Pilih ID KPI">
-                    </div>
-                    <div class="form-group">
-                        <label for="inputkpi">Angka butir</label>
-                        <input type="text" class="form-control" id="angka_butir" name="angka_butir" placeholder="Masukkan angka butir KPI">
-                    </div>
-                    <div class="form-group">
-                        <label for="inputkpi">Nama butir</label>
-                        <input type="text" class="form-control" id="nama_butir" name="nama_butir" placeholder="Masukkan nama butir KPI">
-                    </div>
-                    <div class="form-group">
-                        <label for="inputkpi">Unit utama</label>
-                        <input type="text" class="form-control" id="unit_utama" name="unit_utama" placeholder="Masukkan unit utama KPI">
-                    </div>
-                    <div class="form-group">
-                        <label for="inputkpi">Unit pendukung</label>
-                        <input type="text" class="form-control" id="unit_pendukung" name="unit_pendukung" placeholder="Masukkan unit pendukung KPI">
-                    </div>
-                    <div class="form-group">
-                        <label for="inputkpi">Target</label>
-                        <input type="text" class="form-control" id="target" name="target" placeholder="Masukkan target KPI">
-                    </div>
-                    <div class="form-group">
-                        <label for="inputkpi">Kategori</label>
-                        <input type="text" class="form-control" id="kategori" name="kategori" placeholder="Pilih kategori">
-                    </div>
-                    <div class="form-group">
-                        <label for="inputkpi">Kegiatan</label>
-                        <input type="text" class="form-control" id="kegiatan" name="kegiatan" placeholder="Masukkan kegiatan">
-                    </div>
-                    <div class="form-group">
-                        <label for="inputkpi">Bobot</label>
-                        <input type="number" class="form-control" id="bobot" name="bobot" placeholder="Masukkan bobot">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                    <?= form_close(); ?>
+                    <h2>List KPI</h2>
 
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <a href="<?= base_url('/admin/form_tambahkpi') ?>" class="btn btn-success"><span>Tambah
+                                    KPI</span></a>
+
+                        </div>
+
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+
+                                            <th>ID KPI</th>
+                                            <th>Nama KPI</th>
+
+                                            <th>Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                        $nomor = 0;
+                                        foreach ($tampildata as $row) :
+                                            $nomor++;
+                                        ?>
+                                            <tr>
+                                                <th><?= $nomor; ?></th>
+                                                <td><?= $row->nama_kpi ?></td>
+
+
+                                                <td>
+                                                    <a href=""><i class="fas fa-edit"></i></a>
+                                                    <a href=""><i class="fas fa-trash-alt"></i></a>
+                                                </td>
+
+                                            </tr>
+
+                                        <?php
+                                        endforeach;
+                                        ?>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
 
             </div>
-            <!-- End of Content Wrapper -->
+
 
         </div>
-        <!-- End of Page Wrapper -->
+        <!-- End of Content Wrapper -->
 
-        <!-- Scroll to Top Button-->
-        <a class="scroll-to-top rounded" href="#page-top">
-            <i class="fas fa-angle-up"></i>
-        </a>
+    </div>
+    <!-- End of Page Wrapper -->
 
-        <!-- Bootstrap core JavaScript-->
-        <script src="http://localhost:8080/js/jquery.min.js"></script>
-        <script src="http://localhost:8080/js/bootstrap.bundle.min.js"></script>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
 
-        <!-- Page level plugins -->
-        <script src="http://localhost:8080/js/jquery.dataTables.min.js"></script>
-        <script src="http://localhost:8080/js/dataTables.bootstrap4.min.js"></script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="http://localhost:8080/js/jquery.min.js"></script>
+    <script src="http://localhost:8080/js/bootstrap.bundle.min.js"></script>
 
-        <!-- Page level custom scripts -->
-        <script src="http://localhost:8080/js/datatables-demo.js"></script>
+    <!-- Page level plugins -->
+    <script src="http://localhost:8080/js/jquery.dataTables.min.js"></script>
+    <script src="http://localhost:8080/js/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="http://localhost:8080/js/datatables-demo.js"></script>
 
 </body>
 
