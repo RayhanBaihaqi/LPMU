@@ -77,7 +77,8 @@
                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
 
-                        <a class="collapse-item" href="<?= base_url('/admin/listbutirkpi') ?>">Lihat KPI & Butir KPI</a>
+                        <a class="collapse-item" href="<?= base_url('/admin/listkpi') ?>">Lihat KPI</a>
+                        <a class="collapse-item" href="<?= base_url('/admin/listbutirkpi') ?>">Lihat Butir KPI</a>
                         <a class="collapse-item" href="<?= base_url('/admin/adminkpi') ?>">Lihat Rencana</a>
                         <a class="collapse-item" href="<?= base_url('#') ?>">Lihat Capaian</a>
                     </div>
@@ -143,9 +144,8 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <a href="<?= base_url('/admin/tambahkpi') ?>" class="btn btn-success"><span>Tambah
-                                    KPI</span></a>
-                            <a href="<?= base_url('/admin/TambahButirKpi') ?>" class="btn btn-success"><span>Tambah
+
+                            <a href="<?= base_url('/admin/form_tambahbutirKpi') ?>" class="btn btn-success"><span>Tambah
                                     Butir KPI</span></a>
                         </div>
                         <div class="container">
@@ -168,7 +168,7 @@
                                             <th>No</th>
                                             <th>ID KPI</th>
                                             <th>Angka Butir</th>
-                                            <th>Nama KPI</th>
+                                            <th>Nama Butir</th>
                                             <th>Unit Utama</th>
                                             <th>Unit Pendukung</th>
                                             <th>Target</th>
@@ -187,7 +187,7 @@
                                             <tr>
                                                 <th><?= $nomor; ?></th>
                                                 <td><?= $row->idkpi ?></td>
-                                                <td><?= $row->angka_butir ?></td>
+                                                <td><?= $row->idkpi . '.' . $row->angka_butir ?></td>
                                                 <td><?= $row->nama_butir ?></td>
                                                 <td><?= $row->unit_utama ?></td>
                                                 <td><?= $row->unit_pendukung ?></td>
@@ -195,6 +195,12 @@
                                                 <td><?= $row->kategori ?></td>
                                                 <td><?= $row->kegiatan ?></td>
                                                 <td><?= $row->bobot ?></td>
+
+                                                <td>
+                                                    <a href=""><i class="fas fa-edit"></i></a>
+                                                    <a href=""><i class="fas fa-trash-alt"></i></a>
+                                                </td>
+
                                             </tr>
 
                                         <?php

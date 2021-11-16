@@ -2,25 +2,19 @@ Pengerjaan KPI :
 
 ADMIN : 
 1. menambah kata sapaan setelah login admin dashboard
-2. membuat form tambah kpi
-3. membuat form tambah butir kpi
-4. menampilkan tabel daftar kpi + butirnya
 5. lihat rencana digabungkan ke lihat capaian
 6. hapus kolom pass pd tabel user
-7. tabel datatables.js (bentuk tabel)
 8. menggabungkan tabel kpi dan tabel butir kpi di halaman admin "lihat kpi butir"
 
 USER : 
 1. menampilkan tabel daftar kpi + butirnya
 2. menampilkan grafik kesimpulan
-
 4. buat perhitungan antara target dan realisasi
 5. Tambah halaman ubah password
 6. Hapus pilihan "profil"
 7. Menambah sapaan di page setelah login
 8. menampilkan tabel rencana
-9. menu lihat grafik pindah ke menu atas
-10. semua menu grafik di dashboard pindah ke kesimpulan
+
 11. kesimpulan diperlihatkan dalam tabel
 12. menu2 di body dashboard KPI dikosongkan
 
@@ -30,3 +24,9 @@ notes :
 
 DONE
 3. menambah link sosmed
+2. membuat form tambah kpi
+3. membuat form tambah butir kpi
+4. menampilkan tabel daftar kpi + butirnya
+7. tabel datatables.js (bentuk tabel)
+10. semua menu grafik di dashboard pindah ke kesimpulan
+9. menu lihat grafik pindah ke menu atas

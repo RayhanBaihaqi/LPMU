@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Admin</title>
+    <title>Form Tambah KPI</title>
 
     <!-- Custom fonts for this template-->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
@@ -77,7 +77,8 @@
                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
 
-                        <a class="collapse-item" href="<?= base_url('/admin/listbutirkpi') ?>">Lihat KPI & Butir KPI</a>
+                        <a class="collapse-item" href="<?= base_url('/admin/listkpi') ?>">Lihat KPI</a>
+                        <a class="collapse-item" href="<?= base_url('/admin/listbutirkpi') ?>">Lihat Butir KPI</a>
                         <a class="collapse-item" href="<?= base_url('/admin/adminkpi') ?>">Lihat Rencana</a>
                         <a class="collapse-item" href="<?= base_url('#') ?>">Lihat Capaian</a>
                     </div>
@@ -140,13 +141,16 @@
                 <div class="container-fluid">
                     <h2>Tambah KPI</h2>
                     <br>
-                    <form>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Masukkan nama KPI baru</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan nama KPI Baru">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
+
+                    <?= form_open('admin/simpankpi') ?>
+                    <div class="form-group">
+                        <label for="inputkpi">Masukkan nama KPI baru</label>
+                        <input type="text" class="form-control" id="nama_kpi" name="nama_kpi" placeholder="Masukkan nama KPI Baru">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <?= form_close(); ?>
+
+
 
                 </div>
 

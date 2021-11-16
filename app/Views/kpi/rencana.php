@@ -140,6 +140,69 @@
         <!-- Nav Bar End -->
 
         <h3>Tabel Rencana KPI</h3>
+        <div class="card shadow mb-4">
+
+            <div class="container-fluid">
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Pilih ID KPI</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>ID KPI</th>
+                                <th>Angka Butir</th>
+                                <th>Nama Butir</th>
+                                <th>Unit Utama</th>
+                                <th>Unit Pendukung</th>
+                                <th>Target</th>
+                                <th>Kategori</th>
+                                <th>Kegiatan</th>
+                                <th>Bobot</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $nomor = 0;
+                            foreach ($tampildata as $row) :
+                                $nomor++;
+                            ?>
+                                <tr>
+                                    <th><?= $nomor; ?></th>
+                                    <td><?= $row->idkpi ?></td>
+                                    <td><?= $row->idkpi . '.' . $row->angka_butir ?></td>
+                                    <td><?= $row->nama_butir ?></td>
+                                    <td><?= $row->unit_utama ?></td>
+                                    <td><?= $row->unit_pendukung ?></td>
+                                    <td><?= $row->target ?></td>
+                                    <td><?= $row->kategori ?></td>
+                                    <td><?= $row->kegiatan ?></td>
+                                    <td><?= $row->bobot ?></td>
+
+
+
+                                </tr>
+
+                            <?php
+                            endforeach;
+                            ?>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
         <br>
 
     </div>

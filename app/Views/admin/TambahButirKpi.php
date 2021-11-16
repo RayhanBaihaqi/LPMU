@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Admin</title>
+    <title>Form Tambah Butir KPI</title>
 
     <!-- Custom fonts for this template-->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
@@ -77,7 +77,8 @@
                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
 
-                        <a class="collapse-item" href="<?= base_url('/admin/listbutirkpi') ?>">Lihat KPI & Butir KPI</a>
+                        <a class="collapse-item" href="<?= base_url('/admin/listkpi') ?>">Lihat KPI</a>
+                        <a class="collapse-item" href="<?= base_url('/admin/listbutirkpi') ?>">Lihat Butir KPI</a>
                         <a class="collapse-item" href="<?= base_url('/admin/adminkpi') ?>">Lihat Rencana</a>
                         <a class="collapse-item" href="<?= base_url('#') ?>">Lihat Capaian</a>
                     </div>
@@ -139,7 +140,45 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <h2>Tambah Butir KPI</h2>
-
+                    <?= form_open('admin/simpanbutirkpi') ?>
+                    <div class="form-group">
+                        <label for="inputkpi">ID KPI</label>
+                        <input type="text" class="form-control" id="idkpi" name="idkpi" placeholder="Pilih ID KPI">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputkpi">Angka butir</label>
+                        <input type="text" class="form-control" id="angka_butir" name="angka_butir" placeholder="Masukkan angka butir KPI">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputkpi">Nama butir</label>
+                        <input type="text" class="form-control" id="nama_butir" name="nama_butir" placeholder="Masukkan nama butir KPI">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputkpi">Unit utama</label>
+                        <input type="text" class="form-control" id="unit_utama" name="unit_utama" placeholder="Masukkan unit utama KPI">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputkpi">Unit pendukung</label>
+                        <input type="text" class="form-control" id="unit_pendukung" name="unit_pendukung" placeholder="Masukkan unit pendukung KPI">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputkpi">Target</label>
+                        <input type="text" class="form-control" id="target" name="target" placeholder="Masukkan target KPI">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputkpi">Kategori</label>
+                        <input type="text" class="form-control" id="kategori" name="kategori" placeholder="Pilih kategori">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputkpi">Kegiatan</label>
+                        <input type="text" class="form-control" id="kegiatan" name="kegiatan" placeholder="Masukkan kegiatan">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputkpi">Bobot</label>
+                        <input type="number" class="form-control" id="bobot" name="bobot" placeholder="Masukkan bobot">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <?= form_close(); ?>
 
                 </div>
 
