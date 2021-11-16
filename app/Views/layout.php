@@ -23,7 +23,7 @@
   </nav>
   <br>
   <div class="container">
-  <img class="card-img-top" src="/img/welcome.jpg" alt="Card image" width="1000" height="300">
+  <img class="card-img-top" src="/img/welcome.jpg" alt="Card image" width="800" height="200">
     <div class="row">
       <div class="col-sm-6">
         <div class="card">
