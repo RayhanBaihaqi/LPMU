@@ -81,10 +81,10 @@
                     </div>
                     <div class="col-sm-2">
                         <div class="social">
-                            <a href=""><i class="fab fa-twitter"></i></a>
-                            <a href=""><i class="fab fa-facebook-f"></i></a>
-                            <a href=""><i class="fab fa-linkedin-in"></i></a>
-                            <a href=""><i class="fab fa-instagram"></i></a>
+                              <a href="https://www.upj.ac.id/"><i class="fas fa-globe"></i></i></a>
+                              <a href="https://twitter.com/upj_bintaro"><i class="fab fa-twitter"></i></a>
+                              <a href="https://web.facebook.com/universitas.pembangunan.jaya?_rdc=1&_rdr"><i class="fab fa-facebook-f"></i></a>
+                              <a href="https://www.instagram.com/upj_bintaro/"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
@@ -104,9 +104,10 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between">
                     <div class="navbar-nav mr-auto">
-                        <a href="kpi" class="nav-item nav-link active">Home</a>
-                        <a href="/kpi/inputkpi" class="nav-item nav-link">Input Rencana</a>
-                        <a href="/kpi/inputcapaian" class="nav-item nav-link">Input Capaian</a>
+                        <a href="/kpi" class="nav-item nav-link active">Home</a>
+                        <a href="/kpi/rencana" class="nav-item nav-link">Rencana</a>
+                        <a href="/kpi/inputcapaian" class="nav-item nav-link">Input Realisasi</a>
+                        <a href="/kpi/kesimpulan" class="nav-item nav-link">Kesimpulan</a>
 
 
 

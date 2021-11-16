@@ -108,8 +108,9 @@
                 <div class="collapse navbar-collapse justify-content-between">
                     <div class="navbar-nav mr-auto">
                         <a href="/kpi" class="nav-item nav-link">Home</a>
-                        <a href="inputkpi" class="nav-item nav-link active">Input Rencana</a>
-                        <a href="/kpi/inputcapaian" class="nav-item nav-link">Input Capaian</a>
+                        <a href="rencana" class="nav-item nav-link active">Rencana</a>
+                        <a href="/kpi/inputcapaian" class="nav-item nav-link">Input Realisasi</a>
+                        <a href="/kpi/kesimpulan" class="nav-item nav-link">Kesimpulan</a>
                     </div>
                     <div class="ml-auto">
                         <div class="user-info-dropdown">
@@ -138,7 +139,7 @@
         </div>
         <!-- Nav Bar End -->
 
-        <h3>Silahkan isi form dibawah ini</h3>
+        <h3>Tabel Rencana KPI</h3>
         <br>
 
     </div>

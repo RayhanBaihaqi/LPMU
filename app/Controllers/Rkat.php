@@ -115,6 +115,18 @@ class Rkat extends BaseController
 
         return redirect()->to(base_url('rkat/indexbyuser'));
     }
+<<<<<<< HEAD
+=======
+    function tambah_post() {
+        $model = new DetailRkatModel();
+        $data['anggaranGasal']  = (int)$this->input->post('anggaranGasal',true);
+        $data['anggaranGenap']  = (int)$this->input->post('anggaranGenap',true);
+        $data['total_perkegiatan'] = $data['anggaranGasal']+$data['anggaranGenap']; //hasil sesuai simbol plus
+      
+        $this->response($data, 200); //menampilkan variabel $data dengan status 200
+       }
+       
+>>>>>>> 29f57b1869f05c06dd0c1b735bee3c426f8c50d0
     //User Capaian Anggaran 
     public function indexcapaianbyuser()
     {

@@ -6,16 +6,13 @@ use CodeIgniter\Model;
 
 class DataKpiModel extends Model
 {
+    function __construct()
+    {
+        $this->db = db_connect();
+    }
 
-    protected $table      = 'data_kpi';
-    protected $primaryKey = 'idkpi';
-
-    protected $useAutoIncrement = true;
-
-    protected $returnType     = 'array';
-    //protected $useSoftDeletes = true;
-
-    protected $allowedFields = ['huruf_kpi' ,'nama_kpi' ,'angka_butir','nama_butir'];
-
+    function tampildata()
+    {
+        return $this->db->table('tabel_butir_kpi')->get();
+    }
 }
-

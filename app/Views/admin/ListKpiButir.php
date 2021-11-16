@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Admin</title>
+    <title>List KPI dan Butir</title>
 
     <!-- Custom fonts for this template-->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
@@ -76,8 +76,7 @@
                     <span>KPI</span></a>
                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="<?= base_url('/admin/tambahkpi') ?>">Tambah KPI</a>
-                        <a class="collapse-item" href="<?= base_url('/admin/tambahbutirkpi') ?>">Tambah Butir KPI</a>
+
                         <a class="collapse-item" href="<?= base_url('/admin/listbutirkpi') ?>">Lihat KPI & Butir KPI</a>
                         <a class="collapse-item" href="<?= base_url('/admin/adminkpi') ?>">Lihat Rencana</a>
                         <a class="collapse-item" href="<?= base_url('#') ?>">Lihat Capaian</a>
@@ -149,72 +148,99 @@
                 <div class="container-fluid">
                     <h2>List KPI + Butir</h2>
 
-                    <div class="form-group">
-                        <label for="exampleFormControlSelect2">Tahun Ajaran</label>
-                        <select class="form-control" id="exampleFormControlSelect2">
-                            <option>2019/2020</option>
-                            <option>2020/2021</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="disabledTextInput">Nama Prodi/Unit</label>
-                        <input type="text" id="disabledTextInput" class="form-control" placeholder="nama prodi/unit" disabled>
-                    </div>
-                    <div class="form-group">
-                        <label for="disabledTextInput">KPI</label>
-                        <input type="text" id="disabledTextInput" class="form-control" placeholder="kpi" disabled>
-                    </div>
-                    <div class="table-responsive">
-                        <div class="table-wrapper">
-                            <table class="table table-striped table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Kriteria</th>
-                                        <th>Butir Kriteria</th>
-                                        <th>Indikator Standar</th>
-                                        <th>Unit Utama</th>
-                                        <th>Unit Pendukung</th>
-                                        <th>Target</th>
-                                        <th>Kategori</th>
-                                        <th>Nama Kegiatan</th>
-                                        <th>Bobot</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <a href="<?= base_url('/admin/tambahkpi') ?>" class="btn btn-success"><span>Tambah
+                                    KPI</span></a>
+                            <a href="<?= base_url('/admin/TambahButirKpi') ?>" class="btn btn-success"><span>Tambah
+                                    Butir KPI</span></a>
+                        </div>
+                        <div class="container">
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">Pilih ID KPI</label>
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>ID KPI</th>
+                                            <th>Angka Butir</th>
+                                            <th>Nama KPI</th>
+                                            <th>Unit Utama</th>
+                                            <th>Unit Pendukung</th>
+                                            <th>Target</th>
+                                            <th>Kategori</th>
+                                            <th>Kegiatan</th>
+                                            <th>Bobot</th>
+                                            <th>Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                        $nomor = 0;
+                                        foreach ($tampildata as $row) :
+                                            $nomor++;
+                                        ?>
+                                            <tr>
+                                                <th><?= $nomor; ?></th>
+                                                <td><?= $row->idkpi ?></td>
+                                                <td><?= $row->angka_butir ?></td>
+                                                <td><?= $row->nama_butir ?></td>
+                                                <td><?= $row->unit_utama ?></td>
+                                                <td><?= $row->unit_pendukung ?></td>
+                                                <td><?= $row->target ?></td>
+                                                <td><?= $row->kategori ?></td>
+                                                <td><?= $row->kegiatan ?></td>
+                                                <td><?= $row->bobot ?></td>
+                                            </tr>
 
-                                    </tr>
-                                </tbody>
-                            </table>
+                                        <?php
+                                        endforeach;
+                                        ?>
+
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
-
-
                 </div>
 
 
             </div>
-            <!-- End of Content Wrapper -->
+
 
         </div>
-        <!-- End of Page Wrapper -->
+        <!-- End of Content Wrapper -->
 
-        <!-- Scroll to Top Button-->
-        <a class="scroll-to-top rounded" href="#page-top">
-            <i class="fas fa-angle-up"></i>
-        </a>
+    </div>
+    <!-- End of Page Wrapper -->
 
-        <!-- Bootstrap core JavaScript-->
-        <script src="http://localhost:8080/js/jquery.min.js"></script>
-        <script src="http://localhost:8080/js/bootstrap.bundle.min.js"></script>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
 
-        <!-- Page level plugins -->
-        <script src="http://localhost:8080/js/jquery.dataTables.min.js"></script>
-        <script src="http://localhost:8080/js/dataTables.bootstrap4.min.js"></script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="http://localhost:8080/js/jquery.min.js"></script>
+    <script src="http://localhost:8080/js/bootstrap.bundle.min.js"></script>
 
-        <!-- Page level custom scripts -->
-        <script src="http://localhost:8080/js/datatables-demo.js"></script>
+    <!-- Page level plugins -->
+    <script src="http://localhost:8080/js/jquery.dataTables.min.js"></script>
+    <script src="http://localhost:8080/js/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="http://localhost:8080/js/datatables-demo.js"></script>
 
 </body>
 

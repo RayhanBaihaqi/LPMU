@@ -1,3 +1,47 @@
+<<<<<<< HEAD
+ERROR - 2021-11-15 02:31:33 --> Table 'db_lpmu.data_kpi' doesn't exist
+CRITICAL - 2021-11-15 02:31:33 --> Table 'db_lpmu.data_kpi' doesn't exist
+#0 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1881): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\LPMU\app\Models\DetailRkatModel.php(42): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\LPMU\app\Controllers\CapaianRkat.php(25): App\Models\DetailRkatModel->gabungkpi()
+#6 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\CapaianRkat->createcapaianbyuser()
+#7 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CapaianRkat))
+#8 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\LPMU\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2021-11-15 02:31:37 --> Table 'db_lpmu.data_kpi' doesn't exist
+CRITICAL - 2021-11-15 02:31:37 --> Table 'db_lpmu.data_kpi' doesn't exist
+#0 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1881): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\LPMU\app\Models\DetailRkatModel.php(42): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\LPMU\app\Controllers\Rkat.php(93): App\Models\DetailRkatModel->gabungkpi()
+#6 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Rkat->indexbyuser()
+#7 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rkat))
+#8 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\LPMU\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2021-11-15 02:32:05 --> Table 'db_lpmu.data_kpi' doesn't exist
+CRITICAL - 2021-11-15 02:32:05 --> Table 'db_lpmu.data_kpi' doesn't exist
+#0 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1881): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\LPMU\app\Models\DetailRkatModel.php(42): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\LPMU\app\Controllers\CapaianRkat.php(25): App\Models\DetailRkatModel->gabungkpi()
+#6 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\CapaianRkat->createcapaianbyuser()
+#7 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CapaianRkat))
+#8 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\LPMU\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+=======
 ERROR - 2021-11-15 00:25:10 --> Column 'total_perkegiatan' cannot be null
 CRITICAL - 2021-11-15 00:25:10 --> Column 'total_perkegiatan' cannot be null
 #0 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('INSERT INTO `de...')
@@ -56,6 +100,7 @@ CRITICAL - 2021-11-15 00:26:18 --> Undefined variable: total_perkegiatan
 #8 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #9 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
 #10 {main}
+<<<<<<< HEAD
 CRITICAL - 2021-11-15 00:52:26 --> Undefined variable: total
 #0 C:\xampp\htdocs\lpmu-web\app\Views\rkat\inputData.php(217): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 217, Array)
 #1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\xampp\\htdocs...')
@@ -447,3 +492,6 @@ CRITICAL - 2021-11-15 05:49:14 --> Undefined index: baris
 #8 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #9 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
 #10 {main}
+=======
+>>>>>>> 59b0d16521b7e4f24de492538600227d99a0d778
+>>>>>>> 29f57b1869f05c06dd0c1b735bee3c426f8c50d0

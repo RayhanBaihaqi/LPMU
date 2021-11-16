@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 CRITICAL - 2021-11-16 02:29:42 --> Undefined variable: set_rkat
 #0 C:\xampp\htdocs\lpmu-web\app\Views\admin\TambahRkat.php(160): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 160, Array)
 #1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\xampp\\htdocs...')
@@ -72,3 +73,315 @@ CRITICAL - 2021-11-16 04:01:21 --> Table 'db_lpmu.data_kpi' doesn't exist
 #9 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #10 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
 #11 {main}
+=======
+ERROR - 2021-11-16 00:06:43 --> Table 'db_lpmu.detail_kpi' doesn't exist
+CRITICAL - 2021-11-16 00:06:43 --> Table 'db_lpmu.detail_kpi' doesn't exist
+#0 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1881): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Model.php(197): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\BaseModel.php(603): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\LPMU\app\Controllers\Admin.php(19): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Admin->adminkpi()
+#8 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#9 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\LPMU\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+ERROR - 2021-11-16 00:08:41 --> Table 'db_lpmu.detail_kpi' doesn't exist
+CRITICAL - 2021-11-16 00:08:41 --> Table 'db_lpmu.detail_kpi' doesn't exist
+#0 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1881): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Model.php(197): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\BaseModel.php(603): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\LPMU\app\Controllers\Admin.php(19): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Admin->adminkpi()
+#8 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#9 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\LPMU\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+ERROR - 2021-11-16 00:08:55 --> Table 'db_lpmu.detail_kpi' doesn't exist
+CRITICAL - 2021-11-16 00:08:55 --> Table 'db_lpmu.detail_kpi' doesn't exist
+#0 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1881): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Model.php(197): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\BaseModel.php(603): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\LPMU\app\Controllers\Admin.php(19): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Admin->adminkpi()
+#8 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#9 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\LPMU\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+ERROR - 2021-11-16 00:09:05 --> Table 'db_lpmu.detail_kpi' doesn't exist
+CRITICAL - 2021-11-16 00:09:05 --> Table 'db_lpmu.detail_kpi' doesn't exist
+#0 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1881): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Model.php(197): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\BaseModel.php(603): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\LPMU\app\Controllers\Admin.php(19): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Admin->adminkpi()
+#8 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#9 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\LPMU\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2021-11-16 00:13:13 --> Undefined variable: user
+#0 C:\xampp\htdocs\LPMU\app\Views\admin\ListKpiButir.php(171): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 171, Array)
+#1 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('/admin/ListKpiB...', Array, true)
+#4 C:\xampp\htdocs\LPMU\app\Controllers\Admin.php(42): view('/admin/ListKpiB...')
+#5 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Admin->listbutirkpi()
+#6 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\LPMU\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2021-11-16 00:23:08 --> Invalid file: kpi/kesimpulan.php
+#0 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('kpi/kesimpulan....')
+#1 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('kpi/kesimpulan', Array, true)
+#2 C:\xampp\htdocs\LPMU\app\Controllers\Kpi.php(27): view('kpi/kesimpulan')
+#3 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Kpi->kesimpulan()
+#4 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kpi))
+#5 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\LPMU\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2021-11-16 00:24:34 --> Invalid file: kpi/rencana.php
+#0 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('kpi/rencana.php')
+#1 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('kpi/rencana', Array, true)
+#2 C:\xampp\htdocs\LPMU\app\Controllers\Kpi.php(19): view('kpi/rencana')
+#3 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Kpi->rencana()
+#4 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kpi))
+#5 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\LPMU\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+ERROR - 2021-11-16 00:39:11 --> Table 'db_lpmu.detail_kpi' doesn't exist
+CRITICAL - 2021-11-16 00:39:11 --> Table 'db_lpmu.detail_kpi' doesn't exist
+#0 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1881): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Model.php(197): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\BaseModel.php(603): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\LPMU\app\Controllers\Admin.php(19): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Admin->adminkpi()
+#8 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#9 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\LPMU\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+ERROR - 2021-11-16 00:39:20 --> Table 'db_lpmu.detail_kpi' doesn't exist
+CRITICAL - 2021-11-16 00:39:20 --> Table 'db_lpmu.detail_kpi' doesn't exist
+#0 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1881): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Model.php(197): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\BaseModel.php(603): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\LPMU\app\Controllers\Admin.php(19): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Admin->adminkpi()
+#8 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#9 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\LPMU\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+ERROR - 2021-11-16 00:43:41 --> Table 'db_lpmu.detail_kpi' doesn't exist
+CRITICAL - 2021-11-16 00:43:41 --> Table 'db_lpmu.detail_kpi' doesn't exist
+#0 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1881): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Model.php(197): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\BaseModel.php(603): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\LPMU\app\Controllers\Admin.php(19): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Admin->adminkpi()
+#8 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#9 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\LPMU\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2021-11-16 00:52:56 --> Undefined property: App\Controllers\Admin::$md
+#0 C:\xampp\htdocs\LPMU\app\Controllers\Admin.php(18): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 18, Array)
+#1 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Admin->listbutirkpi()
+#2 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#3 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\LPMU\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-11-16 00:55:19 --> Call to undefined method App\Controllers\Admin::model()
+#0 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(901): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#1 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(426): CodeIgniter\CodeIgniter->createController()
+#2 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\LPMU\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2021-11-16 00:55:59 --> Call to undefined method App\Controllers\Admin::model()
+#0 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(901): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#1 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(426): CodeIgniter\CodeIgniter->createController()
+#2 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\LPMU\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2021-11-16 00:56:00 --> Call to undefined method App\Controllers\Admin::model()
+#0 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(901): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#1 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(426): CodeIgniter\CodeIgniter->createController()
+#2 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\LPMU\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2021-11-16 00:56:50 --> Call to undefined method App\Controllers\Admin::model()
+#0 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(901): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#1 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(426): CodeIgniter\CodeIgniter->createController()
+#2 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\LPMU\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2021-11-16 00:57:48 --> Undefined property: App\Controllers\Admin::$md
+#0 C:\xampp\htdocs\LPMU\app\Controllers\Admin.php(18): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 18, Array)
+#1 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Admin->listbutirkpi()
+#2 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#3 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\LPMU\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-11-16 00:57:49 --> Undefined property: App\Controllers\Admin::$md
+#0 C:\xampp\htdocs\LPMU\app\Controllers\Admin.php(18): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 18, Array)
+#1 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Admin->listbutirkpi()
+#2 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#3 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\LPMU\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-11-16 01:07:22 --> Class 'App\Models\DetailKpiModel' not found
+#0 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Admin->listbutirkpi()
+#1 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#2 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\LPMU\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2021-11-16 01:07:58 --> Class 'App\Controllers\DataKpiModel' not found
+#0 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Admin->listbutirkpi()
+#1 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#2 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\LPMU\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2021-11-16 01:08:18 --> Class 'App\Controllers\DataKpiModel' not found
+#0 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Admin->listbutirkpi()
+#1 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#2 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\LPMU\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2021-11-16 01:08:19 --> Class 'App\Controllers\DataKpiModel' not found
+#0 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Admin->listbutirkpi()
+#1 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#2 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\LPMU\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2021-11-16 01:09:30 --> Class 'App\Controllers\DataKpiModel' not found
+#0 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Admin->listbutirkpi()
+#1 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#2 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\LPMU\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2021-11-16 01:23:39 --> Undefined variable: user
+#0 C:\xampp\htdocs\LPMU\app\Views\admin\ListKpiButir.php(174): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 174, Array)
+#1 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('/admin/ListKpiB...', Array, true)
+#4 C:\xampp\htdocs\LPMU\app\Controllers\Admin.php(19): view('/admin/ListKpiB...')
+#5 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Admin->listbutirkpi()
+#6 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\LPMU\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2021-11-16 01:23:41 --> Undefined variable: user
+#0 C:\xampp\htdocs\LPMU\app\Views\admin\ListKpiButir.php(174): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 174, Array)
+#1 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('/admin/ListKpiB...', Array, true)
+#4 C:\xampp\htdocs\LPMU\app\Controllers\Admin.php(19): view('/admin/ListKpiB...')
+#5 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Admin->listbutirkpi()
+#6 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\LPMU\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2021-11-16 01:35:14 --> syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting end of file
+#0 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#1 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('/admin/ListKpiB...', Array, true)
+#2 C:\xampp\htdocs\LPMU\app\Controllers\Admin.php(22): view('/admin/ListKpiB...', Array)
+#3 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Admin->listbutirkpi()
+#4 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#5 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\LPMU\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2021-11-16 01:35:39 --> syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting end of file
+#0 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#1 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('/admin/ListKpiB...', Array, true)
+#2 C:\xampp\htdocs\LPMU\app\Controllers\Admin.php(22): view('/admin/ListKpiB...', Array)
+#3 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Admin->listbutirkpi()
+#4 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#5 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\LPMU\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2021-11-16 01:35:53 --> syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting end of file
+#0 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#1 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('/admin/ListKpiB...', Array, true)
+#2 C:\xampp\htdocs\LPMU\app\Controllers\Admin.php(22): view('/admin/ListKpiB...', Array)
+#3 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Admin->listbutirkpi()
+#4 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#5 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\LPMU\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2021-11-16 01:36:10 --> syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting end of file
+#0 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#1 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('/admin/ListKpiB...', Array, true)
+#2 C:\xampp\htdocs\LPMU\app\Controllers\Admin.php(22): view('/admin/ListKpiB...', Array)
+#3 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Admin->listbutirkpi()
+#4 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#5 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\LPMU\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2021-11-16 01:38:50 --> syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting end of file
+#0 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#1 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('/admin/ListKpiB...', Array, true)
+#2 C:\xampp\htdocs\LPMU\app\Controllers\Admin.php(22): view('/admin/ListKpiB...', Array)
+#3 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Admin->listbutirkpi()
+#4 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#5 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\LPMU\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2021-11-16 01:51:01 --> Undefined index: semester
+#0 C:\xampp\htdocs\LPMU\app\Views\admin\ListRkat.php(178): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 178, Array)
+#1 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('admin/ListRkat', Array, true)
+#4 C:\xampp\htdocs\LPMU\app\Controllers\Rkat.php(166): view('admin/ListRkat', Array)
+#5 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Rkat->indexbyadmin()
+#6 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rkat))
+#7 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\LPMU\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\LPMU\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+>>>>>>> 29f57b1869f05c06dd0c1b735bee3c426f8c50d0
