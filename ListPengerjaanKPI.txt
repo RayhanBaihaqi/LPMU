@@ -26,3 +26,6 @@ USER :
 
 notes : 
 1. kesimpulan terakhir
+
+
+DONE
