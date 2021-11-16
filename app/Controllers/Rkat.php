@@ -86,6 +86,7 @@ class Rkat extends BaseController
       
         $this->response($data, 200); //menampilkan variabel $data dengan status 200
        }
+       
     //User Capaian Anggaran 
     public function indexcapaianbyuser()
     {
