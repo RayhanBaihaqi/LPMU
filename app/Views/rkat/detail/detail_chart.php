@@ -32,9 +32,6 @@
 </head>
 
 <body onload="startTime()">
-	<div class="pre-loader">
-		<div class="spinner-border text-info"></div>
-	</div>
 	<div class="wrapper">
 		<!-- Top Bar Start -->
 		<div class="top-bar">
@@ -71,19 +68,19 @@
 						</div>
 					</div>
 					<div class="col-sm-2">
-						<div class="social">
-							<a href=""><i class="fab fa-twitter"></i></a>
-							<a href=""><i class="fab fa-facebook-f"></i></a>
-							<a href=""><i class="fab fa-linkedin-in"></i></a>
-							<a href=""><i class="fab fa-instagram"></i></a>
-						</div>
-					</div>
+                        <div class="social">
+                            <a href="https://www.upj.ac.id/"><i class="fas fa-globe"></i></i></a>
+                            <a href="https://twitter.com/upj_bintaro"><i class="fab fa-twitter"></i></a>
+                            <a href="https://web.facebook.com/universitas.pembangunan.jaya?_rdc=1&_rdr"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/upj_bintaro/"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
 				</div>
 			</div>
 		</div>
 	</div>
 	<!-- Top Bar End -->
-	<div class="container">
+	<div class="container-fluid">
 		<br>
 		<!-- Nav Bar Start -->
 		<div class="nav-bar">
@@ -94,7 +91,6 @@
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse justify-content-between">
-
 					<div class="ml-auto">
 						<div class="user-info-dropdown">
 							<div class="dropdown">
@@ -104,15 +100,14 @@
 									</span>
 									<span class="user-name">
 										<?php
-                                            $nama_prodi = session('nama_prodi');
-                                            echo "$nama_prodi"
-                                        ?>
+                                                $nama_prodi = session('nama_prodi');
+                                                echo "$nama_prodi"
+                                                ?>
 									</span>
 								</a>
 								<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-									<a class="dropdown-item" href="profile.html"><i class="fas fa-user"></i> Profile</a>
-									<a class="dropdown-item" href="profile.html"><i class="fas fa-cog"></i> Setting</a>
-									<a class="dropdown-item" href="/auth/logout"><i class="fas fa-sign-out-alt"></i> Log
+									<a class="dropdown-item" href="profile.html"><i class="fas fa-cog"></i> Ubah Password</a>
+									<a class="dropdown-item" href="<?= base_url('/auth/logout') ?>"><i class="fas fa-sign-out-alt"></i> Log
 										Out</a>
 								</div>
 							</div>
@@ -123,177 +118,244 @@
 		</div>
 		<!-- Nav Bar End -->
 		<br>
-		<!-- Responsive tables Start -->
-		<div class="col-lg-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Striped Table</h4>
-                  <p class="card-description">
-                    Add class <code>.table-striped</code>
-                  </p>
-                  <table class="table table-striped">
-                    <thead>
-                      <tr>
-                        <th>
-                          User
-                        </th>
-                        <th>
-                          First name
-                        </th>
-                        <th>
-                          Progress
-                        </th>
-                        <th>
-                          Amount
-                        </th>
-                        <th>
-                          Deadline
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td class="py-1">
-                          <img src="../../images/faces-clipart/pic-1.png" alt="image"/>
-                        </td>
-                        <td>
-                          Herman Beck
-                        </td>
-                        <td>
-                          <div class="progress">
-                            <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </td>
-                        <td>
-                          $ 77.99
-                        </td>
-                        <td>
-                          May 15, 2015
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="py-1">
-                          <img src="../../images/faces-clipart/pic-2.png" alt="image"/>
-                        </td>
-                        <td>
-                          Messsy Adam
-                        </td>
-                        <td>
-                          <div class="progress">
-                            <div class="progress-bar bg-danger" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </td>
-                        <td>
-                          $245.30
-                        </td>
-                        <td>
-                          July 1, 2015
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="py-1">
-                          <img src="../../images/faces-clipart/pic-3.png" alt="image"/>
-                        </td>
-                        <td>
-                          John Richards
-                        </td>
-                        <td>
-                          <div class="progress">
-                            <div class="progress-bar bg-warning" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </td>
-                        <td>
-                          $138.00
-                        </td>
-                        <td>
-                          Apr 12, 2015
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="py-1">
-                          <img src="../../images/faces-clipart/pic-4.png" alt="image"/>
-                        </td>
-                        <td>
-                          Peter Meggik
-                        </td>
-                        <td>
-                          <div class="progress">
-                            <div class="progress-bar bg-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </td>
-                        <td>
-                          $ 77.99
-                        </td>
-                        <td>
-                          May 15, 2015
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="py-1">
-                          <img src="../../images/faces-clipart/pic-1.png" alt="image"/>
-                        </td>
-                        <td>
-                          Edward
-                        </td>
-                        <td>
-                          <div class="progress">
-                            <div class="progress-bar bg-danger" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </td>
-                        <td>
-                          $ 160.25
-                        </td>
-                        <td>
-                          May 03, 2015
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="py-1">
-                          <img src="../../images/faces-clipart/pic-2.png" alt="image"/>
-                        </td>
-                        <td>
-                          John Doe
-                        </td>
-                        <td>
-                          <div class="progress">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </td>
-                        <td>
-                          $ 123.21
-                        </td>
-                        <td>
-                          April 05, 2015
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="py-1">
-                          <img src="../../images/faces-clipart/pic-3.png" alt="image"/>
-                        </td>
-                        <td>
-                          Henry Tom
-                        </td>
-                        <td>
-                          <div class="progress">
-                            <div class="progress-bar bg-warning" role="progressbar" style="width: 100%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </td>
-                        <td>
-                          $ 150.00
-                        </td>
-                        <td>
-                          June 16, 2015
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-		<!-- Responsive tables End -->
+		
+		<form id="satuan" name="formD" action="<?= base_url('rkat/save'); ?>" method="POST" enctype="multipart/form-data">
+		<?= session()->getFlashdata('status'); ?>	
+			<div class="card">
+					<div class="card-header">Tambah Rencana RKAT</div>
+					<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat'];?>
+						<input type="hidden" class="form-control" id="id_set" value="<?= $id_set ?>" name="id_set[]" 
+						required>
+					<br>
+					<div class="form-inline">
+						<label class="mb-2 mr-sm-2" for="exampleFormControlSelect1" style="width: 150px;">Tahun Ajaran</label>
+						<select class="form-control mb-2 mr-sm-2" id="exampleFormControlSelect1">
+							<!-- <option value="<?= $value['tahun_akademik'] ?>" selected><?= $value['tahun_akademik'] ?> </option>-->
+							<option value="" disabled selected>Pilih Tahun</option>
+							<option value="2019/2020">2019/2020</option>
+							<option value="2020/2021">2020/2021</option>
+						</select>
+					</div>
+					<div class="form-inline">
+						<label for="prodiunit" class="mb-2 mr-sm-2" style="width: 150px;">Program Studi/Unit</label>
+						<input type="text" class="form-control mb-2 mr-sm-2" id="prodiunit" value="<?= $value['nama_prodi'] ?>" name="prodiunit"required disabled>
+						<label for="pagu" class="mb-2 mr-sm-2">Jumlah Pagu</label>
+						<input type="text" class="form-control mb-2 mr-sm-2" id= "pagu" name="pagu" value="RP. <?= $value['pagu'] ?>" required disabled>
+					</div>
+					<?php endforeach; ?>
+					<table class="table">
+						<thead>
+							<tr>
+								<th>cek</th>
+								<th>Kategori</th>
+								<th>Kriteria</th>
+								<th>Butir</th>
+								<th>No Kegiatan</th>
+								<th>Indikator</th>
+								<th>Target</th>
+								<th>Nama Kegiatan</th>
+								<th>Anggaran Gasal</th>
+								<th>Anggaran Genap</th>
+								<th>Total</th>
+							</tr>
+						</thead>
+						<tbody id="tbody">
+							<tr>
+								<td>
+								<input name="chk_a[]" type="checkbox" class="checkall_a" value=""/>
+								</td>
+								<td>
+									<select class="form-control" style="width: 80px;" id="kategori" name="kategori[]">
+										<option value="" disabled selected>Pilih Kategori</option>
+										<option value="PK">PK</option>
+										<option value="OPS">OPS</option>
+										<option value="INV">INV</option>
+									</select>
+								</td>
+								<td>
+									<select class="form-control" style="width: 80px;" id="kpi" name="kpi[]">
+										<option value="" disabled selected>Pilih Kategori KPI</option>
+										<option value="1">1 – Visi Misi Tujuan dan Strategi</option>
+										<option value="2">2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
+										<option value="3">3 - Mahasiswa</option>
+										<option value="4">4 - Sumber Daya Manusia</option>
+										<option value="5">5 - Keuangan, Sarana dan Prasarana</option>
+										<option value="6">6 - Pendidikan</option>
+										<option value="7">7 – Penelitian</option>
+										<option value="8">8 - Pengabdian kepada Masyarakat (PkM)</option>
+										<option value="9">9 - Luaran dan Capaian Tridharma</option>
+									</select>
+								</td>
+								<td>
+									<select class="form-control" style="width: 80px;" id="butir" name="butir[]">
+										<option value="" disabled selected>Pilih butir</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+									</select>
+								</td>
+								<td>
+									<input type="text" class="form-control" style="width: 90px;" id="no_kegiatan" placeholder="Masukan No Kegiatan" name="no_kegiatan[]" required>
+								</td>
+								<td>
+									<input type="text" class="form-control" style="width: 120px;" id="indikator" placeholder="Masukan Indikator" name="indikator[]" required>
+								</td>
+								<td>
+									<input type="text" class="form-control" style="width: 50px;" id="target" placeholder="Masukan Target" name="target[]" required>
+								</td>
+								<td>
+									<input type="text" class="form-control" style="width: 120px;" id="nama_kegiatan" placeholder="Maksukan Nama Kegiatan" name="nama_kegiatan[]" required>
+								</td>
+								<td>
+									<input type="text" class="form-control" style="width: 150px;" id="anggaranGasal" placeholder="Masukan Anggaran Gasal" name="anggaranGasal[]" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" required>
+								</td>
+								<td>
+									<input type="text" class="form-control" style="width: 150px;" id="anggaranGenap" placeholder="Masukan Anggaran Genap" name="anggaranGenap[]" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" required>
+								</td>
+								<td>
+									<input type="text" class="form-control" style="width: 150px;" id="total" name="total[]" placeholder="Total" readonly="readonly" required>
+								</td>
+								<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat'];?>
+									<input type="hidden" class="form-control" id="id_set" value="<?= $id_set ?>" name="id_set[]" required>	
+								<?php endforeach; ?>
+							</tr>
 
-	</div>
+							
+						</tbody>
+						<tfoot>
+						<td><button class="btn btn-success btn-block" onclick="addRow('tbody')" id="BarisBaru"><i class="fa fa-plus"></i> Baris Baru</button></td>
+								<td><button type="button" class="btn btn-warning" onclick="InsertRow('tbody')">Sisip Baris</button></td>
+								<td><button type="button" class="btn btn-danger" onclick="deleteRow('tbody')">Hapus Baris</button></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>Total Keseluruhan</td>
+								<td><input type="text" class="form-control" style="width: 150px;" id="pagu" name="pagu" value="RP. 100000000" required disabled></td>
+								<td><input type="text" class="form-control" style="width: 150px;" id="pagu" name="pagu" value="RP. 100000000" required disabled></td>
+								<td><input type="text" class="form-control" style="width: 150px;" id="pagu" name="pagu" value="RP. 100000000" required disabled></td>
+						</tfoot>
+  					</table>
 
+					<div class="card-footer">
+					<button type="submit" class="btn btn-primary" id="tambah">Tambah Data</button>
+					</div>
+				</div>
+
+		</form>
+	<script>
+		anggaranGasal = document.formD.anggaranGasal.value;
+   		document.formD.total.value = anggaranGasal;
+		anggaranGenap = document.formD.anggaranGenap.value;
+   		document.formD.total.value = anggaranGenap;
+		function OnChange(value){
+			anggaranGasal = document.formD.anggaranGasal.value;
+			anggaranGenap = document.formD.anggaranGenap.value;
+			total = parseInt(anggaranGasal) + parseInt(anggaranGenap);
+     		document.formD.total.value = total;
+		}
+	</script>
+	<script>
+	// JavaScript Document
+ 	function addRow(tableID) {
+	 	var table = document.getElementById(tableID);
+	 	var rowCount = table.rows.length;
+	 	var row = table.insertRow(rowCount);
+	 	var colCount = table.rows[0].cells.length;
+	 	for(var i=0; i<colCount; i++) {
+		 var newcell = row.insertCell(i);
+		 newcell.innerHTML = table.rows[0].cells[i].innerHTML;
+		 var child = newcell.children;
+		 for(var i2=0; i2<child.length; i2++) {
+			 var test = newcell.children[i2].tagName;
+			 switch(test) {
+				 case "INPUT":
+					 if(newcell.children[i2].type=='checkbox'){
+						 newcell.children[i2].value = "";
+						 newcell.children[i2].checked = false;
+					 }else{
+						 newcell.children[i2].value = "";
+					 }
+				 break;
+				 case "SELECT":
+					 newcell.children[i2].value = "";
+				 break;
+				 default:
+				 break;
+			 }
+		 }
+	 }
+ }
+	 
+ function deleteRow(tableID)
+ {
+
+		 var table = document.getElementById(tableID);
+		 var rowCount = table.rows.length;
+			 for(var i=0; i<rowCount; i++)
+				 {
+				 var row = table.rows[i];
+				 var chkbox = row.cells[0].childNodes[0];
+				 if (null != chkbox && true == chkbox.checked)
+					 {
+					 if (rowCount <= 1)
+						 {
+						 alert("Tidak dapat menghapus semua baris.");
+						 break;
+						 }
+					 table.deleteRow(i);
+					 rowCount--;
+					 i--;
+					 }
+				 }
+  }
+  
+
+ 
+ function InsertRow(tableID)
+ {
+	 try{
+		 var table = document.getElementById(tableID);
+		 var rowCount = table.rows.length;
+			 for(var i=0; i<rowCount; i++)
+				 {
+				 var row = table.rows[i];
+				 var chkbox = row.cells[0].childNodes[0];
+				 if (null != chkbox && true == chkbox.checked)
+					 {
+					 var newRow = table.insertRow(i+1);
+					 var colCount = table.rows[0].cells.length;
+						 for (h=0; h<colCount; h++){
+							 var newCell = newRow.insertCell(h);
+							 newCell.innerHTML = table.rows[0].cells[h].innerHTML;
+							 var child = newCell.children;
+							 for(var i2=0; i2<child.length; i2++) {
+								 var test = newCell.children[i2].tagName;
+								 switch(test) {
+									 case "INPUT":
+										 if(newCell.children[i2].type=='checkbox'){
+											 newCell.children[i2].value = "";
+											 newCell.children[i2].checked = false;
+										 }else{
+											 newCell.children[i2].value = "";
+										 }
+									 break;
+									 case "SELECT":
+										 newCell.children[i2].value = "";
+									 break;
+									 default:
+									 break;
+								 }
+							 }
+						 }
+					 }
+					 
+				 }
+			 } catch(e)
+	 {
+	 alert(e);
+	 }
+  }
+ </script>
 	<!-- JavaScript Libraries -->
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
@@ -321,6 +383,7 @@
 		}
 
 	</script>
+
 	<script src="http://localhost:8080/chart/apexcharts.min.js"></script>
 	<script src="http://localhost:8080/chart/dashboard.js"></script>
 	<script src="http://localhost:8080/chart/jquery.knob.min.js"></script>
