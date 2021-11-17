@@ -30,3 +30,17 @@ USER
 ADMIN
 4. Hapus kolom password pada halaman table user (Selesai)
 5. halaman profil dan seting dihapus (Selesai)
+
+
+
+
+
+
+
+note:
+buka url tidak memakai php spark serve jadi langsung:
+http://localhost/lpmu/backend/rkat
+
+untuk penambahan linnk gunakan contoh format dibawah ini:
+<a href="<?php echo site_url(); ?>/public/backend"></a>
+
