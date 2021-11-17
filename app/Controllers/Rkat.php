@@ -34,24 +34,56 @@ class Rkat extends BaseController
         $model = new DetailRkatModel();
 		$data = [
 			'kategori' => $this->request->getVar('kategori'),
-            'anggaranGenap' => $this->request->getVar('anggaranGenap'),
-            'anggaranGasal' => $this->request->getVar('anggaranGasal'),
-            'no_kegiatan' => $this->request->getVar('no_kegiatan'),
-            'indikator' => $this->request->getVar('indikator'),
-            'kpi' => $this->request->getVar('kpi'),
-            'butir' => $this->request->getVar('butir'),
-            'target' => $this->request->getVar('target'),
-            'nama_kegiatan' => $this->request->getVar('nama_kegiatan'),
-            'total' => $this->request->getVar('total'),
-            'id_set' => $this->request->getVar('id_set'),
+           'anggaranGenap' => $this->request->getVar('anggaranGenap'),
+           'anggaranGasal' => $this->request->getVar('anggaranGasal'),
+           'no_kegiatan' => $this->request->getVar('no_kegiatan'),
+           'indikator' => $this->request->getVar('indikator'),
+           'kpi' => $this->request->getVar('kpi'),
+           'butir' => $this->request->getVar('butir'),
+           'target' => $this->request->getVar('target'),
+           'nama_kegiatan' => $this->request->getVar('nama_kegiatan'),
+           'total' => $this->request->getVar('total'),
+           'id_set' => $this->request->getVar('id_set'),
 		];
 		$model->save($data);
 		return redirect()->to(base_url('rkat/createbyuser'))->with('status', '
-            <div class="alert alert-success">
-                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                <strong>Berhasil!</strong> Data Anda Berhasil Terinput.
-            </div>
+           <div class="alert alert-success">
+               <button type="button" class="close" data-dismiss="alert">&times;</button>
+               <strong>Berhasil!</strong> Data Anda Berhasil Terinput.
+           </div>
         ');
+        
+        //memasukan data ke array
+        // $kategori = $_POST['kategori'];
+        // $anggaranGenap = $_POST['anggaranGenap'];
+        // $anggaranGasal = $_POST['anggaranGasal'];
+        // $no_kegiatan = $_POST['no_kegiatan'];
+        // $indikator = $_POST['indikator'];
+        // $kpi = $_POST['kpi'];
+        // $butir = $_POST['butir'];
+        // $target = $_POST['target'];
+        // $nama_kegiatan = $_POST['nama_kegiatan'];
+        // $total = $_POST['total'];
+        // $id_set = $_POST['id_set'];
+        
+        // $baris = count($kategori);
+        // //melakukan perulangan input
+        // for ($i=0; $i < $baris; $i++) { 
+        //    $this->DetailRkatModel->insert([
+        //        'kategori'=>$kategori[$i],
+        //        'anggaranGenap'=>$anggaranGenap[$i],  
+        //        'anggaranGasal'=>$anggaranGasal[$i],  
+        //        'no_kegiatan'=>$no_kegiatan[$i],  
+        //        'indikator'=>$indikator[$i],  
+        //        'kpi'=>$kpi[$i],  
+        //        'butir'=>$butir[$i],  
+        //        'target'=>$target[$i],  
+        //        'nama_kegiatan'=>$nama_kegiatan[$i],  
+        //        'total'=>$total[$i],
+        //        'id_set'=>$id_set[$i],  
+        //    ]);
+        // }
+        // return redirect()->to(base_url('rkat/createbyadmin'))->with('status', 'Data Berhasil ditambah');
 	}
     public function editbyuser($id = null) {
         $model = new DetailRkatModel();
@@ -83,22 +115,6 @@ class Rkat extends BaseController
 
         return redirect()->to(base_url('rkat/indexbyuser'));
     }
-<<<<<<< HEAD
-=======
-    
->>>>>>> ebc5a08c6f9988aa4bfcb94306aeeef2ec24cd52
-    function tambah_post() {
-        $model = new DetailRkatModel();
-        $data['anggaranGasal']  = (int)$this->input->post('anggaranGasal',true);
-        $data['anggaranGenap']  = (int)$this->input->post('anggaranGenap',true);
-        $data['total_perkegiatan'] = $data['anggaranGasal']+$data['anggaranGenap']; //hasil sesuai simbol plus
-      
-        $this->response($data, 200); //menampilkan variabel $data dengan status 200
-       }
-<<<<<<< HEAD
-=======
-       
->>>>>>> ebc5a08c6f9988aa4bfcb94306aeeef2ec24cd52
     //User Capaian Anggaran 
     public function indexcapaianbyuser()
     {

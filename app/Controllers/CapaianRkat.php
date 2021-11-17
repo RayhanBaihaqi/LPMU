@@ -22,7 +22,8 @@ class CapaianRkat extends BaseController
     }
     public function createcapaianbyuser() {
         $model = new DetailRkatModel();
-        $data['detail_rkat'] = $this->DetailRkatModel->gabungkpi();
+        $username = session('username');
+        $data['detail_rkat'] = $this->DetailRkatModel->gabung($username);
         return view('rkat/FormCapaian', $data);
     }
     public function savecapaian()

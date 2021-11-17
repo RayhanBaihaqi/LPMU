@@ -678,3 +678,588 @@ CRITICAL - 2021-11-16 04:04:57 --> syntax error, unexpected '<<' (T_SL), expecti
 =======
 >>>>>>> c03e7ac2eccc2e0c352ad519a03903c4fbc6a7a8
 >>>>>>> ebc5a08c6f9988aa4bfcb94306aeeef2ec24cd52
+CRITICAL - 2021-11-16 16:17:35 --> Undefined variable: baris
+#0 C:\xampp\htdocs\lpmu-web\app\Views\rkat\inputData.php(127): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 127, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('rkat/inputData', Array, true)
+#4 C:\xampp\htdocs\lpmu-web\app\Controllers\Rkat.php(30): view('rkat/inputData', Array)
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Rkat->createbyuser()
+#6 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rkat))
+#7 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2021-11-16 16:18:30 --> Undefined variable: baris
+#0 C:\xampp\htdocs\lpmu-web\app\Views\rkat\inputData.php(127): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 127, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('rkat/inputData', Array, true)
+#4 C:\xampp\htdocs\lpmu-web\app\Controllers\Rkat.php(30): view('rkat/inputData', Array)
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Rkat->createbyuser()
+#6 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rkat))
+#7 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2021-11-16 16:27:19 --> Undefined variable: baris
+#0 C:\xampp\htdocs\lpmu-web\app\Views\rkat\inputData.php(148): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 148, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('rkat/inputData', Array, true)
+#4 C:\xampp\htdocs\lpmu-web\app\Controllers\Rkat.php(30): view('rkat/inputData', Array)
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Rkat->createbyuser()
+#6 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rkat))
+#7 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2021-11-16 16:28:03 --> Undefined variable: baris
+#0 C:\xampp\htdocs\lpmu-web\app\Views\rkat\inputData.php(148): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 148, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('rkat/inputData', Array, true)
+#4 C:\xampp\htdocs\lpmu-web\app\Controllers\Rkat.php(30): view('rkat/inputData', Array)
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Rkat->createbyuser()
+#6 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rkat))
+#7 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2021-11-16 16:28:39 --> Undefined variable: j
+#0 C:\xampp\htdocs\lpmu-web\app\Views\rkat\inputData.php(231): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 231, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('rkat/inputData', Array, true)
+#4 C:\xampp\htdocs\lpmu-web\app\Controllers\Rkat.php(30): view('rkat/inputData', Array)
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Rkat->createbyuser()
+#6 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rkat))
+#7 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+ERROR - 2021-11-16 16:36:33 --> Table 'db_lpmu.data_kpi' doesn't exist
+CRITICAL - 2021-11-16 16:36:33 --> Table 'db_lpmu.data_kpi' doesn't exist
+#0 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1881): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\lpmu-web\app\Models\DetailRkatModel.php(42): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\lpmu-web\app\Controllers\CapaianRkat.php(25): App\Models\DetailRkatModel->gabungkpi()
+#6 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\CapaianRkat->createcapaianbyuser()
+#7 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CapaianRkat))
+#8 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2021-11-16 16:55:55 --> Invalid file: /admin/ubahPass.php
+#0 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/admin/ubahPass...')
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('/admin/ubahPass', Array, true)
+#2 C:\xampp\htdocs\lpmu-web\app\Controllers\Auth.php(138): view('/admin/ubahPass', Array)
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Auth->ubahpass()
+#4 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2021-11-16 16:58:36 --> Undefined variable: set_rkat
+#0 C:\xampp\htdocs\lpmu-web\app\Views\ubahPass.php(133): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 133, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('ubahPass', Array, true)
+#4 C:\xampp\htdocs\lpmu-web\app\Controllers\Auth.php(138): view('ubahPass', Array)
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Auth->ubahpass()
+#6 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2021-11-16 16:59:09 --> Undefined variable: set_rkat
+#0 C:\xampp\htdocs\lpmu-web\app\Views\ubahPass.php(133): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 133, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('ubahPass', Array, true)
+#4 C:\xampp\htdocs\lpmu-web\app\Controllers\Auth.php(138): view('ubahPass', Array)
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Auth->ubahpass()
+#6 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2021-11-16 17:03:27 --> syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ']'
+#0 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Router\Router.php(169): CodeIgniter\Router\Router->autoRoute('auth/ubahpass')
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(809): CodeIgniter\Router\Router->handle('auth/ubahpass')
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(389): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-11-16 17:06:26 --> Undefined property: App\Controllers\Auth::$DetailRkatModel
+#0 C:\xampp\htdocs\lpmu-web\app\Controllers\Auth.php(138): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 138, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Auth->ubahpass()
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-11-16 17:06:55 --> Undefined property: App\Controllers\Auth::$AuthRkatModel
+#0 C:\xampp\htdocs\lpmu-web\app\Controllers\Auth.php(138): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 138, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Auth->ubahpass()
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-11-16 17:08:41 --> Undefined property: App\Controllers\Auth::$AuthRkatModel
+#0 C:\xampp\htdocs\lpmu-web\app\Controllers\Auth.php(138): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 138, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Auth->ubahpass()
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-11-16 17:08:43 --> Undefined property: App\Controllers\Auth::$AuthRkatModel
+#0 C:\xampp\htdocs\lpmu-web\app\Controllers\Auth.php(138): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 138, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Auth->ubahpass()
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-11-16 17:09:44 --> Undefined property: App\Controllers\Auth::$UsersRkatModel
+#0 C:\xampp\htdocs\lpmu-web\app\Controllers\Auth.php(138): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 138, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Auth->ubahpass()
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-11-16 17:11:54 --> Undefined property: App\Controllers\Auth::$UsersRkatModel
+#0 C:\xampp\htdocs\lpmu-web\app\Controllers\Auth.php(138): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 138, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Auth->ubahpass()
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-11-16 17:12:53 --> Undefined property: App\Controllers\Auth::$UsersRkatModel
+#0 C:\xampp\htdocs\lpmu-web\app\Controllers\Auth.php(139): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 139, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Auth->ubahpass()
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-11-16 17:12:54 --> Undefined property: App\Controllers\Auth::$UsersRkatModel
+#0 C:\xampp\htdocs\lpmu-web\app\Controllers\Auth.php(139): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 139, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Auth->ubahpass()
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-11-16 17:13:00 --> Undefined property: App\Controllers\Auth::$UsersRkatModel
+#0 C:\xampp\htdocs\lpmu-web\app\Controllers\Auth.php(139): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 139, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Auth->ubahpass()
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-11-16 17:13:28 --> Undefined property: App\Controllers\Auth::$UsersModel
+#0 C:\xampp\htdocs\lpmu-web\app\Controllers\Auth.php(139): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 139, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Auth->ubahpass()
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-11-16 17:16:57 --> Undefined variable: set_rkat
+#0 C:\xampp\htdocs\lpmu-web\app\Views\ubahPass.php(133): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 133, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('ubahPass', Array, true)
+#4 C:\xampp\htdocs\lpmu-web\app\Controllers\Auth.php(143): view('ubahPass', Array)
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Auth->ubahpass()
+#6 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2021-11-16 17:19:24 --> Undefined variable: value
+#0 C:\xampp\htdocs\lpmu-web\app\Views\ubahPass.php(135): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 135, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('ubahPass', Array, true)
+#4 C:\xampp\htdocs\lpmu-web\app\Controllers\Auth.php(143): view('ubahPass', Array)
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Auth->ubahpass()
+#6 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2021-11-16 21:42:55 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::set() must be of the type string or null, array given, called in C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Model.php on line 256
+#0 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Model.php(256): CodeIgniter\Database\BaseBuilder->set('kategori', Array, NULL)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\BaseModel.php(774): CodeIgniter\Model->doInsert(Array)
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Model.php(686): CodeIgniter\BaseModel->insert(Array, false)
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\BaseModel.php(687): CodeIgniter\Model->insert(Array, false)
+#4 C:\xampp\htdocs\lpmu-web\app\Controllers\Rkat.php(48): CodeIgniter\BaseModel->save(Array)
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Rkat->save()
+#6 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rkat))
+#7 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2021-11-16 21:43:21 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::set() must be of the type string or null, array given, called in C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Model.php on line 256
+#0 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Model.php(256): CodeIgniter\Database\BaseBuilder->set('kategori', Array, NULL)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\BaseModel.php(774): CodeIgniter\Model->doInsert(Array)
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Model.php(686): CodeIgniter\BaseModel->insert(Array, false)
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\BaseModel.php(687): CodeIgniter\Model->insert(Array, false)
+#4 C:\xampp\htdocs\lpmu-web\app\Controllers\Rkat.php(48): CodeIgniter\BaseModel->save(Array)
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Rkat->save()
+#6 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rkat))
+#7 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2021-11-16 21:45:30 --> Argument 2 passed to CodeIgniter\Database\BaseBuilder::set() must be of the type string or null, array given, called in C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Model.php on line 256
+#0 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Model.php(256): CodeIgniter\Database\BaseBuilder->set('kategori', Array, NULL)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\BaseModel.php(774): CodeIgniter\Model->doInsert(Array)
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Model.php(686): CodeIgniter\BaseModel->insert(Array, false)
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\BaseModel.php(687): CodeIgniter\Model->insert(Array, false)
+#4 C:\xampp\htdocs\lpmu-web\app\Controllers\Rkat.php(48): CodeIgniter\BaseModel->save(Array)
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Rkat->save()
+#6 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rkat))
+#7 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2021-11-16 21:51:21 --> Undefined variable: a
+#0 C:\xampp\htdocs\lpmu-web\app\Views\rkat\inputData.php(163): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 163, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('rkat/inputData', Array, true)
+#4 C:\xampp\htdocs\lpmu-web\app\Controllers\Rkat.php(30): view('rkat/inputData', Array)
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Rkat->createbyuser()
+#6 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rkat))
+#7 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2021-11-16 22:26:27 --> Undefined property: App\Controllers\Auth::$SetRkatModel
+#0 C:\xampp\htdocs\lpmu-web\app\Controllers\Auth.php(141): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 141, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Auth->ubahpass()
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-11-16 22:27:03 --> Undefined property: App\Controllers\Auth::$SetRkatModel
+#0 C:\xampp\htdocs\lpmu-web\app\Controllers\Auth.php(142): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 142, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Auth->ubahpass()
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-11-16 22:27:39 --> Undefined property: App\Controllers\Auth::$SetRkatModel
+#0 C:\xampp\htdocs\lpmu-web\app\Controllers\Auth.php(142): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 142, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Auth->ubahpass()
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-11-16 22:27:46 --> Undefined property: App\Controllers\Auth::$SetRkatModel
+#0 C:\xampp\htdocs\lpmu-web\app\Controllers\Auth.php(142): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 142, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Auth->ubahpass()
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-11-16 22:28:45 --> Undefined property: App\Controllers\Auth::$DetailRkatModel
+#0 C:\xampp\htdocs\lpmu-web\app\Controllers\Auth.php(142): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 142, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Auth->ubahpass()
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-11-16 22:28:59 --> Undefined property: App\Controllers\Auth::$DetailRkatModel
+#0 C:\xampp\htdocs\lpmu-web\app\Controllers\Auth.php(141): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 141, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Auth->ubahpass()
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-11-16 22:29:28 --> Undefined property: App\Controllers\Auth::$UsersModel
+#0 C:\xampp\htdocs\lpmu-web\app\Controllers\Auth.php(141): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 141, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Auth->ubahpass()
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-11-16 22:30:28 --> Undefined property: App\Controllers\Auth::$UsersModel
+#0 C:\xampp\htdocs\lpmu-web\app\Controllers\Auth.php(141): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 141, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Auth->ubahpass()
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-11-16 22:32:03 --> Undefined property: App\Controllers\Auth::$UsersModel
+#0 C:\xampp\htdocs\lpmu-web\app\Controllers\Auth.php(141): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 141, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Auth->ubahpass()
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-11-16 22:37:29 --> Undefined variable: id
+#0 C:\xampp\htdocs\lpmu-web\app\Controllers\Auth.php(140): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 140, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Auth->ubahpass()
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+ERROR - 2021-11-16 22:52:46 --> Table 'db_lpmu.data_kpi' doesn't exist
+CRITICAL - 2021-11-16 22:52:46 --> Table 'db_lpmu.data_kpi' doesn't exist
+#0 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1881): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\lpmu-web\app\Models\DetailRkatModel.php(42): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\lpmu-web\app\Controllers\CapaianRkat.php(25): App\Models\DetailRkatModel->gabungkpi()
+#6 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\CapaianRkat->createcapaianbyuser()
+#7 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CapaianRkat))
+#8 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2021-11-16 22:59:08 --> Undefined index: no_kegiatan
+#0 C:\xampp\htdocs\lpmu-web\app\Views\rkat\FormCapaian.php(163): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 163, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('rkat/FormCapaia...', Array, true)
+#4 C:\xampp\htdocs\lpmu-web\app\Controllers\CapaianRkat.php(27): view('rkat/FormCapaia...', Array)
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\CapaianRkat->createcapaianbyuser()
+#6 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CapaianRkat))
+#7 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2021-11-16 23:00:11 --> Undefined index: no_kegiatan
+#0 C:\xampp\htdocs\lpmu-web\app\Views\rkat\FormCapaian.php(163): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 163, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('rkat/FormCapaia...', Array, true)
+#4 C:\xampp\htdocs\lpmu-web\app\Controllers\CapaianRkat.php(27): view('rkat/FormCapaia...', Array)
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\CapaianRkat->createcapaianbyuser()
+#6 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CapaianRkat))
+#7 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2021-11-16 23:04:16 --> Undefined index: no_kegiatan
+#0 C:\xampp\htdocs\lpmu-web\app\Views\rkat\FormCapaian.php(163): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 163, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('rkat/FormCapaia...', Array, true)
+#4 C:\xampp\htdocs\lpmu-web\app\Controllers\CapaianRkat.php(27): view('rkat/FormCapaia...', Array)
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\CapaianRkat->createcapaianbyuser()
+#6 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CapaianRkat))
+#7 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2021-11-16 23:04:17 --> Undefined index: no_kegiatan
+#0 C:\xampp\htdocs\lpmu-web\app\Views\rkat\FormCapaian.php(163): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 163, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('rkat/FormCapaia...', Array, true)
+#4 C:\xampp\htdocs\lpmu-web\app\Controllers\CapaianRkat.php(27): view('rkat/FormCapaia...', Array)
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\CapaianRkat->createcapaianbyuser()
+#6 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CapaianRkat))
+#7 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2021-11-16 23:04:18 --> Undefined index: no_kegiatan
+#0 C:\xampp\htdocs\lpmu-web\app\Views\rkat\FormCapaian.php(163): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 163, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('rkat/FormCapaia...', Array, true)
+#4 C:\xampp\htdocs\lpmu-web\app\Controllers\CapaianRkat.php(27): view('rkat/FormCapaia...', Array)
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\CapaianRkat->createcapaianbyuser()
+#6 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CapaianRkat))
+#7 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2021-11-16 23:04:19 --> Undefined index: no_kegiatan
+#0 C:\xampp\htdocs\lpmu-web\app\Views\rkat\FormCapaian.php(163): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 163, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('rkat/FormCapaia...', Array, true)
+#4 C:\xampp\htdocs\lpmu-web\app\Controllers\CapaianRkat.php(27): view('rkat/FormCapaia...', Array)
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\CapaianRkat->createcapaianbyuser()
+#6 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CapaianRkat))
+#7 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2021-11-16 23:04:19 --> Undefined index: no_kegiatan
+#0 C:\xampp\htdocs\lpmu-web\app\Views\rkat\FormCapaian.php(163): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 163, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('rkat/FormCapaia...', Array, true)
+#4 C:\xampp\htdocs\lpmu-web\app\Controllers\CapaianRkat.php(27): view('rkat/FormCapaia...', Array)
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\CapaianRkat->createcapaianbyuser()
+#6 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CapaianRkat))
+#7 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2021-11-16 23:04:19 --> Undefined index: no_kegiatan
+#0 C:\xampp\htdocs\lpmu-web\app\Views\rkat\FormCapaian.php(163): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 163, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('rkat/FormCapaia...', Array, true)
+#4 C:\xampp\htdocs\lpmu-web\app\Controllers\CapaianRkat.php(27): view('rkat/FormCapaia...', Array)
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\CapaianRkat->createcapaianbyuser()
+#6 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CapaianRkat))
+#7 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2021-11-16 23:04:19 --> Undefined index: no_kegiatan
+#0 C:\xampp\htdocs\lpmu-web\app\Views\rkat\FormCapaian.php(163): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 163, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('rkat/FormCapaia...', Array, true)
+#4 C:\xampp\htdocs\lpmu-web\app\Controllers\CapaianRkat.php(27): view('rkat/FormCapaia...', Array)
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\CapaianRkat->createcapaianbyuser()
+#6 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CapaianRkat))
+#7 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2021-11-16 23:04:19 --> Undefined index: no_kegiatan
+#0 C:\xampp\htdocs\lpmu-web\app\Views\rkat\FormCapaian.php(163): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 163, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('rkat/FormCapaia...', Array, true)
+#4 C:\xampp\htdocs\lpmu-web\app\Controllers\CapaianRkat.php(27): view('rkat/FormCapaia...', Array)
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\CapaianRkat->createcapaianbyuser()
+#6 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CapaianRkat))
+#7 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2021-11-16 23:04:20 --> Undefined index: no_kegiatan
+#0 C:\xampp\htdocs\lpmu-web\app\Views\rkat\FormCapaian.php(163): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 163, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('rkat/FormCapaia...', Array, true)
+#4 C:\xampp\htdocs\lpmu-web\app\Controllers\CapaianRkat.php(27): view('rkat/FormCapaia...', Array)
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\CapaianRkat->createcapaianbyuser()
+#6 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CapaianRkat))
+#7 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2021-11-16 23:04:20 --> Undefined index: no_kegiatan
+#0 C:\xampp\htdocs\lpmu-web\app\Views\rkat\FormCapaian.php(163): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 163, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Common.php(1271): CodeIgniter\View\View->render('rkat/FormCapaia...', Array, true)
+#4 C:\xampp\htdocs\lpmu-web\app\Controllers\CapaianRkat.php(27): view('rkat/FormCapaia...', Array)
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\CapaianRkat->createcapaianbyuser()
+#6 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CapaianRkat))
+#7 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+ERROR - 2021-11-16 23:05:29 --> Table 'db_lpmu.data_kpi' doesn't exist
+CRITICAL - 2021-11-16 23:05:29 --> Table 'db_lpmu.data_kpi' doesn't exist
+#0 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1881): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\lpmu-web\app\Models\DetailRkatModel.php(42): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\lpmu-web\app\Controllers\Rkat.php(19): App\Models\DetailRkatModel->gabungkpi()
+#6 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Rkat->indexbyuser()
+#7 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rkat))
+#8 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2021-11-16 23:05:35 --> Table 'db_lpmu.data_kpi' doesn't exist
+CRITICAL - 2021-11-16 23:05:35 --> Table 'db_lpmu.data_kpi' doesn't exist
+#0 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1881): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\lpmu-web\app\Models\DetailRkatModel.php(42): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\lpmu-web\app\Controllers\Rkat.php(19): App\Models\DetailRkatModel->gabungkpi()
+#6 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Rkat->indexbyuser()
+#7 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rkat))
+#8 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2021-11-16 23:07:32 --> Column 'id_set' cannot be null
+CRITICAL - 2021-11-16 23:07:32 --> Column 'id_set' cannot be null
+#0 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('INSERT INTO `de...')
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `de...')
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `de...')
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2277): CodeIgniter\Database\BaseConnection->query('INSERT INTO `de...', Array, false)
+#4 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Model.php(259): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\BaseModel.php(774): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Model.php(686): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\BaseModel.php(687): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp\htdocs\lpmu-web\app\Controllers\Rkat.php(48): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Rkat->save()
+#10 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rkat))
+#11 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+ERROR - 2021-11-16 23:08:51 --> Column 'id_set' cannot be null
+CRITICAL - 2021-11-16 23:08:51 --> Column 'id_set' cannot be null
+#0 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(329): mysqli->query('INSERT INTO `de...')
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `de...')
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `de...')
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2277): CodeIgniter\Database\BaseConnection->query('INSERT INTO `de...', Array, false)
+#4 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Model.php(259): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\BaseModel.php(774): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Model.php(686): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\BaseModel.php(687): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp\htdocs\lpmu-web\app\Controllers\Rkat.php(48): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Rkat->save()
+#10 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rkat))
+#11 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2021-11-16 23:11:03 --> Undefined index: id_set
+#0 C:\xampp\htdocs\lpmu-web\app\Controllers\Rkat.php(67): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 67, Array)
+#1 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Rkat->save()
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rkat))
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-11-16 23:13:32 --> count(): Parameter must be an array or an object that implements Countable
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'count(): Parame...', 'C:\\xampp\\htdocs...', 69, Array)
+#1 C:\xampp\htdocs\lpmu-web\app\Controllers\Rkat.php(69): count('OPS')
+#2 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Rkat->save()
+#3 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rkat))
+#4 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\lpmu-web\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\lpmu-web\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#7 {main}

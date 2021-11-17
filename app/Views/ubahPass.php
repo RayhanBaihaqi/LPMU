@@ -27,6 +27,7 @@
 	<!-- Template Stylesheet -->
 	<link rel="stylesheet" href="http://localhost:8080/css/header.css">
 	<link rel="stylesheet" href="http://localhost:8080/css/style2.css">
+	<link href="http://localhost:8080/css/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 
 </head>
@@ -80,7 +81,7 @@
 		</div>
 	</div>
 	<!-- Top Bar End -->
-	<div class="container-fluid">
+	<div class="container">
 		<br>
 		<!-- Nav Bar Start -->
 		<div class="nav-bar">
@@ -91,6 +92,7 @@
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse justify-content-between">
+
 					<div class="ml-auto">
 						<div class="user-info-dropdown">
 							<div class="dropdown">
@@ -100,9 +102,9 @@
 									</span>
 									<span class="user-name">
 										<?php
-                                                $nama_prodi = session('nama_prodi');
-                                                echo "$nama_prodi"
-                                                ?>
+                                            $nama_prodi = session('nama_prodi');
+                                            echo "$nama_prodi"
+                                        ?>
 									</span>
 								</a>
 								<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
@@ -118,82 +120,38 @@
 		</div>
 		<!-- Nav Bar End -->
 		<br>
-    </div>
-    <div class="container-fluid">
-		<div class="card">
-			<div class="card-body">
-				<h4 class="card-title">Formulir Target Capaian</h4>
-				<div class="form-group ">
-					<label for="sel1">Standar KPI:</label>
-					<select class="form-control kpi" id="sel1">
-						<option>A</option>
-						<option>B</option>
-						<option>C</option>
-						<option></option>
-					</select>
-					<label for="sel1">Kategori:</label>
-					<select class="form-control kpi" id="sel1">
-						<option>A</option>
-						<option>B</option>
-						<option>C</option>
-						<option></option>
-					</select>
+        <form action="<?= base_url('auth/update'); ?>" method="POST" enctype="multipart/form-data">
+			<div class="card">
+				<div class="card-header">Ubah Password</div>
+				<div class="card-body">
+					<input required type="hidden" name="id" value="<?= $user['id']; ?>">
+					<div class="form-group">
+						<label for="username">Username</label>
+						<input required type="text" name="username" class="form-control" id="username" placeholder="Masukkan Username" value="<?= $user['username']; ?>">
+					</div>
+					<div class="form-group">
+						<label for="nama_prodi">Nama Prodi/Unit</label>
+						<input required type="text" name="nama_prodi" class="form-control" id="nama_prodi" name='nama_prodi' placeholder="Masukkan Nama Prodi/Unit" value="<?= $user['nama_prodi']; ?>">
+					</div>
+					<div class="form-group">
+						<label for="password">Password</label>
+						<input type="password" class="form-control" name="password" placeholder="Password" id='password'>
+					</div>
+					<div class="form-group">
+						<button type="submit" id="tambah" class="btn btn-success">Ubah Password</button>
+					</div>
 				</div>
-				<table  class="table table-hover">
-					<thead>
-					<tr>
-						<th>No Kegiatan</th>
-						<th>Indikator</th>
-						<th>Butir</th>
-						<th>Target</th>
-						<th>Nama Kegiatan</th>
-						<th>Anggaran Gasal</th>
-						<th>Serapan Gasal</th>
-						<th>Anggaran Genap</th>
-						<th>Serapan Genap</th>
-						<th>Total Anggaran</th>
-						<th>Total Serapan</th>
-						<th>Aksi</th>
-					</tr>
-					</thead>
-					<tbody id="tabelData">
-						<?php if ($detail_rkat) : ?>
-							<?php foreach ($detail_rkat as $reading) : ?>
-							<tr>
-								<td><?= $reading['no_kegiatan']; ?></td>
-								<td><?= $reading['indikator']; ?></td>
-								<td><?= $reading['butir']; ?></td>
-								<td><?= $reading['target']; ?></td>
-								<td><?= $reading['nama_kegiatan']; ?></td>
-								<td><?= $reading['anggaranGasal']; ?></td>
-								<td><input type="file" id="myFile" name="filename2"></td>
-								<td><?= $reading['anggaranGenap']; ?></td>
-								<td><input type="file" id="myFile" name="filename2"></td>
-								<td><?= $reading['total']; ?></td>
-								<td><input type="file" id="myFile" name="filename2"></td>
-								<td><a href="<?= base_url('rkat/editbyadmin/'); ?>" class="button button2"><i class="fas fa-edit"></i></a></td>
-							</tr>
-							<?php endforeach; ?>
-						<?php endif; ?>
-					</tbody>
-				</table>
-				<button type="button" class="btn btn-primary">Submit</button>
 			</div>
-		</div>
-    </div>
+		</form>
+
+	</div>
+
 	<!-- JavaScript Libraries -->
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 	<script src="lib/easing/easing.min.js"></script>
 	<script src="lib/owlcarousel/owl.carousel.min.js"></script>
 	<script src="lib/isotope/isotope.pkgd.min.js"></script>
-	<script>
-		// Add the following code if you want the name of the file appear on select
-		$(".custom-file-input").on("change", function() {
-		var fileName = $(this).val().split("\\").pop();
-		$(this).siblings(".custom-file-label").addClass("selected").html(fileName);
-		});
-	</script>
 	<script>
 		function startTime() {
 			var today = new Date();
@@ -215,24 +173,18 @@
 		}
 
 	</script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$('#tabelData').DataTable();
-			function filterData () {
-				$('#tabelData').DataTable().search(
-					$('.kpi').val()
-					).draw();
-			}
-			$('.kpi').on('change', function () {
-				filterData();
-			});
-		});
-	</script>
-	<script src="http://localhost:8080/chart/apexcharts.min.js"></script>
-	<script src="http://localhost:8080/chart/dashboard.js"></script>
-	<script src="http://localhost:8080/chart/jquery.knob.min.js"></script>
-	<script src="http://localhost:8080/chart/knob-chart-setting.js"></script>
-	<script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+
+		<!-- Bootstrap core JavaScript-->
+		<script src="http://localhost:8080/js/jquery.min.js"></script>
+		<script src="http://localhost:8080/js/bootstrap.bundle.min.js"></script>
+
+		<!-- Page level plugins -->
+		<script src="http://localhost:8080/js/jquery.dataTables.min.js"></script>
+		<script src="http://localhost:8080/js/dataTables.bootstrap4.min.js"></script>
+
+		<!-- Page level custom scripts -->
+		<script src="http://localhost:8080/js/datatables-demo.js"></script>
+
 	<script>
 		$(window).load(function () {
 			$(".pre-loader").fadeOut("slow");

@@ -285,74 +285,7 @@
 		 }
 	 }
  }
-	 
- function deleteRow(tableID)
- {
-
-		 var table = document.getElementById(tableID);
-		 var rowCount = table.rows.length;
-			 for(var i=0; i<rowCount; i++)
-				 {
-				 var row = table.rows[i];
-				 var chkbox = row.cells[0].childNodes[0];
-				 if (null != chkbox && true == chkbox.checked)
-					 {
-					 if (rowCount <= 1)
-						 {
-						 alert("Tidak dapat menghapus semua baris.");
-						 break;
-						 }
-					 table.deleteRow(i);
-					 rowCount--;
-					 i--;
-					 }
-				 }
-  }
  
- function InsertRow(tableID)
- {
-	 try{
-		 var table = document.getElementById(tableID);
-		 var rowCount = table.rows.length;
-			 for(var i=0; i<rowCount; i++)
-				 {
-				 var row = table.rows[i];
-				 var chkbox = row.cells[0].childNodes[0];
-				 if (null != chkbox && true == chkbox.checked)
-					 {
-					 var newRow = table.insertRow(i+1);
-					 var colCount = table.rows[0].cells.length;
-						 for (h=0; h<colCount; h++){
-							 var newCell = newRow.insertCell(h);
-							 newCell.innerHTML = table.rows[0].cells[h].innerHTML;
-							 var child = newCell.children;
-							 for(var i2=0; i2<child.length; i2++) {
-								 var test = newCell.children[i2].tagName;
-								 switch(test) {
-									 case "INPUT":
-										 if(newCell.children[i2].type=='checkbox'){
-											 newCell.children[i2].value = "";
-											 newCell.children[i2].checked = false;
-										 }else{
-											 newCell.children[i2].value = "";
-										 }
-									 break;
-									 case "SELECT":
-										 newCell.children[i2].value = "";
-									 break;
-									 default:
-									 break;
-								 }
-							 }
-						 }
-					 }
-					 
-				 }
-			 } catch(e)
-	 {
-	 alert(e);
-	 }
-  }
  </script>
 	<!-- JavaScript Libraries -->
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

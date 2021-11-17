@@ -5,6 +5,7 @@ namespace App\Controllers;
 use CodeIgniter\Controller;
 use App\Models\UsersModel;
 use App\Models\AuthModel;
+use App\Models\SetRkatModel;
 
 class Auth extends BaseController
 {
@@ -128,5 +129,30 @@ class Auth extends BaseController
         $session->destroy();
         session()->setFlashdata('pesan', 'Berhasil Logout');
         return redirect()->to('/');
+    }
+
+    //Ubah Password User
+    public function ubahpass($id_setrkat = null) {
+        $model = new SetRkatModel();
+        $username = session('username');
+        $data = [
+            'user' => $model->where('id_user',$id_setrkat)->first()
+        ]; 
+
+        return view('ubahPass',$data);
+    }
+    public function updatepass() {
+        $model = new UsersModel();
+        $id = $this->request->getVar('id');
+
+        $data = [
+			'username' => $this->request->getVar('username'),
+            'nama_prodi' => $this->request->getVar('nama_prodi'),
+            'level' => $this->request->getVar('level'),
+            'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
+        ];
+        $save = $model->update($id,$data);
+
+        return redirect()->to(base_url('auth/index'));
     }
 }
