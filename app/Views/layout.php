@@ -17,26 +17,26 @@
   <nav class="navbar navbar-expand-sm bg-light justify-content-end">
     <ul class="nav ">
       <li class="nav-item">
-        <a class="nav-link" href="/auth/logout">LOGOUT</a>
+        <a class="nav-link" href="<?php echo site_url(); ?>auth/logout">LOGOUT</a>
       </li>
     </ul>
   </nav>
   <br>
   <div class="container">
-  <img class="card-img-top" src="/img/welcome.jpg" alt="Card image" width="800" height="200">
+  <img class="card-img-top" src="<?php echo base_url(); ?>/public/img/welcome.jpg" alt="Card image" width="800" height="200">
     <div class="row">
       <div class="col-sm-6">
         <div class="card">
-          <a class="btn" href="/backend/rkat" role="button">
-            <img class="card-img-top" src="/img/RKAT1.jpg" alt="Card image">
+          <a class="btn" href="<?php echo site_url(); ?>backend/rkat" role="button">
+            <img class="card-img-top" src="<?php echo base_url(); ?>/public/img/RKAT1.jpg" alt="Card image">
             <div class="card-body">RKAT</div>
           </a>
         </div>
       </div>
       <div class="col-sm-6">
         <div class="card">
-          <a class="btn" href="kpi" role="button">
-            <img class="card-img-top" src="/img/KPI1.jpg" alt="Card image">
+          <a class="btn" href="<?php echo site_url(); ?>kpi" role="button">
+            <img class="card-img-top" src="<?php echo base_url(); ?>/public/img/KPI1.jpg" alt="Card image">
             <div class="card-body">KPI</div>
           </a>
         </div>

@@ -83,10 +83,7 @@ class Rkat extends BaseController
 
         return redirect()->to(base_url('rkat/indexbyuser'));
     }
-<<<<<<< HEAD
-=======
     
->>>>>>> ebc5a08c6f9988aa4bfcb94306aeeef2ec24cd52
     function tambah_post() {
         $model = new DetailRkatModel();
         $data['anggaranGasal']  = (int)$this->input->post('anggaranGasal',true);
@@ -95,10 +92,7 @@ class Rkat extends BaseController
       
         $this->response($data, 200); //menampilkan variabel $data dengan status 200
        }
-<<<<<<< HEAD
-=======
        
->>>>>>> ebc5a08c6f9988aa4bfcb94306aeeef2ec24cd52
     //User Capaian Anggaran 
     public function indexcapaianbyuser()
     {

@@ -678,3 +678,11 @@ CRITICAL - 2021-11-16 04:04:57 --> syntax error, unexpected '<<' (T_SL), expecti
 =======
 >>>>>>> c03e7ac2eccc2e0c352ad519a03903c4fbc6a7a8
 >>>>>>> ebc5a08c6f9988aa4bfcb94306aeeef2ec24cd52
+CRITICAL - 2021-11-16 19:48:55 --> syntax error, unexpected '<<' (T_SL), expecting function (T_FUNCTION) or const (T_CONST)
+#0 C:\xampp\htdocs\lpmu\vendor\codeigniter4\framework\system\Router\Router.php(169): CodeIgniter\Router\Router->autoRoute('rkat/createbyus...')
+#1 C:\xampp\htdocs\lpmu\vendor\codeigniter4\framework\system\CodeIgniter.php(809): CodeIgniter\Router\Router->handle('rkat/createbyus...')
+#2 C:\xampp\htdocs\lpmu\vendor\codeigniter4\framework\system\CodeIgniter.php(389): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\lpmu\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\lpmu\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\lpmu\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\xampp\\htdocs...')
+#6 {main}

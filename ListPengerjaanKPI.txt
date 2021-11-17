@@ -30,3 +30,13 @@ DONE
 7. tabel datatables.js (bentuk tabel)
 10. semua menu grafik di dashboard pindah ke kesimpulan
 9. menu lihat grafik pindah ke menu atas
+
+
+
+
+note:
+buka url tidak memakai php spark serve jadi langsung:
+http://localhost/lpmu/backend/rkat
+
+untuk penambahan linnk gunakan contoh format dibawah ini:
+<a href="<?php echo site_url(); ?>/public/backend"></a>

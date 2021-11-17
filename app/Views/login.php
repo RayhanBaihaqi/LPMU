@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="UTF-8">
 	<title>LPMU UPJ</title>
 	<meta name="description" content="The small framework with powerful features">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" type="image/png" href="/favicon.ico" />
+	<link rel="shortcut icon" type="image/png" href="<?php echo base_url(); ?>/public/favicon.ico" />
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-	<link rel="stylesheet" href="http://localhost:8080/css/style.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>/public/css/style.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -40,7 +39,7 @@
 					<h2>LPMU</h2>
 					<h5>LEMBAGA PENJAMINAN MUTU UNIVERSITAS</h5>
 				</div>
-				<div class="right-inductor"><img src="/img/logo_upj.png" alt=""></div>
+				<div class="right-inductor"><img src="<?php echo base_url(); ?>/public/img/logo_upj.png" alt=""></div>
 			</div>
 		</div>
 	</section>

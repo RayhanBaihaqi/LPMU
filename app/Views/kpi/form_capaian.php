@@ -12,9 +12,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>/public/plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>/public/dist/css/adminlte.min.css">
     <meta charset="utf-8">
     <title>Dashboard KPI</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -25,7 +25,7 @@
     <meta content="Law Firm Website Template" name="description">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
+    <link rel="shortcut icon" type="image/png" href="<?php echo base_url(); ?>/public/favicon.ico" />
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,600;1,700;1,800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
@@ -39,8 +39,8 @@
 
 
     <!-- Template Stylesheet -->
-    <link rel="stylesheet" href="http://localhost:8080/css/header.css">
-    <link rel="stylesheet" href="http://localhost:8080/css/style2.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>/public/css/header.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>/public/css/style2.css">
 </head>
 
 <body>
@@ -52,8 +52,8 @@
                 <div class="row">
                     <div class="col-sm-2">
                         <div class="logo">
-                            <a href="index.html">
-                                <img src="/img/logo-upj.png" alt="Logo">
+                            <a href="<?php echo site_url(); ?>">
+                                <img src="<?php echo base_url(); ?>/public/img/logo-upj.png" alt="Logo">
                             </a>
                         </div>
                     </div>
@@ -100,24 +100,24 @@
         <!-- Nav Bar Start -->
         <div class="nav-bar">
             <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-                <a href="/backend"><i class="fas fa-long-arrow-alt-left"></i></a>
+                <a href="<?php echo site_url(); ?>backend"><i class="fas fa-long-arrow-alt-left"></i></a>
                 <a href="#" class="navbar-brand">MENU</a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-between">
                     <div class="navbar-nav mr-auto">
-                        <a href="/kpi" class="nav-item nav-link">Home</a>
-                        <a href="/kpi/rencana" class="nav-item nav-link">Rencana</a>
-                        <a href="inputcapaian" class="nav-item nav-link active">Input Realisasi</a>
-                        <a href="/kpi/kesimpulan" class="nav-item nav-link">Kesimpulan</a>
+                        <a href="<?php echo site_url(); ?>kpi" class="nav-item nav-link">Home</a>
+                        <a href="<?php echo site_url(); ?>kpi/rencana" class="nav-item nav-link">Rencana</a>
+                        <a href="<?php echo site_url(); ?>inputcapaian" class="nav-item nav-link active">Input Realisasi</a>
+                        <a href="<?php echo site_url(); ?>kpi/kesimpulan" class="nav-item nav-link">Kesimpulan</a>
                     </div>
                     <div class="ml-auto">
                         <div class="user-info-dropdown">
                             <div class="dropdown">
                                 <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
                                     <span class="user-icon">
-                                        <img src="/img/inf-logo.jpg" alt="">
+                                        <img src="<?php echo base_url(); ?>/public/img/inf-logo.jpg" alt="">
                                     </span>
                                     <span class="user-name">
                                         <?php
@@ -127,9 +127,8 @@
                                     </span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                                    <a class="dropdown-item" href="profile.html"><i class="fas fa-user"></i> Profile</a>
                                     <a class="dropdown-item" href="profile.html"><i class="fas fa-cog"></i> Setting</a>
-                                    <a class="dropdown-item" href="/auth/logout"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+                                    <a class="dropdown-item" href="<?php echo site_url(); ?>auth/logout"><i class="fas fa-sign-out-alt"></i> Log Out</a>
                                 </div>
                             </div>
                         </div>

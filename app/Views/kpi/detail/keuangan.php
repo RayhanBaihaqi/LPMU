@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>/public/plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>/public/dist/css/adminlte.min.css">
     <meta charset="utf-8">
     <title>Detail Keuangan</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -19,7 +19,7 @@
     <meta content="Law Firm Website Template" name="keywords">
     <meta content="Law Firm Website Template" name="description">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
+    <link rel="shortcut icon" type="image/png" href="<?php echo base_url(); ?>/public/favicon.ico" />
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,600;1,700;1,800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
@@ -28,14 +28,12 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
+    <!-- <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet"> -->
 
     <!-- Template Stylesheet -->
-    <link rel="stylesheet" href="http://localhost:8080/css/header.css">
-    <link rel="stylesheet" href="http://localhost:8080/css/style2.css">
-
+    <link rel="stylesheet" href="<?php echo base_url(); ?>/public/css/header.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>/public/css/style2.css">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -344,8 +342,8 @@
                 <div class="row">
                     <div class="col-sm-2">
                         <div class="logo">
-                            <a href="index.html">
-                                <img src="/img/logo-upj.png" alt="Logo">
+                            <a href="<?php echo site_url(); ?>">
+                                <img src="<?php echo base_url(); ?>/public/img/logo-upj.png" alt="Logo">
                             </a>
                         </div>
                     </div>
@@ -373,11 +371,11 @@
                         </div>
                     </div>
                     <div class="col-sm-2">
-                        <div class="social">
-                            <a href=""><i class="fab fa-twitter"></i></a>
-                            <a href=""><i class="fab fa-facebook-f"></i></a>
-                            <a href=""><i class="fab fa-linkedin-in"></i></a>
-                            <a href=""><i class="fab fa-instagram"></i></a>
+                    <div class="social">
+                            <a href="https://www.upj.ac.id/"><i class="fas fa-globe"></i></i></a>
+                            <a href="https://twitter.com/upj_bintaro"><i class="fab fa-twitter"></i></a>
+                            <a href="https://web.facebook.com/universitas.pembangunan.jaya?_rdc=1&_rdr"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/upj_bintaro/"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
@@ -390,7 +388,7 @@
         <!-- Nav Bar Start -->
         <div class="nav-bar">
             <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-                <a href="/kpi"><i class="fas fa-long-arrow-alt-left"></i></a>
+                <a href="<?php echo site_url(); ?>kpi"><i class="fas fa-long-arrow-alt-left"></i></a>
                 <a href="#" class="navbar-brand">MENU</a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
@@ -402,7 +400,7 @@
                             <div class="dropdown">
                                 <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
                                     <span class="user-icon">
-                                        <img src="/img/inf-logo.jpg" alt="">
+                                        <img src="<?php echo base_url(); ?>/public/img/inf-logo.jpg" alt="">
                                     </span>
                                     <span class="user-name">
                                         <?php
@@ -412,9 +410,8 @@
                                     </span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                                    <a class="dropdown-item" href="profile.html"><i class="fas fa-user"></i> Profile</a>
                                     <a class="dropdown-item" href="profile.html"><i class="fas fa-cog"></i> Setting</a>
-                                    <a class="dropdown-item" href="/auth/logout"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+                                    <a class="dropdown-item" href="<?php echo site_url(); ?>auth/logout"><i class="fas fa-sign-out-alt"></i> Log Out</a>
                                 </div>
                             </div>
                         </div>
@@ -622,19 +619,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <!-- jQuery -->
-    <script src="../../plugins/jquery/jquery.min.js"></script>
+    <script src="<?php echo base_url(); ?>/public/plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
-    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?php echo base_url(); ?>/public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- ChartJS -->
-    <script src="../../plugins/chart.js/Chart.min.js"></script>
+    <script src="<?php echo base_url(); ?>/public/plugins/chart.js/Chart.min.js"></script>
     <!-- AdminLTE App -->
-    <script src="../../dist/js/adminlte.min.js"></script>
+    <script src="<?php echo base_url(); ?>/public/dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
-    <script src="../../dist/js/demo.js"></script>
-    <script src="http://localhost:8080/chart/apexcharts.min.js"></script>
-    <script src="http://localhost:8080/chart/dashboard.js"></script>
-    <script src="http://localhost:8080/chart/jquery.knob.min.js"></script>
-    <script src="http://localhost:8080/chart/knob-chart-setting.js"></script>
+    <script src="<?php echo base_url(); ?>/public/dist/js/demo.js"></script>
+    <script src="<?php echo base_url(); ?>/public/chart/apexcharts.min.js"></script>
+    <script src="<?php echo base_url(); ?>/public/chart/dashboard.js"></script>
+    <script src="<?php echo base_url(); ?>/public/chart/jquery.knob.min.js"></script>
+    <script src="<?php echo base_url(); ?>/public/chart/knob-chart-setting.js"></script>
     <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
     <script>
         $(function() {

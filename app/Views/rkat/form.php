@@ -9,7 +9,7 @@
 	<meta content="Law Firm Website Template" name="description">
 
 	<!-- Favicon -->
-	<link rel="shortcut icon" type="image/png" href="/favicon.ico" />
+	<link rel="shortcut icon" type="image/png" href="<?php echo base_url(); ?>/public/favicon.ico" />
 
 	<!-- Google Font -->
 	<link
@@ -20,13 +20,13 @@
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-	<link href="lib/animate/animate.min.css" rel="stylesheet">
-	<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+	<!-- <link href="lib/animate/animate.min.css" rel="stylesheet">
+	<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet"> -->
 
 
 	<!-- Template Stylesheet -->
-	<link rel="stylesheet" href="http://localhost:8080/css/header.css">
-	<link rel="stylesheet" href="http://localhost:8080/css/style2.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>/public/css/header.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>/public/css/style2.css">
 
 
 </head>
@@ -42,8 +42,8 @@
 				<div class="row">
 					<div class="col-sm-2">
 						<div class="logo">
-							<a href="index.html">
-								<img src="/img/logo-upj.png" alt="Logo">
+							<a href="<?php echo site_url(); ?>">
+								<img src="<?php echo base_url(); ?>/public/img/logo-upj.png" alt="Logo">
 							</a>
 						</div>
 					</div>
@@ -88,7 +88,7 @@
 		<!-- Nav Bar Start -->
 		<div class="nav-bar">
 			<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-				<a href="/backend/rkat"><i class="fas fa-long-arrow-alt-left"></i></a>
+				<a href="<?php echo site_url(); ?>backend/rkat"><i class="fas fa-long-arrow-alt-left"></i></a>
 				<a href="#" class="navbar-brand">MENU</a>
 				<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
 					<span class="navbar-toggler-icon"></span>
@@ -99,7 +99,7 @@
 							<div class="dropdown">
 								<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
 									<span class="user-icon">
-										<img src="/img/inf-logo.jpg" alt="">
+										<img src="<?php echo base_url(); ?>/public/img/inf-logo.jpg" alt="">
 									</span>
 									<span class="user-name">
 										<?php
@@ -137,9 +137,9 @@
 	<!-- JavaScript Libraries -->
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-	<script src="lib/easing/easing.min.js"></script>
+	<!-- <script src="lib/easing/easing.min.js"></script>
 	<script src="lib/owlcarousel/owl.carousel.min.js"></script>
-	<script src="lib/isotope/isotope.pkgd.min.js"></script>
+	<script src="lib/isotope/isotope.pkgd.min.js"></script> -->
 	<script>
 		function startTime() {
 			var today = new Date();
@@ -162,10 +162,10 @@
 
 	</script>
 
-	<script src="http://localhost:8080/chart/apexcharts.min.js"></script>
-	<script src="http://localhost:8080/chart/dashboard.js"></script>
-	<script src="http://localhost:8080/chart/jquery.knob.min.js"></script>
-	<script src="http://localhost:8080/chart/knob-chart-setting.js"></script>
+	<!-- <script src="?php echo base_url(); ?>/public/chart/apexcharts.min.js"></script>
+	<script src="?php echo base_url(); ?>/public/chart/dashboard.js"></script> -->
+	<script src="<?php echo base_url(); ?>/public/chart/jquery.knob.min.js"></script>
+	<script src="<?php echo base_url(); ?>/public/chart/knob-chart-setting.js"></script>
 	<script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
 	<script>
 		$(window).load(function () {
