@@ -25,9 +25,9 @@
 
 
 	<!-- Template Stylesheet -->
-	<link rel="stylesheet" href="<?php echo base_url(); ?>css/header.css">
-	<link rel="stylesheet" href="<?php echo base_url(); ?>css/style2.css">
-	<link href="<?php echo base_url(); ?>/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>/public/css/header.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>/public/css/style2.css">
+	<link href="<?php echo base_url(); ?>/public/css/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 
 </head>
@@ -135,13 +135,17 @@
                   	<thead>
 										<tr>
 											<th>No</th>
-											<th>Nama Kegiatan</th>
-											<th>Jenis Biaya</th>
-											<th>Anggaran</th>
-											<th>Keterangan</th>
-                                            <th>Jenis KPI</th>
+											<th>Kategori</th>
+											<th>No Kegiatan</th>
+											<th>Target</th>
+											<th>Indikator</th>
+                                            <th>Nama Kegiatan</th>
+											<th>KPI</th>
 											<th>Butir</th>
-											<th>Jenis Anggaran</th>
+											<th>Anggaran Gasal</th>
+                                            <th>Anggaran Ganjil</th>
+											<th>Total Anggaran Rencana</th>
+											<th>Total Anggaran Realisasi</th>
 											<th>Actions</th>
 										</tr>
 									</thead>
@@ -151,13 +155,17 @@
                                         <?php foreach ($detail_rkat as $value) : ?>
 										<tr>
 											<td scope="row"><?= $i++; ?></td>
-											<td><?= $value['nama_kegiatan']; ?></td>
-											<td><?= $value['semester']; ?></td>
-											<td><?= $value['anggaran']; ?></td>
-											<td><?= $value['keterangan']; ?></td>
-                                            <td><?= $value['huruf_kpi']; ?></td>
-											<td><?= $value['angka_butir']; ?></td>
-											<td><?= $value['jenis_anggaran']; ?></td>
+											<td><?= $value['kategori']; ?></td>
+											<td><?= $value['no_kegiatan']; ?></td>
+											<td><?= $value['target']; ?></td>
+											<td><?= $value['indikator']; ?></td>
+                                            <td><?= $value['nama_kegiatan']; ?></td>
+											<td><?= $value['kpi']; ?></td>
+											<td><?= $value['butir']; ?></td>
+											<td><?= $value['anggaranGasal']; ?></td>
+											<td><?= $value['anggaranGenap']; ?></td>
+											<td><?= $value['total']; ?></td>
+											<td></td>
 											<td>
 												<a href="<?= base_url('rkat/editbyuser/'.$value['id']); ?>"
 													class="button button2"><i class="fas fa-edit"></i></a>

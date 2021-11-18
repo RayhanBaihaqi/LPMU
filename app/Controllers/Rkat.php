@@ -16,7 +16,8 @@ class Rkat extends BaseController
     public function indexbyuser()
     {
         $model = new DetailRkatModel();
-        $data['detail_rkat'] = $this->DetailRkatModel->gabungkpi();
+        $username = session('username');
+        $data['detail_rkat'] = $this->DetailRkatModel->gabung($username);
 
         return view('rkat/ListData', $data);
     }

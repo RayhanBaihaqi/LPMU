@@ -166,11 +166,11 @@
 								<td><?= $reading['target']; ?></td>
 								<td><?= $reading['nama_kegiatan']; ?></td>
 								<td><?= $reading['anggaranGasal']; ?></td>
-								<td><input type="file" id="myFile" name="filename2"></td>
+								<td><input type="text" class="form-control" style="width: 150px;" id="anggaranGasal" placeholder="Masukan Anggaran Gasal" name="anggaranGasal[]" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" required></td>
 								<td><?= $reading['anggaranGenap']; ?></td>
-								<td><input type="file" id="myFile" name="filename2"></td>
+								<td><input type="text" class="form-control" style="width: 150px;" id="anggaranGasal" placeholder="Masukan Anggaran Gasal" name="anggaranGasal[]" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" required></td>
 								<td><?= $reading['total']; ?></td>
-								<td><input type="file" id="myFile" name="filename2"></td>
+								<td><input type="text" class="form-control" style="width: 150px;" id="anggaranGasal" placeholder="Masukan Anggaran Gasal" name="anggaranGasal[]" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" required></td>
 								<td><a href="<?= base_url('rkat/editbyadmin/'); ?>" class="button button2"><i class="fas fa-edit"></i></a></td>
 							</tr>
 							<?php endforeach; ?>

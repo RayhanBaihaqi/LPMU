@@ -144,7 +144,6 @@
 					<table class="table">
 						<thead>
 							<tr>
-								<th>cek</th>
 								<th>Kategori</th>
 								<th>Kriteria</th>
 								<th>Butir</th>
@@ -155,15 +154,13 @@
 								<th>Anggaran Gasal</th>
 								<th>Anggaran Genap</th>
 								<th>Total</th>
+								<th>Aksi</th>
 							</tr>
 						</thead>
 						<tbody id="tbody">
 							<tr>
 								<td>
-								<input name="chk_a[]" type="checkbox" class="checkall_a" value=""/>
-								</td>
-								<td>
-									<select class="form-control" style="width: 80px;" id="kategori" name="kategori[]">
+									<select class="form-control" style="width: 70px;" id="kategori" name="kategori[]">
 										<option value="" disabled selected>Pilih Kategori</option>
 										<option value="PK">PK</option>
 										<option value="OPS">OPS</option>
@@ -171,7 +168,7 @@
 									</select>
 								</td>
 								<td>
-									<select class="form-control" style="width: 80px;" id="kpi" name="kpi[]">
+									<select class="form-control" style="width: 60px;" id="kpi" name="kpi[]">
 										<option value="" disabled selected>Pilih Kategori KPI</option>
 										<option value="1">1 – Visi Misi Tujuan dan Strategi</option>
 										<option value="2">2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
@@ -185,7 +182,7 @@
 									</select>
 								</td>
 								<td>
-									<select class="form-control" style="width: 80px;" id="butir" name="butir[]">
+									<select class="form-control" style="width: 60px;" id="butir" name="butir[]">
 										<option value="" disabled selected>Pilih butir</option>
 										<option value="1">1</option>
 										<option value="2">2</option>
@@ -196,7 +193,7 @@
 									<input type="text" class="form-control" style="width: 90px;" id="no_kegiatan" placeholder="Masukan No Kegiatan" name="no_kegiatan[]" required>
 								</td>
 								<td>
-									<input type="text" class="form-control" style="width: 120px;" id="indikator" placeholder="Masukan Indikator" name="indikator[]" required>
+									<input type="text" class="form-control" style="width: 80px;" id="indikator" placeholder="Masukan Indikator" name="indikator[]" required>
 								</td>
 								<td>
 									<input type="text" class="form-control" style="width: 50px;" id="target" placeholder="Masukan Target" name="target[]" required>
@@ -213,6 +210,9 @@
 								<td>
 									<input type="text" class="form-control" style="width: 150px;" id="total" name="total[]" placeholder="Total" readonly="readonly" required>
 								</td>
+								<td>
+									<button type="button" class="btn btn-danger" onclick="deleteRow('tbody')"><i class="fas fa-trash-alt"></i></button>
+								</td>			
 								<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat'];?>
 									<input type="hidden" class="form-control" id="id_set" value="<?= $id_set ?>" name="id_set[]" required>	
 								<?php endforeach; ?>
@@ -222,8 +222,8 @@
 						</tbody>
 						<tfoot>
 						<td><button class="btn btn-success btn-block" onclick="addRow('tbody')" id="BarisBaru"><i class="fa fa-plus"></i> Baris Baru</button></td>
-								<td><button type="button" class="btn btn-warning" onclick="InsertRow('tbody')">Sisip Baris</button></td>
-								<td><button type="button" class="btn btn-danger" onclick="deleteRow('tbody')">Hapus Baris</button></td>
+								<td></td>
+								<td></td>
 								<td></td>
 								<td></td>
 								<td></td>
