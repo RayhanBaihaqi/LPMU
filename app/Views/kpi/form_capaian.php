@@ -142,26 +142,27 @@
         <div class="form-group" id="kriteriaDiv">
             <select class="form-control" id="kriteria" name="kriteria">
                 <option value="Pilih Kriteria" disabled selected>Pilih Kategori KPI</option>
-                <option value="Visi Misi Tujuan dan Strategi">1 – Visi Misi Tujuan dan Strategi</option>
-                <option value="Tata Pamong, Tata Kelola, dan Kerjasama">2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
-                <option value="Mahasiswa">3 - Mahasiswa</option>
-                <option value="Sumber Daya Manusia">4 - Sumber Daya Manusia</option>
-                <option value="Keuangan, Sarana dan Prasarana">5 - Keuangan, Sarana dan Prasarana</option>
-                <option value="Pendidikan">6 - Pendidikan</option>
-                <option value="Penelitian">7 – Penelitian</option>
-                <option value="Pengabdian kepada Masyarakat (PkM)">8 - Pengabdian kepada Masyarakat (PkM)</option>
-                <option value="Luaran dan Capaian Tridharma">9 - Luaran dan Capaian Tridharma</option>
+                <option value="1">1 – Visi Misi Tujuan dan Strategi</option>
+                <option value="2">2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
+                <option value="3">3 - Mahasiswa</option>
+                <option value="4">4 - Sumber Daya Manusia</option>
+                <option value="5">5 - Keuangan, Sarana dan Prasarana</option>
+                <option value="6">6 - Pendidikan</option>
+                <option value="7">7 – Penelitian</option>
+                <option value="8">8 - Pengabdian kepada Masyarakat (PkM)</option>
+                <option value="9">9 - Luaran dan Capaian Tridharma</option>
             </select>
         </div>
         <form>
             <div class="container-fluid">
                 <div class="row clearfix">
-                    <div class="form-group" id="kpi1Div">
+                    <div class="form-group">
+
                         <!-- Tabel Visi Misi !-->
                         <table class="table table-bordered table-hover" id="kpi1">
                             <thead>
                                 <tr>
-                                    <th class="text-center">No.KPI</th>
+                                    <th class="text-center">No</th>
                                     <th class="text-center">Angka butir</th>
                                     <th class="text-center">Butir</th>
                                     <th class="text-center">Rencana</th>
@@ -173,77 +174,32 @@
                             <tbody>
                                 <?php
                                 $nomor = 0;
-                                foreach ($listinput as $row) :
+                                foreach ($tampildata as $row) :
                                     $nomor++;
                                 ?>
                                     <tr>
                                         <th><?= $nomor; ?></th>
+
                                         <td><?= $row->idkpi . '.' . $row->angka_butir ?></td>
-                                    
                                         <td><?= $row->nama_butir ?></td>
+
                                         <td><?= $row->target ?></td>
                                         <td>
-                                            <input type="number" name='mobile[]' placeholder='Iya=1, Tidak=0' class="form-control" />
+                                            <input type="number" name='mobile[]' placeholder='Masukkan jumlah maks 1' class="form-control" />
                                         </td>
-                                    </tr>
-                                
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="form-group" id="kpi2Div">
-                        <!-- Tabel Visi Misi !-->
-                        <table class="table table-bordered table-hover" id="kpi2">
-                            <thead>
-                                <tr>
-                                    <th class="text-center">No.KPI</th>
-                                    <th class="text-center">Angka butir</th>
-                                    <th class="text-center">Butir</th>
-                                    <th class="text-center">Rencana</th>
-                                    <th class="text-center">Realisasi</th>
-                                    <th class="text-center">Upload File</th>
-                                    <th class="text-center">Aksi</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr id='kpi21'>
-                                    <td>Adanya struktur organisasi universitas yang mengakomodasi struktur organisasi: Fakultas, Program Studi dan Unit dan memenuhi 5 pilar struktur tata pamong</td>
-                                    <td>SK SO, Pejabat dan SK Pengangkatan Lengkap</td>
-                                    <td>
-                                        <input type="number" name='mobile[]' placeholder='Iya=1, Tidak=0' class="form-control" />
-                                    </td>
-                                </tr>
-                                <tr id='kpi22'>
-                                    <td>Adanya kegiatan-kegiatan yang dilakukan sebagai bentuk hasil kerjasama, yang memenuhi 3 aspek</td>
-                                    <td>> 5 kegiatan, 1 kegiatan internasional dan memenuhi 3 aspek</td>
-                                    <td>
 
-                                        <input type="number" name='mobile[]' placeholder='Masukkan jumlah kegiatan' class="form-control" />
-                                    </td>
-                                </tr>
-                                <tr id='kpi23'>
-                                    <td>Adanya MoU kerjasama UPJ Bidang Tridharma</td>
-                                    <td>> 2/tahun MoU baru</td>
-                                    <td>
-                                        <input type="number" name='mobile[]' placeholder='Masukkan jumlah maks 2' class="form-control" />
-                                    </td>
-                                </tr>
-                                <tr id='kpi24'>
-                                    <td>Adanya MoU kerjasama UPJ Tingkat internasional</td>
-                                    <td>> 1/tahun MoU baru</td>
-                                    <td>
-                                        <input type="number" name='mobile[]' placeholder='Masukkan jumlah maks 1' class="form-control" />
-                                    </td>
-                                </tr>
-                                <tr id='kpi25'>
-                                    <td>Adanya MoU kerjasama UPJ Tingkat nasional</td>
-                                    <td>> 2/tahun MoU baru</td>
-                                    <td>
-                                        <input type="number" name='mobile[]' placeholder='Masukkan jumlah maks 2' class="form-control" />
-                                    </td>
-                                </tr>
+
+
+                                    </tr>
+
+                                <?php
+                                endforeach;
+                                ?>
+
                             </tbody>
                         </table>
                     </div>
+
                 </div>
 
             </div>
