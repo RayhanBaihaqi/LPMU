@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <!-- Custom styles for this template-->
-    <link href="http://localhost:8080/css/style_admin.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>/public/css/style_admin.css" rel="stylesheet">
 
     <style>
         .table-responsive {
@@ -309,7 +309,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link " href="/admin">
+                <a class="nav-link " href="<?php echo site_url(); ?>admin">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
