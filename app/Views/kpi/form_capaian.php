@@ -162,7 +162,7 @@
                             <thead>
                                 <tr>
                                     <th class="text-center">No.KPI</th>
-                                    <th class="text-center">Huruf butir</th>
+                                    <th class="text-center">Angka butir</th>
                                     <th class="text-center">Butir</th>
                                     <th class="text-center">Rencana</th>
                                     <th class="text-center">Realisasi</th>
@@ -171,28 +171,22 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr id='kpi11'>
-                                    <td>Visi UPJ diturunkan ke dalam visi Fakultas/ Program Studi/Unit Kerja</td>
-                                    <td>Visi UPJ diturunkan ke dalam visi Fakultas/ Program Studi/Unit Kerja</td>
-                                    <td>
-                                        <input type="number" name='mobile[]' placeholder='Iya=1, Tidak=0' class="form-control" />
-                                    </td>
-                                </tr>
-                                <tr id='kpi12'>
-                                    <td>Adanya keterlibatan pemangku kepentingan dalam penyusunan Visi Misi Universitas, Fakultas dan Program Studi</td>
-                                    <td>mekanisme penyusunan VMTS yang terdokumentasi dan melibatkan stakeholder</td>
-                                    <td>
-                                        <input type="number" name='mobile[]' placeholder='Iya=1, Tidak=0' class="form-control" />
-                                    </td>
-                                </tr>
-
-                                <tr id='kpi13'>
-                                    <td>Sosialisasi Visi-misi dan Nilai-Nilai Jaya</td>
-                                    <td>minimal 1x per TA</td>
-                                    <td>
-                                        <input type="number" name='mobile[]' placeholder='Sosialisasi >1x, masukkan angka 1' class="form-control" />
-                                    </td>
-                                </tr>
+                                <?php
+                                $nomor = 0;
+                                foreach ($listinput as $row) :
+                                    $nomor++;
+                                ?>
+                                    <tr>
+                                        <th><?= $nomor; ?></th>
+                                        <td><?= $row->idkpi . '.' . $row->angka_butir ?></td>
+                                    
+                                        <td><?= $row->nama_butir ?></td>
+                                        <td><?= $row->target ?></td>
+                                        <td>
+                                            <input type="number" name='mobile[]' placeholder='Iya=1, Tidak=0' class="form-control" />
+                                        </td>
+                                    </tr>
+                                
                             </tbody>
                         </table>
                     </div>
@@ -201,10 +195,13 @@
                         <table class="table table-bordered table-hover" id="kpi2">
                             <thead>
                                 <tr>
-
+                                    <th class="text-center">No.KPI</th>
+                                    <th class="text-center">Angka butir</th>
                                     <th class="text-center">Butir</th>
                                     <th class="text-center">Rencana</th>
                                     <th class="text-center">Realisasi</th>
+                                    <th class="text-center">Upload File</th>
+                                    <th class="text-center">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>

@@ -26,7 +26,11 @@ class Kpi extends BaseController
 	}
 	public function inputcapaian()
 	{
-		return view('kpi/form_capaian');
+		$listinput = new DataKpiButirModel();
+		$data = [
+			'listinput' => $listinput->listinput()->getResult()
+		];
+		return view('kpi/form_capaian', $data);
 	}
 	public function kesimpulan()
 	{
