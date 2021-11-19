@@ -12,7 +12,6 @@ USER
 5. membuat perhitungan penambahan pada bagian halaman Tambah Rencana RKAT
 8. Buat perhitungan dan memasukan ke databae formulir realisasi RKAT
 9. perbaikan pada bentuk tabel isian realisasi
-10. membuat halaman edit pada formulir realisasi
 11. Pada kesimpulan menambahkan dua grafik 
 12. Membuat menampilkan setiap data user by login
 13. Tambahkan Halaman Ubah Password
