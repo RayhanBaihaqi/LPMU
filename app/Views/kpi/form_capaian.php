@@ -33,6 +33,9 @@
     <!-- CSS Libraries -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Page level custom scripts -->
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
 
     <link href="lib/animate/animate.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
@@ -41,6 +44,9 @@
     <!-- Template Stylesheet -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>/public/css/header.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>/public/css/style2.css">
+
+
+
 </head>
 
 <body>
@@ -138,104 +144,86 @@
         </div>
         <!-- Nav Bar End -->
         <h3>Silahkan isi form capaian</h3>
-        <br>
-        <div class="form-group" id="kriteriaDiv">
-            <select class="form-control" id="kriteria" name="kriteria">
-                <option value="Pilih Kriteria" disabled selected>Pilih Kategori KPI</option>
-                <option value="1">1 – Visi Misi Tujuan dan Strategi</option>
-                <option value="2">2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
-                <option value="3">3 - Mahasiswa</option>
-                <option value="4">4 - Sumber Daya Manusia</option>
-                <option value="5">5 - Keuangan, Sarana dan Prasarana</option>
-                <option value="6">6 - Pendidikan</option>
-                <option value="7">7 – Penelitian</option>
-                <option value="8">8 - Pengabdian kepada Masyarakat (PkM)</option>
-                <option value="9">9 - Luaran dan Capaian Tridharma</option>
-            </select>
-        </div>
-        <form>
-            <div class="container-fluid">
-                <div class="row clearfix">
-                    <div class="form-group">
 
-                        <!-- Tabel Visi Misi !-->
-                        <table class="table table-bordered table-hover" id="kpi1">
-                            <thead>
-                                <tr>
-                                    <th class="text-center">No</th>
-                                    <th class="text-center">Angka butir</th>
-                                    <th class="text-center">Butir</th>
-                                    <th class="text-center">Rencana</th>
-                                    <th class="text-center">Realisasi</th>
-                                    <th class="text-center">Upload File</th>
-                                    <th class="text-center">Aksi</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                $nomor = 0;
-                                foreach ($tampildata as $row) :
-                                    $nomor++;
-                                ?>
-                                    <tr>
-                                        <th><?= $nomor; ?></th>
-
-                                        <td><?= $row->idkpi . '.' . $row->angka_butir ?></td>
-                                        <td><?= $row->nama_butir ?></td>
-
-                                        <td><?= $row->target ?></td>
-                                        <td>
-                                            <input type="number" name='mobile[]' placeholder='Masukkan jumlah maks 1' class="form-control" />
-                                        </td>
-
-
-
-                                    </tr>
-
-                                <?php
-                                endforeach;
-                                ?>
-
-                            </tbody>
-                        </table>
-                    </div>
-
-                </div>
-
+        <div class="card shadow mb-4">
+            <br>
+            <div class="form-group" id="kriteriaDiv">
+                <select class="form-control" id="kriteria" name="kriteria">
+                    <option value="Pilih Kriteria" disabled selected>Pilih Kategori KPI</option>
+                    <option value="1">1 – Visi Misi Tujuan dan Strategi</option>
+                    <option value="2">2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
+                    <option value="3">3 - Mahasiswa</option>
+                    <option value="4">4 - Sumber Daya Manusia</option>
+                    <option value="5">5 - Keuangan, Sarana dan Prasarana</option>
+                    <option value="6">6 - Pendidikan</option>
+                    <option value="7">7 – Penelitian</option>
+                    <option value="8">8 - Pengabdian kepada Masyarakat (PkM)</option>
+                    <option value="9">9 - Luaran dan Capaian Tridharma</option>
+                </select>
             </div>
 
-        </form>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable3" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th class="text-center">No</th>
+                                <th class="text-center">Angka butir</th>
+                                <th class="text-center">Butir</th>
+                                <th class="text-center">Rencana</th>
+                                <th class="text-center">Realisasi</th>
+                                <th class="text-center">Upload File</th>
+                                <th class="text-center">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $nomor = 0;
+                            foreach ($tampildata as $row) :
+                                $nomor++;
+                            ?>
+                                <tr>
+                                    <td><?= $nomor; ?></td>
+
+                                    <td><?= $row->idkpi . '.' . $row->angka_butir ?></td>
+                                    <td><?= $row->nama_butir ?></td>
+
+                                    <td><?= $row->target ?></td>
+                                    <td>
+                                        <input type="number" name='mobile[]' placeholder='Masukkan realisasi' class="form-control" />
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+
+
+
+                                </tr>
+
+                            <?php
+                            endforeach;
+                            ?>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+
     </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script>
-    $(document).ready(function() {
-        $("#kriteria").change(function() {
-            if ($(this).val() == "Visi Misi Tujuan dan Strategi") {
-                $('#kpi1Div').show();
-                $('#kpi1').attr('required', '');
-                $('#kpi1').attr('data-error', 'This field is required.');
-                $('#kpi2Div').hide();
-                $('#kpi2').removeAttr('required');
-                $('#kpi2').removeAttr('data-error');
-            } else if ($(this).val() == "Tata Pamong, Tata Kelola, dan Kerjasama") {
-                $('#kpi1Div').hide();
-                $('#kpi1').removeAttr('required');
-                $('#kpi1').removeAttr('data-error');
-                $('#kpi2Div').show();
-                $('#kpi2').attr('required', '');
-                $('#kpi2').attr('data-error', 'This field is required.');
 
-            } else {
+<!-- Page level plugins -->
+<script src="<?php echo base_url(); ?>/public/js/jquery.dataTables.min.js"></script>
+<script src="<?php echo base_url(); ?>/public/js/dataTables.bootstrap4.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 
-
-            }
-        });
-        $("kriteria").trigger("change");
-    })
-</script>
+<!-- Page level custom scripts -->
+<script src="<?php echo base_url(); ?>/public/js/datatables-demo.js"></script>
 
 </html>

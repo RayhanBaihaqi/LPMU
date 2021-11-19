@@ -33,6 +33,8 @@
     <!-- CSS Libraries -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+
 
     <!-- <link href="lib/animate/animate.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet"> -->
@@ -107,10 +109,10 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between">
                     <div class="navbar-nav mr-auto">
-                        <a href="<?php echo site_url(); ?>/public/kpi" class="nav-item nav-link">Home</a>
-                        <a href="<?php echo site_url(); ?>/public/rencana" class="nav-item nav-link active">Rencana</a>
-                        <a href="<?php echo site_url(); ?>/public/kpi/inputcapaian" class="nav-item nav-link">Input Realisasi</a>
-                        <a href="<?php echo site_url(); ?>/public/kpi/kesimpulan" class="nav-item nav-link">Kesimpulan</a>
+                        <a href="<?php echo site_url(); ?>kpi" class="nav-item nav-link">Home</a>
+                        <a href="<?php echo site_url(); ?>rencana" class="nav-item nav-link active">Rencana</a>
+                        <a href="<?php echo site_url(); ?>kpi/inputcapaian" class="nav-item nav-link">Input Realisasi</a>
+                        <a href="<?php echo site_url(); ?>kpi/kesimpulan" class="nav-item nav-link">Kesimpulan</a>
                     </div>
                     <div class="ml-auto">
                         <div class="user-info-dropdown">
@@ -155,7 +157,7 @@
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <table class="table table-bordered" id="dataTable2" width="100%" cellspacing="0">
                         <thead>
                             <tr>
                                 <th>No</th>
@@ -178,7 +180,7 @@
                                 $nomor++;
                             ?>
                                 <tr>
-                                    <th><?= $nomor; ?></th>
+                                    <td><?= $nomor; ?></td>
                                     <td><?= $row->idkpi ?></td>
                                     <td><?= $row->idkpi . '.' . $row->angka_butir ?></td>
                                     <td><?= $row->nama_butir ?></td>
@@ -210,6 +212,16 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- Page level plugins -->
+<script src="<?php echo base_url(); ?>/public/js/jquery.dataTables.min.js"></script>
+<script src="<?php echo base_url(); ?>/public/js/dataTables.bootstrap4.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+
+<!-- Page level custom scripts -->
+<script src="<?php echo base_url(); ?>/public/js/datatables-demo.js"></script>
+
+
+
 <script>
     $(document).ready(function() {
         $("#prodi_unit").change(function() {

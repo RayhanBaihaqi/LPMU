@@ -13,8 +13,6 @@ USER :
 5. Tambah halaman ubah password
 6. Hapus pilihan "profil"
 7. Menambah sapaan di page setelah login
-8. menampilkan tabel rencana
-
 11. kesimpulan diperlihatkan dalam tabel
 
 
@@ -31,6 +29,7 @@ DONE
 10. semua menu grafik di dashboard pindah ke kesimpulan
 9. menu lihat grafik pindah ke menu atas
 12. menu2 di body dashboard KPI dikosongkan
+8. menampilkan tabel rencana
 
 
 
