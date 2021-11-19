@@ -16,7 +16,7 @@ USER :
 8. menampilkan tabel rencana
 
 11. kesimpulan diperlihatkan dalam tabel
-12. menu2 di body dashboard KPI dikosongkan
+
 
 notes : 
 1. kesimpulan terakhir
@@ -30,6 +30,7 @@ DONE
 7. tabel datatables.js (bentuk tabel)
 10. semua menu grafik di dashboard pindah ke kesimpulan
 9. menu lihat grafik pindah ke menu atas
+12. menu2 di body dashboard KPI dikosongkan
 
 
 
