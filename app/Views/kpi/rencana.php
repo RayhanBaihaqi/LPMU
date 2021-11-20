@@ -140,36 +140,40 @@
         </div>
         <!-- Nav Bar End -->
 
-        <h3>Tabel Rencana KPI</h3>
+        <br>
         <div class="card shadow mb-4">
-
-            <div class="container-fluid">
-                <div class="form-group">
-                    <label for="exampleFormControlSelect1">Pilih ID KPI</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-                </div>
+            <div class="card-header">
+                <h3>Tabel Rencana KPI</h3>
             </div>
+            
             <div class="card-body">
+                <div class="container-fluid">
+                    <div class="form-group category-filter">
+                        <label for="exampleFormControlSelect1">Pilih ID KPI</label>
+                        <select class="form-control filter-satuan" id="categoryFilter">
+                            <option value=""></option>    
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                </div>
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable2" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th>No</th>
-                                <th>ID KPI</th>
-                                <th>Angka Butir</th>
-                                <th>Nama Butir</th>
-                                <th>Unit Utama</th>
-                                <th>Unit Pendukung</th>
-                                <th>Target</th>
-                                <th>Kategori</th>
-                                <th>Kegiatan</th>
-                                <th>Bobot</th>
+                                <th scope="col">No</th>
+                                <th scope="col">ID KPI</th>
+                                <th scope="col">Angka Butir</th>
+                                <th scope="col">Nama Butir</th>
+                                <th scope="col">Unit Utama</th>
+                                <th scope="col">Unit Pendukung</th>
+                                <th scope="col">Target</th>
+                                <th scope="col">Kategori</th>
+                                <th scope="col">Kegiatan</th>
+                                <th scope="col">Bobot</th>
 
                             </tr>
                         </thead>
@@ -190,11 +194,7 @@
                                     <td><?= $row->kategori ?></td>
                                     <td><?= $row->kegiatan ?></td>
                                     <td><?= $row->bobot ?></td>
-
-
-
                                 </tr>
-
                             <?php
                             endforeach;
                             ?>
@@ -835,6 +835,9 @@
         $("kriteria").trigger("change");
 
     });
+
+
+ 
 </script>
 
 </html>

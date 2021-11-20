@@ -36,9 +36,11 @@
     <!-- Page level custom scripts -->
 
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet"> -->
 
 
     <!-- Template Stylesheet -->
@@ -143,26 +145,28 @@
             </nav>
         </div>
         <!-- Nav Bar End -->
-        <h3>Silahkan isi form capaian</h3>
-
+        
+<br>
         <div class="card shadow mb-4">
-            <br>
-            <div class="form-group" id="kriteriaDiv">
-                <select class="form-control" id="kriteria" name="kriteria">
-                    <option value="Pilih Kriteria" disabled selected>Pilih Kategori KPI</option>
-                    <option value="1">1 – Visi Misi Tujuan dan Strategi</option>
-                    <option value="2">2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
-                    <option value="3">3 - Mahasiswa</option>
-                    <option value="4">4 - Sumber Daya Manusia</option>
-                    <option value="5">5 - Keuangan, Sarana dan Prasarana</option>
-                    <option value="6">6 - Pendidikan</option>
-                    <option value="7">7 – Penelitian</option>
-                    <option value="8">8 - Pengabdian kepada Masyarakat (PkM)</option>
-                    <option value="9">9 - Luaran dan Capaian Tridharma</option>
-                </select>
+            <div class="card-header">
+                <h3>Silahkan isi form capaian</h3>
             </div>
 
             <div class="card-body">
+                <div class="form-group" id="kriteriaDiv">
+                    <select class="form-control" id="kriteria" name="kriteria">
+                        <option value="Pilih Kriteria" disabled selected>Pilih Kategori KPI</option>
+                        <option value="1">1 – Visi Misi Tujuan dan Strategi</option>
+                        <option value="2">2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
+                        <option value="3">3 - Mahasiswa</option>
+                        <option value="4">4 - Sumber Daya Manusia</option>
+                        <option value="5">5 - Keuangan, Sarana dan Prasarana</option>
+                        <option value="6">6 - Pendidikan</option>
+                        <option value="7">7 – Penelitian</option>
+                        <option value="8">8 - Pengabdian kepada Masyarakat (PkM)</option>
+                        <option value="9">9 - Luaran dan Capaian Tridharma</option>
+                    </select>
+                </div>
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable3" width="100%" cellspacing="0">
                         <thead>
@@ -217,6 +221,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 
 <!-- Page level plugins -->
 <script src="<?php echo base_url(); ?>/public/js/jquery.dataTables.min.js"></script>
