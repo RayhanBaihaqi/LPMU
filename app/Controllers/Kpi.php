@@ -11,7 +11,10 @@ use App\Models\UsersModel;
 
 class Kpi extends BaseController
 {
-
+	public function __construct()
+	{
+		helper('form');
+	}
 	public function index()
 	{
 		return view('/kpi/Dashboard');
@@ -37,7 +40,18 @@ class Kpi extends BaseController
 	{
 		return view('kpi/grafik');
 	}
-	public function ubah_pass()
+
+	public function form_ubahpass()
+	{
+		$model = new UsersModel();
+		$username = session('username');
+		$data = [
+			'user' => $model->where('id_user', $id_setrkat)->first()
+		];
+
+		return view('kpi/ubah_pwd', $data);
+	}
+	public function fungsi_ubahpass()
 	{
 		$model = new UsersModel();
 		$id = $this->request->getVar('id');
@@ -51,16 +65,6 @@ class Kpi extends BaseController
 		$save = $model->update($id, $data);
 
 		return redirect()->to(base_url('kpi/ubah_pwd'));
-	}
-	public function form_ubahpass()
-	{
-		$model = new UsersModel();
-		$username = session('username');
-		$data = [
-			'user' => $model->where('id_user', $id_setrkat)->first()
-		];
-
-		return view('kpi/ubahPass', $data);
 	}
 	/*public function save()
 	{

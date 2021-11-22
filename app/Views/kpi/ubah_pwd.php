@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Dashboard KPI</title>
+    <title>Ganti Password</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Law Firm Website Template" name="keywords">
     <meta content="Law Firm Website Template" name="description">
@@ -118,29 +118,38 @@
         </div>
         <!-- Nav Bar End -->
         <br>
-        <form action="<?= base_url('kpi/ubah_pass'); ?>" method="POST" enctype="multipart/form-data">
+        <div class="container">
             <div class="card">
                 <div class="card-header">Ubah Password</div>
-                <div class="card-body">
-                    <input required type="hidden" name="id" value="<?= $user['id']; ?>">
-                    <div class="form-group">
-                        <label for="username">Username</label>
-                        <input required type="text" name="username" class="form-control" id="username" placeholder="Masukkan Username" value="<?= $user['username']; ?>">
-                    </div>
-                    <div class="form-group">
-                        <label for="nama_prodi">Nama Prodi/Unit</label>
-                        <input required type="text" name="nama_prodi" class="form-control" id="nama_prodi" name='nama_prodi' placeholder="Masukkan Nama Prodi/Unit" value="<?= $user['nama_prodi']; ?>">
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" class="form-control" name="password" placeholder="Password" id='password'>
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" id="tambah" class="btn btn-success">Ubah Password</button>
-                    </div>
+
+            </div>
+
+            <?= form_open('kpi/fungsi_ubahpass'); ?>
+            <div class="card-body">
+
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input required type="text" name="username" class="form-control" id="username" placeholder="Masukkan Username" value="<?= $user['username']; ?>">
+                </div>
+                <div class="form-group">
+                    <label for="nama_prodi">Nama Prodi/Unit</label>
+                    <input required type="text" name="nama_prodi" class="form-control" id="nama_prodi" name='nama_prodi' placeholder="Masukkan Nama Prodi/Unit" value="<?= $user['nama_prodi']; ?>">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" name="password" placeholder="Password" id='password'>
+                </div>
+                <div class="form-group">
+                    <button type="submit" id="tambah" class="btn btn-success">Ubah Password</button>
                 </div>
             </div>
-        </form>
+            <?= form_close(); ?>
+
+        </div>
+
+    </div>
+
+
 
     </div>
 

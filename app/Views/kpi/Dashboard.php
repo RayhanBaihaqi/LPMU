@@ -198,209 +198,210 @@
                     </div>
                 </div>
             </div>
-            <!-- ====================================================================================================================== -->
-            <!-- <a href="#" class="btn btn-info btn-sm"><i class="fa fa-home"></i> Link Button</a>
+        </div>
+        <!-- ====================================================================================================================== -->
+        <!-- <a href="#" class="btn btn-info btn-sm"><i class="fa fa-home"></i> Link Button</a>
                 <a href="#" class="btn btn-info btn-sm"><i class="fa fa-home"></i> Link Button</a>
                 <a href="#" class="btn btn-info btn-sm"><i class="fa fa-home"></i> Link Button</a> -->
-            <hr>
+        <hr>
 
 
 
-            <!-- JavaScript Libraries -->
-            <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-            <!-- <script src="lib/easing/easing.min.js"></script>
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <!-- <script src="lib/easing/easing.min.js"></script>
             <script src="lib/owlcarousel/owl.carousel.min.js"></script>
             <script src="lib/isotope/isotope.pkgd.min.js"></script> -->
-            <script>
-                function startTime() {
-                    var today = new Date();
-                    var h = today.getHours();
-                    var m = today.getMinutes();
-                    var s = today.getSeconds();
-                    m = checkTime(m);
-                    s = checkTime(s);
-                    document.getElementById('txt').innerHTML =
-                        h + ":" + m + ":" + s;
-                    var t = setTimeout(startTime, 500);
-                }
+        <script>
+            function startTime() {
+                var today = new Date();
+                var h = today.getHours();
+                var m = today.getMinutes();
+                var s = today.getSeconds();
+                m = checkTime(m);
+                s = checkTime(s);
+                document.getElementById('txt').innerHTML =
+                    h + ":" + m + ":" + s;
+                var t = setTimeout(startTime, 500);
+            }
 
-                function checkTime(i) {
-                    if (i < 10) {
-                        i = "0" + i
-                    }; // add zero in front of numbers < 10
-                    return i;
-                }
-            </script>
-            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-            <!-- jQuery -->
-            <script src="<?php echo base_url(); ?>/public/plugins/jquery/jquery.min.js"></script>
-            <!-- Bootstrap 4 -->
-            <script src="<?php echo base_url(); ?>/public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-            <!-- ChartJS -->
-            <script src="<?php echo base_url(); ?>/public/plugins/chart.js/Chart.min.js"></script>
-            <!-- AdminLTE App -->
-            <script src="<?php echo base_url(); ?>/public/dist/js/adminlte.min.js"></script>
-            <!-- AdminLTE for demo purposes -->
-            <script src="<?php echo base_url(); ?>/public/dist/js/demo.js"></script>
-            <script src="<?php echo base_url(); ?>/public/chart/apexcharts.min.js"></script>
-            <script src="<?php echo base_url(); ?>/public/chart/dashboard.js"></script>
-            <script src="<?php echo base_url(); ?>/public/chart/jquery.knob.min.js"></script>
-            <script src="<?php echo base_url(); ?>/public/chart/knob-chart-setting.js"></script>
-            <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
-            <script>
-                $(window).load(function() {
-                    $(".pre-loader").fadeOut("slow");
-                });
-            </script>
+            function checkTime(i) {
+                if (i < 10) {
+                    i = "0" + i
+                }; // add zero in front of numbers < 10
+                return i;
+            }
+        </script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <!-- jQuery -->
+        <script src="<?php echo base_url(); ?>/public/plugins/jquery/jquery.min.js"></script>
+        <!-- Bootstrap 4 -->
+        <script src="<?php echo base_url(); ?>/public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- ChartJS -->
+        <script src="<?php echo base_url(); ?>/public/plugins/chart.js/Chart.min.js"></script>
+        <!-- AdminLTE App -->
+        <script src="<?php echo base_url(); ?>/public/dist/js/adminlte.min.js"></script>
+        <!-- AdminLTE for demo purposes -->
+        <script src="<?php echo base_url(); ?>/public/dist/js/demo.js"></script>
+        <script src="<?php echo base_url(); ?>/public/chart/apexcharts.min.js"></script>
+        <script src="<?php echo base_url(); ?>/public/chart/dashboard.js"></script>
+        <script src="<?php echo base_url(); ?>/public/chart/jquery.knob.min.js"></script>
+        <script src="<?php echo base_url(); ?>/public/chart/knob-chart-setting.js"></script>
+        <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+        <script>
+            $(window).load(function() {
+                $(".pre-loader").fadeOut("slow");
+            });
+        </script>
 
-            <!--JavaScript Libraries -->
-            <script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-            <!-- // <script src="lib/easing/easing.min.js"></script>
+        <!--JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <!-- // <script src="lib/easing/easing.min.js"></script>
             // <script src="lib/owlcarousel/owl.carousel.min.js"></script>
             // <script src="lib/isotope/isotope.pkgd.min.js"></script> -->
-            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-            <!-- jQuery -->
-            <script src="<?php echo base_url(); ?>/public/plugins/jquery/jquery.min.js"></script>
-            <!-- Bootstrap 4 -->
-            <script src="<?php echo base_url(); ?>/public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-            <!-- ChartJS -->
-            <script src="<?php echo base_url(); ?>/public/plugins/chart.js/Chart.min.js"></script>
-            <!-- AdminLTE App -->
-            <script src="<?php echo base_url(); ?>/public/dist/js/adminlte.min.js"></script>
-            <!-- AdminLTE for demo purposes -->
-            <script src="<?php echo base_url(); ?>/public/dist/js/demo.js"></script>
-            <script src="<?php echo base_url(); ?>/public/chart/apexcharts.min.js"></script>
-            <script src="<?php echo base_url(); ?>/public/chart/dashboard.js"></script>
-            <script src="<?php echo base_url(); ?>/public/chart/jquery.knob.min.js"></script>
-            <script src="<?php echo base_url(); ?>/public/chart/knob-chart-setting.js"></script>
-            <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
-            <script>
-                function startTime() {
-                    var today = new Date();
-                    var h = today.getHours();
-                    var m = today.getMinutes();
-                    var s = today.getSeconds();
-                    m = checkTime(m);
-                    s = checkTime(s);
-                    document.getElementById('txt').innerHTML =
-                        h + ":" + m + ":" + s;
-                    var t = setTimeout(startTime, 500); >>>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <!-- jQuery -->
+        <script src="<?php echo base_url(); ?>/public/plugins/jquery/jquery.min.js"></script>
+        <!-- Bootstrap 4 -->
+        <script src="<?php echo base_url(); ?>/public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- ChartJS -->
+        <script src="<?php echo base_url(); ?>/public/plugins/chart.js/Chart.min.js"></script>
+        <!-- AdminLTE App -->
+        <script src="<?php echo base_url(); ?>/public/dist/js/adminlte.min.js"></script>
+        <!-- AdminLTE for demo purposes -->
+        <script src="<?php echo base_url(); ?>/public/dist/js/demo.js"></script>
+        <script src="<?php echo base_url(); ?>/public/chart/apexcharts.min.js"></script>
+        <script src="<?php echo base_url(); ?>/public/chart/dashboard.js"></script>
+        <script src="<?php echo base_url(); ?>/public/chart/jquery.knob.min.js"></script>
+        <script src="<?php echo base_url(); ?>/public/chart/knob-chart-setting.js"></script>
+        <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+        <script>
+            function startTime() {
+                var today = new Date();
+                var h = today.getHours();
+                var m = today.getMinutes();
+                var s = today.getSeconds();
+                m = checkTime(m);
+                s = checkTime(s);
+                document.getElementById('txt').innerHTML =
+                    h + ":" + m + ":" + s;
+                var t = setTimeout(startTime, 500); >>>
 
+            }
+            //Create pie or douhnut chart
+            // You can switch between pie and douhnut using the method below.
+            new Chart(pieChartCanvas, {
+                type: 'pie',
+                data: pieData,
+                options: pieOptions
+            })
+
+            //-------------
+            //- BAR CHART -
+            //-------------
+            var barChartCanvas = $('#barChart').get(0).getContext('2d')
+            var barChartData = $.extend(true, {}, areaChartData)
+            var temp0 = areaChartData.datasets[0]
+            var temp1 = areaChartData.datasets[1]
+            barChartData.datasets[0] = temp1
+            barChartData.datasets[1] = temp0
+
+            var barChartOptions = {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    datasetFill: false
+                } <<
+                <<
+                <<
+                <
+                HEAD ===
+                ===
+                =
+        </script>
+        <script>
+            $(window).load(function() {
+                $(".pre-loader").fadeOut("slow");
+            });
+        </script>
+        <script>
+            $(function() {
+                /* ChartJS
+                 * -------
+                 * Here we will create a few charts using ChartJS
+                 */
+
+                //--------------
+                //- AREA CHART -
+                //--------------
+
+                // Get context with jQuery - using jQuery's .get() method.
+                var areaChartCanvas = $('#areaChart').get(0).getContext('2d')
+
+                var areaChartData = {
+                    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                    datasets: [{
+                            label: 'Digital Goods',
+                            backgroundColor: 'rgba(60,141,188,0.9)',
+                            borderColor: 'rgba(60,141,188,0.8)',
+                            pointRadius: false,
+                            pointColor: '#3b8bba',
+                            pointStrokeColor: 'rgba(60,141,188,1)',
+                            pointHighlightFill: '#fff',
+                            pointHighlightStroke: 'rgba(60,141,188,1)',
+                            data: [28, 48, 40, 19, 86, 27, 90]
+                        },
+                        {
+                            label: 'Electronics',
+                            backgroundColor: 'rgba(210, 214, 222, 1)',
+                            borderColor: 'rgba(210, 214, 222, 1)',
+                            pointRadius: false,
+                            pointColor: 'rgba(210, 214, 222, 1)',
+                            pointStrokeColor: '#c1c7d1',
+                            pointHighlightFill: '#fff',
+                            pointHighlightStroke: 'rgba(220,220,220,1)',
+                            data: [65, 59, 80, 81, 56, 55, 40]
+                        },
+                    ]
                 }
-                //Create pie or douhnut chart
-                // You can switch between pie and douhnut using the method below.
-                new Chart(pieChartCanvas, {
-                    type: 'pie',
-                    data: pieData,
-                    options: pieOptions
+
+                new Chart(barChartCanvas, {
+                    type: 'bar',
+                    data: barChartData,
+                    options: barChartOptions
                 })
 
-                //-------------
-                //- BAR CHART -
-                //-------------
-                var barChartCanvas = $('#barChart').get(0).getContext('2d')
-                var barChartData = $.extend(true, {}, areaChartData)
-                var temp0 = areaChartData.datasets[0]
-                var temp1 = areaChartData.datasets[1]
-                barChartData.datasets[0] = temp1
-                barChartData.datasets[1] = temp0
+                //---------------------
+                //- STACKED BAR CHART -
+                //---------------------
+                var stackedBarChartCanvas = $('#stackedBarChart').get(0).getContext('2d')
+                var stackedBarChartData = $.extend(true, {}, barChartData)
 
-                var barChartOptions = {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        datasetFill: false
-                    } <<
-                    <<
-                    <<
-                    <
-                    HEAD ===
-                    ===
-                    =
-            </script>
-            <script>
-                $(window).load(function() {
-                    $(".pre-loader").fadeOut("slow");
-                });
-            </script>
-            <script>
-                $(function() {
-                    /* ChartJS
-                     * -------
-                     * Here we will create a few charts using ChartJS
-                     */
-
-                    //--------------
-                    //- AREA CHART -
-                    //--------------
-
-                    // Get context with jQuery - using jQuery's .get() method.
-                    var areaChartCanvas = $('#areaChart').get(0).getContext('2d')
-
-                    var areaChartData = {
-                        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-                        datasets: [{
-                                label: 'Digital Goods',
-                                backgroundColor: 'rgba(60,141,188,0.9)',
-                                borderColor: 'rgba(60,141,188,0.8)',
-                                pointRadius: false,
-                                pointColor: '#3b8bba',
-                                pointStrokeColor: 'rgba(60,141,188,1)',
-                                pointHighlightFill: '#fff',
-                                pointHighlightStroke: 'rgba(60,141,188,1)',
-                                data: [28, 48, 40, 19, 86, 27, 90]
-                            },
-                            {
-                                label: 'Electronics',
-                                backgroundColor: 'rgba(210, 214, 222, 1)',
-                                borderColor: 'rgba(210, 214, 222, 1)',
-                                pointRadius: false,
-                                pointColor: 'rgba(210, 214, 222, 1)',
-                                pointStrokeColor: '#c1c7d1',
-                                pointHighlightFill: '#fff',
-                                pointHighlightStroke: 'rgba(220,220,220,1)',
-                                data: [65, 59, 80, 81, 56, 55, 40]
-                            },
-                        ]
+                var stackedBarChartOptions = {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        xAxes: [{
+                            stacked: true,
+                        }],
+                        yAxes: [{
+                            stacked: true
+                        }]
                     }
+                }
 
-                    new Chart(barChartCanvas, {
-                        type: 'bar',
-                        data: barChartData,
-                        options: barChartOptions
-                    })
-
-                    //---------------------
-                    //- STACKED BAR CHART -
-                    //---------------------
-                    var stackedBarChartCanvas = $('#stackedBarChart').get(0).getContext('2d')
-                    var stackedBarChartData = $.extend(true, {}, barChartData)
-
-                    var stackedBarChartOptions = {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        scales: {
-                            xAxes: [{
-                                stacked: true,
-                            }],
-                            yAxes: [{
-                                stacked: true
-                            }]
-                        }
-                    }
-
-                    new Chart(stackedBarChartCanvas, {
-                        type: 'bar',
-                        data: stackedBarChartData,
-                        options: stackedBarChartOptions
-                    })
+                new Chart(stackedBarChartCanvas, {
+                    type: 'bar',
+                    data: stackedBarChartData,
+                    options: stackedBarChartOptions
                 })
-            </script>
+            })
+        </script>
 </body>
 
 </html>
