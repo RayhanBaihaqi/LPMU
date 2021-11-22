@@ -155,19 +155,15 @@
 							</tr>
 						</thead>
 						<tbody>
-							<?php
-								$var = 5;
-								for($baris=1;$baris<=$var;$baris++){
-							?>
 							<tr>
 								<td>
-									<select class="form-control form-control-sm" id="kategori<?= $baris ?>" name="kategori">
+									<select class="form-control form-control-sm" id="kategori" name="kategori">
 										<option value="" disabled selected>Pilih Kategori</option>
 										<option value="PK">PK</option>
 										<option value="OPS">OPS</option>
 										<option value="INV">INV</option>
 									</select>
-									<select class="form-control form-control-sm" id="kpi<?= $baris ?>" name="kpi">
+									<select class="form-control form-control-sm" id="kpi" name="kpi">
 										<option value="" disabled selected>Pilih Kategori KPI</option>
 										<option value="1">1 – Visi Misi Tujuan dan Strategi</option>
 										<option value="2">2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
@@ -179,7 +175,7 @@
 										<option value="8">8 - Pengabdian kepada Masyarakat (PkM)</option>
 										<option value="9">9 - Luaran dan Capaian Tridharma</option>
 									</select>
-									<select class="form-control form-control-sm" id="butir<?= $baris ?>" name="butir">
+									<select class="form-control form-control-sm" id="butir" name="butir">
 										<option value="" disabled selected>Pilih butir</option>
 										<option value="1">1</option>
 										<option value="2">2</option>
@@ -187,29 +183,74 @@
 									</select>
 								</td>
 								<td>
-									<input type="text" class="form-control form-control-sm" id="no_kegiatan<?= $baris ?>" placeholder="Masukan No Kegiatan" name="no_kegiatan" required>
-									<input type="text" class="form-control form-control-sm" id="indikator<?= $baris ?>" placeholder="Masukan Indikator" name="indikator" required>
+									<input type="text" class="form-control form-control-sm" id="no_kegiatan" placeholder="Masukan No Kegiatan" name="no_kegiatan" required>
+									<input type="text" class="form-control form-control-sm" id="indikator" placeholder="Masukan Indikator" name="indikator" required>
 								</td>
 								<td>
-									<input type="text" class="form-control form-control-sm" id="target<?= $baris ?>" placeholder="Masukan Target" name="target" required>
-									<input type="text" class="form-control form-control-sm" id="nama_kegiatan<?= $baris ?>" placeholder="Maksukan Nama Kegiatan" name="nama_kegiatan" required>
+									<input type="text" class="form-control form-control-sm" id="target" placeholder="Masukan Target" name="target" required>
+									<input type="text" class="form-control form-control-sm" id="nama_kegiatan" placeholder="Maksukan Nama Kegiatan" name="nama_kegiatan" required>
 								</td>
 								<td>
-									<input type="text" class="form-control form-control-sm" id="anggaranGasal<?= $baris ?>" placeholder="Masukan Anggaran Gasal" name="anggaranGasal" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" required>
+									<input type="text" class="form-control form-control-sm" id="anggaranGasal" placeholder="Masukan Anggaran Gasal" name="anggaranGasal" onkeyup="sum1();"  required>
 								</td>
 								<td>
-									<input type="text" class="form-control form-control-sm" id="anggaranGenap<?= $baris ?>" placeholder="Masukan Anggaran Genap" name="anggaranGenap" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" required>
+									<input type="text" class="form-control form-control-sm" id="anggaranGenap" placeholder="Masukan Anggaran Genap" name="anggaranGenap" onkeyup="sum1();"  required>
 								</td>
 								<td>
-									<input type="text" class="form-control form-control-sm" id="total<?= $baris ?>" name="total" placeholder="Total" readonly="readonly" required>
+									<input type="text" class="form-control form-control-sm" id="total" name="total" placeholder="Total" readonly="readonly" required>
 								</td>
 								<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat'];?>
 									<input type="hidden" class="form-control" id="id_set" value="<?= $id_set ?>" name="id_set" required>	
 								<?php endforeach; ?>
 							</tr>
-							<?php
-							}
-							?>
+							<tr>
+								<td>
+									<select class="form-control form-control-sm" id="kategori" name="kategori">
+										<option value="" disabled selected>Pilih Kategori</option>
+										<option value="PK">PK</option>
+										<option value="OPS">OPS</option>
+										<option value="INV">INV</option>
+									</select>
+									<select class="form-control form-control-sm" id="kpi" name="kpi">
+										<option value="" disabled selected>Pilih Kategori KPI</option>
+										<option value="1">1 – Visi Misi Tujuan dan Strategi</option>
+										<option value="2">2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
+										<option value="3">3 - Mahasiswa</option>
+										<option value="4">4 - Sumber Daya Manusia</option>
+										<option value="5">5 - Keuangan, Sarana dan Prasarana</option>
+										<option value="6">6 - Pendidikan</option>
+										<option value="7">7 – Penelitian</option>
+										<option value="8">8 - Pengabdian kepada Masyarakat (PkM)</option>
+										<option value="9">9 - Luaran dan Capaian Tridharma</option>
+									</select>
+									<select class="form-control form-control-sm" id="butir" name="butir">
+										<option value="" disabled selected>Pilih butir</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+									</select>
+								</td>
+								<td>
+									<input type="text" class="form-control form-control-sm" id="no_kegiatan" placeholder="Masukan No Kegiatan" name="no_kegiatan" required>
+									<input type="text" class="form-control form-control-sm" id="indikator" placeholder="Masukan Indikator" name="indikator" required>
+								</td>
+								<td>
+									<input type="text" class="form-control form-control-sm" id="target" placeholder="Masukan Target" name="target" required>
+									<input type="text" class="form-control form-control-sm" id="nama_kegiatan" placeholder="Maksukan Nama Kegiatan" name="nama_kegiatan" required>
+								</td>
+								<td>
+									<input type="text" class="form-control form-control-sm" id="anggaranGasal" placeholder="Masukan Anggaran Gasal" name="anggaranGasal" onkeyup="tambah2();"  required>
+								</td>
+								<td>
+									<input type="text" class="form-control form-control-sm" id="anggaranGenap" placeholder="Masukan Anggaran Genap" name="anggaranGenap" onkeyup="tambah2();"  required>
+								</td>
+								<td>
+									<input type="text" class="form-control form-control-sm" id="total" name="total" placeholder="Total" readonly="readonly" required>
+								</td>
+								<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat'];?>
+									<input type="hidden" class="form-control" id="id_set" value="<?= $id_set ?>" name="id_set" required>	
+								<?php endforeach; ?>
+							</tr>
 						</tbody>
 						<tfoot>
 								<td></td>
@@ -226,7 +267,7 @@
 					</div>
 				</div>
 		</form>
-	<script>
+	<!-- <script>
 		anggaranGasal = document.formD.anggaranGasal.value;
    		document.formD.total.value = anggaranGasal;
 		anggaranGenap = document.formD.anggaranGenap.value;
@@ -237,7 +278,28 @@
 			total = parseInt(anggaranGasal) + parseInt(anggaranGenap);
      		document.formD.total.value = total;
 		}
-	</script>
+	</script> -->
+	<script>
+function sum1() {
+      var txtFirstNumberValue = document.getElementById('anggaranGasal').value;
+      var txtSecondNumberValue = document.getElementById('anggaranGenap').value;
+      var result = parseInt(txtFirstNumberValue) + parseInt(txtSecondNumberValue);
+      if (!isNaN(result)) {
+         document.getElementById('total').value = result;
+      }
+}
+function tambah2() {
+      var txtFirstNumberValue = document.getElementById('anggaranGasal').value;
+      var txtSecondNumberValue = document.getElementById('anggaranGenap').value;
+      var result = parseInt(txtFirstNumberValue) + parseInt(txtSecondNumberValue);
+      if (!isNaN(result)) {
+         document.getElementById('total').value = result;
+      }
+}
+</script>
+<script>
+
+</script>
 	<!-- JavaScript Libraries -->
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
