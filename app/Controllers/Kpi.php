@@ -7,6 +7,7 @@ use App\Models\DetailKpiModel;
 use App\Models\ModelKpiAdmin;
 use App\Models\DataKpiModel;
 use App\Models\DataKpiButirModel;
+use App\Models\UsersModel;
 
 class Kpi extends BaseController
 {
@@ -37,7 +38,10 @@ class Kpi extends BaseController
 		return view('kpi/grafik');
 	}
 
-
+	public function editpass()
+	{
+		return view('kpi/ubah_pwd');
+	}
 	/*public function save()
 	{
 		$detail = new DetailKpiModel();
