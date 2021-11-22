@@ -124,8 +124,9 @@
                                     </span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                                    <a class="dropdown-item" href="profile.html"><i class="fas fa-cog"></i> Setting</a>
-                                    <a class="dropdown-item" href="<?php echo site_url(); ?>auth/logout"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+                                    <a class="dropdown-item" href="<?= base_url('/kpi/form_ubahpass') ?>"><i class="fas fa-cog"></i> Ubah Password</a>
+                                    <a class="dropdown-item" href="<?= base_url('/auth/logout') ?>"><i class="fas fa-sign-out-alt"></i> Log
+                                        Out</a>
                                 </div>
                             </div>
                         </div>
