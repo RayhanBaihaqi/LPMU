@@ -12,16 +12,14 @@
 	<link rel="shortcut icon" type="image/png" href="<?php echo base_url(); ?>/public/favicon.ico" />
 
 	<!-- Google Font -->
-	<link
-		href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,600;1,700;1,800&family=Roboto:wght@400;500&display=swap"
-		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,600;1,700;1,800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
 	<!-- CSS Libraries -->
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-	<!-- <link href="lib/animate/animate.min.css" rel="stylesheet">
-	<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet"> -->
+	<!-- <link href="?php echo base_url(); ?>/public/lib/animate/animate.min.css" rel="stylesheet">
+	<link href="?php echo base_url(); ?>/public/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet"> -->
 
 
 	<!-- Template Stylesheet -->
@@ -119,7 +117,7 @@
 		<!-- Nav Bar End -->
 		<br>
 		
-		<form id="formD" name="formD" action="<?= base_url('rkat/save'); ?>" method="POST" enctype="multipart/form-data">
+		<form id="satuan" name="formD" action="<?= base_url('rkat/save'); ?>" method="POST" enctype="multipart/form-data">
 		<?= session()->getFlashdata('status'); ?>	
 			<div class="card">
 					<div class="card-header">Tambah Rencana RKAT</div>
@@ -127,121 +125,111 @@
 						<input type="hidden" class="form-control" id="id_set" value="<?= $id_set ?>" name="id_set[]" 
 						required>
 					<br>
-					<div class="form-inline">
-						<label class="mb-2 mr-sm-2" for="exampleFormControlSelect1" style="width: 150px;">Tahun Ajaran</label>
-						<select class="form-control mb-2 mr-sm-2" id="exampleFormControlSelect1">
-							<!-- <option value="<?= $value['tahun_akademik'] ?>" selected><?= $value['tahun_akademik'] ?> </option>-->
-							<option value="" disabled selected>Pilih Tahun</option>
-							<option value="2019/2020">2019/2020</option>
-							<option value="2020/2021">2020/2021</option>
-						</select>
-					</div>
-					<div class="form-inline">
-						<label for="prodiunit" class="mb-2 mr-sm-2" style="width: 150px;">Program Studi/Unit</label>
-						<input type="text" class="form-control mb-2 mr-sm-2" id="prodiunit" value="<?= $value['nama_prodi'] ?>" name="prodiunit"required disabled>
-						<label for="pagu" class="mb-2 mr-sm-2">Jumlah Pagu</label>
-						<input type="text" class="form-control mb-2 mr-sm-2" id=pagu" name="pagu" value="RP. <?= $value['pagu'] ?>" required disabled>
-					</div>
-					<?php endforeach; ?>
-					<table class="table">
-						<thead>
-							<tr>
-								<th>Kategori</th>
-								<th>Kriteria</th>
-								<th>Butir</th>
-								<th>No Kegiatan</th>
-								<th>Indikator</th>
-								<th>Target</th>
-								<th>Nama Kegiatan</th>
-								<th>Anggaran Gasal</th>
-								<th>Anggaran Genap</th>
-								<th>Total</th>
-							</tr>
-						</thead>
-						<tbody>
-							<?php
-								for($baris=1;$baris<=1;$baris++){
-							?>
-							<tr id="<?= $baris ?>">
-								<td>
-									<select class="form-control" style="width: 80px;" id="kategori" name="kategori">
-										<option value="" disabled selected>Pilih Kategori</option>
-										<option value="PK">PK</option>
-										<option value="OPS">OPS</option>
-										<option value="INV">INV</option>
-									</select>
-								</td>
-								<td>
-									<select class="form-control" style="width: 80px;" id="kpi" name="kpi">
-										<option value="" disabled selected>Pilih Kategori KPI</option>
-										<option value="1">1 – Visi Misi Tujuan dan Strategi</option>
-										<option value="2">2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
-										<option value="3">3 - Mahasiswa</option>
-										<option value="4">4 - Sumber Daya Manusia</option>
-										<option value="5">5 - Keuangan, Sarana dan Prasarana</option>
-										<option value="6">6 - Pendidikan</option>
-										<option value="7">7 – Penelitian</option>
-										<option value="8">8 - Pengabdian kepada Masyarakat (PkM)</option>
-										<option value="9">9 - Luaran dan Capaian Tridharma</option>
-									</select>
-								</td>
-								<td>
-									<select class="form-control" style="width: 80px;" id="butir" name="butir">
-										<option value="" disabled selected>Pilih butir</option>
-										<option value="1">1</option>
-										<option value="2">2</option>
-										<option value="3">3</option>
-									</select>
-								</td>
-								<td>
-									<input type="text" class="form-control" style="width: 90px;" id="no_kegiatan" placeholder="Masukan No Kegiatan" name="no_kegiatan" required>
-								</td>
-								<td>
-									<input type="text" class="form-control" style="width: 120px;" id="indikator" placeholder="Masukan Indikator" name="indikator" required>
-								</td>
-								<td>
-									<input type="text" class="form-control" style="width: 50px;" id="target" placeholder="Masukan Target" name="target" required>
-								</td>
-								<td>
-									<input type="text" class="form-control" style="width: 120px;" id="nama_kegiatan" placeholder="Maksukan Nama Kegiatan" name="nama_kegiatan" required>
-								</td>
-								<td>
-									<input type="text" class="form-control" style="width: 150px;" id="anggaranGasal" placeholder="Masukan Anggaran Gasal" name="anggaranGasal" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" required>
-								</td>
-								<td>
-									<input type="text" class="form-control" style="width: 150px;" id="anggaranGenap" placeholder="Masukan Anggaran Genap" name="anggaranGenap" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" required>
-								</td>
-								<td>
-									<input type="text" class="form-control" style="width: 150px;" id="total" name="total" placeholder="Total" readonly="readonly" required>
-								</td>
-								<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat'];?>
-									<input type="hidden" class="form-control" id="id_set" value="<?= $id_set ?>" name="id_set" required>	
-								<?php endforeach; ?>
-							</tr>
-							<?php
-							}
-							?>
-							<tr>
-								<td><button class="btn btn-success btn-block" id="BarisBaru"><i class="fa fa-plus"></i> Baris Baru</button></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
+					<div class="card-body">
+						<div class="form-inline">
+							<label class="mb-2 mr-sm-2" for="exampleFormControlSelect1" style="width: 150px;">Tahun Ajaran</label>
+							<select class="form-control mb-2 mr-sm-2" id="exampleFormControlSelect1">
+								<!-- <option value="<?= $value['tahun_akademik'] ?>" selected><?= $value['tahun_akademik'] ?> </option>-->
+								<option value="" disabled selected>Pilih Tahun</option>
+								<option value="2019/2020">2019/2020</option>
+								<option value="2020/2021">2020/2021</option>
+							</select>
+						</div>
+						<div class="form-inline" style="margin-bottom:20px;">
+							<label for="prodiunit" class="mb-2 mr-sm-2" style="width: 150px;">Program Studi/Unit</label>
+							<input type="text" class="form-control mb-2 mr-sm-2" id="prodiunit" value="<?= $value['nama_prodi'] ?>" name="prodiunit"required disabled>
+							<label for="pagu" class="mb-2 mr-sm-2">Jumlah Pagu</label>
+							<input type="text" class="form-control mb-2 mr-sm-2" id= "pagu" name="pagu" value="RP. <?= $value['pagu'] ?>" required disabled>
+						</div>
+						<?php endforeach; ?>
+						<table class="table table-borded table-responsive table-striped">
+							<thead class="table-dark">
+								<tr>
+									<th class="text-center" width="4"> Action </th>
+									<th width="600px">Kategori - Kriteria - Butir</th>
+									<th width="600px">No Kegiatan- Indikator </th>
+									<th width="600px"> Target - Nama Kegiatan</th>
+									<th width="600px">Anggaran Gasal</th>
+									<th width="600px">Anggaran Genap</th>
+									<th>Total</th>
+								</tr>
+							</thead>
+							<tbody id="tbody2">
+								<tr>
+									<td><input name="chk_a[]" type="checkbox" class="checkall_a" value=""/></td>
+									<td>
+										<select class="form-control form-control-sm" id="kategori" name="kategori[]">
+											<option value="" disabled selected>Kategori</option>
+											<option value="PK">PK</option>
+											<option value="OPS">OPS</option>
+											<option value="INV">INV</option>
+										</select>
+										
+										<select class="form-control form-control-sm" id="kpi" name="kpi[]">
+											<option value="" disabled selected>Kriteria KPI</option>
+											<option value="1">1 – Visi Misi Tujuan dan Strategi</option>
+											<option value="2">2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
+											<option value="3">3 - Mahasiswa</option>
+											<option value="4">4 - Sumber Daya Manusia</option>
+											<option value="5">5 - Keuangan, Sarana dan Prasarana</option>
+											<option value="6">6 - Pendidikan</option>
+											<option value="7">7 – Penelitian</option>
+											<option value="8">8 - Pengabdian kepada Masyarakat (PkM)</option>
+											<option value="9">9 - Luaran dan Capaian Tridharma</option>
+										</select>
+										
+										<select class="form-control form-control-sm" id="butir" name="butir[]">
+											<option value="" disabled selected>Butir</option>
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+										</select>
+									</td>
+									<td>
+										<input type="text" class="form-control form-control-sm" id="no_kegiatan" placeholder="No Kegiatan" name="no_kegiatan[]" required>
+									
+										<input type="text" class="form-control form-control-sm" id="indikator" placeholder="Indikator" name="indikator[]" required>
+									</td>
+									<td>
+										<input type="text" class="form-control form-control-sm" id="target" placeholder="Masukan Target" name="target[]" required>
+									
+										<input type="text" class="form-control form-control-sm" id="nama_kegiatan" placeholder="Nama Kegiatan" name="nama_kegiatan[]" required>
+									</td>
+									<td>
+										<input type="text" class="form-control form-control-sm" id="anggaranGasal" placeholder="Rp. 1,000,000" name="anggaranGasal[]" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" required>
+									</td>
+									<td>
+										<input type="text" class="form-control form-control-sm" id="anggaranGenap" placeholder="Rp. 1,000,000" name="anggaranGenap[]" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" required>
+									</td>
+									<td>
+										<input type="text" class="form-control form-control-sm" id="total" name="total[]" placeholder="Rp. 2,000,000" readonly="readonly" required>
+									</td>	
+									<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat'];?>
+										<input type="hidden" class="form-control" id="id_set" value="<?= $id_set ?>" name="id_set[]" required>	
+									<?php endforeach; ?>
+								</tr>
+
+								
+							</tbody>
+							<tfoot>
+								<td> <button type="button" class="btn btn-danger btn-sm" onclick="deleteRow('tbody2')">Hapus Baris</button> </th>
+								<td><button class="btn btn-success btn-sm" onclick="addRow('tbody2')" id="BarisBaru"><i class="fa fa-plus"></i> Baris Baru</button></td>	
+								<!-- <td><button type="button" class="btn btn-warning" onclick="InsertRow('tbody2')">Sisip Baris</button></td> -->
 								<td></td>
 								<td>Total Keseluruhan</td>
 								<td><input type="text" class="form-control" style="width: 150px;" id="pagu" name="pagu" value="RP. 100000000" required disabled></td>
 								<td><input type="text" class="form-control" style="width: 150px;" id="pagu" name="pagu" value="RP. 100000000" required disabled></td>
 								<td><input type="text" class="form-control" style="width: 150px;" id="pagu" name="pagu" value="RP. 100000000" required disabled></td>
-							</tr>
-						</tbody>
-  					</table>
-				
-					<div class="card-footer">
+							</tfoot>
+						</table>
+					</div>
+					<div class="card-footer" align="center">
 					<button type="submit" class="btn btn-primary" id="tambah">Tambah Data</button>
 					</div>
 				</div>
 
 		</form>
+
 	<script>
 		anggaranGasal = document.formD.anggaranGasal.value;
    		document.formD.total.value = anggaranGasal;
@@ -254,12 +242,105 @@
      		document.formD.total.value = total;
 		}
 	</script>
+	<script>
+		// JavaScript Document
+		function addRow(tableID) {
+			var table = document.getElementById(tableID);
+			console.log(table);
+			var rowCount = table.rows.length;
+			console.log(rowCount);
+			var row = table.insertRow(rowCount);
+			console.log(row);
+			var colCount = table.rows[0].cells.length;
+			console.log(colCount);
+			for(var i=0; i<colCount; i++) {
+				var newcell = row.insertCell(i);
+				newcell.innerHTML = table.rows[0].cells[i].innerHTML;
+				var child = newcell.children;
+				for(var i2=0; i2<child.length; i2++) {
+					var test = newcell.children[i2].tagName;
+					switch(test) {
+						case "INPUT":
+							if(newcell.children[i2].type=='checkbox'){
+								newcell.children[i2].value = "";
+								newcell.children[i2].checked = false;
+							}else{
+								newcell.children[i2].value = "";
+							}
+						break;
+						case "SELECT":
+							newcell.children[i2].value = "";
+						break;
+						default:
+						break;
+					}
+				}
+			}
+		}
+		function deleteRow(tableID){
+			var table = document.getElementById(tableID);
+			var rowCount = table.rows.length;
+			for(var i=0; i<rowCount; i++){
+				var row = table.rows[i];
+				var chkbox = row.cells[0].childNodes[0];
+				if (null != chkbox && true == chkbox.checked){
+					if (rowCount <= 1){
+						alert("Tidak dapat menghapus semua baris.");
+						break;
+					}
+					table.deleteRow(i);
+					rowCount--;
+					i--;
+				}
+			}
+		}
+
+		function InsertRow(tableID){
+			var table = document.getElementById(tableID);
+			console.log(table);
+			var rowCount = table.rows.length;
+			console.log(rowCount);
+			for(var i=0; i<rowCount; i++){
+				var row = table.rows[i];
+				console.log(row);
+				var chkbox = row.cells[0].childNodes[0];
+				if (null != chkbox && true == chkbox.checked){
+					var newRow = table.insertRow(i+1);
+					var colCount = table.rows[0].cells.length;
+					for (h=0; h<colCount; h++){
+						var newCell = newRow.insertCell(h);
+						newCell.innerHTML = table.rows[0].cells[h].innerHTML;
+						var child = newCell.children;
+						for(var i2=0; i2<child.length; i2++) {
+							var test = newCell.children[i2].tagName;
+							switch(test) {
+								case "INPUT":
+									if(newCell.children[i2].type=='checkbox'){
+										newCell.children[i2].value = "";
+										newCell.children[i2].checked = false;
+									}else{
+										newCell.children[i2].value = "";
+									}
+								break;
+								case "SELECT":
+									newCell.children[i2].value = "";
+								break;
+								default:
+								break;
+							}
+						}
+					}
+				}	
+			}
+		}
+		
+	</script>
 	<!-- JavaScript Libraries -->
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-	<!-- <script src="lib/easing/easing.min.js"></script>
-	<script src="lib/owlcarousel/owl.carousel.min.js"></script>
-	<script src="lib/isotope/isotope.pkgd.min.js"></script> -->
+	<!-- <script src="?php echo base_url(); ?>/public/lib/easing/easing.min.js"></script>
+	<script src="?php echo base_url(); ?>/public/lib/owlcarousel/owl.carousel.min.js"></script>
+	<script src="?php echo base_url(); ?>/public/lib/isotope/isotope.pkgd.min.js"></script> -->
 	<script>
 		function startTime() {
 			var today = new Date();
@@ -282,8 +363,8 @@
 
 	</script>
 
-	<script src="<?php echo base_url(); ?>/public/chart/apexcharts.min.js"></script>
-	<script src="<?php echo base_url(); ?>/public/chart/dashboard.js"></script>
+	<!-- <script src="?php echo base_url(); ?>/public/chart/apexcharts.min.js"></script> -->
+	<!-- <script src="<?php echo base_url(); ?>/public/chart/dashboard.js"></script> -->
 	<script src="<?php echo base_url(); ?>/public/chart/jquery.knob.min.js"></script>
 	<script src="<?php echo base_url(); ?>/public/chart/knob-chart-setting.js"></script>
 	<script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>

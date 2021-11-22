@@ -16,8 +16,8 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 	<!-- Custom styles for this template-->
-	<link href="http://localhost:8080/css/style_admin.css" rel="stylesheet">
-	<link href="http://localhost:8080/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+	<link href="<?php echo base_url(); ?>/public/css/style_admin.css" rel="stylesheet">
+	<link href="<?php echo base_url(); ?>/public/css/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
@@ -42,7 +42,7 @@
 
 			<!-- Nav Item - Dashboard -->
 			<li class="nav-item active">
-				<a class="nav-link " href="/admin">
+				<a class="nav-link " href="<?php echo site_url(); ?>admin">
 					<i class="fas fa-fw fa-tachometer-alt"></i>
 					<span>Dashboard</span></a>
 			</li>
@@ -121,7 +121,7 @@
 									echo "$nama_prodi"
 									?>
 								</span>
-								<img class="img-profile rounded-circle" src="/img/inf-logo.jpg">
+								<img class="img-profile rounded-circle" src="<?php echo base_url(); ?>/public/img/inf-logo.jpg">
 							</a>
 							<!-- Dropdown - User Information -->
 							<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -198,15 +198,15 @@
 		</a>
 
 		<!-- Bootstrap core JavaScript-->
-		<script src="http://localhost:8080/js/jquery.min.js"></script>
-		<script src="http://localhost:8080/js/bootstrap.bundle.min.js"></script>
+		<script src="<?php echo base_url(); ?>/public/js/jquery.min.js"></script>
+		<script src="<?php echo base_url(); ?>/public/js/bootstrap.bundle.min.js"></script>
 
 		<!-- Page level plugins -->
-		<script src="http://localhost:8080/js/jquery.dataTables.min.js"></script>
-		<script src="http://localhost:8080/js/dataTables.bootstrap4.min.js"></script>
+		<script src="<?php echo base_url(); ?>/public/js/jquery.dataTables.min.js"></script>
+		<script src="<?php echo base_url(); ?>/public/js/dataTables.bootstrap4.min.js"></script>
 
 		<!-- Page level custom scripts -->
-		<script src="http://localhost:8080/js/datatables-demo.js"></script>
+		<script src="<?php echo base_url(); ?>/public/js/datatables-demo.js"></script>
 
 </body>
 
