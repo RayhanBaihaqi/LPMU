@@ -37,10 +37,30 @@ class Kpi extends BaseController
 	{
 		return view('kpi/grafik');
 	}
-
-	public function editpass()
+	public function ubah_pass()
 	{
-		return view('kpi/ubah_pwd');
+		$model = new UsersModel();
+		$id = $this->request->getVar('id');
+
+		$data = [
+			'username' => $this->request->getVar('username'),
+			'nama_prodi' => $this->request->getVar('nama_prodi'),
+			'level' => $this->request->getVar('level'),
+			'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
+		];
+		$save = $model->update($id, $data);
+
+		return redirect()->to(base_url('kpi/ubah_pwd'));
+	}
+	public function form_ubahpass()
+	{
+		$model = new UsersModel();
+		$username = session('username');
+		$data = [
+			'user' => $model->where('id_user', $id_setrkat)->first()
+		];
+
+		return view('kpi/ubahPass', $data);
 	}
 	/*public function save()
 	{

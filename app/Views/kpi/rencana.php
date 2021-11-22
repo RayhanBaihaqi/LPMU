@@ -129,7 +129,7 @@
                                     </span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                                    <a class="dropdown-item" href="<?= base_url('/kpi/editpass') ?>"><i class="fas fa-cog"></i> Ubah Password</a>
+                                    <a class="dropdown-item" href="<?= base_url('/kpi/form_ubahpass') ?>"><i class="fas fa-cog"></i> Ubah Password</a>
                                     <a class="dropdown-item" href="<?= base_url('/auth/logout') ?>"><i class="fas fa-sign-out-alt"></i> Log
                                         Out</a>
                                 </div>
@@ -146,13 +146,13 @@
             <div class="card-header">
                 <h3>Tabel Rencana KPI</h3>
             </div>
-            
+
             <div class="card-body">
                 <div class="container-fluid">
                     <div class="form-group category-filter">
                         <label for="exampleFormControlSelect1">Pilih ID KPI</label>
                         <select class="form-control filter-satuan" id="categoryFilter">
-                            <option value=""></option>    
+                            <option value=""></option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -836,9 +836,6 @@
         $("kriteria").trigger("change");
 
     });
-
-
- 
 </script>
 
 </html>

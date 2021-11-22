@@ -135,7 +135,7 @@
                                     </span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                                    <a class="dropdown-item" href="<?= base_url('/kpi/editpass') ?>"><i class="fas fa-cog"></i> Ubah Password</a>
+                                    <a class="dropdown-item" href="<?= base_url('/kpi/form_ubahpass') ?>"><i class="fas fa-cog"></i> Ubah Password</a>
                                     <a class="dropdown-item" href="<?= base_url('/auth/logout') ?>"><i class="fas fa-sign-out-alt"></i> Log
                                         Out</a>
                                 </div>
@@ -146,8 +146,8 @@
             </nav>
         </div>
         <!-- Nav Bar End -->
-        
-<br>
+
+        <br>
         <div class="card shadow mb-4">
             <div class="card-header">
                 <h3>Silahkan isi form capaian</h3>

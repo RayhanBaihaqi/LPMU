@@ -106,7 +106,7 @@
                                     </span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                                    <a class="dropdown-item" href="profile.html"><i class="fas fa-cog"></i> Ubah Password</a>
+                                    <a class="dropdown-item" href="<?= base_url('/kpi/form_ubahpass') ?>"><i class="fas fa-cog"></i> Ubah Password</a>
                                     <a class="dropdown-item" href="<?= base_url('/auth/logout') ?>"><i class="fas fa-sign-out-alt"></i> Log
                                         Out</a>
                                 </div>
@@ -118,7 +118,7 @@
         </div>
         <!-- Nav Bar End -->
         <br>
-        <form action="<?= base_url('auth/update'); ?>" method="POST" enctype="multipart/form-data">
+        <form action="<?= base_url('kpi/ubah_pass'); ?>" method="POST" enctype="multipart/form-data">
             <div class="card">
                 <div class="card-header">Ubah Password</div>
                 <div class="card-body">
