@@ -30,27 +30,79 @@ class Rkat extends BaseController
 
         return view('rkat/inputData', $data);
     }
-    public function save()
-	{
+    public function save() {
         $model = new DetailRkatModel();
-		$data = [
-<<<<<<< HEAD
-		    'kategori' => $this->request->getVar('kategori'),
-=======
-            'kategori' => $this->request->getVar('kategori'),
->>>>>>> 2778af22cfe86b813382fb6250bf0b00e8492741
-            'anggaranGenap' => $this->request->getVar('anggaranGenap'),
-            'anggaranGasal' => $this->request->getVar('anggaranGasal'),
-            'no_kegiatan' => $this->request->getVar('no_kegiatan'),
-            'indikator' => $this->request->getVar('indikator'),
-            'kpi' => $this->request->getVar('kpi'),
-            'butir' => $this->request->getVar('butir'),
-            'target' => $this->request->getVar('target'),
-            'nama_kegiatan' => $this->request->getVar('nama_kegiatan'),
-            'total' => $this->request->getVar('total'),
-            'id_set' => $this->request->getVar('id_set'),
+
+        $jjj1 = $this->request->getVar('anggaranGasal1');
+        $jjj2 = $this->request->getVar('pagu2');
+        $jjj3 = $this->request->getVar('pagu3');
+
+		$data1 = [
+            'kategori' => $this->request->getVar('kategori1'),
+            'anggaranGenap' => $this->request->getVar('anggaranGenap1'),
+            'anggaranGasal' => $this->request->getVar('anggaranGasal1'),
+            'no_kegiatan' => $this->request->getVar('no_kegiatan1'),
+            'indikator' => $this->request->getVar('indikator1'),
+            'kpi' => $this->request->getVar('kpi1'),
+            'butir' => $this->request->getVar('butir1'),
+            'target' => $this->request->getVar('target1'),
+            'nama_kegiatan' => $this->request->getVar('nama_kegiatan1'),
+            'total' => $this->request->getVar('total1'),
+            'id_set' => $this->request->getVar('id_set1'),
 		];
-        print_r($data);exit();
+        $data2 = [
+            'kategori' => $this->request->getVar('kategori2'),
+            'anggaranGenap' => $this->request->getVar('anggaranGenap2'),
+            'anggaranGasal' => $this->request->getVar('anggaranGasal2'),
+            'no_kegiatan' => $this->request->getVar('no_kegiatan2'),
+            'indikator' => $this->request->getVar('indikator2'),
+            'kpi' => $this->request->getVar('kpi2'),
+            'butir' => $this->request->getVar('butir2'),
+            'target' => $this->request->getVar('target2'),
+            'nama_kegiatan' => $this->request->getVar('nama_kegiatan2'),
+            'total' => $this->request->getVar('total2'),
+            'id_set' => $this->request->getVar('id_set2'),
+		];
+        $data3 = [
+            'kategori' => $this->request->getVar('kategori3'),
+            'anggaranGenap' => $this->request->getVar('anggaranGenap3'),
+            'anggaranGasal' => $this->request->getVar('anggaranGasal3'),
+            'no_kegiatan' => $this->request->getVar('no_kegiatan3'),
+            'indikator' => $this->request->getVar('indikator3'),
+            'kpi' => $this->request->getVar('kpi3'),
+            'butir' => $this->request->getVar('butir3'),
+            'target' => $this->request->getVar('target3'),
+            'nama_kegiatan' => $this->request->getVar('nama_kegiatan3'),
+            'total' => $this->request->getVar('total3'),
+            'id_set' => $this->request->getVar('id_set3'),
+		];
+        $data4 = [
+            'kategori' => $this->request->getVar('kategori4'),
+            'anggaranGenap' => $this->request->getVar('anggaranGenap4'),
+            'anggaranGasal' => $this->request->getVar('anggaranGasal4'),
+            'no_kegiatan' => $this->request->getVar('no_kegiatan4'),
+            'indikator' => $this->request->getVar('indikator4'),
+            'kpi' => $this->request->getVar('kpi4'),
+            'butir' => $this->request->getVar('butir4'),
+            'target' => $this->request->getVar('target4'),
+            'nama_kegiatan' => $this->request->getVar('nama_kegiatan4'),
+            'total' => $this->request->getVar('total4'),
+            'id_set' => $this->request->getVar('id_set4'),
+		];
+        $data5 = [
+            'kategori' => $this->request->getVar('kategori5'),
+            'anggaranGenap' => $this->request->getVar('anggaranGenap5'),
+            'anggaranGasal' => $this->request->getVar('anggaranGasal5'),
+            'no_kegiatan' => $this->request->getVar('no_kegiatan5'),
+            'indikator' => $this->request->getVar('indikator5'),
+            'kpi' => $this->request->getVar('kpi5'),
+            'butir' => $this->request->getVar('butir5'),
+            'target' => $this->request->getVar('target5'),
+            'nama_kegiatan' => $this->request->getVar('nama_kegiatan5'),
+            'total' => $this->request->getVar('total5'),
+            'id_set' => $this->request->getVar('id_set5'),
+		];
+        print_r($jjj1);print_r($jjj2);print_r($jjj3);exit();
 		$model->save($data);
 		return redirect()->to(base_url('rkat/createbyuser'))->with('status', '
            <div class="alert alert-success">
