@@ -34,7 +34,11 @@ class Rkat extends BaseController
 	{
         $model = new DetailRkatModel();
 		$data = [
+<<<<<<< HEAD
 		    'kategori' => $this->request->getVar('kategori'),
+=======
+            'kategori' => $this->request->getVar('kategori'),
+>>>>>>> 2778af22cfe86b813382fb6250bf0b00e8492741
             'anggaranGenap' => $this->request->getVar('anggaranGenap'),
             'anggaranGasal' => $this->request->getVar('anggaranGasal'),
             'no_kegiatan' => $this->request->getVar('no_kegiatan'),
@@ -46,6 +50,7 @@ class Rkat extends BaseController
             'total' => $this->request->getVar('total'),
             'id_set' => $this->request->getVar('id_set'),
 		];
+        print_r($data);exit();
 		$model->save($data);
 		return redirect()->to(base_url('rkat/createbyuser'))->with('status', '
            <div class="alert alert-success">
