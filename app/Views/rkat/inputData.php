@@ -239,13 +239,13 @@
 									<input type="text" class="form-control form-control-sm" id="nama_kegiatan" placeholder="Maksukan Nama Kegiatan" name="nama_kegiatan" required>
 								</td>
 								<td>
-									<input type="text" class="form-control form-control-sm" id="anggaranGasal" placeholder="Masukan Anggaran Gasal" name="anggaranGasal" onkeyup="tambah2();"  required>
+									<input type="text" class="form-control form-control-sm" id="anggaranGasal2" placeholder="Masukan Anggaran Gasal" name="anggaranGasal" onkeyup="tambah2();"  required>
 								</td>
 								<td>
-									<input type="text" class="form-control form-control-sm" id="anggaranGenap" placeholder="Masukan Anggaran Genap" name="anggaranGenap" onkeyup="tambah2();"  required>
+									<input type="text" class="form-control form-control-sm" id="anggaranGenap2" placeholder="Masukan Anggaran Genap" name="anggaranGenap" onkeyup="tambah2();"  required>
 								</td>
 								<td>
-									<input type="text" class="form-control form-control-sm" id="total" name="total" placeholder="Total" readonly="readonly" required>
+									<input type="text" class="form-control form-control-sm" id="total2" name="total" placeholder="Total" readonly="readonly" required>
 								</td>
 								<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat'];?>
 									<input type="hidden" class="form-control" id="id_set" value="<?= $id_set ?>" name="id_set" required>	
@@ -289,11 +289,11 @@ function sum1() {
       }
 }
 function tambah2() {
-      var txtFirstNumberValue = document.getElementById('anggaranGasal').value;
-      var txtSecondNumberValue = document.getElementById('anggaranGenap').value;
+      var txtFirstNumberValue = document.getElementById('anggaranGasal2').value;
+      var txtSecondNumberValue = document.getElementById('anggaranGenap2').value;
       var result = parseInt(txtFirstNumberValue) + parseInt(txtSecondNumberValue);
       if (!isNaN(result)) {
-         document.getElementById('total').value = result;
+         document.getElementById('total2').value = result;
       }
 }
 </script>

@@ -34,17 +34,17 @@ class Rkat extends BaseController
 	{
         $model = new DetailRkatModel();
 		$data = [
-			'kategori' => $this->request->getVar('kategori'),
-           'anggaranGenap' => $this->request->getVar('anggaranGenap'),
-           'anggaranGasal' => $this->request->getVar('anggaranGasal'),
-           'no_kegiatan' => $this->request->getVar('no_kegiatan'),
-           'indikator' => $this->request->getVar('indikator'),
-           'kpi' => $this->request->getVar('kpi'),
-           'butir' => $this->request->getVar('butir'),
-           'target' => $this->request->getVar('target'),
-           'nama_kegiatan' => $this->request->getVar('nama_kegiatan'),
-           'total' => $this->request->getVar('total'),
-           'id_set' => $this->request->getVar('id_set'),
+		    'kategori' => $this->request->getVar('kategori'),
+            'anggaranGenap' => $this->request->getVar('anggaranGenap'),
+            'anggaranGasal' => $this->request->getVar('anggaranGasal'),
+            'no_kegiatan' => $this->request->getVar('no_kegiatan'),
+            'indikator' => $this->request->getVar('indikator'),
+            'kpi' => $this->request->getVar('kpi'),
+            'butir' => $this->request->getVar('butir'),
+            'target' => $this->request->getVar('target'),
+            'nama_kegiatan' => $this->request->getVar('nama_kegiatan'),
+            'total' => $this->request->getVar('total'),
+            'id_set' => $this->request->getVar('id_set'),
 		];
 		$model->save($data);
 		return redirect()->to(base_url('rkat/createbyuser'))->with('status', '
