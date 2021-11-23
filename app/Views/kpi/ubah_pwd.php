@@ -124,26 +124,40 @@
 
             </div>
 
-            <?= form_open('kpi/fungsi_ubahpass'); ?>
-            <div class="card-body">
-
-                <div class="form-group">
-                    <label for="username">Username</label>
-                    <input required type="text" name="username" class="form-control" id="username" placeholder="Masukkan Username" value="<?= $user['username']; ?>">
-                </div>
-                <div class="form-group">
-                    <label for="nama_prodi">Nama Prodi/Unit</label>
-                    <input required type="text" name="nama_prodi" class="form-control" id="nama_prodi" name='nama_prodi' placeholder="Masukkan Nama Prodi/Unit" value="<?= $user['nama_prodi']; ?>">
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" class="form-control" name="password" placeholder="Password" id='password'>
-                </div>
-                <div class="form-group">
-                    <button type="submit" id="tambah" class="btn btn-success">Ubah Password</button>
+            <div class="card shadow mb-4">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <form action="<?= base_url('auth/update'); ?>" method="POST" enctype="multipart/form-data">
+                            <input required type="hidden" name="id" value="id">
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input required type="text" name="username" class="form-control" id="username" placeholder="Masukkan Username" value="">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" name="password" placeholder="Password" id='password'>
+                            </div>
+                            <div class="form-group">
+                                <label for="nama_prodi">Nama Prodi/Unit</label>
+                                <input required type="text" name="nama_prodi" class="form-control" id="nama_prodi" name='nama_prodi' placeholder="Masukkan Nama Prodi/Unit" value="">
+                            </div>
+                            <div class="form-group">
+                                <label for="level">Kategori User</label>
+                                <select required class="form-control" id="level" name="level">
+                                    <option value="level" ?></option>
+                                    <option value="prodi">Prodi</option>
+                                    <option value="unit">Unit</option>
+                                    <option value="rektorat">Rektorat</option>
+                                    <option value="admin">Admin</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" id="tambah" class="btn btn-success">edit</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
-            <?= form_close(); ?>
 
         </div>
 
