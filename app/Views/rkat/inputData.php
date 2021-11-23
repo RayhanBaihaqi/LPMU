@@ -120,7 +120,7 @@
 		<br>
 		
 		<form id="formD" name="formD" action="<?= base_url('rkat/save'); ?>" method="POST" enctype="multipart/form-data">
-		<?= session()->getFlashdata('status'); ?>	
+			<?= session()->getFlashdata('status'); ?>	
 			<div class="card">
 				<div class="card-header">Tambah Rencana RKAT</div>
 					<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat'];?>
@@ -136,7 +136,7 @@
 							<option value="2020/2021">2020/2021</option>
 						</select>
 					</div>
-					<div class="form-inline">
+					<div class="form-inline" style="margin-bottom:20px;">
 						<label for="prodiunit" class="mb-2 mr-sm-2" style="width: 150px;">Program Studi/Unit</label>
 						<input type="text" class="form-control mb-2 mr-sm-2" id="prodiunit" value="<?= $value['nama_prodi'] ?>" name="prodiunit"required disabled>
 						<label for="pagu" class="mb-2 mr-sm-2">Jumlah Pagu</label>
@@ -149,21 +149,21 @@
 								<th width="600px">Kategori - Kriteria - Butir</th>
 								<th width="600px">No Kegiatan- Indikator </th>
 								<th width="600px"> Target - Nama Kegiatan</th>
-								<th width="600px">Anggaran Gasal</th>
-								<th width="600px">Anggaran Genap</th>
+								<th width="600px">Anggaran Gasal (Rp.)</th>
+								<th width="600px">Anggaran Genap (Rp.)</th>
 								<th>Total</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
 								<td>
-									<select class="form-control form-control-sm" id="kategori" name="kategori">
+									<select class="form-control form-control-sm" id="kategori1" name="kategori1">
 										<option value="" disabled selected>Pilih Kategori</option>
 										<option value="PK">PK</option>
 										<option value="OPS">OPS</option>
 										<option value="INV">INV</option>
 									</select>
-									<select class="form-control form-control-sm" id="kpi" name="kpi">
+									<select class="form-control form-control-sm" id="kpi1" name="kpi1">
 										<option value="" disabled selected>Pilih Kategori KPI</option>
 										<option value="1">1 – Visi Misi Tujuan dan Strategi</option>
 										<option value="2">2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
@@ -175,7 +175,7 @@
 										<option value="8">8 - Pengabdian kepada Masyarakat (PkM)</option>
 										<option value="9">9 - Luaran dan Capaian Tridharma</option>
 									</select>
-									<select class="form-control form-control-sm" id="butir" name="butir">
+									<select class="form-control form-control-sm" id="butir1" name="butir1">
 										<option value="" disabled selected>Pilih butir</option>
 										<option value="1">1</option>
 										<option value="2">2</option>
@@ -183,35 +183,35 @@
 									</select>
 								</td>
 								<td>
-									<input type="text" class="form-control form-control-sm" id="no_kegiatan" placeholder="Masukan No Kegiatan" name="no_kegiatan" required>
-									<input type="text" class="form-control form-control-sm" id="indikator" placeholder="Masukan Indikator" name="indikator" required>
+									<input type="text" class="form-control form-control-sm" id="no_kegiatan1" placeholder="Masukan No Kegiatan" name="no_kegiatan1" required>
+									<input type="text" class="form-control form-control-sm" id="indikator1" placeholder="Masukan Indikator" name="indikator1" required>
 								</td>
 								<td>
-									<input type="text" class="form-control form-control-sm" id="target" placeholder="Masukan Target" name="target" required>
-									<input type="text" class="form-control form-control-sm" id="nama_kegiatan" placeholder="Maksukan Nama Kegiatan" name="nama_kegiatan" required>
+									<input type="text" class="form-control form-control-sm" id="target1" placeholder="Masukan Target" name="target1" required>
+									<input type="text" class="form-control form-control-sm" id="nama_kegiatan1" placeholder="Maksukan Nama Kegiatan" name="nama_kegiatan1" required>
 								</td>
 								<td>
-									<input type="text" class="form-control form-control-sm" id="anggaranGasal" placeholder="Masukan Anggaran Gasal" name="anggaranGasal" onkeyup="sum1();"  required>
+									<input type="number" class="form-control form-control-sm" id="anggaranGasal1" placeholder="Masukan Anggaran Gasal" name="anggaranGasal1" onkeyup="totalAnggaran1(); totalKeseluruhan();" value="0" required>
 								</td>
 								<td>
-									<input type="text" class="form-control form-control-sm" id="anggaranGenap" placeholder="Masukan Anggaran Genap" name="anggaranGenap" onkeyup="sum1();"  required>
+									<input type="number" class="form-control form-control-sm" id="anggaranGenap1" placeholder="Masukan Anggaran Genap" name="anggaranGenap1" onkeyup="totalAnggaran1(); totalKeseluruhan();" value="0" required>
 								</td>
 								<td>
-									<input type="text" class="form-control form-control-sm" id="total" name="total" placeholder="Total" readonly="readonly" required>
+									<input type="text" class="form-control form-control-sm" id="total1" name="total1" placeholder="Total" readonly="readonly" required>
 								</td>
 								<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat'];?>
-									<input type="hidden" class="form-control" id="id_set" value="<?= $id_set ?>" name="id_set" required>	
+									<input type="hidden" class="form-control" id="id_set1" value="<?= $id_set ?>" name="id_set1" required>	
 								<?php endforeach; ?>
 							</tr>
 							<tr>
 								<td>
-									<select class="form-control form-control-sm" id="kategori" name="kategori">
+									<select class="form-control form-control-sm" id="kategori2" name="kategori2">
 										<option value="" disabled selected>Pilih Kategori</option>
 										<option value="PK">PK</option>
 										<option value="OPS">OPS</option>
 										<option value="INV">INV</option>
 									</select>
-									<select class="form-control form-control-sm" id="kpi" name="kpi">
+									<select class="form-control form-control-sm" id="kpi2" name="kpi2">
 										<option value="" disabled selected>Pilih Kategori KPI</option>
 										<option value="1">1 – Visi Misi Tujuan dan Strategi</option>
 										<option value="2">2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
@@ -223,7 +223,7 @@
 										<option value="8">8 - Pengabdian kepada Masyarakat (PkM)</option>
 										<option value="9">9 - Luaran dan Capaian Tridharma</option>
 									</select>
-									<select class="form-control form-control-sm" id="butir" name="butir">
+									<select class="form-control form-control-sm" id="butir2" name="butir2">
 										<option value="" disabled selected>Pilih butir</option>
 										<option value="1">1</option>
 										<option value="2">2</option>
@@ -231,34 +231,177 @@
 									</select>
 								</td>
 								<td>
-									<input type="text" class="form-control form-control-sm" id="no_kegiatan" placeholder="Masukan No Kegiatan" name="no_kegiatan" required>
-									<input type="text" class="form-control form-control-sm" id="indikator" placeholder="Masukan Indikator" name="indikator" required>
+									<input type="text" class="form-control form-control-sm" id="no_kegiatan2" placeholder="Masukan No Kegiatan" name="no_kegiatan2">
+									<input type="text" class="form-control form-control-sm" id="indikator2" placeholder="Masukan Indikator" name="indikator2">
 								</td>
 								<td>
-									<input type="text" class="form-control form-control-sm" id="target" placeholder="Masukan Target" name="target" required>
-									<input type="text" class="form-control form-control-sm" id="nama_kegiatan" placeholder="Maksukan Nama Kegiatan" name="nama_kegiatan" required>
+									<input type="text" class="form-control form-control-sm" id="target2" placeholder="Masukan Target" name="target2">
+									<input type="text" class="form-control form-control-sm" id="nama_kegiatan2" placeholder="Maksukan Nama Kegiatan" name="nama_kegiatan2">
 								</td>
 								<td>
-									<input type="text" class="form-control form-control-sm" id="anggaranGasal" placeholder="Masukan Anggaran Gasal" name="anggaranGasal" onkeyup="tambah2();"  required>
+									<input type="number" class="form-control form-control-sm" id="anggaranGasal2" placeholder="Masukan Anggaran Gasal" name="anggaranGasal2" onkeyup="totalAnggaran2(); totalKeseluruhan();" value="0">
 								</td>
 								<td>
-									<input type="text" class="form-control form-control-sm" id="anggaranGenap" placeholder="Masukan Anggaran Genap" name="anggaranGenap" onkeyup="tambah2();"  required>
+									<input type="number" class="form-control form-control-sm" id="anggaranGenap2" placeholder="Masukan Anggaran Genap" name="anggaranGenap2" onkeyup="totalAnggaran2(); totalKeseluruhan();" value="0">
 								</td>
 								<td>
-									<input type="text" class="form-control form-control-sm" id="total" name="total" placeholder="Total" readonly="readonly" required>
+									<input type="text" class="form-control form-control-sm" id="total2" name="total2" placeholder="Total" readonly="readonly">
 								</td>
 								<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat'];?>
-									<input type="hidden" class="form-control" id="id_set" value="<?= $id_set ?>" name="id_set" required>	
+									<input type="hidden" class="form-control" id="id_set2" value="<?= $id_set ?>" name="id_set2">	
+								<?php endforeach; ?>
+							</tr>
+							<tr>
+								<td>
+									<select class="form-control form-control-sm" id="kategori3" name="kategori3">
+										<option value="" disabled selected>Pilih Kategori</option>
+										<option value="PK">PK</option>
+										<option value="OPS">OPS</option>
+										<option value="INV">INV</option>
+									</select>
+									<select class="form-control form-control-sm" id="kpi3" name="kpi3">
+										<option value="" disabled selected>Pilih Kategori KPI</option>
+										<option value="1">1 – Visi Misi Tujuan dan Strategi</option>
+										<option value="2">2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
+										<option value="3">3 - Mahasiswa</option>
+										<option value="4">4 - Sumber Daya Manusia</option>
+										<option value="5">5 - Keuangan, Sarana dan Prasarana</option>
+										<option value="6">6 - Pendidikan</option>
+										<option value="7">7 – Penelitian</option>
+										<option value="8">8 - Pengabdian kepada Masyarakat (PkM)</option>
+										<option value="9">9 - Luaran dan Capaian Tridharma</option>
+									</select>
+									<select class="form-control form-control-sm" id="butir3" name="butir3">
+										<option value="" disabled selected>Pilih butir</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+									</select>
+								</td>
+								<td>
+									<input type="text" class="form-control form-control-sm" id="no_kegiatan3" placeholder="Masukan No Kegiatan" name="no_kegiatan3">
+									<input type="text" class="form-control form-control-sm" id="indikator3" placeholder="Masukan Indikator" name="indikator3">
+								</td>
+								<td>
+									<input type="text" class="form-control form-control-sm" id="target3" placeholder="Masukan Target" name="target3">
+									<input type="text" class="form-control form-control-sm" id="nama_kegiatan3" placeholder="Maksukan Nama Kegiatan" name="nama_kegiatan3">
+								</td>
+								<td>
+									<input type="number" class="form-control form-control-sm" id="anggaranGasal3" placeholder="Masukan Anggaran Gasal" name="anggaranGasal3" onkeyup="totalAnggaran3(); totalKeseluruhan();" value="0">
+								</td>
+								<td>
+									<input type="number" class="form-control form-control-sm" id="anggaranGenap3" placeholder="Masukan Anggaran Genap" name="anggaranGenap3" onkeyup="totalAnggaran3(); totalKeseluruhan();" value="0">
+								</td>
+								<td>
+									<input type="text" class="form-control form-control-sm" id="total3" name="total3" placeholder="Total" readonly="readonly">
+								</td>
+								<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat'];?>
+									<input type="hidden" class="form-control" id="id_set3" value="<?= $id_set ?>" name="id_set3">	
+								<?php endforeach; ?>
+							</tr>
+							<tr>
+								<td>
+									<select class="form-control form-control-sm" id="kategori4" name="kategori4">
+										<option value="" disabled selected>Pilih Kategori</option>
+										<option value="PK">PK</option>
+										<option value="OPS">OPS</option>
+										<option value="INV">INV</option>
+									</select>
+									<select class="form-control form-control-sm" id="kpi4" name="kpi4">
+										<option value="" disabled selected>Pilih Kategori KPI</option>
+										<option value="1">1 – Visi Misi Tujuan dan Strategi</option>
+										<option value="2">2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
+										<option value="3">3 - Mahasiswa</option>
+										<option value="4">4 - Sumber Daya Manusia</option>
+										<option value="5">5 - Keuangan, Sarana dan Prasarana</option>
+										<option value="6">6 - Pendidikan</option>
+										<option value="7">7 – Penelitian</option>
+										<option value="8">8 - Pengabdian kepada Masyarakat (PkM)</option>
+										<option value="9">9 - Luaran dan Capaian Tridharma</option>
+									</select>
+									<select class="form-control form-control-sm" id="butir4" name="butir4">
+										<option value="" disabled selected>Pilih butir</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+									</select>
+								</td>
+								<td>
+									<input type="text" class="form-control form-control-sm" id="no_kegiatan4" placeholder="Masukan No Kegiatan" name="no_kegiatan4">
+									<input type="text" class="form-control form-control-sm" id="indikator4" placeholder="Masukan Indikator" name="indikator4">
+								</td>
+								<td>
+									<input type="text" class="form-control form-control-sm" id="target4" placeholder="Masukan Target" name="target4">
+									<input type="text" class="form-control form-control-sm" id="nama_kegiatan4" placeholder="Maksukan Nama Kegiatan" name="nama_kegiatan4">
+								</td>
+								<td>
+									<input type="number" class="form-control form-control-sm" id="anggaranGasal4" placeholder="Masukan Anggaran Gasal" name="anggaranGasal4" onkeyup="totalAnggaran4();  totalKeseluruhan();" value="0">
+								</td>
+								<td>
+									<input type="number" class="form-control form-control-sm" id="anggaranGenap4" placeholder="Masukan Anggaran Genap" name="anggaranGenap4" onkeyup="totalAnggaran4();  totalKeseluruhan();" value="0">
+								</td>
+								<td>
+									<input type="text" class="form-control form-control-sm" id="total4" name="total4" placeholder="Total" readonly="readonly">
+								</td>
+								<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat'];?>
+									<input type="hidden" class="form-control" id="id_set4" value="<?= $id_set ?>" name="id_set4">	
+								<?php endforeach; ?>
+							</tr>
+							<tr>
+								<td>
+									<select class="form-control form-control-sm" id="kategori5" name="kategori5">
+										<option value="" disabled selected>Pilih Kategori</option>
+										<option value="PK">PK</option>
+										<option value="OPS">OPS</option>
+										<option value="INV">INV</option>
+									</select>
+									<select class="form-control form-control-sm" id="kpi5" name="kpi5">
+										<option value="" disabled selected>Pilih Kategori KPI</option>
+										<option value="1">1 – Visi Misi Tujuan dan Strategi</option>
+										<option value="2">2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
+										<option value="3">3 - Mahasiswa</option>
+										<option value="4">4 - Sumber Daya Manusia</option>
+										<option value="5">5 - Keuangan, Sarana dan Prasarana</option>
+										<option value="6">6 - Pendidikan</option>
+										<option value="7">7 – Penelitian</option>
+										<option value="8">8 - Pengabdian kepada Masyarakat (PkM)</option>
+										<option value="9">9 - Luaran dan Capaian Tridharma</option>
+									</select>
+									<select class="form-control form-control-sm" id="butir5" name="butir5">
+										<option value="" disabled selected>Pilih butir</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+									</select>
+								</td>
+								<td>
+									<input type="text" class="form-control form-control-sm" id="no_kegiatan5" placeholder="Masukan No Kegiatan" name="no_kegiatan5">
+									<input type="text" class="form-control form-control-sm" id="indikator5" placeholder="Masukan Indikator" name="indikator5">
+								</td>
+								<td>
+									<input type="text" class="form-control form-control-sm" id="target5" placeholder="Masukan Target" name="target5">
+									<input type="text" class="form-control form-control-sm" id="nama_kegiatan5" placeholder="Maksukan Nama Kegiatan" name="nama_kegiatan5">
+								</td>
+								<td>
+									<input type="number" class="form-control form-control-sm" id="anggaranGasal5" placeholder="Masukan Anggaran Gasal" name="anggaranGasal5" onkeyup="totalAnggaran5();  totalKeseluruhan();" value="0">
+								</td>
+								<td>
+									<input type="number" class="form-control form-control-sm" id="anggaranGenap5" placeholder="Masukan Anggaran Genap" name="anggaranGenap5" onkeyup="totalAnggaran5();  totalKeseluruhan();" value="0">
+								</td>
+								<td>
+									<input type="text" class="form-control form-control-sm" id="total5" name="total5" placeholder="Total" readonly="readonly">
+								</td>
+								<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat'];?>
+									<input type="hidden" class="form-control" id="id_set5" value="<?= $id_set ?>" name="id_set5">	
 								<?php endforeach; ?>
 							</tr>
 						</tbody>
 						<tfoot>
 								<td></td>
-								<td></td>
-								<td>Total Keseluruhan</td>
-								<td><input type="text" class="form-control" style="width: 150px;" id="pagu" name="pagu" value="RP. 100000000" required disabled></td>
-								<td><input type="text" class="form-control" style="width: 150px;" id="pagu" name="pagu" value="RP. 100000000" required disabled></td>
-								<td><input type="text" class="form-control" style="width: 150px;" id="pagu" name="pagu" value="RP. 100000000" required disabled></td>
+								<td colspan=2 align="right">Total Keseluruhan (Rp.)</td>
+								<td><input type="text" class="form-control" style="width: 150px;" id="pagu1" name="pagu1" value="0" disabled></td>
+								<td><input type="text" class="form-control" style="width: 150px;" id="pagu2" name="pagu2" value="0" disabled></td>
+								<td><input type="text" class="form-control" style="width: 150px;" id="pagu3" name="pagu3" value="0" disabled></td>
 						</tfoot>
   					</table>
 				</div>
@@ -267,46 +410,20 @@
 					</div>
 				</div>
 		</form>
-	<!-- <script>
-		anggaranGasal = document.formD.anggaranGasal.value;
-   		document.formD.total.value = anggaranGasal;
-		anggaranGenap = document.formD.anggaranGenap.value;
-   		document.formD.total.value = anggaranGenap;
-		function OnChange(value){
-			anggaranGasal = document.formD.anggaranGasal.value;
-			anggaranGenap = document.formD.anggaranGenap.value;
-			total = parseInt(anggaranGasal) + parseInt(anggaranGenap);
-     		document.formD.total.value = total;
-		}
-	</script> -->
-	<script>
-function sum1() {
-      var txtFirstNumberValue = document.getElementById('anggaranGasal').value;
-      var txtSecondNumberValue = document.getElementById('anggaranGenap').value;
-      var result = parseInt(txtFirstNumberValue) + parseInt(txtSecondNumberValue);
-      if (!isNaN(result)) {
-         document.getElementById('total').value = result;
-      }
-}
-function tambah2() {
-      var txtFirstNumberValue = document.getElementById('anggaranGasal').value;
-      var txtSecondNumberValue = document.getElementById('anggaranGenap').value;
-      var result = parseInt(txtFirstNumberValue) + parseInt(txtSecondNumberValue);
-      if (!isNaN(result)) {
-         document.getElementById('total').value = result;
-      }
-}
-</script>
-<script>
-
-</script>
+	</div>
+	
 	<!-- JavaScript Libraries -->
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 	<!-- <script src="lib/easing/easing.min.js"></script>
 	<script src="lib/owlcarousel/owl.carousel.min.js"></script>
 	<script src="lib/isotope/isotope.pkgd.min.js"></script> -->
+	<script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
 	<script>
+		$(window).load(function () {
+			$(".pre-loader").fadeOut("slow");
+		});
+
 		function startTime() {
 			var today = new Date();
 			var h = today.getHours();
@@ -325,20 +442,74 @@ function tambah2() {
 			}; // add zero in front of numbers < 10
 			return i;
 		}
+	    // anggaranGasal = document.formD.anggaranGasal.value;
+   		// document.formD.total.value = anggaranGasal;
+		// anggaranGenap = document.formD.anggaranGenap.value;
+   		// document.formD.total.value = anggaranGenap;
+		// function OnChange(value){
+		// 	anggaranGasal = document.formD.anggaranGasal.value;
+		// 	anggaranGenap = document.formD.anggaranGenap.value;
+		// 	total = parseInt(anggaranGasal) + parseInt(anggaranGenap);
+     	// 	document.formD.total.value = total;
+		// } 
+		function totalAnggaran1() {
+			var txtFirstNumberValue = document.getElementById('anggaranGasal1').value;
+			var txtSecondNumberValue = document.getElementById('anggaranGenap1').value;
+			var result = parseInt(txtFirstNumberValue) + parseInt(txtSecondNumberValue);
+			if (!isNaN(result)) { document.getElementById('total1').value = result; }
+		}
+		function totalAnggaran2() {
+			var txtFirstNumberValue = document.getElementById('anggaranGasal2').value;
+			var txtSecondNumberValue = document.getElementById('anggaranGenap2').value;
+			var result = parseInt(txtFirstNumberValue) + parseInt(txtSecondNumberValue);
+			if (!isNaN(result)) { document.getElementById('total2').value = result; }
+		}
+		function totalAnggaran3() {
+			var txtFirstNumberValue = document.getElementById('anggaranGasal3').value;
+			var txtSecondNumberValue = document.getElementById('anggaranGenap3').value;
+			var result = parseInt(txtFirstNumberValue) + parseInt(txtSecondNumberValue);
+			if (!isNaN(result)) { document.getElementById('total3').value = result; }
+		}
+		function totalAnggaran4() {
+			var txtFirstNumberValue = document.getElementById('anggaranGasal4').value;
+			var txtSecondNumberValue = document.getElementById('anggaranGenap4').value;
+			var result = parseInt(txtFirstNumberValue) + parseInt(txtSecondNumberValue);
+			if (!isNaN(result)) { document.getElementById('total4').value = result; }
+		}
+		function totalAnggaran5() {
+			var txtFirstNumberValue = document.getElementById('anggaranGasal5').value;
+			var txtSecondNumberValue = document.getElementById('anggaranGenap5').value;
+			var result = parseInt(txtFirstNumberValue) + parseInt(txtSecondNumberValue);
+			if (!isNaN(result)) { document.getElementById('total5').value = result; }
+		}
+
+		function totalKeseluruhan() {
+			var anggaranGasal1 = document.getElementById('anggaranGasal1').value;
+			var anggaranGasal2 = document.getElementById('anggaranGasal2').value;
+			var anggaranGasal3 = document.getElementById('anggaranGasal3').value;
+			var anggaranGasal4 = document.getElementById('anggaranGasal4').value;
+			var anggaranGasal5 = document.getElementById('anggaranGasal5').value;
+
+			var anggaranGenap1 = document.getElementById('anggaranGenap1').value;
+			var anggaranGenap2 = document.getElementById('anggaranGenap2').value;
+			var anggaranGenap3 = document.getElementById('anggaranGenap3').value;
+			var anggaranGenap4 = document.getElementById('anggaranGenap4').value;
+			var anggaranGenap5 = document.getElementById('anggaranGenap5').value;
+
+			var result1 = parseInt(anggaranGasal1) + parseInt(anggaranGasal2) + parseInt(anggaranGasal3) + parseInt(anggaranGasal4) + parseInt(anggaranGasal5);
+			var result2 = parseInt(anggaranGenap1) + parseInt(anggaranGenap2) + parseInt(anggaranGenap3) + parseInt(anggaranGenap4) + parseInt(anggaranGenap5);
+			var result3 = parseInt(result1) + parseInt(result2);
+			
+			// if (!isNaN(result)) {
+				document.getElementById('pagu1').value = result1;
+				document.getElementById('pagu2').value = result2;
+				document.getElementById('pagu3').value = result3;
+			// }
+			
+		}
 
 	</script>
-
-	<script src="<?php echo base_url(); ?>/public/chart/apexcharts.min.js"></script>
-	<script src="<?php echo base_url(); ?>/public/chart/dashboard.js"></script>
-	<script src="<?php echo base_url(); ?>/public/chart/jquery.knob.min.js"></script>
-	<script src="<?php echo base_url(); ?>/public/chart/knob-chart-setting.js"></script>
-	<script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
-	<script>
-		$(window).load(function () {
-			$(".pre-loader").fadeOut("slow");
-		});
-
-	</script>
+	
 </body>
 
 </html>
