@@ -41,7 +41,21 @@ class Kpi extends BaseController
 		return view('kpi/grafik');
 	}
 
+	public function ubahpass()
+	{
+		$model = new UsersModel();
+		$id = $this->request->getVar('id');
 
+		$data = [
+			'username' => $this->request->getVar('username'),
+			'nama_prodi' => $this->request->getVar('nama_prodi'),
+			'level' => $this->request->getVar('level'),
+			'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
+		];
+		$save = $model->update($id, $data);
+
+		return redirect()->to(base_url('kpi/form_ubahpass'));
+	}
 	public function form_ubahpass()
 	{
 

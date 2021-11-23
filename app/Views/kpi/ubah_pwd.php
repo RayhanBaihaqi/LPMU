@@ -127,11 +127,14 @@
             <div class="card shadow mb-4">
                 <div class="card-body">
                     <div class="table-responsive">
-                        <form action="<?= base_url('auth/update'); ?>" method="POST" enctype="multipart/form-data">
+                        <form action="<?= base_url('kpi/ubahpass'); ?>" method="POST" enctype="multipart/form-data">
                             <input required type="hidden" name="id" value="id">
                             <div class="form-group">
                                 <label for="username">Username</label>
-                                <input required type="text" name="username" class="form-control" id="username" placeholder="Masukkan Username" value="">
+                                <input required type="text" name="username" class="form-control" id="username" placeholder="Masukkan Username" value="<?php
+                                                                                                                                                        $username = session('username');
+                                                                                                                                                        echo "$username"
+                                                                                                                                                        ?>" disabled>
                             </div>
                             <div class="form-group">
                                 <label for="password">Password</label>
@@ -139,12 +142,18 @@
                             </div>
                             <div class="form-group">
                                 <label for="nama_prodi">Nama Prodi/Unit</label>
-                                <input required type="text" name="nama_prodi" class="form-control" id="nama_prodi" name='nama_prodi' placeholder="Masukkan Nama Prodi/Unit" value="">
+                                <input required type="text" name="nama_prodi" class="form-control" id="nama_prodi" name='nama_prodi' placeholder="Masukkan Nama Prodi/Unit" value="<?php
+                                                                                                                                                                                    $nama_prodi = session('nama_prodi');
+                                                                                                                                                                                    echo "$nama_prodi"
+                                                                                                                                                                                    ?>" disabled>
                             </div>
-                            <div class="form-group">
+                            <div class=" form-group">
                                 <label for="level">Kategori User</label>
-                                <select required class="form-control" id="level" name="level">
-                                    <option value="level" ?></option>
+                                <select required class="form-control" id="level" name="level" disabled>
+                                    <option value="<?php
+                                                    $level = session('level');
+
+                                                    ?>"><?php echo "$level" ?></option>
                                     <option value="prodi">Prodi</option>
                                     <option value="unit">Unit</option>
                                     <option value="rektorat">Rektorat</option>
