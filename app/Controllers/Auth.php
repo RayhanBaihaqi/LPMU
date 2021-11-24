@@ -13,51 +13,54 @@ class Auth extends BaseController
     {
         $model = new UsersModel();
 
-        $data['user'] = $model->orderBy('id','DESC')->findAll();
+        $data['user'] = $model->orderBy('id', 'DESC')->findAll();
 
         return view('admin/ListAdmin', $data);
-
     }
-    public function create() {
+    public function create()
+    {
         $model = new UsersModel();
-        $data['user'] = $model->orderBy('id','ASC')->findAll();
+        $data['user'] = $model->orderBy('id', 'ASC')->findAll();
         return view('admin/TambahUsers', $data);
     }
     public function store()
-	{
-		$model = new UsersModel();
-		$data = [
-			'username' => $this->request->getVar('username'),
-            'nama_prodi' => $this->request->getVar('nama_prodi'),
-            'level' => $this->request->getVar('level'),
-            'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
-		];
-		$model->save($data);
-		return redirect()->to(base_url('auth/index'))->with('status', 'Data Berhasil ditambah');
-	}
-    public function edit($id = null) {
+    {
         $model = new UsersModel();
-        $data['user'] = $model->where('id',$id)->first();
-
-        return view('/admin/EditUsers',$data);
-    }
-    public function update() {
-        $model = new UsersModel();
-        $id = $this->request->getVar('id');
-
         $data = [
-			'username' => $this->request->getVar('username'),
+            'username' => $this->request->getVar('username'),
             'nama_prodi' => $this->request->getVar('nama_prodi'),
             'level' => $this->request->getVar('level'),
             'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
         ];
-        $save = $model->update($id,$data);
+        $model->save($data);
+        return redirect()->to(base_url('auth/index'))->with('status', 'Data Berhasil ditambah');
+    }
+    public function edit($id = null)
+    {
+        $model = new UsersModel();
+        $data['user'] = $model->where('id', $id)->first();
+
+        return view('/admin/EditUsers', $data);
+    }
+    public function update()
+    {
+        $model = new UsersModel();
+        $id = $this->request->getVar('id');
+
+        $data = [
+            'username' => $this->request->getVar('username'),
+            'nama_prodi' => $this->request->getVar('nama_prodi'),
+            'level' => $this->request->getVar('level'),
+            'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
+        ];
+        $save = $model->update($id, $data);
 
         return redirect()->to(base_url('auth/index'));
     }
-    public function delete($id = null) {
+    public function delete($id = null)
+    {
         $model = new UsersModel();
-        $data['user'] = $model->where('id',$id)->delete();
+        $data['user'] = $model->where('id', $id)->delete();
 
         return redirect()->to(base_url('auth/index'));
     }
@@ -83,6 +86,7 @@ class Auth extends BaseController
 
             $data = [
                 'log' => TRUE,
+                'id' => $row->id,
                 'nama_prodi' => $row->nama_prodi,
                 'username' => $row->username,
                 'level' => $row->level,
@@ -132,26 +136,28 @@ class Auth extends BaseController
     }
 
     //Ubah Password User
-    public function ubahpass($id_setrkat = null) {
+    public function ubahpass($id_setrkat = null)
+    {
         $model = new SetRkatModel();
         $username = session('username');
         $data = [
-            'user' => $model->where('id_user',$id_setrkat)->first()
-        ]; 
+            'user' => $model->where('id_user', $id_setrkat)->first()
+        ];
 
-        return view('ubahPass',$data);
+        return view('ubahPass', $data);
     }
-    public function updatepass() {
+    public function updatepass()
+    {
         $model = new UsersModel();
         $id = $this->request->getVar('id');
 
         $data = [
-			'username' => $this->request->getVar('username'),
+            'username' => $this->request->getVar('username'),
             'nama_prodi' => $this->request->getVar('nama_prodi'),
             'level' => $this->request->getVar('level'),
             'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
         ];
-        $save = $model->update($id,$data);
+        $save = $model->update($id, $data);
 
         return redirect()->to(base_url('auth/index'));
     }

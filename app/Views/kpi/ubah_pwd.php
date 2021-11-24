@@ -123,13 +123,14 @@
         <!-- Nav Bar End -->
         <br>
         <div class="container">
+            <?= session()->getFlashdata('pesan'); ?>
             <div class="card">
-                <div class="card-header">Ubah Password</div>
+                <div class="card-header">
+                    <h2>Ubah Password<h2>
+                </div>
 
             </div>
-            <?php if (session()->getFlashdata('success')) : ?>
-                <div class="alert alert-danger"><?= session()->getFlashdata('status') ?></div>
-            <?php endif ?>
+
             <div class="card shadow mb-4">
                 <div class="card-body">
                     <div class="table-responsive">
@@ -147,8 +148,8 @@
                                                                                                                                                         ?>" disabled>
                             </div>
                             <div class="form-group">
-                                <label for="password">Password</label>
-                                <input type="password" class="form-control" name="password" placeholder="Password" id='password'>
+                                <label for="password">Password Baru</label>
+                                <input type="password" class="form-control" name="password" placeholder="Masukkan password baru" id='password'>
                             </div>
                             <div class="form-group">
                                 <label for="nama_prodi">Nama Prodi/Unit</label>

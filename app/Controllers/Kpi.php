@@ -53,12 +53,31 @@ class Kpi extends BaseController
 	public function ubahpwd()
 	{
 		$model = new UsersModel();
-		$id = $this->request->getVar('id');
+		$id = session('id');
+		//exit();
 		$data = [
 			'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
 		];
 		$save = $model->update($id, $data);
-		return redirect()->to(base_url('kpi/form_ubahpass'))->with('status', 'Data Berhasil diubah');
+
+		if ($save) {
+			session()->setFlashdata('pesan', '
+		<div class="alert alert-success">
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			<strong>Berhasil!</strong> Password anda telah berubah.
+		</div>');
+		} else {
+			session()->setFlashdata('pesan', '
+		<div class="alert alert-danger">
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			<strong>Tidak berhasil!</strong> Password anda tidak berubah.
+		</div>');
+		}
+		//print_r($save);
+		//exit();
+
+
+		return redirect()->to(base_url('kpi/form_ubahpass'));
 	}
 
 	/*public function save()
