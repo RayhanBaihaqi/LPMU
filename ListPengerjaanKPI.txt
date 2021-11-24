@@ -10,6 +10,7 @@ USER :
 2. menampilkan grafik kesimpulan
 4. buat perhitungan antara target dan realisasi
 11. kesimpulan diperlihatkan dalam tabel
+13. 1 kategori KPI bikin 1 halaman tabel
 
 
 notes : 
