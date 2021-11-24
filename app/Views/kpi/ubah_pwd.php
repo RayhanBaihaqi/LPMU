@@ -123,12 +123,18 @@
                 <div class="card-header">Ubah Password</div>
 
             </div>
-
+            <?php if (session()->getFlashdata('success')) : ?>
+                <div class="alert alert-danger"><?= session()->getFlashdata('status') ?></div>
+            <?php endif ?>
             <div class="card shadow mb-4">
                 <div class="card-body">
                     <div class="table-responsive">
-                        <form action="<?= base_url('kpi/ubahpass'); ?>" method="POST" enctype="multipart/form-data">
-                            <input required type="hidden" name="id" value="id">
+                        <form action="<?= base_url('kpi/ubahpwd'); ?>" method="POST" enctype="multipart/form-data">
+                            <input required type="hidden" name="id" value="<?php
+                                                                            $id = session('id');
+
+                                                                            ?>">
+
                             <div class="form-group">
                                 <label for="username">Username</label>
                                 <input required type="text" name="username" class="form-control" id="username" placeholder="Masukkan Username" value="<?php

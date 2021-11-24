@@ -8,17 +8,20 @@ class UsersModel extends Model
 {
     protected $table      = 'user';
 
-    protected $allowedFields = ['id','username', 'password', 'nama_prodi','created_at','updated_at', 'level'];
-    public function tampilDataSetRKAT($username=null){
+    protected $allowedFields = ['id', 'username', 'password', 'nama_prodi', 'created_at', 'updated_at', 'level'];
+
+    public function tampilDataSetRKAT($username = null)
+    {
         return $this->db->table('set_rkat')
-        ->join('user', 'user.id=set_rkat.id_user')
-        ->where('username',$username)
-        ->get()->getResultArray();
+            ->join('user', 'user.id=set_rkat.id_user')
+            ->where('username', $username)
+            ->get()->getResultArray();
     }
-    public function edit($id_setrkat=null){
+    public function edit($id_setrkat = null)
+    {
         return $this->db->table('set_rkat')
-        ->join('user', 'user.id=set_rkat.id_user')
-        ->where('id_setrkat',$id_setrkat)
-        ->get()->getResultArray();
+            ->join('user', 'user.id=set_rkat.id_user')
+            ->where('id_setrkat', $id_setrkat)
+            ->get()->getResultArray();
     }
 }
