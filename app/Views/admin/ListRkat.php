@@ -60,7 +60,7 @@
 					<div class="bg-white py-2 collapse-inner rounded">
 						<a class="collapse-item" href="<?= base_url('rkat/createbyadmin') ?>">Tambah RKAT</a>
 						<a class="collapse-item" href="<?= base_url('rkat/indexbyadmin') ?>">Lihat Data</a>
-						<a class="collapse-item" href="<?= base_url('setrkat/create') ?>">Atur Semster dan Pagu</a>
+						<a class="collapse-item" href="<?= base_url('setrkat/create') ?>">Atur Semester dan Pagu</a>
 						<a class="collapse-item" href="<?= base_url('setrkat/index') ?>">Lihat Data Set Rkat</a>
 					</div>
 				</div>
@@ -168,12 +168,12 @@
 												<tr>
 													<td scope="row"><?= $i++; ?></td>
 													<td><?= $reading['nama_kegiatan']; ?></td>
-													<td><?= $reading['semester']; ?></td>
-													<td><?= $reading['anggaran']; ?></td>
-													<td><?= $reading['keterangan']; ?></td>
-													<td><?= $reading['jenis_kpi']; ?></td>
+													<td><!--?= $reading['semester']; ?>--></td>
+													<td><?= $reading['total']; ?></td>
+													<td><?= $reading['nama_kegiatan']; ?></td>
+													<td><?= $reading['nama_kegiatan']; ?></td>
 													<td><?= $reading['butir']; ?></td>
-													<td><?= $reading['jenis_anggaran']; ?></td>
+													<td><?= $reading['nama_kegiatan']; ?></td>
 													<td>
 														<a href="<?= base_url('rkat/editbyadmin/' . $reading['id']); ?>" class="button button2"><i class="fas fa-edit"></i></a>
 														<a href="<?= base_url('rkat/deletebyadmin/' . $reading['id']); ?>" class="button button2"><i class="fas fa-trash-alt"></i></a>

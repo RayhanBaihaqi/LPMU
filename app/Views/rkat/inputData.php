@@ -147,23 +147,23 @@
 						<thead class="table-dark">
 							<tr>
 								<th width="600px">Kategori - Kriteria - Butir</th>
-								<th width="600px">No Kegiatan- Indikator </th>
-								<th width="600px"> Target - Nama Kegiatan</th>
+								<th width="600px">No Kegiatan- Indikator</th>
+								<th width="600px">Target - Nama Kegiatan</th>
 								<th width="600px">Anggaran Gasal (Rp.)</th>
 								<th width="600px">Anggaran Genap (Rp.)</th>
-								<th>Total</th>
+								<th>Total (Rp.)</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
 								<td>
-									<select class="form-control form-control-sm" id="kategori1" name="kategori1">
+									<select class="form-control form-control-sm" id="kategori1" name="kategori1" required>
 										<option value="" disabled selected>Pilih Kategori</option>
 										<option value="PK">PK</option>
 										<option value="OPS">OPS</option>
 										<option value="INV">INV</option>
 									</select>
-									<select class="form-control form-control-sm" id="kpi1" name="kpi1">
+									<select class="form-control form-control-sm" id="kpi1" name="kpi1" required>
 										<option value="" disabled selected>Pilih Kategori KPI</option>
 										<option value="1">1 – Visi Misi Tujuan dan Strategi</option>
 										<option value="2">2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
@@ -175,7 +175,7 @@
 										<option value="8">8 - Pengabdian kepada Masyarakat (PkM)</option>
 										<option value="9">9 - Luaran dan Capaian Tridharma</option>
 									</select>
-									<select class="form-control form-control-sm" id="butir1" name="butir1">
+									<select class="form-control form-control-sm" id="butir1" name="butir1" required>
 										<option value="" disabled selected>Pilih butir</option>
 										<option value="1">1</option>
 										<option value="2">2</option>
@@ -395,14 +395,14 @@
 									<input type="hidden" class="form-control" id="id_set5" value="<?= $id_set ?>" name="id_set5">	
 								<?php endforeach; ?>
 							</tr>
+							<tr>
+								<td></td>
+								<td colspan=2 align="right">Total Keseluruhan (Rp.)</td>
+								<td><input type="text" class="form-control" style="width: 150px;" id="pagu1" name="pagu1" value="0" readonly="readonly"></td>
+								<td><input type="text" class="form-control" style="width: 150px;" id="pagu2" name="pagu2" value="0" readonly="readonly"></td>
+								<td><input type="text" class="form-control" style="width: 150px;" id="pagu3" name="pagu3" value="0" readonly="readonly"></td>
+							</tr>
 						</tbody>
-						<tfoot>
-							<td></td>
-							<td colspan=2 align="right">Total Keseluruhan (Rp.)</td>
-							<td><input type="text" class="form-control" style="width: 150px;" id="pagu1" name="pagu1" value="1" disabled></td>
-							<td><input type="text" class="form-control" style="width: 150px;" id="pagu2" name="pagu2" value="1" disabled></td>
-							<td><input type="text" class="form-control" style="width: 150px;" id="pagu3" name="pagu3" value="1" disabled></td>
-						</tfoot>
   					</table>
 				</div>
 					<div class="card-footer">
@@ -503,6 +503,9 @@
 			document.getElementById('pagu1').value = result1;
 			document.getElementById('pagu2').value = result2;
 			document.getElementById('pagu3').value = result3;
+			document.getElementById('pagu1b').value = result1;
+			document.getElementById('pagu2b').value = result2;
+			document.getElementById('pagu3b').value = result3;
 			
 		}
 
