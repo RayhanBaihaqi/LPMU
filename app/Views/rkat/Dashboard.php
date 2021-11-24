@@ -92,7 +92,7 @@
         <br>
         <!-- Nav Bar Start -->
 		<div class="nav-bar">
-			<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+			<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 				<a href="<?php echo site_url(); ?>backend"><i class="fas fa-long-arrow-alt-left"></i></a>
 				<a href="#" class="navbar-brand">MENU</a>
 				<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">

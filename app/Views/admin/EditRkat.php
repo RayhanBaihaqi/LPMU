@@ -60,7 +60,7 @@
 					<div class="bg-white py-2 collapse-inner rounded">
 						<a class="collapse-item" href="<?= base_url('rkat/createbyadmin') ?>">Tambah RKAT</a>
 						<a class="collapse-item" href="<?= base_url('rkat/indexbyadmin') ?>">Lihat Data</a>
-						<a class="collapse-item" href="<?= base_url('setrkat/create') ?>">Atur Semster dan Pagu</a>
+						<a class="collapse-item" href="<?= base_url('setrkat/create') ?>">Atur Semester dan Pagu</a>
 						<a class="collapse-item" href="<?= base_url('setrkat/index') ?>">Lihat Data Set Rkat</a>
 					</div>
 				</div>
@@ -140,7 +140,7 @@
 				<div class="container-fluid">
 
 					<!-- Page Heading -->
-					<h1 class="h3 mb-2 text-gray-800">Tambah User</h1>
+					<h1 class="h3 mb-2 text-gray-800">Edit Target Capaian</h1>
 
 					<!-- DataTales Example -->
 					<div class="card shadow mb-4">
@@ -156,8 +156,8 @@
 									<div class="form-group">
 										<label for="jenis_anggaran">Jenis Anggaran</label>
 										<select class="form-control" id="jenis_anggaran" name="jenis_anggaran">
-											<option value="<?= $detail_rkat['jenis_anggaran']; ?>" disabled selected>
-												<?= $detail_rkat['jenis_anggaran']; ?></option>
+											<!-- <option value="?= $detail_rkat['jenis_anggaran']; ?>" disabled selected> -->
+												<!-- ?= $detail_rkat['jenis_anggaran']; ?></option> -->
 											<option value="Program Kerja">Program Kerja</option>
 											<option value="Oprasional">Oprasional</option>
 											<option value="Investasi">Investasi</option>
@@ -166,8 +166,8 @@
 									<div class="form-group">
 										<label for="jenis_kpi">Standar KPI</label>
 										<select class="form-control" id="jenis_kpi" name="jenis_kpi">
-											<option value="<?= $detail_rkat['jenis_kpi']; ?>" disabled selected>
-												<?= $detail_rkat['jenis_kpi']; ?></option>
+											<!-- <option value="?= $detail_rkat['jenis_kpi']; ?>" disabled selected>
+												?= $detail_rkat['jenis_kpi']; ?></option> -->
 											<option value="1">Standar 1 – Visi Misi Tujuan dan Strategi</option>
 											<option value="2">Standar 2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
 											<option value="3">Standar 3 - Mahasiswa</option>
@@ -186,8 +186,8 @@
 									<div class="form-group">
 										<label for="semester">Semester</label>
 										<select class="form-control" id="semester" name="semester">
-											<option value="<?= $detail_rkat['semester']; ?>" disabled selected>
-												<?= $detail_rkat['semester']; ?></option>
+											<!-- <option value="?= $detail_rkat['semester']; ?>" disabled selected>
+												?= $detail_rkat['semester']; ?></option> -->
 											<option value="Gasal">Gasal</option>
 											<option value="Genap">Genap</option>
 											<option value="Gasal dan Genap">Gasal dan Genap</option>
@@ -195,11 +195,11 @@
 									</div>
 									<div class="form-group">
 										<label for="anggaran">Anggaran Kegiatan</label>
-										<input type="text" class="form-control" id="anggaran" placeholder="Masukan Total Anggaran" name="anggaran" required value="<?= $detail_rkat['anggaran']; ?>">
+										<input type="text" class="form-control" id="anggaran" placeholder="Masukan Total Anggaran" name="anggaran" required value=""><!--?= $detail_rkat['anggaran']; ?>-->
 									</div>
 									<div class="form-group">
 										<label for="keterangan">Keterangan Kegiatan</label>
-										<textarea class="form-control" rows="5" id="keterangan" placeholder="Masukan Total Biaya" name="keterangan" required><?= $detail_rkat['keterangan']; ?></textarea>
+										<textarea class="form-control" rows="5" id="keterangan" placeholder="Masukan Total Biaya" name="keterangan" required><!--?= $detail_rkat['keterangan']; ?>--></textarea>
 									</div>
 									<div class="form-group">
 										<button type="submit" id="edit" class="btn btn-success">edit</button>
