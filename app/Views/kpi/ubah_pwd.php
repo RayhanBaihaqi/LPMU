@@ -84,11 +84,11 @@
         <!-- Nav Bar Start -->
         <div class="nav-bar">
             <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-<<<<<<< HEAD
+
                 <a href="<?php echo site_url(); ?>backend"><i class="fas fa-long-arrow-alt-left"></i></a>
-=======
-                <a href="<?php echo site_url(); ?>backend/kpi"><i class="fas fa-long-arrow-alt-left"></i></a>
->>>>>>> 2b8403aa550423a7cc661129c4978a2ef0b452d1
+
+
+
                 <a href="#" class="navbar-brand">MENU</a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
@@ -212,23 +212,34 @@
             return i;
         }
     </script>
-
-    <!-- Bootstrap core JavaScript-->
-    <script src="<?php echo base_url(); ?>/public/js/jquery.min.js"></script>
-    <script src="<?php echo base_url(); ?>/public/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Page level plugins -->
-    <script src="<?php echo base_url(); ?>/public/js/jquery.dataTables.min.js"></script>
-    <script src="<?php echo base_url(); ?>/public/js/dataTables.bootstrap4.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="<?php echo base_url(); ?>/public/js/datatables-demo.js"></script>
-
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- jQuery -->
+    <script src="<?php echo base_url(); ?>/public/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="<?php echo base_url(); ?>/public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- ChartJS -->
+    <script src="<?php echo base_url(); ?>/public/plugins/chart.js/Chart.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="<?php echo base_url(); ?>/public/dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="<?php echo base_url(); ?>/public/dist/js/demo.js"></script>
+    <!-- <script src="?php echo base_url(); ?>/public/chart/apexcharts.min.js"></script>
+    <script src="?php echo base_url(); ?>/public/chart/dashboard.js"></script> -->
+    <script src="<?php echo base_url(); ?>/public/chart/jquery.knob.min.js"></script>
+    <script src="<?php echo base_url(); ?>/public/chart/knob-chart-setting.js"></script>
+    <script src="<?php echo base_url(); ?>/public/chart/grafik.js"></script>
+    <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
     <script>
         $(window).load(function() {
             $(".pre-loader").fadeOut("slow");
         });
     </script>
+    <script>
+
+    </script>
+
 </body>
 
 </html>
