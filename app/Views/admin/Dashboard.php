@@ -152,7 +152,7 @@
 											<div class="h3  font-weight-bold text-primary text-uppercase mb-1">
 												SELAMAT DATANG</div>
 											<br>
-											<div class="mb-0  col mr-2 text-gray-800 text-justify">Saat ini anda login sebagai admin. Disini, admin bisa melihat data-data dari KPI dan RKAT yang telah dicapai oleh tiap unit dan program studi di Universitas Pembangunan Jaya</div>
+											<div class="mb-0  col mr-2 text-gray-800 text-justify">Saat ini anda login sebagai admin. Disini, admin bisa melihat data-data dari KPI dan RKAT yang telah dicapai oleh tiap unit dan program studi di Universitas Pembangunan Jaya. Selain itu, admin bisa juga menambah user, kategori KPI beserta butir KPI.</div>
 										</div>
 
 										<div class="col-auto">
