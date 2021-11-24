@@ -3,6 +3,8 @@
 namespace App\Controllers;
 
 //use CodeIgniter\Controller;
+
+use App\Models\ChangePass_Model;
 use App\Models\DetailKpiModel;
 use App\Models\ModelKpiAdmin;
 use App\Models\DataKpiModel;
@@ -58,6 +60,7 @@ class Kpi extends BaseController
 		$save = $model->update($id, $data);
 		return redirect()->to(base_url('kpi/form_ubahpass'))->with('status', 'Data Berhasil diubah');
 	}
+
 	/*public function save()
 	{
 		$detail = new DetailKpiModel();
