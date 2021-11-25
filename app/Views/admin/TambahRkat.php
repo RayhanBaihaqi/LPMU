@@ -79,8 +79,7 @@
 
 						<a class="collapse-item" href="<?= base_url('/admin/listkpi') ?>">Lihat KPI</a>
 						<a class="collapse-item" href="<?= base_url('/admin/listbutirkpi') ?>">Lihat Butir KPI</a>
-						<a class="collapse-item" href="<?= base_url('/admin/adminkpi') ?>">Lihat Rencana</a>
-						<a class="collapse-item" href="<?= base_url('#') ?>">Lihat Capaian</a>
+						<a class="collapse-item" href="<?= base_url('/admin/listcapaiankpi') ?>">Lihat Capaian</a>
 					</div>
 				</div>
 			</li>
@@ -160,7 +159,8 @@
 										</div>
 										<div class="form-group">
 											<label for="uname">Jumlah Pagu</label>
-											<input type="hidden" class="form-control" id="uname" name="uname" value="" required disabled> <!--?= $value['pagu'] ?>-->
+											<input type="hidden" class="form-control" id="uname" name="uname" value="" required disabled>
+											<!--?= $value['pagu'] ?>-->
 										</div>
 									<?php endforeach; ?>
 									<form action="<?= base_url('setrkat/tambahbyadmin'); ?>" method="post">

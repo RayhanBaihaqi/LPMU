@@ -1,7 +1,6 @@
 Pengerjaan KPI : 
 
 ADMIN : 
-1. menambah narasi dibawah kata sapaan setelah login admin dashboard
 5. lihat rencana (gw hapus) digabungkan ke lihat capaian
 8. menggabungkan tabel kpi dan tabel butir kpi di halaman admin "lihat kpi butir" 
 
@@ -31,6 +30,7 @@ DONE
 5. Tambah halaman ubah password
 6. Hapus pilihan "profil"
 7. Menambah  sapaan di page setelah login
+1. menambah narasi dibawah kata sapaan setelah login admin dashboard
 
 
 

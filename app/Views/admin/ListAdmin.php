@@ -76,11 +76,9 @@
 					<span>KPI</span></a>
 				<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
-
 						<a class="collapse-item" href="<?= base_url('/admin/listkpi') ?>">Lihat KPI</a>
 						<a class="collapse-item" href="<?= base_url('/admin/listbutirkpi') ?>">Lihat Butir KPI</a>
-						<a class="collapse-item" href="<?= base_url('/admin/adminkpi') ?>">Lihat Rencana</a>
-						<a class="collapse-item" href="<?= base_url('#') ?>">Lihat Capaian</a>
+						<a class="collapse-item" href="<?= base_url('/admin/listcapaiankpi') ?>">Lihat Capaian</a>
 					</div>
 				</div>
 			</li>

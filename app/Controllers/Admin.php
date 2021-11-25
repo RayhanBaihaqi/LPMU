@@ -29,6 +29,11 @@ class Admin extends BaseController
         ];
         echo view('/admin/ListKpiButir', $data);
     }
+    public function listcapaiankpi()
+    {
+
+        echo view('/admin/ListCapaianKpi');
+    }
     public function form_tambahkpi()
     {
         helper('form');

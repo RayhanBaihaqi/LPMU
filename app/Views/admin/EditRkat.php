@@ -79,8 +79,7 @@
 
 						<a class="collapse-item" href="<?= base_url('/admin/listkpi') ?>">Lihat KPI</a>
 						<a class="collapse-item" href="<?= base_url('/admin/listbutirkpi') ?>">Lihat Butir KPI</a>
-						<a class="collapse-item" href="<?= base_url('/admin/adminkpi') ?>">Lihat Rencana</a>
-						<a class="collapse-item" href="<?= base_url('#') ?>">Lihat Capaian</a>
+						<a class="collapse-item" href="<?= base_url('/admin/listcapaiankpi') ?>">Lihat Capaian</a>
 					</div>
 				</div>
 			</li>
@@ -157,7 +156,7 @@
 										<label for="jenis_anggaran">Jenis Anggaran</label>
 										<select class="form-control" id="jenis_anggaran" name="jenis_anggaran">
 											<!-- <option value="?= $detail_rkat['jenis_anggaran']; ?>" disabled selected> -->
-												<!-- ?= $detail_rkat['jenis_anggaran']; ?></option> -->
+											<!-- ?= $detail_rkat['jenis_anggaran']; ?></option> -->
 											<option value="Program Kerja">Program Kerja</option>
 											<option value="Oprasional">Oprasional</option>
 											<option value="Investasi">Investasi</option>
@@ -195,7 +194,8 @@
 									</div>
 									<div class="form-group">
 										<label for="anggaran">Anggaran Kegiatan</label>
-										<input type="text" class="form-control" id="anggaran" placeholder="Masukan Total Anggaran" name="anggaran" required value=""><!--?= $detail_rkat['anggaran']; ?>-->
+										<input type="text" class="form-control" id="anggaran" placeholder="Masukan Total Anggaran" name="anggaran" required value="">
+										<!--?= $detail_rkat['anggaran']; ?>-->
 									</div>
 									<div class="form-group">
 										<label for="keterangan">Keterangan Kegiatan</label>

@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>List KPI dan Butir</title>
+    <title>List Capaian KPI</title>
 
     <!-- Custom fonts for this template-->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
@@ -137,26 +137,15 @@
                 <!-- End of Topbar -->
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    <h2>List KPI + Butir</h2>
+
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-2 text-gray-800">List Capaian KPI</h1>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-
-                            <a href="<?= base_url('/admin/form_tambahbutirKpi') ?>" class="btn btn-success"><span>Tambah
-                                    Butir KPI</span></a>
-                        </div>
-                        <div class="container">
-                            <div class="form-group">
-                                <label for="exampleFormControlSelect1">Pilih ID KPI</label>
-                                <select class="form-control" id="exampleFormControlSelect1">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div>
+                            <a href="#" class="btn btn-success"><span>Tambah
+                                    Data</span></a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -164,79 +153,44 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>ID KPI</th>
-                                            <th>Angka Butir</th>
-                                            <th>Nama Butir</th>
-                                            <th>Unit Utama</th>
-                                            <th>Unit Pendukung</th>
-                                            <th>Target</th>
-                                            <th>Kategori</th>
-                                            <th>Kegiatan</th>
-                                            <th>Bobot</th>
-                                            <th>Aksi</th>
+                                            <th>Nama Prodi</th>
+                                            <th>Tahun Ajaran</th>
+                                            <th>Level</th>
+                                            <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php
-                                        $nomor = 0;
-                                        foreach ($tampildata as $row) :
-                                            $nomor++;
-                                        ?>
-                                            <tr>
-                                                <th><?= $nomor; ?></th>
-                                                <td><?= $row->idkpi ?></td>
-                                                <td><?= $row->idkpi . '.' . $row->angka_butir ?></td>
-                                                <td><?= $row->nama_butir ?></td>
-                                                <td><?= $row->unit_utama ?></td>
-                                                <td><?= $row->unit_pendukung ?></td>
-                                                <td><?= $row->target ?></td>
-                                                <td><?= $row->kategori ?></td>
-                                                <td><?= $row->kegiatan ?></td>
-                                                <td><?= $row->bobot ?></td>
-
-                                                <td>
-                                                    <a href=""><i class="fas fa-edit"></i></a>
-                                                    <a href=""><i class="fas fa-trash-alt"></i></a>
-                                                </td>
-
-                                            </tr>
-
-                                        <?php
-                                        endforeach;
-                                        ?>
 
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
+
                 </div>
 
 
             </div>
-
+            <!-- End of Content Wrapper -->
 
         </div>
-        <!-- End of Content Wrapper -->
+        <!-- End of Page Wrapper -->
 
-    </div>
-    <!-- End of Page Wrapper -->
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
 
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
+        <!-- Bootstrap core JavaScript-->
+        <script src="<?php echo base_url(); ?>/public/js/jquery.min.js"></script>
+        <script src="<?php echo base_url(); ?>/public/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="<?php echo base_url(); ?>/public/js/jquery.min.js"></script>
-    <script src="<?php echo base_url(); ?>/public/js/bootstrap.bundle.min.js"></script>
+        <!-- Page level plugins -->
+        <script src="<?php echo base_url(); ?>/public/js/jquery.dataTables.min.js"></script>
+        <script src="<?php echo base_url(); ?>/public/js/dataTables.bootstrap4.min.js"></script>
 
-    <!-- Page level plugins -->
-    <script src="<?php echo base_url(); ?>/public/js/jquery.dataTables.min.js"></script>
-    <script src="<?php echo base_url(); ?>/public/js/dataTables.bootstrap4.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="<?php echo base_url(); ?>/public/js/datatables-demo.js"></script>
+        <!-- Page level custom scripts -->
+        <script src="<?php echo base_url(); ?>/public/js/datatables-demo.js"></script>
 
 </body>
 

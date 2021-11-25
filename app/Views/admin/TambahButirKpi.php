@@ -76,11 +76,9 @@
                     <span>KPI</span></a>
                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-
                         <a class="collapse-item" href="<?= base_url('/admin/listkpi') ?>">Lihat KPI</a>
                         <a class="collapse-item" href="<?= base_url('/admin/listbutirkpi') ?>">Lihat Butir KPI</a>
-                        <a class="collapse-item" href="<?= base_url('/admin/adminkpi') ?>">Lihat Rencana</a>
-                        <a class="collapse-item" href="<?= base_url('#') ?>">Lihat Capaian</a>
+                        <a class="collapse-item" href="<?= base_url('/admin/listcapaiankpi') ?>">Lihat Capaian</a>
                     </div>
                 </div>
             </li>
@@ -124,13 +122,13 @@
                                 <img class="img-profile rounded-circle" src="<?php echo base_url(); ?>/public/img/inf-logo.jpg">
                             </a>
                             <!-- Dropdown - User Information -->
-							<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="<?= base_url('auth/logout') ?>">
-									<i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-									Logout
-								</a>
-							</div>
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="<?= base_url('auth/logout') ?>">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
                         </li>
 
                     </ul>
