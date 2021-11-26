@@ -86,7 +86,7 @@
 		<!-- Nav Bar Start -->
 		<div class="nav-bar">
 			<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-				<a href="/backend/rkat"><i class="fas fa-long-arrow-alt-left"></i></a>
+				<a href="<?php echo site_url(); ?>backend/rkat"><i class="fas fa-long-arrow-alt-left"></i></a>
 				<a href="#" class="navbar-brand">MENU</a>
 				<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
 					<span class="navbar-toggler-icon"></span>
@@ -109,8 +109,7 @@
 								</a>
 								<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
 									<a class="dropdown-item" href="profile.html"><i class="fas fa-cog"></i> Ubah Password</a>
-									<a class="dropdown-item" href="<?= base_url('/auth/logout') ?>"><i class="fas fa-sign-out-alt"></i> Log
-										Out</a>
+									<a class="dropdown-item" href="<?= base_url('/auth/logout') ?>"><i class="fas fa-sign-out-alt"></i> Log Out</a>
 								</div>
 							</div>
 						</div>
@@ -121,69 +120,76 @@
 		<!-- Nav Bar End -->
 		<br>
         <form action="<?= base_url('rkat/updatebyuser'); ?>" method="POST" enctype="multipart/form-data">
-	
-                <input required type="hidden" name="id" value="<?= $detail_rkat['id']; ?>">
-				<input required type="hidden" name="id_set" value="<?= $detail_rkat['id_set']; ?>">
-				<div class="form-group">
-					<label for="nama_kegiatan">Nama Kegiatan</label>
-					<input type="text" class="form-control" id="nama_kegiatan" placeholder="Maksukan Nama Kegiatan" 
-					name="nama_kegiatan" required value="<?= $detail_rkat['nama_kegiatan']; ?>">
+			<div class="card">
+				<div class="card-header"></div>
+				<div class="card-body">
+					<input required type="hidden" name="id" value="<?= $detail_rkat['id']; ?>">
+					<input required type="hidden" name="id_set" value="<?= $detail_rkat['id_set']; ?>">
+					<div class="form-group">
+						<label for="nama_kegiatan">Nama Kegiatan</label>
+						<input type="text" class="form-control" id="nama_kegiatan" placeholder="Maksukan Nama Kegiatan" 
+						name="nama_kegiatan" required value="<?= $detail_rkat['nama_kegiatan']; ?>">
+					</div>
+					<div class="form-group">
+						<label for="jenis_anggaran">Jenis Anggaran</label>
+						<select class="form-control" id="jenis_anggaran" name="jenis_anggaran">
+							<!-- <option value="?= $detail_rkat['jenis_anggaran']; ?>" disabled selected>
+								?= $detail_rkat['jenis_anggaran']; ?></option> -->
+							<option value="Program Kerja">Program Kerja</option>
+							<option value="Oprasional">Oprasional</option>
+							<option value="Investasi">Investasi</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="jenis_kpi">Standar KPI</label>
+						<select class="form-control" id="jenis_kpi" name="jenis_kpi">
+							<!-- <option value="?= $detail_rkat['jenis_kpi']; ?>" disabled selected>
+								?= $detail_rkat['jenis_kpi']; ?></option> -->
+							<option value="1">Standar 1 – Visi Misi Tujuan dan Strategi</option>
+							<option value="2">Standar 2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
+							<option value="3">Standar 3 - Mahasiswa</option>
+							<option value="4">Standar 4 - Sumber Daya Manusia</option>
+							<option value="5">Standar 5 - Keuangan, Sarana dan Prasarana</option>
+							<option value="6">Standar 6 - Pendidikan</option>
+							<option value="7">Standar 7 – Penelitian</option>
+							<option value="8">Standar 8 - Pengabdian kepada Masyarakat (PkM)</option>
+							<option value="9">Standar 9 - Luaran dan Capaian Tridharma</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="butir">Butir</label>
+						<input type="text" class="form-control" id="butir" placeholder="Masukan Butir Ke-" name="butir" 
+						required value="<?= $detail_rkat['butir']; ?>">
+					</div>
+					<div class="form-group">
+						<label for="semester">Semester</label>
+						<select class="form-control" id="semester" name="semester">
+							<!-- <option value="?= $detail_rkat['semester']; ?>" disabled selected>
+								?= $detail_rkat['semester']; ?></option> -->
+							<option value="Gasal">Gasal</option>
+							<option value="Genap">Genap</option>
+							<option value="Gasal dan Genap">Gasal dan Genap</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="anggaran">Anggaran Kegiatan</label>
+						<input type="text" class="form-control" id="anggaran" placeholder="Masukan Total Anggaran" 
+						name="anggaran" required value=""><!--?= $detail_rkat['anggaran']; ?>-->
+					</div>
+					<div class="form-group">
+						<label for="keterangan">Keterangan Kegiatan</label>
+						<textarea class="form-control" rows="5" id="keterangan" placeholder="Masukan Total Biaya" 
+						name="keterangan" required ></textarea><!--?= $detail_rkat['keterangan']; ?>-->
+					</div>
+					<div class="form-group">
+						<button type="submit" id="edit" class="btn btn-success">edit</button>
+					</div>
 				</div>
-                <div class="form-group">
-                    <label for="jenis_anggaran">Jenis Anggaran</label>
-                    <select class="form-control" id="jenis_anggaran" name="jenis_anggaran">
-                        <option value="<?= $detail_rkat['jenis_anggaran']; ?>" disabled selected>
-							<?= $detail_rkat['jenis_anggaran']; ?></option>
-						<option value="Program Kerja">Program Kerja</option>
-						<option value="Oprasional">Oprasional</option>
-						<option value="Investasi">Investasi</option>
-					</select>
-                </div>
-                <div class="form-group">
-                    <label for="jenis_kpi">Standar KPI</label>
-					<select class="form-control" id="jenis_kpi" name="jenis_kpi">
-                        <option value="<?= $detail_rkat['jenis_kpi']; ?>" disabled selected>
-							<?= $detail_rkat['jenis_kpi']; ?></option>
-						<option value="1">Standar 1 – Visi Misi Tujuan dan Strategi</option>
-						<option value="2">Standar 2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
-						<option value="3">Standar 3 - Mahasiswa</option>
-						<option value="4">Standar 4 - Sumber Daya Manusia</option>
-						<option value="5">Standar 5 - Keuangan, Sarana dan Prasarana</option>
-						<option value="6">Standar 6 - Pendidikan</option>
-						<option value="7">Standar 7 – Penelitian</option>
-						<option value="8">Standar 8 - Pengabdian kepada Masyarakat (PkM)</option>
-						<option value="9">Standar 9 - Luaran dan Capaian Tridharma</option>
-					</select>
+				<div class="card-footer">
+					<button type="submit" class="btn btn-primary" id="tambah">Tambah Data</button>
 				</div>
-                <div class="form-group">
-					<label for="butir">Butir</label>
-					<input type="text" class="form-control" id="butir" placeholder="Masukan Butir Ke-" name="butir" 
-					required value="<?= $detail_rkat['butir']; ?>">
-				</div>
-                <div class="form-group">
-                    <label for="semester">Semester</label>
-                    <select class="form-control" id="semester" name="semester">
-                        <option value="<?= $detail_rkat['semester']; ?>" disabled selected>
-							<?= $detail_rkat['semester']; ?></option>
-                        <option value="Gasal">Gasal</option>
-						<option value="Genap">Genap</option>
-						<option value="Gasal dan Genap">Gasal dan Genap</option>
-					</select>
-                </div>
-                <div class="form-group">
-					<label for="anggaran">Anggaran Kegiatan</label>
-					<input type="text" class="form-control" id="anggaran" placeholder="Masukan Total Anggaran" 
-					name="anggaran" required value="<?= $detail_rkat['anggaran']; ?>">
-				</div>
-				<div class="form-group">
-					<label for="keterangan">Keterangan Kegiatan</label>
-					<textarea class="form-control" rows="5" id="keterangan" placeholder="Masukan Total Biaya" 
-					name="keterangan" required ><?= $detail_rkat['keterangan']; ?></textarea>
-				</div>
-                <div class="form-group">
-					<button type="submit" id="edit" class="btn btn-success">edit</button>
-				</div>
-			</form>
+			</div>
+		</form>
 
 	</div>
 
