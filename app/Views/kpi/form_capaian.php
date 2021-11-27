@@ -117,7 +117,7 @@
                     <div class="navbar-nav mr-auto">
                         <a href="<?php echo site_url(); ?>kpi" class="nav-item nav-link">Home</a>
                         <a href="<?php echo site_url(); ?>kpi/rencana" class="nav-item nav-link">Rencana</a>
-                        <a href="<?php echo site_url(); ?>inputcapaian" class="nav-item nav-link active">Input Realisasi</a>
+                        <a href="<?php echo site_url(); ?>kpi/inputcapaian" class="nav-item nav-link active">Input Realisasi</a>
                         <a href="<?php echo site_url(); ?>kpi/kesimpulan" class="nav-item nav-link">Kesimpulan</a>
                     </div>
                     <div class="ml-auto">
@@ -220,8 +220,13 @@
                                             <td>
                                                 <input type="number" name='mobile[]' placeholder='Masukkan realisasi' class="form-control" />
                                             </td>
-                                            <td></td>
-                                            <td></td>
+
+                                            <td><a href="<?= base_url(''); ?>" class="button button2"><i class="fas fa-upload"></i></a></td>
+                                            <td>
+
+                                                <a href="<?= base_url(''); ?>" class="button button2"><i class="fas fa-edit"></i></a>
+                                                <a href="<?= base_url(''); ?>" class="button button2"><i class="fas fa-trash-alt"></i></a>
+                                            </td>
 
 
 

@@ -138,17 +138,24 @@
                 <!-- End of Topbar -->
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    <h2>Tambah KPI</h2>
-                    <br>
+                    <div class="card shadow mb-4">
+                        <div class="card-body">
+                            <h2>Tambah KPI</h2>
+                            <br>
 
-                    <?= form_open('admin/simpankpi') ?>
-                    <div class="form-group">
-                        <label for="inputkpi">Masukkan nama KPI baru</label>
-                        <input type="text" class="form-control" id="nama_kpi" name="nama_kpi" placeholder="Masukkan nama KPI Baru">
+                            <?= form_open('admin/simpankpi') ?>
+                            <div class="form-group">
+                                <label for="inputkpi">ID KPI</label>
+                                <input type="text" class="form-control" id="idkpi" name="idkpi" placeholder="Masukkan nomor ID KPI Baru">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputkpi">Nama KPI</label>
+                                <input type="text" class="form-control" id="nama_kpi" name="nama_kpi" placeholder="Masukkan nama KPI Baru">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <?= form_close(); ?>
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                    <?= form_close(); ?>
-
 
 
                 </div>

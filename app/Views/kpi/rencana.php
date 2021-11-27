@@ -110,7 +110,7 @@
                 <div class="collapse navbar-collapse justify-content-between">
                     <div class="navbar-nav mr-auto">
                         <a href="<?php echo site_url(); ?>kpi" class="nav-item nav-link">Home</a>
-                        <a href="<?php echo site_url(); ?>rencana" class="nav-item nav-link active">Rencana</a>
+                        <a href="<?php echo site_url(); ?>kpi/rencana" class="nav-item nav-link active">Rencana</a>
                         <a href="<?php echo site_url(); ?>kpi/inputcapaian" class="nav-item nav-link">Input Realisasi</a>
                         <a href="<?php echo site_url(); ?>kpi/kesimpulan" class="nav-item nav-link">Kesimpulan</a>
                     </div>

@@ -196,7 +196,7 @@
 
                                                 <td>
                                                     <a href=""><i class="fas fa-edit"></i></a>
-                                                    <a href=""><i class="fas fa-trash-alt"></i></a>
+                                                    <a href="<?= base_url('admin/hapusbutirkpi/' . $row->id); ?>" class="button button2"><i class="fas fa-trash-alt"></i></a>
                                                 </td>
 
                                             </tr>

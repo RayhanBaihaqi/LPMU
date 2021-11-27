@@ -19,4 +19,8 @@ class DataKpiButirModel extends Model
     {
         return $this->db->table('tabel_butir_kpi')->insert($data);
     }
+    function hapuskpibutir($id)
+    {
+        return $this->db->table('tabel_butir_kpi')->delete(['id' => $id]);
+    }
 }
