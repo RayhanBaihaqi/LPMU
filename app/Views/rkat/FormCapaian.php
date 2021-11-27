@@ -123,6 +123,8 @@
 		<div class="card">
 			<div class="card-body">
 				<h4 class="card-title">Formulir Target Capaian</h4>
+			</div>
+			<div class="card-body">
 				<div class="form-group ">
 					<label for="sel1">Standar KPI:</label>
 					<select class="form-control kpi" id="sel1">

@@ -30,13 +30,62 @@ class Kpi extends BaseController
 		];
 		return view('kpi/rencana', $data);
 	}
-	public function inputcapaian()
+	public function inputcapaian($kategori = null)
 	{
 		$listbutirkpi = new DataKpiButirModel();
-		$data = [
-			'tampildata' => $listbutirkpi->tampildatabutir()->getResult()
-		];
-		return view('kpi/form_capaian', $data);
+
+		if ($kategori == null) {
+			$data = [
+				'tampildata' => $listbutirkpi->tampildatabutir()->getResult()
+			];
+			return view('kpi/form_capaian', $data);
+		}elseif ($kategori == 1) {
+			$data = [
+				'tampildata' => $listbutirkpi->tampildatabutir()->getResult()
+			];
+			return view('kpi/form_capaian1', $data);
+		}elseif ($kategori == 2) {
+			$data = [
+				'tampildata' => $listbutirkpi->tampildatabutir()->getResult()
+			];
+			return view('kpi/form_capaian2', $data);
+		}elseif ($kategori == 3) {
+			$data = [
+				'tampildata' => $listbutirkpi->tampildatabutir()->getResult()
+			];
+			return view('kpi/form_capaian3', $data);
+		}elseif ($kategori == 4) {
+			$data = [
+				'tampildata' => $listbutirkpi->tampildatabutir()->getResult()
+			];
+			return view('kpi/form_capaian4', $data);
+		}elseif ($kategori == 5) {
+			$data = [
+				'tampildata' => $listbutirkpi->tampildatabutir()->getResult()
+			];
+			return view('kpi/form_capaian5', $data);
+		}elseif ($kategori == 6) {
+			$data = [
+				'tampildata' => $listbutirkpi->tampildatabutir()->getResult()
+			];
+			return view('kpi/form_capaian6', $data);
+		}elseif ($kategori == 7) {
+			$data = [
+				'tampildata' => $listbutirkpi->tampildatabutir()->getResult()
+			];
+			return view('kpi/form_capaian7', $data);
+		}elseif ($kategori == 8) {
+			$data = [
+				'tampildata' => $listbutirkpi->tampildatabutir()->getResult()
+			];
+			return view('kpi/form_capaian8', $data);
+		}elseif ($kategori == 9) {
+			$data = [
+				'tampildata' => $listbutirkpi->tampildatabutir()->getResult()
+			];
+			return view('kpi/form_capaian9', $data);
+		}
+
 	}
 	public function kesimpulan()
 	{
