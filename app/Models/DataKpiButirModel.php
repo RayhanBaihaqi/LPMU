@@ -13,7 +13,9 @@ class DataKpiButirModel extends Model
 
     function tampildatabutir()
     {
-        return $this->db->table('tabel_butir_kpi')->get();
+        return $this->db->table('tabel_butir_kpi')
+            ->join('tabel_kpi', 'tabel_kpi.idkpi=tabel_butir_kpi.idkpi')
+            ->get();
     }
     function simpan($data)
     {
