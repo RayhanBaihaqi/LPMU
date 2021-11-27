@@ -23,10 +23,6 @@
 						<h3>LOGIN</h3>
 						<input type="text" class="form-control" name="username" placeholder="Username">
 						<input type="password" class="form-control" name="password" placeholder="Password">
-						<div class="custom-control custom-checkbox">
-							<input type="checkbox" class="custom-control-input" id="customCheck" name="rememberme">
-							<label class="custom-control-label" for="customCheck">Remember Me</label>
-						</div>
 						<?php if (session()->getFlashdata('pesan')) : ?>
 							<div class="alert alert-danger"><?= session()->getFlashdata('pesan') ?></div>
 						<?php endif ?>

@@ -405,10 +405,10 @@
 						</tbody>
   					</table>
 				</div>
-					<div class="card-footer">
-						<button type="submit" class="btn btn-primary" id="tambah">Tambah Data</button>
-					</div>
+				<div class="card-footer">
+					<button type="submit" class="btn btn-primary" id="tambah">Tambah Data</button>
 				</div>
+			</div>
 		</form>
 	</div>
 	

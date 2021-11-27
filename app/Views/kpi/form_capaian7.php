@@ -117,7 +117,7 @@
                     <div class="navbar-nav mr-auto">
                         <a href="<?php echo site_url(); ?>kpi" class="nav-item nav-link">Home</a>
                         <a href="<?php echo site_url(); ?>kpi/rencana" class="nav-item nav-link">Rencana</a>
-                        <a href="<?php echo site_url(); ?>kpi/inputcapaian" class="nav-item nav-link active">Input Realisasi</a>
+                        <a href="<?php echo site_url(); ?>inputcapaian" class="nav-item nav-link active">Input Realisasi</a>
                         <a href="<?php echo site_url(); ?>kpi/kesimpulan" class="nav-item nav-link">Kesimpulan</a>
                     </div>
                     <div class="ml-auto">
@@ -153,6 +153,15 @@
                 <h3>Silahkan isi form capaian</h3>
             </div>
             <div class="card-body">
+                <div class="form-inline">
+                    <label class="mb-2 mr-sm-1" for="exampleFormControlSelect1" style="width: 150px;">Tahun Ajaran</label>
+                    <select class="form-control mb-2 mr-sm-2" id="exampleFormControlSelect1">
+
+                        <option value="" disabled selected>Pilih Tahun</option>
+                        <option value="2019/2020">2019/2020</option>
+                        <option value="2020/2021">2020/2021</option>
+                    </select>
+                </div>
                 <div class="form-inline" style="margin-bottom:20px;">
                     <label for="prodiunit" class="mb-2 mr-sm-2" style="width: 150px;">Program Studi/Unit</label>
                     <input type="text" class="form-control mb-2 mr-sm-2" id="prodiunit" value=" <?php
@@ -181,96 +190,51 @@
                             <option value="<?php echo site_url(); ?>kpi/inputcapaian/8">8 - Pengabdian kepada Masyarakat (PkM)</option>
                             <option value="<?php echo site_url(); ?>kpi/inputcapaian/9">9 - Luaran dan Capaian Tridharma</option>
                         </select>
-<<<<<<< HEAD
-                    </div>
-                    <div class="form-inline" style="margin-bottom:20px;">
-                        <label for="prodiunit" class="mb-2 mr-sm-2" style="width: 150px;">Program Studi/Unit</label>
-                        <input type="text" class="form-control mb-2 mr-sm-2" id="prodiunit" value=" <?php
-                                                                                                    $nama_prodi = session('nama_prodi');
-                                                                                                    echo "$nama_prodi"
-                                                                                                    ?>" name="prodiunit" required disabled>
-                        <label for="level" class="mb-2 mr-sm-2">Level</label>
-                        <input type="text" class="form-control mb-2 mr-sm-2" id="level" name="level" value="<?php
-                                                                                                            $level = session('level');
-                                                                                                            echo "$level"
-                                                                                                            ?>" required disabled>
-                    </div>
-                    <div class="card-body">
-
-                        <div class="form-group" id="kriteriaDiv">
-                            <select class="form-control" id="kriteria" name="kriteria">
-                                <option value="Pilih Kriteria" disabled selected>Pilih Kategori KPI</option>
-                                <option value="1">1 – Visi Misi Tujuan dan Strategi</option>
-                                <option value="2">2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
-                                <option value="3">3 - Mahasiswa</option>
-                                <option value="4">4 - Sumber Daya Manusia</option>
-                                <option value="5">5 - Keuangan, Sarana dan Prasarana</option>
-                                <option value="6">6 - Pendidikan</option>
-                                <option value="7">7 – Penelitian</option>
-                                <option value="8">8 - Pengabdian kepada Masyarakat (PkM)</option>
-                                <option value="9">9 - Luaran dan Capaian Tridharma</option>
-                            </select>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="table table-bordered" id="dataTable3" width="100%" cellspacing="0">
-                                <thead>
-                                    <tr>
-                                        <th class="text-center">No</th>
-                                        <th class="text-center">Angka butir</th>
-                                        <th class="text-center">Butir</th>
-                                        <th class="text-center">Rencana</th>
-                                        <th class="text-center">Realisasi</th>
-                                        <th class="text-center">Upload File</th>
-                                        <th class="text-center">Aksi</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php
-                                    $nomor = 0;
-                                    foreach ($tampildata as $row) :
-                                        $nomor++;
-                                    ?>
-                                        <tr>
-                                            <td><?= $nomor; ?></td>
-
-                                            <td><?= $row->idkpi . '.' . $row->angka_butir ?></td>
-                                            <td><?= $row->nama_butir ?></td>
-
-                                            <td><?= $row->target ?></td>
-                                            <td>
-                                                <input type="number" name='mobile[]' placeholder='Masukkan realisasi' class="form-control" />
-                                            </td>
-
-                                            <td><a href="<?= base_url(''); ?>" class="button button2"><i class="fas fa-upload"></i></a></td>
-                                            <td>
-
-                                                <a href="<?= base_url(''); ?>" class="button button2"><i class="fas fa-edit"></i></a>
-                                                <a href="<?= base_url(''); ?>" class="button button2"><i class="fas fa-trash-alt"></i></a>
-                                            </td>
-
-
-
-                                        </tr>
-
-                                    <?php
-                                    endforeach;
-                                    ?>
-
-                                </tbody>
-                            </table>
-                            <div class="form-group">
-                                <button type="submit" id="tambah" class="btn btn-success">Submit</button>
-                            </div>
-
-                        </div>
-
-                    </div>
-            </form>
-=======
                     </form>
                 </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable3" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th class="text-center">No</th>
+                                <th class="text-center">Angka butir</th>
+                                <th class="text-center">Butir</th>
+                                <th class="text-center">Rencana</th>
+                                <th class="text-center">Realisasi</th>
+                                <th class="text-center">Upload File</th>
+                                <th class="text-center">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $nomor = 0;
+                            foreach ($tampildata as $row) :
+                                $nomor++;
+                            ?>
+                                <tr>
+                                    <td><?= $nomor; ?></td>
+
+                                    <td><?= $row->idkpi . '.' . $row->angka_butir ?></td>
+                                    <td><?= $row->nama_butir ?></td>
+
+                                    <td><?= $row->target ?></td>
+                                    <td>
+                                        <input type="number" name='mobile[]' placeholder='Masukkan realisasi' class="form-control" />
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            <?php
+                            endforeach;
+                            ?>
+
+                        </tbody>
+                    </table>
+                    <div class="form-group">
+                        <button type="submit" id="tambah" class="btn btn-success">Submit</button>
+                    </div>
+                </div>
             </div>
->>>>>>> e9648317b9a234ad94a5713c20368537a0f364fb
         </div>
 
 
