@@ -142,39 +142,56 @@
                             <h2>Tambah Butir KPI</h2>
                             <?= form_open('admin/simpanbutirkpi') ?>
                             <div class="form-group">
-                                <label for="inputkpi">ID KPI</label>
-                                <input type="text" class="form-control" id="idkpi" name="idkpi" placeholder="Pilih ID KPI">
+                                <label for="idkpi">ID KPI</label>
+                                <select required class="form-control" id="idkpi" name="idkpi">
+                                    <option selected disabled>Pilih Kategori KPI</option>
+                                    <option value="1">1. Visi, Misi, Tujuan dan Strategi</option>
+                                    <option value="2">2. Tata Pamong, Tata Kelola dan Kerjasama</option>
+                                    <option value="3">3. Mahasiswa</option>
+                                    <option value="4">4. Sumber Daya Manusia </option>
+                                    <option value="5">5. Keuangan, Sarana dan Prasarana</option>
+                                    <option value="6">6. Pendidikan</option>
+                                    <option value="7">7. Penelitian</option>
+                                    <option value="8">8 Pengabdian Kepada Masyarakat</option>
+                                    <option value="9">9. Luaran dan Capaian Tridharma</option>
+                                </select>
                             </div>
                             <div class="form-group">
-                                <label for="inputkpi">Angka butir</label>
+                                <label for="angka_butir">Angka butir</label>
                                 <input type="text" class="form-control" id="angka_butir" name="angka_butir" placeholder="Masukkan angka butir KPI">
                             </div>
                             <div class="form-group">
-                                <label for="inputkpi">Nama butir</label>
+                                <label for="nama_butir">Nama butir</label>
                                 <input type="text" class="form-control" id="nama_butir" name="nama_butir" placeholder="Masukkan nama butir KPI">
                             </div>
                             <div class="form-group">
-                                <label for="inputkpi">Unit utama</label>
+                                <label for="unit_utama">Unit utama</label>
                                 <input type="text" class="form-control" id="unit_utama" name="unit_utama" placeholder="Masukkan unit utama KPI">
                             </div>
                             <div class="form-group">
-                                <label for="inputkpi">Unit pendukung</label>
+                                <label for="unit_pendukung">Unit pendukung</label>
                                 <input type="text" class="form-control" id="unit_pendukung" name="unit_pendukung" placeholder="Masukkan unit pendukung KPI">
                             </div>
                             <div class="form-group">
-                                <label for="inputkpi">Target</label>
+                                <label for="target">Target</label>
                                 <input type="text" class="form-control" id="target" name="target" placeholder="Masukkan target KPI">
                             </div>
                             <div class="form-group">
-                                <label for="inputkpi">Kategori</label>
-                                <input type="text" class="form-control" id="kategori" name="kategori" placeholder="Pilih kategori">
+                                <label for="kategori">Kategori</label>
+                                <select required class="form-control" id="kategori" name="kategori">
+                                    <option selected disabled>Pilih Kategori KPI</option>
+                                    <option value="OPS">OPS</option>
+                                    <option value="PK">PK</option>
+                                    <option value="INV">INV</option>
+
+                                </select>
                             </div>
                             <div class="form-group">
-                                <label for="inputkpi">Kegiatan</label>
+                                <label for="kegiatan">Kegiatan</label>
                                 <input type="text" class="form-control" id="kegiatan" name="kegiatan" placeholder="Masukkan kegiatan">
                             </div>
                             <div class="form-group">
-                                <label for="inputkpi">Bobot</label>
+                                <label for="bobot">Bobot</label>
                                 <input type="number" step=0.01 class="form-control" id="bobot" name="bobot" placeholder="Masukkan bobot">
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>

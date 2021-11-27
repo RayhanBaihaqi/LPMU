@@ -117,7 +117,7 @@
                     <div class="navbar-nav mr-auto">
                         <a href="<?php echo site_url(); ?>kpi" class="nav-item nav-link">Home</a>
                         <a href="<?php echo site_url(); ?>kpi/rencana" class="nav-item nav-link">Rencana</a>
-                        <a href="<?php echo site_url(); ?>inputcapaian" class="nav-item nav-link active">Input Realisasi</a>
+                        <a href="<?php echo site_url(); ?>kpi/inputcapaian" class="nav-item nav-link active">Input Realisasi</a>
                         <a href="<?php echo site_url(); ?>kpi/kesimpulan" class="nav-item nav-link">Kesimpulan</a>
                     </div>
                     <div class="ml-auto">
@@ -178,7 +178,7 @@
                     <label class="mb-2 mr-sm-1" for="exampleFormControlSelect1" style="width: 150px;">Tahun Ajaran</label>
                     <form method="POST" action="">
                         <select class="form-control mb-2 mr-sm-2" id="kriteria" name="kriteria" onChange="document.location.href=this.options[this.selectedIndex].value;">
-                        <!-- <select name="forma" onchange="location = this.value;"> -->
+                            <!-- <select name="forma" onchange="location = this.value;"> -->
                             <option value="Pilih Kriteria" disabled selected>Pilih Kategori KPI</option>
                             <option value="<?php echo site_url(); ?>kpi/inputcapaian/1">1 – Visi Misi Tujuan dan Strategi</option>
                             <option value="<?php echo site_url(); ?>kpi/inputcapaian/2">2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>

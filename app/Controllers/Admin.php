@@ -22,14 +22,7 @@ class Admin extends BaseController
         ];
         echo view('/admin/ListKpi', $data);
     }
-    public function listbutirkpi()
-    {
-        $listbutirkpi = new DataKpiButirModel();
-        $data = [
-            'tampildata' => $listbutirkpi->tampildatabutir()->getResult()
-        ];
-        echo view('/admin/ListKpiButir', $data);
-    }
+
     public function listcapaiankpi()
     {
 
@@ -81,6 +74,14 @@ class Admin extends BaseController
     }
 
     //proses butir kpi
+    public function listbutirkpi()
+    {
+        $listbutirkpi = new DataKpiButirModel();
+        $data = [
+            'tampildata' => $listbutirkpi->tampildatabutir()->getResult()
+        ];
+        echo view('/admin/ListKpiButir', $data);
+    }
     public function form_tambahbutirkpi()
     {
         helper('form');

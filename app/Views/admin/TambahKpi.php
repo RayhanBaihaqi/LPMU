@@ -145,11 +145,11 @@
 
                             <?= form_open('admin/simpankpi') ?>
                             <div class="form-group">
-                                <label for="inputkpi">ID KPI</label>
+                                <label for="idkpi">ID KPI</label>
                                 <input type="text" class="form-control" id="idkpi" name="idkpi" placeholder="Masukkan nomor ID KPI Baru">
                             </div>
                             <div class="form-group">
-                                <label for="inputkpi">Nama KPI</label>
+                                <label for="nama_kpi">Nama KPI</label>
                                 <input type="text" class="form-control" id="nama_kpi" name="nama_kpi" placeholder="Masukkan nama KPI Baru">
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
