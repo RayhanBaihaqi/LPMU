@@ -107,7 +107,7 @@
                         <a href="<?php echo site_url(); ?>kpi" class="nav-item nav-link">Home</a>
                         <a href="<?php echo site_url(); ?>kpi/rencana" class="nav-item nav-link">Rencana</a>
                         <a href="<?php echo site_url(); ?>kpi/inputcapaian" class="nav-item nav-link">Input Realisasi</a>
-                        <a href="<?php echo site_url(); ?>kesimpulan" class="nav-item nav-link active">Kesimpulan</a>
+                        <a href="<?php echo site_url(); ?>kpi/kesimpulan" class="nav-item nav-link active">Kesimpulan</a>
                     </div>
                     <div class="ml-auto">
                         <div class="user-info-dropdown">

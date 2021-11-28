@@ -110,7 +110,7 @@
                 <div class="collapse navbar-collapse justify-content-between">
                     <div class="navbar-nav mr-auto">
                         <a href="<?php echo site_url(); ?>kpi" class="nav-item nav-link">Home</a>
-                        <a href="<?php echo site_url(); ?>rencana" class="nav-item nav-link active">Rencana</a>
+                        <a href="<?php echo site_url(); ?>kpi/rencana" class="nav-item nav-link active">Rencana</a>
                         <a href="<?php echo site_url(); ?>kpi/inputcapaian" class="nav-item nav-link">Input Realisasi</a>
                         <a href="<?php echo site_url(); ?>kpi/kesimpulan" class="nav-item nav-link">Kesimpulan</a>
                     </div>
@@ -166,7 +166,7 @@
                         <thead>
                             <tr>
                                 <th scope="col">No</th>
-                                <th scope="col">ID KPI</th>
+                                <th scope="col">Nama KPI</th>
                                 <th scope="col">Angka Butir</th>
                                 <th scope="col">Nama Butir</th>
                                 <th scope="col">Unit Utama</th>
@@ -186,7 +186,7 @@
                             ?>
                                 <tr>
                                     <td><?= $nomor; ?></td>
-                                    <td><?= $row->idkpi ?></td>
+                                    <td><?= $row->nama_kpi ?></td>
                                     <td><?= $row->idkpi . '.' . $row->angka_butir ?></td>
                                     <td><?= $row->nama_butir ?></td>
                                     <td><?= $row->unit_utama ?></td>

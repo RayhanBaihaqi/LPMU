@@ -9,7 +9,7 @@
 	<meta content="Law Firm Website Template" name="description">
 
 	<!-- Favicon -->
-	<link rel="shortcut icon" type="image/png" href="/favicon.ico" />
+	<link rel="shortcut icon" type="image/png" href="<?php echo base_url(); ?>/public//favicon.ico" />
 
 	<!-- Google Font -->
 	<link
@@ -122,44 +122,46 @@
 		<br>
 		<!-- Responsive tables Start -->
 		<div class="col-lg-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Data Rencana Kegiatan dan Anggaran Tahunan (RKAT) 
+            <div class="card">
+				<div class="card-header">
+					<h4 class="card-title">Data Rencana Kegiatan dan Anggaran Tahunan (RKAT) 
 						<?php 
 							$nama_prodi = session('nama_prodi');
 							echo "$nama_prodi"
                     	?>
-						</h4>
-                  <div class="table-responsive">
-                  <table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
-                  	<thead>
-										<tr>
-											<th>No</th>
-											<th>Kategori</th>
-											<th>No Kegiatan</th>
-											<th>Target</th>
-											<th>Indikator</th>
-                                            <th>Nama Kegiatan</th>
-											<th>KPI</th>
-											<th>Butir</th>
-											<th>Anggaran Gasal</th>
-                                            <th>Anggaran Ganjil</th>
-											<th>Total Anggaran Rencana</th>
-											<th>Total Anggaran Realisasi</th>
-											<th>Actions</th>
-										</tr>
-									</thead>
-                                    <tbody>
-									<?php $i = 1;?>
-									<?php if ($detail_rkat) : ?>
-                                        <?php foreach ($detail_rkat as $value) : ?>
+					</h4>
+				</div>
+                <div class="card-body">
+					<div class="table-responsive">
+						<table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
+							<thead>
+								<tr>
+									<th>No</th>
+									<th>Kategori</th>
+									<th>No Kegiatan</th>
+									<th>Target</th>
+									<th>Indikator</th>
+									<th>Nama Kegiatan</th>
+									<th>KPI</th>
+									<th>Butir</th>
+									<th>Anggaran Gasal</th>
+									<th>Anggaran Ganjil</th>
+									<th>Total Anggaran Rencana</th>
+									<th>Total Anggaran Realisasi</th>
+									<th>Actions</th>
+								</tr>
+							</thead>
+							<tbody>
+								<?php $i = 1;?>
+								<?php if ($detail_rkat) : ?>
+									<?php foreach ($detail_rkat as $value) : ?>
 										<tr>
 											<td scope="row"><?= $i++; ?></td>
 											<td><?= $value['kategori']; ?></td>
 											<td><?= $value['no_kegiatan']; ?></td>
 											<td><?= $value['target']; ?></td>
 											<td><?= $value['indikator']; ?></td>
-                                            <td><?= $value['nama_kegiatan']; ?></td>
+											<td><?= $value['nama_kegiatan']; ?></td>
 											<td><?= $value['kpi']; ?></td>
 											<td><?= $value['butir']; ?></td>
 											<td><?= $value['anggaranGasal']; ?></td>
@@ -173,63 +175,68 @@
 													class="button button2"><i class="fas fa-trash-alt"></i></a>
 											</td>
 										</tr>
-										<?php endforeach; ?>
-										<?php endif; ?>
-									</tbody>
-                  </table>
+									<?php endforeach; ?>
+								<?php endif; ?>
+							</tbody>
+						</table>
+                	</div>
                 </div>
-                </div>
-              </div>
             </div>
+		</div>
 		<!-- Responsive tables End -->
 
 	</div>
 
-	<!-- JavaScript Libraries -->
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-	<!-- <script src="lib/easing/easing.min.js"></script>
-	<script src="lib/owlcarousel/owl.carousel.min.js"></script>
-	<script src="lib/isotope/isotope.pkgd.min.js"></script> -->
-	<script>
-		function startTime() {
-			var today = new Date();
-			var h = today.getHours();
-			var m = today.getMinutes();
-			var s = today.getSeconds();
-			m = checkTime(m);
-			s = checkTime(s);
-			document.getElementById('txt').innerHTML =
-				h + ":" + m + ":" + s;
-			var t = setTimeout(startTime, 500);
-		}
+	 <!-- JavaScript Libraries -->
+	 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script> -->
+    <script>
+        function startTime() {
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById('txt').innerHTML =
+                h + ":" + m + ":" + s;
+            var t = setTimeout(startTime, 500);
+        }
 
-		function checkTime(i) {
-			if (i < 10) {
-				i = "0" + i
-			}; // add zero in front of numbers < 10
-			return i;
-		}
-
-	</script>
-
-		<!-- Bootstrap core JavaScript-->
-		<script src="<?php echo base_url(); ?>/public/js/jquery.min.js"></script>
-		<script src="<?php echo base_url(); ?>/public/js/bootstrap.bundle.min.js"></script>
-
-		<!-- Page level plugins -->
-		<script src="<?php echo base_url(); ?>/public/js/jquery.dataTables.min.js"></script>
-		<script src="<?php echo base_url(); ?>/public/js/dataTables.bootstrap4.min.js"></script>
-
-		<!-- Page level custom scripts -->
-		<script src="<?php echo base_url(); ?>/public/js/datatables-demo.js"></script>
-
-	<script>
-		$(window).load(function () {
-			$(".pre-loader").fadeOut("slow");
-		});
-
-	</script>
+        function checkTime(i) {
+            if (i < 10) {
+                i = "0" + i
+            }; // add zero in front of numbers < 10
+            return i;
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- jQuery -->
+    <script src="<?php echo base_url(); ?>/public/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="<?php echo base_url(); ?>/public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- ChartJS -->
+    <script src="<?php echo base_url(); ?>/public/plugins/chart.js/Chart.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="<?php echo base_url(); ?>/public/dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="<?php echo base_url(); ?>/public/dist/js/demo.js"></script>
+    <!-- <script src="?php echo base_url(); ?>/public/chart/apexcharts.min.js"></script>
+    <script src="?php echo base_url(); ?>/public/chart/dashboard.js"></script> -->
+    <script src="<?php echo base_url(); ?>/public/chart/jquery.knob.min.js"></script>
+    <script src="<?php echo base_url(); ?>/public/chart/knob-chart-setting.js"></script>
+    <script src="<?php echo base_url(); ?>/public/chart/grafik.js"></script>
+    <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script>
+        $(window).load(function() {
+            $(".pre-loader").fadeOut("slow");
+        });
+    </script>
 </body>
 
 </html>

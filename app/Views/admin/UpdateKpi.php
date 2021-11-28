@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Form Tambah KPI</title>
+    <title>Form Edit KPI</title>
 
     <!-- Custom fonts for this template-->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
@@ -138,24 +138,21 @@
                 <!-- End of Topbar -->
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    <div class="card shadow mb-4">
-                        <div class="card-body">
-                            <h2>Tambah KPI</h2>
-                            <br>
+                    <h2>Edit KPI</h2>
+                    <br>
 
-                            <?= form_open('admin/simpankpi') ?>
-                            <div class="form-group">
-                                <label for="idkpi">ID KPI</label>
-                                <input type="text" class="form-control" id="idkpi" name="idkpi" placeholder="Masukkan nomor ID KPI Baru">
-                            </div>
-                            <div class="form-group">
-                                <label for="nama_kpi">Nama KPI</label>
-                                <input type="text" class="form-control" id="nama_kpi" name="nama_kpi" placeholder="Masukkan nama KPI Baru">
-                            </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                            <?= form_close(); ?>
+                    <form action="<?= base_url('admin/updatekpi'); ?>" method="POST" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="inputkpi">ID KPI</label>
+                            <input type="text" class="form-control" id="idkpi" name="idkpi" placeholder="Masukkan nomor ID KPI Baru">
                         </div>
-                    </div>
+                        <div class="form-group">
+                            <label for="inputkpi">Nama KPI</label>
+                            <input type="text" class="form-control" id="nama_kpi" name="nama_kpi" placeholder="Masukkan nama KPI Baru">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+
 
 
                 </div>

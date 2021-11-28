@@ -6,6 +6,7 @@ use CodeIgniter\Model;
 
 class DataKpiModel extends Model
 {
+
     function __construct()
     {
         $this->db = db_connect();
@@ -18,5 +19,15 @@ class DataKpiModel extends Model
     function save1($data)
     {
         return $this->db->table('tabel_kpi')->insert($data);
+    }
+
+    public function editKpi($data, $idkpi)
+    {
+        return $this->db->table('tabel_kpi')->update($data, array('idkpi' => $idkpi));
+    }
+
+    function hapuskpi($idkpi)
+    {
+        return $this->db->table('tabel_kpi')->delete(['idkpi' => $idkpi]);
     }
 }

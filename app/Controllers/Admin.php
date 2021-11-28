@@ -9,6 +9,7 @@ use App\Models\DataKpiButirModel;
 
 class Admin extends BaseController
 {
+
     public function index()
     {
         return view('admin/Dashboard');
@@ -21,43 +22,23 @@ class Admin extends BaseController
         ];
         echo view('/admin/ListKpi', $data);
     }
-    public function listbutirkpi()
-    {
-        $listbutirkpi = new DataKpiButirModel();
-        $data = [
-            'tampildata' => $listbutirkpi->tampildatabutir()->getResult()
-        ];
-        echo view('/admin/ListKpiButir', $data);
-    }
+
     public function listcapaiankpi()
     {
 
         echo view('/admin/ListCapaianKpi');
     }
+
+    //proses kpi
     public function form_tambahkpi()
     {
         helper('form');
         return view('/admin/TambahKpi');
     }
-    public function form_tambahbutirkpi()
-    {
-        helper('form');
-        return view('/admin/TambahButirKpi');
-    }
-    public function form_ubahkpi()
-    {
-        return view('/admin/UbahKpi');
-    }
-
-
-    //proses
-    public function tambahkpi()
-    {
-    }
-
     public function simpankpi()
     {
         $data = [
+            'idkpi' => $this->request->getpost('idkpi'),
             'nama_kpi' => $this->request->getpost('nama_kpi'),
         ];
         $listkpi = new DataKpiModel();
@@ -67,14 +48,44 @@ class Admin extends BaseController
             return redirect()->to('/admin/listkpi');
         }
     }
-    public function ubahkpi()
+    public function form_updatekpi($idkpi = null)
     {
+        $listkpi = new DataKpiModel();
+        $data['tabel_kpi'] = $listkpi->where('idkpi', $idkpi)->first();
+        return view('/admin/UpdateKpi', $data);
     }
-    public function hapuskpi()
+
+    public function updatekpi()
     {
+        $listkpi = new DataKpiModel();
+        $idkpi = $this->request->getPost('idkpi');
+        $data = [
+            'idkpi' => $this->request->getpost('idkpi'),
+            'nama_kpi' => $this->request->getpost('nama_kpi'),
+        ];
+        $listkpi->editKpi($data, $idkpi);
+        return redirect()->to('/admin/listkpi');
     }
-    public function tambahbutirkpi()
+    public function hapuskpi($idkpi)
     {
+        $listkpi = new DataKpiModel();
+        $listkpi->hapuskpi($idkpi);
+        return redirect()->to('/admin/listkpi');
+    }
+
+    //proses butir kpi
+    public function listbutirkpi()
+    {
+        $listbutirkpi = new DataKpiButirModel();
+        $data = [
+            'tampildata' => $listbutirkpi->tampildatabutir()->getResult()
+        ];
+        echo view('/admin/ListKpiButir', $data);
+    }
+    public function form_tambahbutirkpi()
+    {
+        helper('form');
+        return view('/admin/TambahButirKpi');
     }
     public function simpanbutirkpi()
     {
@@ -96,10 +107,13 @@ class Admin extends BaseController
             return redirect()->to('/admin/listbutirkpi');
         }
     }
-    public function ubahbutirkpi()
+
+
+
+    public function hapusbutirkpi($id)
     {
-    }
-    public function hapusbutirkpi()
-    {
+        $listbutirkpi = new DataKpiButirModel();
+        $listbutirkpi->hapuskpibutir($id);
+        return redirect()->to('/admin/listbutirkpi');
     }
 }

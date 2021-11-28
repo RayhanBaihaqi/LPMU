@@ -12,9 +12,7 @@
 	<link rel="shortcut icon" type="image/png" href="<?php echo base_url(); ?>/public/favicon.ico" />
 
 	<!-- Google Font -->
-	<link
-		href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,600;1,700;1,800&family=Roboto:wght@400;500&display=swap"
-		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,600;1,700;1,800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
 	<!-- CSS Libraries -->
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
@@ -68,13 +66,13 @@
 						</div>
 					</div>
 					<div class="col-sm-2">
-                        <div class="social">
-                            <a href="https://www.upj.ac.id/"><i class="fas fa-globe"></i></i></a>
-                            <a href="https://twitter.com/upj_bintaro"><i class="fab fa-twitter"></i></a>
-                            <a href="https://web.facebook.com/universitas.pembangunan.jaya?_rdc=1&_rdr"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://www.instagram.com/upj_bintaro/"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
+						<div class="social">
+							<a href="https://www.upj.ac.id/"><i class="fas fa-globe"></i></i></a>
+							<a href="https://twitter.com/upj_bintaro"><i class="fab fa-twitter"></i></a>
+							<a href="https://web.facebook.com/universitas.pembangunan.jaya?_rdc=1&_rdr"><i class="fab fa-facebook-f"></i></a>
+							<a href="https://www.instagram.com/upj_bintaro/"><i class="fab fa-instagram"></i></a>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -100,9 +98,9 @@
 									</span>
 									<span class="user-name">
 										<?php
-                                                $nama_prodi = session('nama_prodi');
-                                                echo "$nama_prodi"
-                                                ?>
+										$nama_prodi = session('nama_prodi');
+										echo "$nama_prodi"
+										?>
 									</span>
 								</a>
 								<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
@@ -118,11 +116,13 @@
 		</div>
 		<!-- Nav Bar End -->
 		<br>
-    </div>
-    <div class="container-fluid">
+	</div>
+	<div class="container-fluid">
 		<div class="card">
 			<div class="card-body">
 				<h4 class="card-title">Formulir Target Capaian</h4>
+			</div>
+			<div class="card-body">
 				<div class="form-group ">
 					<label for="sel1">Standar KPI:</label>
 					<select class="form-control kpi" id="sel1">
@@ -139,40 +139,40 @@
 						<option></option>
 					</select>
 				</div>
-				<table  class="table table-borded table-responsive table-striped">
+				<table class="table table-borded table-responsive table-striped">
 					<thead>
-					<tr>
-						<th>No Kegiatan</th>
-						<th>Indikator</th>
-						<th>Butir</th>
-						<th>Target</th>
-						<th>Nama Kegiatan</th>
-						<th>Anggaran Gasal</th>
-						<th>Serapan Gasal</th>
-						<th>Anggaran Genap</th>
-						<th>Serapan Genap</th>
-						<th>Total Anggaran</th>
-						<th>Total Serapan</th>
-						<th>Aksi</th>
-					</tr>
+						<tr>
+							<th>No Kegiatan</th>
+							<th>Indikator</th>
+							<th>Butir</th>
+							<th>Target</th>
+							<th>Nama Kegiatan</th>
+							<th>Anggaran Gasal</th>
+							<th>Serapan Gasal</th>
+							<th>Anggaran Genap</th>
+							<th>Serapan Genap</th>
+							<th>Total Anggaran</th>
+							<th>Total Serapan</th>
+							<th>Aksi</th>
+						</tr>
 					</thead>
 					<tbody id="tabelData">
 						<?php if ($detail_rkat) : ?>
 							<?php foreach ($detail_rkat as $reading) : ?>
-							<tr>
-								<td><?= $reading['no_kegiatan']; ?></td>
-								<td><?= $reading['indikator']; ?></td>
-								<td><?= $reading['butir']; ?></td>
-								<td><?= $reading['target']; ?></td>
-								<td><?= $reading['nama_kegiatan']; ?></td>
-								<td><?= $reading['anggaranGasal']; ?></td>
-								<td><input type="text" class="form-control" style="width: 150px;" id="anggaranGasal" placeholder="Masukan Anggaran Gasal" name="anggaranGasal[]" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" required></td>
-								<td><?= $reading['anggaranGenap']; ?></td>
-								<td><input type="text" class="form-control" style="width: 150px;" id="anggaranGasal" placeholder="Masukan Anggaran Gasal" name="anggaranGasal[]" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" required></td>
-								<td><?= $reading['total']; ?></td>
-								<td><input type="text" class="form-control" style="width: 150px;" id="anggaranGasal" placeholder="Masukan Anggaran Gasal" name="anggaranGasal[]" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" required></td>
-								<td><a href="<?= base_url('rkat/editbyadmin/'); ?>/<?= $reading['id']; ?>" class="button button2"><i class="fas fa-edit"></i></a></td>
-							</tr>
+								<tr>
+									<td><?= $reading['no_kegiatan']; ?></td>
+									<td><?= $reading['indikator']; ?></td>
+									<td><?= $reading['butir']; ?></td>
+									<td><?= $reading['target']; ?></td>
+									<td><?= $reading['nama_kegiatan']; ?></td>
+									<td><?= $reading['anggaranGasal']; ?></td>
+									<td><input type="text" class="form-control" style="width: 150px;" id="anggaranGasal" placeholder="Masukan Anggaran Gasal" name="anggaranGasal[]" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" required></td>
+									<td><?= $reading['anggaranGenap']; ?></td>
+									<td><input type="text" class="form-control" style="width: 150px;" id="anggaranGasal" placeholder="Masukan Anggaran Gasal" name="anggaranGasal[]" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" required></td>
+									<td><?= $reading['total']; ?></td>
+									<td><input type="text" class="form-control" style="width: 150px;" id="anggaranGasal" placeholder="Masukan Anggaran Gasal" name="anggaranGasal[]" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" required></td>
+									<td><a href="<?= base_url('rkat/editbyadmin/'); ?>/<?= $reading['id']; ?>" class="button button2"><i class="fas fa-edit"></i></a></td>
+								</tr>
 							<?php endforeach; ?>
 						<?php endif; ?>
 					</tbody>
@@ -180,7 +180,7 @@
 				<button type="button" class="btn btn-primary">Submit</button>
 			</div>
 		</div>
-    </div>
+	</div>
 	<!-- JavaScript Libraries -->
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
@@ -190,8 +190,8 @@
 	<script>
 		// Add the following code if you want the name of the file appear on select
 		$(".custom-file-input").on("change", function() {
-		var fileName = $(this).val().split("\\").pop();
-		$(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+			var fileName = $(this).val().split("\\").pop();
+			$(this).siblings(".custom-file-label").addClass("selected").html(fileName);
 		});
 	</script>
 	<script>
@@ -213,17 +213,17 @@
 			}; // add zero in front of numbers < 10
 			return i;
 		}
-
 	</script>
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('#tabelData').DataTable();
-			function filterData () {
+
+			function filterData() {
 				$('#tabelData').DataTable().search(
 					$('.kpi').val()
-					).draw();
+				).draw();
 			}
-			$('.kpi').on('change', function () {
+			$('.kpi').on('change', function() {
 				filterData();
 			});
 		});
@@ -234,10 +234,9 @@
 	<script src="<?php echo base_url(); ?>/public/chart/knob-chart-setting.js"></script>
 	<script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
 	<script>
-		$(window).load(function () {
+		$(window).load(function() {
 			$(".pre-loader").fadeOut("slow");
 		});
-
 	</script>
 </body>
 

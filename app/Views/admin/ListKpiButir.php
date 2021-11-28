@@ -164,7 +164,7 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>ID KPI</th>
+                                            <th>Nama KPI</th>
                                             <th>Angka Butir</th>
                                             <th>Nama Butir</th>
                                             <th>Unit Utama</th>
@@ -184,7 +184,7 @@
                                         ?>
                                             <tr>
                                                 <th><?= $nomor; ?></th>
-                                                <td><?= $row->idkpi ?></td>
+                                                <td><?= $row->nama_kpi ?></td>
                                                 <td><?= $row->idkpi . '.' . $row->angka_butir ?></td>
                                                 <td><?= $row->nama_butir ?></td>
                                                 <td><?= $row->unit_utama ?></td>
@@ -196,7 +196,7 @@
 
                                                 <td>
                                                     <a href=""><i class="fas fa-edit"></i></a>
-                                                    <a href=""><i class="fas fa-trash-alt"></i></a>
+                                                    <a href="<?= base_url('admin/hapusbutirkpi/' . $row->id); ?>" class="button button2"><i class="fas fa-trash-alt"></i></a>
                                                 </td>
 
                                             </tr>

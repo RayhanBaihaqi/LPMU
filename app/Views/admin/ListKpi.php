@@ -163,7 +163,6 @@
 
                                             <th>ID KPI</th>
                                             <th>Nama KPI</th>
-
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -175,12 +174,15 @@
                                         ?>
                                             <tr>
                                                 <th><?= $nomor; ?></th>
+
                                                 <td><?= $row->nama_kpi ?></td>
 
 
                                                 <td>
-                                                    <a href=""><i class="fas fa-edit"></i></a>
-                                                    <a href=""><i class="fas fa-trash-alt"></i></a>
+                                                    <a href="<?= base_url('admin/form_updatekpi/' . $row->idkpi); ?>" class="button button2"><i class="fas fa-edit"></i></a>
+                                                    <a href="<?= base_url('admin/hapuskpi/' . $row->idkpi); ?>" class="button button2"><i class="fas fa-trash-alt"></i></a>
+
+
                                                 </td>
 
                                             </tr>
@@ -197,6 +199,7 @@
                 </div>
 
 
+
             </div>
 
 
@@ -211,6 +214,7 @@
         <i class="fas fa-angle-up"></i>
     </a>
 
+
     <!-- Bootstrap core JavaScript-->
     <script src="<?php echo base_url(); ?>/public/js/jquery.min.js"></script>
     <script src="<?php echo base_url(); ?>/public/js/bootstrap.bundle.min.js"></script>
@@ -221,6 +225,7 @@
 
     <!-- Page level custom scripts -->
     <script src="<?php echo base_url(); ?>/public/js/datatables-demo.js"></script>
+
 
 </body>
 
