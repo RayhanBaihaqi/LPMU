@@ -85,7 +85,7 @@
         <div class="nav-bar">
             <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
 
-                <a href="<?php echo site_url(); ?>backend"><i class="fas fa-long-arrow-alt-left"></i></a>
+                <a href="<?php echo site_url(); ?>kpi"><i class="fas fa-long-arrow-alt-left"></i></a>
 
 
 
