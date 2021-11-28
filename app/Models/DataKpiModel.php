@@ -16,14 +16,18 @@ class DataKpiModel extends Model
     {
         return $this->db->table('tabel_kpi')->get();
     }
-    function save1($data)
+    function simpankpi($data)
     {
         return $this->db->table('tabel_kpi')->insert($data);
     }
 
-    public function editKpi($data, $idkpi)
+    function ambildatakpi($idkpi)
     {
-        return $this->db->table('tabel_kpi')->update($data, array('idkpi' => $idkpi));
+        return $this->db->table('tabel_kpi')->getWhere(['idkpi' => $idkpi]);
+    }
+    function update1($data, $idkpi)
+    {
+        return $this->db->table('tabel_kpi')->update($data, ['idkpi' => $idkpi]);
     }
 
     function hapuskpi($idkpi)

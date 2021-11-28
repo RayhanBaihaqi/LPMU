@@ -17,7 +17,15 @@ class DataKpiButirModel extends Model
             ->join('tabel_kpi', 'tabel_kpi.idkpi=tabel_butir_kpi.idkpi')
             ->get();
     }
-    function simpan($data)
+    function ambildatabutir($id)
+    {
+        return $this->db->table('tabel_butir_kpi')->getWhere(['id' => $id]);
+    }
+    function update2($data, $id)
+    {
+        return $this->db->table('tabel_butir_kpi')->update($data, ['id' => $id]);
+    }
+    function simpankpibutir($data)
     {
         return $this->db->table('tabel_butir_kpi')->insert($data);
     }

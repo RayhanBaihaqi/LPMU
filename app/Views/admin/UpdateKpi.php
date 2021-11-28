@@ -138,21 +138,24 @@
                 <!-- End of Topbar -->
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    <h2>Edit KPI</h2>
-                    <br>
+                    <div class="card shadow mb-4">
+                        <div class="card-body">
+                            <h2>Edit KPI</h2>
+                            <br>
 
-                    <form action="<?= base_url('admin/updatekpi'); ?>" method="POST" enctype="multipart/form-data">
-                        <div class="form-group">
-                            <label for="inputkpi">ID KPI</label>
-                            <input type="text" class="form-control" id="idkpi" name="idkpi" placeholder="Masukkan nomor ID KPI Baru">
+                            <?= form_open('admin/updatekpi') ?>
+                            <div class="form-group">
+                                <label for="idkpi">ID KPI</label>
+                                <input type="text" class="form-control" id="idkpi" name="idkpi" placeholder="Masukkan nomor ID KPI Baru" readonly value="<?= $idkpi ?>">
+                            </div>
+                            <div class="form-group">
+                                <label for="nama_kpi">Nama KPI</label>
+                                <input type="text" class="form-control" id="nama_kpi" name="nama_kpi" placeholder="Masukkan nama KPI Baru" value="<?= $nama_kpi ?>">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <?= form_close(); ?>
                         </div>
-                        <div class="form-group">
-                            <label for="inputkpi">Nama KPI</label>
-                            <input type="text" class="form-control" id="nama_kpi" name="nama_kpi" placeholder="Masukkan nama KPI Baru">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
-
+                    </div>
 
 
                 </div>
