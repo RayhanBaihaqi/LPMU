@@ -41,52 +41,53 @@ class Kpi extends BaseController
 			return view('kpi/form_capaian', $data);
 		}elseif ($kategori == 1) {
 			$data = [
-				'tampildata' => $listbutirkpi->tampildatabutir()->getResult()
+				'tampildata' => $listbutirkpi->tampildatabutir1()->getResult()
 			];
 			return view('kpi/form_capaian1', $data);
 		}elseif ($kategori == 2) {
 			$data = [
-				'tampildata' => $listbutirkpi->tampildatabutir()->getResult()
+				'tampildata' => $listbutirkpi->tampildatabutir2()->getResult()
 			];
 			return view('kpi/form_capaian2', $data);
 		}elseif ($kategori == 3) {
 			$data = [
-				'tampildata' => $listbutirkpi->tampildatabutir()->getResult()
+				'tampildata' => $listbutirkpi->tampildatabutir3()->getResult()
 			];
 			return view('kpi/form_capaian3', $data);
 		}elseif ($kategori == 4) {
 			$data = [
-				'tampildata' => $listbutirkpi->tampildatabutir()->getResult()
+				'tampildata' => $listbutirkpi->tampildatabutir4()->getResult()
 			];
 			return view('kpi/form_capaian4', $data);
 		}elseif ($kategori == 5) {
 			$data = [
-				'tampildata' => $listbutirkpi->tampildatabutir()->getResult()
+				'tampildata' => $listbutirkpi->tampildatabutir5()->getResult()
 			];
 			return view('kpi/form_capaian5', $data);
 		}elseif ($kategori == 6) {
 			$data = [
-				'tampildata' => $listbutirkpi->tampildatabutir()->getResult()
+				'tampildata' => $listbutirkpi->tampildatabutir6()->getResult()
 			];
 			return view('kpi/form_capaian6', $data);
 		}elseif ($kategori == 7) {
 			$data = [
-				'tampildata' => $listbutirkpi->tampildatabutir()->getResult()
+				'tampildata' => $listbutirkpi->tampildatabutir7()->getResult()
 			];
 			return view('kpi/form_capaian7', $data);
 		}elseif ($kategori == 8) {
 			$data = [
-				'tampildata' => $listbutirkpi->tampildatabutir()->getResult()
+				'tampildata' => $listbutirkpi->tampildatabutir8()->getResult()
 			];
 			return view('kpi/form_capaian8', $data);
 		}elseif ($kategori == 9) {
 			$data = [
-				'tampildata' => $listbutirkpi->tampildatabutir()->getResult()
+				'tampildata' => $listbutirkpi->tampildatabutir9()->getResult()
 			];
 			return view('kpi/form_capaian9', $data);
 		}
 
 	}
+
 	public function kesimpulan()
 	{
 		return view('kpi/grafik');
@@ -129,22 +130,323 @@ class Kpi extends BaseController
 		return redirect()->to(base_url('kpi/form_ubahpass'));
 	}
 
-	/*public function save()
+	public function savecapaian1()
 	{
-		$detail = new DetailKpiModel();
+		// $detail = new DataKpiButirModel();
+		$db      = \Config\Database::connect();
+		$detail = $db->table('tabel_butir_kpi');
+
+		$id = $this->request->getPost('id');
 		$data = [
-			'tahun_akademik' => $this->request->getPost('tahun_akademik'),
-			'prodi_unit' => $this->request->getPost('prodi_unit'),
-			'nama_prodi_unit' => $this->request->getPost('nama_prodi_unit'),
-			'nama_kpi' => $this->request->getPost('nama_kpi'),
-			'nama_butir' => $this->request->getPost('nama_butir'),
-			'pic' => $this->request->getPost('pic'),
-			'nama_pic' => $this->request->getPost('nama_pic'),
-			'created_at' => $this->request->getPost('created_at')
+			'realisasi' => $this->request->getPost('txtRealisasi'),
 		];
-		$detail->save($data);
-		return redirect()->to(base_url('kpi/inputkpi'))->with('status', 'Data Berhasil ditambah');
+
+		foreach ($id as $key => $value) {
+			foreach ($data as $abc => $def) {
+				$no=0;
+				foreach ($def as $ooo) {
+					$no++;
+					if ($value == $no) {
+						$detail->set('realisasi', $ooo);
+						$detail->where('id', $value);
+						$detail->update();
+					}
+				}
+				echo "<br><br>";
+			}	
+		}
+		return redirect()->to(base_url('kpi/inputcapaian/1'))->with('status', 'Data Berhasil Di-Update');
 	}
+
+	public function savecapaian2()
+	{
+		// $detail = new DataKpiButirModel();
+		$db      = \Config\Database::connect();
+		$detail = $db->table('tabel_butir_kpi');
+
+		$id = $this->request->getPost('id');
+		$data = [
+			'realisasi' => $this->request->getPost('txtRealisasi'),
+		];
+		// echo "data : ";print_r($data);echo "<br>";
+		// echo "id : ";print_r($id);echo "<br>";
+		
+		// echo "<br><br>";
+		foreach ($id as $key => $value) {
+			// echo "id value : ";print_r($value);echo "<br>";
+
+			foreach ($data as $abc => $def) {
+				$no=0;
+				foreach ($def as $ooo) {
+					$no++;
+					if ($value == $no) {
+						// echo "no : ".$no;echo "<br>";
+						// echo "ooo value : ";print_r($ooo);echo "<br>";
+
+						$detail->set('realisasi', $ooo);
+						$detail->where('id', $value);
+						$detail->update();
+					}
+				}
+				echo "<br><br>";
+			}	
+		}
+		return redirect()->to(base_url('kpi/inputcapaian/2'))->with('status', 'Data Berhasil Di-Update');
+	}
+
+	public function savecapaian3()
+	{
+		// $detail = new DataKpiButirModel();
+		$db      = \Config\Database::connect();
+		$detail = $db->table('tabel_butir_kpi');
+
+		$id = $this->request->getPost('id');
+		$data = [
+			'realisasi' => $this->request->getPost('txtRealisasi'),
+		];
+		// echo "data : ";print_r($data);echo "<br>";
+		// echo "id : ";print_r($id);echo "<br>";
+		
+		// echo "<br><br>";
+		foreach ($id as $key => $value) {
+			// echo "id value : ";print_r($value);echo "<br>";
+
+			foreach ($data as $abc => $def) {
+				$no=0;
+				foreach ($def as $ooo) {
+					$no++;
+					if ($value == $no) {
+						// echo "no : ".$no;echo "<br>";
+						// echo "ooo value : ";print_r($ooo);echo "<br>";
+
+						$detail->set('realisasi', $ooo);
+						$detail->where('id', $value);
+						$detail->update();
+					}
+				}
+				echo "<br><br>";
+			}	
+		}
+		return redirect()->to(base_url('kpi/inputcapaian/3'))->with('status', 'Data Berhasil Di-Update');
+	}
+
+	public function savecapaian4()
+	{
+		// $detail = new DataKpiButirModel();
+		$db      = \Config\Database::connect();
+		$detail = $db->table('tabel_butir_kpi');
+
+		$id = $this->request->getPost('id');
+		$data = [
+			'realisasi' => $this->request->getPost('txtRealisasi'),
+		];
+		// echo "data : ";print_r($data);echo "<br>";
+		// echo "id : ";print_r($id);echo "<br>";
+		
+		// echo "<br><br>";
+		foreach ($id as $key => $value) {
+			// echo "id value : ";print_r($value);echo "<br>";
+
+			foreach ($data as $abc => $def) {
+				$no=0;
+				foreach ($def as $ooo) {
+					$no++;
+					if ($value == $no) {
+						// echo "no : ".$no;echo "<br>";
+						// echo "ooo value : ";print_r($ooo);echo "<br>";
+
+						$detail->set('realisasi', $ooo);
+						$detail->where('id', $value);
+						$detail->update();
+					}
+				}
+				echo "<br><br>";
+			}	
+		}
+		return redirect()->to(base_url('kpi/inputcapaian/4'))->with('status', 'Data Berhasil Di-Update');
+	}
+
+	public function savecapaian5()
+	{
+		// $detail = new DataKpiButirModel();
+		$db      = \Config\Database::connect();
+		$detail = $db->table('tabel_butir_kpi');
+
+		$id = $this->request->getPost('id');
+		$data = [
+			'realisasi' => $this->request->getPost('txtRealisasi'),
+		];
+		// echo "data : ";print_r($data);echo "<br>";
+		// echo "id : ";print_r($id);echo "<br>";
+		
+		// echo "<br><br>";
+		foreach ($id as $key => $value) {
+			// echo "id value : ";print_r($value);echo "<br>";
+
+			foreach ($data as $abc => $def) {
+				$no=0;
+				foreach ($def as $ooo) {
+					$no++;
+					if ($value == $no) {
+						// echo "no : ".$no;echo "<br>";
+						// echo "ooo value : ";print_r($ooo);echo "<br>";
+
+						$detail->set('realisasi', $ooo);
+						$detail->where('id', $value);
+						$detail->update();
+					}
+				}
+				echo "<br><br>";
+			}	
+		}
+		return redirect()->to(base_url('kpi/inputcapaian/5'))->with('status', 'Data Berhasil Di-Update');
+	}
+
+	public function savecapaian6()
+	{
+		// $detail = new DataKpiButirModel();
+		$db      = \Config\Database::connect();
+		$detail = $db->table('tabel_butir_kpi');
+
+		$id = $this->request->getPost('id');
+		$data = [
+			'realisasi' => $this->request->getPost('txtRealisasi'),
+		];
+		// echo "data : ";print_r($data);echo "<br>";
+		// echo "id : ";print_r($id);echo "<br>";
+		
+		// echo "<br><br>";
+		foreach ($id as $key => $value) {
+			// echo "id value : ";print_r($value);echo "<br>";
+
+			foreach ($data as $abc => $def) {
+				$no=0;
+				foreach ($def as $ooo) {
+					$no++;
+					if ($value == $no) {
+						// echo "no : ".$no;echo "<br>";
+						// echo "ooo value : ";print_r($ooo);echo "<br>";
+
+						$detail->set('realisasi', $ooo);
+						$detail->where('id', $value);
+						$detail->update();
+					}
+				}
+				echo "<br><br>";
+			}	
+		}
+		return redirect()->to(base_url('kpi/inputcapaian/6'))->with('status', 'Data Berhasil Di-Update');
+	}
+
+	public function savecapaian7()
+	{
+		// $detail = new DataKpiButirModel();
+		$db      = \Config\Database::connect();
+		$detail = $db->table('tabel_butir_kpi');
+
+		$id = $this->request->getPost('id');
+		$data = [
+			'realisasi' => $this->request->getPost('txtRealisasi'),
+		];
+		// echo "data : ";print_r($data);echo "<br>";
+		// echo "id : ";print_r($id);echo "<br>";
+		
+		// echo "<br><br>";
+		foreach ($id as $key => $value) {
+			// echo "id value : ";print_r($value);echo "<br>";
+
+			foreach ($data as $abc => $def) {
+				$no=0;
+				foreach ($def as $ooo) {
+					$no++;
+					if ($value == $no) {
+						// echo "no : ".$no;echo "<br>";
+						// echo "ooo value : ";print_r($ooo);echo "<br>";
+
+						$detail->set('realisasi', $ooo);
+						$detail->where('id', $value);
+						$detail->update();
+					}
+				}
+				echo "<br><br>";
+			}	
+		}
+		return redirect()->to(base_url('kpi/inputcapaian/7'))->with('status', 'Data Berhasil Di-Update');
+	}
+	public function savecapaian8()
+	{
+		// $detail = new DataKpiButirModel();
+		$db      = \Config\Database::connect();
+		$detail = $db->table('tabel_butir_kpi');
+
+		$id = $this->request->getPost('id');
+		$data = [
+			'realisasi' => $this->request->getPost('txtRealisasi'),
+		];
+		// echo "data : ";print_r($data);echo "<br>";
+		// echo "id : ";print_r($id);echo "<br>";
+		
+		// echo "<br><br>";
+		foreach ($id as $key => $value) {
+			// echo "id value : ";print_r($value);echo "<br>";
+
+			foreach ($data as $abc => $def) {
+				$no=0;
+				foreach ($def as $ooo) {
+					$no++;
+					if ($value == $no) {
+						// echo "no : ".$no;echo "<br>";
+						// echo "ooo value : ";print_r($ooo);echo "<br>";
+
+						$detail->set('realisasi', $ooo);
+						$detail->where('id', $value);
+						$detail->update();
+					}
+				}
+				echo "<br><br>";
+			}	
+		}
+		return redirect()->to(base_url('kpi/inputcapaian/8'))->with('status', 'Data Berhasil Di-Update');
+	}
+
+	public function savecapaian9()
+	{
+		// $detail = new DataKpiButirModel();
+		$db      = \Config\Database::connect();
+		$detail = $db->table('tabel_butir_kpi');
+
+		$id = $this->request->getPost('id');
+		$data = [
+			'realisasi' => $this->request->getPost('txtRealisasi'),
+		];
+		// echo "data : ";print_r($data);echo "<br>";
+		// echo "id : ";print_r($id);echo "<br>";
+		
+		// echo "<br><br>";
+		foreach ($id as $key => $value) {
+			// echo "id value : ";print_r($value);echo "<br>";
+
+			foreach ($data as $abc => $def) {
+				$no=0;
+				foreach ($def as $ooo) {
+					$no++;
+					if ($value == $no) {
+						// echo "no : ".$no;echo "<br>";
+						// echo "ooo value : ";print_r($ooo);echo "<br>";
+
+						$detail->set('realisasi', $ooo);
+						$detail->where('id', $value);
+						$detail->update();
+					}
+				}
+				echo "<br><br>";
+			}	
+		}
+		return redirect()->to(base_url('kpi/inputcapaian/9'))->with('status', 'Data Berhasil Di-Update');
+	}
+
+	
+	/*
 	public function detail_keuangan()
 	{
 		$detail_keuangan = new DetailKpiModel();
