@@ -216,7 +216,6 @@
 								<td> <button type="button" class="btn btn-danger btn-sm" onclick="deleteRow('tbody2')"><i class="fa fa-minus"></i>Hapus Baris</button> </th>
 								<td><button class="btn btn-success btn-sm" onclick="addRow('tbody2')" id="BarisBaru"><i class="fa fa-plus"></i> Baris Baru</button></td>
 								<td></td>
-<<<<<<< HEAD
 								<td>Total Keseluruhan</td>
 								<td><input type="text" class="form-control" style="width: 150px;" id="pagu1" name="pagu" value="RP. 0" required disabled></td>
 								<td><input type="text" class="form-control" style="width: 150px;" id="pagu2" name="pagu" value="RP. 0" required disabled></td>
@@ -229,20 +228,6 @@
 					</div>
 				</div>
 
-=======
-								<td colspan=2 align="right">Total Keseluruhan (Rp.)</td>
-								<td><input type="text" class="form-control" style="width: 150px;" id="pagu1" name="pagu1" value="0" readonly="readonly"></td>
-								<td><input type="text" class="form-control" style="width: 150px;" id="pagu2" name="pagu2" value="0" readonly="readonly"></td>
-								<td><input type="text" class="form-control" style="width: 150px;" id="pagu3" name="pagu3" value="0" readonly="readonly"></td>
-							</tr>
-						</tbody>
-  					</table>
-				</div>
-				<div class="card-footer">
-					<button type="submit" class="btn btn-primary" id="tambah">Tambah Data</button>
-				</div>
-			</div>
->>>>>>> 5bf7bfcbafec92d781dabd8d341de27cd5dedc9f
 		</form>
 
 	<script>
@@ -283,7 +268,7 @@
 			// console.log(rowCount);
 			var row = table.insertRow(rowCount);
 			// console.log(row);
-			document.getElementById('jumlah').value = rowCount;
+			document.getElementById("jumlah").value = rowCount;
 			var colCount = table.rows[0].cells.length;
 			// console.log(colCount);
 			for(var i=0; i<colCount; i++) {

@@ -86,11 +86,8 @@
 		<!-- Nav Bar Start -->
 		<div class="nav-bar">
 			<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-<<<<<<< HEAD
-				<a href="<?= base_url('/backend/rkat') ?>"><i class="fas fa-long-arrow-alt-left"></i></a>
-=======
+
 				<a href="<?php echo site_url(); ?>backend/rkat"><i class="fas fa-long-arrow-alt-left"></i></a>
->>>>>>> 5bf7bfcbafec92d781dabd8d341de27cd5dedc9f
 				<a href="#" class="navbar-brand">MENU</a>
 				<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
 					<span class="navbar-toggler-icon"></span>
