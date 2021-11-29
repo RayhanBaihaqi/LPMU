@@ -10,7 +10,6 @@ USER
 8. Buat perhitungan dan memasukan ke databae formulir realisasi RKAT
 9. perbaikan pada bentuk tabel isian realisasi
 11. Pada kesimpulan menambahkan dua grafik 
-12. Membuat menampilkan setiap data user by login
 
 Catatan
 1. Mencari tau apa saja yang akan di tampilkan pada halaman dashboard
@@ -26,6 +25,7 @@ USER
 5. membuat perhitungan penambahan pada bagian halaman Tambah Rencana RKAT (Selesai)
 2. Membuat tambah dan hapus data baris pada form rencana (Selesai)
 1. Menampilkan nama kolom dari kategori Rencana RKAT (Selesai)
+12. Membuat menampilkan setiap data user by login (Selesai)
 ADMIN
 4. Hapus kolom password pada halaman table user (Selesai)
 5. halaman profil dan seting dihapus (Selesai)
