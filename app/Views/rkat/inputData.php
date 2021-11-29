@@ -197,10 +197,10 @@
 										<input type="text" class="form-control form-control-sm" id="nama_kegiatan" placeholder="Nama Kegiatan" name="nama_kegiatan[]" required>
 									</td>
 									<td>
-										<input type="number" class="form-control form-control-sm" id="anggaranGasal" placeholder="Rp. 0" value="0" name="anggaranGasal[]" onkeyup="totalAnggaran1();" required>
+										<input type="text" class="form-control form-control-sm" id="anggaranGasal" placeholder="Rp. 0" name="anggaranGasal[]" onkeyup="totalAnggaran1();" required>
 									</td>
 									<td>
-										<input type="number" class="form-control form-control-sm" id="anggaranGenap" placeholder="Rp. 0" value="0" name="anggaranGenap[]" onkeyup="totalAnggaran1();" required>
+										<input type="text" class="form-control form-control-sm" id="anggaranGenap" placeholder="Rp. 0" name="anggaranGenap[]" onkeyup="totalAnggaran1();" required>
 									</td>
 									<td>
 										<input type="text" class="form-control form-control-sm" id="total" name="total[]" placeholder="Rp. 0" readonly="readonly" required>
