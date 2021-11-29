@@ -128,9 +128,8 @@
 					<br>
 					<div class="card-body">
 						<div class="form-inline">
-							<label class="mb-2 mr-sm-2" for="exampleFormControlSelect1" style="width: 150px;">Tahun Ajaran</label>
-							<select class="form-control mb-2 mr-sm-2" id="exampleFormControlSelect1">
-								<!-- <option value="<?= $value['tahun_akademik'] ?>" selected><?= $value['tahun_akademik'] ?> </option>-->
+							<label class="mb-2 mr-sm-2" for="exampleFormControlSelect1" style="width: 150px;">Tahun Akademik</label>
+							<select class="form-control mb-2 mr-sm-2" id="tahunAkademik" name="tahunAkademik[]">
 								<option value="" disabled selected>Pilih Tahun</option>
 								<option value="2019/2020">2019/2020</option>
 								<option value="2020/2021">2020/2021</option>

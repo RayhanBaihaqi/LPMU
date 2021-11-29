@@ -139,6 +139,7 @@
 						<option></option>
 					</select>
 				</div>
+				<form action="<?= base_url('rkat/updatebyuser'); ?>" method="POST" enctype="multipart/form-data">
 				<table class="table table-borded table-responsive table-striped">
 					<thead>
 						<tr>
@@ -159,6 +160,8 @@
 					<tbody id="tabelData">
 						<?php if ($detail_rkat) : ?>
 							<?php foreach ($detail_rkat as $reading) : ?>
+								<input required type="hidden" name="id" value="<?= $reading['id']; ?>">
+								<input required type="hidden" name="id_set" value="<?= $reading['id_set']; ?>">
 								<tr>
 									<td><?= $reading['no_kegiatan']; ?></td>
 									<td><?= $reading['indikator']; ?></td>
@@ -178,6 +181,7 @@
 					</tbody>
 				</table>
 				<button type="button" class="btn btn-primary">Submit</button>
+				</form>
 			</div>
 		</div>
 	</div>

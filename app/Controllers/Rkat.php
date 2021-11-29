@@ -45,6 +45,7 @@ class Rkat extends BaseController
         $nama_kegiatan = $this->request->getVar('nama_kegiatan');
         $total = $this->request->getVar('total');
         $id_set = $this->request->getVar('id_set');
+        $tahunAkademik = $this->request->getVar('tahunAkademik');
         //echo $kategori[1]; die();
             for ($i=0; $i <= $jumlah; $i++) {
                 $this->DetailRkatModel->insert([
@@ -58,6 +59,7 @@ class Rkat extends BaseController
                     'target'=>$target[$i],  
                     'nama_kegiatan'=>$nama_kegiatan[$i],  
                     'total'=>$total[$i],  
+                    'tahunAkademik'=>$tahunAkademik[$i],  
                     'id_set'=>$id_set,  
                 ]);
             }
