@@ -146,11 +146,11 @@
                             <?= form_open('admin/updatekpi') ?>
                             <div class="form-group">
                                 <label for="idkpi">ID KPI</label>
-                                <input type="text" class="form-control" id="idkpi" name="idkpi" placeholder="Masukkan nomor ID KPI Baru" readonly value="<?= $idkpi ?>">
+                                <input type="text" class="form-control" id="idkpi" name="idkpi" placeholder="Masukkan nomor ID KPI Baru" readonly value="<?= $idkpi ?>" required>
                             </div>
                             <div class="form-group">
                                 <label for="nama_kpi">Nama KPI</label>
-                                <input type="text" class="form-control" id="nama_kpi" name="nama_kpi" placeholder="Masukkan nama KPI Baru" value="<?= $nama_kpi ?>">
+                                <input type="text" class="form-control" id="nama_kpi" name="nama_kpi" placeholder="Masukkan nama KPI Baru" value="<?= $nama_kpi ?>" required>
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                             <?= form_close(); ?>
