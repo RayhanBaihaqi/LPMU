@@ -210,7 +210,7 @@
                                         <tr style="font-weight: bold;">
                                             <td colspan="9"> TOTAL </td>
 
-                                            <td><?php echo $sum; ?></td>
+                                            <td><?php echo $get_sum; ?></td>
                                             <td></td>
 
 
