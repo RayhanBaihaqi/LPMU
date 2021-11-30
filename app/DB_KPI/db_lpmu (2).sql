@@ -130,7 +130,7 @@ INSERT INTO `tabel_butir_kpi` (`id`, `idkpi`, `angka_butir`, `nama_butir`, `unit
 (37, 8, '3', 'Dosen melibatkan mahasiswa dalam kegiatan pengabdian kepada masyarakat', 'Prodi', 'LP2M', 'judul Pengabdian dosen melibatkan mahasiswa > 20%  ', 'PK', 'Dosen melibatkan mahasiswa dalam kegiatan pengabdian kepada masyarakat', 1),
 (38, 9, '1', 'Rerata IPK lulusan', 'Prodi', 'BP', 'Rerata IPK lulusan > 3,25', 'PK', 'Rerata IPK lulusan', 1),
 (39, 9, '2', 'Prestasi mahasiswa di bidang akademik tingkat internasional', 'Prodi', 'BKAL', '0,1% prestasi x jumlah mahasiswa aktif', 'PK', 'Prestasi mahasiswa di bidang akademik tingkat internasional', 1),
-(43, 9, '3', 'bbbbbcxcxccc', 'LP2M', 'LPMU', '4x', 'PK', 'Seminar', 1),
+(43, 9, '3', 'Prestasi mahasiswa di bidang akademik tingkat nasional', 'Prodi', 'BKAL', '>1%', 'PK', '', 0.5),
 (45, 3, '4', 'Pencapaian target mahasiswa baru (non blended learning)', 'MPH', 'Prodi', '1140', 'PK', 'peningkatan intake maba > 10% per TA', 1.5),
 (46, 3, '5', 'Jumlah student body aktif per semester', 'Prodi', 'BP', '>95%', 'PK', '', 0.5),
 (47, 3, '6', 'Jumlah mahasiswa asing', 'Prodi', 'KHI', '> 1% student body', 'PK', 'Jumlah mahasiswa asing >!%', 1),
