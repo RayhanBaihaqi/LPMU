@@ -123,13 +123,12 @@
 			<div class="card">
 					<div class="card-header">Tambah Rencana RKAT</div>
 					<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat'];?>
-					<input type="hidden" class="form-control" id="id_set" value="<?= $id_set ?>" name="id_set" 
-						required>
+					<input type="hidden" class="form-control" id="id_set" value="<?= $id_set ?>" name="id_set" required>
 					<br>
 					<div class="card-body">
 						<div class="form-inline">
 							<label class="mb-2 mr-sm-2" for="exampleFormControlSelect1" style="width: 150px;">Tahun Akademik</label>
-							<select class="form-control mb-2 mr-sm-2" id="tahunAkademik" name="tahunAkademik[]">
+							<select class="form-control mb-2 mr-sm-2" id="tahunAkademik" name="tahunAkademik" required>
 								<option value="" disabled selected>Pilih Tahun</option>
 								<option value="2019/2020">2019/2020</option>
 								<option value="2020/2021">2020/2021</option>
@@ -158,14 +157,14 @@
 								<tr>
 									<td><input name="chk_a[]" type="checkbox" class="checkall_a" value=""/></td>
 									<td>
-										<select class="form-control form-control-sm" id="kategori" name="kategori[]">
+										<select class="form-control form-control-sm" id="kategori" name="kategori[]" required>
 											<option value="" disabled selected>Kategori</option>
 											<option value="PK">PK</option>
 											<option value="OPS">OPS</option>
 											<option value="INV">INV</option>
 										</select>
 										
-										<select class="form-control form-control-sm" id="kpi" name="kpi[]">
+										<select class="form-control form-control-sm" id="kpi" name="kpi[]" required>
 											<option value="" disabled selected>Kriteria KPI</option>
 											<option value="1">1 – Visi Misi Tujuan dan Strategi</option>
 											<option value="2">2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
@@ -178,7 +177,7 @@
 											<option value="9">9 - Luaran dan Capaian Tridharma</option>
 										</select>
 										
-										<select class="form-control form-control-sm" id="butir" name="butir[]">
+										<select class="form-control form-control-sm" id="butir" name="butir[]" required>
 											<option value="" disabled selected>Butir</option>
 											<option value="1">1</option>
 											<option value="2">2</option>
@@ -309,6 +308,7 @@
 		function deleteRow(tableID){
 			var table = document.getElementById(tableID);
 			var rowCount = table.rows.length;
+			console.log(rowCount);
 			for(var i=0; i<rowCount; i++){
 				var row = table.rows[i];
 				var chkbox = row.cells[0].childNodes[0];
