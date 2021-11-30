@@ -122,6 +122,7 @@ class Admin extends BaseController
         if (count($ambildatabutir->getResult()) > 0) {
             $row = $ambildatabutir->getRow();
             $data = [
+                'id' => $id,
                 'idkpi' => $row->idkpi,
                 'angka_butir' => $row->angka_butir,
                 'nama_butir' => $row->nama_butir,

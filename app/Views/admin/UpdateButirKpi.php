@@ -141,10 +141,11 @@
                         <div class="card-body">
                             <h2>Edit Butir KPI</h2>
                             <?= form_open('admin/updatebutirkpi') ?>
+                            <input required type="hidden" name="id" value="<?= $id ?>">
                             <div class="form-group">
                                 <label for="idkpi">ID KPI</label>
                                 <select required class="form-control" id="idkpi" name="idkpi">
-                                    <option selected disabled>Pilih Kategori KPI</option>
+                                    <option value="<?= $idkpi; ?>"><?= $idkpi; ?></option>
                                     <option value="1">1. Visi, Misi, Tujuan dan Strategi</option>
                                     <option value="2">2. Tata Pamong, Tata Kelola dan Kerjasama</option>
                                     <option value="3">3. Mahasiswa</option>
@@ -178,8 +179,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="kategori">Kategori</label>
-                                <select required class="form-control" id="kategori" name="kategori" value="<?= $kategori ?>">
-                                    <option selected disabled>Pilih Kategori KPI</option>
+                                <select required class="form-control" id="kategori" name="kategori">
+                                    <option value="<?= $kategori; ?>"><?= $kategori; ?></option>
                                     <option value="OPS">OPS</option>
                                     <option value="PK">PK</option>
                                     <option value="INV">INV</option>
