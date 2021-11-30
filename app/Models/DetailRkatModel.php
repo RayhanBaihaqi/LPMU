@@ -15,11 +15,18 @@ class DetailRkatModel extends Model
     protected $returnType     = 'array';
     //protected $useSoftDeletes = true;
 
-    protected $allowedFields = ['kategori','anggaranGenap' ,'anggaranGasal' ,'no_kegiatan' ,'indikator' , 'target', 'nama_kegiatan', 'kpi', 'butir', 'id_set', 'total'];
+    protected $allowedFields = ['kategori','anggaranGenap' ,'anggaranGasal' ,'no_kegiatan' ,'indikator' , 'target', 'nama_kegiatan', 'kpi', 'butir', 'id_set', 'total', 'tahunAkademik'];
 
-    public function gabung(){
+    // public function gabung(){
+    //     return $this->db->table('detail_rkat')
+    //     ->join('set_rkat', 'set_rkat.id_setrkat = detail_rkat.id_set')
+    //     ->get()->getResultArray();
+    // }
+    public function gabung($username=null){
         return $this->db->table('detail_rkat')
         ->join('set_rkat', 'set_rkat.id_setrkat = detail_rkat.id_set')
+        ->join('user', 'user.id=set_rkat.id_user')
+        ->where('username',$username)
         ->get()->getResultArray();
     }
     public function tampilRKAT($id_user=null){
@@ -35,16 +42,6 @@ class DetailRkatModel extends Model
         // ->join('set_rkat', 'set_rkat.id_setrkat = detail_rkat.id_set')
         // ->where('id_user',$id_user)
         // ->get()->getResultArray();
-    }
-    public function gabungkpi(){
-        return $this->db->table('detail_rkat')
-        ->join('data_kpi', 'data_kpi.idkpi = detail_rkat.id_kpi')
-        ->get()->getResultArray();
-    }
-    public function gabungbutir(){
-        return $this->db->table('detail_rkat')
-        ->join('data_butir', 'data_butir.idbutir = detail_rkat.id_butir')
-        ->get()->getResultArray();
     }
     public function tampilDataSetRKAT($username=null){
         return $this->db->table('set_rkat')

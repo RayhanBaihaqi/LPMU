@@ -109,14 +109,9 @@
 									</span>
 								</a>
 								<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-<<<<<<< HEAD
 									<a class="dropdown-item" href="<?= base_url('/rkat/form_ubahpass') ?>"><i class="fas fa-cog"></i> Ubah Password</a>
 									<a class="dropdown-item" href="<?= base_url('/auth/logout') ?>"><i class="fas fa-sign-out-alt"></i> Log
 										Out</a>
-=======
-									<a class="dropdown-item" href="profile.html"><i class="fas fa-cog"></i> Ubah Password</a>
-									<a class="dropdown-item" href="<?= base_url('/auth/logout') ?>"><i class="fas fa-sign-out-alt"></i> Log Out</a>
->>>>>>> 5bf7bfcbafec92d781dabd8d341de27cd5dedc9f
 								</div>
 							</div>
 						</div>

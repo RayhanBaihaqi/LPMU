@@ -118,19 +118,18 @@
 		<br>
 		
 		<form id="satuan" name="formD" action="<?= base_url('rkat/save'); ?>" method="POST" enctype="multipart/form-data">
-		<input type="hidden" name="jumlah" id="jumlah">
+		<input type="hidden" name="jumlah" id="jumlah" value="0">
 		<?= session()->getFlashdata('status'); ?>	
 			<div class="card">
 					<div class="card-header">Tambah Rencana RKAT</div>
 					<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat'];?>
-						<input type="hidden" class="form-control" id="id_set" value="<?= $id_set ?>" name="id_set[]" 
+					<input type="hidden" class="form-control" id="id_set" value="<?= $id_set ?>" name="id_set" 
 						required>
 					<br>
 					<div class="card-body">
 						<div class="form-inline">
-							<label class="mb-2 mr-sm-2" for="exampleFormControlSelect1" style="width: 150px;">Tahun Ajaran</label>
-							<select class="form-control mb-2 mr-sm-2" id="exampleFormControlSelect1">
-								<!-- <option value="<?= $value['tahun_akademik'] ?>" selected><?= $value['tahun_akademik'] ?> </option>-->
+							<label class="mb-2 mr-sm-2" for="exampleFormControlSelect1" style="width: 150px;">Tahun Akademik</label>
+							<select class="form-control mb-2 mr-sm-2" id="tahunAkademik" name="tahunAkademik[]">
 								<option value="" disabled selected>Pilih Tahun</option>
 								<option value="2019/2020">2019/2020</option>
 								<option value="2020/2021">2020/2021</option>
@@ -205,9 +204,6 @@
 									<td>
 										<input type="text" class="form-control form-control-sm" id="total" name="total[]" placeholder="Rp. 0" readonly="readonly" required>
 									</td>	
-									<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat'];?>
-										<input type="hidden" class="form-control" id="id_set" value="<?= $id_set ?>" name="id_set[]" required>	
-									<?php endforeach; ?>
 								</tr>
 
 								
@@ -259,18 +255,17 @@
 		}
 	</script>
 	<script>
-
 		// JavaScript Document
 		function addRow(tableID) {
 			var table = document.getElementById(tableID);
-			// console.log(table);
+			 console.log(table);
 			var rowCount = table.rows.length;
-			// console.log(rowCount);
+			 console.log(rowCount);
 			var row = table.insertRow(rowCount);
-			// console.log(row);
+			 console.log(row);
 			document.getElementById("jumlah").value = rowCount;
 			var colCount = table.rows[0].cells.length;
-			// console.log(colCount);
+			 //console.log(colCount);
 			for(var i=0; i<colCount; i++) {
 				var newcell = row.insertCell(i);
 				newcell.innerHTML = table.rows[0].cells[i].innerHTML;
@@ -285,14 +280,17 @@
 								newcell.children[i2].checked = false;
 							}else{
 								if (i2==4) {
+									newcell.children[i2].setAttribute("required","required");
 									newcell.children[i2].setAttribute("id","anggaranGasal1");
 									newcell.children[i2].value = "";
 								}
 								else if (i2==5) {
+									newcell.children[i2].setAttribute("required","required");
 									newcell.children[i2].setAttribute("id","anggaranGenap1");
 									newcell.children[i2].value = "";
 								}
 								else {
+									newcell.children[i2].setAttribute("required","required");
 									var ambilID = newcell.children[i2].getAttribute('id');
 									newcell.children[i2].setAttribute("id",ambilID + rowCount);
 									newcell.children[i2].value = "";
