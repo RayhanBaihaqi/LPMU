@@ -207,19 +207,10 @@
 
                                     </tbody>
                                     <tfoot>
-                                        <tr>
-                                            <td></td>
-                                            <td>
-                                                TOTAL
-                                            </td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td>xxxxxxxxxx</td>
+                                        <tr style="font-weight: bold;">
+                                            <td colspan="9"> TOTAL </td>
+
+                                            <td><?php echo $sum; ?></td>
                                             <td></td>
 
 

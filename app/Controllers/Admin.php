@@ -84,7 +84,8 @@ class Admin extends BaseController
     {
         $listbutirkpi = new DataKpiButirModel();
         $data = [
-            'tampildata' => $listbutirkpi->tampildatabutir()->getResult()
+            'tampildata' => $listbutirkpi->tampildatabutir()->getResult(),
+            'sum' => $listbutirkpi->get_sum()->getResult()
         ];
         echo view('/admin/ListKpiButir', $data);
     }
