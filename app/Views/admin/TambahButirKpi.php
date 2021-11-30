@@ -158,11 +158,11 @@
                             </div>
                             <div class="form-group">
                                 <label for="angka_butir">Angka butir</label>
-                                <input type="text" class="form-control" id="angka_butir" name="angka_butir" placeholder="Masukkan angka butir KPI">
+                                <input type="text" class="form-control" id="angka_butir" name="angka_butir" placeholder="Masukkan angka butir KPI" required>
                             </div>
                             <div class="form-group">
                                 <label for="nama_butir">Nama butir</label>
-                                <input type="text" class="form-control" id="nama_butir" name="nama_butir" placeholder="Masukkan nama butir KPI">
+                                <input type="text" class="form-control" id="nama_butir" name="nama_butir" placeholder="Masukkan nama butir KPI" required>
                             </div>
                             <div class="form-group">
                                 <label for="unit_utama">Unit utama</label>

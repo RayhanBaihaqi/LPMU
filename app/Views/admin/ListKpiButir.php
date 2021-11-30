@@ -206,6 +206,26 @@
                                         ?>
 
                                     </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td></td>
+                                            <td>
+                                                TOTAL
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>xxxxxxxxxx</td>
+                                            <td></td>
+
+
+
+                                        </tr>
+                                    </tfoot>
                                 </table>
                             </div>
                         </div>
