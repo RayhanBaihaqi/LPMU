@@ -1,15 +1,19 @@
 Pengerjaan KPI : 
 
 ADMIN : 
-5. lihat rencana (gw hapus) digabungkan ke lihat capaian
-8. menggabungkan tabel kpi dan tabel butir kpi di halaman admin "lihat kpi butir" 
+1. memanggil data capaian kpi dari database
+2. database tabel_capaian_kpi dibanyakin kolomnya utk dibuat sbg penyimpanan inputan dari user
 
 USER : 
-1. menampilkan tabel daftar kpi + butirnya
 2. menampilkan grafik kesimpulan
-4. buat perhitungan antara target dan realisasi
-11. kesimpulan diperlihatkan dalam tabel
+4. buat perhitungan antara bobot dan realisasi --> hasil jumlah_bobot
+11. kesimpulan diperlihatkan dalam tabel grafik
 13. 1 kategori KPI bikin 1 halaman tabel
+14. save input realisasi ke capaian
+15. menambah fitur file
+16. menghapus kolom aksi di user
+17. tahun ajaran form realisasi kpi REQUIRED
+
 
 
 notes : 
@@ -31,6 +35,9 @@ DONE
 6. Hapus pilihan "profil"
 7. Menambah  sapaan di page setelah login
 1. menambah narasi dibawah kata sapaan setelah login admin dashboard
+5. lihat rencana (gw hapus) digabungkan ke lihat capaian
+8. menggabungkan tabel kpi dan tabel butir kpi di halaman admin "lihat kpi butir" 
+1. menampilkan tabel daftar kpi + butirnya
 
 
 

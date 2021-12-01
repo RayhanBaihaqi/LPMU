@@ -1,6 +1,14 @@
 // Call the dataTables jQuery plugin
 $(document).ready(function() {
-  $('#dataTable').DataTable();
+
+  var table = $('#dataTable').DataTable();
+
+  $('.filter-satuan').change(function () {
+    table.columns(1)
+    .search( $(this).val() )
+    .draw();
+  });
+  
 });
 
 $(document).ready(function() {

@@ -154,21 +154,21 @@
             </div>
             <div class="card-body">
                 <div class="form-inline" id="kriteriaDiv">
-                        <label class="mb-2 mr-sm-1" for="exampleFormControlSelect1" style="width: 150px;">Tahun Ajaran</label>
-                        <form method="POST" action="">
-                            <select class="form-control mb-2 mr-sm-2" id="kriteria" name="kriteria" onChange="document.location.href=this.options[this.selectedIndex].value;">
-                                <!-- <select name="forma" onchange="location = this.value;"> -->
-                                <option value="<?php echo site_url(); ?>kpi/inputcapaian/2" disabled selected>2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
-                                <option value="<?php echo site_url(); ?>kpi/inputcapaian/1">1 - Visi Misi Tujuan dan Strategi</option>
-                                <option value="<?php echo site_url(); ?>kpi/inputcapaian/3">3 - Mahasiswa</option>
-                                <option value="<?php echo site_url(); ?>kpi/inputcapaian/4">4 - Sumber Daya Manusia</option>
-                                <option value="<?php echo site_url(); ?>kpi/inputcapaian/5">5 - Keuangan, Sarana dan Prasarana</option>
-                                <option value="<?php echo site_url(); ?>kpi/inputcapaian/6">6 - Pendidikan</option>
-                                <option value="<?php echo site_url(); ?>kpi/inputcapaian/7">7 - Penelitian</option>
-                                <option value="<?php echo site_url(); ?>kpi/inputcapaian/8">8 - Pengabdian kepada Masyarakat (PkM)</option>
-                                <option value="<?php echo site_url(); ?>kpi/inputcapaian/9">9 - Luaran dan Capaian Tridharma</option>
-                            </select>
-                        </form>
+                    <label class="mb-2 mr-sm-1" for="exampleFormControlSelect1" style="width: 150px;">Kategori KPI</label>
+                    <form method="POST" action="">
+                        <select class="form-control mb-2 mr-sm-2" id="kriteria" name="kriteria" onChange="document.location.href=this.options[this.selectedIndex].value;">
+                            <!-- <select name="forma" onchange="location = this.value;"> -->
+                            <option value="<?php echo site_url(); ?>kpi/inputcapaian/2" disabled selected>2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
+                            <option value="<?php echo site_url(); ?>kpi/inputcapaian/1">1 - Visi Misi Tujuan dan Strategi</option>
+                            <option value="<?php echo site_url(); ?>kpi/inputcapaian/3">3 - Mahasiswa</option>
+                            <option value="<?php echo site_url(); ?>kpi/inputcapaian/4">4 - Sumber Daya Manusia</option>
+                            <option value="<?php echo site_url(); ?>kpi/inputcapaian/5">5 - Keuangan, Sarana dan Prasarana</option>
+                            <option value="<?php echo site_url(); ?>kpi/inputcapaian/6">6 - Pendidikan</option>
+                            <option value="<?php echo site_url(); ?>kpi/inputcapaian/7">7 - Penelitian</option>
+                            <option value="<?php echo site_url(); ?>kpi/inputcapaian/8">8 - Pengabdian kepada Masyarakat (PkM)</option>
+                            <option value="<?php echo site_url(); ?>kpi/inputcapaian/9">9 - Luaran dan Capaian Tridharma</option>
+                        </select>
+                    </form>
                 </div>
                 <form id="formA" name="formA" action="<?= base_url('kpi/savecapaian2'); ?>" method="POST" enctype="multipart/form-data">
                     <div class="form-inline">
@@ -199,6 +199,7 @@
                                     <th class="text-center">Angka butir</th>
                                     <th class="text-center">Butir</th>
                                     <th class="text-center">Rencana</th>
+                                    <th class="text-center">Bobot</th>
                                     <th class="text-center">Realisasi</th>
                                     <th class="text-center">Upload File</th>
                                     <th class="text-center">Aksi</th>
@@ -215,6 +216,7 @@
                                         <td><?= $row->idkpi . '.' . $row->angka_butir ?></td>
                                         <td><?= $row->nama_butir ?></td>
                                         <td><?= $row->target ?></td>
+                                        <td><?= $row->bobot ?></td>
                                         <td>
                                             <input type="number" name="txtRealisasi[]" placeholder='Masukkan realisasi' class="form-control" value="<?= $row->realisasi; ?>" />
                                             <input type="hidden" name="id[]" value="<?= $row->id; ?>" />

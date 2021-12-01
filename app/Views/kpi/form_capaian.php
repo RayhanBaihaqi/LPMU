@@ -166,7 +166,7 @@
                                                                                                         ?>" required disabled>
                 </div>
                 <div class="form-inline" id="kriteriaDiv">
-                    <label class="mb-2 mr-sm-1" for="exampleFormControlSelect1" style="width: 150px;">Tahun Ajaran</label>
+                    <label class="mb-2 mr-sm-1" for="exampleFormControlSelect1" style="width: 150px;">Kategori KPI</label>
                     <form method="POST" action="">
                         <select class="form-control mb-2 mr-sm-2" id="kriteria" name="kriteria" onChange="document.location.href=this.options[this.selectedIndex].value;">
                             <!-- <select name="forma" onchange="location = this.value;"> -->

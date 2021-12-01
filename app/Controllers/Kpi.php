@@ -26,7 +26,8 @@ class Kpi extends BaseController
 	{
 		$listbutirkpi = new DataKpiButirModel();
 		$data = [
-			'tampildata' => $listbutirkpi->tampildatabutir()->getResult()
+			'tampildata' => $listbutirkpi->tampildatabutir()->getResult(),
+			'sum' => $listbutirkpi->get_sum()->getResult()
 		];
 		return view('kpi/rencana', $data);
 	}
@@ -39,53 +40,52 @@ class Kpi extends BaseController
 				'tampildata' => $listbutirkpi->tampildatabutir()->getResult()
 			];
 			return view('kpi/form_capaian', $data);
-		}elseif ($kategori == 1) {
+		} elseif ($kategori == 1) {
 			$data = [
 				'tampildata' => $listbutirkpi->tampildatabutir1()->getResult()
 			];
 			return view('kpi/form_capaian1', $data);
-		}elseif ($kategori == 2) {
+		} elseif ($kategori == 2) {
 			$data = [
 				'tampildata' => $listbutirkpi->tampildatabutir2()->getResult()
 			];
 			return view('kpi/form_capaian2', $data);
-		}elseif ($kategori == 3) {
+		} elseif ($kategori == 3) {
 			$data = [
 				'tampildata' => $listbutirkpi->tampildatabutir3()->getResult()
 			];
 			return view('kpi/form_capaian3', $data);
-		}elseif ($kategori == 4) {
+		} elseif ($kategori == 4) {
 			$data = [
 				'tampildata' => $listbutirkpi->tampildatabutir4()->getResult()
 			];
 			return view('kpi/form_capaian4', $data);
-		}elseif ($kategori == 5) {
+		} elseif ($kategori == 5) {
 			$data = [
 				'tampildata' => $listbutirkpi->tampildatabutir5()->getResult()
 			];
 			return view('kpi/form_capaian5', $data);
-		}elseif ($kategori == 6) {
+		} elseif ($kategori == 6) {
 			$data = [
 				'tampildata' => $listbutirkpi->tampildatabutir6()->getResult()
 			];
 			return view('kpi/form_capaian6', $data);
-		}elseif ($kategori == 7) {
+		} elseif ($kategori == 7) {
 			$data = [
 				'tampildata' => $listbutirkpi->tampildatabutir7()->getResult()
 			];
 			return view('kpi/form_capaian7', $data);
-		}elseif ($kategori == 8) {
+		} elseif ($kategori == 8) {
 			$data = [
 				'tampildata' => $listbutirkpi->tampildatabutir8()->getResult()
 			];
 			return view('kpi/form_capaian8', $data);
-		}elseif ($kategori == 9) {
+		} elseif ($kategori == 9) {
 			$data = [
 				'tampildata' => $listbutirkpi->tampildatabutir9()->getResult()
 			];
 			return view('kpi/form_capaian9', $data);
 		}
-
 	}
 
 	public function kesimpulan()
@@ -143,7 +143,7 @@ class Kpi extends BaseController
 
 		foreach ($id as $key => $value) {
 			foreach ($data as $abc => $def) {
-				$no=0;
+				$no = 0;
 				foreach ($def as $ooo) {
 					$no++;
 					if ($value == $no) {
@@ -153,7 +153,7 @@ class Kpi extends BaseController
 					}
 				}
 				echo "<br><br>";
-			}	
+			}
 		}
 		return redirect()->to(base_url('kpi/inputcapaian/1'))->with('status', 'Data Berhasil Di-Update');
 	}
@@ -170,13 +170,13 @@ class Kpi extends BaseController
 		];
 		// echo "data : ";print_r($data);echo "<br>";
 		// echo "id : ";print_r($id);echo "<br>";
-		
+
 		// echo "<br><br>";
 		foreach ($id as $key => $value) {
 			// echo "id value : ";print_r($value);echo "<br>";
 
 			foreach ($data as $abc => $def) {
-				$no=0;
+				$no = 0;
 				foreach ($def as $ooo) {
 					$no++;
 					if ($value == $no) {
@@ -189,7 +189,7 @@ class Kpi extends BaseController
 					}
 				}
 				echo "<br><br>";
-			}	
+			}
 		}
 		return redirect()->to(base_url('kpi/inputcapaian/2'))->with('status', 'Data Berhasil Di-Update');
 	}
@@ -206,13 +206,13 @@ class Kpi extends BaseController
 		];
 		// echo "data : ";print_r($data);echo "<br>";
 		// echo "id : ";print_r($id);echo "<br>";
-		
+
 		// echo "<br><br>";
 		foreach ($id as $key => $value) {
 			// echo "id value : ";print_r($value);echo "<br>";
 
 			foreach ($data as $abc => $def) {
-				$no=0;
+				$no = 0;
 				foreach ($def as $ooo) {
 					$no++;
 					if ($value == $no) {
@@ -225,7 +225,7 @@ class Kpi extends BaseController
 					}
 				}
 				echo "<br><br>";
-			}	
+			}
 		}
 		return redirect()->to(base_url('kpi/inputcapaian/3'))->with('status', 'Data Berhasil Di-Update');
 	}
@@ -242,13 +242,13 @@ class Kpi extends BaseController
 		];
 		// echo "data : ";print_r($data);echo "<br>";
 		// echo "id : ";print_r($id);echo "<br>";
-		
+
 		// echo "<br><br>";
 		foreach ($id as $key => $value) {
 			// echo "id value : ";print_r($value);echo "<br>";
 
 			foreach ($data as $abc => $def) {
-				$no=0;
+				$no = 0;
 				foreach ($def as $ooo) {
 					$no++;
 					if ($value == $no) {
@@ -261,7 +261,7 @@ class Kpi extends BaseController
 					}
 				}
 				echo "<br><br>";
-			}	
+			}
 		}
 		return redirect()->to(base_url('kpi/inputcapaian/4'))->with('status', 'Data Berhasil Di-Update');
 	}
@@ -278,13 +278,13 @@ class Kpi extends BaseController
 		];
 		// echo "data : ";print_r($data);echo "<br>";
 		// echo "id : ";print_r($id);echo "<br>";
-		
+
 		// echo "<br><br>";
 		foreach ($id as $key => $value) {
 			// echo "id value : ";print_r($value);echo "<br>";
 
 			foreach ($data as $abc => $def) {
-				$no=0;
+				$no = 0;
 				foreach ($def as $ooo) {
 					$no++;
 					if ($value == $no) {
@@ -297,7 +297,7 @@ class Kpi extends BaseController
 					}
 				}
 				echo "<br><br>";
-			}	
+			}
 		}
 		return redirect()->to(base_url('kpi/inputcapaian/5'))->with('status', 'Data Berhasil Di-Update');
 	}
@@ -314,13 +314,13 @@ class Kpi extends BaseController
 		];
 		// echo "data : ";print_r($data);echo "<br>";
 		// echo "id : ";print_r($id);echo "<br>";
-		
+
 		// echo "<br><br>";
 		foreach ($id as $key => $value) {
 			// echo "id value : ";print_r($value);echo "<br>";
 
 			foreach ($data as $abc => $def) {
-				$no=0;
+				$no = 0;
 				foreach ($def as $ooo) {
 					$no++;
 					if ($value == $no) {
@@ -333,7 +333,7 @@ class Kpi extends BaseController
 					}
 				}
 				echo "<br><br>";
-			}	
+			}
 		}
 		return redirect()->to(base_url('kpi/inputcapaian/6'))->with('status', 'Data Berhasil Di-Update');
 	}
@@ -350,13 +350,13 @@ class Kpi extends BaseController
 		];
 		// echo "data : ";print_r($data);echo "<br>";
 		// echo "id : ";print_r($id);echo "<br>";
-		
+
 		// echo "<br><br>";
 		foreach ($id as $key => $value) {
 			// echo "id value : ";print_r($value);echo "<br>";
 
 			foreach ($data as $abc => $def) {
-				$no=0;
+				$no = 0;
 				foreach ($def as $ooo) {
 					$no++;
 					if ($value == $no) {
@@ -369,7 +369,7 @@ class Kpi extends BaseController
 					}
 				}
 				echo "<br><br>";
-			}	
+			}
 		}
 		return redirect()->to(base_url('kpi/inputcapaian/7'))->with('status', 'Data Berhasil Di-Update');
 	}
@@ -385,13 +385,13 @@ class Kpi extends BaseController
 		];
 		// echo "data : ";print_r($data);echo "<br>";
 		// echo "id : ";print_r($id);echo "<br>";
-		
+
 		// echo "<br><br>";
 		foreach ($id as $key => $value) {
 			// echo "id value : ";print_r($value);echo "<br>";
 
 			foreach ($data as $abc => $def) {
-				$no=0;
+				$no = 0;
 				foreach ($def as $ooo) {
 					$no++;
 					if ($value == $no) {
@@ -404,7 +404,7 @@ class Kpi extends BaseController
 					}
 				}
 				echo "<br><br>";
-			}	
+			}
 		}
 		return redirect()->to(base_url('kpi/inputcapaian/8'))->with('status', 'Data Berhasil Di-Update');
 	}
@@ -421,13 +421,13 @@ class Kpi extends BaseController
 		];
 		// echo "data : ";print_r($data);echo "<br>";
 		// echo "id : ";print_r($id);echo "<br>";
-		
+
 		// echo "<br><br>";
 		foreach ($id as $key => $value) {
 			// echo "id value : ";print_r($value);echo "<br>";
 
 			foreach ($data as $abc => $def) {
-				$no=0;
+				$no = 0;
 				foreach ($def as $ooo) {
 					$no++;
 					if ($value == $no) {
@@ -440,12 +440,12 @@ class Kpi extends BaseController
 					}
 				}
 				echo "<br><br>";
-			}	
+			}
 		}
 		return redirect()->to(base_url('kpi/inputcapaian/9'))->with('status', 'Data Berhasil Di-Update');
 	}
 
-	
+
 	/*
 	public function detail_keuangan()
 	{

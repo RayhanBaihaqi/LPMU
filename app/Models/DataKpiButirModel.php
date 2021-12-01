@@ -19,7 +19,7 @@ class DataKpiButirModel extends Model
     }
     function get_sum()
     {
-        return $this->db->table('tabel_butir_kpi')->selectSum('bobot')->get();
+        return $this->db->query("SELECT ROUND(SUM(bobot), 2) AS total_bobot from tabel_butir_kpi");
     }
     function ambildatabutir($id)
     {

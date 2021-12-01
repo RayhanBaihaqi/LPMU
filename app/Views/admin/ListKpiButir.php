@@ -146,15 +146,20 @@
                             <a href="<?= base_url('/admin/form_tambahbutirKpi') ?>" class="btn btn-success"><span>Tambah
                                     Butir KPI</span></a>
                         </div>
-                        <div class="container">
+                        <div class="container-fluid">
                             <div class="form-group">
-                                <label for="exampleFormControlSelect1">Pilih ID KPI</label>
-                                <select class="form-control" id="exampleFormControlSelect1">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
+                                <label for="exampleFormControlSelect1">Pilih Nama KPI</label>
+                                <select class="form-control filter-satuan" id="categoryFilter">
+                                    <option selected disabled>-Daftar Kategori KPI-</option>
+                                    <option value="Visi, Misi, Tujuan dan Strategi">Visi, Misi, Tujuan dan Strategi</option>
+                                    <option value="Tata Pamong, Tata Kelola dan Kerjasama">Tata Pamong, Tata Kelola dan Kerjasama</option>
+                                    <option value="Mahasiswa">Mahasiswa</option>
+                                    <option value="Sumber Daya Manusia">Sumber Daya Manusia</option>
+                                    <option value="Keuangan, Sarana dan Prasarana">Keuangan, Sarana dan Prasarana</option>
+                                    <option value="Pendidikan">Pendidikan</option>
+                                    <option value="Penelitian">Penelitian</option>
+                                    <option value="Pengabdian Kepada Masyarakat">Pengabdian Kepada Masyarakat</option>
+                                    <option value="Luaran dan Capaian Tridharma">Luaran dan Capaian Tridharma</option>
                                 </select>
                             </div>
                         </div>
@@ -207,15 +212,17 @@
 
                                     </tbody>
                                     <tfoot>
-                                        <tr style="font-weight: bold;">
-                                            <td colspan="9"> TOTAL </td>
-
-                                            <td><?php echo $get_sum; ?></td>
-                                            <td></td>
-
-
-
-                                        </tr>
+                                        <?php
+                                        foreach ($sum as $rows) {
+                                        ?>
+                                            <tr style="font-weight: bold;">
+                                                <td colspan="9"> TOTAL </td>
+                                                <td><?php echo $rows->total_bobot; ?></td>
+                                                <td></td>
+                                            </tr>
+                                        <?php
+                                        }
+                                        ?>
                                     </tfoot>
                                 </table>
                             </div>

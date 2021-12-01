@@ -156,6 +156,13 @@
                                             <th>Nama Prodi</th>
                                             <th>Tahun Ajaran</th>
                                             <th>Level</th>
+                                            <th>ID KPI</th>
+                                            <th>Angka Butir</th>
+                                            <th>Nama Butir</th>
+                                            <th>Bobot</th>
+                                            <th>Target</th>
+                                            <th>Realisasi</th>
+                                            <th>Jumlah Bobot</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>

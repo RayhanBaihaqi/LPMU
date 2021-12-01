@@ -150,14 +150,18 @@
             <div class="card-body">
                 <div class="container-fluid">
                     <div class="form-group category-filter">
-                        <label for="exampleFormControlSelect1">Pilih ID KPI</label>
+                        <label for="exampleFormControlSelect1">Pilih Nama KPI</label>
                         <select class="form-control filter-satuan" id="categoryFilter">
-                            <option value=""></option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
+                            <option selected disabled>-Daftar Kategori KPI-</option>
+                            <option value="Visi, Misi, Tujuan dan Strategi">Visi, Misi, Tujuan dan Strategi</option>
+                            <option value="Tata Pamong, Tata Kelola dan Kerjasama">Tata Pamong, Tata Kelola dan Kerjasama</option>
+                            <option value="Mahasiswa">Mahasiswa</option>
+                            <option value="Sumber Daya Manusia">Sumber Daya Manusia</option>
+                            <option value="Keuangan, Sarana dan Prasarana">Keuangan, Sarana dan Prasarana</option>
+                            <option value="Pendidikan">Pendidikan</option>
+                            <option value="Penelitian">Penelitian</option>
+                            <option value="Pengabdian Kepada Masyarakat">Pengabdian Kepada Masyarakat</option>
+                            <option value="Luaran dan Capaian Tridharma">Luaran dan Capaian Tridharma</option>
                         </select>
                     </div>
                 </div>
@@ -202,12 +206,22 @@
 
                         </tbody>
                         <tfoot>
-                            <tr style="font-weight: bold;">
+                            <?php
+                            foreach ($sum as $rows) {
+                            ?>
 
-                                <td colspan="9"> TOTAL </td>
+                                <tr style="font-weight: bold;">
+                                    <td colspan="9"> TOTAL </td>
 
-                                <td>xxxxxxxxx</td>
-                            </tr>
+                                    <td><?php echo $rows->total_bobot; ?></td>
+
+
+
+
+                                </tr>
+                            <?php
+                            }
+                            ?>
                         </tfoot>
                     </table>
                 </div>
