@@ -150,24 +150,20 @@
 									<input required type="hidden" name="id" value="<?= $detail_rkat['id']; ?>">
 									<input required type="hidden" name="id_set" value="<?= $detail_rkat['id_set']; ?>">
 									<div class="form-group">
-										<label for="nama_kegiatan">Nama Kegiatan</label>
-										<input type="text" class="form-control" id="nama_kegiatan" placeholder="Maksukan Nama Kegiatan" name="nama_kegiatan" required value="<?= $detail_rkat['nama_kegiatan']; ?>">
-									</div>
-									<div class="form-group">
-										<label for="jenis_anggaran">Jenis Anggaran</label>
-										<select class="form-control" id="jenis_anggaran" name="jenis_anggaran">
-											<!-- <option value="?= $detail_rkat['jenis_anggaran']; ?>" disabled selected> -->
-											<!-- ?= $detail_rkat['jenis_anggaran']; ?></option> -->
+										<label for="kategori">Kategori</label>
+										<select class="form-control" id="kategori" name="kategori">
+											<option value="?= $detail_rkat['kategori']; ?>" disabled selected>
+												<?= $detail_rkat['kategori']; ?></option>
 											<option value="PK">Program Kerja</option>
 											<option value="OPS">Oprasional</option>
 											<option value="INV">Investasi</option>
 										</select>
 									</div>
 									<div class="form-group">
-										<label for="jenis_kpi">Standar KPI</label>
-										<select class="form-control" id="jenis_kpi" name="jenis_kpi">
-											<!-- <option value="?= $detail_rkat['jenis_kpi']; ?>" disabled selected>
-												?= $detail_rkat['jenis_kpi']; ?></option> -->
+										<label for="kpi">Standar KPI</label>
+										<select class="form-control" id="kpi" name="kpi">
+											<option value="?= $detail_rkat['kpi']; ?>" disabled selected>
+												<?= $detail_rkat['kpi']; ?></option>
 											<option value="1">Standar 1 – Visi Misi Tujuan dan Strategi</option>
 											<option value="2">Standar 2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
 											<option value="3">Standar 3 - Mahasiswa</option>
@@ -184,23 +180,43 @@
 										<input type="text" class="form-control" id="butir" placeholder="Masukan Butir Ke-" name="butir" required value="<?= $detail_rkat['butir']; ?>">
 									</div>
 									<div class="form-group">
-										<label for="semester">Semester</label>
-										<select class="form-control" id="semester" name="semester">
-											<!-- <option value="?= $detail_rkat['semester']; ?>" disabled selected>
-												?= $detail_rkat['semester']; ?></option> -->
-											<option value="Gasal">Gasal</option>
-											<option value="Genap">Genap</option>
-											<option value="Gasal dan Genap">Gasal dan Genap</option>
+										<label for="no_kegiatan">NO Kegiatan</label>
+										<input type="text" class="form-control" id="no_kegiatan" placeholder="Maksukan Nama Kegiatan" name="no_kegiatan" required value="<?= $detail_rkat['no_kegiatan']; ?>">
+									</div>
+									<div class="form-group">
+										<label for="indikator">Indikator</label>
+										<input type="text" class="form-control" id="indikator" placeholder="Maksukan Nama Kegiatan" name="indikator" required value="<?= $detail_rkat['indikator']; ?>">
+									</div>
+									<div class="form-group">
+										<label for="target">Target</label>
+										<input type="text" class="form-control" id="target" placeholder="Maksukan Nama Kegiatan" name="target" required value="<?= $detail_rkat['target']; ?>">
+									</div>
+									<div class="form-group">
+										<label for="nama_kegiatan">NamaKegiatan</label>
+										<input type="text" class="form-control" id="nama_kegiatan" placeholder="Maksukan Nama Kegiatan" name="nama_kegiatan" required value="<?= $detail_rkat['nama_kegiatan']; ?>">
+									</div>
+									<div class="form-group">
+										<label for="anggaranGasal">Anggaran Ganjil</label>
+										<input type="text" class="form-control" id="anggaranGasal" placeholder="Masukan Total Anggaran" name="anggaranGasal" required value="<?= $detail_rkat['anggaranGasal']; ?>">
+										
+									</div>
+									<div class="form-group">
+										<label for="anggaranGenap">Anggaran Genap</label>
+										<input type="text" class="form-control" id="anggaranGenap" placeholder="Masukan Total Anggaran" name="anggaranGenap" required value="<?= $detail_rkat['anggaranGenap']; ?>">
+										
+									</div>
+									<div class="form-group">
+										<label for="total">Total Kegiatan</label>
+										<input class="form-control" rows="5" id="total" placeholder="Masukan Total Biaya" name="total" required value="<?= $detail_rkat['total']; ?>">
+									</div>
+									<div class="form-group">
+										<label for="tahunAkademik">Tahun Akademik</label>
+										<select class="form-control" id="tahunAkademik" name="tahunAkademik">
+											<option value="?= $detail_rkat['tahunAkademik']; ?>" disabled selected>
+												<?= $detail_rkat['tahunAkademik']; ?></option>
+											<option value="2019/2020">2019/2020</option>
+											<option value="2020/2021">2020/2021</option>
 										</select>
-									</div>
-									<div class="form-group">
-										<label for="anggaran">Anggaran Kegiatan</label>
-										<input type="text" class="form-control" id="anggaran" placeholder="Masukan Total Anggaran" name="anggaran" required value="">
-										<!--?= $detail_rkat['anggaran']; ?>-->
-									</div>
-									<div class="form-group">
-										<label for="keterangan">Keterangan Kegiatan</label>
-										<textarea class="form-control" rows="5" id="keterangan" placeholder="Masukan Total Biaya" name="keterangan" required><!--?= $detail_rkat['keterangan']; ?>--></textarea>
 									</div>
 									<div class="form-group">
 										<button type="submit" id="edit" class="btn btn-success">edit</button>

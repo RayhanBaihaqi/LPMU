@@ -1,8 +1,7 @@
 List Pengerjaan RKAT
 ADMIN
-6. Merubah judul sesuai dengan halaman
-7. Tahun dan prodi ditambahkan (halaman tambah pagu)
-8. tambah data di tambah pagu di hapus
+7. prodi ditambahkan (halaman tambah pagu)
+
 
 USER
 3. Menampilkan grafik capaian kinerja prodi atau unit
@@ -35,6 +34,9 @@ ADMIN
 1. Membuat kategori pada Rencana RKAT
 2. Perbaikan pada halaman formulir rencana
 3. Membuat halaman lihat data Rencana RKAT
+6. Merubah judul sesuai dengan halaman
+8. tambah data di tambah pagu di hapus
+9. Tahun ditambahkan (halaman tambah pagu)
 
 
 

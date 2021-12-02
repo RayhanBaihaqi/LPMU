@@ -133,8 +133,8 @@
 						name="nama_kegiatan" required value="<?= $detail_rkat['nama_kegiatan']; ?>">
 					</div>
 					<div class="form-group">
-						<label for="jenis_anggaran">Jenis Anggaran</label>
-						<select class="form-control" id="jenis_anggaran" name="jenis_anggaran">
+						<label for="kategori">Kategori</label>
+						<select class="form-control" id="kategori" name="kategori">
 							<!-- <option value="?= $detail_rkat['jenis_anggaran']; ?>" disabled selected>
 								?= $detail_rkat['jenis_anggaran']; ?></option> -->
 							<option value="Program Kerja">Program Kerja</option>

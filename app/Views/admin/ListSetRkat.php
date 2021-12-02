@@ -140,14 +140,10 @@
 				<div class="container-fluid">
 
 					<!-- Page Heading -->
-					<h1 class="h3 mb-2 text-gray-800">Daftar User</h1>
+					<h1 class="h3 mb-2 text-gray-800">Daftar Jumlah Pagu</h1>
 
 					<!-- DataTales Example -->
 					<div class="card shadow mb-4">
-						<div class="card-header py-3">
-							<a href="<?= base_url('/auth/create') ?>" class="btn btn-success"><span>Tambah
-									Data</span></a>
-						</div>
 						<div class="card-body">
 							<div class="table-responsive">
 								<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">

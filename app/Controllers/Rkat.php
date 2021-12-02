@@ -422,14 +422,19 @@ class Rkat extends BaseController
         $id = $this->request->getVar('id');
 
         $data = [
-			'nama_kegiatan' => $this->request->getVar('nama_kegiatan'),
-            'semester' => $this->request->getVar('semester'),
-            'anggaran' => $this->request->getVar('anggaran'),
-            'keterangan' => $this->request->getVar('keterangan'),
-            'jenis_kpi' => $this->request->getVar('jenis_kpi'),
-            'jenis_anggaran' => $this->request->getVar('jenis_anggaran'),
+            'kategori' => $this->request->getVar('kategori'),
+            'anggaranGenap' => $this->request->getVar('anggaranGenap'),
+            'anggaranGasal' => $this->request->getVar('anggaranGasal'),
+            'no_kegiatan' => $this->request->getVar('no_kegiatan'),
+            'indikator' => $this->request->getVar('indikator'),
+            'kpi' => $this->request->getVar('kpi'),
             'butir' => $this->request->getVar('butir'),
+            'target' => $this->request->getVar('target'),
+            'nama_kegiatan' => $this->request->getVar('nama_kegiatan'),
+            'total' => $this->request->getVar('total'),
             'id_set' => $this->request->getVar('id_set'),
+            'tahunAkademik' => $this->request->getVar('tahunAkademik'),
+
         ];
         $save = $model->update($id,$data);
 
