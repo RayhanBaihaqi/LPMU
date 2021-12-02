@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 01, 2021 at 11:46 AM
+-- Generation Time: Dec 02, 2021 at 05:36 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -32,8 +32,6 @@ CREATE TABLE `tabel_capaian_kpi` (
   `tahun_ajaran` varchar(255) NOT NULL,
   `nama_prodi` int(11) NOT NULL,
   `level` int(11) NOT NULL,
-  `bobot` float NOT NULL,
-  `target` varchar(255) NOT NULL,
   `realisasi` int(11) NOT NULL,
   `nilai_bobot` float NOT NULL,
   `upload_file` varchar(255) NOT NULL,
@@ -48,7 +46,18 @@ CREATE TABLE `tabel_capaian_kpi` (
 -- Indexes for table `tabel_capaian_kpi`
 --
 ALTER TABLE `tabel_capaian_kpi`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_capaian_kpi` (`id_capaian_kpi`);
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `tabel_capaian_kpi`
+--
+ALTER TABLE `tabel_capaian_kpi`
+  ADD CONSTRAINT `tabel_capaian_kpi_ibfk_1` FOREIGN KEY (`id_capaian_kpi`) REFERENCES `tabel_butir_kpi` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

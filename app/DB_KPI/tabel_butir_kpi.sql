@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 01, 2021 at 11:47 AM
+-- Generation Time: Dec 02, 2021 at 05:36 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -99,7 +99,7 @@ INSERT INTO `tabel_butir_kpi` (`id`, `idkpi`, `angka_butir`, `nama_butir`, `unit
 (52, 4, '11', 'Dosen mengikuti seminar sebagai pembicara/narasumber minimal 1 (satu) kali per semester. ', 'Prodi', 'HCD', '12', 'PK', 'dosen jadi pembicara/narasumber seminar', 0.5),
 (53, 4, '12', 'Publikasi dalam jurnal nasional terakreditasi minimal 1 artikel per tahun per dosen.', 'Prodi', 'LP2M', '6', 'PK', 'Publikasi', 2),
 (54, 4, '13', 'Publikasi dalam jurnal/media masa nasional', 'Prodi', 'LP2M', '12', 'PK', 'Publikasi', 0.5),
-(55, 4, '14', 'Publikasi dalam jurnal internasional terindeks scopus minimal 1 artikel per 2 tahun per dosen.', 'Prodi', 'LP2M', '3', 'PK', '', 2.5),
+(55, 4, '14', 'Publikasi dalam jurnal internasional terindeks scopus minimal 1 artikel per 2 tahun per dosen.', 'Prodi', 'LP2M', '3', 'PK', '', 2),
 (56, 4, '15', 'Publikasi dalam seminar/media masa internasional', 'Prodi', 'LP2M', '3', 'PK', '', 1.5),
 (57, 4, '16', 'Adanya artikel karya ilmiah yang disitasi (RS = NAS/NDTPS)', 'Prodi', 'LP2M', '10%', 'PK', '', 2),
 (58, 4, '17', 'Adanya hasil penelitian yang dipatenkan minimal 1 paten dalam 5 tahun.', 'Prodi', 'LP2M', '1', 'PK', 'Penelitian', 2),
@@ -158,7 +158,7 @@ INSERT INTO `tabel_butir_kpi` (`id`, `idkpi`, `angka_butir`, `nama_butir`, `unit
 (111, 9, '16', 'Publikasi mahasiswa dalam prosding atau jurnal  Tingkat nasional', 'Prodi', 'LP2M', '10', 'PK', '', 0.25),
 (112, 9, '17', 'Adanya hasil penelitian/PkM mahasiswa yang mendapat pengakuan HKI ', 'Prodi', 'LP2M', '1', 'PK', '', 0.5),
 (113, 9, '18', 'Adanya proposal sesuai standar panduan PKM yang diajukan dengan kebaharuan, kreativitas dan inovasi yang telah terseleksi dengan baik', 'Prodi', 'BKAL', '10/prodi', 'PK', '', 1),
-(115, 7, '10', 'Joint publikasi dengan pihak eksternal (nasional/internasional)', 'Prodi', 'LP2M', '> 1', 'PK', 'Publikasi', 1);
+(114, 7, '10', 'Joint publikasi dengan pihak eksternal (nasional/internasional)', 'Prodi', 'LP2M', '> 1', 'PK', 'Publikasi', 1);
 
 --
 -- Indexes for dumped tables
