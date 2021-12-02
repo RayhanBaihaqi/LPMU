@@ -58,10 +58,11 @@
 				</a>
 				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
-						<a class="collapse-item" href="<?= base_url('rkat/createbyadmin') ?>">Tambah RKAT</a>
+					<a class="collapse-item" href="<?= base_url('rkat/createbyadmin') ?>">Tambah RKAT</a>
 						<a class="collapse-item" href="<?= base_url('rkat/indexbyadmin') ?>">Lihat Data</a>
 						<a class="collapse-item" href="<?= base_url('setrkat/create') ?>">Atur Semester dan Pagu</a>
 						<a class="collapse-item" href="<?= base_url('setrkat/index') ?>">Lihat Data Set Rkat</a>
+						<a class="collapse-item" href="<?= base_url('rkat/indexBuatTabel') ?>">Buat Tabel Rencana</a>
 					</div>
 				</div>
 			</li>
@@ -147,22 +148,7 @@
 						<div class="card-body">
 							<div class="table-responsive">
 								<div class="container">
-									<!-- Akan Dilooping -->
-									<?php foreach ($detail_rkat as $key => $value) : $id_set = $value['id_set']; ?>
-										<div class="form-group">
-											<label for="exampleFormControlSelect1">Tahun Ajaran</label>
-											<select class="form-control" id="exampleFormControlSelect1" disabled>
-												<!-- <option value="?= $value['tahun_akademik'] ?>" selected>?= $value['tahun_akademik'] ?>
-												</option> -->
-												<option></option>
-											</select>
-										</div>
-										<div class="form-group">
-											<label for="uname">Jumlah Pagu</label>
-											<input type="hidden" class="form-control" id="uname" name="uname" value="" required disabled>
-											<!--?= $value['pagu'] ?>-->
-										</div>
-									<?php endforeach; ?>
+
 									<form action="<?= base_url('setrkat/tambahbyadmin'); ?>" method="post">
 										<div class="input-group mb-3">
 											<input type="text" class="form-control" placeholder="Jumlah Kegiatan" name="jumlah">

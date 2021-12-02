@@ -58,10 +58,11 @@
 				</a>
 				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
-						<a class="collapse-item" href="<?= base_url('rkat/createbyadmin') ?>">Tambah RKAT</a>
+					<a class="collapse-item" href="<?= base_url('rkat/createbyadmin') ?>">Tambah RKAT</a>
 						<a class="collapse-item" href="<?= base_url('rkat/indexbyadmin') ?>">Lihat Data</a>
 						<a class="collapse-item" href="<?= base_url('setrkat/create') ?>">Atur Semester dan Pagu</a>
 						<a class="collapse-item" href="<?= base_url('setrkat/index') ?>">Lihat Data Set Rkat</a>
+						<a class="collapse-item" href="<?= base_url('rkat/indexBuatTabel') ?>">Buat Tabel Rencana</a>
 					</div>
 				</div>
 			</li>
@@ -139,7 +140,7 @@
 				<div class="container-fluid">
 
 					<!-- Page Heading -->
-					<h1 class="h3 mb-2 text-gray-800">Tambah User</h1>
+					<h1 class="h3 mb-2 text-gray-800">Edit Pagu</h1>
 
 					<!-- DataTales Example -->
 					<div class="card shadow mb-4">
@@ -152,8 +153,8 @@
 											<label for="tahun_akademik">Tahun Ajaran</label>
 											<select class="form-control" id="tahun_akademik" name="tahun_akademik">
 												<option value="<?= $value['tahun_akademik']; ?>"><?= $value['tahun_akademik']; ?></option>
-												<option value="2021/2022">2021/2022</option>
-												<option value="2022/2023">2022/2023</option>
+												<option value="2019/2020">2019/2020</option>
+												<option value="2020/2021">2020/2021</option>
 											</select>
 										</div>
 										<div class="form-group">

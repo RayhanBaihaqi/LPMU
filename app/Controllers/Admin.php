@@ -24,7 +24,6 @@ class Admin extends BaseController
     }
 
 
-
     //proses kpi
     public function form_tambahkpi()
     {
@@ -172,4 +171,8 @@ class Admin extends BaseController
 
         echo view('/admin/ListCapaianKpi');
     }
+
+    //RKAT
+
+
 }

@@ -58,10 +58,11 @@
 				</a>
 				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
-						<a class="collapse-item" href="<?= base_url('rkat/createbyadmin') ?>">Tambah RKAT</a>
+					<a class="collapse-item" href="<?= base_url('rkat/createbyadmin') ?>">Tambah RKAT</a>
 						<a class="collapse-item" href="<?= base_url('rkat/indexbyadmin') ?>">Lihat Data</a>
 						<a class="collapse-item" href="<?= base_url('setrkat/create') ?>">Atur Semester dan Pagu</a>
 						<a class="collapse-item" href="<?= base_url('setrkat/index') ?>">Lihat Data Set Rkat</a>
+						<a class="collapse-item" href="<?= base_url('rkat/indexBuatTabel') ?>">Buat Tabel Rencana</a>
 					</div>
 				</div>
 			</li>
@@ -139,7 +140,7 @@
 				<div class="container-fluid">
 
 					<!-- Page Heading -->
-					<h1 class="h3 mb-2 text-gray-800">Edit Target Capaian</h1>
+					<h1 class="h3 mb-2 text-gray-800">Edit Rencana RKAT</h1>
 
 					<!-- DataTales Example -->
 					<div class="card shadow mb-4">
@@ -157,9 +158,9 @@
 										<select class="form-control" id="jenis_anggaran" name="jenis_anggaran">
 											<!-- <option value="?= $detail_rkat['jenis_anggaran']; ?>" disabled selected> -->
 											<!-- ?= $detail_rkat['jenis_anggaran']; ?></option> -->
-											<option value="Program Kerja">Program Kerja</option>
-											<option value="Oprasional">Oprasional</option>
-											<option value="Investasi">Investasi</option>
+											<option value="PK">Program Kerja</option>
+											<option value="OPS">Oprasional</option>
+											<option value="INV">Investasi</option>
 										</select>
 									</div>
 									<div class="form-group">

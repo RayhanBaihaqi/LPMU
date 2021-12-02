@@ -58,10 +58,11 @@
 				</a>
 				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
-						<a class="collapse-item" href="<?= base_url('rkat/createbyadmin') ?>">Tambah RKAT</a>
+					<a class="collapse-item" href="<?= base_url('rkat/createbyadmin') ?>">Tambah RKAT</a>
 						<a class="collapse-item" href="<?= base_url('rkat/indexbyadmin') ?>">Lihat Data</a>
 						<a class="collapse-item" href="<?= base_url('setrkat/create') ?>">Atur Semester dan Pagu</a>
 						<a class="collapse-item" href="<?= base_url('setrkat/index') ?>">Lihat Data Set Rkat</a>
+						<a class="collapse-item" href="<?= base_url('rkat/indexBuatTabel') ?>">Buat Tabel Rencana</a>
 					</div>
 				</div>
 			</li>
@@ -148,14 +149,18 @@
 								<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 									<thead>
 										<tr>
-											<th>Id</th>
+											<th>No</th>
+											<th>Kategori</th>
+											<th>No Kegiatan</th>
+											<th>Target</th>
+											<th>Indikator</th>
 											<th>Nama Kegiatan</th>
-											<th>Jenis Biaya</th>
-											<th>Anggaran</th>
-											<th>Keterangan</th>
-											<th>Jenis KPI</th>
+											<th>KPI</th>
 											<th>Butir</th>
-											<th>Jenis Anggaran</th>
+											<th>Anggaran Gasal</th>
+											<th>Anggaran Ganjil</th>
+											<th>Total Anggaran Rencana</th>
+											<th>Total Anggaran Realisasi</th>
 											<th>Actions</th>
 										</tr>
 									</thead>
@@ -165,15 +170,17 @@
 											<?php foreach ($detail_rkat as $reading) : ?>
 												<tr>
 													<td scope="row"><?= $i++; ?></td>
+													<td><?= $reading['kategori']; ?></td>
+													<td><?= $reading['no_kegiatan']; ?></td>
+													<td><?= $reading['target']; ?></td>
+													<td><?= $reading['indikator']; ?></td>
 													<td><?= $reading['nama_kegiatan']; ?></td>
-													<td>
-														<!--?= $reading['semester']; ?>-->
-													</td>
-													<td><?= $reading['total']; ?></td>
-													<td><?= $reading['nama_kegiatan']; ?></td>
-													<td><?= $reading['nama_kegiatan']; ?></td>
+													<td><?= $reading['kpi']; ?></td>
 													<td><?= $reading['butir']; ?></td>
-													<td><?= $reading['nama_kegiatan']; ?></td>
+													<td><?= $reading['anggaranGasal']; ?></td>
+													<td><?= $reading['anggaranGenap']; ?></td>
+													<td><?= $reading['total']; ?></td>
+													<td></td>
 													<td>
 														<a href="<?= base_url('rkat/editbyadmin/' . $reading['id']); ?>" class="button button2"><i class="fas fa-edit"></i></a>
 														<a href="<?= base_url('rkat/deletebyadmin/' . $reading['id']); ?>" class="button button2"><i class="fas fa-trash-alt"></i></a>

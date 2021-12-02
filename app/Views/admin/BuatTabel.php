@@ -17,7 +17,6 @@
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 	<!-- Custom styles for this template-->
 	<link href="<?php echo base_url(); ?>/public/css/style_admin.css" rel="stylesheet">
-	<link href="<?php echo base_url(); ?>/public/css/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
@@ -58,7 +57,7 @@
 				</a>
 				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
-					<a class="collapse-item" href="<?= base_url('rkat/createbyadmin') ?>">Tambah RKAT</a>
+						<a class="collapse-item" href="<?= base_url('rkat/createbyadmin') ?>">Tambah RKAT</a>
 						<a class="collapse-item" href="<?= base_url('rkat/indexbyadmin') ?>">Lihat Data</a>
 						<a class="collapse-item" href="<?= base_url('setrkat/create') ?>">Atur Semester dan Pagu</a>
 						<a class="collapse-item" href="<?= base_url('setrkat/index') ?>">Lihat Data Set Rkat</a>
@@ -77,10 +76,11 @@
 					<span>KPI</span></a>
 				<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
-
-						<a class="collapse-item" href="<?= base_url('/admin/listkpi') ?>">Lihat KPI</a>
-						<a class="collapse-item" href="<?= base_url('/admin/listbutirkpi') ?>">Lihat Butir KPI</a>
-						<a class="collapse-item" href="<?= base_url('/admin/listcapaiankpi') ?>">Lihat Capaian</a>
+                        <a class="collapse-item" href="<?= base_url('rkat/createbyadmin') ?>">Tambah RKAT</a>
+						<a class="collapse-item" href="<?= base_url('rkat/indexbyadmin') ?>">Lihat Data</a>
+						<a class="collapse-item" href="<?= base_url('setrkat/create') ?>">Atur Semester dan Pagu</a>
+						<a class="collapse-item" href="<?= base_url('setrkat/index') ?>">Lihat Data Set Rkat</a>
+						<a class="collapse-item" href="<?= base_url('rkat/indexBuatTabel') ?>">Buat Tabel Rencana</a>
 					</div>
 				</div>
 			</li>
@@ -123,6 +123,7 @@
 								</span>
 								<img class="img-profile rounded-circle" src="<?php echo base_url(); ?>/public/img/inf-logo.jpg">
 							</a>
+
 							<!-- Dropdown - User Information -->
 							<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
 								<div class="dropdown-divider"></div>
@@ -137,71 +138,56 @@
 
 				</nav>
 				<!-- End of Topbar -->
+
 				<!-- Begin Page Content -->
 				<div class="container-fluid">
+					<div class="row">
 
-					<!-- Page Heading -->
-					<h1 class="h3 mb-2 text-gray-800">Tambah User</h1>
-
-					<!-- DataTales Example -->
-					<div class="card shadow mb-4">
-						<div class="card-body">
-							<div class="table-responsive">
-								<form action="<?= base_url('setrkat/store'); ?>" method="POST" enctype="multipart/form-data">
-									<div class="container">
-										<div class="form-group">
-											<label for="tahun_akademik">Tahun Ajaran</label>
-											<select class="form-control" id="tahun_akademik" name="tahun_akademik">
-												<option selected>Pilih Tahun Ajaran</option>
-												<option value="2021/2022">2021/2022</option>
-												<option value="2022/2023">2022/2023</option>
-											</select>
-										</div>
-										<div class="form-group">
-											<label for="id_user">Prodi/Unit</label>
-											<select class="form-control" id="id_user" name="id_user">
-												<option selected>Pilih Prodi/Unit</option>
-												<option value="1">Akuntansi</option>
-												<option value="2">Desain Komunikasi Visual</option>
-												<option value="3">Informatika</option>
-												<option value="4">Ilmu Komunikasi</option>
-											</select>
-										</div>
-										<div class="form-group">
-											<label for="pagu">Jumlah Pagu (Rp)</label>
-											<input type="text" class="form-control" id="pagu" placeholder="Masukan Nilai Pagu" name="pagu" required>
-										</div>
-										<button type="submit" class="btn btn-primary" id="tambah">Tambah Data</button>
-									</div>
-								</form>
+						<!-- Earnings (Monthly) Card Example -->
+						<div class="col">
+                        <h1 class="h3 mb-2 text-gray-800">Buat Tabel Rencana RKAT</h1>
+							<div class="card border-left-primary shadow h-100 py-2">
+								<div class="card-body">
+                                    
+								</div>
 							</div>
 						</div>
+
+
 					</div>
+					<!-- Page Heading -->
+
 
 				</div>
-
+				<!-- /.container-fluid -->
 
 			</div>
-			<!-- End of Content Wrapper -->
+			<!-- End of Main Content -->
+
+			<!-- Footer -->
+			<footer class="sticky-footer bg-white">
+				<div class="container my-auto">
+					<div class="copyright text-center my-auto">
+						<span>Copyright &copy; Your Website 2020</span>
+					</div>
+				</div>
+			</footer>
+			<!-- End of Footer -->
 
 		</div>
-		<!-- End of Page Wrapper -->
+		<!-- End of Content Wrapper -->
 
-		<!-- Scroll to Top Button-->
-		<a class="scroll-to-top rounded" href="#page-top">
-			<i class="fas fa-angle-up"></i>
-		</a>
+	</div>
+	<!-- End of Page Wrapper -->
 
-		<!-- Bootstrap core JavaScript-->
-		<script src="<?php echo base_url(); ?>/public/js/jquery.min.js"></script>
-		<script src="<?php echo base_url(); ?>/public/js/bootstrap.bundle.min.js"></script>
+	<!-- Scroll to Top Button-->
+	<a class="scroll-to-top rounded" href="#page-top">
+		<i class="fas fa-angle-up"></i>
+	</a>
 
-		<!-- Page level plugins -->
-		<script src="<?php echo base_url(); ?>/public/js/jquery.dataTables.min.js"></script>
-		<script src="<?php echo base_url(); ?>/public/js/dataTables.bootstrap4.min.js"></script>
-
-		<!-- Page level custom scripts -->
-		<script src="<?php echo base_url(); ?>/public/js/datatables-demo.js"></script>
+	<!-- Bootstrap core JavaScript-->
+	<script src="<?php echo base_url(); ?>/public/js/jquery.min.js"></script>
+	<script src="<?php echo base_url(); ?>/public/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

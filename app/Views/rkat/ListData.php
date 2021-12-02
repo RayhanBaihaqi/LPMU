@@ -85,14 +85,19 @@
 		<br>
 		<!-- Nav Bar Start -->
 		<div class="nav-bar">
-			<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-				<a href="<?php echo site_url(); ?>backend/rkat"><i class="fas fa-long-arrow-alt-left"></i></a>
+		<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+				<a href="<?php echo site_url(); ?>backend"><i class="fas fa-long-arrow-alt-left"></i></a>
 				<a href="#" class="navbar-brand">MENU</a>
 				<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse justify-content-between">
-
+					<div class="navbar-nav mr-auto">
+						<a href="<?php echo site_url(); ?>backend/rkat" class="nav-item nav-link ">Home</a>
+						<a href="<?= base_url('/rkat/createbyuser') ?>" class="nav-item nav-link">Rencana Anggaran</a>
+                        <a href="<?= base_url('/CapaianRkat/createcapaianbyuser') ?>" class="nav-item nav-link">Realisasi Anggaran</a>
+                        <a href="<?= base_url('/rkat/indexbyuser') ?>" class="nav-item nav-link active">Kesimpulan</a>
+					</div>
 					<div class="ml-auto">
 						<div class="user-info-dropdown">
 							<div class="dropdown">
