@@ -130,28 +130,21 @@
 			</div>
 			<div class="card-body">
 				<div class="form-group ">
-					<label for="sel1">Standar KPI:</label>
-					<select class="form-control kpi" id="sel1">
-						<option>A</option>
-						<option>B</option>
-						<option>C</option>
-						<option></option>
-					</select>
 					<label for="sel1">Kategori:</label>
 					<select class="form-control kpi" id="sel1">
-						<option>A</option>
-						<option>B</option>
-						<option>C</option>
-						<option></option>
+						<option>Pilih Kategori</option>
+						<option>PK</option>
+						<option>OPS</option>
+						<option>INV</option>
 					</select>
 				</div>
 				<form action="<?= base_url('rkat/updatebyuser'); ?>" method="POST" enctype="multipart/form-data">
 				<table class="table table-borded table-responsive table-striped">
 					<thead>
 						<tr>
+							<th>KPI - Butir</th>
 							<th>No Kegiatan</th>
 							<th>Indikator</th>
-							<th>Butir</th>
 							<th>Target</th>
 							<th>Nama Kegiatan</th>
 							<th>Anggaran Gasal</th>
@@ -160,18 +153,20 @@
 							<th>Serapan Genap</th>
 							<th>Total Anggaran</th>
 							<th>Total Serapan</th>
-							<th>Aksi</th>
 						</tr>
 					</thead>
-					<tbody id="tabelData">
+					<tbody id="nilai">
 						<?php if ($detail_rkat) : ?>
 							<?php foreach ($detail_rkat as $reading) : ?>
 								<input required type="hidden" name="id" value="<?= $reading['id']; ?>">
 								<input required type="hidden" name="id_set" value="<?= $reading['id_set']; ?>">
 								<tr>
+									<td>
+										<?= $reading['kpi']; ?>.
+										<?= $reading['butir']; ?>
+									</td>
 									<td><?= $reading['no_kegiatan']; ?></td>
 									<td><?= $reading['indikator']; ?></td>
-									<td><?= $reading['butir']; ?></td>
 									<td><?= $reading['target']; ?></td>
 									<td><?= $reading['nama_kegiatan']; ?></td>
 									<td><?= $reading['anggaranGasal']; ?></td>
@@ -180,11 +175,25 @@
 									<td><input type="text" class="form-control" style="width: 150px;" id="anggaranGasal" placeholder="Masukan Anggaran Gasal" name="anggaranGasal[]" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" required></td>
 									<td><?= $reading['total']; ?></td>
 									<td><input type="text" class="form-control" style="width: 150px;" id="anggaranGasal" placeholder="Masukan Anggaran Gasal" name="anggaranGasal[]" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" required></td>
-									<td><a href="<?= base_url('rkat/editbyadmin/'); ?>/<?= $reading['id']; ?>" class="button button2"><i class="fas fa-edit"></i></a></td>
 								</tr>
-							<?php endforeach; ?>
+								<?php endforeach; ?>
 						<?php endif; ?>
 					</tbody>
+						<tfoot>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td><span id="anggaranGanjil"></span></td>
+									<td></td>
+									<td><span id="anggaranGenap"></span></td>
+									<td></td>
+									<td><span id="total"></span></td>
+									<td></td>
+						</tfoot>
+							
+					
 				</table>
 				<button type="button" class="btn btn-primary">Submit</button>
 				</form>
@@ -192,6 +201,30 @@
 		</div>
 	</div>
 	<!-- JavaScript Libraries -->
+	<script>
+		var table = document.getElementById("nilai"), sumHsl = 0;
+		for(var t = 1; t < table.rows.length; t++)
+		{
+			sumHsl = sumHsl + parseInt(table.rows[t].cells[5].innerHTML);
+		}
+		document.getElementById("anggaranGanjil").innerHTML = "Rp."+ sumHsl;
+	</script>
+	<script>
+		var table = document.getElementById("nilai"), sumHsl = 0;
+		for(var t = 1; t < table.rows.length; t++)
+		{
+			sumHsl = sumHsl + parseInt(table.rows[t].cells[7].innerHTML);
+		}
+		document.getElementById("anggaranGenap").innerHTML = "Rp."+ sumHsl;
+	</script>
+	<script>
+		var table = document.getElementById("nilai"), sumHsl = 0;
+		for(var t = 1; t < table.rows.length; t++)
+		{
+			sumHsl = sumHsl + parseInt(table.rows[t].cells[7].innerHTML);
+		}
+		document.getElementById("total").innerHTML = "Rp."+ sumHsl;
+	</script>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 	<!-- <script src="lib/easing/easing.min.js"></script>
@@ -204,6 +237,7 @@
 			$(this).siblings(".custom-file-label").addClass("selected").html(fileName);
 		});
 	</script>
+	
 	<script>
 		function startTime() {
 			var today = new Date();
