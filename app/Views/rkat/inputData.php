@@ -214,7 +214,7 @@
 								
 							</tbody>
 							<tfoot>
-								<td> <button type="button" class="btn btn-danger btn-sm" onclick="deleteRow('tbody2')"><i class="fa fa-minus"></i>Hapus Baris</button> </th>
+								 <td> <!--<button type="button" class="btn btn-danger btn-sm" onclick="deleteRow('tbody2')"><i class="fa fa-minus"></i>Hapus Baris</button>--> </th> 
 								<td><button class="btn btn-success btn-sm" onclick="addRow('tbody2')" id="BarisBaru"><i class="fa fa-plus"></i> Baris Baru</button></td>
 								<td></td>
 								<td>Total Keseluruhan</td>
