@@ -10,6 +10,7 @@ use App\Models\ModelKpiAdmin;
 use App\Models\DataKpiModel;
 use App\Models\DataKpiButirModel;
 use App\Models\UsersModel;
+use App\Models\DataCapaianKpiModel;
 
 class Kpi extends BaseController
 {
@@ -132,16 +133,23 @@ class Kpi extends BaseController
 
 	public function savecapaian1()
 	{
-		// $detail = new DataKpiButirModel();
+		$detail = new DataCapaianKpiModel();
 		$db      = \Config\Database::connect();
-		$detail = $db->table('tabel_butir_kpi');
+		//$detail = $db->table('tabel_butir_kpi');
+		$detail = $db->table('tabel_capaian_kpi');
 
 		$id = $this->request->getPost('id');
 		$data = [
+			'level' => $this->request->getPost('level'),
+			'nama_prodi' => $this->request->getPost('nama_prodi'),
+			'tahun_ajaran' => $this->request->getPost('tahun_ajaran'),
 			'realisasi' => $this->request->getPost('txtRealisasi'),
+			'idkpi' => $this->request->getPost('idkpi'),
+			'id_butir_kpi' => $this->request->getPost('id_butir_kpi'),
+
 		];
 
-		foreach ($id as $key => $value) {
+		/*foreach ($id as $key => $value) {
 			foreach ($data as $abc => $def) {
 				$no = 0;
 				foreach ($def as $ooo) {
@@ -154,7 +162,7 @@ class Kpi extends BaseController
 				}
 				echo "<br><br>";
 			}
-		}
+		}*/
 		return redirect()->to(base_url('kpi/inputcapaian/1'))->with('status', 'Data Berhasil Di-Update');
 	}
 

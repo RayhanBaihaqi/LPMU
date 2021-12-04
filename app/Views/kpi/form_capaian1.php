@@ -173,7 +173,7 @@
                 <form id="formA" name="formA" action="<?= base_url('kpi/savecapaian1'); ?>" method="POST" enctype="multipart/form-data">
                     <div class="form-inline">
                         <label class="mb-2 mr-sm-1" for="exampleFormControlSelect1" style="width: 150px;">Tahun Ajaran</label>
-                        <select class="form-control mb-2 mr-sm-2" id="exampleFormControlSelect1">
+                        <select class="form-control mb-2 mr-sm-2" id="exampleFormControlSelect1" name="tahun_ajaran">
                             <option value="" disabled selected>Pilih Tahun</option>
                             <option value="2019/2020">2019/2020</option>
                             <option value="2020/2021">2020/2021</option>
@@ -181,10 +181,10 @@
                     </div>
                     <div class="form-inline" style="margin-bottom:20px;">
                         <label for="prodiunit" class="mb-2 mr-sm-2" style="width: 150px;">Program Studi/Unit</label>
-                        <input type="text" class="form-control mb-2 mr-sm-2" id="prodiunit" value=" <?php
-                                                                                                    $nama_prodi = session('nama_prodi');
-                                                                                                    echo "$nama_prodi"
-                                                                                                    ?>" name="prodiunit" required disabled>
+                        <input type="text" class="form-control mb-2 mr-sm-2" id="prodiunit" name="nama_prodi" value=" <?php
+                                                                                                                        $nama_prodi = session('nama_prodi');
+                                                                                                                        echo "$nama_prodi"
+                                                                                                                        ?>" name="prodiunit" required disabled>
                         <label for="level" class="mb-2 mr-sm-2">Level</label>
                         <input type="text" class="form-control mb-2 mr-sm-2" id="level" name="level" value="<?php
                                                                                                             $level = session('level');
@@ -218,8 +218,10 @@
                                         <td><?= $row->target ?></td>
                                         <td><?= $row->bobot ?></td>
                                         <td>
-                                            <input type="number" name="txtRealisasi[]" placeholder='Masukkan realisasi' class="form-control" value="<?= $row->realisasi; ?>" />
+                                            <input type="number" name="txtRealisasi[]" placeholder='Masukkan realisasi' class="form-control">
                                             <input type="hidden" name="id[]" value="<?= $row->id; ?>" />
+                                            <input type="hidden" name="idkpi[]" value="1" />
+                                            <input type="hidden" name="id_butir_kpi[]" value="<?= $row->angka_butir ?>" />
                                         </td>
                                         <td></td>
                                         <td></td>

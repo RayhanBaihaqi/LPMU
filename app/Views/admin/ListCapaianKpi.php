@@ -58,11 +58,11 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="<?= base_url('rkat/createbyadmin') ?>">Tambah RKAT</a>
-						<a class="collapse-item" href="<?= base_url('rkat/indexbyadmin') ?>">Lihat Data</a>
-						<a class="collapse-item" href="<?= base_url('setrkat/create') ?>">Atur Semester dan Pagu</a>
-						<a class="collapse-item" href="<?= base_url('setrkat/index') ?>">Lihat Data Set Rkat</a>
-						<a class="collapse-item" href="<?= base_url('rkat/indexBuatTabel') ?>">Buat Tabel Rencana</a>
+                        <a class="collapse-item" href="<?= base_url('rkat/createbyadmin') ?>">Tambah RKAT</a>
+                        <a class="collapse-item" href="<?= base_url('rkat/indexbyadmin') ?>">Lihat Data</a>
+                        <a class="collapse-item" href="<?= base_url('setrkat/create') ?>">Atur Semester dan Pagu</a>
+                        <a class="collapse-item" href="<?= base_url('setrkat/index') ?>">Lihat Data Set Rkat</a>
+                        <a class="collapse-item" href="<?= base_url('rkat/indexBuatTabel') ?>">Buat Tabel Rencana</a>
                     </div>
                 </div>
             </li>
@@ -157,18 +157,41 @@
                                             <th>Nama Prodi</th>
                                             <th>Tahun Ajaran</th>
                                             <th>Level</th>
-                                            <th>ID KPI</th>
+                                            <th>Nama KPI</th>
                                             <th>Angka Butir</th>
                                             <th>Nama Butir</th>
                                             <th>Bobot</th>
                                             <th>Target</th>
                                             <th>Realisasi</th>
                                             <th>Jumlah Bobot</th>
+                                            <th>File</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-
+                                        <?php
+                                        $nomor = 0;
+                                        foreach ($tampilcapaiankpi as $row) :
+                                            $nomor++;
+                                        ?>
+                                            <tr>
+                                                <th><?= $nomor; ?></th>
+                                                <td><?= $row->nama_prodi ?></td>
+                                                <td><?= $row->tahun_ajaran ?></td>
+                                                <td><?= $row->level ?></td>
+                                                <td><?= $row->nama_kpi ?></td>
+                                                <td><?= $row->idkpi . '.' . $row->angka_butir ?></td>
+                                                <td><?= $row->nama_butir ?></td>
+                                                <td><?= $row->bobot ?></td>
+                                                <td><?= $row->target ?></td>
+                                                <td><?= $row->realisasi ?></td>
+                                                <td><?= $row->nilai_bobot ?></td>
+                                                <td><?= $row->upload_file ?></td>
+                                                <td></td>
+                                            <?php
+                                        endforeach;
+                                            ?>
+                                            </tr>
                                     </tbody>
                                 </table>
                             </div>

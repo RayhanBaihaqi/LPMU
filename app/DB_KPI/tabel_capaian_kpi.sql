@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 02, 2021 at 05:36 AM
+-- Generation Time: Dec 04, 2021 at 10:47 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -28,15 +28,24 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `tabel_capaian_kpi` (
-  `id` int(100) NOT NULL,
+  `id` int(11) NOT NULL,
+  `level` varchar(255) NOT NULL,
+  `nama_prodi` varchar(255) NOT NULL,
   `tahun_ajaran` varchar(255) NOT NULL,
-  `nama_prodi` int(11) NOT NULL,
-  `level` int(11) NOT NULL,
   `realisasi` int(11) NOT NULL,
   `nilai_bobot` float NOT NULL,
   `upload_file` varchar(255) NOT NULL,
-  `id_capaian_kpi` int(11) NOT NULL
+  `idkpi` int(11) NOT NULL,
+  `id_butir_kpi` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tabel_capaian_kpi`
+--
+
+INSERT INTO `tabel_capaian_kpi` (`id`, `level`, `nama_prodi`, `tahun_ajaran`, `realisasi`, `nilai_bobot`, `upload_file`, `idkpi`, `id_butir_kpi`) VALUES
+(3, 'Prodi', 'Informatika', '2019/2020', 2, 2, 'aaaaaa', 3, 7),
+(4, 'Prodi', 'Informatika', '2020/2021', 1, 1, 'aaaa', 6, 2);
 
 --
 -- Indexes for dumped tables
@@ -46,18 +55,17 @@ CREATE TABLE `tabel_capaian_kpi` (
 -- Indexes for table `tabel_capaian_kpi`
 --
 ALTER TABLE `tabel_capaian_kpi`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `id_capaian_kpi` (`id_capaian_kpi`);
+  ADD PRIMARY KEY (`id`);
 
 --
--- Constraints for dumped tables
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- Constraints for table `tabel_capaian_kpi`
+-- AUTO_INCREMENT for table `tabel_capaian_kpi`
 --
 ALTER TABLE `tabel_capaian_kpi`
-  ADD CONSTRAINT `tabel_capaian_kpi_ibfk_1` FOREIGN KEY (`id_capaian_kpi`) REFERENCES `tabel_butir_kpi` (`id`);
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

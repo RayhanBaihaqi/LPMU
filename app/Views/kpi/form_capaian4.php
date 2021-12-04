@@ -217,7 +217,7 @@
                                         <td><?= $row->nama_butir ?></td>
                                         <td><?= $row->target ?></td>
                                         <td>
-                                            <input type="number" name="txtRealisasi[]" placeholder='Masukkan realisasi' class="form-control" value="<?= $row->realisasi; ?>" />
+                                            <input type="number" name="txtRealisasi[]" placeholder='Masukkan realisasi' class="form-control">
                                             <input type="hidden" name="id[]" value="<?= $row->id; ?>" />
                                         </td>
                                         <td></td>
