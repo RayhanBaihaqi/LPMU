@@ -133,324 +133,488 @@ class Kpi extends BaseController
 
 	public function savecapaian1()
 	{
-		$detail = new DataCapaianKpiModel();
+		$capaianmodel = new DataCapaianKpiModel();
 		$db      = \Config\Database::connect();
 		//$detail = $db->table('tabel_butir_kpi');
 		$detail = $db->table('tabel_capaian_kpi');
 
 		$id = $this->request->getPost('id');
-		$data = [
-			'level' => $this->request->getPost('level'),
-			'nama_prodi' => $this->request->getPost('nama_prodi'),
-			'tahun_ajaran' => $this->request->getPost('tahun_ajaran'),
-			'realisasi' => $this->request->getPost('txtRealisasi'),
-			'idkpi' => $this->request->getPost('idkpi'),
-			'id_butir_kpi' => $this->request->getPost('id_butir_kpi'),
+		$realisasi = $this->request->getPost('txtRealisasi');
+		$bobot = $this->request->getPost('bobot');
+		$level = $this->request->getPost('level');
+		$nama_prodi = $this->request->getPost('nama_prodi');
+		$tahun_ajaran = $this->request->getPost('tahun_ajaran');
+		//$upload_file = $this->request->getPost('upload_file');
+		$idkpi = $this->request->getPost('idkpi');
+		$id_butir_kpi = $this->request->getPost('id_butir_kpi');
 
-		];
+		$nilai_bobot = array();
+		for ($i = 0; $i < count($id); $i++) {
+			$nilai_bobot[$i] = $realisasi[$i] * $bobot[$i / 100];
+		}
+		for ($i = 0; $i < count($id); $i++) {
+			$data = [
+				'level' => $level,
+				'nama_prodi' => $nama_prodi,
+				'tahun_ajaran' => $tahun_ajaran,
+				'realisasi' => $realisasi[$i],
+				'nilai_bobot' => $nilai_bobot[$i],
+				//'upload_file' => $this->request->getPost('upload_file'),
+				'idkpi' => $idkpi[$i],
+				'id_butir_kpi' => $id_butir_kpi[$i],
+			];
+			$save_capaian = $capaianmodel->simpancapaian($data);
+		}
+		if ($save_capaian) {
+			session()->setFlashdata('pesan', '
+		<div class="alert alert-success">
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			<strong>Berhasil!</strong> Data Capaian telah masuk ke database.
+		</div>');
+		} else {
+			session()->setFlashdata('pesan', '
+		<div class="alert alert-danger">
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			<strong>Tidak berhasil!</strong> Data Capaian tidak masuk ke database.
+		</div>');
+		}
 
-		/*foreach ($id as $key => $value) {
-			foreach ($data as $abc => $def) {
-				$no = 0;
-				foreach ($def as $ooo) {
-					$no++;
-					if ($value == $no) {
-						$detail->set('realisasi', $ooo);
-						$detail->where('id', $value);
-						$detail->update();
-					}
-				}
-				echo "<br><br>";
-			}
-		}*/
-		return redirect()->to(base_url('kpi/inputcapaian/1'))->with('status', 'Data Berhasil Di-Update');
+
+		return redirect()->to(base_url('kpi/inputcapaian/1'));
+		// echo "<br><br>";
+		// print_r($nilai_bobot);
+		// exit();
 	}
 
 	public function savecapaian2()
 	{
-		// $detail = new DataKpiButirModel();
+		$capaianmodel = new DataCapaianKpiModel();
 		$db      = \Config\Database::connect();
-		$detail = $db->table('tabel_butir_kpi');
+		//$detail = $db->table('tabel_butir_kpi');
+		$detail = $db->table('tabel_capaian_kpi');
 
 		$id = $this->request->getPost('id');
-		$data = [
-			'realisasi' => $this->request->getPost('txtRealisasi'),
-		];
-		// echo "data : ";print_r($data);echo "<br>";
-		// echo "id : ";print_r($id);echo "<br>";
+		$realisasi = $this->request->getPost('txtRealisasi');
+		$bobot = $this->request->getPost('bobot');
+		$level = $this->request->getPost('level');
+		$nama_prodi = $this->request->getPost('nama_prodi');
+		$tahun_ajaran = $this->request->getPost('tahun_ajaran');
+		//$upload_file = $this->request->getPost('upload_file');
+		$idkpi = $this->request->getPost('idkpi');
+		$id_butir_kpi = $this->request->getPost('id_butir_kpi');
 
-		// echo "<br><br>";
-		foreach ($id as $key => $value) {
-			// echo "id value : ";print_r($value);echo "<br>";
-
-			foreach ($data as $abc => $def) {
-				$no = 0;
-				foreach ($def as $ooo) {
-					$no++;
-					if ($value == $no) {
-						// echo "no : ".$no;echo "<br>";
-						// echo "ooo value : ";print_r($ooo);echo "<br>";
-
-						$detail->set('realisasi', $ooo);
-						$detail->where('id', $value);
-						$detail->update();
-					}
-				}
-				echo "<br><br>";
-			}
+		$nilai_bobot = array();
+		for ($i = 0; $i < count($id); $i++) {
+			$nilai_bobot[$i] = ((int)$realisasi[$i] * (float)$bobot[$i] / 100);
 		}
-		return redirect()->to(base_url('kpi/inputcapaian/2'))->with('status', 'Data Berhasil Di-Update');
+		for ($i = 0; $i < count($id); $i++) {
+			$data = [
+				'level' => $level,
+				'nama_prodi' => $nama_prodi,
+				'tahun_ajaran' => $tahun_ajaran,
+				'realisasi' => $realisasi[$i],
+				'nilai_bobot' => $nilai_bobot[$i],
+				//'upload_file' => $this->request->getPost('upload_file'),
+				'idkpi' => $idkpi[$i],
+				'id_butir_kpi' => $id_butir_kpi[$i],
+			];
+			$save_capaian = $capaianmodel->simpancapaian($data);
+		}
+		if ($save_capaian) {
+			session()->setFlashdata('pesan', '
+		<div class="alert alert-success">
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			<strong>Berhasil!</strong> Data Capaian telah masuk ke database.
+		</div>');
+		} else {
+			session()->setFlashdata('pesan', '
+		<div class="alert alert-danger">
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			<strong>Tidak berhasil!</strong> Data Capaian tidak masuk ke database.
+		</div>');
+		}
+
+		return redirect()->to(base_url('kpi/inputcapaian/2'));
+		// echo "<br><br>";
+		// print_r($nilai_bobot);
+		// exit();
 	}
 
 	public function savecapaian3()
 	{
-		// $detail = new DataKpiButirModel();
+		$capaianmodel = new DataCapaianKpiModel();
 		$db      = \Config\Database::connect();
-		$detail = $db->table('tabel_butir_kpi');
+		//$detail = $db->table('tabel_butir_kpi');
+		$detail = $db->table('tabel_capaian_kpi');
 
 		$id = $this->request->getPost('id');
-		$data = [
-			'realisasi' => $this->request->getPost('txtRealisasi'),
-		];
-		// echo "data : ";print_r($data);echo "<br>";
-		// echo "id : ";print_r($id);echo "<br>";
+		$realisasi = $this->request->getPost('txtRealisasi');
+		$bobot = $this->request->getPost('bobot');
+		$level = $this->request->getPost('level');
+		$nama_prodi = $this->request->getPost('nama_prodi');
+		$tahun_ajaran = $this->request->getPost('tahun_ajaran');
+		//$upload_file = $this->request->getPost('upload_file');
+		$idkpi = $this->request->getPost('idkpi');
+		$id_butir_kpi = $this->request->getPost('id_butir_kpi');
 
-		// echo "<br><br>";
-		foreach ($id as $key => $value) {
-			// echo "id value : ";print_r($value);echo "<br>";
-
-			foreach ($data as $abc => $def) {
-				$no = 0;
-				foreach ($def as $ooo) {
-					$no++;
-					if ($value == $no) {
-						// echo "no : ".$no;echo "<br>";
-						// echo "ooo value : ";print_r($ooo);echo "<br>";
-
-						$detail->set('realisasi', $ooo);
-						$detail->where('id', $value);
-						$detail->update();
-					}
-				}
-				echo "<br><br>";
-			}
+		$nilai_bobot = array();
+		for ($i = 0; $i < count($id); $i++) {
+			$nilai_bobot[$i] = ((int)$realisasi[$i] * (float)$bobot[$i] / 100);
 		}
-		return redirect()->to(base_url('kpi/inputcapaian/3'))->with('status', 'Data Berhasil Di-Update');
+		for ($i = 0; $i < count($id); $i++) {
+			$data = [
+				'level' => $level,
+				'nama_prodi' => $nama_prodi,
+				'tahun_ajaran' => $tahun_ajaran,
+				'realisasi' => $realisasi[$i],
+				'nilai_bobot' => $nilai_bobot[$i],
+				//'upload_file' => $this->request->getPost('upload_file'),
+				'idkpi' => $idkpi[$i],
+				'id_butir_kpi' => $id_butir_kpi[$i],
+			];
+			$save_capaian = $capaianmodel->simpancapaian($data);
+		}
+		if ($save_capaian) {
+			session()->setFlashdata('pesan', '
+		<div class="alert alert-success">
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			<strong>Berhasil!</strong> Data Capaian telah masuk ke database.
+		</div>');
+		} else {
+			session()->setFlashdata('pesan', '
+		<div class="alert alert-danger">
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			<strong>Tidak berhasil!</strong> Data Capaian tidak masuk ke database.
+		</div>');
+		}
+
+		return redirect()->to(base_url('kpi/inputcapaian/3'));
+		// echo "<br><br>";
+		// print_r($nilai_bobot);
+		// exit();
 	}
 
 	public function savecapaian4()
 	{
-		// $detail = new DataKpiButirModel();
+		$capaianmodel = new DataCapaianKpiModel();
 		$db      = \Config\Database::connect();
-		$detail = $db->table('tabel_butir_kpi');
+		//$detail = $db->table('tabel_butir_kpi');
+		$detail = $db->table('tabel_capaian_kpi');
 
 		$id = $this->request->getPost('id');
-		$data = [
-			'realisasi' => $this->request->getPost('txtRealisasi'),
-		];
-		// echo "data : ";print_r($data);echo "<br>";
-		// echo "id : ";print_r($id);echo "<br>";
+		$realisasi = $this->request->getPost('txtRealisasi');
+		$bobot = $this->request->getPost('bobot');
+		$level = $this->request->getPost('level');
+		$nama_prodi = $this->request->getPost('nama_prodi');
+		$tahun_ajaran = $this->request->getPost('tahun_ajaran');
+		//$upload_file = $this->request->getPost('upload_file');
+		$idkpi = $this->request->getPost('idkpi');
+		$id_butir_kpi = $this->request->getPost('id_butir_kpi');
 
-		// echo "<br><br>";
-		foreach ($id as $key => $value) {
-			// echo "id value : ";print_r($value);echo "<br>";
-
-			foreach ($data as $abc => $def) {
-				$no = 0;
-				foreach ($def as $ooo) {
-					$no++;
-					if ($value == $no) {
-						// echo "no : ".$no;echo "<br>";
-						// echo "ooo value : ";print_r($ooo);echo "<br>";
-
-						$detail->set('realisasi', $ooo);
-						$detail->where('id', $value);
-						$detail->update();
-					}
-				}
-				echo "<br><br>";
-			}
+		$nilai_bobot = array();
+		for ($i = 0; $i < count($id); $i++) {
+			$nilai_bobot[$i] = ((int)$realisasi[$i] * (float)$bobot[$i] / 100);
 		}
-		return redirect()->to(base_url('kpi/inputcapaian/4'))->with('status', 'Data Berhasil Di-Update');
+		for ($i = 0; $i < count($id); $i++) {
+			$data = [
+				'level' => $level,
+				'nama_prodi' => $nama_prodi,
+				'tahun_ajaran' => $tahun_ajaran,
+				'realisasi' => $realisasi[$i],
+				'nilai_bobot' => $nilai_bobot[$i],
+				//'upload_file' => $this->request->getPost('upload_file'),
+				'idkpi' => $idkpi[$i],
+				'id_butir_kpi' => $id_butir_kpi[$i],
+			];
+			$save_capaian = $capaianmodel->simpancapaian($data);
+		}
+		if ($save_capaian) {
+			session()->setFlashdata('pesan', '
+		<div class="alert alert-success">
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			<strong>Berhasil!</strong> Data Capaian telah masuk ke database.
+		</div>');
+		} else {
+			session()->setFlashdata('pesan', '
+		<div class="alert alert-danger">
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			<strong>Tidak berhasil!</strong> Data Capaian tidak masuk ke database.
+		</div>');
+		}
+
+		return redirect()->to(base_url('kpi/inputcapaian/4'));
+		// echo "<br><br>";
+		// print_r($nilai_bobot);
+		// exit();
 	}
 
 	public function savecapaian5()
 	{
-		// $detail = new DataKpiButirModel();
+		$capaianmodel = new DataCapaianKpiModel();
 		$db      = \Config\Database::connect();
-		$detail = $db->table('tabel_butir_kpi');
+		//$detail = $db->table('tabel_butir_kpi');
+		$detail = $db->table('tabel_capaian_kpi');
 
 		$id = $this->request->getPost('id');
-		$data = [
-			'realisasi' => $this->request->getPost('txtRealisasi'),
-		];
-		// echo "data : ";print_r($data);echo "<br>";
-		// echo "id : ";print_r($id);echo "<br>";
+		$realisasi = $this->request->getPost('txtRealisasi');
+		$bobot = $this->request->getPost('bobot');
+		$level = $this->request->getPost('level');
+		$nama_prodi = $this->request->getPost('nama_prodi');
+		$tahun_ajaran = $this->request->getPost('tahun_ajaran');
+		//$upload_file = $this->request->getPost('upload_file');
+		$idkpi = $this->request->getPost('idkpi');
+		$id_butir_kpi = $this->request->getPost('id_butir_kpi');
 
-		// echo "<br><br>";
-		foreach ($id as $key => $value) {
-			// echo "id value : ";print_r($value);echo "<br>";
-
-			foreach ($data as $abc => $def) {
-				$no = 0;
-				foreach ($def as $ooo) {
-					$no++;
-					if ($value == $no) {
-						// echo "no : ".$no;echo "<br>";
-						// echo "ooo value : ";print_r($ooo);echo "<br>";
-
-						$detail->set('realisasi', $ooo);
-						$detail->where('id', $value);
-						$detail->update();
-					}
-				}
-				echo "<br><br>";
-			}
+		$nilai_bobot = array();
+		for ($i = 0; $i < count($id); $i++) {
+			$nilai_bobot[$i] = ((int)$realisasi[$i] * (float)$bobot[$i] / 100);
 		}
-		return redirect()->to(base_url('kpi/inputcapaian/5'))->with('status', 'Data Berhasil Di-Update');
+		for ($i = 0; $i < count($id); $i++) {
+			$data = [
+				'level' => $level,
+				'nama_prodi' => $nama_prodi,
+				'tahun_ajaran' => $tahun_ajaran,
+				'realisasi' => $realisasi[$i],
+				'nilai_bobot' => $nilai_bobot[$i],
+				//'upload_file' => $this->request->getPost('upload_file'),
+				'idkpi' => $idkpi[$i],
+				'id_butir_kpi' => $id_butir_kpi[$i],
+			];
+			$save_capaian = $capaianmodel->simpancapaian($data);
+		}
+		if ($save_capaian) {
+			session()->setFlashdata('pesan', '
+		<div class="alert alert-success">
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			<strong>Berhasil!</strong> Data Capaian telah masuk ke database.
+		</div>');
+		} else {
+			session()->setFlashdata('pesan', '
+		<div class="alert alert-danger">
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			<strong>Tidak berhasil!</strong> Data Capaian tidak masuk ke database.
+		</div>');
+		}
+
+		return redirect()->to(base_url('kpi/inputcapaian/5'));
+		// echo "<br><br>";
+		// print_r($nilai_bobot);
+		// exit();
 	}
 
 	public function savecapaian6()
 	{
-		// $detail = new DataKpiButirModel();
+		$capaianmodel = new DataCapaianKpiModel();
 		$db      = \Config\Database::connect();
-		$detail = $db->table('tabel_butir_kpi');
+		//$detail = $db->table('tabel_butir_kpi');
+		$detail = $db->table('tabel_capaian_kpi');
 
 		$id = $this->request->getPost('id');
-		$data = [
-			'realisasi' => $this->request->getPost('txtRealisasi'),
-		];
-		// echo "data : ";print_r($data);echo "<br>";
-		// echo "id : ";print_r($id);echo "<br>";
+		$realisasi = $this->request->getPost('txtRealisasi');
+		$bobot = $this->request->getPost('bobot');
+		$level = $this->request->getPost('level');
+		$nama_prodi = $this->request->getPost('nama_prodi');
+		$tahun_ajaran = $this->request->getPost('tahun_ajaran');
+		//$upload_file = $this->request->getPost('upload_file');
+		$idkpi = $this->request->getPost('idkpi');
+		$id_butir_kpi = $this->request->getPost('id_butir_kpi');
 
-		// echo "<br><br>";
-		foreach ($id as $key => $value) {
-			// echo "id value : ";print_r($value);echo "<br>";
-
-			foreach ($data as $abc => $def) {
-				$no = 0;
-				foreach ($def as $ooo) {
-					$no++;
-					if ($value == $no) {
-						// echo "no : ".$no;echo "<br>";
-						// echo "ooo value : ";print_r($ooo);echo "<br>";
-
-						$detail->set('realisasi', $ooo);
-						$detail->where('id', $value);
-						$detail->update();
-					}
-				}
-				echo "<br><br>";
-			}
+		$nilai_bobot = array();
+		for ($i = 0; $i < count($id); $i++) {
+			$nilai_bobot[$i] = ((int)$realisasi[$i] * (float)$bobot[$i] / 100);
 		}
-		return redirect()->to(base_url('kpi/inputcapaian/6'))->with('status', 'Data Berhasil Di-Update');
+		for ($i = 0; $i < count($id); $i++) {
+			$data = [
+				'level' => $level,
+				'nama_prodi' => $nama_prodi,
+				'tahun_ajaran' => $tahun_ajaran,
+				'realisasi' => $realisasi[$i],
+				'nilai_bobot' => $nilai_bobot[$i],
+				//'upload_file' => $this->request->getPost('upload_file'),
+				'idkpi' => $idkpi[$i],
+				'id_butir_kpi' => $id_butir_kpi[$i],
+			];
+			$save_capaian = $capaianmodel->simpancapaian($data);
+		}
+		if ($save_capaian) {
+			session()->setFlashdata('pesan', '
+		<div class="alert alert-success">
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			<strong>Berhasil!</strong> Data Capaian telah masuk ke database.
+		</div>');
+		} else {
+			session()->setFlashdata('pesan', '
+		<div class="alert alert-danger">
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			<strong>Tidak berhasil!</strong> Data Capaian tidak masuk ke database.
+		</div>');
+		}
+
+		return redirect()->to(base_url('kpi/inputcapaian/6'));
+		// echo "<br><br>";
+		// print_r($nilai_bobot);
+		// exit();
 	}
 
 	public function savecapaian7()
 	{
-		// $detail = new DataKpiButirModel();
+		$capaianmodel = new DataCapaianKpiModel();
 		$db      = \Config\Database::connect();
-		$detail = $db->table('tabel_butir_kpi');
+		//$detail = $db->table('tabel_butir_kpi');
+		$detail = $db->table('tabel_capaian_kpi');
 
 		$id = $this->request->getPost('id');
-		$data = [
-			'realisasi' => $this->request->getPost('txtRealisasi'),
-		];
-		// echo "data : ";print_r($data);echo "<br>";
-		// echo "id : ";print_r($id);echo "<br>";
+		$realisasi = $this->request->getPost('txtRealisasi');
+		$bobot = $this->request->getPost('bobot');
+		$level = $this->request->getPost('level');
+		$nama_prodi = $this->request->getPost('nama_prodi');
+		$tahun_ajaran = $this->request->getPost('tahun_ajaran');
+		//$upload_file = $this->request->getPost('upload_file');
+		$idkpi = $this->request->getPost('idkpi');
+		$id_butir_kpi = $this->request->getPost('id_butir_kpi');
 
-		// echo "<br><br>";
-		foreach ($id as $key => $value) {
-			// echo "id value : ";print_r($value);echo "<br>";
-
-			foreach ($data as $abc => $def) {
-				$no = 0;
-				foreach ($def as $ooo) {
-					$no++;
-					if ($value == $no) {
-						// echo "no : ".$no;echo "<br>";
-						// echo "ooo value : ";print_r($ooo);echo "<br>";
-
-						$detail->set('realisasi', $ooo);
-						$detail->where('id', $value);
-						$detail->update();
-					}
-				}
-				echo "<br><br>";
-			}
+		$nilai_bobot = array();
+		for ($i = 0; $i < count($id); $i++) {
+			$nilai_bobot[$i] = ((int)$realisasi[$i] * (float)$bobot[$i] / 100);
 		}
-		return redirect()->to(base_url('kpi/inputcapaian/7'))->with('status', 'Data Berhasil Di-Update');
+		for ($i = 0; $i < count($id); $i++) {
+			$data = [
+				'level' => $level,
+				'nama_prodi' => $nama_prodi,
+				'tahun_ajaran' => $tahun_ajaran,
+				'realisasi' => $realisasi[$i],
+				'nilai_bobot' => $nilai_bobot[$i],
+				//'upload_file' => $this->request->getPost('upload_file'),
+				'idkpi' => $idkpi[$i],
+				'id_butir_kpi' => $id_butir_kpi[$i],
+			];
+			$save_capaian = $capaianmodel->simpancapaian($data);
+		}
+		if ($save_capaian) {
+			session()->setFlashdata('pesan', '
+		<div class="alert alert-success">
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			<strong>Berhasil!</strong> Data Capaian telah masuk ke database.
+		</div>');
+		} else {
+			session()->setFlashdata('pesan', '
+		<div class="alert alert-danger">
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			<strong>Tidak berhasil!</strong> Data Capaian tidak masuk ke database.
+		</div>');
+		}
+
+		return redirect()->to(base_url('kpi/inputcapaian/7'));
+		// echo "<br><br>";
+		// print_r($nilai_bobot);
+		// exit();
 	}
 	public function savecapaian8()
 	{
-		// $detail = new DataKpiButirModel();
+		$capaianmodel = new DataCapaianKpiModel();
 		$db      = \Config\Database::connect();
-		$detail = $db->table('tabel_butir_kpi');
+		//$detail = $db->table('tabel_butir_kpi');
+		$detail = $db->table('tabel_capaian_kpi');
 
 		$id = $this->request->getPost('id');
-		$data = [
-			'realisasi' => $this->request->getPost('txtRealisasi'),
-		];
-		// echo "data : ";print_r($data);echo "<br>";
-		// echo "id : ";print_r($id);echo "<br>";
+		$realisasi = $this->request->getPost('txtRealisasi');
+		$bobot = $this->request->getPost('bobot');
+		$level = $this->request->getPost('level');
+		$nama_prodi = $this->request->getPost('nama_prodi');
+		$tahun_ajaran = $this->request->getPost('tahun_ajaran');
+		//$upload_file = $this->request->getPost('upload_file');
+		$idkpi = $this->request->getPost('idkpi');
+		$id_butir_kpi = $this->request->getPost('id_butir_kpi');
 
-		// echo "<br><br>";
-		foreach ($id as $key => $value) {
-			// echo "id value : ";print_r($value);echo "<br>";
-
-			foreach ($data as $abc => $def) {
-				$no = 0;
-				foreach ($def as $ooo) {
-					$no++;
-					if ($value == $no) {
-						// echo "no : ".$no;echo "<br>";
-						// echo "ooo value : ";print_r($ooo);echo "<br>";
-
-						$detail->set('realisasi', $ooo);
-						$detail->where('id', $value);
-						$detail->update();
-					}
-				}
-				echo "<br><br>";
-			}
+		$nilai_bobot = array();
+		for ($i = 0; $i < count($id); $i++) {
+			$nilai_bobot[$i] = ((int)$realisasi[$i] * (float)$bobot[$i] / 100);
 		}
-		return redirect()->to(base_url('kpi/inputcapaian/8'))->with('status', 'Data Berhasil Di-Update');
+		for ($i = 0; $i < count($id); $i++) {
+			$data = [
+				'level' => $level,
+				'nama_prodi' => $nama_prodi,
+				'tahun_ajaran' => $tahun_ajaran,
+				'realisasi' => $realisasi[$i],
+				'nilai_bobot' => $nilai_bobot[$i],
+				//'upload_file' => $this->request->getPost('upload_file'),
+				'idkpi' => $idkpi[$i],
+				'id_butir_kpi' => $id_butir_kpi[$i],
+			];
+			$save_capaian = $capaianmodel->simpancapaian($data);
+		}
+		if ($save_capaian) {
+			session()->setFlashdata('pesan', '
+		<div class="alert alert-success">
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			<strong>Berhasil!</strong> Data Capaian telah masuk ke database.
+		</div>');
+		} else {
+			session()->setFlashdata('pesan', '
+		<div class="alert alert-danger">
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			<strong>Tidak berhasil!</strong> Data Capaian tidak masuk ke database.
+		</div>');
+		}
+
+		return redirect()->to(base_url('kpi/inputcapaian/8'));
+		// echo "<br><br>";
+		// print_r($nilai_bobot);
+		// exit();
 	}
 
 	public function savecapaian9()
 	{
-		// $detail = new DataKpiButirModel();
+		$capaianmodel = new DataCapaianKpiModel();
 		$db      = \Config\Database::connect();
-		$detail = $db->table('tabel_butir_kpi');
+		//$detail = $db->table('tabel_butir_kpi');
+		$detail = $db->table('tabel_capaian_kpi');
 
 		$id = $this->request->getPost('id');
-		$data = [
-			'realisasi' => $this->request->getPost('txtRealisasi'),
-		];
-		// echo "data : ";print_r($data);echo "<br>";
-		// echo "id : ";print_r($id);echo "<br>";
+		$realisasi = $this->request->getPost('txtRealisasi');
+		$bobot = $this->request->getPost('bobot');
+		$level = $this->request->getPost('level');
+		$nama_prodi = $this->request->getPost('nama_prodi');
+		$tahun_ajaran = $this->request->getPost('tahun_ajaran');
+		//$upload_file = $this->request->getPost('upload_file');
+		$idkpi = $this->request->getPost('idkpi');
+		$id_butir_kpi = $this->request->getPost('id_butir_kpi');
 
-		// echo "<br><br>";
-		foreach ($id as $key => $value) {
-			// echo "id value : ";print_r($value);echo "<br>";
-
-			foreach ($data as $abc => $def) {
-				$no = 0;
-				foreach ($def as $ooo) {
-					$no++;
-					if ($value == $no) {
-						// echo "no : ".$no;echo "<br>";
-						// echo "ooo value : ";print_r($ooo);echo "<br>";
-
-						$detail->set('realisasi', $ooo);
-						$detail->where('id', $value);
-						$detail->update();
-					}
-				}
-				echo "<br><br>";
-			}
+		$nilai_bobot = array();
+		for ($i = 0; $i < count($id); $i++) {
+			$nilai_bobot[$i] = ((int)$realisasi[$i] * (float)$bobot[$i] / 100);
 		}
-		return redirect()->to(base_url('kpi/inputcapaian/9'))->with('status', 'Data Berhasil Di-Update');
+		for ($i = 0; $i < count($id); $i++) {
+			$data = [
+				'level' => $level,
+				'nama_prodi' => $nama_prodi,
+				'tahun_ajaran' => $tahun_ajaran,
+				'realisasi' => $realisasi[$i],
+				'nilai_bobot' => $nilai_bobot[$i],
+				//'upload_file' => $this->request->getPost('upload_file'),
+				'idkpi' => $idkpi[$i],
+				'id_butir_kpi' => $id_butir_kpi[$i],
+			];
+			$save_capaian = $capaianmodel->simpancapaian($data);
+		}
+		if ($save_capaian) {
+			session()->setFlashdata('pesan', '
+		<div class="alert alert-success">
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			<strong>Berhasil!</strong> Data Capaian telah masuk ke database.
+		</div>');
+		} else {
+			session()->setFlashdata('pesan', '
+		<div class="alert alert-danger">
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			<strong>Tidak berhasil!</strong> Data Capaian tidak masuk ke database.
+		</div>');
+		}
+
+		return redirect()->to(base_url('kpi/inputcapaian/9'));
+		// echo "<br><br>";
+		// print_r($nilai_bobot);
+		// exit();
 	}
 
 

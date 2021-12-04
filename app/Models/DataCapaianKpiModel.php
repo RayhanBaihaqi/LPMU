@@ -17,4 +17,8 @@ class DataCapaianKpiModel extends Model
             ->join('tabel_kpi', 'tabel_kpi.idkpi=tabel_capaian_kpi.idkpi')
             ->get();
     }
+    function simpancapaian($data)
+    {
+        return $this->db->table('tabel_capaian_kpi')->insert($data);
+    }
 }

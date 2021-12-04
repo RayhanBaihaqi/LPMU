@@ -148,6 +148,23 @@
                             <a href="#" class="btn btn-success"><span>Tambah
                                     Data</span></a>
                         </div>
+                        <div class="container-fluid">
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">Pilih Nama KPI</label>
+                                <select class="form-control filter-satuan" id="categoryFilter">
+                                    <option selected disabled>-Daftar Kategori KPI-</option>
+                                    <option value="Visi, Misi, Tujuan dan Strategi">Visi, Misi, Tujuan dan Strategi</option>
+                                    <option value="Tata Pamong, Tata Kelola dan Kerjasama">Tata Pamong, Tata Kelola dan Kerjasama</option>
+                                    <option value="Mahasiswa">Mahasiswa</option>
+                                    <option value="Sumber Daya Manusia">Sumber Daya Manusia</option>
+                                    <option value="Keuangan, Sarana dan Prasarana">Keuangan, Sarana dan Prasarana</option>
+                                    <option value="Pendidikan">Pendidikan</option>
+                                    <option value="Penelitian">Penelitian</option>
+                                    <option value="Pengabdian Kepada Masyarakat">Pengabdian Kepada Masyarakat</option>
+                                    <option value="Luaran dan Capaian Tridharma">Luaran dan Capaian Tridharma</option>
+                                </select>
+                            </div>
+                        </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -163,7 +180,7 @@
                                             <th>Bobot</th>
                                             <th>Target</th>
                                             <th>Realisasi</th>
-                                            <th>Jumlah Bobot</th>
+                                            <th>Nilai Bobot</th>
                                             <th>File</th>
                                             <th>Actions</th>
                                         </tr>

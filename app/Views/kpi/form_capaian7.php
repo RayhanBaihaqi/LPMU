@@ -148,6 +148,7 @@
         <!-- Nav Bar End -->
 
         <br>
+        <?= session()->getFlashdata('pesan'); ?>
         <div class="card shadow mb-4">
             <div class="card-header">
                 <h3>Silahkan isi form capaian</h3>
@@ -174,23 +175,25 @@
                 <form id="formA" name="formA" action="<?= base_url('kpi/savecapaian7'); ?>" method="POST" enctype="multipart/form-data">
                     <div class="form-inline">
                         <label class="mb-2 mr-sm-1" for="exampleFormControlSelect1" style="width: 150px;">Tahun Ajaran</label>
-                        <select class="form-control mb-2 mr-sm-2" id="exampleFormControlSelect1">
+                        <select class="form-control mb-2 mr-sm-2" id="exampleFormControlSelect1" name="tahun_ajaran" required>
                             <option value="" disabled selected>Pilih Tahun</option>
                             <option value="2019/2020">2019/2020</option>
                             <option value="2020/2021">2020/2021</option>
                         </select>
                     </div>
                     <div class="form-inline" style="margin-bottom:20px;">
+                        <input type="hidden" name="nama_prodi" value="<?php $nama_prodi = session('nama_prodi');
+                                                                        echo $nama_prodi ?>">
                         <label for="prodiunit" class="mb-2 mr-sm-2" style="width: 150px;">Program Studi/Unit</label>
-                        <input type="text" class="form-control mb-2 mr-sm-2" id="prodiunit" value=" <?php
-                                                                                                    $nama_prodi = session('nama_prodi');
-                                                                                                    echo "$nama_prodi"
-                                                                                                    ?>" name="prodiunit" required disabled>
+                        <input type=" text" class="form-control mb-2 mr-sm-2" id="prodiunit" name="nama_prodi[]" value=" <?php $nama_prodi = session('nama_prodi');
+                                                                                                                            echo "$nama_prodi" ?>" name="prodiunit" required disabled>
+                        <input type="hidden" name="level" value="<?php $level = session('level');
+                                                                    echo $level ?>">
                         <label for="level" class="mb-2 mr-sm-2">Level</label>
-                        <input type="text" class="form-control mb-2 mr-sm-2" id="level" name="level" value="<?php
-                                                                                                            $level = session('level');
-                                                                                                            echo "$level"
-                                                                                                            ?>" required disabled>
+                        <input type="text" class="form-control mb-2 mr-sm-2" id="level" name="level[]" value="<?php
+                                                                                                                $level = session('level');
+                                                                                                                echo "$level"
+                                                                                                                ?>" required disabled>
                     </div>
                     <div class="table-responsive">
                         <table class="table table-bordered" id="dataTable3" width="100%" cellspacing="0">
@@ -200,6 +203,7 @@
                                     <th class="text-center">Angka butir</th>
                                     <th class="text-center">Butir</th>
                                     <th class="text-center">Rencana</th>
+                                    <th class="text-center">Bobot</th>
                                     <th class="text-center">Realisasi</th>
                                     <th class="text-center">Upload File</th>
                                     <th class="text-center">Aksi</th>
@@ -216,11 +220,15 @@
                                         <td><?= $row->idkpi . '.' . $row->angka_butir ?></td>
                                         <td><?= $row->nama_butir ?></td>
                                         <td><?= $row->target ?></td>
+                                        <td><?= $row->bobot ?></td>
                                         <td>
-                                            <input type="number" name="txtRealisasi[]" placeholder='Masukkan realisasi' class="form-control">
-                                            <input type="hidden" name="id[]" value="<?= $row->id; ?>" />
+                                            <input type="hidden" name="bobot[]" value="<?= $row->bobot ?>" />
+                                            <input type="hidden" name="id[]" value="<?= $row->id ?>" />
+                                            <input type="number" name="txtRealisasi[]" placeholder='Masukkan realisasi' class="form-control" required>
+                                            <input type="hidden" name="idkpi[]" value="7" />
+                                            <input type="hidden" name="id_butir_kpi[]" value="<?= $row->angka_butir ?>" />
                                         </td>
-                                        <td></td>
+                                        <td><a href="" class="button button2"><i class="fas fa-upload"></i></a></td>
                                         <td></td>
                                     </tr>
                                 <?php
