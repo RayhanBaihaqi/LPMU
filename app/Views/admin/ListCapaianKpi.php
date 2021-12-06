@@ -145,8 +145,7 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <a href="#" class="btn btn-success"><span>Tambah
-                                    Data</span></a>
+                            <span></span></a>
                         </div>
                         <div class="container-fluid">
                             <div class="form-group">

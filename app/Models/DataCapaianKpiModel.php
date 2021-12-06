@@ -21,4 +21,13 @@ class DataCapaianKpiModel extends Model
     {
         return $this->db->table('tabel_capaian_kpi')->insert($data);
     }
+    function tampilcapaiankpi_user()
+    {
+
+        return $this->db->table('tabel_capaian_kpi')
+            ->join('tabel_butir_kpi', 'tabel_butir_kpi.id=tabel_capaian_kpi.id_butir_kpi')
+            ->join('tabel_kpi', 'tabel_kpi.idkpi=tabel_capaian_kpi.idkpi')
+
+            ->get();
+    }
 }

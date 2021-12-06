@@ -91,7 +91,11 @@ class Kpi extends BaseController
 
 	public function kesimpulan()
 	{
-		return view('kpi/grafik');
+		$listcapaiankpi = new DataCapaianKpiModel();
+		$data = [
+			'tampilcapaiankpi' => $listcapaiankpi->tampilcapaiankpi_user()->getResult(),
+		];
+		return view('kpi/grafik', $data);
 	}
 
 	public function form_ubahpass($id = null)
