@@ -206,7 +206,7 @@ class Rkat extends BaseController
         $id_set = $this->request->getVar('id_set');
         $tahunAkademik = $this->request->getVar('tahunAkademik');
         // print_r($tahunAkademik); die();
-            for ($i=0; $i <= $jumlah; $i++) {
+            for ($i=0; $i < $jumlah; $i++) {
                 $this->DetailRkatModel->insert([
                     'kategori'=>$kategori[$i],
                     'anggaranGenap'=>$anggaranGenap[$i],  
@@ -376,39 +376,54 @@ class Rkat extends BaseController
         return view('admin/ListRkat', $data);
 
     }
+
     public function createbyadmin() {
         $model = new DetailRkatModel();
-        $data['detail_rkat'] = $model->orderBy('id','ASC')->findAll();
-        return view('admin/TambahRkat', $data);
+        $username = session('username');
+        $data = [
+            'set_rkat' => $this->DetailRkatModel->tampilRKAT($username),
+        ]; 
+
+        return view('admin/inputData', $data);
     }
     public function savebyadmin()
 	{
-        $nama_kegiatan = $this->request->getVar('nama_kegiatan');
-        $semester = $this->request->getVar('semester');
-        $anggaran = $this->request->getVar('anggaran');
-        $keterangan = $this->request->getVar('keterangan');
-        $jenis_kpi = $this->request->getVar('jenis_kpi');
-        $jenis_anggaran = $this->request->getVar('jenis_anggaran');
-        $butir = $this->request->getVar('butir');
-        $id_set = $this->request->getVar('id_prodi');
         $jumlah = $this->request->getVar('jumlah');
-
-            for ($i=0; $i < $jumlah; $i++) { 
+        $kategori = $this->request->getVar('kategori');
+        $anggaranGenap = $this->request->getVar('anggaranGenap');
+        $anggaranGasal = $this->request->getVar('anggaranGasal');
+        $no_kegiatan = $this->request->getVar('no_kegiatan');
+        $indikator = $this->request->getVar('indikator');
+        $kpi = $this->request->getVar('kpi');
+        $butir = $this->request->getVar('butir');
+        $target = $this->request->getVar('target');
+        $nama_kegiatan = $this->request->getVar('nama_kegiatan');
+        $total = $this->request->getVar('total');
+        $id_set = $this->request->getVar('id_set');
+        $tahunAkademik = $this->request->getVar('tahunAkademik');
+        //print_r($tahunAkademik); die();
+            for ($i=0; $i <= $jumlah; $i++) {
                 $this->DetailRkatModel->insert([
-                    'nama_kegiatan'=>$nama_kegiatan[$i],
-                    'semester'=>$semester[$i],  
-                    'anggaran'=>$anggaran[$i],  
-                    'keterangan'=>$keterangan[$i],  
-                    'jenis_kpi'=>$jenis_kpi[$i],  
-                    'jenis_anggaran'=>$jenis_anggaran[$i],  
+                    'kategori'=>$kategori[$i],
+                    'anggaranGenap'=>$anggaranGenap[$i],  
+                    'anggaranGasal'=>$anggaranGasal[$i],  
+                    'no_kegiatan'=>$no_kegiatan[$i],  
+                    'indikator'=>$indikator[$i],  
+                    'kpi'=>$kpi[$i],  
                     'butir'=>$butir[$i],  
-                    'id_set'=>$id_set[$i],  
+                    'target'=>$target[$i],  
+                    'nama_kegiatan'=>$nama_kegiatan[$i],  
+                    'total'=>$total[$i],  
+                    'tahunAkademik'=>$tahunAkademik,  
+                    'id_set'=>$id_set,  
                 ]);
             }
-
-            // $sql = $this->DetailRkatModel->tambahBatch($data);
-            // $model->insertBatch($data);
-            return redirect()->to(base_url('setrkat/createbyadmin'))->with('status', 'Data Berhasil ditambah');
+            return redirect()->to(base_url('rkat/createbyadmin'))->with('status', '
+           <div class="alert alert-success">
+               <button type="button" class="close" data-dismiss="alert">&times;</button>
+               <strong>Berhasil!</strong> Data Anda Berhasil Terinput.
+           </div>
+        ');
 	}
     public function editbyadmin($id = null) {
         $model = new DetailRkatModel();

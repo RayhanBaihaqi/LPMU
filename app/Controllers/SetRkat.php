@@ -216,7 +216,7 @@ class SetRkat extends BaseController
             'set_rkat' => $this->SetRkatModel->tampilRKAT($username),
         ]; 
 
-        return view('admin/tambahRkat', $data);
+        return view('admin/inputdata', $data);
     }
     public function tambahbyadmin()
 	{

@@ -29,10 +29,10 @@ class DetailRkatModel extends Model
         ->where('username',$username)
         ->get()->getResultArray();
     }
-    public function tampilRKAT($id_user=null){
-        return $this->db->table('detail_rkat')
-        ->join('set_rkat', 'set_rkat.id_setrkat = detail_rkat.id_set')
-        ->where('id_user',$id_user)
+    public function tampilRKAT($username=null){
+        return $this->db->table('set_rkat')
+        ->join('user', 'user.id=set_rkat.id_user')
+        ->where('username',$username)
         ->get()->getResultArray();
     }
     public function tambahBatch($data){
