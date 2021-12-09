@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\DataModel;
 use App\Models\DataKpiModel;
 use App\Models\DataKpiButirModel;
+use App\Models\DataCapaianKpiModel;
 
 
 class Admin extends BaseController
@@ -168,8 +169,11 @@ class Admin extends BaseController
     //proses list capaian kpi
     public function listcapaiankpi()
     {
-
-        echo view('/admin/ListCapaianKpi');
+        $listcapaiankpi = new DataCapaianKpiModel();
+        $data = [
+            'tampilcapaiankpi' => $listcapaiankpi->tampilcapaiankpi()->getResult(),
+        ];
+        echo view('/admin/ListCapaianKpi', $data);
     }
 
     //RKAT

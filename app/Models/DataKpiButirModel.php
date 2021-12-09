@@ -41,6 +41,7 @@ class DataKpiButirModel extends Model
     function tampildatabutir1()
     {
         $builder = $this->db->table('tabel_butir_kpi');
+
         $builder->where('idkpi', '1');
         return $builder->get();
     }

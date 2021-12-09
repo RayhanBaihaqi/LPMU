@@ -58,11 +58,11 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="<?= base_url('rkat/createbyadmin') ?>">Tambah RKAT</a>
-						<a class="collapse-item" href="<?= base_url('rkat/indexbyadmin') ?>">Lihat Data</a>
-						<a class="collapse-item" href="<?= base_url('setrkat/create') ?>">Atur Semester dan Pagu</a>
-						<a class="collapse-item" href="<?= base_url('setrkat/index') ?>">Lihat Data Set Rkat</a>
-						<a class="collapse-item" href="<?= base_url('rkat/indexBuatTabel') ?>">Buat Tabel Rencana</a>
+                        <a class="collapse-item" href="<?= base_url('rkat/createbyadmin') ?>">Tambah RKAT</a>
+                        <a class="collapse-item" href="<?= base_url('rkat/indexbyadmin') ?>">Lihat Data</a>
+                        <a class="collapse-item" href="<?= base_url('setrkat/create') ?>">Atur Semester dan Pagu</a>
+                        <a class="collapse-item" href="<?= base_url('setrkat/index') ?>">Lihat Data Set Rkat</a>
+                        <a class="collapse-item" href="<?= base_url('rkat/indexBuatTabel') ?>">Buat Tabel Rencana</a>
                     </div>
                 </div>
             </li>
@@ -145,8 +145,24 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <a href="#" class="btn btn-success"><span>Tambah
-                                    Data</span></a>
+                            <span></span></a>
+                        </div>
+                        <div class="container-fluid">
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">Pilih Nama KPI</label>
+                                <select class="form-control filter-satuan" id="categoryFilter">
+                                    <option selected disabled>-Daftar Kategori KPI-</option>
+                                    <option value="Visi, Misi, Tujuan dan Strategi">Visi, Misi, Tujuan dan Strategi</option>
+                                    <option value="Tata Pamong, Tata Kelola dan Kerjasama">Tata Pamong, Tata Kelola dan Kerjasama</option>
+                                    <option value="Mahasiswa">Mahasiswa</option>
+                                    <option value="Sumber Daya Manusia">Sumber Daya Manusia</option>
+                                    <option value="Keuangan, Sarana dan Prasarana">Keuangan, Sarana dan Prasarana</option>
+                                    <option value="Pendidikan">Pendidikan</option>
+                                    <option value="Penelitian">Penelitian</option>
+                                    <option value="Pengabdian Kepada Masyarakat">Pengabdian Kepada Masyarakat</option>
+                                    <option value="Luaran dan Capaian Tridharma">Luaran dan Capaian Tridharma</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -157,18 +173,41 @@
                                             <th>Nama Prodi</th>
                                             <th>Tahun Ajaran</th>
                                             <th>Level</th>
-                                            <th>ID KPI</th>
+                                            <th>Nama KPI</th>
                                             <th>Angka Butir</th>
                                             <th>Nama Butir</th>
                                             <th>Bobot</th>
                                             <th>Target</th>
                                             <th>Realisasi</th>
-                                            <th>Jumlah Bobot</th>
+                                            <th>Nilai Bobot</th>
+                                            <th>File</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-
+                                        <?php
+                                        $nomor = 0;
+                                        foreach ($tampilcapaiankpi as $row) :
+                                            $nomor++;
+                                        ?>
+                                            <tr>
+                                                <th><?= $nomor; ?></th>
+                                                <td><?= $row->nama_prodi ?></td>
+                                                <td><?= $row->tahun_ajaran ?></td>
+                                                <td><?= $row->level ?></td>
+                                                <td><?= $row->nama_kpi ?></td>
+                                                <td><?= $row->idkpi . '.' . $row->angka_butir ?></td>
+                                                <td><?= $row->nama_butir ?></td>
+                                                <td><?= $row->bobot ?></td>
+                                                <td><?= $row->target ?></td>
+                                                <td><?= $row->realisasi ?></td>
+                                                <td><?= $row->nilai_bobot ?></td>
+                                                <td><?= $row->upload_file ?></td>
+                                                <td></td>
+                                            <?php
+                                        endforeach;
+                                            ?>
+                                            </tr>
                                     </tbody>
                                 </table>
                             </div>
