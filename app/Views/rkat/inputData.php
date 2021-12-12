@@ -172,13 +172,13 @@
 										
 										<select class="form-control form-control-sm" id="kpi" name="kpi[]" required>
 											<option value="" disabled selected>Kriteria KPI</option>
-											<option value="1">1 – Visi Misi Tujuan dan Strategi</option>
+											<option value="1">1 - Visi Misi Tujuan dan Strategi</option>
 											<option value="2">2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
 											<option value="3">3 - Mahasiswa</option>
 											<option value="4">4 - Sumber Daya Manusia</option>
 											<option value="5">5 - Keuangan, Sarana dan Prasarana</option>
 											<option value="6">6 - Pendidikan</option>
-											<option value="7">7 – Penelitian</option>
+											<option value="7">7 - Penelitian</option>
 											<option value="8">8 - Pengabdian kepada Masyarakat (PkM)</option>
 											<option value="9">9 - Luaran dan Capaian Tridharma</option>
 										</select>

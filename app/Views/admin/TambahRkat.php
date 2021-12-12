@@ -58,11 +58,10 @@
 				</a>
 				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
-					<a class="collapse-item" href="<?= base_url('rkat/createbyadmin') ?>">Tambah RKAT</a>
+						<a class="collapse-item" href="<?= base_url('rkat/createbyadmin') ?>">Tambah RKAT</a>
 						<a class="collapse-item" href="<?= base_url('rkat/indexbyadmin') ?>">Lihat Data</a>
 						<a class="collapse-item" href="<?= base_url('setrkat/create') ?>">Atur Semester dan Pagu</a>
 						<a class="collapse-item" href="<?= base_url('setrkat/index') ?>">Lihat Data Set Rkat</a>
-						<a class="collapse-item" href="<?= base_url('rkat/indexBuatTabel') ?>">Buat Tabel Rencana</a>
 					</div>
 				</div>
 			</li>
@@ -80,7 +79,8 @@
 
 						<a class="collapse-item" href="<?= base_url('/admin/listkpi') ?>">Lihat KPI</a>
 						<a class="collapse-item" href="<?= base_url('/admin/listbutirkpi') ?>">Lihat Butir KPI</a>
-						<a class="collapse-item" href="<?= base_url('/admin/listcapaiankpi') ?>">Lihat Capaian</a>
+						<a class="collapse-item" href="<?= base_url('/admin/adminkpi') ?>">Lihat Rencana</a>
+						<a class="collapse-item" href="<?= base_url('#') ?>">Lihat Capaian</a>
 					</div>
 				</div>
 			</li>
@@ -141,13 +141,27 @@
 				<div class="container-fluid">
 
 					<!-- Page Heading -->
+					<h1 class="h3 mb-2 text-gray-800">Tambah User</h1>
 
 					<!-- DataTales Example -->
 					<div class="card shadow mb-4">
 						<div class="card-body">
 							<div class="table-responsive">
 								<div class="container">
-
+									<!-- Akan Dilooping -->
+									<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat']; ?>
+										<div class="form-group">
+											<label for="exampleFormControlSelect1">Tahun Ajaran</label>
+											<select class="form-control" id="exampleFormControlSelect1" disabled>
+												<option value="<?= $value['tahun_akademik'] ?>" selected><?= $value['tahun_akademik'] ?>
+												</option>
+											</select>
+										</div>
+										<div class="form-group">
+											<label for="uname">Jumlah Pagu</label>
+											<input type="hidden" class="form-control" id="uname" name="uname" value="<?= $value['pagu'] ?>" required disabled>
+										</div>
+									<?php endforeach; ?>
 									<form action="<?= base_url('setrkat/tambahbyadmin'); ?>" method="post">
 										<div class="input-group mb-3">
 											<input type="text" class="form-control" placeholder="Jumlah Kegiatan" name="jumlah">

@@ -29,7 +29,7 @@ class DetailRkatModel extends Model
         ->where('username',$username)
         ->get()->getResultArray();
     }
-    public function tampilRKAT($username=null){
+    public function tampilRKAT($id_user=null){
         return $this->db->table('set_rkat')
         ->join('user', 'user.id=set_rkat.id_user')
         ->where('username',$username)

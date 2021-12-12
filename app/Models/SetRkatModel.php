@@ -35,4 +35,3 @@ class SetRkatModel extends Model
         ->get()->getResultArray();
     }
 }
-

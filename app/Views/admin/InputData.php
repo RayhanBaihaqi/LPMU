@@ -149,19 +149,22 @@
 									<input type="hidden" name="jumlah" id="jumlah" value="0">
 									<?= session()->getFlashdata('status'); ?>	
 									<div class="card">
-									<div class="form-inline">
-										<label class="mb-2 mr-sm-2" for="exampleFormControlSelect1" style="width: 150px;">Tahun Akademik</label>
-										<select class="form-control mb-2 mr-sm-2" id="tahunAkademik" name="tahunAkademik" required>
-											<option value="" disabled selected>Pilih Tahun</option>
-											<option value="2019/2020">2019/2020</option>
-											<option value="2020/2021">2020/2021</option>
-										</select>
-									</div>
+									<div class="card-body">
+										<div class="form-inline">
+											<label class="mb-2 mr-sm-2" for="exampleFormControlSelect1" style="width: 150px;">Tahun Akademik</label>
+											<select class="form-control mb-2 mr-sm-2" id="tahunAkademik" name="tahunAkademik" required>
+												<option value="" disabled selected>Pilih Tahun</option>
+												<option value="2019/2020">2019/2020</option>
+												<option value="2020/2021">2020/2021</option>
+											</select>
+										</div>
+										<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat'];?>
+										<?php endforeach; ?>
 										<table class="table table-borded table-responsive table-striped">
 											<thead class="table-dark">
 												<tr>
-													<th width="600px"> Prodi/Unit </th>
-													<th width="600px">Kategori - Kriteria - Butir</th>
+													<th class="text-center" width="4"> Action </th>
+													<th width="600px">Prodi/Unit - Kategori - Kriteria - Butir</th>
 													<th width="600px">No Kegiatan- Indikator </th>
 													<th width="600px"> Target - Nama Kegiatan</th>
 													<th width="600px">Anggaran Gasal</th>
@@ -171,16 +174,15 @@
 											</thead>
 											<tbody id="tbody2">
 												<tr>
+													<td><input name="chk_a[]" type="checkbox" class="checkall_a" value=""/></td>
 													<td>
-														<select class="form-control form-control-sm" id="id_set" name="id_set[]"  required>
-															<option value="" disabled selected>Pilih Prodi/Unit</option>
-															<option value="1">Akuntansi</option>
-															<option value="2">Desain Komunikasi Visual</option>
-															<option value="3">Informatika</option>
-															<option value="4">Ilmu Komunikasi</option>
-														</select>
-													</td>
-													<td>
+													<select class="form-control form-control-sm" id="id_set" name="id_set[]"required>
+														<option value=""disabled selected>Pilih Prodi/Unit</option>
+														<option value="1">Akuntansi</option>
+														<option value="2">Desain Komunikasi Visual</option>
+														<option value="3">Informatika</option>
+														<option value="4">Ilmu Komunikasi</option>
+													</select>
 														<select class="form-control form-control-sm" id="kategori" name="kategori[]" required>
 															<option value="" disabled selected>Kategori</option>
 															<option value="PK">PK</option>
@@ -189,13 +191,13 @@
 														</select>
 														<select class="form-control form-control-sm" id="kpi" name="kpi[]" required>
 															<option value="" disabled selected>Kriteria KPI</option>
-															<option value="1">1 – Visi Misi Tujuan dan Strategi</option>
+															<option value="1">1 - Visi Misi Tujuan dan Strategi</option>
 															<option value="2">2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
 															<option value="3">3 - Mahasiswa</option>
 															<option value="4">4 - Sumber Daya Manusia</option>
 															<option value="5">5 - Keuangan, Sarana dan Prasarana</option>
 															<option value="6">6 - Pendidikan</option>
-															<option value="7">7 – Penelitian</option>
+															<option value="7">7 - Penelitian</option>
 															<option value="8">8 - Pengabdian kepada Masyarakat (PkM)</option>
 															<option value="9">9 - Luaran dan Capaian Tridharma</option>
 														</select>										
@@ -228,7 +230,7 @@
 												</tr>								
 											</tbody>
 											<tfoot>
-												<td> <!--<button type="button" class="btn btn-danger btn-sm" onclick="deleteRow('tbody2')"><i class="fa fa-minus"></i>Hapus Baris</button>--> </th> 
+												<td><button type="button" class="btn btn-danger btn-sm" onclick="deleteRow('tbody2')"><i class="fa fa-minus"></i>Hapus Baris</button></th> 
 												<td><button class="btn btn-success btn-sm" onclick="addRow('tbody2')" id="BarisBaru"><i class="fa fa-plus"></i> Baris Baru</button></td>
 												<td></td>
 												<td>Total Keseluruhan</td>
@@ -250,7 +252,7 @@
 			<!-- End of Content Wrapper -->
 		</div>
 		<!-- End of Page Wrapper -->
-		<script>
+			<script>
 		function totalAnggaran1() {
 			var txtFirstNumberValue = document.getElementById('anggaranGasal').value;
 			var txtSecondNumberValue = document.getElementById('anggaranGenap').value;
@@ -264,29 +266,43 @@
 			document.getElementById('pagu1').value = pagu1;
 			document.getElementById('pagu2').value = pagu2;
 			document.getElementById('pagu3').value = pagu3;
-			for (let index = 1; index <= table.rows.length; index++) {
-				var txtFirstNumberValue = document.getElementById('anggaranGasal'+index).value;
-				var txtSecondNumberValue = document.getElementById('anggaranGenap'+index).value;
-				var result = parseInt(txtFirstNumberValue) + parseInt(txtSecondNumberValue);
-				if (!isNaN(result)) { document.getElementById('total'+index).value = result; }
-				pagu1 = parseInt(pagu1) + parseInt(document.getElementById('anggaranGasal'+index).value)
-				document.getElementById('pagu1').value = pagu1;
-				pagu2 = parseInt(pagu2) + parseInt(document.getElementById('anggaranGenap'+index).value)
-				document.getElementById('pagu2').value = pagu2;
-				pagu3 = parseInt(pagu3) + parseInt(document.getElementById('total'+index).value)
-				document.getElementById('pagu3').value = pagu3;
-			}			
+			if (pagu3 > <?= $value['pagu'] ?>) {
+				$('#pagu3').addClass('btn-danger');
+			} else {
+				$('#pagu3').removeClass('btn-danger');
+			}
+			if (document.getElementById('anggaranGasal1').value != null || document.getElementById('anggaranGenap1').value != null) {
+				for (let index = 1; index <= table.rows.length; index++) {
+				if (document.getElementById('anggaranGasal'+index).value != null || document.getElementById('anggaranGenap'+index).value != null) {
+					var txtFirstNumberValue = document.getElementById('anggaranGasal'+index).value;
+					var txtSecondNumberValue = document.getElementById('anggaranGenap'+index).value;
+					var result = parseInt(txtFirstNumberValue) + parseInt(txtSecondNumberValue);
+					if (!isNaN(result)) { document.getElementById('total'+index).value = result; }
+					pagu1 = parseInt(pagu1) + parseInt(document.getElementById('anggaranGasal'+index).value)
+					document.getElementById('pagu1').value = pagu1;
+					pagu2 = parseInt(pagu2) + parseInt(document.getElementById('anggaranGenap'+index).value)
+					document.getElementById('pagu2').value = pagu2;
+					pagu3 = parseInt(pagu3) + parseInt(document.getElementById('total'+index).value)
+					document.getElementById('pagu3').value = pagu3;
+				}
+					if (pagu3 > <?= $value['pagu'] ?>) {
+						$('#pagu3').addClass('btn-danger');
+					} else {
+						$('#pagu3').removeClass('btn-danger');
+					}
+				}
+			}
 		}
 	</script>
 	<script>
 		// JavaScript Document
 		function addRow(tableID) {
 			var table = document.getElementById(tableID);
-			 console.log(table);
+			//  console.log(table);
 			var rowCount = table.rows.length;
 			 console.log(rowCount);
 			var row = table.insertRow(rowCount);
-			 console.log(row);
+			//  console.log(row);
 			document.getElementById("jumlah").value = rowCount;
 			var colCount = table.rows[0].cells.length;
 			 //console.log(colCount);
@@ -296,7 +312,7 @@
 				var child = newcell.children;
 				for(var i2=0; i2<child.length; i2++) {
 					var test = newcell.children[i2].tagName;
-					console.log(test)
+					// console.log(test)
 					switch(test) {
 						case "INPUT":
 							if(newcell.children[i2].type=='checkbox'){
@@ -347,6 +363,8 @@
 					i--;
 				}
 			}
+			console.log(rowCount);
+			document.getElementById("jumlah").value = rowCount;
 		}
 		
 	</script>
