@@ -123,55 +123,61 @@
 		<div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
 				<div class="card-header">
-					<h4 class="card-title">Data Rencana Kegiatan dan Anggaran Tahunan (RKAT) 
-						<?php 
-							$nama_prodi = session('nama_prodi');
-							echo "$nama_prodi"
-                    	?>
+					<h4 class="card-title">Rincian RKAT
 					</h4>
 				</div>
                 <div class="card-body">
-					<div class="table-responsive">
-						<table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
-							<thead>
-								<tr>
-									<th>No</th>
-									<th>Kategori</th>
-									<th>No Kegiatan</th>
-									<th>Target</th>
-									<th>Indikator</th>
-									<th>Nama Kegiatan</th>
-									<th>KPI</th>
-									<th>Butir</th>
-									<th>Anggaran Gasal</th>
-									<th>Anggaran Ganjil</th>
-									<th>Total Anggaran Rencana</th>
-									<th>Total Anggaran Realisasi</th>
-								</tr>
-							</thead>
-							<tbody>
-								<?php $i = 1;?>
-								<?php if ($detail_rkat) : ?>
-									<?php foreach ($detail_rkat as $value) : ?>
-										<tr>
-											<td scope="row"><?= $i++; ?></td>
-											<td><?= $value['kategori']; ?></td>
-											<td><?= $value['no_kegiatan']; ?></td>
-											<td><?= $value['target']; ?></td>
-											<td><?= $value['indikator']; ?></td>
-											<td><?= $value['nama_kegiatan']; ?></td>
-											<td><?= $value['kpi']; ?></td>
-											<td><?= $value['butir']; ?></td>
-											<td><?= $value['anggaranGasal']; ?></td>
-											<td><?= $value['anggaranGenap']; ?></td>
-											<td><?= $value['total']; ?></td>
-											<td></td>
-										</tr>
-									<?php endforeach; ?>
-								<?php endif; ?>
-							</tbody>
-						</table>
-                	</div>
+                    <?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat'];?>
+					<input type="hidden" class="form-control" id="id_set" value="<?= $id_set ?>" name="id_set" required>
+					<br>
+					<div class="card-body">
+						<div class="form-inline">
+							<label class="mb-2 mr-sm-2" for="exampleFormControlSelect1" style="width: 150px;">Tahun Akademik</label>
+							<select class="form-control mb-2 mr-sm-2" id="tahunAkademik" name="tahunAkademik" required>
+								<option value="" disabled selected>Pilih Tahun</option>
+								<option value="2019/2020">2019/2020</option>
+								<option value="2020/2021">2020/2021</option>
+							</select>
+						</div>
+						<div class="form-inline" style="margin-bottom:20px;">
+							<label for="prodiunit" class="mb-2 mr-sm-2" style="width: 150px;">Program Studi/Unit</label>
+							<input type="text" class="form-control mb-2 mr-sm-2" id="prodiunit" value="<?= $value['nama_prodi'] ?>" name="prodiunit"required disabled>
+							<label for="pagu" class="mb-2 mr-sm-2">Jumlah Pagu</label>
+							<input type="text" class="form-control mb-2 mr-sm-2" id= "pagu" name="pagu" value="RP. <?= $value['pagu'] ?>" required disabled>
+						</div>
+					<?php endforeach; ?>
+                    <table class="table table-hover">
+                        <tbody>
+                        <tr>
+                            <td>PK</td>
+                            <td>:</td>
+                            <td>RP. </td>
+                        </tr>
+                        <tr>
+                            <td>OPS</td>
+                            <td>:</td>
+                            <td>Rp. </td>
+                        </tr>
+                        <tr>
+                            <td>Total PK + OPS</td>
+                            <td>:</td>
+                            <td>Rp. </td>
+                        </tr>
+                        </tbody>
+                        <tbody>
+                        <tr>
+                            <td>INV</td>
+                            <td>:</td>
+                            <td>Rp. </td>
+                        </tr>
+                        <tr>
+                            <td>Total RKAT</td>
+                            <td>:</td>
+                            <td>Rp. </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    </div>
                 </div>
             </div>
 		</div>

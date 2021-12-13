@@ -20,7 +20,26 @@ class Rkat extends BaseController
         $username = session('username');
         $data['detail_rkat'] = $this->DetailRkatModel->gabung($username);
 
+        return view('rkat/kesimpulan', $data);
+    }
+    public function listrkat()
+    {
+        $model = new DetailRkatModel();
+        $username = session('username');
+        $data['detail_rkat'] = $this->DetailRkatModel->gabung($username);
+
         return view('rkat/ListData', $data);
+    }
+    public function rincian()
+    {
+        $model = new DetailRkatModel();
+        $username = session('username');
+        $data = [
+            'set_rkat' => $this->DetailRkatModel->tampilDataSetRKAT($username),
+            'detail_rkat' => $this->DetailRkatModel->gabung($username),
+        ]; 
+
+        return view('rkat/RincianRkat', $data);
     }
     public function createbyuser() {
         $model = new DetailRkatModel();
@@ -47,7 +66,7 @@ class Rkat extends BaseController
         $total = $this->request->getVar('total');
         $id_set = $this->request->getVar('id_set');
         $tahunAkademik = $this->request->getVar('tahunAkademik');
-        print_r($id_set); die();
+        //print_r($id_set); die();
             for ($i=0; $i <= $jumlah; $i++) {
                 $this->DetailRkatModel->insert([
                     'kategori'=>$kategori[$i],
@@ -239,7 +258,7 @@ class Rkat extends BaseController
         $id_set = $this->request->getVar('id_set');
         $tahunAkademik = $this->request->getVar('tahunAkademik');
         //print_r($id_set); die();
-            for ($i=0; $i <= $jumlah; $i++) {
+            for ($i=0; $i < $jumlah; $i++) {
                 $this->DetailRkatModel->insert([
                     'kategori'=>$kategori[$i],
                     'anggaranGenap'=>$anggaranGenap[$i],  

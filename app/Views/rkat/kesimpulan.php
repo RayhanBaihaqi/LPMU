@@ -86,12 +86,18 @@
 		<!-- Nav Bar Start -->
 		<div class="nav-bar">
 		<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-				<a href="<?= base_url('/rkat/indexbyuser') ?>"><i class="fas fa-long-arrow-alt-left"></i></a>
+				<a href="<?php echo site_url(); ?>backend"><i class="fas fa-long-arrow-alt-left"></i></a>
 				<a href="#" class="navbar-brand">MENU</a>
 				<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse justify-content-between">
+					<div class="navbar-nav mr-auto">
+						<a href="<?php echo site_url(); ?>backend/rkat" class="nav-item nav-link ">Home</a>
+						<a href="<?= base_url('/rkat/createbyuser') ?>" class="nav-item nav-link">Rencana Anggaran</a>
+                        <a href="<?= base_url('/CapaianRkat/createcapaianbyuser') ?>" class="nav-item nav-link">Realisasi Anggaran</a>
+                        <a href="<?= base_url('/rkat/indexbyuser') ?>" class="nav-item nav-link active">Kesimpulan</a>
+					</div>
 					<div class="ml-auto">
 						<div class="user-info-dropdown">
 							<div class="dropdown">
@@ -122,55 +128,10 @@
 		<!-- Responsive tables Start -->
 		<div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
-				<div class="card-header">
-					<h4 class="card-title">Data Rencana Kegiatan dan Anggaran Tahunan (RKAT) 
-						<?php 
-							$nama_prodi = session('nama_prodi');
-							echo "$nama_prodi"
-                    	?>
-					</h4>
-				</div>
                 <div class="card-body">
 					<div class="table-responsive">
-						<table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
-							<thead>
-								<tr>
-									<th>No</th>
-									<th>Kategori</th>
-									<th>No Kegiatan</th>
-									<th>Target</th>
-									<th>Indikator</th>
-									<th>Nama Kegiatan</th>
-									<th>KPI</th>
-									<th>Butir</th>
-									<th>Anggaran Gasal</th>
-									<th>Anggaran Ganjil</th>
-									<th>Total Anggaran Rencana</th>
-									<th>Total Anggaran Realisasi</th>
-								</tr>
-							</thead>
-							<tbody>
-								<?php $i = 1;?>
-								<?php if ($detail_rkat) : ?>
-									<?php foreach ($detail_rkat as $value) : ?>
-										<tr>
-											<td scope="row"><?= $i++; ?></td>
-											<td><?= $value['kategori']; ?></td>
-											<td><?= $value['no_kegiatan']; ?></td>
-											<td><?= $value['target']; ?></td>
-											<td><?= $value['indikator']; ?></td>
-											<td><?= $value['nama_kegiatan']; ?></td>
-											<td><?= $value['kpi']; ?></td>
-											<td><?= $value['butir']; ?></td>
-											<td><?= $value['anggaranGasal']; ?></td>
-											<td><?= $value['anggaranGenap']; ?></td>
-											<td><?= $value['total']; ?></td>
-											<td></td>
-										</tr>
-									<?php endforeach; ?>
-								<?php endif; ?>
-							</tbody>
-						</table>
+                    <a href="<?= base_url('/rkat/listrkat') ?>" class="btn btn-primary btn-block">Rincian Anggaran</a>
+                    <a href="<?= base_url('/rkat/rincian') ?>" class="btn btn-primary btn-block">Rincian RKAT</a>
                 	</div>
                 </div>
             </div>
