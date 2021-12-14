@@ -36,9 +36,11 @@ class Rkat extends BaseController
         $username = session('username');
         $data = [
             'set_rkat' => $this->DetailRkatModel->tampilDataSetRKAT($username),
-            'detail_rkat' => $this->DetailRkatModel->gabung($username),
+            'pk' => $model->join('set_rkat', 'set_rkat.id_setrkat=detail_rkat.id_set')->join('user', 'user.id=set_rkat.id_user')->where('username',$username)->where('kategori', 'PK')->findAll(),
+            'ops' => $model->join('set_rkat', 'set_rkat.id_setrkat=detail_rkat.id_set')->join('user', 'user.id=set_rkat.id_user')->where('username',$username)->where('kategori', 'OPS')->findAll(),
+            'inv' => $model->join('set_rkat', 'set_rkat.id_setrkat=detail_rkat.id_set')->join('user', 'user.id=set_rkat.id_user')->where('username',$username)->where('kategori', 'INV')->findAll(),
+            // 'detail_rkat' => $this->DetailRkatModel->gabung($username),
         ]; 
-
         return view('rkat/RincianRkat', $data);
     }
     public function createbyuser() {

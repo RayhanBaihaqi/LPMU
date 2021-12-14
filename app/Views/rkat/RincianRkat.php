@@ -131,14 +131,14 @@
 					<input type="hidden" class="form-control" id="id_set" value="<?= $id_set ?>" name="id_set" required>
 					<br>
 					<div class="card-body">
-						<div class="form-inline">
+						<!-- <div class="form-inline">
 							<label class="mb-2 mr-sm-2" for="exampleFormControlSelect1" style="width: 150px;">Tahun Akademik</label>
 							<select class="form-control mb-2 mr-sm-2" id="tahunAkademik" name="tahunAkademik" required>
 								<option value="" disabled selected>Pilih Tahun</option>
 								<option value="2019/2020">2019/2020</option>
 								<option value="2020/2021">2020/2021</option>
 							</select>
-						</div>
+						</div> -->
 						<div class="form-inline" style="margin-bottom:20px;">
 							<label for="prodiunit" class="mb-2 mr-sm-2" style="width: 150px;">Program Studi/Unit</label>
 							<input type="text" class="form-control mb-2 mr-sm-2" id="prodiunit" value="<?= $value['nama_prodi'] ?>" name="prodiunit"required disabled>
@@ -146,34 +146,40 @@
 							<input type="text" class="form-control mb-2 mr-sm-2" id= "pagu" name="pagu" value="RP. <?= $value['pagu'] ?>" required disabled>
 						</div>
 					<?php endforeach; ?>
+                    <?php $totalPk=0; foreach ($pk as $key => $value) : $totalPk = $totalPk+$value['total']; endforeach; ?>
+                    <?php $totalOps=0; foreach ($ops as $key => $value) : $totalOps = $totalOps+$value['total']; endforeach; ?>
+                    <?php $pkops = $totalPk+$totalOps; ?>
+                    <?php $totalInv=0; foreach ($inv as $key => $value) : $totalInv = $totalInv+$value['total']; endforeach; ?>
+                    <?php $totalSeluruh = $pkops+$totalInv; ?>
                     <table class="table table-hover">
+                        
                         <tbody>
                         <tr>
                             <td>PK</td>
                             <td>:</td>
-                            <td>RP. </td>
+                            <td>RP. <?= $totalPk ?></td>
                         </tr>
                         <tr>
                             <td>OPS</td>
                             <td>:</td>
-                            <td>Rp. </td>
+                            <td>Rp. <?= $totalOps ?></td>
                         </tr>
                         <tr>
                             <td>Total PK + OPS</td>
                             <td>:</td>
-                            <td>Rp. </td>
+                            <td>Rp. <?= $pkops ?></td>
                         </tr>
                         </tbody>
                         <tbody>
                         <tr>
                             <td>INV</td>
                             <td>:</td>
-                            <td>Rp. </td>
+                            <td>Rp. <?= $totalInv ?></td>
                         </tr>
                         <tr>
                             <td>Total RKAT</td>
                             <td>:</td>
-                            <td>Rp. </td>
+                            <td>Rp. <?= $totalSeluruh ?></td>
                         </tr>
                         </tbody>
                     </table>

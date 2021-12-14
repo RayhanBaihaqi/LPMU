@@ -59,7 +59,7 @@ class SetRkat extends BaseController
     }
     public function delete($id_setrkat = null) {
         $model = new SetRkatModel();
-        $data['set_rkat'] = $model->where('id_setrkat',$id)->delete();
+        $data['set_rkat'] = $model->where('id_setrkat',$id_setrkat)->delete();
 
         return redirect()->to(base_url('setrkat/index'));
     }

@@ -223,7 +223,8 @@
 						</table>
 					</div>
 					<div class="card-footer" align="center">
-					<button type="submit" class="btn btn-primary" id="jumlah">Tambah Data</button>
+					<button type="submit" class="btn btn-primary" id="btnJumlah" value="Tambah Data">Tambah Data</button>
+					<span id="textError"></span>
 					</div>
 				</div>
 
@@ -243,10 +244,16 @@
 			document.getElementById('pagu1').value = pagu1;
 			document.getElementById('pagu2').value = pagu2;
 			document.getElementById('pagu3').value = pagu3;
+			
+			var buttonSend = document.getElementById('btnJumlah');
 			if (pagu3 > <?= $value['pagu'] ?>) {
 				$('#pagu3').addClass('btn-danger');
+				buttonSend.disabled = true;
+				document.getElementById('textError').innerHTML = "Nilai Pagu yang anda masukkan melebihi Nilai Pagu yang anda miliki";
 			} else {
 				$('#pagu3').removeClass('btn-danger');
+				buttonSend.disabled = false;
+				document.getElementById('textError').innerHTML = "";
 			}
 			if (document.getElementById('anggaranGasal1').value != null || document.getElementById('anggaranGenap1').value != null) {
 				for (let index = 1; index <= table.rows.length; index++) {
@@ -262,11 +269,16 @@
 					pagu3 = parseInt(pagu3) + parseInt(document.getElementById('total'+index).value)
 					document.getElementById('pagu3').value = pagu3;
 				}
-					if (pagu3 > <?= $value['pagu'] ?>) {
-						$('#pagu3').addClass('btn-danger');
-					} else {
-						$('#pagu3').removeClass('btn-danger');
-					}
+				var buttonSend = document.getElementById('btnJumlah');
+				if (pagu3 > <?= $value['pagu'] ?>) {
+					$('#pagu3').addClass('btn-danger');
+					buttonSend.disabled = true;
+					document.getElementById('textError').innerHTML = "Nilai Pagu yang anda masukkan melebihi Nilai Pagu yang anda miliki";
+				} else {
+					$('#pagu3').removeClass('btn-danger');
+					buttonSend.disabled = false;
+					document.getElementById('textError').innerHTML = "";
+				}
 				}
 			}
 		}
