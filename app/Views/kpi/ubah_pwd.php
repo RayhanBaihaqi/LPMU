@@ -149,7 +149,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="password">Password Baru</label>
-                                <input type="password" class="form-control" name="password" placeholder="Masukkan password baru" id='password'>
+                                <input type="password" class="form-control" name="password" placeholder="Masukkan password baru" id='password' required>
                             </div>
                             <div class="form-group">
                                 <label for="nama_prodi">Nama Prodi/Unit</label>
