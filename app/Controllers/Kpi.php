@@ -165,7 +165,7 @@ class Kpi extends BaseController
 				'nilai_bobot' => $nilai_bobot[$i],
 				//'upload_file' => $this->request->getPost('upload_file'),
 				'idkpi' => $idkpi[$i],
-				'id_butir_kpi' => $id_butir_kpi[$i],
+				'id_butir_kpi' => $id[$i],
 			];
 			$save_capaian = $capaianmodel->simpancapaian($data);
 		}
@@ -220,7 +220,7 @@ class Kpi extends BaseController
 				'nilai_bobot' => $nilai_bobot[$i],
 				//'upload_file' => $this->request->getPost('upload_file'),
 				'idkpi' => $idkpi[$i],
-				'id_butir_kpi' => $id_butir_kpi[$i],
+				'id_butir_kpi' => $id[$i],
 			];
 			$save_capaian = $capaianmodel->simpancapaian($data);
 		}
@@ -274,7 +274,7 @@ class Kpi extends BaseController
 				'nilai_bobot' => $nilai_bobot[$i],
 				//'upload_file' => $this->request->getPost('upload_file'),
 				'idkpi' => $idkpi[$i],
-				'id_butir_kpi' => $id_butir_kpi[$i],
+				'id_butir_kpi' => $id[$i],
 			];
 			$save_capaian = $capaianmodel->simpancapaian($data);
 		}
@@ -328,7 +328,7 @@ class Kpi extends BaseController
 				'nilai_bobot' => $nilai_bobot[$i],
 				//'upload_file' => $this->request->getPost('upload_file'),
 				'idkpi' => $idkpi[$i],
-				'id_butir_kpi' => $id_butir_kpi[$i],
+				'id_butir_kpi' => $id[$i],
 			];
 			$save_capaian = $capaianmodel->simpancapaian($data);
 		}
@@ -382,7 +382,7 @@ class Kpi extends BaseController
 				'nilai_bobot' => $nilai_bobot[$i],
 				//'upload_file' => $this->request->getPost('upload_file'),
 				'idkpi' => $idkpi[$i],
-				'id_butir_kpi' => $id_butir_kpi[$i],
+				'id_butir_kpi' => $id[$i],
 			];
 			$save_capaian = $capaianmodel->simpancapaian($data);
 		}
@@ -436,7 +436,7 @@ class Kpi extends BaseController
 				'nilai_bobot' => $nilai_bobot[$i],
 				//'upload_file' => $this->request->getPost('upload_file'),
 				'idkpi' => $idkpi[$i],
-				'id_butir_kpi' => $id_butir_kpi[$i],
+				'id_butir_kpi' => $id[$i],
 			];
 			$save_capaian = $capaianmodel->simpancapaian($data);
 		}
@@ -490,7 +490,7 @@ class Kpi extends BaseController
 				'nilai_bobot' => $nilai_bobot[$i],
 				//'upload_file' => $this->request->getPost('upload_file'),
 				'idkpi' => $idkpi[$i],
-				'id_butir_kpi' => $id_butir_kpi[$i],
+				'id_butir_kpi' => $id[$i],
 			];
 			$save_capaian = $capaianmodel->simpancapaian($data);
 		}
@@ -543,7 +543,7 @@ class Kpi extends BaseController
 				'nilai_bobot' => $nilai_bobot[$i],
 				//'upload_file' => $this->request->getPost('upload_file'),
 				'idkpi' => $idkpi[$i],
-				'id_butir_kpi' => $id_butir_kpi[$i],
+				'id_butir_kpi' => $id[$i],
 			];
 			$save_capaian = $capaianmodel->simpancapaian($data);
 		}
@@ -597,7 +597,7 @@ class Kpi extends BaseController
 				'nilai_bobot' => $nilai_bobot[$i],
 				//'upload_file' => $this->request->getPost('upload_file'),
 				'idkpi' => $idkpi[$i],
-				'id_butir_kpi' => $id_butir_kpi[$i],
+				'id_butir_kpi' => $id[$i],
 			];
 			$save_capaian = $capaianmodel->simpancapaian($data);
 		}
