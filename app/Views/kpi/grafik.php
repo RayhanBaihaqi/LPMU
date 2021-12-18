@@ -11,7 +11,7 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>/public/dist/css/adminlte.min.css">
     <meta charset="utf-8">
-    <title>Dashboard KPI</title>
+    <title>Kesimpulan</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Law Firm Website Template" name="keywords">
     <meta content="Law Firm Website Template" name="description">
