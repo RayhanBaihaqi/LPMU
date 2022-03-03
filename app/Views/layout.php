@@ -23,23 +23,33 @@
   </nav>
   <br>
   <div class="container">
-  <img class="card-img-top" src="<?php echo base_url(); ?>/public/img/welcome.jpg" alt="Card image" width="800" height="200">
+    <div class="col">
+			<div class="card border-left-primary shadow h-100 py-2">
+				<div class="card-body">
+					<div class="row no-gutters align-items-center">
+						<div class="col mr-2">
+							<div class="h3 font-weight-bold text-info text-uppercase mb-1">SELAMAT DATANG DI SIORMAWA</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
     <div class="row">
       <div class="col-sm-6">
-        <div class="card">
-          <a class="btn" href="<?php echo site_url(); ?>backend/rkat" role="button">
+      <a class="btn" href="<?php echo site_url(); ?>backend/rkat" role="button">
+        <div class="card bg-info text-white">
             <img class="card-img-top" src="<?php echo base_url(); ?>/public/img/RKAT1.jpg" alt="Card image">
             <div class="card-body">RKAT</div>
-          </a>
         </div>
+      </a>
       </div>
       <div class="col-sm-6">
-        <div class="card">
-          <a class="btn" href="<?php echo site_url(); ?>kpi" role="button">
+      <a class="btn" href="<?php echo site_url(); ?>kpi" role="button">
+        <div class="card bg-info text-white">
             <img class="card-img-top" src="<?php echo base_url(); ?>/public/img/KPI1.jpg" alt="Card image">
             <div class="card-body">KPI</div>
-          </a>
         </div>
+      </a>
       </div>
     </div>
   </div>

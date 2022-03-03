@@ -4,7 +4,7 @@
 body {
 	color: #000000;
 	background: #ffffff;
-	font-family: 'Roboto', sans-serif;
+
 	font-weight: 400;
 }
 
@@ -14,10 +14,9 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: 'EB Garamond', serif;
 	font-weight: 600;
-	font-style: italic;
-	color: #121518;
+
+	color: #000000;
 }
 
 a {
@@ -68,30 +67,6 @@ a:focus {
 	padding: 15px 0;
 	text-align: left;
 
-}
-
-.top-bar .logo .pertama {
-	margin: 0;
-	color: #ed3237;
-	font-size: 25px;
-	line-height: 10px;
-	font-weight: 800;
-}
-
-.top-bar .logo .kedua {
-	margin: 0;
-	color: #008854;
-	font-size: 25px;
-	line-height: 40px;
-	font-weight: 800;
-}
-
-.top-bar .logo .ketiga {
-	margin: 0;
-	color: #0082c6;
-	font-size: 25px;
-	line-height: 10px;
-	font-weight: 800;
 }
 
 

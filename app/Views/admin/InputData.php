@@ -58,7 +58,7 @@
 				</a>
 				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
-						<a class="collapse-item" href="<?= base_url('setrkat/createbyadmin') ?>">Tambah RKAT</a>
+						<a class="collapse-item" href="<?= base_url('rkat/createbyadmin') ?>">Tambah RKAT</a>
 						<a class="collapse-item" href="<?= base_url('rkat/indexbyadmin') ?>">Lihat Data</a>
 						<a class="collapse-item" href="<?= base_url('setrkat/create') ?>">Atur Semester dan Pagu</a>
 						<a class="collapse-item" href="<?= base_url('setrkat/index') ?>">Lihat Data Set Rkat</a>
@@ -266,7 +266,7 @@
 			document.getElementById('pagu1').value = pagu1;
 			document.getElementById('pagu2').value = pagu2;
 			document.getElementById('pagu3').value = pagu3;
-			if (pagu3 > <?= $value['pagu'] ?>) {
+			if (pagu3 > ) {
 				$('#pagu3').addClass('btn-danger');
 			} else {
 				$('#pagu3').removeClass('btn-danger');
@@ -285,7 +285,7 @@
 					pagu3 = parseInt(pagu3) + parseInt(document.getElementById('total'+index).value)
 					document.getElementById('pagu3').value = pagu3;
 				}
-					if (pagu3 > <?= $value['pagu'] ?>) {
+					if (pagu3 > ) {
 						$('#pagu3').addClass('btn-danger');
 					} else {
 						$('#pagu3').removeClass('btn-danger');

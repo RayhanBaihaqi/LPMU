@@ -152,8 +152,8 @@
 											<label for="tahun_akademik">Tahun Ajaran</label>
 											<select class="form-control" id="tahun_akademik" name="tahun_akademik">
 												<option selected>Pilih Tahun Ajaran</option>
-												<option value="2021/2022">2021/2022</option>
-												<option value="2022/2023">2022/2023</option>
+												<option value="2019/2020">2019/2020</option>
+												<option value="2020/2021">2020/2021</option>
 											</select>
 										</div>
 										<div class="form-group">

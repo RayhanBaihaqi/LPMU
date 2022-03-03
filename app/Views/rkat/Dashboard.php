@@ -47,40 +47,18 @@
                 <div class="row">
                     <div class="col-sm-2">
                         <div class="logo">
-                            <a href="<?php echo site_url(); ?>">
-                                <img src="<?php echo base_url(); ?>/public/img/logo-upj.png" alt="Logo">
-                            </a>
+                            <img src="<?php echo base_url(); ?>/public/img/logo-upj.png" alt="Logo">
                         </div>
                     </div>
-                    <div class="col-sm-5">
+                    <div class="col-sm-8">
                         <div class="logo">
-                            <h1 class="pertama">Lembaga</h1>
-                            <h1 class="kedua">Penjaminan Mutu</h1>
-                            <h1 class="ketiga">Universitas</h1>
-                        </div>
-                    </div>
-                    <div class="col-sm-1">
-                        <div class="top-bar-right">
-                            <div class="text">
-                                <h2>RKAT</h2>
-                            </div>
+                            <H5 style="text-align: center;">SISTEM INFORMASI MONITORING DAN EVALUASI</H5>
+                            <p style="text-align: center;">UNIVERSITAS PEMBANGUNAN JAYA</p>
                         </div>
                     </div>
                     <div class="col-sm-2">
-                        <div class="top-bar-right">
-                            <div class="text">
-                                <h2>
-                                    <div id="txt"></div>
-                                </h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <div class="social">
-                            <a href="https://www.upj.ac.id/"><i class="fas fa-globe"></i></i></a>
-                            <a href="https://twitter.com/upj_bintaro"><i class="fab fa-twitter"></i></a>
-                            <a href="https://web.facebook.com/universitas.pembangunan.jaya?_rdc=1&_rdr"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://www.instagram.com/upj_bintaro/"><i class="fab fa-instagram"></i></a>
+                        <div class="logo">
+                        <img src="<?php echo base_url(); ?>/public/img/logo-simonev.jpg" alt="Logo" style="float: right;">
                         </div>
                     </div>
                 </div>
@@ -196,161 +174,6 @@
             </div>
             <!-- ====================================================================================================================== -->
 
-            
-
-            <!--<a href="<-?= base_url('/setrkat/createbyuser') ?>" class="btn btn-info btn-sm"><i class="fa fa-home"></i> Rencana RKAT</a> 
-			<a href="<-?= base_url('/rkat/indexbyuser') ?>" class="btn btn-info btn-sm"><i class="fa fa-home"></i> Lihat List Rencana</a>-->
-            <!-- <hr>
-            <div class="row clearfix progress-box">
-				<div class="col-lg-3 col-md-6 col-sm-12 mb-30">
-					<div class="card-box pd-30 height-100-p">
-						<a href="/backend/detail_chart" class="small-box-footer text-blue">
-							<div class="progress-box text-center">
-								<div id="chart"></div>
-								<h5 class="text-blue padding-top-10 h5">My Earnings</h5>
-							</div>
-							Lihat detail <i class="fas fa-arrow-circle-right"></i>
-						</a>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 col-sm-12 mb-30">
-					<div class="card-box pd-30 height-100-p">
-						<a href="/backend/detail_chart" class="small-box-footer text-blue">
-							<div class="progress-box text-center">
-								<div id="chart2"></div>
-								<h5 class="text-blue padding-top-10 h5">My Earnings</h5>
-							</div>
-							Lihat detail <i class="fas fa-arrow-circle-right"></i>
-						</a>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 col-sm-12 mb-30">
-					<div class="card-box pd-30 height-100-p">
-						<a href="/backend/detail_chart" class="small-box-footer text-blue">
-							<div class="progress-box text-center">
-								<div id="chart3"></div>
-								<h5 class="text-blue padding-top-10 h5">My Earnings</h5>
-							</div>
-							Lihat detail <i class="fas fa-arrow-circle-right"></i>
-						</a>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 col-sm-12 mb-30">
-					<div class="card-box pd-30 height-100-p">
-						<a href="/backend/detail_chart" class="small-box-footer text-blue">
-							<div class="progress-box text-center">
-								<div id="chart4"></div>
-								<h5 class="text-blue padding-top-10 h5">My Earnings</h5>
-							</div>
-							Lihat detail <i class="fas fa-arrow-circle-right"></i>
-						</a>
-					</div>
-				</div>
-			</div>
-            <-!-- ====================================================================================================================== --
-            <div class="row clearfix progress-box">
-				<div class="col-lg-3 col-md-6 col-sm-12 mb-30">
-					<div class="card-box pd-30 height-100-p">
-						<a href="/backend/detail_chart" class="small-box-footer text-blue">
-							<div class="progress-box text-center">
-								<div id="chart5"></div>
-								<h5 class="text-blue padding-top-10 h5">My Earnings</h5>
-							</div>
-							Lihat detail <i class="fas fa-arrow-circle-right"></i>
-						</a>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 col-sm-12 mb-30">
-					<div class="card-box pd-30 height-100-p">
-						<a href="/backend/detail_chart" class="small-box-footer text-blue">
-							<div class="progress-box text-center">
-								<div id="chart6"></div>
-								<h5 class="text-blue padding-top-10 h5">My Earnings</h5>
-							</div>
-							Lihat detail <i class="fas fa-arrow-circle-right"></i>
-						</a>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 col-sm-12 mb-30">
-					<div class="card-box pd-30 height-100-p">
-						<a href="/backend/detail_chart" class="small-box-footer text-blue">
-							<div class="progress-box text-center">
-								<div id="chart7"></div>
-								<h5 class="text-blue padding-top-10 h5">My Earnings</h5>
-							</div>
-							Lihat detail <i class="fas fa-arrow-circle-right"></i>
-						</a>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 col-sm-12 mb-30">
-					<div class="card-box pd-30 height-100-p">
-						<a href="/backend/detail_chart" class="small-box-footer text-blue">
-							<div class="progress-box text-center">
-								<div id="chart8"></div>
-								<h5 class="text-blue padding-top-10 h5">My Earnings</h5>
-							</div>
-							Lihat detail <i class="fas fa-arrow-circle-right"></i>
-						</a>
-					</div>
-				</div>
-			</div>
-            <-!-- ====================================================================================================================== --
-            <div class="row clearfix progress-box">
-				<div class="col-lg-4 col-md-6 col-sm-12 mb-30">
-					<div class="card-box pd-30 height-100-p">
-						<a href="/backend/detail_chart" class="small-box-footer text-blue">
-							<div class="progress-box text-center">
-								<div id="chart9"></div>
-								<h5 class="text-blue padding-top-10 h5">My Earnings</h5>
-							</div>
-							Lihat detail <i class="fas fa-arrow-circle-right"></i>
-						</a>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 col-sm-12 mb-30">
-					<div class="card-box pd-30 height-100-p">
-						<a href="/backend/detail_chart" class="small-box-footer text-blue">
-							<div class="progress-box text-center">
-								<div id="chart10"></div>
-								<h5 class="text-blue padding-top-10 h5">My Earnings</h5>
-							</div>
-							Lihat detail <i class="fas fa-arrow-circle-right"></i>
-						</a>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 col-sm-12 mb-30">
-					<div class="card-box pd-30 height-100-p">
-						<a href="/backend/detail_chart" class="small-box-footer text-blue">
-							<div class="progress-box text-center">
-								<div id="chart11"></div>
-								<h5 class="text-blue padding-top-10 h5">My Earnings</h5>
-							</div>
-							Lihat detail <i class="fas fa-arrow-circle-right"></i>
-						</a>
-					</div>
-				</div>
-			</div>
-			<-!-- ====================================================================================================================== --
-			<h3>GRAFIK PERBANDINGAN</h3>
-			<hr>
-			<div class="row clearfix progress-box">
-				<div class="col-lg-6 col-md-6 col-sm-12 mb-30">
-					<div class="card-box pd-30 height-100-p">
-							<div class="progress-box text-center">
-							<canvas id="barChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-								<h5 class="text-blue padding-top-10 h5">My Earnings</h5>
-							</div>
-					</div>
-				</div>
-				<div class="col-lg-6 col-md-6 col-sm-12 mb-30">
-					<div class="card-box pd-30 height-100-p">
-							<div class="progress-box text-center">
-							<canvas id="barChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-								<h5 class="text-blue padding-top-10 h5">My Earnings</h5>
-							</div>
-					</div>
-				</div>
-			</div> -->
         <section class="content">
                 <div class="row">
                     <div class="col-md-6">
@@ -370,18 +193,6 @@
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/isotope/isotope.pkgd.min.js"></script> -->
     <script>
-        function startTime() {
-            var today = new Date();
-            var h = today.getHours();
-            var m = today.getMinutes();
-            var s = today.getSeconds();
-            m = checkTime(m);
-            s = checkTime(s);
-            document.getElementById('txt').innerHTML =
-                h + ":" + m + ":" + s;
-            var t = setTimeout(startTime, 500);
-        }
-
         function checkTime(i) {
             if (i < 10) {
                 i = "0" + i
