@@ -21,6 +21,15 @@ $(document).ready(function() {
   });
 });
 
+$(document).ready(function() {
+  var table = $('#dataTable_rencana').DataTable();
+
+  $('.filter-satuan').change(function () {
+    table.columns(4)
+    .search( $(this).val() )
+    .draw();
+  });
+});
 
 $(document).ready(function() {
   $('#dataTable3').DataTable({
