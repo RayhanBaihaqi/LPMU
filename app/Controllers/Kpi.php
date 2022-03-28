@@ -154,7 +154,8 @@ class Kpi extends BaseController
 
 		$nilai_bobot = array();
 		for ($i = 0; $i < count($id); $i++) {
-			$nilai_bobot[$i] = $realisasi[$i] * $bobot[$i / 100];
+			//$nilai_bobot[$i] = $realisasi[$i] * $bobot[$i / 100];
+			$nilai_bobot[$i] = ((float)$realisasi[$i] * (float)$bobot[$i]);
 		}
 		for ($i = 0; $i < count($id); $i++) {
 			$data = [
@@ -209,7 +210,7 @@ class Kpi extends BaseController
 
 		$nilai_bobot = array();
 		for ($i = 0; $i < count($id); $i++) {
-			$nilai_bobot[$i] = $realisasi[$i] * $bobot[$i / 100];
+			$nilai_bobot[$i] = ((float)$realisasi[$i] * (float)$bobot[$i]);
 		}
 		for ($i = 0; $i < count($id); $i++) {
 			$data = [
@@ -263,7 +264,7 @@ class Kpi extends BaseController
 
 		$nilai_bobot = array();
 		for ($i = 0; $i < count($id); $i++) {
-			$nilai_bobot[$i] = $realisasi[$i] * $bobot[$i / 100];
+			$nilai_bobot[$i] = ((float)$realisasi[$i] * (float)$bobot[$i]);
 		}
 		for ($i = 0; $i < count($id); $i++) {
 			$data = [
@@ -317,7 +318,7 @@ class Kpi extends BaseController
 
 		$nilai_bobot = array();
 		for ($i = 0; $i < count($id); $i++) {
-			$nilai_bobot[$i] = $realisasi[$i] * $bobot[$i / 100];
+			$nilai_bobot[$i] = ((float)$realisasi[$i] * (float)$bobot[$i]);
 		}
 		for ($i = 0; $i < count($id); $i++) {
 			$data = [
@@ -371,7 +372,7 @@ class Kpi extends BaseController
 
 		$nilai_bobot = array();
 		for ($i = 0; $i < count($id); $i++) {
-			$nilai_bobot[$i] = $realisasi[$i] * $bobot[$i / 100];
+			$nilai_bobot[$i] = ((float)$realisasi[$i] * (float)$bobot[$i]);
 		}
 		for ($i = 0; $i < count($id); $i++) {
 			$data = [
@@ -425,7 +426,7 @@ class Kpi extends BaseController
 
 		$nilai_bobot = array();
 		for ($i = 0; $i < count($id); $i++) {
-			$nilai_bobot[$i] = $realisasi[$i] * $bobot[$i / 100];
+			$nilai_bobot[$i] = ((float)$realisasi[$i] * (float)$bobot[$i]);
 		}
 		for ($i = 0; $i < count($id); $i++) {
 			$data = [
@@ -479,7 +480,7 @@ class Kpi extends BaseController
 
 		$nilai_bobot = array();
 		for ($i = 0; $i < count($id); $i++) {
-			$nilai_bobot[$i] = $realisasi[$i] * $bobot[$i / 100];
+			$nilai_bobot[$i] = ((float)$realisasi[$i] * (float)$bobot[$i]);
 		}
 		for ($i = 0; $i < count($id); $i++) {
 			$data = [
@@ -532,7 +533,7 @@ class Kpi extends BaseController
 
 		$nilai_bobot = array();
 		for ($i = 0; $i < count($id); $i++) {
-			$nilai_bobot[$i] = $realisasi[$i] * $bobot[$i / 100];
+			$nilai_bobot[$i] = ((float)$realisasi[$i] * (float)$bobot[$i]);
 		}
 		for ($i = 0; $i < count($id); $i++) {
 			$data = [
@@ -586,7 +587,7 @@ class Kpi extends BaseController
 
 		$nilai_bobot = array();
 		for ($i = 0; $i < count($id); $i++) {
-			$nilai_bobot[$i] = $realisasi[$i] * $bobot[$i / 100];
+			$nilai_bobot[$i] = ((float)$realisasi[$i] * (float)$bobot[$i]);
 		}
 		for ($i = 0; $i < count($id); $i++) {
 			$data = [
