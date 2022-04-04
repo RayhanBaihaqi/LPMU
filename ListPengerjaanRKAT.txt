@@ -1,6 +1,7 @@
 List Pengerjaan RKAT
 ADMIN
 7. prodi ditambahkan (halaman tambah pagu)
+10. menambahkan nama-nama pengisi data 
 
 
 USER
@@ -15,6 +16,7 @@ USER
 Catatan
 1. Mencari tau apa saja yang akan di tampilkan pada halaman dashboard
 3. Selesaikan semua list di atas kemudian gabung databes menjadi satu
+4. pada login, jika ingin logout wajib dari tombol logout bukan dari tombol sebelumnya.
 
 DONE
 USER

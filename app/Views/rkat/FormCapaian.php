@@ -117,20 +117,21 @@
 					</select>
 				</div>
 				<form action="<?= base_url('rkat/updatebyuser'); ?>" method="POST" enctype="multipart/form-data">
-				<table class="table table-borded table-responsive table-striped">
+				<div class="table-responsive">
+				<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 					<thead>
 						<tr>
-							<th>KPI - Butir</th>
-							<th>No Kegiatan</th>
-							<th>Indikator</th>
-							<th>Target</th>
-							<th>Nama Kegiatan</th>
-							<th>Anggaran Gasal</th>
-							<th>Serapan Gasal</th>
-							<th>Anggaran Genap</th>
-							<th>Serapan Genap</th>
-							<th>Total Anggaran</th>
-							<th>Total Serapan</th>
+							<th width="400px">No Kegiatan</th>
+							<th width="600px">KPI-Butir</th>
+							<th width="600px"> Indikator - Nama Kegiatan</th>
+							<th width="600px">Target</th>
+							<th width="600px">Anggaran Ganjil</th>
+							<th width="600px">Serapan Ganjil</th>
+							<th width="600px">Anggaran Genap</th>
+							<th width="600px">Serapan Genap</th>
+							<th width="600px">Total Anggaran</th>
+							<th width="600px">Total Serapan</th>
+							<th width="600px">Bukti</th>
 						</tr>
 					</thead>
 					<tbody id="nilai">
@@ -139,36 +140,46 @@
 								<input required type="hidden" name="id" value="<?= $reading['id']; ?>">
 								<input required type="hidden" name="id_set" value="<?= $reading['id_set']; ?>">
 								<tr>
-									<td>
-										<?= $reading['kpi']; ?>.
-										<?= $reading['butir']; ?>
-									</td>
 									<td><?= $reading['no_kegiatan']; ?></td>
-									<td><?= $reading['indikator']; ?></td>
+									<td><?= $reading['kpi']; ?> . <?= $reading['butir']; ?></td>
+									<td>
+										<ul class="list-group list-group-flush">
+											<li class="list-group-item" width="600px"><?= $reading['indikator']; ?></li>
+											<li class="list-group-item"><?= $reading['nama_kegiatan']; ?></li>
+										</ul>
+									</td>
 									<td><?= $reading['target']; ?></td>
-									<td><?= $reading['nama_kegiatan']; ?></td>
-									<td><?= $reading['anggaranGasal']; ?></td>
-									<td><input type="text" class="form-control" style="width: 150px;" id="anggaranGasal" placeholder="Masukan Anggaran Gasal" name="anggaranGasal[]" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" required></td>
+									<td> <?= $reading['anggaranGasal']; ?></td>
+									<td>
+									<input type="text" class="form-control" style="width: 150px;" id="anggaranGasal" placeholder="Masukan Anggaran Gasal" name="anggaranGasal[]" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" required>
+									</td>
 									<td><?= $reading['anggaranGenap']; ?></td>
-									<td><input type="text" class="form-control" style="width: 150px;" id="anggaranGasal" placeholder="Masukan Anggaran Gasal" name="anggaranGasal[]" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" required></td>
+									<td>
+									<input type="text" class="form-control" style="width: 150px;" id="anggaranGasal" placeholder="Masukan Anggaran Gasal" name="anggaranGasal[]" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" required>
+									</td>
 									<td><?= $reading['total']; ?></td>
-									<td><input type="text" class="form-control" style="width: 150px;" id="anggaranGasal" placeholder="Masukan Anggaran Gasal" name="anggaranGasal[]" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" required></td>
+									<td>
+									<input type="text" class="form-control" style="width: 150px;" id="anggaranGasal" placeholder="Masukan Anggaran Gasal" name="anggaranGasal[]" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" required>
+									</td>
+									<td>
+										<input type="file" id="myFile" name="filename2">
+									</td>	
 								</tr>
 								<?php endforeach; ?>
 						<?php endif; ?>
 					</tbody>
 						<tfoot>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td><span id="anggaranGanjil"></span></td>
-									<td></td>
-									<td><span id="anggaranGenap"></span></td>
-									<td></td>
-									<td><span id="total"></span></td>
-									<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td><span id="anggaranGanjil"></span></td>
+								<td></td>
+								<td><span id="anggaranGenap"></span></td>
+								<td></td>
+								<td><span id="total"></span></td>
+								<td></td>
+								<td></td>
 						</tfoot>
 							
 					
@@ -177,13 +188,14 @@
 				</form>
 			</div>
 		</div>
+		</div>
 	</div>
 	<!-- JavaScript Libraries -->
 	<script>
 		var table = document.getElementById("nilai"), sumHsl = 0;
 		for(var t = 1; t < table.rows.length; t++)
 		{
-			sumHsl = sumHsl + parseInt(table.rows[t].cells[5].innerHTML);
+			sumHsl = sumHsl + parseInt(table.rows[t].cells[4].innerHTML);
 		}
 		document.getElementById("anggaranGanjil").innerHTML = "Rp."+ sumHsl;
 	</script>
@@ -191,7 +203,7 @@
 		var table = document.getElementById("nilai"), sumHsl = 0;
 		for(var t = 1; t < table.rows.length; t++)
 		{
-			sumHsl = sumHsl + parseInt(table.rows[t].cells[7].innerHTML);
+			sumHsl = sumHsl + parseInt(table.rows[t].cells[6].innerHTML);
 		}
 		document.getElementById("anggaranGenap").innerHTML = "Rp."+ sumHsl;
 	</script>
@@ -199,7 +211,7 @@
 		var table = document.getElementById("nilai"), sumHsl = 0;
 		for(var t = 1; t < table.rows.length; t++)
 		{
-			sumHsl = sumHsl + parseInt(table.rows[t].cells[7].innerHTML);
+			sumHsl = sumHsl + parseInt(table.rows[t].cells[6].innerHTML);
 		}
 		document.getElementById("total").innerHTML = "Rp."+ sumHsl;
 	</script>
@@ -260,6 +272,11 @@
 			$(".pre-loader").fadeOut("slow");
 		});
 	</script>
+	<!-- Page level custom scripts -->
+	<script src="<?php echo base_url(); ?>/public/js/datatables-demo.js"></script>
+	<!-- Page level plugins -->
+		<script src="<?php echo base_url(); ?>/public/js/jquery.dataTables.min.js"></script>
+		<script src="<?php echo base_url(); ?>/public/js/dataTables.bootstrap4.min.js"></script>
 </body>
 
 </html>
