@@ -28,7 +28,7 @@
 				<div class="card-body">
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-2">
-							<div class="h3 font-weight-bold text-info text-uppercase mb-1">SELAMAT DATANG DI SIORMAWA</div>
+							<div class="h3 font-weight-bold text-info text-uppercase mb-1">SELAMAT DATANG DI SIMONEV</div>
 						</div>
 					</div>
 				</div>

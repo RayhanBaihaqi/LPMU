@@ -51,7 +51,7 @@
                     </div>
                     <div class="col-sm-2">
                         <div class="logo">
-                        <img src="<?php echo base_url(); ?>/public/img/logo-simonev.jpg" alt="Logo" style="float: right;">
+                        <img src="<?php echo base_url(); ?>/public/img/monev_logo.png" alt="Logo" style="float: right;">
                         </div>
                     </div>
                 </div>

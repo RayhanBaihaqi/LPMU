@@ -48,7 +48,7 @@
                     </div>
                     <div class="col-sm-2">
                         <div class="logo">
-                        <img src="<?php echo base_url(); ?>/public/img/logo-simonev.jpg" alt="Logo" style="float: right;">
+                        <img src="<?php echo base_url(); ?>/public/img/monev_logo.png" alt="Logo" style="float: right;">
                         </div>
                     </div>
                 </div>
@@ -118,12 +118,13 @@
 				</div>
 				<form action="<?= base_url('rkat/updatebyuser'); ?>" method="POST" enctype="multipart/form-data">
 				<div class="table-responsive">
-				<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+				<table class="perhitungan table table-bordered" id="dataTable" width="100%" cellspacing="0">
 					<thead>
 						<tr>
 							<th width="400px">No Kegiatan</th>
 							<th width="600px">KPI-Butir</th>
-							<th width="600px"> Indikator - Nama Kegiatan</th>
+							<th width="600px">Kategori</th>
+							<th width="600px">Indikator - Nama Kegiatan</th>
 							<th width="600px">Target</th>
 							<th width="600px">Anggaran Ganjil</th>
 							<th width="600px">Serapan Ganjil</th>
@@ -136,12 +137,15 @@
 					</thead>
 					<tbody id="nilai">
 						<?php if ($detail_rkat) : ?>
-							<?php foreach ($detail_rkat as $reading) : ?>
+							<?php
+								$no = 1;
+								foreach ($detail_rkat as $reading) : ?>
 								<input required type="hidden" name="id" value="<?= $reading['id']; ?>">
 								<input required type="hidden" name="id_set" value="<?= $reading['id_set']; ?>">
 								<tr>
-									<td><?= $reading['no_kegiatan']; ?></td>
+									<td><?= $no++; ?></td>
 									<td><?= $reading['kpi']; ?> . <?= $reading['butir']; ?></td>
+									<td><?= $reading['kategori']; ?></td>
 									<td>
 										<ul class="list-group list-group-flush">
 											<li class="list-group-item" width="600px"><?= $reading['indikator']; ?></li>
@@ -149,17 +153,21 @@
 										</ul>
 									</td>
 									<td><?= $reading['target']; ?></td>
-									<td> <?= $reading['anggaranGasal']; ?></td>
+									<td id="harga"><?= $reading['anggaranGasal']; ?></td>
 									<td>
-									<input type="text" class="form-control" style="width: 150px;" id="anggaranGasal" placeholder="Masukan Anggaran Gasal" name="anggaranGasal[]" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" required>
+									<input type="text" class="form-control form-control-sm" id="serapGanjil" placeholder="Rp. 0" name="serapGanjil[]" onkeyup="totalAnggaran1();" required>
+									<p>Persentase Serap: <input type="text" name="totalBayarGanjil" id="totalBayarGanjil" disabled /></p>
 									</td>
-									<td><?= $reading['anggaranGenap']; ?></td>
+									<td ><?= $reading['anggaranGenap']; ?></td>
 									<td>
-									<input type="text" class="form-control" style="width: 150px;" id="anggaranGasal" placeholder="Masukan Anggaran Gasal" name="anggaranGasal[]" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" required>
+									<input type="text" class="form-control form-control-sm" id="serapGenap" placeholder="Rp. 0" name="serapGenap[]" onkeyup="totalAnggaran1();" required>
+									<p>Persentase Serap: <input type="text" name="totalBayarGenap" id="totalBayarGenap" disabled /></p>
 									</td>
 									<td><?= $reading['total']; ?></td>
 									<td>
-									<input type="text" class="form-control" style="width: 150px;" id="anggaranGasal" placeholder="Masukan Anggaran Gasal" name="anggaranGasal[]" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" required>
+									<input type="text" class="form-control form-control-sm" id="totalSerap" name="totalSerap[]" placeholder="Rp. 0" disabled onkeyup="totalAnggaran1();" required>
+									<p>Persentase Serap: <input type="text" name="totalBayarSerap" id="totalBayarSerap" disabled /></p>
+									<p>Persentase Serap: <input type="text" name="totalBayarSerap2" id="totalBayarSerap2" disabled /></p>
 									</td>
 									<td>
 										<input type="file" id="myFile" name="filename2">
@@ -173,9 +181,10 @@
 								<td></td>
 								<td></td>
 								<td></td>
+								<td></td>
 								<td><span id="anggaranGanjil"></span></td>
 								<td></td>
-								<td><span id="anggaranGenap"></span></td>
+								<td><span id="anggaranGenap1"></span></td>
 								<td></td>
 								<td><span id="total"></span></td>
 								<td></td>
@@ -195,7 +204,7 @@
 		var table = document.getElementById("nilai"), sumHsl = 0;
 		for(var t = 1; t < table.rows.length; t++)
 		{
-			sumHsl = sumHsl + parseInt(table.rows[t].cells[4].innerHTML);
+			sumHsl = sumHsl + parseInt(table.rows[t].cells[5].innerHTML);
 		}
 		document.getElementById("anggaranGanjil").innerHTML = "Rp."+ sumHsl;
 	</script>
@@ -203,19 +212,79 @@
 		var table = document.getElementById("nilai"), sumHsl = 0;
 		for(var t = 1; t < table.rows.length; t++)
 		{
-			sumHsl = sumHsl + parseInt(table.rows[t].cells[6].innerHTML);
+			sumHsl = sumHsl + parseInt(table.rows[t].cells[7].innerHTML);
 		}
-		document.getElementById("anggaranGenap").innerHTML = "Rp."+ sumHsl;
+		document.getElementById("anggaranGenap1").innerHTML = "Rp."+ sumHsl;
 	</script>
 	<script>
 		var table = document.getElementById("nilai"), sumHsl = 0;
 		for(var t = 1; t < table.rows.length; t++)
 		{
-			sumHsl = sumHsl + parseInt(table.rows[t].cells[6].innerHTML);
+			sumHsl = sumHsl + parseInt(table.rows[t].cells[9].innerHTML);
 		}
 		document.getElementById("total").innerHTML = "Rp."+ sumHsl;
 	</script>
+	<script>
+		function totalAnggaran1() {
+			<?php if ($detail_rkat) : ?>
+			<?php foreach ($detail_rkat as $reading) : ?>
+			
+			var ganjilFirstNumberValue = document.getElementById('serapGanjil').value;
+			var txtSecondNumberValue = document.getElementById('serapGenap').value;
+			var serapTertNumberValue = document.getElementById('totalSerap').value;
+			var anggaranGasal = <?= $reading['anggaranGasal']; ?>;
+			var anggaranGenap = <?= $reading['anggaranGenap']; ?>;
+			var serap = <?= $reading['total']; ?>;
+			var table = document.getElementById('nilai');
+			for(let index = 1; index <= table.rows.length; index++)
+			{
+				//persentase serap ganjil
+				hitungGanjil = parseInt (ganjilFirstNumberValue) / parseInt(anggaranGasal) * 100;
+				//persentase serap genap
+				hitungGenap = parseInt (txtSecondNumberValue) / parseInt(anggaranGenap) * 100;
+				//total persentase searapan
+				hitungTotalSerap = parseInt (ganjilFirstNumberValue) / parseInt(txtSecondNumberValue) * 100;
+				hitungTotalSerap2 = parseInt (serapTertNumberValue) / parseInt(serap) * 100;
+				//total serapan
+				result = parseInt(ganjilFirstNumberValue) + parseInt(txtSecondNumberValue);
+			}
+			if (!isNaN(result,hitungGanjil,hitungGenap)) { 
+				document.getElementById('totalSerap').value = result;
+				document.getElementById('totalBayarGanjil').value = hitungGanjil + "%"; 
+				document.getElementById('totalBayarGenap').value = hitungGenap + "%"; 
+				document.getElementById('totalBayarSerap').value = hitungTotalSerap + "%"; 
+				document.getElementById('totalBayarSerap2').value = hitungTotalSerap2 + "%";
+			}
+			<?php endforeach; ?>
+						<?php endif; ?>
+						console.log(hitungGanjil);
+		}
+	</script>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<!-- <script type="text/javascript">
+		$(document).ready(function(){
+		$("#diskon").keyup(function(){
+			var harga  = parseInt($("#harga").val());
+			var diskon  = parseInt($("#diskon").val());
+			for(var t = 1; t < table.rows.length; t++)
+		{
+			(parseInt($("#harga")/parseInt($("#diskon"))*100 + parseInt(table.rows[t].innerHTML;
+		}
+			
+			console.log(diskon);
+			$("#totBayar").val(total);
+		});
+		});
+	</script> -->
+	<!-- <script>
+		$(".perhitungan").keyup(function(){
+			var anggaranGasal = pareseInt($("#anggaranGasal").val())
+			var SerapGasal = pareseInt($("#SerapGasal").val())
+
+			var hasilSerapGasal = (anggaranGasal / SerapanGasal) * 100;
+			$("#hasilSerapGasal").atter("value", hasilSerapGasal)
+		});
+	</script> -->
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 	<!-- <script src="lib/easing/easing.min.js"></script>
 	<script src="lib/owlcarousel/owl.carousel.min.js"></script>

@@ -35,7 +35,7 @@
 					<h2>LPMU</h2>
 					<h5>LEMBAGA PENJAMINAN MUTU UNIVERSITAS</h5>
 				</div>
-				<div class="right-inductor"><img src="<?php echo base_url(); ?>/public/img/logo_upj.png" alt=""></div>
+				<div class="right-inductor"><img src="<?php echo base_url(); ?>/public/img/monev_logo_putih.png" alt=""></div>
 			</div>
 		</div>
 	</section>
