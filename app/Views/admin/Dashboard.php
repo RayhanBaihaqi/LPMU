@@ -30,9 +30,7 @@
 
 			<!-- Sidebar - Brand -->
 			<a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
-				<div class="sidebar-brand-icon rotate-n-15">
-					<i class="fas fa-laugh-wink"></i>
-				</div>
+			<img src="<?php echo base_url(); ?>/public/img/monev_logo_putih.png" alt="Logo" style="width: 70px; height: 70px;">
 				<div class="sidebar-brand-text mx-3">Admin</div>
 			</a>
 
@@ -105,10 +103,10 @@
 
 				<!-- Topbar -->
 				<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
+					
 					<!-- Topbar Navbar -->
 					<ul class="navbar-nav ml-auto">
-
+						
 						<div class="topbar-divider d-none d-sm-block"></div>
 
 						<!-- Nav Item - User Information -->
@@ -155,7 +153,7 @@
 										</div>
 
 										<div class="col-auto">
-											<i class="fas fa-users-cog fa-8x"></i>
+                        					<img src="<?php echo base_url(); ?>/public/img/monev_logo.png" alt="Logo" style="width: 150px; height: 150px;">
 
 										</div>
 									</div>
