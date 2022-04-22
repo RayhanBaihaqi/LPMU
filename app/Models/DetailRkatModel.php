@@ -8,14 +8,14 @@ class DetailRkatModel extends Model
 {
 
     protected $table      = 'detail_rkat';
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'id_rkat';
 
     protected $useAutoIncrement = true;
 
     protected $returnType     = 'array';
     //protected $useSoftDeletes = true;
 
-    protected $allowedFields = ['kategori','anggaranGenap' ,'anggaranGasal' ,'no_kegiatan' ,'indikator' , 'target', 'nama_kegiatan', 'kpi', 'butir', 'tahunAkademik','id_set', 'total'];
+    protected $allowedFields = ['kategori','anggaranGenap' ,'anggaranGasal' ,'no_kegiatan' ,'indikator' , 'target', 'nama_kegiatan', 'kpi', 'butir', 'tahunAkademik','id_set', 'total', 'serapGanjil', 'serapGenap', 'totalSerap'];
 
     // public function gabung(){
     //     return $this->db->table('detail_rkat')
@@ -29,12 +29,12 @@ class DetailRkatModel extends Model
         ->where('username',$username)
         ->get()->getResultArray();
     }
-    public function tampilRKAT($id_user=null){
-        return $this->db->table('set_rkat')
-        ->join('user', 'user.id=set_rkat.id_user')
-        ->where('username',$username)
-        ->get()->getResultArray();
-    }
+    // public function tampilRKAT($id_user=null){
+    //     return $this->db->table('set_rkat')
+    //     ->join('user', 'user.id=set_rkat.id_user')
+    //     ->where('username',$username)
+    //     ->get()->getResultArray();
+    // }
     public function tambahBatch($data){
         return $this->db->table('detail_rkat')
         ->insertBatch($data);

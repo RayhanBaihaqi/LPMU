@@ -23,7 +23,10 @@ class CapaianRkat extends BaseController
     public function createcapaianbyuser() {
         $model = new DetailRkatModel();
         $username = session('username');
-        $data['detail_rkat'] = $this->DetailRkatModel->gabung($username);
+        $data = [
+            'detail_rkat' => $model->join('set_rkat', 'set_rkat.id_setrkat = detail_rkat.id_set')->join('user', 'user.id=set_rkat.id_user')->where('username',$username)->findAll(),
+            // 'count_detail_rkat' => $model->join('set_rkat', 'set_rkat.id_setrkat = detail_rkat.id_set')->join('user', 'user.id=set_rkat.id_user')->where('username',$username)->countAllResults()
+        ];
         return view('rkat/FormCapaian', $data);
     }
     public function savecapaian()
@@ -36,6 +39,7 @@ class CapaianRkat extends BaseController
         $jenis_anggaran = $this->request->getVar('jenis_anggaran');
         $id_set = $this->request->getVar('id_set');
         $jumlah = $this->request->getVar('jumlah');
+
 
             for ($i=0; $i < $jumlah; $i++) { 
                 $this->DetailRkatModel->insert([

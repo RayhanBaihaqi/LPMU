@@ -31,36 +31,36 @@
 
 <body onload="startTime()">
 	<div class="wrapper">
-        <!-- Top Bar Start -->
-        <div class="top-bar">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-2">
-                        <div class="logo">
-                            <img src="<?php echo base_url(); ?>/public/img/logo-upj.png" alt="Logo">
-                        </div>
-                    </div>
-                    <div class="col-sm-8">
-                        <div class="logo">
-                            <H5 style="text-align: center;">SISTEM INFORMASI MONITORING DAN EVALUASI</H5>
-                            <p style="text-align: center;">UNIVERSITAS PEMBANGUNAN JAYA</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <div class="logo">
-                        <img src="<?php echo base_url(); ?>/public/img/monev_logo.png" alt="Logo" style="float: right;">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+		<!-- Top Bar Start -->
+		<div class="top-bar">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-2">
+						<div class="logo">
+							<img src="<?php echo base_url(); ?>/public/img/logo-upj.png" alt="Logo">
+						</div>
+					</div>
+					<div class="col-sm-8">
+						<div class="logo">
+							<H5 style="text-align: center;">SISTEM INFORMASI MONITORING DAN EVALUASI</H5>
+							<p style="text-align: center;">UNIVERSITAS PEMBANGUNAN JAYA</p>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="logo">
+							<img src="<?php echo base_url(); ?>/public/img/monev_logo.png" alt="Logo" style="float: right;">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<!-- Top Bar End -->
 	<div class="container-fluid">
 		<br>
 		<!-- Nav Bar Start -->
 		<div class="nav-bar">
-		<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+			<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 				<a href="<?php echo site_url(); ?>backend"><i class="fas fa-long-arrow-alt-left"></i></a>
 				<a href="#" class="navbar-brand">MENU</a>
 				<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -70,8 +70,8 @@
 					<div class="navbar-nav mr-auto">
 						<a href="<?php echo site_url(); ?>backend/rkat" class="nav-item nav-link ">Home</a>
 						<a href="<?= base_url('/rkat/createbyuser') ?>" class="nav-item nav-link">Rencana Anggaran</a>
-                        <a href="<?= base_url('/CapaianRkat/createcapaianbyuser') ?>" class="nav-item nav-link active">Realisasi Anggaran</a>
-                        <a href="<?= base_url('/rkat/indexbyuser') ?>" class="nav-item nav-link">Kesimpulan</a>
+						<a href="<?= base_url('/CapaianRkat/createcapaianbyuser') ?>" class="nav-item nav-link active">Realisasi Anggaran</a>
+						<a href="<?= base_url('/rkat/indexbyuser') ?>" class="nav-item nav-link">Kesimpulan</a>
 					</div>
 					<div class="ml-auto">
 						<div class="user-info-dropdown">
@@ -82,9 +82,9 @@
 									</span>
 									<span class="user-name">
 										<?php
-                                            $nama_prodi = session('nama_prodi');
-                                            echo "$nama_prodi"
-                                        ?>
+										$nama_prodi = session('nama_prodi');
+										echo "$nama_prodi"
+										?>
 									</span>
 								</a>
 								<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
@@ -117,147 +117,149 @@
 					</select>
 				</div>
 				<form action="<?= base_url('rkat/updatebyuser'); ?>" method="POST" enctype="multipart/form-data">
-				<div class="table-responsive">
-				<table class="perhitungan table table-bordered" id="dataTable" width="100%" cellspacing="0">
-					<thead>
-						<tr>
-							<th width="400px">No Kegiatan</th>
-							<th width="600px">KPI-Butir</th>
-							<th width="600px">Kategori</th>
-							<th width="600px">Indikator - Nama Kegiatan</th>
-							<th width="600px">Target</th>
-							<th width="600px">Anggaran Ganjil</th>
-							<th width="600px">Serapan Ganjil</th>
-							<th width="600px">Anggaran Genap</th>
-							<th width="600px">Serapan Genap</th>
-							<th width="600px">Total Anggaran</th>
-							<th width="600px">Total Serapan</th>
-							<th width="600px">Bukti</th>
-						</tr>
-					</thead>
-					<tbody id="nilai">
-						<?php if ($detail_rkat) : ?>
-							<?php
-								$no = 1;
-								foreach ($detail_rkat as $reading) : ?>
-								<input required type="hidden" name="id" value="<?= $reading['id']; ?>">
-								<input required type="hidden" name="id_set" value="<?= $reading['id_set']; ?>">
+					<div class="table-responsive">
+						<table class="perhitungan table table-bordered" id="dataTable" width="100%" cellspacing="0">
+							<thead>
 								<tr>
-									<td><?= $no++; ?></td>
-									<td><?= $reading['kpi']; ?> . <?= $reading['butir']; ?></td>
-									<td><?= $reading['kategori']; ?></td>
-									<td>
-										<ul class="list-group list-group-flush">
-											<li class="list-group-item" width="600px"><?= $reading['indikator']; ?></li>
-											<li class="list-group-item"><?= $reading['nama_kegiatan']; ?></li>
-										</ul>
-									</td>
-									<td><?= $reading['target']; ?></td>
-									<td id="harga"><?= $reading['anggaranGasal']; ?></td>
-									<td>
-									<input type="text" class="form-control form-control-sm" id="serapGanjil" placeholder="Rp. 0" name="serapGanjil[]" onkeyup="totalAnggaran1();" required>
-									<p>Persentase Serap: <input type="text" name="totalBayarGanjil" id="totalBayarGanjil" disabled /></p>
-									</td>
-									<td ><?= $reading['anggaranGenap']; ?></td>
-									<td>
-									<input type="text" class="form-control form-control-sm" id="serapGenap" placeholder="Rp. 0" name="serapGenap[]" onkeyup="totalAnggaran1();" required>
-									<p>Persentase Serap: <input type="text" name="totalBayarGenap" id="totalBayarGenap" disabled /></p>
-									</td>
-									<td><?= $reading['total']; ?></td>
-									<td>
-									<input type="text" class="form-control form-control-sm" id="totalSerap" name="totalSerap[]" placeholder="Rp. 0" disabled onkeyup="totalAnggaran1();" required>
-									<p>Persentase Serap: <input type="text" name="totalBayarSerap" id="totalBayarSerap" disabled /></p>
-									<p>Persentase Serap: <input type="text" name="totalBayarSerap2" id="totalBayarSerap2" disabled /></p>
-									</td>
-									<td>
-										<input type="file" id="myFile" name="filename2">
-									</td>	
+									<th width="400px">No Kegiatan</th>
+									<th width="600px">KPI-Butir</th>
+									<th width="600px">Kategori</th>
+									<th width="600px">Indikator - Nama Kegiatan</th>
+									<th width="600px">Target</th>
+									<th width="600px">Anggaran Ganjil</th>
+									<th width="600px">Serapan Ganjil</th>
+									<th width="600px">Anggaran Genap</th>
+									<th width="600px">Serapan Genap</th>
+									<th width="600px">Total Anggaran</th>
+									<th width="600px">Total Serapan</th>
+									<th width="600px">Bukti</th>
 								</tr>
-								<?php endforeach; ?>
-						<?php endif; ?>
-					</tbody>
-						<tfoot>
+							</thead>
+							<tbody id="nilai">
+								<?php if ($detail_rkat) : ?>
+									<?php
+									$no = 1;
+									foreach ($detail_rkat as $reading) : ?>
+										<input required type="hidden" name="id_set" value="<?= $reading['id_set']; ?>">
+										<tr>
+											<td><?= $no; ?></td>
+											<td><?= $reading['kpi']; ?> . <?= $reading['butir']; ?></td>
+											<td><?= $reading['kategori']; ?></td>
+											<td>
+												<ul class="list-group list-group-flush">
+													<li class="list-group-item" width="600px"><?= $reading['indikator']; ?></li>
+													<li class="list-group-item"><?= $reading['nama_kegiatan']; ?></li>
+												</ul>
+											</td>
+											<td><?= $reading['target']; ?></td>
+											<td><input type="text" id="aGanjil<?= $no; ?>" value="<?= $reading['anggaranGasal']; ?>" disabled /></td>
+											<td>
+												<input style="display: none;" required type="text" name="id[]" id="id" value="<?= $reading['id_rkat']; ?>">
+												<input type="text" class="form-control form-control-sm" id="serapGasal<?= $no; ?>" placeholder="Rp. 0" name="serapGanjil[]" onkeyup="totalAnggaran1(this.id);" required <?= ($reading['serapGanjil'] != "") ? "value='".$reading['serapGanjil']."' disabled" : "" ?>>
+												<p>Persentase Serap: <input type="text" name="totalBayarGanjil" id="totalBayarGanjil<?= $no; ?>" disabled /></p>
+											</td>
+											<td><input type="text" id="aGenap<?= $no; ?>" value="<?= $reading['anggaranGenap']; ?>" disabled /></td>
+											<td>
+												<input type="text" class="form-control form-control-sm" id="serapGenap<?= $no; ?>" placeholder="Rp. 0" name="serapGenap[]" onkeyup="totalAnggaran2(this.id);" required <?= ($reading['serapGenap'] != "") ? "value='".$reading['serapGenap']."' disabled" : "" ?>>
+												<p>Persentase Serap: <input type="text" name="totalBayarGenap" id="totalBayarGenap<?= $no; ?>" disabled /></p>
+											</td>
+											<td><?= $reading['total']; ?></td>
+											<td>
+												<input type="text" class="form-control form-control-sm" id="totalSerap<?= $no ?>" name="totalSerap[]" placeholder="Rp. 0" required>
+												<p>Persentase Serap: <input type="text" name="totalBayarSerap2" id="totalBayarSerap<?= $no ?>" disabled /></p>
+											</td>
+											<td>
+												<input type="file" id="myFile" name="filename2">
+											</td>
+										</tr>
+									<?php $no++;
+									endforeach; ?>
+								<?php endif; ?>
+							</tbody>
+							<tfoot>
 								<td></td>
 								<td></td>
 								<td></td>
 								<td></td>
 								<td></td>
-								<td><span id="anggaranGanjil"></span></td>
+								<td><span id="totalanggaranganjil"></span></td>
 								<td></td>
-								<td><span id="anggaranGenap1"></span></td>
+								<td><span id="totalanggarangenap"></span></td>
 								<td></td>
 								<td><span id="total"></span></td>
 								<td></td>
 								<td></td>
-						</tfoot>
-							
-					
-				</table>
-				<button type="button" class="btn btn-primary">Submit</button>
+							</tfoot>
+
+
+						</table>
+						<div class="card-footer" align="center">
+							<button type="submit" class="btn btn-primary" id="btnJumlah" value="submit">Simpan Data</button>
+							<span id="textError"></span>
+						</div>
 				</form>
 			</div>
 		</div>
-		</div>
+	</div>
 	</div>
 	<!-- JavaScript Libraries -->
 	<script>
-		var table = document.getElementById("nilai"), sumHsl = 0;
-		for(var t = 1; t < table.rows.length; t++)
-		{
-			sumHsl = sumHsl + parseInt(table.rows[t].cells[5].innerHTML);
+		var table = document.getElementById("nilai"),
+			sumHsl = 0;
+		for (var t = 1; t < table.rows.length; t++) {
+			sumHsl = sumHsl + parseInt(table.rows[t].cells[5].getElementsByTagName('input')[0].value);
 		}
-		document.getElementById("anggaranGanjil").innerHTML = "Rp."+ sumHsl;
+		document.getElementById("totalanggaranganjil").innerHTML = "Rp." + sumHsl;
 	</script>
 	<script>
-		var table = document.getElementById("nilai"), sumHsl = 0;
-		for(var t = 1; t < table.rows.length; t++)
-		{
-			sumHsl = sumHsl + parseInt(table.rows[t].cells[7].innerHTML);
+		var table = document.getElementById("nilai"),
+			sumHsl = 0;
+		for (var t = 1; t < table.rows.length; t++) {
+			sumHsl = sumHsl + parseInt(table.rows[t].cells[7].getElementsByTagName('input')[0].value);
 		}
-		document.getElementById("anggaranGenap1").innerHTML = "Rp."+ sumHsl;
+		document.getElementById("totalanggarangenap").innerHTML = "Rp." + sumHsl;
 	</script>
 	<script>
-		var table = document.getElementById("nilai"), sumHsl = 0;
-		for(var t = 1; t < table.rows.length; t++)
-		{
+		var table = document.getElementById("nilai"),
+			sumHsl = 0;
+		for (var t = 1; t < table.rows.length; t++) {
 			sumHsl = sumHsl + parseInt(table.rows[t].cells[9].innerHTML);
 		}
-		document.getElementById("total").innerHTML = "Rp."+ sumHsl;
+		document.getElementById("total").innerHTML = "Rp." + sumHsl;
 	</script>
 	<script>
-		function totalAnggaran1() {
-			<?php if ($detail_rkat) : ?>
-			<?php foreach ($detail_rkat as $reading) : ?>
-			
-			var ganjilFirstNumberValue = document.getElementById('serapGanjil').value;
-			var txtSecondNumberValue = document.getElementById('serapGenap').value;
-			var serapTertNumberValue = document.getElementById('totalSerap').value;
-			var anggaranGasal = <?= $reading['anggaranGasal']; ?>;
-			var anggaranGenap = <?= $reading['anggaranGenap']; ?>;
-			var serap = <?= $reading['total']; ?>;
-			var table = document.getElementById('nilai');
-			for(let index = 1; index <= table.rows.length; index++)
-			{
-				//persentase serap ganjil
-				hitungGanjil = parseInt (ganjilFirstNumberValue) / parseInt(anggaranGasal) * 100;
-				//persentase serap genap
-				hitungGenap = parseInt (txtSecondNumberValue) / parseInt(anggaranGenap) * 100;
-				//total persentase searapan
-				hitungTotalSerap = parseInt (ganjilFirstNumberValue) / parseInt(txtSecondNumberValue) * 100;
-				hitungTotalSerap2 = parseInt (serapTertNumberValue) / parseInt(serap) * 100;
-				//total serapan
-				result = parseInt(ganjilFirstNumberValue) + parseInt(txtSecondNumberValue);
-			}
-			if (!isNaN(result,hitungGanjil,hitungGenap)) { 
-				document.getElementById('totalSerap').value = result;
-				document.getElementById('totalBayarGanjil').value = hitungGanjil + "%"; 
-				document.getElementById('totalBayarGenap').value = hitungGenap + "%"; 
-				document.getElementById('totalBayarSerap').value = hitungTotalSerap + "%"; 
-				document.getElementById('totalBayarSerap2').value = hitungTotalSerap2 + "%";
-			}
-			<?php endforeach; ?>
-						<?php endif; ?>
-						console.log(hitungGanjil);
+		function totalAnggaran1(clicked_id) {
+			var nameid = clicked_id;
+			var id = nameid.replace(/^\D+/g, '');
+			// console.log(id);
+
+			var serapGanjil = document.getElementById(nameid).value;
+			var aGanjil = document.getElementById('aGanjil' + id).value;
+			var aGenap = document.getElementById('aGenap' + id).value;
+			// console.log("Anggaran Ganjil = "+aGanjil + " Anggaran Genap = " + aGenap + " Nilai Serapan = " + serapGanjil);
+			hitungGanjil = parseInt(serapGanjil) / parseInt(aGanjil) * 100;
+			document.getElementById('totalBayarGanjil' + id).value = hitungGanjil + "%";
+		}
+
+		function totalAnggaran2(clicked_id) {
+			var nameid = clicked_id;
+			var id = nameid.replace(/^\D+/g, '');
+			// console.log(id);
+
+			var serapGenap = document.getElementById(nameid).value;
+			var aGenap = document.getElementById('aGenap' + id).value;
+			persenSerapGenap = parseInt(serapGenap) / parseInt(aGenap) * 100;
+			document.getElementById('totalBayarGenap' + id).value = persenSerapGenap + "%";
+
+			var serapGanjil = document.getElementById('serapGasal' + id).value;
+			var persenSerapGanjil = document.getElementById('totalBayarGanjil' + id).value;
+			var persenSerapGanjil = persenSerapGanjil.replace(/[^\d.-]/g, '');
+
+			var totalAnggaran = parseInt(serapGanjil) + parseInt(serapGenap);
+			document.getElementById('totalSerap' + id).value = totalAnggaran;
+
+			totalPersenSerap = parseInt(persenSerapGanjil) + parseInt(persenSerapGenap);
+			document.getElementById('totalBayarSerap' + id).value = totalPersenSerap + "%";
 		}
 	</script>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -296,7 +298,7 @@
 			$(this).siblings(".custom-file-label").addClass("selected").html(fileName);
 		});
 	</script>
-	
+
 	<script>
 		function startTime() {
 			var today = new Date();
@@ -344,8 +346,8 @@
 	<!-- Page level custom scripts -->
 	<script src="<?php echo base_url(); ?>/public/js/datatables-demo.js"></script>
 	<!-- Page level plugins -->
-		<script src="<?php echo base_url(); ?>/public/js/jquery.dataTables.min.js"></script>
-		<script src="<?php echo base_url(); ?>/public/js/dataTables.bootstrap4.min.js"></script>
+	<script src="<?php echo base_url(); ?>/public/js/jquery.dataTables.min.js"></script>
+	<script src="<?php echo base_url(); ?>/public/js/dataTables.bootstrap4.min.js"></script>
 </body>
 
 </html>
