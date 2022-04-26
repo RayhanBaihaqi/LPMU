@@ -165,7 +165,7 @@
 											</td>
 											<td><?= $reading['total']; ?></td>
 											<td>
-												<input type="text" class="form-control form-control-sm" id="totalSerap<?= $no ?>" name="totalSerap[]" placeholder="Rp. 0" required>
+												<input type="text" class="form-control form-control-sm" id="totalSerap<?= $no ?>" name="totalSerap[]" placeholder="Rp. 0" required <?= ($reading['totalSerap'] != "") ? "value='".$reading['totalSerap']."' disabled" : "" ?>>
 												<p>Persentase Serap: <input type="text" name="totalBayarSerap2" id="totalBayarSerap<?= $no ?>" disabled /></p>
 											</td>
 											<td>
