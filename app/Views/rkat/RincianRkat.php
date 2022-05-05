@@ -127,6 +127,7 @@
                     <table class="table table-hover">
                         
                         <tbody>
+                        <div id="chart"></div>
                         <tr>
                             <td>PK</td>
                             <td>:</td>
@@ -170,6 +171,35 @@
     <!-- <script src="lib/easing/easing.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/isotope/isotope.pkgd.min.js"></script> -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+        var myChart = Highcharts.chart('chart', {
+            chart: {
+                type: 'bar'
+            },
+            title: {
+                text: 'Total Anggaran'
+            },
+            xAxis: {
+                categories: ['PK', 'OPS', 'INV']
+            },
+            yAxis: {
+                title: {
+                    text: 'Penjualan (unit)'
+                }
+            },
+            series: [
+                    <?php 
+                       foreach ($pk as $key => $value) {
+                            echo "{name: '" . "Anggaran" . "'" .  ",data: [$totalPk,$totalOps,$totalInv]},";
+                        }
+                        
+                    ?>
+            ]
+        });
+    });
+</script>
     <script>
         function startTime() {
             var today = new Date();

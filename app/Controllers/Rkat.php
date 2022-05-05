@@ -103,11 +103,13 @@ class Rkat extends BaseController
     }
     public function updatebyuser()
     {
+        
         $model = new DetailRkatModel();
         $id = $_POST['id'];
         $serapGanjil = $_POST['serapGanjil'];
         $serapGenap = $_POST['serapGenap'];
         $totalSerap = $_POST['totalSerap'];
+        // $bukti = $_POST['bukti'];
 
         foreach ($id as $key => $n) {
             
@@ -116,6 +118,7 @@ class Rkat extends BaseController
                 'serapGanjil' => $serapGanjil[$key],
                 'serapGenap' => $serapGenap[$key],
                 'totalSerap' => $totalSerap[$key],
+                // 'bukti' => $bukti[$key],
             ];
 
             $save = $model->update($id, $data);
@@ -123,6 +126,34 @@ class Rkat extends BaseController
             // print "The serapGanjil is " . $n . ", serapGenap is " . $serapGenap[$key] .
             //     ", and totalSerap is " . $totalSerap[$key] . ". Thank you\n";
         }
+        // if (!$this->validate([
+		// 	'keterangan' => [
+		// 		'rules' => 'required',
+		// 		'errors' => [
+		// 			'required' => '{field} Tidak boleh kosong'
+		// 		]
+		// 	],
+		// 	'bukti' => [
+		// 		'rules' => 'uploaded[bukti]|mime_in[bukti,image/jpg,image/jpeg,image/gif,image/png]|max_size[berkas,2048]',
+		// 		'errors' => [
+		// 			'uploaded' => 'Harus Ada File yang diupload',
+		// 			'mime_in' => 'File Extention Harus Berupa jpg,jpeg,gif,png',
+		// 			'max_size' => 'Ukuran File Maksimal 2 MB'
+		// 		]
+ 
+		// 	]
+		// ])) {
+		// 	session()->setFlashdata('error', $this->validator->listErrors());
+		// 	return redirect()->back()->withInput();
+		// }
+        
+        // $dataBukti = $this->request->getFile('bukti');
+		// $fileName = $dataBukti->getRandomName();
+		// $model->insert([
+		// 	'bukti' => $fileName,
+		// ]);
+        // $dataBukti->move('upload/', $fileName);
+        // session()->setFlashdata('success', 'Berkas Berhasil diupload');
         return redirect()->to(base_url('CapaianRkat/createcapaianbyuser'));
     }
     public function deletebyuser($id = null)
@@ -352,4 +383,13 @@ class Rkat extends BaseController
         $data['detail_rkat'] = $model->orderBy('id', 'DESC')->findAll();
         return view('admin/BuatTabel', $data);
     }
+
+    //Grafik
+    public function kesimpulan()
+	{
+        $model = new DetailRkatModel();
+        $data = $model->tampilDataSetRKAT();
+ 
+        return view('grafik', compact('data'));
+	}
 }

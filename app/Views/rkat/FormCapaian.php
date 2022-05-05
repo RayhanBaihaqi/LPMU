@@ -132,7 +132,7 @@
 									<th width="600px">Serapan Genap</th>
 									<th width="600px">Total Anggaran</th>
 									<th width="600px">Total Serapan</th>
-									<th width="600px">Bukti</th>
+									<!-- <th width="600px">Bukti</th> -->
 								</tr>
 							</thead>
 							<tbody id="nilai">
@@ -165,11 +165,11 @@
 											</td>
 											<td><?= $reading['total']; ?></td>
 											<td>
-												<input type="text" class="form-control form-control-sm" id="totalSerap<?= $no ?>" name="totalSerap[]" placeholder="Rp. 0" required <?= ($reading['totalSerap'] != "") ? "value='".$reading['totalSerap']."' disabled" : "" ?>>
-												<p>Persentase Serap: <input type="text" name="totalBayarSerap2" id="totalBayarSerap<?= $no ?>" disabled /></p>
+												<input type="text" class="form-control form-control-sm" id="totalSerap<?= $no; ?>" name="totalSerap[]" placeholder="Rp. 0" required <?= ($reading['totalSerap'] != "") ? "value='".$reading['totalSerap']."' disabled" : "" ?>>
+												<p>Persentase Serap: <input type="text" name="totalBayarSerap2" id="totalBayarSerap<?= $no; ?>" disabled /></p>
 											</td>
 											<td>
-												<input type="file" id="myFile" name="filename2">
+												<!-- <input type="file" id="bukti<?= $no; ?>" name="bukti[]" required> -->
 											</td>
 										</tr>
 									<?php $no++;

@@ -15,7 +15,7 @@ class DetailRkatModel extends Model
     protected $returnType     = 'array';
     //protected $useSoftDeletes = true;
 
-    protected $allowedFields = ['kategori','anggaranGenap' ,'anggaranGasal' ,'no_kegiatan' ,'indikator' , 'target', 'nama_kegiatan', 'kpi', 'butir', 'tahunAkademik','id_set', 'total', 'serapGanjil', 'serapGenap', 'totalSerap'];
+    protected $allowedFields = ['kategori','anggaranGenap' ,'anggaranGasal' ,'no_kegiatan' ,'indikator' , 'target', 'nama_kegiatan', 'kpi', 'butir', 'tahunAkademik','id_set', 'total', 'serapGanjil', 'serapGenap', 'totalSerap', 'bukti'];
 
     // public function gabung(){
     //     return $this->db->table('detail_rkat')
@@ -49,6 +49,9 @@ class DetailRkatModel extends Model
         ->where('username',$username)
         ->get()->getResultArray();
     }
-
+    public function getData()
+    {
+        return $this->findAll();
+    }
 }
 
