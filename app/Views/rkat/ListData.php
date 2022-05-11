@@ -33,6 +33,18 @@
 </head>
 
 <body onload="startTime()">
+	<style>
+		@page{
+			margin: 10px;
+		}
+	</style>
+		<?php
+			$pdf = false;
+			if (strpos(current_url(), "pdfListData")) {
+				$pdf = true;
+			}
+			if($pdf == false){
+		?>
 	<div class="wrapper">
         <!-- Top Bar Start -->
         <div class="top-bar">
@@ -97,8 +109,11 @@
 		</div>
 		<!-- Nav Bar End -->
 		<br>
+		<input type="button" value="Download PDF" onclick="window.open('<?php echo base_url('pdf/pdfListData') ?>','blank')">
+	<?php } ?>
 		<!-- Responsive tables Start -->
 		<div class="col-lg-12 grid-margin stretch-card">
+			
             <div class="card">
 				<div class="card-header">
 					<h4 class="card-title">Data Rencana Kegiatan dan Anggaran Tahunan (RKAT) 
@@ -108,6 +123,8 @@
                     	?>
 					</h4>
 				</div>
+				
+				
                 <div class="card-body">
 					<div class="table-responsive">
 						<table class="table table-striped" id="dataTable" width="100%" cellspacing="0">

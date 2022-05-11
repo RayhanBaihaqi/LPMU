@@ -33,6 +33,18 @@
 </head>
 
 <body onload="startTime()">
+<style>
+		@page{
+			margin: 10px;
+		}
+	</style>
+		<?php
+			$pdf = false;
+			if (strpos(current_url(), "pdfRincian")) {
+				$pdf = true;
+			}
+			if($pdf == false){
+		?>
 	<div class="wrapper">
         <!-- Top Bar Start -->
         <div class="top-bar">
@@ -97,6 +109,35 @@
 		</div>
 		<!-- Nav Bar End -->
 		<br>
+        <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Kesimpulan</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          Serapan Terendah Prodi <?php $nama_prodi = session('nama_prodi'); echo "$nama_prodi" ?> : <br>
+          Serapan Tertinggi Prodi <?php $nama_prodi = session('nama_prodi'); echo "$nama_prodi" ?> : <br><hr>
+          rata-rata serapan prodi <?php $nama_prodi = session('nama_prodi'); echo "$nama_prodi" ?> per TA <br> 
+          - TA 20--     : <br>
+          - TA 20--     : 
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+        <input type="button" value="Download PDF" onclick="window.open('<?php echo base_url('pdf/pdfRincian') ?>','blank')">
+        <?php } ?>
 		<!-- Responsive tables Start -->
 		<div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
@@ -127,7 +168,10 @@
                     <table class="table table-hover">
                         
                         <tbody>
-                        <div id="chart"></div>
+                        <canvas id="myChart"></canvas>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                            Kesimpulan
+                        </button>
                         <tr>
                             <td>PK</td>
                             <td>:</td>
@@ -162,7 +206,7 @@
             </div>
 		</div>
 		<!-- Responsive tables End -->
-
+        <!-- The Modal -->
 	</div>
 
 	 <!-- JavaScript Libraries -->
@@ -171,35 +215,44 @@
     <!-- <script src="lib/easing/easing.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/isotope/isotope.pkgd.min.js"></script> -->
-    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script>
-document.addEventListener('DOMContentLoaded', function () {
-        var myChart = Highcharts.chart('chart', {
-            chart: {
-                type: 'bar'
-            },
-            title: {
-                text: 'Total Anggaran'
-            },
-            xAxis: {
-                categories: ['PK', 'OPS', 'INV']
-            },
-            yAxis: {
-                title: {
-                    text: 'Penjualan (unit)'
-                }
-            },
-            series: [
-                    <?php 
-                       foreach ($pk as $key => $value) {
-                            echo "{name: '" . "Anggaran" . "'" .  ",data: [$totalPk,$totalOps,$totalInv]},";
-                        }
-                        
-                    ?>
-            ]
-        });
-    });
-</script>
+		var ctx = document.getElementById("myChart").getContext('2d');
+		var myChart = new Chart(ctx, {
+			type: 'bar',
+			data: {
+				labels: ["OPS", "PK", "INV"],
+				datasets: [{
+					label: '',
+					data: [
+                        <?php echo $totalOps; ?>,
+                        <?php echo $totalPk; ?>, 
+                        <?php echo $totalInv; ?>, 
+					],
+					backgroundColor: [
+					'rgba(255, 99, 132, 0.2)',
+					'rgba(54, 162, 235, 0.2)',
+					'rgba(255, 206, 86, 0.2)',
+					],
+					borderColor: [
+					'rgba(255,99,132,1)',
+					'rgba(54, 162, 235, 1)',
+					'rgba(255, 206, 86, 1)',
+					],
+					borderWidth: 1
+				}]
+			},
+            options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "World Wine Production 2018"
+    }
+  }
+		});
+	</script>
+
+
     <script>
         function startTime() {
             var today = new Date();

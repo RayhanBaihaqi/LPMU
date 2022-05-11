@@ -107,7 +107,7 @@
 				<h4 class="card-title">Formulir Target Capaian</h4>
 			</div>
 			<div class="card-body">
-				<div class="form-group ">
+				<!-- <div class="form-group ">
 					<label for="sel1">Kategori:</label>
 					<select class="form-control kpi" id="sel1">
 						<option>Pilih Kategori</option>
@@ -115,7 +115,7 @@
 						<option>OPS</option>
 						<option>INV</option>
 					</select>
-				</div>
+				</div> -->
 				<form action="<?= base_url('rkat/updatebyuser'); ?>" method="POST" enctype="multipart/form-data">
 					<div class="table-responsive">
 						<table class="perhitungan table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -168,9 +168,9 @@
 												<input type="text" class="form-control form-control-sm" id="totalSerap<?= $no; ?>" name="totalSerap[]" placeholder="Rp. 0" required <?= ($reading['totalSerap'] != "") ? "value='".$reading['totalSerap']."' disabled" : "" ?>>
 												<p>Persentase Serap: <input type="text" name="totalBayarSerap2" id="totalBayarSerap<?= $no; ?>" disabled /></p>
 											</td>
-											<td>
-												<!-- <input type="file" id="bukti<?= $no; ?>" name="bukti[]" required> -->
-											</td>
+											<!-- <td>
+												<input type="file" id="bukti<?= $no; ?>" name="bukti[]" required>
+											</td> -->
 										</tr>
 									<?php $no++;
 									endforeach; ?>
@@ -206,7 +206,7 @@
 	<script>
 		var table = document.getElementById("nilai"),
 			sumHsl = 0;
-		for (var t = 1; t < table.rows.length; t++) {
+		for (var t = 0; t < table.rows.length; t++) {
 			sumHsl = sumHsl + parseInt(table.rows[t].cells[5].getElementsByTagName('input')[0].value);
 		}
 		document.getElementById("totalanggaranganjil").innerHTML = "Rp." + sumHsl;
@@ -214,7 +214,7 @@
 	<script>
 		var table = document.getElementById("nilai"),
 			sumHsl = 0;
-		for (var t = 1; t < table.rows.length; t++) {
+		for (var t = 0; t < table.rows.length; t++) {
 			sumHsl = sumHsl + parseInt(table.rows[t].cells[7].getElementsByTagName('input')[0].value);
 		}
 		document.getElementById("totalanggarangenap").innerHTML = "Rp." + sumHsl;
@@ -222,7 +222,7 @@
 	<script>
 		var table = document.getElementById("nilai"),
 			sumHsl = 0;
-		for (var t = 1; t < table.rows.length; t++) {
+		for (var t = 0; t < table.rows.length; t++) {
 			sumHsl = sumHsl + parseInt(table.rows[t].cells[9].innerHTML);
 		}
 		document.getElementById("total").innerHTML = "Rp." + sumHsl;

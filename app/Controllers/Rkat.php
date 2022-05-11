@@ -23,6 +23,7 @@ class Rkat extends BaseController
 
         return view('rkat/kesimpulan', $data);
     }
+
     public function listrkat()
     {
         $model = new DetailRkatModel();
@@ -40,7 +41,8 @@ class Rkat extends BaseController
             'pk' => $model->join('set_rkat', 'set_rkat.id_setrkat=detail_rkat.id_set')->join('user', 'user.id=set_rkat.id_user')->where('username', $username)->where('kategori', 'PK')->findAll(),
             'ops' => $model->join('set_rkat', 'set_rkat.id_setrkat=detail_rkat.id_set')->join('user', 'user.id=set_rkat.id_user')->where('username', $username)->where('kategori', 'OPS')->findAll(),
             'inv' => $model->join('set_rkat', 'set_rkat.id_setrkat=detail_rkat.id_set')->join('user', 'user.id=set_rkat.id_user')->where('username', $username)->where('kategori', 'INV')->findAll(),
-            // 'detail_rkat' => $this->DetailRkatModel->gabung($username),
+            'tahunGenap' => $model->join('set_rkat', 'set_rkat.id_setrkat=detail_rkat.id_set')->join('user', 'user.id=set_rkat.id_user')->where('username', $username)->where('tahunAkademik', '2019/2020')->findAll(),
+            'detail_rkat' => $this->DetailRkatModel->gabung($username),
         ];
         return view('rkat/RincianRkat', $data);
     }

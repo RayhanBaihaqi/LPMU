@@ -87,9 +87,9 @@
 						<div class="user-info-dropdown">
 							<div class="dropdown">
 								<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-									<span class="user-icon">
+									<!-- <span class="user-icon">
 										<img src="<?php echo base_url(); ?>/public/img/inf-logo.jpg" alt="">
-									</span>
+									</span> -->
 									<span class="user-name">
 										<?php
                                             $nama_prodi = session('nama_prodi');
@@ -215,9 +215,9 @@
     <script src="<?php echo base_url(); ?>/public/dist/js/demo.js"></script>
     <!-- <script src="?php echo base_url(); ?>/public/chart/apexcharts.min.js"></script>
     <script src="?php echo base_url(); ?>/public/chart/dashboard.js"></script> -->
-    <script src="<?php echo base_url(); ?>/public/chart/jquery.knob.min.js"></script>
+    <!-- <script src="<?php echo base_url(); ?>/public/chart/jquery.knob.min.js"></script>
     <script src="<?php echo base_url(); ?>/public/chart/knob-chart-setting.js"></script>
-	<script src="<?php echo base_url(); ?>/public/chart/grafik.js"></script>
+	<script src="<?php echo base_url(); ?>/public/chart/grafik.js"></script> -->
     <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
     <script>
         $(window).load(function() {
