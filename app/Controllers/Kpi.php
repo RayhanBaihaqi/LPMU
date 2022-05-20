@@ -98,6 +98,15 @@ class Kpi extends BaseController
 		return view('kpi/grafik', $data);
 	}
 
+	public function kesimpulan_grafik()
+	{
+		$grafikcapaiankpi = new DataCapaianKpiModel();
+		$data = [
+			'tampilgrafikkpi' => $grafikcapaiankpi->get_grafik()->getResult(),
+		];
+		return view('kpi/grafik2', $data);
+	}
+
 
 
 	public function form_ubahpass($id = null)

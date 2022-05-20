@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php
+<!-- <?php
+        // print_r($tampilgrafikkpi);
+        // foreach ($tampilgrafikkpi as $key => $value) {
 
-// foreach ($tampilcapaiankpi as $key => $value) {
-//     $nilai_bobot[] = $value['$nilai_bobot'];
-//     $idkppi[] = $value['$idkpi'];
-// }
-?>
+        //     $nilai_bobot[] = $value['$nilai_bobot'];
+        //     $idkpi[] = $value['$idkpi'];
+        // }
+        ?> -->
 
 <head>
     <meta charset="UTF-8">
@@ -123,85 +124,40 @@
         <!-- Nav Bar End -->
 
         <div class="container col-lg-12">
-
             <br>
             <a href="<?= base_url('kpi/kesimpulan') ?>" class="btn btn-primary btn-block">Data Tabel</a>
             <a href="<?= base_url('kpi/kesimpulan_grafik') ?>" class="btn btn-primary btn-block">Data Grafik</a>
             <br>
-            <div class="card shadow mb-4">
-                <div class="card-header">
-                    <h3>Data Capaian KPI </h3>
-                </div>
 
-                <div class="card-body">
-                    <div class="container-fluid">
-                        <div class="form-group category-filter">
-                            <label for="exampleFormControlSelect1">Pilih Nama KPI</label>
-                            <select class="form-control filter-satuan" id="categoryFilter">
-                                <option selected disabled>-Daftar Kategori KPI-</option>
-                                <option value="Visi, Misi, Tujuan dan Strategi">Visi, Misi, Tujuan dan Strategi</option>
-                                <option value="Tata Pamong, Tata Kelola dan Kerjasama">Tata Pamong, Tata Kelola dan Kerjasama</option>
-                                <option value="Mahasiswa">Mahasiswa</option>
-                                <option value="Sumber Daya Manusia">Sumber Daya Manusia</option>
-                                <option value="Keuangan, Sarana dan Prasarana">Keuangan, Sarana dan Prasarana</option>
-                                <option value="Pendidikan">Pendidikan</option>
-                                <option value="Penelitian">Penelitian</option>
-                                <option value="Pengabdian Kepada Masyarakat">Pengabdian Kepada Masyarakat</option>
-                                <option value="Luaran dan Capaian Tridharma">Luaran dan Capaian Tridharma</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable_rencana" width="100%" cellspacing="0">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Nama Prodi</th>
-                                    <th>Tahun Ajaran</th>
-                                    <th>Level</th>
-                                    <th>Nama KPI</th>
-                                    <th>Angka Butir</th>
-                                    <th>Nama Butir</th>
-                                    <th>Bobot</th>
-                                    <th>Target</th>
-                                    <th>Realisasi</th>
-                                    <th>Nilai Bobot</th>
-                                    <th>File</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                $nomor = 0;
-                                foreach ($tampilcapaiankpi as $row) :
-                                    $nomor++;
-                                ?>
-                                    <tr>
-                                        <td><?= $nomor; ?></td>
-                                        <td><?= $row->nama_prodi ?></td>
-                                        <td><?= $row->tahun_ajaran ?></td>
-                                        <td><?= $row->level ?></td>
-                                        <td><?= $row->nama_kpi ?></td>
-                                        <td><?= $row->idkpi . '.' . $row->angka_butir ?></td>
-                                        <td><?= $row->nama_butir ?></td>
-                                        <td><?= $row->bobot ?></td>
-                                        <td><?= $row->target ?></td>
-                                        <td><?= $row->realisasi ?></td>
-                                        <td><?= $row->nilai_bobot ?></td>
-                                        <td><?= $row->upload_file ?></td>
-                                        <td></td>
-                                    <?php
-                                endforeach;
-                                    ?>
-                                    </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+
         </div>
 
+        <div class="container col-lg-12">
+            <section class="content">
 
+                <!-- BAR CHART -->
+                <div class="card card-success">
+                    <div class="card-header">
+                        <h3 class="card-title">Grafik Capaian KPI</h3>
+
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart">
+                            <canvas id="barChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+            </section>
+        </div>
 
         <!-- JavaScript Libraries -->
 
@@ -249,7 +205,96 @@
                 $(".pre-loader").fadeOut("slow");
             });
         </script>
+        <script>
+            $(function() {
+                /* ChartJS
+                 * -------
+                 * Here we will create a few charts using ChartJS
+                 */
 
+                //--------------
+                //- AREA CHART -
+                //--------------
+                // Get context with jQuery - using jQuery's .get() method.
+                var areaChartCanvas = $('#barChart').get(0).getContext('2d')
+
+                var areaChartData = {
+                    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                    datasets: [{
+                            label: 'Digital Goods',
+                            backgroundColor: 'rgba(60,141,188,0.9)',
+                            borderColor: 'rgba(60,141,188,0.8)',
+                            pointRadius: false,
+                            pointColor: '#3b8bba',
+                            pointStrokeColor: 'rgba(60,141,188,1)',
+                            pointHighlightFill: '#fff',
+                            pointHighlightStroke: 'rgba(60,141,188,1)',
+                            data: [28, 48, 40, 19, 86, 27, 90]
+                        },
+                        {
+                            label: 'Electronics',
+                            backgroundColor: 'rgba(210, 214, 222, 1)',
+                            borderColor: 'rgba(210, 214, 222, 1)',
+                            pointRadius: false,
+                            pointColor: 'rgba(210, 214, 222, 1)',
+                            pointStrokeColor: '#c1c7d1',
+                            pointHighlightFill: '#fff',
+                            pointHighlightStroke: 'rgba(220,220,220,1)',
+                            data: [65, 59, 80, 81, 56, 55, 40]
+                        },
+                    ]
+                }
+
+                var areaChartOptions = {
+                    maintainAspectRatio: false,
+                    responsive: true,
+                    legend: {
+                        display: false
+                    },
+                    scales: {
+                        xAxes: [{
+                            gridLines: {
+                                display: false,
+                            }
+                        }],
+                        yAxes: [{
+                            gridLines: {
+                                display: false,
+                            }
+                        }]
+                    }
+                }
+
+                // This will get the first returned node in the jQuery collection.
+                new Chart(areaChartCanvas, {
+                    type: 'line',
+                    data: areaChartData,
+                    options: areaChartOptions
+                })
+
+                //- BAR CHART -
+                //-------------
+                var barChartCanvas = $('#barChart').get(0).getContext('2d')
+                var barChartData = $.extend(true, {}, areaChartData)
+                var temp0 = areaChartData.datasets[0]
+                var temp1 = areaChartData.datasets[1]
+                barChartData.datasets[0] = temp1
+                barChartData.datasets[1] = temp0
+
+                var barChartOptions = {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    datasetFill: false
+                }
+
+                new Chart(barChartCanvas, {
+                    type: 'bar',
+                    data: barChartData,
+                    options: barChartOptions
+                })
+
+            })
+        </script>
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
