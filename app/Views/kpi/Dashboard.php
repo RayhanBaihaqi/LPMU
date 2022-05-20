@@ -51,45 +51,24 @@
                 <div class="row">
                     <div class="col-sm-2">
                         <div class="logo">
-                            <a href="<?php echo site_url(); ?>">
-                                <img src="<?php echo base_url(); ?>/public/img/logo-upj.png" alt="Logo">
-                            </a>
+                            <img src="<?php echo base_url(); ?>/public/img/logo-upj.png" alt="Logo">
                         </div>
                     </div>
-                    <div class="col-sm-5">
+                    <div class="col-sm-8">
                         <div class="logo">
-                            <h1 class="pertama">Lembaga</h1>
-                            <h1 class="kedua">Penjaminan Mutu</h1>
-                            <h1 class="ketiga">Universitas</h1>
-                        </div>
-                    </div>
-                    <div class="col-sm-1">
-                        <div class="top-bar-right">
-                            <div class="text">
-                                <h2>KPI</h2>
-                            </div>
+                            <H5 style="text-align: center;">SISTEM INFORMASI MONITORING DAN EVALUASI</H5>
+                            <p style="text-align: center;">UNIVERSITAS PEMBANGUNAN JAYA</p>
                         </div>
                     </div>
                     <div class="col-sm-2">
-                        <div class="top-bar-right">
-                            <div class="text">
-                                <h2>
-                                    <div id="txt"></div>
-                                </h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <div class="social">
-                            <a href="https://www.upj.ac.id/"><i class="fas fa-globe"></i></i></a>
-                            <a href="https://twitter.com/upj_bintaro"><i class="fab fa-twitter"></i></a>
-                            <a href="https://web.facebook.com/universitas.pembangunan.jaya?_rdc=1&_rdr"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://www.instagram.com/upj_bintaro/"><i class="fab fa-instagram"></i></a>
+                        <div class="logo">
+                            <img src="<?php echo base_url(); ?>/public/img/monev_logo.png" alt="Logo" style="float: right;">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
     <!-- Top Bar End -->
     <div class="container-fluid">

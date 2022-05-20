@@ -98,6 +98,17 @@ class Kpi extends BaseController
 		return view('kpi/grafik', $data);
 	}
 
+	public function kesimpulan_grafik()
+	{
+		$grafikcapaiankpi = new DataCapaianKpiModel();
+		$data = [
+			'tampilgrafikkpi' => $grafikcapaiankpi->get_grafik()->getResult(),
+		];
+		return view('kpi/grafik2', $data);
+	}
+
+
+
 	public function form_ubahpass($id = null)
 	{
 		$model = new UsersModel();
@@ -148,10 +159,12 @@ class Kpi extends BaseController
 		$level = $this->request->getPost('level');
 		$nama_prodi = $this->request->getPost('nama_prodi');
 		$tahun_ajaran = $this->request->getPost('tahun_ajaran');
-		//$upload_file = $this->request->getPost('upload_file');
+		$upload_file = $this->request->getFile('uploadFile');
 		$idkpi = $this->request->getPost('idkpi');
 		$id_butir_kpi = $this->request->getPost('id_butir_kpi');
 
+
+		//dd($upload_file);
 		$nilai_bobot = array();
 		for ($i = 0; $i < count($id); $i++) {
 			//$nilai_bobot[$i] = $realisasi[$i] * $bobot[$i / 100];
@@ -164,7 +177,7 @@ class Kpi extends BaseController
 				'tahun_ajaran' => $tahun_ajaran,
 				'realisasi' => $realisasi[$i],
 				'nilai_bobot' => $nilai_bobot[$i],
-				//'upload_file' => $this->request->getPost('upload_file'),
+				'upload_file' => $upload_file[$i],
 				'idkpi' => $idkpi[$i],
 				'id_butir_kpi' => $id[$i],
 			];
