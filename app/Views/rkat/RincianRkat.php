@@ -201,6 +201,122 @@
                         </tr>
                         </tbody>
                     </table>
+                    
+                        <div class="container">
+  <h2>Toggleable Tabs</h2>
+  <br>
+  <div class="dropdown nav-tabs" >
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                        Dropdown button
+                        </button>
+                        <div class="dropdown-menu" role="tablist">
+                        <a class="nav-link active" data-toggle="tab" href="#home">ops</a>
+                        <a class="nav-link" data-toggle="tab" href="#menu1">pk</a>
+                        <a class="nav-link" data-toggle="tab" href="#menu2">Menu 2</a>
+                        </div>
+                    </div>
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+  <a class="nav-link disabled" href="#">Disabled</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#home">ops</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#menu1">pk</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#menu2">Menu 2</a>
+    </li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div id="home" class="container tab-pane active"><br>
+    <table class="table table-striped" id="dataTable1" width="100%" cellspacing="0">
+							<thead>
+								<tr>
+									<th>No</th>
+									<th>Kategori</th>
+									<th>No Kegiatan</th>
+									<th>Target</th>
+									<th>Indikator</th>
+									<th>Nama Kegiatan</th>
+									<th>KPI</th>
+									<th>Butir</th>
+									<th>Anggaran Gasal</th>
+									<th>Anggaran Ganjil</th>
+									<th>Total Anggaran Rencana</th>
+									<th>Total Anggaran Realisasi</th>
+								</tr>
+							</thead>
+							<tbody>
+								<?php $i = 1;?>
+								<?php foreach ($detail_rkat as $value) : ?>
+										<tr>
+											<td scope="row"><?= $i++; ?></td>
+											<td><?= $value['kategori']; ?></td>
+											<td><?= $value['no_kegiatan']; ?></td>
+											<td><?= $value['target']; ?></td>
+											<td><?= $value['indikator']; ?></td>
+											<td><?= $value['nama_kegiatan']; ?></td>
+											<td><?= $value['kpi']; ?></td>
+											<td><?= $value['butir']; ?></td>
+											<td><?= $value['anggaranGasal']; ?></td>
+											<td><?= $value['anggaranGenap']; ?></td>
+											<td><?= $value['total']; ?></td>
+											<td></td>
+										</tr>
+									<?php endforeach; ?>
+							</tbody>
+						</table>
+    </div>
+    <div id="menu1" class="container tab-pane fade"><br>
+    <table class="table table-striped" id="dataTable1" width="100%" cellspacing="0">
+							<thead>
+								<tr>
+									<th>No</th>
+									<th>Kategori</th>
+									<th>No Kegiatan</th>
+									<th>Target</th>
+									<th>Indikator</th>
+									<th>Nama Kegiatan</th>
+									<th>KPI</th>
+									<th>Butir</th>
+									<th>Anggaran Gasal</th>
+									<th>Anggaran Ganjil</th>
+									<th>Total Anggaran Rencana</th>
+									<th>Total Anggaran Realisasi</th>
+								</tr>
+							</thead>
+							<tbody>
+								<?php $i = 1;?>
+								<?php foreach ($ops as $key => $value) : ?>
+										<tr>
+											<td scope="row"><?= $i++; ?></td>
+											<td><?= $value['kategori']; ?></td>
+											<td><?= $value['no_kegiatan']; ?></td>
+											<td><?= $value['target']; ?></td>
+											<td><?= $value['indikator']; ?></td>
+											<td><?= $value['nama_kegiatan']; ?></td>
+											<td><?= $value['kpi']; ?></td>
+											<td><?= $value['butir']; ?></td>
+											<td><?= $value['anggaranGasal']; ?></td>
+											<td><?= $value['anggaranGenap']; ?></td>
+											<td><?= $value['total']; ?></td>
+											<td></td>
+										</tr>
+									<?php endforeach; ?>
+							</tbody>
+						</table>
+    </div>
+    <div id="menu2" class="container tab-pane fade"><br>
+      <h3>Menu 2</h3>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+    </div>
+  </div>
+</div>
                     </div>
                 </div>
             </div>

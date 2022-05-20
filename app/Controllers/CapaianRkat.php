@@ -4,12 +4,16 @@ namespace App\Controllers;
 
 use CodeIgniter\Controller;
 use App\Models\DetailRkatModel;
+use App\Models\TahunAkademikModel;
+use App\Models\PersenSerapModel;
 use App\Models\SetRkatModel;
 
 class CapaianRkat extends BaseController
 {
     public function __construct(){
         $this->DetailRkatModel= new DetailRkatModel();
+        $this->TahunAkademikModel = new TahunAkademikModel();
+        $this->PersenSerapModel = new PersenSerapModel();
     }
     
     //user capaian rkat
@@ -25,6 +29,7 @@ class CapaianRkat extends BaseController
         $username = session('username');
         $data = [
             'detail_rkat' => $model->join('set_rkat', 'set_rkat.id_setrkat = detail_rkat.id_set')->join('user', 'user.id=set_rkat.id_user')->where('username',$username)->findAll(),
+            'tahunAkademik' => $this->TahunAkademikModel->where('aktif', '1')->first(),
             // 'count_detail_rkat' => $model->join('set_rkat', 'set_rkat.id_setrkat = detail_rkat.id_set')->join('user', 'user.id=set_rkat.id_user')->where('username',$username)->countAllResults()
         ];
         return view('rkat/FormCapaian', $data);
