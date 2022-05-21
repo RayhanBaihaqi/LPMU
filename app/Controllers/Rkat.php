@@ -5,6 +5,8 @@ namespace App\Controllers;
 use CodeIgniter\Controller;
 use App\Models\DetailRkatModel;
 use App\Models\SetRkatModel;
+use App\Models\TahunAkademikModel;
+use App\Models\PersenSerapModel;
 use App\Models\UsersModel;
 
 class Rkat extends BaseController
@@ -12,6 +14,8 @@ class Rkat extends BaseController
     public function __construct()
     {
         $this->DetailRkatModel = new DetailRkatModel();
+        $this->TahunAkademikModel = new TahunAkademikModel();
+        $this->PersenSerapModel = new PersenSerapModel();
     }
 
     //User Rencana Anggaran
@@ -37,6 +41,7 @@ class Rkat extends BaseController
         $model = new DetailRkatModel();
         $username = session('username');
         $data = [
+            'detail_rkat' => $this->DetailRkatModel->gabung($username),
             'set_rkat' => $this->DetailRkatModel->tampilDataSetRKAT($username),
             'pk' => $model->join('set_rkat', 'set_rkat.id_setrkat=detail_rkat.id_set')->join('user', 'user.id=set_rkat.id_user')->where('username', $username)->where('kategori', 'PK')->findAll(),
             'ops' => $model->join('set_rkat', 'set_rkat.id_setrkat=detail_rkat.id_set')->join('user', 'user.id=set_rkat.id_user')->where('username', $username)->where('kategori', 'OPS')->findAll(),
@@ -52,6 +57,7 @@ class Rkat extends BaseController
         $username = session('username');
         $data = [
             'set_rkat' => $this->DetailRkatModel->tampilDataSetRKAT($username),
+            'tahunAkademik' => $this->TahunAkademikModel->where('aktif', '1')->first(),
         ];
 
         return view('rkat/inputData', $data);
@@ -107,10 +113,14 @@ class Rkat extends BaseController
     {
         
         $model = new DetailRkatModel();
+        $modelPersen = new PersenSerapModel();
         $id = $_POST['id'];
         $serapGanjil = $_POST['serapGanjil'];
         $serapGenap = $_POST['serapGenap'];
-        $totalSerap = $_POST['totalSerap'];
+        $persenSerapGanjil = $_POST['persenSerapGanjil'];
+        $persenSerapGenap = $_POST['persenSerapGenap'];
+        $id_tahun = $_POST['id_tahun'];
+        $id_user = $_POST['id_user'];
         // $bukti = $_POST['bukti'];
 
         foreach ($id as $key => $n) {
@@ -119,7 +129,8 @@ class Rkat extends BaseController
             $data = [
                 'serapGanjil' => $serapGanjil[$key],
                 'serapGenap' => $serapGenap[$key],
-                'totalSerap' => $totalSerap[$key],
+                // 'persenSerapGanjil' => $persenSerapGanjil[$key],
+                // 'persenSerapGenap' => $persenSerapGenap[$key],
                 // 'bukti' => $bukti[$key],
             ];
 
@@ -128,6 +139,15 @@ class Rkat extends BaseController
             // print "The serapGanjil is " . $n . ", serapGenap is " . $serapGenap[$key] .
             //     ", and totalSerap is " . $totalSerap[$key] . ". Thank you\n";
         }
+        
+            $data2 = [
+                'persenSerapGanjil' => $persenSerapGanjil,
+                'persenSerapGenap' => $persenSerapGenap,
+                'id_tahun' => $id_tahun,
+                'id_user' => $id_user,
+                
+            ];
+            $tambahPersen = $modelPersen->insert($data2);
         // if (!$this->validate([
 		// 	'keterangan' => [
 		// 		'rules' => 'required',

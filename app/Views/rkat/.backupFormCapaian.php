@@ -117,10 +117,6 @@
 					</select>
 				</div> -->
 				<form action="<?= base_url('rkat/updatebyuser'); ?>" method="POST" enctype="multipart/form-data">
-				<div class="form-inline">
-									<label class="mb-2 mr-sm-2" for="exampleFormControlSelect1" style="width: 150px;">Tahun Akademik</label>
-									<input type="text" class="form-control mb-2 mr-sm-2" name="tahunAkademik" id="tahunAkademik" value="<?= $tahunAkademik['tahunAkademik'] ?>" disabled>
-								</div>
 					<div class="table-responsive">
 						<table class="perhitungan table table-bordered" id="dataTable" width="100%" cellspacing="0">
 							<thead>
@@ -132,17 +128,14 @@
 									<th >Target</th>
 									<th >Anggaran Ganjil</th>
 									<th width="600px">Serapan Ganjil</th>
-									<th >peren Ganjil</th>
 									<th >Anggaran Genap</th>
 									<th width="600px">Serapan Genap</th>
-									<th >peren Genap</th>
 									<!-- <th >Total Anggaran</th>
 									<th width="600px">Total Serapan</th> -->
 									<!-- <th width="600px">Bukti</th> -->
 								</tr>
 							</thead>
 							<tbody id="nilai">
-								
 								<?php if ($detail_rkat) : ?>
 									<?php
 									$no = 1;
@@ -162,14 +155,24 @@
 											<td><input type="text" class="form-control form-control-sm" id="aGanjil<?= $no; ?>" value="<?= $reading['anggaranGasal']; ?>" disabled /></td>
 											<td>
 												<input style="display: none;" required type="text" name="id[]" id="id" value="<?= $reading['id_rkat']; ?>">
-												<input type="text" class="form-control form-control-sm serapGanjil" id="serapGanjil<?= $no; ?>" placeholder="Rp. 0" name="serapGanjil[]" onkeyup="AddInputs(this.id);" required <?= ($reading['serapGanjil'] != "") ? "value='".$reading['serapGanjil']."' disabled" : "" ?>>
+												<input type="text" class="form-control form-control-sm" id="serapGasal<?= $no; ?>" placeholder="Rp. 0" name="serapGanjil[]" onkeyup="AddInputs(this.id);" required>
+												<!-- <input type="text" class="form-control form-control-sm" id="serapGasal<?= $no; ?>" placeholder="Rp. 0" name="serapGanjil[]" onkeyup="totalAnggaran1(this.id);" required <?= ($reading['serapGanjil'] != "") ? "value='".$reading['serapGanjil']."' disabled" : "" ?>>
+												<p>Persentase Serap: <input type="text" class="form-control form-control-sm" name="persenSerapGanjil" id="persenSerapGanjil<?= $no; ?>" disabled /></p> -->
 											</td>
-											<td></td>
 											<td><input type="text" class="form-control form-control-sm" id="aGenap<?= $no; ?>" value="<?= $reading['anggaranGenap']; ?>" disabled /></td>
 											<td>
-											<input type="text" class="form-control form-control-sm serapGenap" id="serapGenap<?= $no; ?>" placeholder="Rp. 0" name="serapGenap[]" onkeyup="AddInputs2(this.id);" required <?= ($reading['serapGenap'] != "") ? "value='".$reading['serapGanjil']."' disabled" : "" ?>>
+											<input type="text" class="form-control form-control-sm" id="serapGenap<?= $no; ?>" placeholder="Rp. 0" name="serapGenap[]" onkeyup="AddInputs2(this.id);" required>
+												<!-- <input type="text" class="form-control form-control-sm" id="serapGenap<?= $no; ?>" placeholder="Rp. 0" name="serapGenap[]" onkeyup="totalAnggaran2(this.id);" required <?= ($reading['serapGenap'] != "") ? "value='".$reading['serapGenap']."' disabled" : "" ?>>
+												<p>Persentase Serap: <p></p><input type="text" class="form-control form-control-sm" name="persenSerapGenap" id="persenSerapGenap<?= $no; ?>" disabled /></p> -->
 											</td>
-											<td></td>
+											<!-- <td><input type="text" class="form-control form-control-sm" id="jumlahAnggaran<?= $no; ?>" value="<?= $reading['total']; ?>" disabled /></td>
+											<td>
+												<input type="text" class="form-control form-control-sm" id="totalSerap<?= $no; ?>" name="totalSerap[]" placeholder="Rp. 0" required <?= ($reading['totalSerap'] != "") ? "value='".$reading['totalSerap']."' disabled" : "" ?>>
+												<p>Persentase Serap: <input type="text" class="form-control form-control-sm" name="totalBayarSerap2" id="totalBayarSerap<?= $no; ?>" disabled /></p>
+											</td> -->
+											<!-- <td>
+												
+											</td> -->
 										</tr>
 									<?php $no++;
 									endforeach; ?>
@@ -182,11 +185,9 @@
 								<td></td>
 								<td></td>
 								<td><span id="totalanggaranganjil"></span></td>
-								<td><span id="tampilTotalGanjil"></span></td>
-								<td><p>Persentase Serap: <input type="text" class="form-control form-control-sm" name="persenSerapGanjil" id="persenSerapGanjil" disabled /></p></td>
+								<td><span id="Display"></span></td>
 								<td><span id="totalanggarangenap"></span></td>
-								<td><span id="tampilTotalGenap"></span></td>
-								<td><p>Persentase Serap: <input type="text" class="form-control form-control-sm" name="persenSerapGenap" id="persenSerapGenap" disabled /></p></td>
+								<td><span id="Display2"></span></td>
 								<!-- <td><span id="total"></span></td> -->
 
 							</tfoot>
@@ -209,15 +210,15 @@
 		for (var t = 0; t < table.rows.length; t++) {
 			sumHsl = sumHsl + parseInt(table.rows[t].cells[5].getElementsByTagName('input')[0].value);
 		}
-		document.getElementById("totalanggaranganjil").innerHTML = sumHsl;
+		document.getElementById("totalanggaranganjil").innerHTML = "Rp." + sumHsl;
 	</script>
 	<script>
 		var table = document.getElementById("nilai"),
 			sumHsl = 0;
 		for (var t = 0; t < table.rows.length; t++) {
-			sumHsl = sumHsl + parseInt(table.rows[t].cells[8].getElementsByTagName('input')[0].value);
+			sumHsl = sumHsl + parseInt(table.rows[t].cells[7].getElementsByTagName('input')[0].value);
 		}
-		document.getElementById("totalanggarangenap").innerHTML = sumHsl;
+		document.getElementById("totalanggarangenap").innerHTML = "Rp." + sumHsl;
 	</script>
 	<script>
 		var table = document.getElementById("nilai"),
@@ -230,48 +231,37 @@
 	<script>
 		function AddInputs(clicked_id)
 		{
-			var totalGanjil = 0;
-			var aGanjil = document.getElementById('totalanggaranganjil').innerHTML;
-			
-			var panjangDataSerapGanjil = document.querySelectorAll (".serapGanjil")
-			// console.log(panjangDataSerapGanjil.length)
-			for (let index = 1; index <= panjangDataSerapGanjil.length; index++) {
-				var nilaiKolomGanjil = document.getElementById("serapGanjil"+index).value;
-				totalGanjil += parseInt(nilaiKolomGanjil);
-			}
-			if (isNaN(totalGanjil)) {
-				// console.log("Silahkan Isi Seluruh Kolom Data");
-				var tampilTotalGanjil = document.getElementById("tampilTotalGanjil").innerHTML = "Silahkan Isi Seluruh Kolom Data";
-			} else {
-				console.log(totalGanjil);
-				var tampilTotalGanjil = document.getElementById("tampilTotalGanjil").innerHTML = totalGanjil;
-				
-			}
+			var nameid = clicked_id;
+			var id = nameid.replace(/^\D+/g, '');
+			var total = 0;
+			var coll = document.getElementById("serapGasal"+id).value;
+			for ( let i = 0; i<coll.length; i++)
+			{
 
-			hitungGanjil = parseInt(totalGanjil) / parseInt(aGanjil) * 100;
-			document.getElementById('persenSerapGanjil').value = hitungGanjil + "%";
-			console.log(hitungGanjil);
+				var ele = coll[i];
+				total += parseInt(coll);
+			}
+			var Display = document.getElementById("Display");
+			Display.innerHTML = "Rp." + total;
+			console.log('ini id='+ id +' ini input='+coll);
+			// console.log(total);
 		}
 		function AddInputs2(clicked_id)
 		{
-			var totalGenap = 0;
-			var aGenap = document.getElementById('totalanggarangenap').innerHTML;
-			var panjangDataSerapGenap = document.querySelectorAll (".serapGenap")
-			console.log(panjangDataSerapGenap.length)
-			for (let index = 1; index <= panjangDataSerapGenap.length; index++) {
-				var nilaiKolomGenap = document.getElementById("serapGenap"+index).value;
-				totalGenap += parseInt(nilaiKolomGenap);
-			}
-			if (isNaN(totalGenap)) {
-				console.log("Silahkan Isi Seluruh Kolom Data");
-				var tampilTotalGenap = document.getElementById("tampilTotalGenap").innerHTML = "Silahkan Isi Seluruh Kolom Data";
-			} else {
-				console.log(totalGenap);
-				var tampilTotalGenap = document.getElementById("tampilTotalGenap").innerHTML = totalGenap;
-			}
+			var nameid = clicked_id;
+			var id = nameid.replace(/^\D+/g, '');
+			var total2 = 0;
+			var coll2 = document.getElementById("serapGenap"+id).value;
+			for ( let i = 0; i<coll2.length; i++)
+			{
 
-			hitungGenap = parseInt(totalGenap) / parseInt(aGenap) * 100;
-			document.getElementById('persenSerapGenap').value = hitungGenap + "%";
+				var ele = coll2[i];
+				total2 += parseInt(coll2);
+			}
+			var Display2 = document.getElementById("Display2");
+			Display2.innerHTML = "Rp." + total2;
+			console.log('ini id='+ id +' ini input='+coll);
+			// console.log(total);
 		}
 	</script>
 	<script>
@@ -280,12 +270,12 @@
 			var id = nameid.replace(/^\D+/g, '');
 			// console.log(id);
 
-			var serapGasal = document.getElementById(nameid).value;
+			var serapGanjil = document.getElementById(nameid).value;
 			var aGanjil = document.getElementById('aGanjil' + id).value;
 			var aGenap = document.getElementById('aGenap' + id).value;
-			// console.log("Anggaran Ganjil = "+aGanjil + " Anggaran Genap = " + aGenap + " Nilai Serapan = " + serapGasal);
-			hitungGanjil = parseInt(serapGasal) / parseInt(aGanjil) * 100;
-			document.getElementById('persenserapGasal' + id).value = hitungGanjil + "%";
+			// console.log("Anggaran Ganjil = "+aGanjil + " Anggaran Genap = " + aGenap + " Nilai Serapan = " + serapGanjil);
+			hitungGanjil = parseInt(serapGanjil) / parseInt(aGanjil) * 100;
+			document.getElementById('persenSerapGanjil' + id).value = hitungGanjil + "%";
 		}
 
 		function totalAnggaran2(clicked_id) {
@@ -298,11 +288,11 @@
 			persentaseSerapGenap = parseInt(serapGenap) / parseInt(aGenap) * 100;
 			document.getElementById('persenSerapGenap' + id).value = persentaseSerapGenap + "%";
 
-			var serapGasal = document.getElementById('serapGasal' + id).value;
-			var persentaseserapGasal = document.getElementById('persenserapGasal' + id).value;
-			var persentaseserapGasal = persentaseserapGasal.replace(/[^\d.-]/g, '');
+			var serapGanjil = document.getElementById('serapGasal' + id).value;
+			var persentaseSerapGanjil = document.getElementById('persenSerapGanjil' + id).value;
+			var persentaseSerapGanjil = persentaseSerapGanjil.replace(/[^\d.-]/g, '');
 
-			var totalAnggaran = parseInt(serapGasal) + parseInt(serapGenap);
+			var totalAnggaran = parseInt(serapGanjil) + parseInt(serapGenap);
 			document.getElementById('totalSerap' + id).value = totalAnggaran;
 
 			var jumAnggaran = document.getElementById('jumlahAnggaran' + id).value;

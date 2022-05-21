@@ -112,11 +112,8 @@
 					<div class="card-body">
 						<div class="form-inline">
 							<label class="mb-2 mr-sm-2" for="exampleFormControlSelect1" style="width: 150px;">Tahun Akademik</label>
-							<select class="form-control mb-2 mr-sm-2" id="tahunAkademik" name="tahunAkademik" required>
-								<option value="" disabled selected>Pilih Tahun</option>
-								<option value="2019/2020">2019/2020</option>
-								<option value="2020/2021">2020/2021</option>
-							</select>
+							<input type="text" class="form-control mb-2 mr-sm-2" name="tahunAkademik" id="tahunAkademik" value="<?= $tahunAkademik['tahunAkademik'] ?>" disabled>
+							
 						</div>
 						<div class="form-inline" style="margin-bottom:20px;">
 							<label for="prodiunit" class="mb-2 mr-sm-2" style="width: 150px;">Program Studi/Unit</label>
@@ -215,6 +212,7 @@
 			var result = parseInt(txtFirstNumberValue) + parseInt(txtSecondNumberValue);
 			if (!isNaN(result)) { document.getElementById('total').value = result; }
 			
+
 			var table = document.getElementById('tbody2');
 			let pagu1 = txtFirstNumberValue;
 			let pagu2 = txtSecondNumberValue;
@@ -242,6 +240,7 @@
 					if (!isNaN(result)) { document.getElementById('total'+index).value = result; }
 					pagu1 = parseInt(pagu1) + parseInt(document.getElementById('anggaranGasal'+index).value)
 					document.getElementById('pagu1').value = pagu1;
+					console.log(anggaranGasal1);
 					pagu2 = parseInt(pagu2) + parseInt(document.getElementById('anggaranGenap'+index).value)
 					document.getElementById('pagu2').value = pagu2;
 					pagu3 = parseInt(pagu3) + parseInt(document.getElementById('total'+index).value)
