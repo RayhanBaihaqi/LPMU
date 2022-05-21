@@ -208,7 +208,7 @@
                                             <input type="hidden" name="id_butir_kpi[]" value="<?= $row->angka_butir ?>" />
                                         </td>
                                         <td>
-                                            <input type="file" name="uploadFile[]" class="form-control" required />
+                                            <input type="file" name="uploadFile[]" class="form-control" />
 
                                         </td>
                                         <td></td>

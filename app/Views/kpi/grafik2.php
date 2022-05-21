@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- <?php
-        // print_r($tampilgrafikkpi);
-        // foreach ($tampilgrafikkpi as $key => $value) {
 
-        //     $nilai_bobot[] = $value['$nilai_bobot'];
-        //     $idkpi[] = $value['$idkpi'];
-        // }
-        ?> -->
+<?php
+//print_r($tampilgrafikkpi);
+
+foreach ($tampilgrafikkpi as $key => $value) {
+    $nilai_bobot[] = $value['$nilai_bobot'];
+    $idkpi[] = $value['$idkpi'];
+}
+?>
+
 
 <head>
     <meta charset="UTF-8">
@@ -131,81 +133,122 @@
 
 
         </div>
+        <!-- <?php
+                // print_r($tampilgrafikkpi);
+                //  foreach ($tampilgrafikkpi as $key => $value) {
 
+                //      $nilai_bobot[] = $value['$nilai_bobot'];
+                //      $idkpi[] = $value['$idkpi'];
+                //  }
+                //  echo json_encode($idkpi);
+                ?> -->
         <div class="container col-lg-12">
             <section class="content">
+
 
                 <!-- BAR CHART -->
                 <div class="card card-success">
                     <div class="card-header">
                         <h3 class="card-title">Grafik Capaian KPI</h3>
-
-                        <div class="card-tools">
-                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                <i class="fas fa-minus"></i>
-                            </button>
-                            <button type="button" class="btn btn-tool" data-card-widget="remove">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
                     </div>
                     <div class="card-body">
                         <div class="chart">
-                            <canvas id="barChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                            <canvas id="myChart" height="100"></canvas>
+
                         </div>
                     </div>
                     <!-- /.card-body -->
-                </div>
             </section>
-        </div>
+        </div> -->
 
-        <!-- JavaScript Libraries -->
+    </div>
 
-        <!-- <script src="lib/easing/easing.min.js"></script>
+    <!-- JavaScript Libraries -->
+
+    <!-- <script src="lib/easing/easing.min.js"></script>
             <script src="lib/owlcarousel/owl.carousel.min.js"></script>
             <script src="lib/isotope/isotope.pkgd.min.js"></script> -->
-        <script>
-            function startTime() {
-                var today = new Date();
-                var h = today.getHours();
-                var m = today.getMinutes();
-                var s = today.getSeconds();
-                m = checkTime(m);
-                s = checkTime(s);
-                document.getElementById('txt').innerHTML =
-                    h + ":" + m + ":" + s;
-                var t = setTimeout(startTime, 500);
+    <script>
+        function startTime() {
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById('txt').innerHTML =
+                h + ":" + m + ":" + s;
+            var t = setTimeout(startTime, 500);
+        }
+
+        function checkTime(i) {
+            if (i < 10) {
+                i = "0" + i
+            }; // add zero in front of numbers < 10
+            return i;
+        }
+    </script>
+
+    <!-- jQuery -->
+    <script src="<?php echo base_url(); ?>/public/plugins/jquery/jquery.min.js"></script>
+    <!-- ChartJS -->
+    <script src="<?php echo base_url(); ?>/public/plugins/chart.js/Chart.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="<?php echo base_url(); ?>/public/dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+
+    <!-- Page level custom scripts -->
+    <script src="<?php echo base_url(); ?>/public/dist/js/demo.js"></script>
+    <script src="<?php echo base_url(); ?>/public/chart/apexcharts.min.js"></script>
+    <script src="<?php echo base_url(); ?>/public/chart/dashboard.js"></script>
+    <script src="<?php echo base_url(); ?>/public/chart/jquery.knob.min.js"></script>
+    <script src="<?php echo base_url(); ?>/public/chart/knob-chart-setting.js"></script>
+    <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script>
+        $(window).load(function() {
+            $(".pre-loader").fadeOut("slow");
+        });
+    </script>
+    <script>
+        const ctx = document.getElementById('myChart');
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                        label: 'Digital Goods',
+                        backgroundColor: 'rgba(60,141,188,0.9)',
+                        borderColor: 'rgba(60,141,188,0.8)',
+                        pointRadius: false,
+                        pointColor: '#3b8bba',
+                        pointStrokeColor: 'rgba(60,141,188,1)',
+                        pointHighlightFill: '#fff',
+                        pointHighlightStroke: 'rgba(60,141,188,1)',
+                        data: [28, 48, 40, 19, 86, 27, 90]
+                    },
+                    {
+                        label: 'Electronics',
+                        backgroundColor: 'rgba(210, 214, 222, 1)',
+                        borderColor: 'rgba(210, 214, 222, 1)',
+                        pointRadius: false,
+                        pointColor: 'rgba(210, 214, 222, 1)',
+                        pointStrokeColor: '#c1c7d1',
+                        pointHighlightFill: '#fff',
+                        pointHighlightStroke: 'rgba(220,220,220,1)',
+                        data: [65, 59, 80, 81, 56, 55, 40]
+                    },
+                ]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
             }
-
-            function checkTime(i) {
-                if (i < 10) {
-                    i = "0" + i
-                }; // add zero in front of numbers < 10
-                return i;
-            }
-        </script>
-
-        <!-- jQuery -->
-        <script src="<?php echo base_url(); ?>/public/plugins/jquery/jquery.min.js"></script>
-        <!-- ChartJS -->
-        <script src="<?php echo base_url(); ?>/public/plugins/chart.js/Chart.min.js"></script>
-        <!-- AdminLTE App -->
-        <script src="<?php echo base_url(); ?>/public/dist/js/adminlte.min.js"></script>
-        <!-- AdminLTE for demo purposes -->
-
-        <!-- Page level custom scripts -->
-        <script src="<?php echo base_url(); ?>/public/dist/js/demo.js"></script>
-        <script src="<?php echo base_url(); ?>/public/chart/apexcharts.min.js"></script>
-        <script src="<?php echo base_url(); ?>/public/chart/dashboard.js"></script>
-        <script src="<?php echo base_url(); ?>/public/chart/jquery.knob.min.js"></script>
-        <script src="<?php echo base_url(); ?>/public/chart/knob-chart-setting.js"></script>
-        <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
-        <script>
-            $(window).load(function() {
-                $(".pre-loader").fadeOut("slow");
-            });
-        </script>
-        <script>
+        });
+    </script>
+    <!-- <script>
             $(function() {
                 /* ChartJS
                  * -------
@@ -294,7 +337,7 @@
                 })
 
             })
-        </script>
+        </script> -->
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
