@@ -39,8 +39,8 @@
 			<hr class="sidebar-divider my-0">
 
 			<!-- Nav Item - Dashboard -->
-			<li class="nav-item active">
-				<a class="nav-link " href="/admin">
+			<li class="nav-item ">
+				<a class="nav-link " href="<?php echo site_url(); ?>admin">
 					<i class="fas fa-fw fa-tachometer-alt"></i>
 					<span>Dashboard</span></a>
 			</li>
@@ -56,10 +56,11 @@
 				</a>
 				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
-						<a class="collapse-item" href="<?= base_url('setrkat/createbyadmin') ?>">Tambah RKAT</a>
+						<a class="collapse-item" href="<?= base_url('rkat/createbyadmin') ?>">Tambah RKAT</a>
 						<a class="collapse-item" href="<?= base_url('rkat/indexbyadmin') ?>">Lihat Data</a>
-						<a class="collapse-item" href="<?= base_url('setrkat/create') ?>">Atur Semester dan Pagu</a>
-						<a class="collapse-item" href="<?= base_url('setrkat/index') ?>">Lihat Data Set Rkat</a>
+						<a class="collapse-item" href="<?= base_url('pagurkat/create') ?>">Buat Pagu</a>
+						<a class="collapse-item" href="<?= base_url('pagurkat/index') ?>">List Pagu</a>
+						<a class="collapse-item" href="<?= base_url('tahunakademik/indextahun') ?>">Tahun Akademik</a>
 					</div>
 				</div>
 			</li>
@@ -85,7 +86,7 @@
 			<div class="sidebar-heading">
 				User
 			</div>
-			<li class="nav-item ">
+			<li class="nav-item">
 				<a class="nav-link " href="<?= base_url('auth/index') ?>">
 					<i class="fas fa-fw fa-tachometer-alt"></i>
 					<span>Tabel User</span></a>
@@ -137,39 +138,19 @@
 				<div class="container-fluid">
 
 					<!-- Page Heading -->
-					<h1 class="h3 mb-2 text-gray-800">Edit Pagu</h1>
-
+					<h1 class="h3 mb-2 text-gray-800">Tambah Tahun Akademik</h1>
 					<!-- DataTales Example -->
 					<div class="card shadow mb-4">
 						<div class="card-body">
+                        <?= session()->getFlashdata('status'); ?>	
 							<div class="table-responsive">
-								<form action="<?= base_url('setrkat/update'); ?>" method="POST" enctype="multipart/form-data">
-									<?php foreach ($set_rkat as $key => $value) : ?>
-										<input required type="hidden" name="id_setrkat" value="<?= $value['id_setrkat']; ?>">
-										<div class="form-group">
-											<label for="tahun_akademik">Tahun Ajaran</label>
-											<select class="form-control" id="tahun_akademik" name="tahun_akademik">
-												<option value="<?= $value['tahun_akademik']; ?>"><?= $value['tahun_akademik']; ?></option>
-												<option value="2019/2020">2019/2020</option>
-												<option value="2020/2021">2020/2021</option>
-											</select>
-										</div>
-										<div class="form-group">
-											<label for="semester">Prodi/Unit</label>
-											<select class="form-control" id="id_user" name="id_user">
-												<option value="<?= $value['id_user']; ?>"><b><?= $value['nama_prodi']; ?></b></option>
-												<?php foreach ($list_prodi as $key => $prodi) : ?>
-													<option value="<?= $prodi['id'] ?>"><?= $prodi['nama_prodi'] ?></option>
-												<?php endforeach ?>
-											</select>
-										</div>
-										<div class="form-group">
-											<label for="pagu">Jumlah Pagu (Rp)</label>
-											<input required type="text" name="pagu" class="form-control" id="pagu" name='pagu' placeholder="Masukkan Nama Prodi/Unit" value="<?= $value['pagu']; ?>">
-										</div>
-									<?php endforeach; ?>
+								<form action="<?= base_url('tahunakademik/store'); ?>" method="POST" enctype="multipart/form-data">
 									<div class="form-group">
-										<button type="submit" id="tambah" class="btn btn-success">edit</button>
+										<label for="tahunAkademik">Tahun Akademik</label>
+										<input required type="text" name="tahunAkademik" class="form-control" id="tahunAkademik" placeholder="Masukkan Tahun Akademik">
+									</div>
+									<div class="form-group">
+										<button type="submit" id="tambah" class="btn btn-success">Tambahkan</button>
 									</div>
 								</form>
 							</div>

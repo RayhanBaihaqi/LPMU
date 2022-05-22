@@ -292,10 +292,11 @@
 							</thead>
 							<tbody>
 								<?php $i = 1;?>
-								<?php foreach ($ops as $key => $value) : ?>
+								<?php foreach ($tahunAkademik as $key => $value) : ?>
 										<tr>
 											<td scope="row"><?= $i++; ?></td>
 											<td><?= $value['kategori']; ?></td>
+             
 											<td><?= $value['no_kegiatan']; ?></td>
 											<td><?= $value['target']; ?></td>
 											<td><?= $value['indikator']; ?></td>

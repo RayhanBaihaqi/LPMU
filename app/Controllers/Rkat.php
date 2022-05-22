@@ -4,9 +4,9 @@ namespace App\Controllers;
 
 use CodeIgniter\Controller;
 use App\Models\DetailRkatModel;
-use App\Models\SetRkatModel;
 use App\Models\TahunAkademikModel;
 use App\Models\PersenSerapModel;
+use App\Models\PaguRkatModel;
 use App\Models\UsersModel;
 
 class Rkat extends BaseController
@@ -16,9 +16,11 @@ class Rkat extends BaseController
         $this->DetailRkatModel = new DetailRkatModel();
         $this->TahunAkademikModel = new TahunAkademikModel();
         $this->PersenSerapModel = new PersenSerapModel();
+        $this->PaguModel = new PaguRkatModel();
+        $this->UsersModel = new UsersModel();
     }
 
-    //User Rencana Anggaran
+    //User
     public function indexbyuser()
     {
         $model = new DetailRkatModel();
@@ -46,8 +48,7 @@ class Rkat extends BaseController
             'pk' => $model->join('set_rkat', 'set_rkat.id_setrkat=detail_rkat.id_set')->join('user', 'user.id=set_rkat.id_user')->where('username', $username)->where('kategori', 'PK')->findAll(),
             'ops' => $model->join('set_rkat', 'set_rkat.id_setrkat=detail_rkat.id_set')->join('user', 'user.id=set_rkat.id_user')->where('username', $username)->where('kategori', 'OPS')->findAll(),
             'inv' => $model->join('set_rkat', 'set_rkat.id_setrkat=detail_rkat.id_set')->join('user', 'user.id=set_rkat.id_user')->where('username', $username)->where('kategori', 'INV')->findAll(),
-            'tahunGenap' => $model->join('set_rkat', 'set_rkat.id_setrkat=detail_rkat.id_set')->join('user', 'user.id=set_rkat.id_user')->where('username', $username)->where('tahunAkademik', '2019/2020')->findAll(),
-            'detail_rkat' => $this->DetailRkatModel->gabung($username),
+            'tahunAkademik' => $model-> join('tahun_akademik', 'tahun_akademik.id_tahun=detail_rkat.id_tahun')->join('set_rkat', 'set_rkat.id_setrkat=detail_rkat.id_set')->join('user', 'user.id=set_rkat.id_user')->where('username', $username)->where('aktif', '1')->findAll(),
         ];
         return view('rkat/RincianRkat', $data);
     }
@@ -56,7 +57,7 @@ class Rkat extends BaseController
         $model = new DetailRkatModel();
         $username = session('username');
         $data = [
-            'set_rkat' => $this->DetailRkatModel->tampilDataSetRKAT($username),
+            'pagu_rkat' => $this->DetailRkatModel->tampilDataSetRKAT($username),
             'tahunAkademik' => $this->TahunAkademikModel->where('aktif', '1')->first(),
         ];
 
@@ -76,8 +77,9 @@ class Rkat extends BaseController
         $target = $this->request->getVar('target');
         $nama_kegiatan = $this->request->getVar('nama_kegiatan');
         $total = $this->request->getVar('total');
-        $id_set = $this->request->getVar('id_set');
-        $tahunAkademik = $this->request->getVar('tahunAkademik');
+        $id_pagu = $this->request->getVar('id_pagu');
+        $id_tahun = $this->request->getVar('id_tahun');
+        $id_user = $this->request->getVar('id_user');
         //print_r($id_set); die();
         for ($i = 0; $i <= $jumlah; $i++) {
             $this->DetailRkatModel->insert([
@@ -91,8 +93,9 @@ class Rkat extends BaseController
                 'target' => $target[$i],
                 'nama_kegiatan' => $nama_kegiatan[$i],
                 'total' => $total[$i],
-                'tahunAkademik' => $tahunAkademik,
-                'id_set' => $id_set,
+                'id_tahun' => $id_tahun,
+                'id_pagu' => $id_pagu,
+                'id_user' => $id_user,
             ]);
         }
         return redirect()->to(base_url('rkat/createbyuser'))->with('status', '
@@ -117,10 +120,7 @@ class Rkat extends BaseController
         $id = $_POST['id'];
         $serapGanjil = $_POST['serapGanjil'];
         $serapGenap = $_POST['serapGenap'];
-        $persenSerapGanjil = $_POST['persenSerapGanjil'];
-        $persenSerapGenap = $_POST['persenSerapGenap'];
-        $id_tahun = $_POST['id_tahun'];
-        $id_user = $_POST['id_user'];
+        
         // $bukti = $_POST['bukti'];
 
         foreach ($id as $key => $n) {
@@ -139,6 +139,10 @@ class Rkat extends BaseController
             // print "The serapGanjil is " . $n . ", serapGenap is " . $serapGenap[$key] .
             //     ", and totalSerap is " . $totalSerap[$key] . ". Thank you\n";
         }
+        $persenSerapGanjil = $_POST['persenSerapGanjil'];
+        $persenSerapGenap = $_POST['persenSerapGenap'];
+        $id_tahun = $_POST['id_tahun'];
+        $id_user = $_POST['id_user'];
         
             $data2 = [
                 'persenSerapGanjil' => $persenSerapGanjil,
@@ -148,36 +152,9 @@ class Rkat extends BaseController
                 
             ];
             $tambahPersen = $modelPersen->insert($data2);
-        // if (!$this->validate([
-		// 	'keterangan' => [
-		// 		'rules' => 'required',
-		// 		'errors' => [
-		// 			'required' => '{field} Tidak boleh kosong'
-		// 		]
-		// 	],
-		// 	'bukti' => [
-		// 		'rules' => 'uploaded[bukti]|mime_in[bukti,image/jpg,image/jpeg,image/gif,image/png]|max_size[berkas,2048]',
-		// 		'errors' => [
-		// 			'uploaded' => 'Harus Ada File yang diupload',
-		// 			'mime_in' => 'File Extention Harus Berupa jpg,jpeg,gif,png',
-		// 			'max_size' => 'Ukuran File Maksimal 2 MB'
-		// 		]
- 
-		// 	]
-		// ])) {
-		// 	session()->setFlashdata('error', $this->validator->listErrors());
-		// 	return redirect()->back()->withInput();
-		// }
-        
-        // $dataBukti = $this->request->getFile('bukti');
-		// $fileName = $dataBukti->getRandomName();
-		// $model->insert([
-		// 	'bukti' => $fileName,
-		// ]);
-        // $dataBukti->move('upload/', $fileName);
-        // session()->setFlashdata('success', 'Berkas Berhasil diupload');
         return redirect()->to(base_url('CapaianRkat/createcapaianbyuser'));
     }
+
     public function deletebyuser($id = null)
     {
         $model = new DetailRkatModel();
@@ -186,6 +163,7 @@ class Rkat extends BaseController
         return redirect()->to(base_url('rkat/indexbyuser'));
     }
 
+    //Ubah Pssword User
     public function form_ubahpass($id = null)
     {
         $model = new UsersModel();
@@ -197,7 +175,6 @@ class Rkat extends BaseController
     {
         $model = new UsersModel();
         $id = session('id');
-        //exit();
         $data = [
             'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
         ];
@@ -219,97 +196,26 @@ class Rkat extends BaseController
         return redirect()->to(base_url('kpi/form_ubahpass'));
     }
 
-    //User Capaian Anggaran 
-    public function indexcapaianbyuser()
-    {
-        $model = new DetailRkatModel();
-        $data['detail_rkat'] = $this->DetailRkatModel->gabung();
-
-        return view('rkat/ListData', $data);
-    }
-    public function createcapaianbyuser()
-    {
-        $model = new DetailRkatModel();
-        $data['detail_rkat'] = $model->orderBy('id', 'ASC')->findAll();
-        return view('rkat/FormCapaian', $data);
-    }
-    public function savecapaian()
-    {
-        $nama_kegiatan = $this->request->getVar('nama_kegiatan');
-        $semester = $this->request->getVar('semester');
-        $anggaran = $this->request->getVar('anggaran');
-        $keterangan = $this->request->getVar('keterangan');
-        $jenis_kpi = $this->request->getVar('jenis_kpi');
-        $jenis_anggaran = $this->request->getVar('jenis_anggaran');
-        $butir = $this->request->getVar('butir');
-        $id_set = $this->request->getVar('id_set');
-        $jumlah = $this->request->getVar('jumlah');
-
-        for ($i = 0; $i < $jumlah; $i++) {
-            $this->DetailRkatModel->insert([
-                'nama_kegiatan' => $nama_kegiatan[$i],
-                'semester' => $semester[$i],
-                'anggaran' => $anggaran[$i],
-                'keterangan' => $keterangan[$i],
-                'jenis_kpi' => $jenis_kpi[$i],
-                'jenis_anggaran' => $jenis_anggaran[$i],
-                'butir' => $butir[$i],
-                'id_set' => $id_set[$i],
-            ]);
-        }
-        return redirect()->to(base_url('setrkat/createbyuser'))->with('status', 'Data Berhasil ditambah');
-    }
-    public function editcapaianbyuser($id = null)
-    {
-        $model = new DetailRkatModel();
-        $data['detail_rkat'] = $model->where('id', $id)->first();
-
-        return view('rkat/EditDataRkat', $data);
-    }
-    public function updatecapaianbyuser()
-    {
-        $model = new DetailRkatModel();
-        $id = $this->request->getVar('id');
-        $data = [
-            'nama_kegiatan' => $this->request->getVar('nama_kegiatan'),
-            'semester' => $this->request->getVar('semester'),
-            'anggaran' => $this->request->getVar('anggaran'),
-            'keterangan' => $this->request->getVar('keterangan'),
-            'jenis_kpi' => $this->request->getVar('jenis_kpi'),
-            'jenis_anggaran' => $this->request->getVar('jenis_anggaran'),
-            'butir' => $this->request->getVar('butir'),
-            'id_set' => $this->request->getVar('id_set'),
-
-        ];
-        $save = $model->update($id, $data);
-
-        return redirect()->to(base_url('rkat/indexbyuser'));
-    }
-    public function deletecapaianbyuser($id = null)
-    {
-        $model = new DetailRkatModel();
-        $data['detail_rkat'] = $model->where('id', $id)->delete();
-
-        return redirect()->to(base_url('rkat/indexbyuser'));
-    }
-
     ////////////////////////////admin////////////////////////////////
+
     public function indexbyadmin()
     {
         $model = new DetailRkatModel();
+        $data = [
+            'detail_rkat' => $model->join('user', 'user.id=detail_rkat.id_user')->orderBy('id_rkat', 'DESC')->findAll(),
 
-        $data['detail_rkat'] = $model->orderBy('id', 'DESC')->findAll();
-
+        ];
         return view('admin/ListRkat', $data);
     }
     public function createbyadmin()
     {
-        $model = new DetailRkatModel();
-        $username = session('username');
+        $model = new UsersModel();
+        $model2 = new PaguRkatModel();
         $data = [
-            'set_rkat' => $this->DetailRkatModel->tampilDataSetRKAT($username),
+            'user' => $model->orderBy('id', 'DESC')->findAll(),
+            'pagu' => $model2->join('user', 'user.id=pagu_rkat.id_user')->findAll(),
+            'tahunAkademik' => $this->TahunAkademikModel->where('aktif', '1')->first(),
         ];
-
         return view('admin/inputData', $data);
     }
     public function savebyadmin()
@@ -325,13 +231,11 @@ class Rkat extends BaseController
         $target = $this->request->getVar('target');
         $nama_kegiatan = $this->request->getVar('nama_kegiatan');
         $total = $this->request->getVar('total');
-        $id_set = $this->request->getVar('id_set');
-        $tahunAkademik = $this->request->getVar('tahunAkademik');
-        $serapGanjil = $this->request->getVar('serapGanjil');
-        $serapGenap = $this->request->getVar('serapGenap');
-        $totalSerap = $this->request->getVar('totalSerap');
+        $id_pagu = $this->request->getVar('id_pagu');
+        $id_tahun = $this->request->getVar('id_tahun');
+        $id_user = $this->request->getVar('id_user');
         //print_r($id_set); die();
-        for ($i = 0; $i < $jumlah; $i++) {
+        for ($i = 0; $i <= $jumlah; $i++) {
             $this->DetailRkatModel->insert([
                 'kategori' => $kategori[$i],
                 'anggaranGenap' => $anggaranGenap[$i],
@@ -343,24 +247,22 @@ class Rkat extends BaseController
                 'target' => $target[$i],
                 'nama_kegiatan' => $nama_kegiatan[$i],
                 'total' => $total[$i],
-                'tahunAkademik' => $tahunAkademik,
-                'id_set' => $id_set,
-                'serapGanjil' => $serapGanjil,
-                'serapGenap' => $serapGenap,
-                'totalSerap' => $totalSerap,
+                'id_tahun' => $id_tahun,
+                'id_pagu' => $id_pagu,
+                'id_user' => $id_user,
             ]);
         }
-        return redirect()->to(base_url('setrkat/createbyadmin'))->with('status', '
+        return redirect()->to(base_url('rkat/createbyadmin'))->with('status', '
            <div class="alert alert-success">
                <button type="button" class="close" data-dismiss="alert">&times;</button>
                <strong>Berhasil!</strong> Data Anda Berhasil Terinput.
            </div>
         ');
     }
-    public function editbyadmin($id = null)
+    public function editbyadmin($id_rkat = null)
     {
         $model = new DetailRkatModel();
-        $data['detail_rkat'] = $model->where('id', $id)->first();
+        $data['detail_rkat'] = $model->where('id_rkat', $id_rkat)->first();
         // print_r($data);exit();
 
         return view('/admin/EditRkat', $data);
@@ -397,13 +299,6 @@ class Rkat extends BaseController
         $data['detail_rkat'] = $model->where('id', $id)->delete();
 
         return redirect()->to(base_url('rkat/indexbyadmin'));
-    }
-
-    public function indexBuatTabel()
-    {
-        $model = new DetailRkatModel();
-        $data['detail_rkat'] = $model->orderBy('id', 'DESC')->findAll();
-        return view('admin/BuatTabel', $data);
     }
 
     //Grafik

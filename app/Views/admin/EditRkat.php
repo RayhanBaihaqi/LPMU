@@ -39,7 +39,7 @@
 			<hr class="sidebar-divider my-0">
 
 			<!-- Nav Item - Dashboard -->
-			<li class="nav-item active">
+			<li class="nav-item">
 				<a class="nav-link " href="<?php echo site_url(); ?>admin">
 					<i class="fas fa-fw fa-tachometer-alt"></i>
 					<span>Dashboard</span></a>
@@ -56,10 +56,11 @@
 				</a>
 				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
-						<a class="collapse-item" href="<?= base_url('setrkat/createbyadmin') ?>">Tambah RKAT</a>
+						<a class="collapse-item" href="<?= base_url('rkat/createbyadmin') ?>">Tambah RKAT</a>
 						<a class="collapse-item" href="<?= base_url('rkat/indexbyadmin') ?>">Lihat Data</a>
-						<a class="collapse-item" href="<?= base_url('setrkat/create') ?>">Atur Semester dan Pagu</a>
-						<a class="collapse-item" href="<?= base_url('setrkat/index') ?>">Lihat Data Set Rkat</a>
+						<a class="collapse-item" href="<?= base_url('pagurkat/create') ?>">Buat Pagu</a>
+						<a class="collapse-item" href="<?= base_url('pagurkat/index') ?>">List Pagu</a>
+						<a class="collapse-item" href="<?= base_url('tahunakademik/indextahun') ?>">Tahun Akademik</a>
 					</div>
 				</div>
 			</li>
@@ -144,8 +145,8 @@
 						<div class="card-body">
 							<div class="table-responsive">
 								<form action="<?= base_url('rkat/updatebyadmin'); ?>" method="POST" enctype="multipart/form-data">
-									<input required type="hidden" name="id" value="<?= $detail_rkat['id']; ?>">
-									<input required type="hidden" name="id_set" value="<?= $detail_rkat['id_set']; ?>">
+									<input required type="hidden" name="id" value="<?= $detail_rkat['id_rkat']; ?>">
+									<input required type="hidden" name="id_set" value="<?= $detail_rkat['id_user']; ?>">
 									<div class="form-group">
 										<label for="kategori">Kategori</label>
 										<select class="form-control" id="kategori" name="kategori">
@@ -207,12 +208,10 @@
 										<input class="form-control" rows="5" id="total" placeholder="Masukan Total Biaya" name="total" required value="<?= $detail_rkat['total']; ?>">
 									</div>
 									<div class="form-group">
-										<label for="tahunAkademik">Tahun Akademik</label>
-										<select class="form-control" id="tahunAkademik" name="tahunAkademik">
-											<option value="?= $detail_rkat['tahunAkademik']; ?>" disabled selected>
-												<?= $detail_rkat['tahunAkademik']; ?></option>
-											<option value="2019/2020">2019/2020</option>
-											<option value="2020/2021">2020/2021</option>
+										<label for="id_tahun">Tahun Akademik</label>
+										<select class="form-control" id="id_tahun" name="id_tahun">
+											<option value="?= $detail_rkat['id_tahun']; ?>" disabled selected>
+												<?= $detail_rkat['id_tahun']; ?></option>
 										</select>
 									</div>
 									<div class="form-group">

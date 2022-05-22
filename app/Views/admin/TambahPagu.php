@@ -9,7 +9,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>List data user</title>
+	<title>Admin</title>
 
 	<!-- Custom fonts for this template-->
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
@@ -39,7 +39,7 @@
 			<hr class="sidebar-divider my-0">
 
 			<!-- Nav Item - Dashboard -->
-			<li class="nav-item active">
+			<li class="nav-item">
 				<a class="nav-link " href="<?php echo site_url(); ?>admin">
 					<i class="fas fa-fw fa-tachometer-alt"></i>
 					<span>Dashboard</span></a>
@@ -56,10 +56,11 @@
 				</a>
 				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
-						<a class="collapse-item" href="<?= base_url('setrkat/createbyadmin') ?>">Tambah RKAT</a>
+						<a class="collapse-item" href="<?= base_url('rkat/createbyadmin') ?>">Tambah RKAT</a>
 						<a class="collapse-item" href="<?= base_url('rkat/indexbyadmin') ?>">Lihat Data</a>
-						<a class="collapse-item" href="<?= base_url('setrkat/create') ?>">Atur Semester dan Pagu</a>
-						<a class="collapse-item" href="<?= base_url('setrkat/index') ?>">Lihat Data Set Rkat</a>
+						<a class="collapse-item" href="<?= base_url('pagurkat/create') ?>">Buat Pagu</a>
+						<a class="collapse-item" href="<?= base_url('pagurkat/index') ?>">List Pagu</a>
+						<a class="collapse-item" href="<?= base_url('tahunakademik/indextahun') ?>">Tahun Akademik</a>
 					</div>
 				</div>
 			</li>
@@ -74,6 +75,7 @@
 					<span>KPI</span></a>
 				<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
+
 						<a class="collapse-item" href="<?= base_url('/admin/listkpi') ?>">Lihat KPI</a>
 						<a class="collapse-item" href="<?= base_url('/admin/listbutirkpi') ?>">Lihat Butir KPI</a>
 						<a class="collapse-item" href="<?= base_url('/admin/listcapaiankpi') ?>">Lihat Capaian</a>
@@ -137,40 +139,36 @@
 				<div class="container-fluid">
 
 					<!-- Page Heading -->
-					<h1 class="h3 mb-2 text-gray-800">Daftar Jumlah Pagu</h1>
+					<h1 class="h3 mb-2 text-gray-800">Tambah Pagu</h1>
 
 					<!-- DataTales Example -->
 					<div class="card shadow mb-4">
 						<div class="card-body">
 							<div class="table-responsive">
-								<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-									<thead>
-										<tr>
-											<th>Id</th>
-											<th>Tahun Akademik</th>
-											<th>Pagu</th>
-											<th>Nama Prodi/Unit</th>
-											<th>Actions</th>
-										</tr>
-									</thead>
-									<tbody>
-										<?php $i = 1; ?>
-										<?php if ($set_rkat) : ?>
-											<?php foreach ($set_rkat as $reading) : ?>
-												<tr>
-													<td scope="row"><?= $i++; ?></td>
-													<td><?= $reading['tahun_akademik']; ?></td>
-													<td><?= $reading['pagu']; ?></td>
-													<td><?= $reading['nama_prodi']; ?></td>
-													<td>
-														<a href="<?= base_url('setrkat/edit/' . $reading['id_setrkat']); ?>" class="button button2"><i class="fas fa-edit"></i></a>
-														<a href="<?= base_url('setrkat/delete/' . $reading['id_setrkat']); ?>" class="button button2"><i class="fas fa-trash-alt"></i></a>
-													</td>
-												</tr>
-											<?php endforeach; ?>
-										<?php endif; ?>
-									</tbody>
-								</table>
+								<form action="<?= base_url('pagurkat/store'); ?>" method="POST" enctype="multipart/form-data">
+									<div class="container">
+									<?= session()->getFlashdata('status'); ?>	
+										<div class="form-group">
+											<input type="hidden" class="form-control" id="id_tahun" value="<?= $tahunAkademik['id_tahun'] ?>" name="id_tahun" required>
+											<label for="tahunAkademik">Tahun Akademik</label>
+											<input type="text" class="form-control mb-2 mr-sm-2" name="tahunAkademik" id="tahunAkademik" value="<?= $tahunAkademik['tahunAkademik'] ?>" disabled>
+										</div>
+										<div class="form-group">
+											<label for="id_user">Prodi/Unit</label>
+											<select class="form-control" id="id_user" name="id_user">
+												<option value="" disabled selected>Pilih Prodi/Unit</option>
+												<?php foreach ($user as $reading) : ?>
+												<option value="<?= $reading['id']; ?>"><?= $reading['nama_prodi']; ?></option>
+												<?php endforeach; ?>
+											</select>
+										</div>
+										<div class="form-group">
+											<label for="jumlah_pagu">Jumlah Pagu (Rp)</label>
+											<input type="text" class="form-control" id="jumlah_pagu" placeholder="Masukan Nilai Jumlah Pagu" name="jumlah_pagu" required>
+										</div>
+										<button type="submit" class="btn btn-primary" id="tambah">Tambah Data</button>
+									</div>
+								</form>
 							</div>
 						</div>
 					</div>

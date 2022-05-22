@@ -9,7 +9,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>Admin</title>
+	<title>List data user</title>
 
 	<!-- Custom fonts for this template-->
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
@@ -39,7 +39,7 @@
 			<hr class="sidebar-divider my-0">
 
 			<!-- Nav Item - Dashboard -->
-			<li class="nav-item ">
+			<li class="nav-item">
 				<a class="nav-link " href="<?php echo site_url(); ?>admin">
 					<i class="fas fa-fw fa-tachometer-alt"></i>
 					<span>Dashboard</span></a>
@@ -59,7 +59,7 @@
 						<a class="collapse-item" href="<?= base_url('rkat/createbyadmin') ?>">Tambah RKAT</a>
 						<a class="collapse-item" href="<?= base_url('rkat/indexbyadmin') ?>">Lihat Data</a>
 						<a class="collapse-item" href="<?= base_url('pagurkat/create') ?>">Buat Pagu</a>
-						<a class="collapse-item" href="<?= base_url('pagurkat/index') ?>">List Pagu</a>
+						<a class="collapse-item active" href="<?= base_url('pagurkat/index') ?>">List Pagu</a>
 						<a class="collapse-item" href="<?= base_url('tahunakademik/indextahun') ?>">Tahun Akademik</a>
 					</div>
 				</div>
@@ -86,7 +86,7 @@
 			<div class="sidebar-heading">
 				User
 			</div>
-			<li class="nav-item">
+			<li class="nav-item ">
 				<a class="nav-link " href="<?= base_url('auth/index') ?>">
 					<i class="fas fa-fw fa-tachometer-alt"></i>
 					<span>Tabel User</span></a>
@@ -138,40 +138,40 @@
 				<div class="container-fluid">
 
 					<!-- Page Heading -->
-					<h1 class="h3 mb-2 text-gray-800">Tambah User</h1>
-					<?php if (session()->getFlashdata('success')) : ?>
-						<div class="alert alert-danger"><?= session()->getFlashdata('status') ?></div>
-					<?php endif ?>
+					<h1 class="h3 mb-2 text-gray-800">Daftar Jumlah Pagu</h1>
+
 					<!-- DataTales Example -->
 					<div class="card shadow mb-4">
 						<div class="card-body">
 							<div class="table-responsive">
-								<form action="<?= base_url('auth/store'); ?>" method="POST" enctype="multipart/form-data">
-									<div class="form-group">
-										<label for="username">Username</label>
-										<input required type="text" name="username" class="form-control" id="username" placeholder="Masukkan Username">
-									</div>
-									<div class="form-group">
-										<label for="password">Password</label>
-										<input type="password" class="form-control" name="password" placeholder="Password" id='password'>
-									</div>
-									<div class="form-group">
-										<label for="nama_prodi">Nama Prodi/Unit</label>
-										<input required type="text" name="nama_prodi" class="form-control" id="nama_prodi" name='nama_prodi' placeholder="Masukkan Nama Prodi/Unit">
-									</div>
-									<div class="form-group">
-										<label for="level">Kategori User</label>
-										<select required class="form-control" id="level" name="level">
-											<option value="prodi">Prodi</option>
-											<option value="unit">Unit</option>
-											<option value="rektorat">Rektorat</option>
-											<option value="admin">Admin</option>
-										</select>
-									</div>
-									<div class="form-group">
-										<button type="submit" id="tambah" class="btn btn-success">Tambahkan</button>
-									</div>
-								</form>
+								<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+									<thead>
+										<tr>
+											<th>Id</th>
+											<th>Tahun Akademik</th>
+											<th>Pagu</th>
+											<th>Nama Prodi/Unit</th>
+											<th>Actions</th>
+										</tr>
+									</thead>
+									<tbody>
+										<?php $i = 1; ?>
+										<?php if ($pagu_rkat) : ?>
+											<?php foreach ($pagu_rkat as $reading) : ?>
+												<tr>
+													<td scope="row"><?= $i++; ?></td>
+													<td><?= $reading['tahunAkademik']; ?></td>
+													<td><?= $reading['nama_prodi']; ?></td>
+													<td><?= $reading['jumlah_pagu']; ?></td>
+													<td>
+														<a href="<?= base_url('pagurkat/edit/' . $reading['id_pagu']); ?>" class="button button2"><i class="fas fa-edit"></i></a>
+														
+													</td>
+												</tr>
+											<?php endforeach; ?>
+										<?php endif; ?>
+									</tbody>
+								</table>
 							</div>
 						</div>
 					</div>

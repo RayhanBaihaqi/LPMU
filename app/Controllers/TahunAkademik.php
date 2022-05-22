@@ -7,7 +7,7 @@ use App\Models\DetailRkatModel;
 use App\Models\TahunAkademikModel;
 use App\Models\PersenSerapModel;
 
-class CapaianRkat extends BaseController
+class TahunAkademik extends BaseController
 {
     public function __construct(){
         $this->DetailRkatModel= new DetailRkatModel();
@@ -16,28 +16,31 @@ class CapaianRkat extends BaseController
     }
     
     //user capaian rkat
-    public function indexcapaianbyuser()
+    public function indextahun()
     {
-        $model = new DetailRkatModel();
-        $data['detail_rkat'] = $this->DetailRkatModel->gabungkpi();
-
-        return view('rkat/ListData', $data);
-    }
-    public function createcapaianbyuser() {
-        $model = new DetailRkatModel();
-        $username = session('username');
         $data = [
-            // 'detail_rkat' => $model->join('set_rkat', 'set_rkat.id_setrkat = detail_rkat.id_set')->join('user', 'user.id=set_rkat.id_user')->where('username',$username)->findAll(),
-            'tahunAkademik' => $this->TahunAkademikModel->where('aktif', '1')->first(),
-            'tahunAkademik2' => $model-> join('tahun_akademik', 'tahun_akademik.id_tahun=detail_rkat.id_tahun')->
-                                         join('pagu_rkat', 'pagu_rkat.id_pagu=detail_rkat.id_pagu')->
-                                         join('user', 'user.id=pagu_rkat.id_user')->
-                                         where('username', $username)->
-                                         where('aktif', '1')->
-                                         findAll(),
-            // 'count_detail_rkat' => $model->join('set_rkat', 'set_rkat.id_setrkat = detail_rkat.id_set')->join('user', 'user.id=set_rkat.id_user')->where('username',$username)->countAllResults()
+			'tahun_Akademik' => $this->TahunAkademikModel->orderBy('id_tahun', 'DESC')->findAll(),
+		];
+
+        return view('admin/listtahunakademik', $data);
+    }
+    public function create()
+    {
+        return view('admin/TambahTahun');
+    }
+    public function store() {
+        $model = new TahunAkademikModel();
+        $data = [
+            // 'id_tahun' => $this->request->getVar('id_tahun'),
+            'tahunAkademik' => $this->request->getVar('tahunAkademik'),
         ];
-        return view('rkat/FormCapaian', $data);
+        $model->save($data);
+		return redirect()->to(base_url('tahunakademik/create'))->with('status', '
+        <div class="alert alert-success">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Berhasil!</strong> Data Anda Berhasil Terinput.
+        </div>
+     ');
     }
     public function savecapaian()
 	{

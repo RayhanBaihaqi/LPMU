@@ -17,6 +17,7 @@
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 	<!-- Custom styles for this template-->
 	<link href="<?php echo base_url(); ?>/public/css/style_admin.css" rel="stylesheet">
+	<link href="<?php echo base_url(); ?>/public/css/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
@@ -38,8 +39,8 @@
 			<hr class="sidebar-divider my-0">
 
 			<!-- Nav Item - Dashboard -->
-			<li class="nav-item active">
-				<a class="nav-link " href="<?php echo site_url(); ?>admin">
+			<li class="nav-item">
+				<a class="nav-link " href="/admin">
 					<i class="fas fa-fw fa-tachometer-alt"></i>
 					<span>Dashboard</span></a>
 			</li>
@@ -57,9 +58,9 @@
 					<div class="bg-white py-2 collapse-inner rounded">
 						<a class="collapse-item" href="<?= base_url('rkat/createbyadmin') ?>">Tambah RKAT</a>
 						<a class="collapse-item" href="<?= base_url('rkat/indexbyadmin') ?>">Lihat Data</a>
-						<a class="collapse-item" href="<?= base_url('setrkat/create') ?>">Atur Semester dan Pagu</a>
-						<a class="collapse-item" href="<?= base_url('setrkat/index') ?>">Lihat Data Set Rkat</a>
-						<a class="collapse-item" href="<?= base_url('rkat/indexBuatTabel') ?>">Buat Tabel Rencana</a>
+						<a class="collapse-item" href="<?= base_url('pagurkat/create') ?>">Buat Pagu</a>
+						<a class="collapse-item" href="<?= base_url('pagurkat/index') ?>">List Pagu</a>
+						<a class="collapse-item" href="<?= base_url('tahunakademik/indextahun') ?>">Tahun Akademik</a>
 					</div>
 				</div>
 			</li>
@@ -74,11 +75,9 @@
 					<span>KPI</span></a>
 				<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="<?= base_url('rkat/createbyadmin') ?>">Tambah RKAT</a>
-						<a class="collapse-item" href="<?= base_url('rkat/indexbyadmin') ?>">Lihat Data</a>
-						<a class="collapse-item" href="<?= base_url('setrkat/create') ?>">Atur Semester dan Pagu</a>
-						<a class="collapse-item" href="<?= base_url('setrkat/index') ?>">Lihat Data Set Rkat</a>
-						<a class="collapse-item" href="<?= base_url('rkat/indexBuatTabel') ?>">Buat Tabel Rencana</a>
+						<a class="collapse-item" href="<?= base_url('/admin/listkpi') ?>">Lihat KPI</a>
+						<a class="collapse-item" href="<?= base_url('/admin/listbutirkpi') ?>">Lihat Butir KPI</a>
+						<a class="collapse-item" href="<?= base_url('/admin/listcapaiankpi') ?>">Lihat Capaian</a>
 					</div>
 				</div>
 			</li>
@@ -121,7 +120,6 @@
 								</span>
 								<img class="img-profile rounded-circle" src="<?php echo base_url(); ?>/public/img/inf-logo.jpg">
 							</a>
-
 							<!-- Dropdown - User Information -->
 							<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
 								<div class="dropdown-divider"></div>
@@ -136,56 +134,67 @@
 
 				</nav>
 				<!-- End of Topbar -->
-
 				<!-- Begin Page Content -->
 				<div class="container-fluid">
-					<div class="row">
 
-						<!-- Earnings (Monthly) Card Example -->
-						<div class="col">
-                        <h1 class="h3 mb-2 text-gray-800">Buat Tabel Rencana RKAT</h1>
-							<div class="card border-left-primary shadow h-100 py-2">
-								<div class="card-body">
-                                    
-								</div>
+					<!-- Page Heading -->
+					<h1 class="h3 mb-2 text-gray-800">Edit Pagu</h1>
+
+					<!-- DataTales Example -->
+					<div class="card shadow mb-4">
+						<div class="card-body">
+							<div class="table-responsive">
+								<form action="<?= base_url('setrkat/update'); ?>" method="POST" enctype="multipart/form-data">
+								<input required type="hidden" name="id" value="<?= $pagu_rkat['id_pagu']; ?>">
+										<div class="form-group">
+											<label for="id_tahun">Tahun Ajaran</label>
+											<select class="form-control" id="id_tahun" name="id_tahun">
+												<option value="<?= $pagu_rkat['id_tahun']; ?>"><?= $pagu_rkat['id_tahun']; ?></option>
+											</select>
+										</div>
+										<div class="form-group">
+											<label for="semester">Prodi/Unit</label>
+											<select class="form-control" id="id_user" name="id_user">
+												<option pagu_rkat="<?= $pagu_rkat['id_user']; ?>"><b><?= $pagu_rkat['id_user']; ?></b></option>
+													<option pagu_rkat="<?= $pagu_rkat['id_user']; ?>"><?= $pagu_rkat['id_user']; ?></option>
+											</select>
+										</div>
+										<div class="form-group">
+											<label for="jumlah_pagu">Jumlah Pagu (Rp)</label>
+											<input required type="text" class="form-control" id="jumlah_pagu" name='jumlah_pagu' placeholder="Masukkan Jumlah Pagu" value="<?= $pagu_rkat['jumlah_pagu']; ?>">
+										</div>
+									<div class="form-group">
+										<button type="submit" id="tambah" class="btn btn-success">edit</button>
+									</div>
+								</form>
 							</div>
 						</div>
-
-
 					</div>
-					<!-- Page Heading -->
-
 
 				</div>
-				<!-- /.container-fluid -->
+
 
 			</div>
-			<!-- End of Main Content -->
-
-			<!-- Footer -->
-			<footer class="sticky-footer bg-white">
-				<div class="container my-auto">
-					<div class="copyright text-center my-auto">
-						<span>Copyright &copy; Your Website 2020</span>
-					</div>
-				</div>
-			</footer>
-			<!-- End of Footer -->
+			<!-- End of Content Wrapper -->
 
 		</div>
-		<!-- End of Content Wrapper -->
+		<!-- End of Page Wrapper -->
 
-	</div>
-	<!-- End of Page Wrapper -->
+		<!-- Scroll to Top Button-->
+		<a class="scroll-to-top rounded" href="#page-top">
+			<i class="fas fa-angle-up"></i>
+		</a>
 
-	<!-- Scroll to Top Button-->
-	<a class="scroll-to-top rounded" href="#page-top">
-		<i class="fas fa-angle-up"></i>
-	</a>
+		<!-- Bootstrap core JavaScript-->
+		<script src="<?php echo base_url(); ?>/public/js/jquery.min.js"></script>
+		<script src="<?php echo base_url(); ?>/public/js/bootstrap.bundle.min.js"></script>
 
-	<!-- Bootstrap core JavaScript-->
-	<script src="<?php echo base_url(); ?>/public/js/jquery.min.js"></script>
-	<script src="<?php echo base_url(); ?>/public/js/bootstrap.bundle.min.js"></script>
+		<!-- Page level plugins -->
+		<script src="<?php echo base_url(); ?>/public/js/jquery.dataTables.min.js"></script>
+		<script src="<?php echo base_url(); ?>/public/js/dataTables.bootstrap4.min.js"></script>
+
+		<!-- Page level custom scripts -->
+		<script src="<?php echo base_url(); ?>/public/js/datatables-demo.js"></script>
 
 </body>
 

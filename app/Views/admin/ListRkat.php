@@ -39,7 +39,7 @@
 			<hr class="sidebar-divider my-0">
 
 			<!-- Nav Item - Dashboard -->
-			<li class="nav-item active">
+			<li class="nav-item">
 				<a class="nav-link " href="<?php echo site_url(); ?>admin">
 					<i class="fas fa-fw fa-tachometer-alt"></i>
 					<span>Dashboard</span></a>
@@ -56,10 +56,11 @@
 				</a>
 				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
-						<a class="collapse-item" href="<?= base_url('setrkat/createbyadmin') ?>">Tambah RKAT</a>
+						<a class="collapse-item active" href="<?= base_url('rkat/createbyadmin') ?>">Tambah RKAT</a>
 						<a class="collapse-item" href="<?= base_url('rkat/indexbyadmin') ?>">Lihat Data</a>
-						<a class="collapse-item" href="<?= base_url('setrkat/create') ?>">Atur Semester dan Pagu</a>
-						<a class="collapse-item" href="<?= base_url('setrkat/index') ?>">Lihat Data Set Rkat</a>
+						<a class="collapse-item" href="<?= base_url('pagurkat/create') ?>">Buat Pagu</a>
+						<a class="collapse-item" href="<?= base_url('pagurkat/index') ?>">List Pagu</a>
+						<a class="collapse-item" href="<?= base_url('tahunakademik/indextahun') ?>">Tahun Akademik</a>
 					</div>
 				</div>
 			</li>
@@ -157,7 +158,7 @@
 											<th>Anggaran Gasal</th>
 											<th>Anggaran Ganjil</th>
 											<th>Total Anggaran Rencana</th>
-											<th>Total Anggaran Realisasi</th>
+											<th>Nama Prodi/Unit</th>
 											<th>Actions</th>
 										</tr>
 									</thead>
@@ -177,10 +178,10 @@
 													<td><?= $reading['anggaranGasal']; ?></td>
 													<td><?= $reading['anggaranGenap']; ?></td>
 													<td><?= $reading['total']; ?></td>
-													<td></td>
+													<td><?= $reading['nama_prodi']; ?></td>
 													<td>
-														<a href="<?= base_url('rkat/editbyadmin/' . $reading['id']); ?>" class="button button2"><i class="fas fa-edit"></i></a>
-														<a href="<?= base_url('rkat/deletebyadmin/' . $reading['id']); ?>" class="button button2"><i class="fas fa-trash-alt"></i></a>
+														<a href="<?= base_url('rkat/editbyadmin/' . $reading['id_rkat']); ?>" class="button button2"><i class="fas fa-edit"></i></a>
+														
 													</td>
 												</tr>
 											<?php endforeach; ?>

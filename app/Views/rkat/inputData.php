@@ -18,9 +18,6 @@
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-	<!-- <link href="?php echo base_url(); ?>/public/lib/animate/animate.min.css" rel="stylesheet">
-	<link href="?php echo base_url(); ?>/public/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet"> -->
-
 
 	<!-- Template Stylesheet -->
 	<link rel="stylesheet" href="<?php echo base_url(); ?>/public/css/header.css">
@@ -106,20 +103,23 @@
 		<?= session()->getFlashdata('status'); ?>	
 			<div class="card">
 					<div class="card-header">Tambah Rencana RKAT</div>
-					<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat'];?>
-					<input type="hidden" class="form-control" id="id_set" value="<?= $id_set ?>" name="id_set" required>
+					
+					<?php foreach ($pagu_rkat as $key => $value) : $id_pagu = $value['id_pagu'];?>
+					<input type="hidden" class="form-control" id="id_pagu" value="<?= $id_pagu ?>" name="id_pagu" required>
+					<input type="hidden" class="form-control" id="id_user" value="<?= $value['id_user'] ?>" name="id_user" required>
 					<br>
 					<div class="card-body">
-						<div class="form-inline">
-							<label class="mb-2 mr-sm-2" for="exampleFormControlSelect1" style="width: 150px;">Tahun Akademik</label>
-							<input type="text" class="form-control mb-2 mr-sm-2" name="tahunAkademik" id="tahunAkademik" value="<?= $tahunAkademik['tahunAkademik'] ?>" disabled>
-							
-						</div>
+						<input type="hidden" class="form-control" id="id_tahun" value="<?= $tahunAkademik['id_tahun'] ?>" name="id_tahun" required>
+					<div class="form-inline">
+						<label class="mb-2 mr-sm-2" for="exampleFormControlSelect1" style="width: 150px;">Tahun Akademik</label>
+						<input type="text" class="form-control mb-2 mr-sm-2" name="tahunAkademik" id="tahunAkademik" value="<?= $tahunAkademik['tahunAkademik'] ?>" disabled>
+												
+					</div>
 						<div class="form-inline" style="margin-bottom:20px;">
 							<label for="prodiunit" class="mb-2 mr-sm-2" style="width: 150px;">Program Studi/Unit</label>
 							<input type="text" class="form-control mb-2 mr-sm-2" id="prodiunit" value="<?= $value['nama_prodi'] ?>" name="prodiunit"required disabled>
 							<label for="pagu" class="mb-2 mr-sm-2">Jumlah Pagu</label>
-							<input type="text" class="form-control mb-2 mr-sm-2" id= "pagu" name="pagu" value="RP. <?= $value['pagu'] ?>" required disabled>
+							<input type="text" class="form-control mb-2 mr-sm-2" id= "jumlah_pagu" name="jumlah_pagu" value="RP. <?= $value['jumlah_pagu'] ?>" required disabled>
 						</div>
 						<?php endforeach; ?>
 						<table class="table table-borded table-responsive table-striped">
@@ -222,7 +222,7 @@
 			document.getElementById('pagu3').value = pagu3;
 			
 			var buttonSend = document.getElementById('btnJumlah');
-			if (pagu3 > <?= $value['pagu'] ?>) {
+			if (pagu3 > <?= $value['jumlah_pagu'] ?>) {
 				$('#pagu3').addClass('btn-danger');
 				buttonSend.disabled = true;
 				document.getElementById('textError').innerHTML = "Nilai Pagu yang anda masukkan melebihi Nilai Pagu yang anda miliki";
@@ -247,7 +247,7 @@
 					document.getElementById('pagu3').value = pagu3;
 				}
 				var buttonSend = document.getElementById('btnJumlah');
-				if (pagu3 > <?= $value['pagu'] ?>) {
+				if (pagu3 > <?= $value['jumlah_pagu'] ?>) {
 					$('#pagu3').addClass('btn-danger');
 					buttonSend.disabled = true;
 					document.getElementById('textError').innerHTML = "Nilai Pagu yang anda masukkan melebihi Nilai Pagu yang anda miliki";
@@ -337,9 +337,6 @@
 	<!-- JavaScript Libraries -->
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-	<!-- <script src="?php echo base_url(); ?>/public/lib/easing/easing.min.js"></script>
-	<script src="?php echo base_url(); ?>/public/lib/owlcarousel/owl.carousel.min.js"></script>
-	<script src="?php echo base_url(); ?>/public/lib/isotope/isotope.pkgd.min.js"></script> -->
 	<script>
 		function startTime() {
 			var today = new Date();
@@ -361,9 +358,7 @@
 		}
 
 	</script>
-
-	<!-- <script src="?php echo base_url(); ?>/public/chart/apexcharts.min.js"></script> -->
-	<!-- <script src="<?php echo base_url(); ?>/public/chart/dashboard.js"></script> -->
+	
 	<script src="<?php echo base_url(); ?>/public/chart/jquery.knob.min.js"></script>
 	<script src="<?php echo base_url(); ?>/public/chart/knob-chart-setting.js"></script>
 	<script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>

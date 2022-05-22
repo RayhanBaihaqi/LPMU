@@ -9,7 +9,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>Admin</title>
+	<title>List data user</title>
 
 	<!-- Custom fonts for this template-->
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
@@ -39,7 +39,7 @@
 			<hr class="sidebar-divider my-0">
 
 			<!-- Nav Item - Dashboard -->
-			<li class="nav-item active">
+			<li class="nav-item ">
 				<a class="nav-link " href="<?php echo site_url(); ?>admin">
 					<i class="fas fa-fw fa-tachometer-alt"></i>
 					<span>Dashboard</span></a>
@@ -56,10 +56,11 @@
 				</a>
 				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
-						<a class="collapse-item" href="<?= base_url('setrkat/createbyadmin') ?>">Tambah RKAT</a>
+						<a class="collapse-item" href="<?= base_url('rkat/createbyadmin') ?>">Tambah RKAT</a>
 						<a class="collapse-item" href="<?= base_url('rkat/indexbyadmin') ?>">Lihat Data</a>
-						<a class="collapse-item" href="<?= base_url('setrkat/create') ?>">Atur Semester dan Pagu</a>
-						<a class="collapse-item" href="<?= base_url('setrkat/index') ?>">Lihat Data Set Rkat</a>
+						<a class="collapse-item" href="<?= base_url('pagurkat/create') ?>">Buat Pagu</a>
+						<a class="collapse-item" href="<?= base_url('pagurkat/index') ?>">List Pagu</a>
+						<a class="collapse-item active" href="<?= base_url('tahunakademik/indextahun') ?>">Tahun Akademik</a>
 					</div>
 				</div>
 			</li>
@@ -74,7 +75,6 @@
 					<span>KPI</span></a>
 				<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
-
 						<a class="collapse-item" href="<?= base_url('/admin/listkpi') ?>">Lihat KPI</a>
 						<a class="collapse-item" href="<?= base_url('/admin/listbutirkpi') ?>">Lihat Butir KPI</a>
 						<a class="collapse-item" href="<?= base_url('/admin/listcapaiankpi') ?>">Lihat Capaian</a>
@@ -86,7 +86,7 @@
 			<div class="sidebar-heading">
 				User
 			</div>
-			<li class="nav-item ">
+			<li class="nav-item">
 				<a class="nav-link " href="<?= base_url('auth/index') ?>">
 					<i class="fas fa-fw fa-tachometer-alt"></i>
 					<span>Tabel User</span></a>
@@ -138,39 +138,37 @@
 				<div class="container-fluid">
 
 					<!-- Page Heading -->
-					<h1 class="h3 mb-2 text-gray-800">Tambah Pagu</h1>
+					<h1 class="h3 mb-2 text-gray-800">Daftar User</h1>
 
 					<!-- DataTales Example -->
 					<div class="card shadow mb-4">
+						<div class="card-header py-3">
+							<a href="<?= base_url('/tahunakademik/create') ?>" class="btn btn-success"><span>Tambah
+									Data</span></a>
+						</div>
 						<div class="card-body">
 							<div class="table-responsive">
-								<form action="<?= base_url('setrkat/store'); ?>" method="POST" enctype="multipart/form-data">
-									<div class="container">
-										<div class="form-group">
-											<label for="tahun_akademik">Tahun Ajaran</label>
-											<select class="form-control" id="tahun_akademik" name="tahun_akademik">
-												<option selected>Pilih Tahun Ajaran</option>
-												<option value="2019/2020">2019/2020</option>
-												<option value="2020/2021">2020/2021</option>
-											</select>
-										</div>
-										<div class="form-group">
-											<label for="id_user">Prodi/Unit</label>
-											<select class="form-control" id="id_user" name="id_user">
-												<option selected>Pilih Prodi/Unit</option>
-												<option value="1">Akuntansi</option>
-												<option value="2">Desain Komunikasi Visual</option>
-												<option value="3">Informatika</option>
-												<option value="4">Ilmu Komunikasi</option>
-											</select>
-										</div>
-										<div class="form-group">
-											<label for="pagu">Jumlah Pagu (Rp)</label>
-											<input type="text" class="form-control" id="pagu" placeholder="Masukan Nilai Pagu" name="pagu" required>
-										</div>
-										<button type="submit" class="btn btn-primary" id="tambah">Tambah Data</button>
-									</div>
-								</form>
+								<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+									<thead>
+										<tr>
+											<th>No</th>
+											<th>Tahun</th>
+											<th>Actions</th>
+										</tr>
+									</thead>
+									<tbody>
+										<?php $i = 1; ?>
+										<?php if ($tahun_Akademik) : ?>
+											<?php foreach ($tahun_Akademik as $reading) : ?>
+												<tr>
+													<td scope="row"><?= $i++; ?></td>
+													<td><?= $reading['tahunAkademik']; ?></td>
+													<td><?= $reading['aktif']; ?><?= session()->getFlashdata('status'); ?>	</td>
+												</tr>
+											<?php endforeach; ?>
+										<?php endif; ?>
+									</tbody>
+								</table>
 							</div>
 						</div>
 					</div>

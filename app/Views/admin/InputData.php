@@ -49,17 +49,18 @@
 			<hr class="sidebar-divider">
 
 			<!-- Heading -->
-			<li class="nav-item active">
+			<li class="nav-item ">
 				<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
 					<i class="fas fa-fw fa-cog"></i>
 					<span>RKAT</span>
 				</a>
 				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
-						<a class="collapse-item" href="<?= base_url('rkat/createbyadmin') ?>">Tambah RKAT</a>
+						<a class="collapse-item active" href="<?= base_url('rkat/createbyadmin') ?>">Tambah RKAT</a>
 						<a class="collapse-item" href="<?= base_url('rkat/indexbyadmin') ?>">Lihat Data</a>
-						<a class="collapse-item" href="<?= base_url('setrkat/create') ?>">Atur Semester dan Pagu</a>
-						<a class="collapse-item" href="<?= base_url('setrkat/index') ?>">Lihat Data Set Rkat</a>
+						<a class="collapse-item" href="<?= base_url('pagurkat/create') ?>">Buat Pagu</a>
+						<a class="collapse-item" href="<?= base_url('pagurkat/index') ?>">List Pagu</a>
+						<a class="collapse-item" href="<?= base_url('tahunakademik/indextahun') ?>">Tahun Akademik</a>
 					</div>
 				</div>
 			</li>
@@ -134,35 +135,43 @@
 				</nav>
 				<!-- End of Topbar -->
 				<!-- Begin Page Content -->
-				<div class="container-fluid">
-
+			<div class="container-fluid">
 					<!-- Page Heading -->
 					<h1 class="h3 mb-2 text-gray-800">Tambah Rencana RKAT</h1>
-
 					<!-- DataTales Example -->
-					<div class="card shadow mb-4">
-						<div class="card-body">
-							<div class="table-responsive">
-								<form action="<?= base_url('rkat/savebyadmin'); ?>" method="POST" enctype="multipart/form-data">
-									<input type="hidden" name="jumlah" id="jumlah" value="0">
+				<div class="card shadow mb-4">
+					<div class="card-body">
+						<div class="table-responsive">
+							<form id="satuan" name="formD" action="<?= base_url('rkat/savebyadmin'); ?>" method="POST" enctype="multipart/form-data">
+								<input type="hidden" name="jumlah" id="jumlah" value="0">
 									<?= session()->getFlashdata('status'); ?>	
-									<div class="card">
-									<div class="card-body">
-										<div class="form-inline">
-											<label class="mb-2 mr-sm-2" for="exampleFormControlSelect1" style="width: 150px;">Tahun Akademik</label>
-											<select class="form-control mb-2 mr-sm-2" id="tahunAkademik" name="tahunAkademik" required>
-												<option value="" disabled selected>Pilih Tahun</option>
-												<option value="2019/2020">2019/2020</option>
-												<option value="2020/2021">2020/2021</option>
-											</select>
-										</div>
-										<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat'];?>
-										<?php endforeach; ?>
+								<div class="card">
+									<div class="card-header">Tambah Rencana RKAT</div>
 										<table class="table table-borded table-responsive table-striped">
+
+											<input type="hidden" class="form-control" id="id_tahun" value="<?= $tahunAkademik['id_tahun'] ?>" name="id_tahun" required>
+											<div class="form-inline">
+											
+												<label class="mb-2 mr-sm-2" for="exampleFormControlSelect1" style="width: 150px;">Tahun Akademik</label>
+												<input type="text" class="form-control mb-2 mr-sm-2" name="tahunAkademik" id="tahunAkademik" value="<?= $tahunAkademik['tahunAkademik'] ?>" disabled>
+											</div>
+											
+											<select class="form-control form-control-sm" id="id_user" name="id_user[]" required>
+												<option value="" disabled selected>Nama Prodi/Unit</option>
+												<?php foreach ($pagu as $value) : ?>
+												<option value="<?= $value['id_user']; ?>"><?= $value['nama_prodi']; ?></option>
+												<?php endforeach; ?>
+											</select>
+											<select class="form-control form-control-sm" id="id_pagu" name="id_pagu[]" required>
+												<option value="" disabled selected>Pagu Dari</option>
+												<?php foreach ($pagu as $value) : ?>
+												<option value="<?= $value['id_pagu']; ?>"><?= $value['nama_prodi']; ?></option>
+												<?php endforeach; ?>
+											</select>
 											<thead class="table-dark">
 												<tr>
 													<th class="text-center" width="4"> Action </th>
-													<th width="600px">Prodi/Unit - Kategori - Kriteria - Butir</th>
+													<th width="600px">Kategori - Kriteria - Butir</th>
 													<th width="600px">No Kegiatan- Indikator </th>
 													<th width="600px"> Target - Nama Kegiatan</th>
 													<th width="600px">Anggaran Gasal</th>
@@ -174,19 +183,13 @@
 												<tr>
 													<td><input name="chk_a[]" type="checkbox" class="checkall_a" value=""/></td>
 													<td>
-													<select class="form-control form-control-sm" id="id_set" name="id_set[]"required>
-														<option value=""disabled selected>Pilih Prodi/Unit</option>
-														<option value="1">Akuntansi</option>
-														<option value="2">Desain Komunikasi Visual</option>
-														<option value="3">Informatika</option>
-														<option value="4">Ilmu Komunikasi</option>
-													</select>
 														<select class="form-control form-control-sm" id="kategori" name="kategori[]" required>
 															<option value="" disabled selected>Kategori</option>
 															<option value="PK">PK</option>
 															<option value="OPS">OPS</option>
 															<option value="INV">INV</option>
 														</select>
+														
 														<select class="form-control form-control-sm" id="kpi" name="kpi[]" required>
 															<option value="" disabled selected>Kriteria KPI</option>
 															<option value="1">1 - Visi Misi Tujuan dan Strategi</option>
@@ -198,7 +201,8 @@
 															<option value="7">7 - Penelitian</option>
 															<option value="8">8 - Pengabdian kepada Masyarakat (PkM)</option>
 															<option value="9">9 - Luaran dan Capaian Tridharma</option>
-														</select>										
+														</select>
+														
 														<select class="form-control form-control-sm" id="butir" name="butir[]" required>
 															<option value="" disabled selected>Butir</option>
 															<option value="1">1</option>
@@ -237,26 +241,28 @@
 												<td><input type="text" class="form-control" style="width: 150px;" id="pagu3" name="pagu" value="RP. 0" required disabled></td>
 											</tfoot>
 										</table>
-									</div>
-									<div class="card-footer" align="center">
-										<button type="submit" class="btn btn-primary" id="jumlah">Tambah Data</button>
-									</div>
-								</form>
-							</div>
+								</div>
+								<div class="card-footer" align="center">
+									<button type="submit" class="btn btn-primary" id="btnJumlah" value="Tambah Data">Tambah Data</button>
+									<span id="textError"></span>
+								</div>
+							</form>
 						</div>
 					</div>
 				</div>
 			</div>
-			<!-- End of Content Wrapper -->
 		</div>
+			<!-- End of Content Wrapper -->
+	</div>
 		<!-- End of Page Wrapper -->
-			<script>
+		<script>
 		function totalAnggaran1() {
 			var txtFirstNumberValue = document.getElementById('anggaranGasal').value;
 			var txtSecondNumberValue = document.getElementById('anggaranGenap').value;
 			var result = parseInt(txtFirstNumberValue) + parseInt(txtSecondNumberValue);
 			if (!isNaN(result)) { document.getElementById('total').value = result; }
 			
+
 			var table = document.getElementById('tbody2');
 			let pagu1 = txtFirstNumberValue;
 			let pagu2 = txtSecondNumberValue;
@@ -264,11 +270,8 @@
 			document.getElementById('pagu1').value = pagu1;
 			document.getElementById('pagu2').value = pagu2;
 			document.getElementById('pagu3').value = pagu3;
-			if (pagu3 > ) {
-				$('#pagu3').addClass('btn-danger');
-			} else {
-				$('#pagu3').removeClass('btn-danger');
-			}
+			
+			var buttonSend = document.getElementById('btnJumlah');
 			if (document.getElementById('anggaranGasal1').value != null || document.getElementById('anggaranGenap1').value != null) {
 				for (let index = 1; index <= table.rows.length; index++) {
 				if (document.getElementById('anggaranGasal'+index).value != null || document.getElementById('anggaranGenap'+index).value != null) {
@@ -278,16 +281,12 @@
 					if (!isNaN(result)) { document.getElementById('total'+index).value = result; }
 					pagu1 = parseInt(pagu1) + parseInt(document.getElementById('anggaranGasal'+index).value)
 					document.getElementById('pagu1').value = pagu1;
+					console.log(anggaranGasal1);
 					pagu2 = parseInt(pagu2) + parseInt(document.getElementById('anggaranGenap'+index).value)
 					document.getElementById('pagu2').value = pagu2;
 					pagu3 = parseInt(pagu3) + parseInt(document.getElementById('total'+index).value)
 					document.getElementById('pagu3').value = pagu3;
 				}
-					if (pagu3 > ) {
-						$('#pagu3').addClass('btn-danger');
-					} else {
-						$('#pagu3').removeClass('btn-danger');
-					}
 				}
 			}
 		}

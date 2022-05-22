@@ -122,7 +122,7 @@
 									<input type="text" class="form-control mb-2 mr-sm-2" name="tahunAkademik" id="tahunAkademik" value="<?= $tahunAkademik['tahunAkademik'] ?>" disabled>
 								</div>
 					<div class="table-responsive">
-						<table class="perhitungan table table-bordered" id="dataTable" width="100%" cellspacing="0">
+						<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 							<thead>
 								<tr>
 									<th >No Kegiatan</th>
@@ -143,16 +143,16 @@
 							</thead>
 							<tbody id="nilai">
 								
-								<?php if ($detail_rkat) : ?>
 									<?php
 									$no = 1;
-									foreach ($detail_rkat as $reading) : ?>
+									foreach ($tahunAkademik2 as $key => $reading) : ?>
 										<input required type="hidden" name="id_set" value="<?= $reading['id_set']; ?>">
 										<tr>
 											<td><?= $no; ?></td>
 											<td><?= $reading['kpi']; ?> . <?= $reading['butir']; ?></td>
 											<td><?= $reading['kategori']; ?></td>
 											<td>
+											<input type="hidden" class="form-control" id="id_tahun" value="<?= $tahunAkademik['id_tahun'] ?>" name="id_tahun" required>
 												<ul class="list-group list-group-flush">
 													<li class="list-group-item" width="600px"><?= $reading['indikator']; ?></li>
 													<li class="list-group-item"><?= $reading['nama_kegiatan']; ?></li>
@@ -173,7 +173,6 @@
 										</tr>
 									<?php $no++;
 									endforeach; ?>
-								<?php endif; ?>
 							</tbody>
 							<tfoot>
 								<td></td>
