@@ -99,6 +99,21 @@ class Kpi extends BaseController
 		return view('kpi/grafik', $data);
 	}
 
+	public function kesimpulan_tabel()
+	{
+		$tabelcapaiankpi = new DataCapaianKpiModel();
+		$db      = \Config\Database::connect();
+		$builder = $db->table('tabel_capaian_kpi');
+
+		$data = [
+			'tampiltabelkpi' => $tabelcapaiankpi->get_tabel(),
+			// 'jumlah1_18' => $this->DataCapaianKpiModel->query("SELECT SUM(nilai_bobot) as nb1_18 FROM `tabel_capaian_kpi` where 'tahun_ajaran'='2018/2019' and idkpi=1 "),
+			//'jumlahkpi1' => $tabelcapaiankpi->jumlahkpi1()->getResult()
+
+		];
+		return view('kpi/grafik2', $data);
+	}
+
 	public function kesimpulan_grafik()
 	{
 
@@ -106,12 +121,12 @@ class Kpi extends BaseController
 		$grafikcapaiankpi = new DataCapaianKpiModel();
 		//for ($i = 0; $i < count($id); $i++) {
 		$data = [
-			'tampilgrafikkpi' => $this->DataCapaianKpiModel->get_grafik(),
+			'tampilgrafikkpi' => $grafikcapaiankpi->get_grafik(),
 
 			// 'tampilgrafikkpi' => $this->DataCapaianKpiModel->get_grafik(),
 		];
 		//}
-		return view('kpi/grafik2', $data);
+		return view('kpi/grafik3', $data);
 	}
 
 

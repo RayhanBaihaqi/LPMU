@@ -141,59 +141,33 @@
 
 
         </div>
+        <?php
+        //print_r($tampilgrafikkpi);
 
+        foreach ($tampilgrafikkpi as $key => $value) {
+            $nilai_bobot[] = $value['nilai_bobot'];
+            $id[] = $value['id'];
+            $tahun_ajaran = $value['tahun_ajaran'];
+        }
+        echo json_encode($id)
+        ?>
         <div class="container col-lg-12">
             <section class="content">
-                <div class="card shadow mb-4">
+
+
+                <!-- BAR CHART -->
+                <div class="card card-success">
                     <div class="card-header">
-                        <h3>Data Tabel Capaian KPI </h3>
+                        <h3 class="card-title">Grafik Capaian KPI</h3>
                     </div>
-
                     <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-bordered" id="dataTable_rencana" width="100%" cellspacing="0">
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th>Standar ke-1</th>
-                                        <th>Standar ke-2</th>
-                                        <th>Standar ke-3</th>
-                                        <th>Standar ke-4</th>
-                                        <th>Standar ke-5</th>
-                                        <th>Standar ke-6</th>
-                                        <th>Standar ke-7</th>
-                                        <th>Standar ke-8</th>
-                                        <th>Standar ke-9</th>
-                                        <th>Total Capaian/TA</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>2018/2019</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>2019/2020</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>2020/2021</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>2021/2022</td>
-                                        <td></td>
-                                    </tr>
+                        <div class="chart">
+                            <canvas id="myChart" height="100"></canvas>
 
-                                </tbody>
-                            </table>
                         </div>
                     </div>
-
-
                 </div>
-
-
+                <!-- /.card-body -->
             </section>
         </div> -->
 
@@ -245,7 +219,68 @@
             $(".pre-loader").fadeOut("slow");
         });
     </script>
+    <script>
+        const ctx = document.getElementById('myChart');
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Standar 1', 'Standar 2', 'Standar 3', 'Standar 4', 'Standar 5', 'Standar 6', 'Standar 7', 'Standar 8', 'Standar 9'],
+                datasets: [{
+                        label: <?php echo json_encode($tahun_ajaran = '2018/2019') ?>,
+                        backgroundColor: 'rgba(60,141,188,0.9)',
+                        borderColor: 'rgba(60,141,188,0.8)',
+                        pointRadius: false,
+                        pointColor: '#3b8bba',
+                        pointStrokeColor: 'rgba(60,141,188,1)',
+                        pointHighlightFill: '#fff',
+                        pointHighlightStroke: 'rgba(60,141,188,1)',
+                        data: <?php echo json_encode($nilai_bobot) ?>
+                    },
+                    {
+                        label: <?php echo json_encode($tahun_ajaran = '2019/2020') ?>,
+                        backgroundColor: 'rgba(255, 165, 0, 1)',
+                        borderColor: 'rgba(255, 165, 0, 1)',
+                        pointRadius: false,
+                        pointColor: 'rgba(210, 214, 222, 1)',
+                        pointStrokeColor: '#c1c7d1',
+                        pointHighlightFill: '#fff',
+                        pointHighlightStroke: 'rgba(220,220,220,1)',
+                        data: <?php echo json_encode($nilai_bobot) ?>
+                    },
 
+                    {
+                        label: <?php echo json_encode($tahun_ajaran = '2020/2021') ?>,
+                        backgroundColor: 'rgba(93, 255, 223,1)',
+                        borderColor: 'rgba(93, 255, 223,1)',
+                        pointRadius: false,
+                        pointColor: 'rgba(210, 214, 222, 1)',
+                        pointStrokeColor: '#c1c7d1',
+                        pointHighlightFill: '#fff',
+                        pointHighlightStroke: 'rgba(220,220,220,1)',
+                        data: <?php echo json_encode($nilai_bobot) ?>
+                    },
+                    {
+                        label: <?php echo json_encode($tahun_ajaran = '2021/2022') ?>,
+                        backgroundColor: 'rgba(93, 78, 246,1)',
+                        borderColor: 'rgba(93, 78, 246,1)',
+                        pointRadius: false,
+                        pointColor: 'rgba(210, 214, 222, 1)',
+                        pointStrokeColor: '#c1c7d1',
+                        pointHighlightFill: '#fff',
+                        pointHighlightStroke: 'rgba(220,220,220,1)',
+                        data: <?php echo json_encode($nilai_bobot) ?>
+                    },
+                ]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
     <!-- <script>
             $(function() {
                 /* ChartJS
