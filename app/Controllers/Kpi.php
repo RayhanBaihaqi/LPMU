@@ -17,6 +17,7 @@ class Kpi extends BaseController
 	public function __construct()
 	{
 		helper('form');
+		$this->DataCapaianKpiModel = new DataCapaianKpiModel();
 	}
 	public function index()
 	{
@@ -98,13 +99,34 @@ class Kpi extends BaseController
 		return view('kpi/grafik', $data);
 	}
 
-	public function kesimpulan_grafik()
+	public function kesimpulan_tabel()
 	{
-		$grafikcapaiankpi = new DataCapaianKpiModel();
+		$tabelcapaiankpi = new DataCapaianKpiModel();
+		$db      = \Config\Database::connect();
+		$builder = $db->table('tabel_capaian_kpi');
+
 		$data = [
-			'tampilgrafikkpi' => $grafikcapaiankpi->get_grafik()->getResult(),
+			'tampiltabelkpi' => $tabelcapaiankpi->get_tabel(),
+			// 'jumlah1_18' => $this->DataCapaianKpiModel->query("SELECT SUM(nilai_bobot) as nb1_18 FROM `tabel_capaian_kpi` where 'tahun_ajaran'='2018/2019' and idkpi=1 "),
+			//'jumlahkpi1' => $tabelcapaiankpi->jumlahkpi1()->getResult()
+
 		];
 		return view('kpi/grafik2', $data);
+	}
+
+	public function kesimpulan_grafik()
+	{
+
+		// $this->DataCapaianKpiModel = new DataCapaianKpiModel();
+		$grafikcapaiankpi = new DataCapaianKpiModel();
+		//for ($i = 0; $i < count($id); $i++) {
+		$data = [
+			'tampilgrafikkpi' => $grafikcapaiankpi->get_grafik(),
+
+			// 'tampilgrafikkpi' => $this->DataCapaianKpiModel->get_grafik(),
+		];
+		//}
+		return view('kpi/grafik3', $data);
 	}
 
 
@@ -159,7 +181,7 @@ class Kpi extends BaseController
 		$level = $this->request->getPost('level');
 		$nama_prodi = $this->request->getPost('nama_prodi');
 		$tahun_ajaran = $this->request->getPost('tahun_ajaran');
-		$upload_file = $this->request->getFile('uploadFile');
+		//$upload_file = $this->request->getFile('uploadFile');
 		$idkpi = $this->request->getPost('idkpi');
 		$id_butir_kpi = $this->request->getPost('id_butir_kpi');
 
@@ -177,7 +199,7 @@ class Kpi extends BaseController
 				'tahun_ajaran' => $tahun_ajaran,
 				'realisasi' => $realisasi[$i],
 				'nilai_bobot' => $nilai_bobot[$i],
-				'upload_file' => $upload_file[$i],
+				//'upload_file' => $upload_file[$i],
 				'idkpi' => $idkpi[$i],
 				'id_butir_kpi' => $id[$i],
 			];

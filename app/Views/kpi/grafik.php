@@ -123,14 +123,29 @@
         <!-- Nav Bar End -->
 
         <div class="container col-lg-12">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <br>
+                        <a href="<?= base_url('kpi/kesimpulan') ?>" class="btn btn-primary btn-block">Daftar Capaian</a>
+                        <br>
+                    </div>
+                    <div class="col-sm">
+                        <br>
+                        <a href="<?= base_url('kpi/kesimpulan_tabel') ?>" class="btn btn-primary btn-block">Data Tabel</a>
+                        <br>
+                    </div>
+                    <div class="col-sm">
+                        <br>
+                        <a href="<?= base_url('kpi/kesimpulan_grafik') ?>" class="btn btn-primary btn-block">Data Grafik</a>
+                        <br>
+                    </div>
+                </div>
+            </div>
 
-            <br>
-            <a href="<?= base_url('kpi/kesimpulan') ?>" class="btn btn-primary btn-block">Data Tabel</a>
-            <a href="<?= base_url('kpi/kesimpulan_grafik') ?>" class="btn btn-primary btn-block">Data Grafik</a>
-            <br>
             <div class="card shadow mb-4">
                 <div class="card-header">
-                    <h3>Data Capaian KPI </h3>
+                    <h3>Daftar Capaian KPI </h3>
                 </div>
 
                 <div class="card-body">
