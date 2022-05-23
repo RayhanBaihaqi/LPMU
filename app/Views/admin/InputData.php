@@ -221,7 +221,7 @@
 														<input type="text" class="form-control form-control-sm" id="nama_kegiatan" placeholder="Nama Kegiatan" name="nama_kegiatan[]" required>
 													</td>
 													<td>
-														<input type="text" class="form-control form-control-sm" id="anggaranGasal" placeholder="Rp. 0" name="anggaranGasal[]" onkeyup="totalAnggaran1();" required>
+														<input type="text" class="form-control form-control-sm" id="anggaranGanjil" placeholder="Rp. 0" name="anggaranGanjil[]" onkeyup="totalAnggaran1();" required>
 													</td>
 													<td>
 														<input type="text" class="form-control form-control-sm" id="anggaranGenap" placeholder="Rp. 0" name="anggaranGenap[]" onkeyup="totalAnggaran1();" required>
@@ -257,7 +257,7 @@
 		<!-- End of Page Wrapper -->
 		<script>
 		function totalAnggaran1() {
-			var txtFirstNumberValue = document.getElementById('anggaranGasal').value;
+			var txtFirstNumberValue = document.getElementById('anggaranGanjil').value;
 			var txtSecondNumberValue = document.getElementById('anggaranGenap').value;
 			var result = parseInt(txtFirstNumberValue) + parseInt(txtSecondNumberValue);
 			if (!isNaN(result)) { document.getElementById('total').value = result; }
@@ -272,16 +272,16 @@
 			document.getElementById('pagu3').value = pagu3;
 			
 			var buttonSend = document.getElementById('btnJumlah');
-			if (document.getElementById('anggaranGasal1').value != null || document.getElementById('anggaranGenap1').value != null) {
+			if (document.getElementById('anggaranGanjil1').value != null || document.getElementById('anggaranGenap1').value != null) {
 				for (let index = 1; index <= table.rows.length; index++) {
-				if (document.getElementById('anggaranGasal'+index).value != null || document.getElementById('anggaranGenap'+index).value != null) {
-					var txtFirstNumberValue = document.getElementById('anggaranGasal'+index).value;
+				if (document.getElementById('anggaranGanjil'+index).value != null || document.getElementById('anggaranGenap'+index).value != null) {
+					var txtFirstNumberValue = document.getElementById('anggaranGanjil'+index).value;
 					var txtSecondNumberValue = document.getElementById('anggaranGenap'+index).value;
 					var result = parseInt(txtFirstNumberValue) + parseInt(txtSecondNumberValue);
 					if (!isNaN(result)) { document.getElementById('total'+index).value = result; }
-					pagu1 = parseInt(pagu1) + parseInt(document.getElementById('anggaranGasal'+index).value)
+					pagu1 = parseInt(pagu1) + parseInt(document.getElementById('anggaranGanjil'+index).value)
 					document.getElementById('pagu1').value = pagu1;
-					console.log(anggaranGasal1);
+					console.log(anggaranGanjil1);
 					pagu2 = parseInt(pagu2) + parseInt(document.getElementById('anggaranGenap'+index).value)
 					document.getElementById('pagu2').value = pagu2;
 					pagu3 = parseInt(pagu3) + parseInt(document.getElementById('total'+index).value)
@@ -318,7 +318,7 @@
 							}else{
 								if (i2==4) {
 									newcell.children[i2].setAttribute("required","required");
-									newcell.children[i2].setAttribute("id","anggaranGasal1");
+									newcell.children[i2].setAttribute("id","anggaranGanjil1");
 									newcell.children[i2].value = "";
 								}
 								else if (i2==5) {

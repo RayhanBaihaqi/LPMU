@@ -146,8 +146,8 @@
 							</thead>
 							<tbody>
 								<?php $i = 1;?>
-								<?php if ($detail_rkat) : ?>
-									<?php foreach ($detail_rkat as $value) : ?>
+								<?php if ($detail_rkat2) : ?>
+									<?php foreach ($detail_rkat2 as $value) : ?>
 										<tr>
 											<td scope="row"><?= $i++; ?></td>
 											<td><?= $value['kategori']; ?></td>
@@ -157,7 +157,7 @@
 											<td><?= $value['nama_kegiatan']; ?></td>
 											<td><?= $value['kpi']; ?></td>
 											<td><?= $value['butir']; ?></td>
-											<td><?= $value['anggaranGasal']; ?></td>
+											<td><?= $value['anggaranGanjil']; ?></td>
 											<td><?= $value['anggaranGenap']; ?></td>
 											<td><?= $value['total']; ?></td>
 											<td></td>

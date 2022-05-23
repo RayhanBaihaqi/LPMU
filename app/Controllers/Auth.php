@@ -5,7 +5,7 @@ namespace App\Controllers;
 use CodeIgniter\Controller;
 use App\Models\UsersModel;
 use App\Models\AuthModel;
-use App\Models\SetRkatModel;
+use App\Models\PaguRkatModel;
 
 class Auth extends BaseController
 {
@@ -138,7 +138,7 @@ class Auth extends BaseController
     //Ubah Password User
     public function ubahpass($id_setrkat = null)
     {
-        $model = new SetRkatModel();
+        $model = new PaguRkatModel();
         $username = session('username');
         $data = [
             'user' => $model->where('id_user', $id_setrkat)->first()

@@ -24,14 +24,14 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `detail_rkat`
+-- Table structure for table `detail_rkat2`
 --
 
-CREATE TABLE `detail_rkat` (
+CREATE TABLE `detail_rkat2` (
   `id` int(20) NOT NULL,
   `kategori` varchar(10) NOT NULL,
   `anggaranGenap` int(100) NOT NULL,
-  `anggaranGasal` int(100) NOT NULL,
+  `anggaranGanjil` int(100) NOT NULL,
   `no_kegiatan` varchar(50) NOT NULL,
   `indikator` varchar(255) NOT NULL,
   `target` varchar(100) NOT NULL,
@@ -43,10 +43,10 @@ CREATE TABLE `detail_rkat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `detail_rkat`
+-- Dumping data for table `detail_rkat2`
 --
 
-INSERT INTO `detail_rkat` (`id`, `kategori`, `anggaranGenap`, `anggaranGasal`, `no_kegiatan`, `indikator`, `target`, `nama_kegiatan`, `kpi`, `butir`, `total`, `id_set`) VALUES
+INSERT INTO `detail_rkat2` (`id`, `kategori`, `anggaranGenap`, `anggaranGanjil`, `no_kegiatan`, `indikator`, `target`, `nama_kegiatan`, `kpi`, `butir`, `total`, `id_set`) VALUES
 (1, 'PK', 1000000, 1000000, '1', 'sddvsd', '1', 'acara', '2', '2', '', 3);
 
 -- --------------------------------------------------------
@@ -290,9 +290,9 @@ INSERT INTO `user` (`id`, `username`, `password`, `nama_prodi`, `created_at`, `u
 --
 
 --
--- Indexes for table `detail_rkat`
+-- Indexes for table `detail_rkat2`
 --
-ALTER TABLE `detail_rkat`
+ALTER TABLE `detail_rkat2`
   ADD PRIMARY KEY (`id`),
   ADD KEY `FOREIGN` (`id_set`);
 
@@ -327,9 +327,9 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT for table `detail_rkat`
+-- AUTO_INCREMENT for table `detail_rkat2`
 --
-ALTER TABLE `detail_rkat`
+ALTER TABLE `detail_rkat2`
   MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
@@ -361,9 +361,9 @@ ALTER TABLE `user`
 --
 
 --
--- Constraints for table `detail_rkat`
+-- Constraints for table `detail_rkat2`
 --
-ALTER TABLE `detail_rkat`
+ALTER TABLE `detail_rkat2`
   ADD CONSTRAINT `FOREIGN` FOREIGN KEY (`id_set`) REFERENCES `set_rkat` (`id_setrkat`);
 
 --

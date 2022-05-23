@@ -69,7 +69,7 @@ class TahunAkademik extends BaseController
 	}
     public function editcapaianbyuser($id = null) {
         $model = new DetailRkatModel();
-        $data['detail_rkat'] = $model->where('id',$id)->first();
+        $data['detail_rkat2'] = $model->where('id',$id)->first();
 
         return view('rkat/EditDataRkat',$data);
     }
@@ -92,7 +92,7 @@ class TahunAkademik extends BaseController
     }
     public function deletecapaianbyuser($id = null) {
         $model = new DetailRkatModel();
-        $data['detail_rkat'] = $model->where('id',$id)->delete();
+        $data['detail_rkat2'] = $model->where('id',$id)->delete();
 
         return redirect()->to(base_url('rkat/indexbyuser'));
     }

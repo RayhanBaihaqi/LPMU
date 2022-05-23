@@ -103,18 +103,18 @@
 			<div class="card">
 				<div class="card-header"></div>
 				<div class="card-body">
-					<input required type="hidden" name="id" value="<?= $detail_rkat['id']; ?>">
-					<input required type="hidden" name="id_set" value="<?= $detail_rkat['id_set']; ?>">
+					<input required type="hidden" name="id" value="<?= $detail_rkat2['id']; ?>">
+					<input required type="hidden" name="id_set" value="<?= $detail_rkat2['id_set']; ?>">
 					<div class="form-group">
 						<label for="nama_kegiatan">Nama Kegiatan</label>
 						<input type="text" class="form-control" id="nama_kegiatan" placeholder="Maksukan Nama Kegiatan" 
-						name="nama_kegiatan" required value="<?= $detail_rkat['nama_kegiatan']; ?>">
+						name="nama_kegiatan" required value="<?= $detail_rkat2['nama_kegiatan']; ?>">
 					</div>
 					<div class="form-group">
 						<label for="kategori">Kategori</label>
 						<select class="form-control" id="kategori" name="kategori">
-							<!-- <option value="?= $detail_rkat['jenis_anggaran']; ?>" disabled selected>
-								?= $detail_rkat['jenis_anggaran']; ?></option> -->
+							<!-- <option value="?= $detail_rkat2['jenis_anggaran']; ?>" disabled selected>
+								?= $detail_rkat2['jenis_anggaran']; ?></option> -->
 							<option value="Program Kerja">Program Kerja</option>
 							<option value="Oprasional">Oprasional</option>
 							<option value="Investasi">Investasi</option>
@@ -123,8 +123,8 @@
 					<div class="form-group">
 						<label for="jenis_kpi">Standar KPI</label>
 						<select class="form-control" id="jenis_kpi" name="jenis_kpi">
-							<!-- <option value="?= $detail_rkat['jenis_kpi']; ?>" disabled selected>
-								?= $detail_rkat['jenis_kpi']; ?></option> -->
+							<!-- <option value="?= $detail_rkat2['jenis_kpi']; ?>" disabled selected>
+								?= $detail_rkat2['jenis_kpi']; ?></option> -->
 							<option value="1">Standar 1 – Visi Misi Tujuan dan Strategi</option>
 							<option value="2">Standar 2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
 							<option value="3">Standar 3 - Mahasiswa</option>
@@ -139,13 +139,13 @@
 					<div class="form-group">
 						<label for="butir">Butir</label>
 						<input type="text" class="form-control" id="butir" placeholder="Masukan Butir Ke-" name="butir" 
-						required value="<?= $detail_rkat['butir']; ?>">
+						required value="<?= $detail_rkat2['butir']; ?>">
 					</div>
 					<div class="form-group">
 						<label for="semester">Semester</label>
 						<select class="form-control" id="semester" name="semester">
-							<!-- <option value="?= $detail_rkat['semester']; ?>" disabled selected>
-								?= $detail_rkat['semester']; ?></option> -->
+							<!-- <option value="?= $detail_rkat2['semester']; ?>" disabled selected>
+								?= $detail_rkat2['semester']; ?></option> -->
 							<option value="Gasal">Gasal</option>
 							<option value="Genap">Genap</option>
 							<option value="Gasal dan Genap">Gasal dan Genap</option>
@@ -154,12 +154,12 @@
 					<div class="form-group">
 						<label for="anggaran">Anggaran Kegiatan</label>
 						<input type="text" class="form-control" id="anggaran" placeholder="Masukan Total Anggaran" 
-						name="anggaran" required value=""><!--?= $detail_rkat['anggaran']; ?>-->
+						name="anggaran" required value=""><!--?= $detail_rkat2['anggaran']; ?>-->
 					</div>
 					<div class="form-group">
 						<label for="keterangan">Keterangan Kegiatan</label>
 						<textarea class="form-control" rows="5" id="keterangan" placeholder="Masukan Total Biaya" 
-						name="keterangan" required ></textarea><!--?= $detail_rkat['keterangan']; ?>-->
+						name="keterangan" required ></textarea><!--?= $detail_rkat2['keterangan']; ?>-->
 					</div>
 					<div class="form-group">
 						<button type="submit" id="edit" class="btn btn-success">edit</button>

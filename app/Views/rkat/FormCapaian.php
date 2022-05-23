@@ -146,7 +146,7 @@
 									<?php
 									$no = 1;
 									foreach ($tahunAkademik2 as $key => $reading) : ?>
-										<input required type="hidden" name="id_set" value="<?= $reading['id_set']; ?>">
+										<input required type="hidden" name="id_user" value="<?= $reading['id_user']; ?>">
 										<tr>
 											<td><?= $no; ?></td>
 											<td><?= $reading['kpi']; ?> . <?= $reading['butir']; ?></td>
@@ -159,7 +159,7 @@
 												</ul>
 											</td>
 											<td><?= $reading['target']; ?></td>
-											<td><input type="text" class="form-control form-control-sm" id="aGanjil<?= $no; ?>" value="<?= $reading['anggaranGasal']; ?>" disabled /></td>
+											<td><input type="text" class="form-control form-control-sm" id="aGanjil<?= $no; ?>" value="<?= $reading['anggaranGanjil']; ?>" disabled /></td>
 											<td>
 												<input style="display: none;" required type="text" name="id[]" id="id" value="<?= $reading['id_rkat']; ?>">
 												<input type="text" class="form-control form-control-sm serapGanjil" id="serapGanjil<?= $no; ?>" placeholder="Rp. 0" name="serapGanjil[]" onkeyup="AddInputs(this.id);" required <?= ($reading['serapGanjil'] != "") ? "value='".$reading['serapGanjil']."' disabled" : "" ?>>

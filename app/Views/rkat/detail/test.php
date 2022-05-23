@@ -191,7 +191,7 @@
 									<input type="text" class="form-control form-control-sm" id="nama_kegiatan1" placeholder="Maksukan Nama Kegiatan" name="nama_kegiatan1" required>
 								</td>
 								<td>
-									<input type="number" class="form-control form-control-sm" id="anggaranGasal1" placeholder="Masukan Anggaran Gasal" name="anggaranGasal1" onkeyup="totalAnggaran1(); totalKeseluruhan();" value="0" required>
+									<input type="number" class="form-control form-control-sm" id="anggaranGanjil1" placeholder="Masukan Anggaran Gasal" name="anggaranGanjil1" onkeyup="totalAnggaran1(); totalKeseluruhan();" value="0" required>
 								</td>
 								<td>
 									<input type="number" class="form-control form-control-sm" id="anggaranGenap1" placeholder="Masukan Anggaran Genap" name="anggaranGenap1" onkeyup="totalAnggaran1(); totalKeseluruhan();" value="0" required>
@@ -239,7 +239,7 @@
 									<input type="text" class="form-control form-control-sm" id="nama_kegiatan2" placeholder="Maksukan Nama Kegiatan" name="nama_kegiatan2">
 								</td>
 								<td>
-									<input type="number" class="form-control form-control-sm" id="anggaranGasal2" placeholder="Masukan Anggaran Gasal" name="anggaranGasal2" onkeyup="totalAnggaran2(); totalKeseluruhan();" value="0">
+									<input type="number" class="form-control form-control-sm" id="anggaranGanjil2" placeholder="Masukan Anggaran Gasal" name="anggaranGanjil2" onkeyup="totalAnggaran2(); totalKeseluruhan();" value="0">
 								</td>
 								<td>
 									<input type="number" class="form-control form-control-sm" id="anggaranGenap2" placeholder="Masukan Anggaran Genap" name="anggaranGenap2" onkeyup="totalAnggaran2(); totalKeseluruhan();" value="0">
@@ -287,7 +287,7 @@
 									<input type="text" class="form-control form-control-sm" id="nama_kegiatan3" placeholder="Maksukan Nama Kegiatan" name="nama_kegiatan3">
 								</td>
 								<td>
-									<input type="number" class="form-control form-control-sm" id="anggaranGasal3" placeholder="Masukan Anggaran Gasal" name="anggaranGasal3" onkeyup="totalAnggaran3(); totalKeseluruhan();" value="0">
+									<input type="number" class="form-control form-control-sm" id="anggaranGanjil3" placeholder="Masukan Anggaran Gasal" name="anggaranGanjil3" onkeyup="totalAnggaran3(); totalKeseluruhan();" value="0">
 								</td>
 								<td>
 									<input type="number" class="form-control form-control-sm" id="anggaranGenap3" placeholder="Masukan Anggaran Genap" name="anggaranGenap3" onkeyup="totalAnggaran3(); totalKeseluruhan();" value="0">
@@ -335,7 +335,7 @@
 									<input type="text" class="form-control form-control-sm" id="nama_kegiatan4" placeholder="Maksukan Nama Kegiatan" name="nama_kegiatan4">
 								</td>
 								<td>
-									<input type="number" class="form-control form-control-sm" id="anggaranGasal4" placeholder="Masukan Anggaran Gasal" name="anggaranGasal4" onkeyup="totalAnggaran4();  totalKeseluruhan();" value="0">
+									<input type="number" class="form-control form-control-sm" id="anggaranGanjil4" placeholder="Masukan Anggaran Gasal" name="anggaranGanjil4" onkeyup="totalAnggaran4();  totalKeseluruhan();" value="0">
 								</td>
 								<td>
 									<input type="number" class="form-control form-control-sm" id="anggaranGenap4" placeholder="Masukan Anggaran Genap" name="anggaranGenap4" onkeyup="totalAnggaran4();  totalKeseluruhan();" value="0">
@@ -383,7 +383,7 @@
 									<input type="text" class="form-control form-control-sm" id="nama_kegiatan5" placeholder="Maksukan Nama Kegiatan" name="nama_kegiatan5">
 								</td>
 								<td>
-									<input type="number" class="form-control form-control-sm" id="anggaranGasal5" placeholder="Masukan Anggaran Gasal" name="anggaranGasal5" onkeyup="totalAnggaran5();  totalKeseluruhan();" value="0">
+									<input type="number" class="form-control form-control-sm" id="anggaranGanjil5" placeholder="Masukan Anggaran Gasal" name="anggaranGanjil5" onkeyup="totalAnggaran5();  totalKeseluruhan();" value="0">
 								</td>
 								<td>
 									<input type="number" class="form-control form-control-sm" id="anggaranGenap5" placeholder="Masukan Anggaran Genap" name="anggaranGenap5" onkeyup="totalAnggaran5();  totalKeseluruhan();" value="0">
@@ -442,53 +442,53 @@
 			}; // add zero in front of numbers < 10
 			return i;
 		}
-	    // anggaranGasal = document.formD.anggaranGasal.value;
-   		// document.formD.total.value = anggaranGasal;
+	    // anggaranGanjil = document.formD.anggaranGanjil.value;
+   		// document.formD.total.value = anggaranGanjil;
 		// anggaranGenap = document.formD.anggaranGenap.value;
    		// document.formD.total.value = anggaranGenap;
 		// function OnChange(value){
-		// 	anggaranGasal = document.formD.anggaranGasal.value;
+		// 	anggaranGanjil = document.formD.anggaranGanjil.value;
 		// 	anggaranGenap = document.formD.anggaranGenap.value;
-		// 	total = parseInt(anggaranGasal) + parseInt(anggaranGenap);
+		// 	total = parseInt(anggaranGanjil) + parseInt(anggaranGenap);
      	// 	document.formD.total.value = total;
 		// } 
 		function totalAnggaran1() {
-			var txtFirstNumberValue = document.getElementById('anggaranGasal1').value;
+			var txtFirstNumberValue = document.getElementById('anggaranGanjil1').value;
 			var txtSecondNumberValue = document.getElementById('anggaranGenap1').value;
 			var result = parseInt(txtFirstNumberValue) + parseInt(txtSecondNumberValue);
 			if (!isNaN(result)) { document.getElementById('total1').value = result; }
 		}
 		function totalAnggaran2() {
-			var txtFirstNumberValue = document.getElementById('anggaranGasal2').value;
+			var txtFirstNumberValue = document.getElementById('anggaranGanjil2').value;
 			var txtSecondNumberValue = document.getElementById('anggaranGenap2').value;
 			var result = parseInt(txtFirstNumberValue) + parseInt(txtSecondNumberValue);
 			if (!isNaN(result)) { document.getElementById('total2').value = result; }
 		}
 		function totalAnggaran3() {
-			var txtFirstNumberValue = document.getElementById('anggaranGasal3').value;
+			var txtFirstNumberValue = document.getElementById('anggaranGanjil3').value;
 			var txtSecondNumberValue = document.getElementById('anggaranGenap3').value;
 			var result = parseInt(txtFirstNumberValue) + parseInt(txtSecondNumberValue);
 			if (!isNaN(result)) { document.getElementById('total3').value = result; }
 		}
 		function totalAnggaran4() {
-			var txtFirstNumberValue = document.getElementById('anggaranGasal4').value;
+			var txtFirstNumberValue = document.getElementById('anggaranGanjil4').value;
 			var txtSecondNumberValue = document.getElementById('anggaranGenap4').value;
 			var result = parseInt(txtFirstNumberValue) + parseInt(txtSecondNumberValue);
 			if (!isNaN(result)) { document.getElementById('total4').value = result; }
 		}
 		function totalAnggaran5() {
-			var txtFirstNumberValue = document.getElementById('anggaranGasal5').value;
+			var txtFirstNumberValue = document.getElementById('anggaranGanjil5').value;
 			var txtSecondNumberValue = document.getElementById('anggaranGenap5').value;
 			var result = parseInt(txtFirstNumberValue) + parseInt(txtSecondNumberValue);
 			if (!isNaN(result)) { document.getElementById('total5').value = result; }
 		}
 
 		function totalKeseluruhan() {
-			var anggaranGasal1 = document.getElementById('anggaranGasal1').value;
-			var anggaranGasal2 = document.getElementById('anggaranGasal2').value;
-			var anggaranGasal3 = document.getElementById('anggaranGasal3').value;
-			var anggaranGasal4 = document.getElementById('anggaranGasal4').value;
-			var anggaranGasal5 = document.getElementById('anggaranGasal5').value;
+			var anggaranGanjil1 = document.getElementById('anggaranGanjil1').value;
+			var anggaranGanjil2 = document.getElementById('anggaranGanjil2').value;
+			var anggaranGanjil3 = document.getElementById('anggaranGanjil3').value;
+			var anggaranGanjil4 = document.getElementById('anggaranGanjil4').value;
+			var anggaranGanjil5 = document.getElementById('anggaranGanjil5').value;
 
 			var anggaranGenap1 = document.getElementById('anggaranGenap1').value;
 			var anggaranGenap2 = document.getElementById('anggaranGenap2').value;
@@ -496,7 +496,7 @@
 			var anggaranGenap4 = document.getElementById('anggaranGenap4').value;
 			var anggaranGenap5 = document.getElementById('anggaranGenap5').value;
 
-			var result1 = parseInt(anggaranGasal1) + parseInt(anggaranGasal2) + parseInt(anggaranGasal3) + parseInt(anggaranGasal4) + parseInt(anggaranGasal5);
+			var result1 = parseInt(anggaranGanjil1) + parseInt(anggaranGanjil2) + parseInt(anggaranGanjil3) + parseInt(anggaranGanjil4) + parseInt(anggaranGanjil5);
 			var result2 = parseInt(anggaranGenap1) + parseInt(anggaranGenap2) + parseInt(anggaranGenap3) + parseInt(anggaranGenap4) + parseInt(anggaranGenap5);
 			var result3 = parseInt(result1) + parseInt(result2);
 			

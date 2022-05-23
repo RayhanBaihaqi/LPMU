@@ -25,7 +25,7 @@ class Rkat extends BaseController
     {
         $model = new DetailRkatModel();
         $username = session('username');
-        $data['detail_rkat'] = $this->DetailRkatModel->gabung($username);
+        $data['detail_rkat2'] = $this->DetailRkatModel->gabung($username);
 
         return view('rkat/kesimpulan', $data);
     }
@@ -34,7 +34,7 @@ class Rkat extends BaseController
     {
         $model = new DetailRkatModel();
         $username = session('username');
-        $data['detail_rkat'] = $this->DetailRkatModel->gabung($username);
+        $data['detail_rkat2'] = $this->DetailRkatModel->gabung($username);
 
         return view('rkat/ListData', $data);
     }
@@ -43,12 +43,12 @@ class Rkat extends BaseController
         $model = new DetailRkatModel();
         $username = session('username');
         $data = [
-            'detail_rkat' => $this->DetailRkatModel->gabung($username),
+            'detail_rkat2' => $this->DetailRkatModel->gabung($username),
             'set_rkat' => $this->DetailRkatModel->tampilDataSetRKAT($username),
-            'pk' => $model->join('set_rkat', 'set_rkat.id_setrkat=detail_rkat.id_set')->join('user', 'user.id=set_rkat.id_user')->where('username', $username)->where('kategori', 'PK')->findAll(),
-            'ops' => $model->join('set_rkat', 'set_rkat.id_setrkat=detail_rkat.id_set')->join('user', 'user.id=set_rkat.id_user')->where('username', $username)->where('kategori', 'OPS')->findAll(),
-            'inv' => $model->join('set_rkat', 'set_rkat.id_setrkat=detail_rkat.id_set')->join('user', 'user.id=set_rkat.id_user')->where('username', $username)->where('kategori', 'INV')->findAll(),
-            'tahunAkademik' => $model-> join('tahun_akademik', 'tahun_akademik.id_tahun=detail_rkat.id_tahun')->join('set_rkat', 'set_rkat.id_setrkat=detail_rkat.id_set')->join('user', 'user.id=set_rkat.id_user')->where('username', $username)->where('aktif', '1')->findAll(),
+            'pk' => $model->join('set_rkat', 'set_rkat.id_setrkat=detail_rkat2.id_set')->join('user', 'user.id=set_rkat.id_user')->where('username', $username)->where('kategori', 'PK')->findAll(),
+            'ops' => $model->join('set_rkat', 'set_rkat.id_setrkat=detail_rkat2.id_set')->join('user', 'user.id=set_rkat.id_user')->where('username', $username)->where('kategori', 'OPS')->findAll(),
+            'inv' => $model->join('set_rkat', 'set_rkat.id_setrkat=detail_rkat2.id_set')->join('user', 'user.id=set_rkat.id_user')->where('username', $username)->where('kategori', 'INV')->findAll(),
+            'tahunAkademik' => $model-> join('tahun_akademik', 'tahun_akademik.id_tahun=detail_rkat2.id_tahun')->join('set_rkat', 'set_rkat.id_setrkat=detail_rkat2.id_set')->join('user', 'user.id=set_rkat.id_user')->where('username', $username)->where('aktif', '1')->findAll(),
         ];
         return view('rkat/RincianRkat', $data);
     }
@@ -69,7 +69,7 @@ class Rkat extends BaseController
         $jumlah = $this->request->getVar('jumlah');
         $kategori = $this->request->getVar('kategori');
         $anggaranGenap = $this->request->getVar('anggaranGenap');
-        $anggaranGasal = $this->request->getVar('anggaranGasal');
+        $anggaranGanjil = $this->request->getVar('anggaranGanjil');
         $no_kegiatan = $this->request->getVar('no_kegiatan');
         $indikator = $this->request->getVar('indikator');
         $kpi = $this->request->getVar('kpi');
@@ -85,7 +85,7 @@ class Rkat extends BaseController
             $this->DetailRkatModel->insert([
                 'kategori' => $kategori[$i],
                 'anggaranGenap' => $anggaranGenap[$i],
-                'anggaranGasal' => $anggaranGasal[$i],
+                'anggaranGanjil' => $anggaranGanjil[$i],
                 'no_kegiatan' => $no_kegiatan[$i],
                 'indikator' => $indikator[$i],
                 'kpi' => $kpi[$i],
@@ -108,7 +108,7 @@ class Rkat extends BaseController
     public function editbyuser($id = null)
     {
         $model = new DetailRkatModel();
-        $data['detail_rkat'] = $model->where('id', $id)->first();
+        $data['detail_rkat2'] = $model->where('id', $id)->first();
 
         return view('rkat/EditDataRkat', $data);
     }
@@ -158,7 +158,7 @@ class Rkat extends BaseController
     public function deletebyuser($id = null)
     {
         $model = new DetailRkatModel();
-        $data['detail_rkat'] = $model->where('id', $id)->delete();
+        $data['detail_rkat2'] = $model->where('id', $id)->delete();
 
         return redirect()->to(base_url('rkat/indexbyuser'));
     }
@@ -202,7 +202,7 @@ class Rkat extends BaseController
     {
         $model = new DetailRkatModel();
         $data = [
-            'detail_rkat' => $model->join('user', 'user.id=detail_rkat.id_user')->orderBy('id_rkat', 'DESC')->findAll(),
+            'detail_rkat2' => $model->join('user', 'user.id=detail_rkat2.id_user')->orderBy('id_rkat', 'DESC')->findAll(),
 
         ];
         return view('admin/ListRkat', $data);
@@ -223,7 +223,7 @@ class Rkat extends BaseController
         $jumlah = $this->request->getVar('jumlah');
         $kategori = $this->request->getVar('kategori');
         $anggaranGenap = $this->request->getVar('anggaranGenap');
-        $anggaranGasal = $this->request->getVar('anggaranGasal');
+        $anggaranGanjil = $this->request->getVar('anggaranGanjil');
         $no_kegiatan = $this->request->getVar('no_kegiatan');
         $indikator = $this->request->getVar('indikator');
         $kpi = $this->request->getVar('kpi');
@@ -239,7 +239,7 @@ class Rkat extends BaseController
             $this->DetailRkatModel->insert([
                 'kategori' => $kategori[$i],
                 'anggaranGenap' => $anggaranGenap[$i],
-                'anggaranGasal' => $anggaranGasal[$i],
+                'anggaranGanjil' => $anggaranGanjil[$i],
                 'no_kegiatan' => $no_kegiatan[$i],
                 'indikator' => $indikator[$i],
                 'kpi' => $kpi[$i],
@@ -262,7 +262,7 @@ class Rkat extends BaseController
     public function editbyadmin($id_rkat = null)
     {
         $model = new DetailRkatModel();
-        $data['detail_rkat'] = $model->where('id_rkat', $id_rkat)->first();
+        $data['detail_rkat2'] = $model->where('id_rkat', $id_rkat)->first();
         // print_r($data);exit();
 
         return view('/admin/EditRkat', $data);
@@ -275,7 +275,7 @@ class Rkat extends BaseController
         $data = [
             'kategori' => $this->request->getVar('kategori'),
             'anggaranGenap' => $this->request->getVar('anggaranGenap'),
-            'anggaranGasal' => $this->request->getVar('anggaranGasal'),
+            'anggaranGanjil' => $this->request->getVar('anggaranGanjil'),
             'no_kegiatan' => $this->request->getVar('no_kegiatan'),
             'indikator' => $this->request->getVar('indikator'),
             'kpi' => $this->request->getVar('kpi'),
@@ -296,7 +296,7 @@ class Rkat extends BaseController
     public function deletebyadmin($id = null)
     {
         $model = new DetailRkatModel();
-        $data['detail_rkat'] = $model->where('id', $id)->delete();
+        $data['detail_rkat2'] = $model->where('id', $id)->delete();
 
         return redirect()->to(base_url('rkat/indexbyadmin'));
     }

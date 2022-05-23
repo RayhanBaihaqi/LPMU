@@ -196,7 +196,7 @@
 										<input type="text" class="form-control form-control-sm" id="nama_kegiatan" placeholder="Nama Kegiatan" name="nama_kegiatan[]" required>
 									</td>
 									<td>
-										<input type="text" class="form-control form-control-sm" id="anggaranGasal" placeholder="Rp. 1,000,000" name="anggaranGasal[]" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" required>
+										<input type="text" class="form-control form-control-sm" id="anggaranGanjil" placeholder="Rp. 1,000,000" name="anggaranGanjil[]" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" required>
 									</td>
 									<td>
 										<input type="text" class="form-control form-control-sm" id="anggaranGenap" placeholder="Rp. 1,000,000" name="anggaranGenap[]" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" required>
@@ -231,14 +231,14 @@
 		</form>
 
 	<script>
-		anggaranGasal = document.formD.anggaranGasal.value;
-   		document.formD.total.value = anggaranGasal;
+		anggaranGanjil = document.formD.anggaranGanjil.value;
+   		document.formD.total.value = anggaranGanjil;
 		anggaranGenap = document.formD.anggaranGenap.value;
    		document.formD.total.value = anggaranGenap;
 		function OnChange(value){
-			anggaranGasal = document.formD.anggaranGasal.value;
+			anggaranGanjil = document.formD.anggaranGanjil.value;
 			anggaranGenap = document.formD.anggaranGenap.value;
-			total = parseInt(anggaranGasal) + parseInt(anggaranGenap);
+			total = parseInt(anggaranGanjil) + parseInt(anggaranGenap);
      		document.formD.total.value = total;
 		}
 	</script>

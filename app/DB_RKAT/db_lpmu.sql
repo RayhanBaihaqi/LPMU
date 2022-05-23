@@ -25,14 +25,14 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `detail_rkat`
+-- Struktur dari tabel `detail_rkat2`
 --
 
-CREATE TABLE `detail_rkat` (
+CREATE TABLE `detail_rkat2` (
   `id` int(20) NOT NULL,
   `kategori` varchar(10) NOT NULL,
   `anggaranGenap` int(100) NOT NULL,
-  `anggaranGasal` int(100) NOT NULL,
+  `anggaranGanjil` int(100) NOT NULL,
   `no_kegiatan` varchar(50) NOT NULL,
   `indikator` varchar(255) NOT NULL,
   `target` varchar(100) NOT NULL,
@@ -45,10 +45,10 @@ CREATE TABLE `detail_rkat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `detail_rkat`
+-- Dumping data untuk tabel `detail_rkat2`
 --
 
-INSERT INTO `detail_rkat` (`id`, `kategori`, `anggaranGenap`, `anggaranGasal`, `no_kegiatan`, `indikator`, `target`, `nama_kegiatan`, `kpi`, `butir`, `total`, `id_set`, `tahunAkademik`) VALUES
+INSERT INTO `detail_rkat2` (`id`, `kategori`, `anggaranGenap`, `anggaranGanjil`, `no_kegiatan`, `indikator`, `target`, `nama_kegiatan`, `kpi`, `butir`, `total`, `id_set`, `tahunAkademik`) VALUES
 (63, 'PK', 2, 1, '3', 'test ke sekian 1', '2', 'Testing 1', '3', '2', '3', 3, ''),
 (64, 'OPS', 4, 3, '3', 'test ke sekian 2', '3', 'Testing 2', '3', '1', '7', 3, ''),
 (65, 'OPS', 4, 2, '3', 'test ke sekian 3', '2', 'Testing 3', '4', '3', '6', 3, ''),
@@ -123,9 +123,9 @@ INSERT INTO `user` (`id`, `username`, `password`, `nama_prodi`, `created_at`, `u
 --
 
 --
--- Indeks untuk tabel `detail_rkat`
+-- Indeks untuk tabel `detail_rkat2`
 --
-ALTER TABLE `detail_rkat`
+ALTER TABLE `detail_rkat2`
   ADD PRIMARY KEY (`id`),
   ADD KEY `FOREIGN` (`id_set`);
 
@@ -147,9 +147,9 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT untuk tabel `detail_rkat`
+-- AUTO_INCREMENT untuk tabel `detail_rkat2`
 --
-ALTER TABLE `detail_rkat`
+ALTER TABLE `detail_rkat2`
   MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
@@ -169,9 +169,9 @@ ALTER TABLE `user`
 --
 
 --
--- Ketidakleluasaan untuk tabel `detail_rkat`
+-- Ketidakleluasaan untuk tabel `detail_rkat2`
 --
-ALTER TABLE `detail_rkat`
+ALTER TABLE `detail_rkat2`
   ADD CONSTRAINT `FOREIGN` FOREIGN KEY (`id_set`) REFERENCES `set_rkat` (`id_setrkat`);
 
 --

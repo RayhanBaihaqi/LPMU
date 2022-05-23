@@ -19,7 +19,7 @@ class CapaianRkat extends BaseController
     public function indexcapaianbyuser()
     {
         $model = new DetailRkatModel();
-        $data['detail_rkat'] = $this->DetailRkatModel->gabungkpi();
+        $data['detail_rkat2'] = $this->DetailRkatModel->gabungkpi();
 
         return view('rkat/ListData', $data);
     }
@@ -27,15 +27,16 @@ class CapaianRkat extends BaseController
         $model = new DetailRkatModel();
         $username = session('username');
         $data = [
-            // 'detail_rkat' => $model->join('set_rkat', 'set_rkat.id_setrkat = detail_rkat.id_set')->join('user', 'user.id=set_rkat.id_user')->where('username',$username)->findAll(),
+            // 'detail_rkat2' => $model->join('set_rkat', 'set_rkat.id_setrkat = detail_rkat2.id_set')->join('user', 'user.id=set_rkat.id_user')->where('username',$username)->findAll(),
             'tahunAkademik' => $this->TahunAkademikModel->where('aktif', '1')->first(),
-            'tahunAkademik2' => $model-> join('tahun_akademik', 'tahun_akademik.id_tahun=detail_rkat.id_tahun')->
-                                         join('pagu_rkat', 'pagu_rkat.id_pagu=detail_rkat.id_pagu')->
+            'pagu_rkat' => $this->DetailRkatModel->tampilDataSetRKAT($username),
+            'tahunAkademik2' => $model-> join('tahun_akademik', 'tahun_akademik.id_tahun=detail_rkat2.id_tahun')->
+                                         join('pagu_rkat', 'pagu_rkat.id_pagu=detail_rkat2.id_pagu')->
                                          join('user', 'user.id=pagu_rkat.id_user')->
                                          where('username', $username)->
                                          where('aktif', '1')->
                                          findAll(),
-            // 'count_detail_rkat' => $model->join('set_rkat', 'set_rkat.id_setrkat = detail_rkat.id_set')->join('user', 'user.id=set_rkat.id_user')->where('username',$username)->countAllResults()
+            // 'count_detail_rkat2' => $model->join('set_rkat', 'set_rkat.id_setrkat = detail_rkat2.id_set')->join('user', 'user.id=set_rkat.id_user')->where('username',$username)->countAllResults()
         ];
         return view('rkat/FormCapaian', $data);
     }
@@ -66,7 +67,7 @@ class CapaianRkat extends BaseController
 	}
     public function editcapaianbyuser($id = null) {
         $model = new DetailRkatModel();
-        $data['detail_rkat'] = $model->where('id',$id)->first();
+        $data['detail_rkat2'] = $model->where('id',$id)->first();
 
         return view('rkat/EditDataRkat',$data);
     }
@@ -89,7 +90,7 @@ class CapaianRkat extends BaseController
     }
     public function deletecapaianbyuser($id = null) {
         $model = new DetailRkatModel();
-        $data['detail_rkat'] = $model->where('id',$id)->delete();
+        $data['detail_rkat2'] = $model->where('id',$id)->delete();
 
         return redirect()->to(base_url('rkat/indexbyuser'));
     }

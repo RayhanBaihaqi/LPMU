@@ -136,10 +136,10 @@
 								</tr>
 							</thead>
 							<tbody id="nilai">
-								<?php if ($detail_rkat) : ?>
+								<?php if ($detail_rkat2) : ?>
 									<?php
 									$no = 1;
-									foreach ($detail_rkat as $reading) : ?>
+									foreach ($detail_rkat2 as $reading) : ?>
 										<input required type="hidden" name="id_set" value="<?= $reading['id_set']; ?>">
 										<tr>
 											<td><?= $no; ?></td>
@@ -152,7 +152,7 @@
 												</ul>
 											</td>
 											<td><?= $reading['target']; ?></td>
-											<td><input type="text" class="form-control form-control-sm" id="aGanjil<?= $no; ?>" value="<?= $reading['anggaranGasal']; ?>" disabled /></td>
+											<td><input type="text" class="form-control form-control-sm" id="aGanjil<?= $no; ?>" value="<?= $reading['anggaranGanjil']; ?>" disabled /></td>
 											<td>
 												<input style="display: none;" required type="text" name="id[]" id="id" value="<?= $reading['id_rkat']; ?>">
 												<input type="text" class="form-control form-control-sm" id="serapGasal<?= $no; ?>" placeholder="Rp. 0" name="serapGanjil[]" onkeyup="AddInputs(this.id);" required>
@@ -318,10 +318,10 @@
 	</script> -->
 	<!-- <script>
 		$(".perhitungan").keyup(function(){
-			var anggaranGasal = pareseInt($("#anggaranGasal").val())
+			var anggaranGanjil = pareseInt($("#anggaranGanjil").val())
 			var SerapGasal = pareseInt($("#SerapGasal").val())
 
-			var hasilSerapGasal = (anggaranGasal / SerapanGasal) * 100;
+			var hasilSerapGasal = (anggaranGanjil / SerapanGasal) * 100;
 			$("#hasilSerapGasal").atter("value", hasilSerapGasal)
 		});
 	</script> -->
