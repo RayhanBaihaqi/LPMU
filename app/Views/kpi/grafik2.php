@@ -169,23 +169,312 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>2018/2019</td>
-                                        <td></td>
+                                        <?php
+                                        foreach ($hasilkpi1_18 as $rows) :
+                                        ?>
+                                            <td>2018/2019</td>
+                                            <td><?php echo $rows->jumlahkpi1_18; ?></td>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                        <?php
+                                        foreach ($hasilkpi2_18 as $rows) :
+                                        ?>
+                                            <td><?php echo $rows->jumlahkpi2_18; ?></td>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                        <?php
+                                        foreach ($hasilkpi3_18 as $rows) :
+                                        ?>
+                                            <td><?php echo $rows->jumlahkpi3_18; ?></td>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                        <?php
+                                        foreach ($hasilkpi4_18 as $rows) :
+                                        ?>
+                                            <td><?php echo $rows->jumlahkpi4_18; ?></td>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                        <?php
+                                        foreach ($hasilkpi5_18 as $rows) :
+                                        ?>
+                                            <td><?php echo $rows->jumlahkpi5_18; ?></td>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                        <?php
+                                        foreach ($hasilkpi6_18 as $rows) :
+                                        ?>
+                                            <td><?php echo $rows->jumlahkpi6_18; ?></td>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                        <?php
+                                        foreach ($hasilkpi7_18 as $rows) :
+                                        ?>
+                                            <td><?php echo $rows->jumlahkpi7_18; ?></td>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                        <?php
+                                        foreach ($hasilkpi8_18 as $rows) :
+                                        ?>
+                                            <td><?php echo $rows->jumlahkpi8_18; ?></td>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                        <?php
+                                        foreach ($hasilkpi9_18 as $rows) :
+                                        ?>
+                                            <td><?php echo $rows->jumlahkpi9_18; ?></td>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                        <?php
+                                        foreach ($totalkpi18 as $rows) :
+                                        ?>
+                                            <td><?php echo $rows->tot_18; ?></td>
+                                        <?php
+                                        endforeach;
+                                        ?>
+
                                     </tr>
                                     <tr>
-                                        <td>2019/2020</td>
-                                        <td></td>
+                                        <?php
+                                        foreach ($hasilkpi1_19 as $rows) :
+                                        ?>
+                                            <td>2019/2020</td>
+                                            <td><?php echo $rows->jumlahkpi1_19; ?></td>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                        <?php
+                                        foreach ($hasilkpi2_19 as $rows) :
+                                        ?>
+                                            <td><?php echo $rows->jumlahkpi2_19; ?></td>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                        <?php
+                                        foreach ($hasilkpi3_19 as $rows) :
+                                        ?>
+                                            <td><?php echo $rows->jumlahkpi3_19; ?></td>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                        <?php
+                                        foreach ($hasilkpi4_19 as $rows) :
+                                        ?>
+                                            <td><?php echo $rows->jumlahkpi4_19; ?></td>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                        <?php
+                                        foreach ($hasilkpi5_19 as $rows) :
+                                        ?>
+                                            <td><?php echo $rows->jumlahkpi5_19; ?></td>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                        <?php
+                                        foreach ($hasilkpi6_19 as $rows) :
+                                        ?>
+                                            <td><?php echo $rows->jumlahkpi6_19; ?></td>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                        <?php
+                                        foreach ($hasilkpi7_19 as $rows) :
+                                        ?>
+                                            <td><?php echo $rows->jumlahkpi7_19; ?></td>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                        <?php
+                                        foreach ($hasilkpi8_19 as $rows) :
+                                        ?>
+                                            <td><?php echo $rows->jumlahkpi8_19; ?></td>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                        <?php
+                                        foreach ($hasilkpi9_19 as $rows) :
+                                        ?>
+                                            <td><?php echo $rows->jumlahkpi9_19; ?></td>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                        <?php
+                                        foreach ($totalkpi19 as $rows) :
+                                        ?>
+                                            <td><?php echo $rows->tot_19; ?></td>
+                                        <?php
+                                        endforeach;
+                                        ?>
                                     </tr>
                                     <tr>
-                                        <td>2020/2021</td>
-                                        <td></td>
+                                        <?php
+                                        foreach ($hasilkpi1_20 as $rows) :
+                                        ?>
+                                            <td>2020/2021</td>
+                                            <td><?php echo $rows->jumlahkpi1_20; ?></td>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                        <?php
+                                        foreach ($hasilkpi2_20 as $rows) :
+                                        ?>
+                                            <td><?php echo $rows->jumlahkpi2_20; ?></td>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                        <?php
+                                        foreach ($hasilkpi3_20 as $rows) :
+                                        ?>
+                                            <td><?php echo $rows->jumlahkpi3_20; ?></td>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                        <?php
+                                        foreach ($hasilkpi4_20 as $rows) :
+                                        ?>
+                                            <td><?php echo $rows->jumlahkpi4_20; ?></td>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                        <?php
+                                        foreach ($hasilkpi5_20 as $rows) :
+                                        ?>
+                                            <td><?php echo $rows->jumlahkpi5_20; ?></td>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                        <?php
+                                        foreach ($hasilkpi6_20 as $rows) :
+                                        ?>
+                                            <td><?php echo $rows->jumlahkpi6_20; ?></td>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                        <?php
+                                        foreach ($hasilkpi7_20 as $rows) :
+                                        ?>
+                                            <td><?php echo $rows->jumlahkpi7_20; ?></td>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                        <?php
+                                        foreach ($hasilkpi8_20 as $rows) :
+                                        ?>
+                                            <td><?php echo $rows->jumlahkpi8_20; ?></td>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                        <?php
+                                        foreach ($hasilkpi9_20 as $rows) :
+                                        ?>
+                                            <td><?php echo $rows->jumlahkpi9_20; ?></td>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                        <?php
+                                        foreach ($totalkpi20 as $rows) :
+                                        ?>
+                                            <td><?php echo $rows->tot_20; ?></td>
+                                        <?php
+                                        endforeach;
+                                        ?>
                                     </tr>
                                     <tr>
-                                        <td>2021/2022</td>
-                                        <td></td>
+                                        <?php
+                                        foreach ($hasilkpi1_21 as $rows) :
+                                        ?>
+                                            <td>2021/2022</td>
+                                            <td><?php echo $rows->jumlahkpi1_21; ?></td>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                        <?php
+                                        foreach ($hasilkpi2_21 as $rows) :
+                                        ?>
+                                            <td><?php echo $rows->jumlahkpi2_21; ?></td>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                        <?php
+                                        foreach ($hasilkpi3_21 as $rows) :
+                                        ?>
+                                            <td><?php echo $rows->jumlahkpi3_21; ?></td>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                        <?php
+                                        foreach ($hasilkpi4_21 as $rows) :
+                                        ?>
+                                            <td><?php echo $rows->jumlahkpi4_21; ?></td>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                        <?php
+                                        foreach ($hasilkpi5_21 as $rows) :
+                                        ?>
+                                            <td><?php echo $rows->jumlahkpi5_21; ?></td>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                        <?php
+                                        foreach ($hasilkpi6_21 as $rows) :
+                                        ?>
+                                            <td><?php echo $rows->jumlahkpi6_21; ?></td>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                        <?php
+                                        foreach ($hasilkpi7_21 as $rows) :
+                                        ?>
+                                            <td><?php echo $rows->jumlahkpi7_21; ?></td>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                        <?php
+                                        foreach ($hasilkpi8_21 as $rows) :
+                                        ?>
+                                            <td><?php echo $rows->jumlahkpi8_21; ?></td>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                        <?php
+                                        foreach ($hasilkpi9_21 as $rows) :
+                                        ?>
+                                            <td><?php echo $rows->jumlahkpi9_21; ?></td>
+                                        <?php
+                                        endforeach;
+                                        ?>
+                                        <?php
+                                        foreach ($totalkpi21 as $rows) :
+                                        ?>
+                                            <td><?php echo $rows->tot_21; ?></td>
+                                        <?php
+                                        endforeach;
+                                        ?>
                                     </tr>
 
                                 </tbody>
+                                <!-- <tfoot>
+                                    <tr>
+                                        <td>Terkecil</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Terbesar</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rata-rata</td>
+                                    </tr>
+
+                                </tfoot> -->
                             </table>
                         </div>
                     </div>

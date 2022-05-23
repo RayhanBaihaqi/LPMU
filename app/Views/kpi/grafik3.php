@@ -141,20 +141,23 @@
 
 
         </div>
+
         <?php
         //print_r($tampilgrafikkpi);
 
         foreach ($tampilgrafikkpi as $key => $value) {
             $nilai_bobot[] = $value['nilai_bobot'];
             $id[] = $value['id'];
-            $tahun_ajaran = $value['tahun_ajaran'];
         }
-        echo json_encode($id)
+        echo json_encode($nilai_bobot)
         ?>
+
+        <!-- <?php
+                //foreach ($tampilgrafikkpi as $key => $value) :  $id[] = $value['id'];
+                // endforeach; 
+                ?> -->
         <div class="container col-lg-12">
             <section class="content">
-
-
                 <!-- BAR CHART -->
                 <div class="card card-success">
                     <div class="card-header">
