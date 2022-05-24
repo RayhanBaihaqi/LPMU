@@ -107,42 +107,52 @@ class Kpi extends BaseController
 		$nama_prodi = session('nama_prodi');
 		$data = [
 			'tampiltabelkpi' => $tabelcapaiankpi->get_tabel(),
+			//standar 1 per TA
 			'hasilkpi1_18' => $tabelcapaiankpi->hitungkpi1_18($nama_prodi)->getResult(),
 			'hasilkpi1_19' => $tabelcapaiankpi->hitungkpi1_19($nama_prodi)->getResult(),
 			'hasilkpi1_20' => $tabelcapaiankpi->hitungkpi1_20($nama_prodi)->getResult(),
 			'hasilkpi1_21' => $tabelcapaiankpi->hitungkpi1_21($nama_prodi)->getResult(),
+			//standar 2 per TA
 			'hasilkpi2_18' => $tabelcapaiankpi->hitungkpi2_18($nama_prodi)->getResult(),
 			'hasilkpi2_19' => $tabelcapaiankpi->hitungkpi2_19($nama_prodi)->getResult(),
 			'hasilkpi2_20' => $tabelcapaiankpi->hitungkpi2_20($nama_prodi)->getResult(),
 			'hasilkpi2_21' => $tabelcapaiankpi->hitungkpi2_21($nama_prodi)->getResult(),
+			//standar 3 per TA
 			'hasilkpi3_18' => $tabelcapaiankpi->hitungkpi3_18($nama_prodi)->getResult(),
 			'hasilkpi3_19' => $tabelcapaiankpi->hitungkpi3_19($nama_prodi)->getResult(),
 			'hasilkpi3_20' => $tabelcapaiankpi->hitungkpi3_20($nama_prodi)->getResult(),
 			'hasilkpi3_21' => $tabelcapaiankpi->hitungkpi3_21($nama_prodi)->getResult(),
+			//standar 4 per TA
 			'hasilkpi4_18' => $tabelcapaiankpi->hitungkpi4_18($nama_prodi)->getResult(),
 			'hasilkpi4_19' => $tabelcapaiankpi->hitungkpi4_19($nama_prodi)->getResult(),
 			'hasilkpi4_20' => $tabelcapaiankpi->hitungkpi4_20($nama_prodi)->getResult(),
 			'hasilkpi4_21' => $tabelcapaiankpi->hitungkpi4_21($nama_prodi)->getResult(),
+			//standar 5 per TA
 			'hasilkpi5_18' => $tabelcapaiankpi->hitungkpi5_18($nama_prodi)->getResult(),
 			'hasilkpi5_19' => $tabelcapaiankpi->hitungkpi5_19($nama_prodi)->getResult(),
 			'hasilkpi5_20' => $tabelcapaiankpi->hitungkpi5_20($nama_prodi)->getResult(),
 			'hasilkpi5_21' => $tabelcapaiankpi->hitungkpi5_21($nama_prodi)->getResult(),
+			//standar 6 per TA
 			'hasilkpi6_18' => $tabelcapaiankpi->hitungkpi6_18($nama_prodi)->getResult(),
 			'hasilkpi6_19' => $tabelcapaiankpi->hitungkpi6_19($nama_prodi)->getResult(),
 			'hasilkpi6_20' => $tabelcapaiankpi->hitungkpi6_20($nama_prodi)->getResult(),
 			'hasilkpi6_21' => $tabelcapaiankpi->hitungkpi6_21($nama_prodi)->getResult(),
+			//standar 7 per TA
 			'hasilkpi7_18' => $tabelcapaiankpi->hitungkpi7_18($nama_prodi)->getResult(),
 			'hasilkpi7_19' => $tabelcapaiankpi->hitungkpi7_19($nama_prodi)->getResult(),
 			'hasilkpi7_20' => $tabelcapaiankpi->hitungkpi7_20($nama_prodi)->getResult(),
 			'hasilkpi7_21' => $tabelcapaiankpi->hitungkpi7_21($nama_prodi)->getResult(),
+			//standar 8 per TA
 			'hasilkpi8_18' => $tabelcapaiankpi->hitungkpi8_18($nama_prodi)->getResult(),
 			'hasilkpi8_19' => $tabelcapaiankpi->hitungkpi8_19($nama_prodi)->getResult(),
 			'hasilkpi8_20' => $tabelcapaiankpi->hitungkpi8_20($nama_prodi)->getResult(),
 			'hasilkpi8_21' => $tabelcapaiankpi->hitungkpi8_21($nama_prodi)->getResult(),
+			//standar 9 per TA
 			'hasilkpi9_18' => $tabelcapaiankpi->hitungkpi9_18($nama_prodi)->getResult(),
 			'hasilkpi9_19' => $tabelcapaiankpi->hitungkpi9_19($nama_prodi)->getResult(),
 			'hasilkpi9_20' => $tabelcapaiankpi->hitungkpi9_20($nama_prodi)->getResult(),
 			'hasilkpi9_21' => $tabelcapaiankpi->hitungkpi9_21($nama_prodi)->getResult(),
+			//jumlah nilai bobot KPI per TA
 			'totalkpi18' => $tabelcapaiankpi->jmlkpi18($nama_prodi)->getResult(),
 			'totalkpi19' => $tabelcapaiankpi->jmlkpi19($nama_prodi)->getResult(),
 			'totalkpi20' => $tabelcapaiankpi->jmlkpi20($nama_prodi)->getResult(),
@@ -156,10 +166,55 @@ class Kpi extends BaseController
 
 		// $this->DataCapaianKpiModel = new DataCapaianKpiModel();
 		$grafikcapaiankpi = new DataCapaianKpiModel();
-		$username = session('username');
+		$nama_prodi = session('nama_prodi');
 		//for ($i = 0; $i < count($id); $i++) {
 		$data = [
 			'tampilgrafikkpi' => $grafikcapaiankpi->get_grafik(),
+			//standar 1 per TA
+			'hasilkpi1_18' => $grafikcapaiankpi->hitungkpi1_18($nama_prodi)->getResultArray(),
+			'hasilkpi1_19' => $grafikcapaiankpi->hitungkpi1_19($nama_prodi)->getResultArray(),
+			'hasilkpi1_20' => $grafikcapaiankpi->hitungkpi1_20($nama_prodi)->getResultArray(),
+			'hasilkpi1_21' => $grafikcapaiankpi->hitungkpi1_21($nama_prodi)->getResultArray(),
+			//standar 2 per TA
+			'hasilkpi2_18' => $grafikcapaiankpi->hitungkpi2_18($nama_prodi)->getResultArray(),
+			'hasilkpi2_19' => $grafikcapaiankpi->hitungkpi2_19($nama_prodi)->getResultArray(),
+			'hasilkpi2_20' => $grafikcapaiankpi->hitungkpi2_20($nama_prodi)->getResultArray(),
+			'hasilkpi2_21' => $grafikcapaiankpi->hitungkpi2_21($nama_prodi)->getResultArray(),
+			//standar 3 per TA
+			'hasilkpi3_18' => $grafikcapaiankpi->hitungkpi3_18($nama_prodi)->getResultArray(),
+			'hasilkpi3_19' => $grafikcapaiankpi->hitungkpi3_19($nama_prodi)->getResultArray(),
+			'hasilkpi3_20' => $grafikcapaiankpi->hitungkpi3_20($nama_prodi)->getResultArray(),
+			'hasilkpi3_21' => $grafikcapaiankpi->hitungkpi3_21($nama_prodi)->getResultArray(),
+			//standar 4 per TA
+			'hasilkpi4_18' => $grafikcapaiankpi->hitungkpi4_18($nama_prodi)->getResultArray(),
+			'hasilkpi4_19' => $grafikcapaiankpi->hitungkpi4_19($nama_prodi)->getResultArray(),
+			'hasilkpi4_20' => $grafikcapaiankpi->hitungkpi4_20($nama_prodi)->getResultArray(),
+			'hasilkpi4_21' => $grafikcapaiankpi->hitungkpi4_21($nama_prodi)->getResultArray(),
+			//standar 5 per TA
+			'hasilkpi5_18' => $grafikcapaiankpi->hitungkpi5_18($nama_prodi)->getResultArray(),
+			'hasilkpi5_19' => $grafikcapaiankpi->hitungkpi5_19($nama_prodi)->getResultArray(),
+			'hasilkpi5_20' => $grafikcapaiankpi->hitungkpi5_20($nama_prodi)->getResultArray(),
+			'hasilkpi5_21' => $grafikcapaiankpi->hitungkpi5_21($nama_prodi)->getResultArray(),
+			//standar 6 per TA
+			'hasilkpi6_18' => $grafikcapaiankpi->hitungkpi6_18($nama_prodi)->getResultArray(),
+			'hasilkpi6_19' => $grafikcapaiankpi->hitungkpi6_19($nama_prodi)->getResultArray(),
+			'hasilkpi6_20' => $grafikcapaiankpi->hitungkpi6_20($nama_prodi)->getResultArray(),
+			'hasilkpi6_21' => $grafikcapaiankpi->hitungkpi6_21($nama_prodi)->getResultArray(),
+			//standar 7 per TA
+			'hasilkpi7_18' => $grafikcapaiankpi->hitungkpi7_18($nama_prodi)->getResultArray(),
+			'hasilkpi7_19' => $grafikcapaiankpi->hitungkpi7_19($nama_prodi)->getResultArray(),
+			'hasilkpi7_20' => $grafikcapaiankpi->hitungkpi7_20($nama_prodi)->getResultArray(),
+			'hasilkpi7_21' => $grafikcapaiankpi->hitungkpi7_21($nama_prodi)->getResultArray(),
+			//standar 8 per TA
+			'hasilkpi8_18' => $grafikcapaiankpi->hitungkpi8_18($nama_prodi)->getResultArray(),
+			'hasilkpi8_19' => $grafikcapaiankpi->hitungkpi8_19($nama_prodi)->getResultArray(),
+			'hasilkpi8_20' => $grafikcapaiankpi->hitungkpi8_20($nama_prodi)->getResultArray(),
+			'hasilkpi8_21' => $grafikcapaiankpi->hitungkpi8_21($nama_prodi)->getResultArray(),
+			//standar 9 per TA
+			'hasilkpi9_18' => $grafikcapaiankpi->hitungkpi9_18($nama_prodi)->getResultArray(),
+			'hasilkpi9_19' => $grafikcapaiankpi->hitungkpi9_19($nama_prodi)->getResultArray(),
+			'hasilkpi9_20' => $grafikcapaiankpi->hitungkpi9_20($nama_prodi)->getResultArray(),
+			'hasilkpi9_21' => $grafikcapaiankpi->hitungkpi9_21($nama_prodi)->getResultArray(),
 
 
 			// 'tampilgrafikkpi' => $this->DataCapaianKpiModel->get_grafik(),

@@ -142,20 +142,86 @@
 
         </div>
 
-        <?php
-        //print_r($tampilgrafikkpi);
+        <!-- foreach ambil hasil penjumlahan nilai bobot KPI TA 2018 -->
+        <?php foreach ($hasilkpi1_18 as $key => $value) : $jumlahkpi1_18 = $value['jumlahkpi1_18'];
+        endforeach; ?>
+        <?php foreach ($hasilkpi2_18 as $key => $value) : $jumlahkpi2_18 = $value['jumlahkpi2_18'];
+        endforeach; ?>
+        <?php foreach ($hasilkpi3_18 as $key => $value) : $jumlahkpi3_18 = $value['jumlahkpi3_18'];
+        endforeach; ?>
+        <?php foreach ($hasilkpi4_18 as $key => $value) : $jumlahkpi4_18 = $value['jumlahkpi4_18'];
+        endforeach; ?>
+        <?php foreach ($hasilkpi5_18 as $key => $value) : $jumlahkpi5_18 = $value['jumlahkpi5_18'];
+        endforeach; ?>
+        <?php foreach ($hasilkpi6_18 as $key => $value) : $jumlahkpi6_18 = $value['jumlahkpi6_18'];
+        endforeach; ?>
+        <?php foreach ($hasilkpi7_18 as $key => $value) : $jumlahkpi7_18 = $value['jumlahkpi7_18'];
+        endforeach; ?>
+        <?php foreach ($hasilkpi8_18 as $key => $value) : $jumlahkpi8_18 = $value['jumlahkpi8_18'];
+        endforeach; ?>
+        <?php foreach ($hasilkpi9_18 as $key => $value) : $jumlahkpi9_18 = $value['jumlahkpi9_18'];
+        endforeach; ?>
 
-        foreach ($tampilgrafikkpi as $key => $value) {
-            $nilai_bobot[] = $value['nilai_bobot'];
-            $id[] = $value['id'];
-        }
-        echo json_encode($nilai_bobot)
-        ?>
+        <!-- foreach ambil hasil penjumlahan nilai bobot KPI TA 2019 -->
+        <?php foreach ($hasilkpi1_19 as $key => $value) : $jumlahkpi1_19 = $value['jumlahkpi1_19'];
+        endforeach; ?>
+        <?php foreach ($hasilkpi2_19 as $key => $value) : $jumlahkpi2_19 = $value['jumlahkpi2_19'];
+        endforeach; ?>
+        <?php foreach ($hasilkpi3_19 as $key => $value) : $jumlahkpi3_19 = $value['jumlahkpi3_19'];
+        endforeach; ?>
+        <?php foreach ($hasilkpi4_19 as $key => $value) : $jumlahkpi4_19 = $value['jumlahkpi4_19'];
+        endforeach; ?>
+        <?php foreach ($hasilkpi5_19 as $key => $value) : $jumlahkpi5_19 = $value['jumlahkpi5_19'];
+        endforeach; ?>
+        <?php foreach ($hasilkpi6_19 as $key => $value) : $jumlahkpi6_19 = $value['jumlahkpi6_19'];
+        endforeach; ?>
+        <?php foreach ($hasilkpi7_19 as $key => $value) : $jumlahkpi7_19 = $value['jumlahkpi7_19'];
+        endforeach; ?>
+        <?php foreach ($hasilkpi8_19 as $key => $value) : $jumlahkpi8_19 = $value['jumlahkpi8_19'];
+        endforeach; ?>
+        <?php foreach ($hasilkpi9_19 as $key => $value) : $jumlahkpi9_19 = $value['jumlahkpi9_19'];
+        endforeach; ?>
 
-        <!-- <?php
-                //foreach ($tampilgrafikkpi as $key => $value) :  $id[] = $value['id'];
-                // endforeach; 
-                ?> -->
+        <!-- foreach ambil hasil penjumlahan nilai bobot KPI TA 2020 -->
+        <?php foreach ($hasilkpi1_20 as $key => $value) : $jumlahkpi1_20 = $value['jumlahkpi1_20'];
+        endforeach; ?>
+        <?php foreach ($hasilkpi2_20 as $key => $value) : $jumlahkpi2_20 = $value['jumlahkpi2_20'];
+        endforeach; ?>
+        <?php foreach ($hasilkpi3_20 as $key => $value) : $jumlahkpi3_20 = $value['jumlahkpi3_20'];
+        endforeach; ?>
+        <?php foreach ($hasilkpi4_20 as $key => $value) : $jumlahkpi4_20 = $value['jumlahkpi4_20'];
+        endforeach; ?>
+        <?php foreach ($hasilkpi5_20 as $key => $value) : $jumlahkpi5_20 = $value['jumlahkpi5_20'];
+        endforeach; ?>
+        <?php foreach ($hasilkpi6_20 as $key => $value) : $jumlahkpi6_20 = $value['jumlahkpi6_20'];
+        endforeach; ?>
+        <?php foreach ($hasilkpi7_20 as $key => $value) : $jumlahkpi7_20 = $value['jumlahkpi7_20'];
+        endforeach; ?>
+        <?php foreach ($hasilkpi8_20 as $key => $value) : $jumlahkpi8_20 = $value['jumlahkpi8_20'];
+        endforeach; ?>
+        <?php foreach ($hasilkpi9_20 as $key => $value) : $jumlahkpi9_20 = $value['jumlahkpi9_20'];
+        endforeach; ?>
+
+        <!-- foreach ambil hasil penjumlahan nilai bobot KPI TA 2021 -->
+        <?php foreach ($hasilkpi1_21 as $key => $value) : $jumlahkpi1_21 = $value['jumlahkpi1_21'];
+        endforeach; ?>
+        <?php foreach ($hasilkpi2_21 as $key => $value) : $jumlahkpi2_21 = $value['jumlahkpi2_21'];
+        endforeach; ?>
+        <?php foreach ($hasilkpi3_21 as $key => $value) : $jumlahkpi3_21 = $value['jumlahkpi3_21'];
+        endforeach; ?>
+        <?php foreach ($hasilkpi4_21 as $key => $value) : $jumlahkpi4_21 = $value['jumlahkpi4_21'];
+        endforeach; ?>
+        <?php foreach ($hasilkpi5_21 as $key => $value) : $jumlahkpi5_21 = $value['jumlahkpi5_21'];
+        endforeach; ?>
+        <?php foreach ($hasilkpi6_21 as $key => $value) : $jumlahkpi6_21 = $value['jumlahkpi6_21'];
+        endforeach; ?>
+        <?php foreach ($hasilkpi7_21 as $key => $value) : $jumlahkpi7_21 = $value['jumlahkpi7_21'];
+        endforeach; ?>
+        <?php foreach ($hasilkpi8_21 as $key => $value) : $jumlahkpi8_21 = $value['jumlahkpi8_21'];
+        endforeach; ?>
+        <?php foreach ($hasilkpi9_21 as $key => $value) : $jumlahkpi9_21 = $value['jumlahkpi9_21'];
+        endforeach; ?>
+
         <div class="container col-lg-12">
             <section class="content">
                 <!-- BAR CHART -->
@@ -228,7 +294,9 @@
             type: 'bar',
             data: {
                 labels: ['Standar 1', 'Standar 2', 'Standar 3', 'Standar 4', 'Standar 5', 'Standar 6', 'Standar 7', 'Standar 8', 'Standar 9'],
-                datasets: [{
+                datasets: [
+                    //Data Batang Grafik Standar 1
+                    {
                         label: <?php echo json_encode($tahun_ajaran = '2018/2019') ?>,
                         backgroundColor: 'rgba(60,141,188,0.9)',
                         borderColor: 'rgba(60,141,188,0.8)',
@@ -237,7 +305,8 @@
                         pointStrokeColor: 'rgba(60,141,188,1)',
                         pointHighlightFill: '#fff',
                         pointHighlightStroke: 'rgba(60,141,188,1)',
-                        data: <?php echo json_encode($nilai_bobot) ?>
+                        data: [<?php echo json_encode($jumlahkpi1_18) ?>, <?php echo json_encode($jumlahkpi2_18) ?>, <?php echo json_encode($jumlahkpi3_18) ?>, <?php echo json_encode($jumlahkpi4_18) ?>, <?php echo json_encode($jumlahkpi5_18) ?>, <?php echo json_encode($jumlahkpi6_18) ?>, <?php echo json_encode($jumlahkpi7_18) ?>, <?php echo json_encode($jumlahkpi8_18) ?>, <?php echo json_encode($jumlahkpi9_18) ?>]
+
                     },
                     {
                         label: <?php echo json_encode($tahun_ajaran = '2019/2020') ?>,
@@ -248,7 +317,7 @@
                         pointStrokeColor: '#c1c7d1',
                         pointHighlightFill: '#fff',
                         pointHighlightStroke: 'rgba(220,220,220,1)',
-                        data: <?php echo json_encode($nilai_bobot) ?>
+                        data: [<?php echo json_encode($jumlahkpi1_19) ?>, <?php echo json_encode($jumlahkpi2_19) ?>, <?php echo json_encode($jumlahkpi3_19) ?>, <?php echo json_encode($jumlahkpi4_19) ?>, <?php echo json_encode($jumlahkpi5_19) ?>, <?php echo json_encode($jumlahkpi6_19) ?>, <?php echo json_encode($jumlahkpi7_19) ?>, <?php echo json_encode($jumlahkpi8_19) ?>, <?php echo json_encode($jumlahkpi9_19) ?>]
                     },
 
                     {
@@ -260,7 +329,7 @@
                         pointStrokeColor: '#c1c7d1',
                         pointHighlightFill: '#fff',
                         pointHighlightStroke: 'rgba(220,220,220,1)',
-                        data: <?php echo json_encode($nilai_bobot) ?>
+                        data: [<?php echo json_encode($jumlahkpi1_20) ?>, <?php echo json_encode($jumlahkpi2_20) ?>, <?php echo json_encode($jumlahkpi3_20) ?>, <?php echo json_encode($jumlahkpi4_20) ?>, <?php echo json_encode($jumlahkpi5_20) ?>, <?php echo json_encode($jumlahkpi6_20) ?>, <?php echo json_encode($jumlahkpi7_20) ?>, <?php echo json_encode($jumlahkpi8_20) ?>, <?php echo json_encode($jumlahkpi9_20) ?>]
                     },
                     {
                         label: <?php echo json_encode($tahun_ajaran = '2021/2022') ?>,
@@ -271,16 +340,36 @@
                         pointStrokeColor: '#c1c7d1',
                         pointHighlightFill: '#fff',
                         pointHighlightStroke: 'rgba(220,220,220,1)',
-                        data: <?php echo json_encode($nilai_bobot) ?>
+                        data: [<?php echo json_encode($jumlahkpi1_21) ?>, <?php echo json_encode($jumlahkpi2_21) ?>, <?php echo json_encode($jumlahkpi3_21) ?>, <?php echo json_encode($jumlahkpi4_21) ?>, <?php echo json_encode($jumlahkpi5_21) ?>, <?php echo json_encode($jumlahkpi6_21) ?>, <?php echo json_encode($jumlahkpi7_21) ?>, <?php echo json_encode($jumlahkpi8_21) ?>, <?php echo json_encode($jumlahkpi9_21) ?>]
                     },
                 ]
             },
             options: {
+                responsive: true,
+                legend: {
+                    position: 'top',
+                },
+                hover: {
+                    mode: 'label'
+                },
                 scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
+                    xAxes: [{
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+
+                        }
+                    }],
+                    yAxes: [{
+                        display: true,
+                        ticks: {
+                            beginAtZero: true,
+                            steps: 10,
+                            stepValue: 5,
+
+                        }
+                    }]
+                },
             }
         });
     </script>

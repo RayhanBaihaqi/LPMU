@@ -172,7 +172,7 @@
                                         <?php
                                         foreach ($hasilkpi1_18 as $rows) :
                                         ?>
-                                            <td>2018/2019</td>
+                                            <th>2018/2019</th>
                                             <td><?php echo $rows->jumlahkpi1_18; ?></td>
                                         <?php
                                         endforeach;
@@ -246,7 +246,7 @@
                                         <?php
                                         foreach ($hasilkpi1_19 as $rows) :
                                         ?>
-                                            <td>2019/2020</td>
+                                            <th>2019/2020</th>
                                             <td><?php echo $rows->jumlahkpi1_19; ?></td>
                                         <?php
                                         endforeach;
@@ -319,7 +319,7 @@
                                         <?php
                                         foreach ($hasilkpi1_20 as $rows) :
                                         ?>
-                                            <td>2020/2021</td>
+                                            <th>2020/2021</th>
                                             <td><?php echo $rows->jumlahkpi1_20; ?></td>
                                         <?php
                                         endforeach;
@@ -392,7 +392,7 @@
                                         <?php
                                         foreach ($hasilkpi1_21 as $rows) :
                                         ?>
-                                            <td>2021/2022</td>
+                                            <th>2021/2022</th>
                                             <td><?php echo $rows->jumlahkpi1_21; ?></td>
                                         <?php
                                         endforeach;
