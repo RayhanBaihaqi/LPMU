@@ -195,6 +195,187 @@ class DataCapaianKpiModel extends Model
     {
         return $this->db->query("SELECT SUM(nilai_bobot) as tot_21 FROM `tabel_capaian_kpi` where tahun_ajaran='2021/2022' and nama_prodi='$nama_prodi' ");
     }
+
+    //query penjumlahan semua nilai bonbot prodi akuntansi
+    function jmlkpi18akt($nama_prodi = null)
+    {
+        return $this->db->query("SELECT SUM(nilai_bobot) as tot_18_akt FROM `tabel_capaian_kpi` where tahun_ajaran='2018/2019' and nama_prodi='$nama_prodi'  ");
+    }
+    function jmlkpi19akt($nama_prodi = null)
+    {
+        return $this->db->query("SELECT SUM(nilai_bobot) as tot_19_akt FROM `tabel_capaian_kpi` where tahun_ajaran='2019/2020' and nama_prodi='$nama_prodi' ");
+    }
+    function jmlkpi20akt($nama_prodi = null)
+    {
+        return $this->db->query("SELECT SUM(nilai_bobot) as tot_20_akt FROM `tabel_capaian_kpi` where tahun_ajaran='2020/2021' and nama_prodi='$nama_prodi' ");
+    }
+    function jmlkpi21akt($nama_prodi = null)
+    {
+        return $this->db->query("SELECT SUM(nilai_bobot) as tot_21_akt FROM `tabel_capaian_kpi` where tahun_ajaran='2021/2022' and nama_prodi='$nama_prodi' ");
+    }
+
+    //query penjumlahan semua nilai bonbot prodi manajemen
+    function jmlkpi18mnj($nama_prodi = null)
+    {
+        return $this->db->query("SELECT SUM(nilai_bobot) as tot_18_mnj FROM `tabel_capaian_kpi` where tahun_ajaran='2018/2019' and nama_prodi='$nama_prodi'  ");
+    }
+    function jmlkpi19mnj($nama_prodi = null)
+    {
+        return $this->db->query("SELECT SUM(nilai_bobot) as tot_19_mnj FROM `tabel_capaian_kpi` where tahun_ajaran='2019/2020' and nama_prodi='$nama_prodi' ");
+    }
+    function jmlkpi20mnj($nama_prodi = null)
+    {
+        return $this->db->query("SELECT SUM(nilai_bobot) as tot_20_mnj FROM `tabel_capaian_kpi` where tahun_ajaran='2020/2021' and nama_prodi='$nama_prodi' ");
+    }
+    function jmlkpi21mnj($nama_prodi = null)
+    {
+        return $this->db->query("SELECT SUM(nilai_bobot) as tot_21_mnj FROM `tabel_capaian_kpi` where tahun_ajaran='2021/2022' and nama_prodi='$nama_prodi' ");
+    }
+
+    //query penjumlahan semua nilai bonbot prodi Psikologi
+    function jmlkpi18psi($nama_prodi = null)
+    {
+        return $this->db->query("SELECT SUM(nilai_bobot) as tot_18_psi FROM `tabel_capaian_kpi` where tahun_ajaran='2018/2019' and nama_prodi='$nama_prodi'  ");
+    }
+    function jmlkpi19psi($nama_prodi = null)
+    {
+        return $this->db->query("SELECT SUM(nilai_bobot) as tot_19_psi FROM `tabel_capaian_kpi` where tahun_ajaran='2019/2020' and nama_prodi='$nama_prodi' ");
+    }
+    function jmlkpi20psi($nama_prodi = null)
+    {
+        return $this->db->query("SELECT SUM(nilai_bobot) as tot_20_psi FROM `tabel_capaian_kpi` where tahun_ajaran='2020/2021' and nama_prodi='$nama_prodi' ");
+    }
+    function jmlkpi21psi($nama_prodi = null)
+    {
+        return $this->db->query("SELECT SUM(nilai_bobot) as tot_21_psi FROM `tabel_capaian_kpi` where tahun_ajaran='2021/2022' and nama_prodi='$nama_prodi' ");
+    }
+
+    //query penjumlahan semua nilai bonbot prodi Ilkom
+    function jmlkpi18kom($nama_prodi = null)
+    {
+        return $this->db->query("SELECT SUM(nilai_bobot) as tot_18_kom FROM `tabel_capaian_kpi` where tahun_ajaran='2018/2019' and nama_prodi='$nama_prodi'  ");
+    }
+    function jmlkpi19kom($nama_prodi = null)
+    {
+        return $this->db->query("SELECT SUM(nilai_bobot) as tot_19_kom FROM `tabel_capaian_kpi` where tahun_ajaran='2019/2020' and nama_prodi='$nama_prodi' ");
+    }
+    function jmlkpi20kom($nama_prodi = null)
+    {
+        return $this->db->query("SELECT SUM(nilai_bobot) as tot_20_kom FROM `tabel_capaian_kpi` where tahun_ajaran='2020/2021' and nama_prodi='$nama_prodi' ");
+    }
+    function jmlkpi21kom($nama_prodi = null)
+    {
+        return $this->db->query("SELECT SUM(nilai_bobot) as tot_21_kom FROM `tabel_capaian_kpi` where tahun_ajaran='2021/2022' and nama_prodi='$nama_prodi' ");
+    }
+
+    //query penjumlahan semua nilai bonbot prodi Desain Produk
+    function jmlkpi18dpi($nama_prodi = null)
+    {
+        return $this->db->query("SELECT SUM(nilai_bobot) as tot_18_dpi FROM `tabel_capaian_kpi` where tahun_ajaran='2018/2019' and nama_prodi='$nama_prodi'  ");
+    }
+    function jmlkpi19dpi($nama_prodi = null)
+    {
+        return $this->db->query("SELECT SUM(nilai_bobot) as tot_19_dpi FROM `tabel_capaian_kpi` where tahun_ajaran='2019/2020' and nama_prodi='$nama_prodi' ");
+    }
+    function jmlkpi20dpi($nama_prodi = null)
+    {
+        return $this->db->query("SELECT SUM(nilai_bobot) as tot_20_dpi FROM `tabel_capaian_kpi` where tahun_ajaran='2020/2021' and nama_prodi='$nama_prodi' ");
+    }
+    function jmlkpi21dpi($nama_prodi = null)
+    {
+        return $this->db->query("SELECT SUM(nilai_bobot) as tot_21_dpi FROM `tabel_capaian_kpi` where tahun_ajaran='2021/2022' and nama_prodi='$nama_prodi' ");
+    }
+
+    //query penjumlahan semua nilai bonbot prodi dkv
+    function jmlkpi18dkv($nama_prodi = null)
+    {
+        return $this->db->query("SELECT SUM(nilai_bobot) as tot_18_dkv FROM `tabel_capaian_kpi` where tahun_ajaran='2018/2019' and nama_prodi='$nama_prodi'  ");
+    }
+    function jmlkpi19dkv($nama_prodi = null)
+    {
+        return $this->db->query("SELECT SUM(nilai_bobot) as tot_19_dkv FROM `tabel_capaian_kpi` where tahun_ajaran='2019/2020' and nama_prodi='$nama_prodi' ");
+    }
+    function jmlkpi20dkv($nama_prodi = null)
+    {
+        return $this->db->query("SELECT SUM(nilai_bobot) as tot_20_dkv FROM `tabel_capaian_kpi` where tahun_ajaran='2020/2021' and nama_prodi='$nama_prodi' ");
+    }
+    function jmlkpi21dkv($nama_prodi = null)
+    {
+        return $this->db->query("SELECT SUM(nilai_bobot) as tot_21_dkv FROM `tabel_capaian_kpi` where tahun_ajaran='2021/2022' and nama_prodi='$nama_prodi' ");
+    }
+
+    //query penjumlahan semua nilai bonbot prodi informatika
+    function jmlkpi18inf($nama_prodi = null)
+    {
+        return $this->db->query("SELECT SUM(nilai_bobot) as tot_18_inf FROM `tabel_capaian_kpi` where tahun_ajaran='2018/2019' and nama_prodi='$nama_prodi'  ");
+    }
+    function jmlkpi19inf($nama_prodi = null)
+    {
+        return $this->db->query("SELECT SUM(nilai_bobot) as tot_19_inf FROM `tabel_capaian_kpi` where tahun_ajaran='2019/2020' and nama_prodi='$nama_prodi' ");
+    }
+    function jmlkpi20inf($nama_prodi = null)
+    {
+        return $this->db->query("SELECT SUM(nilai_bobot) as tot_20_inf FROM `tabel_capaian_kpi` where tahun_ajaran='2020/2021' and nama_prodi='$nama_prodi' ");
+    }
+    function jmlkpi21inf($nama_prodi = null)
+    {
+        return $this->db->query("SELECT SUM(nilai_bobot) as tot_21_inf FROM `tabel_capaian_kpi` where tahun_ajaran='2021/2022' and nama_prodi='$nama_prodi' ");
+    }
+
+    //query penjumlahan semua nilai bonbot prodi sistem informasi
+    function jmlkpi18sif($nama_prodi = null)
+    {
+        return $this->db->query("SELECT SUM(nilai_bobot) as tot_18_sif FROM `tabel_capaian_kpi` where tahun_ajaran='2018/2019' and nama_prodi='$nama_prodi'  ");
+    }
+    function jmlkpi19sif($nama_prodi = null)
+    {
+        return $this->db->query("SELECT SUM(nilai_bobot) as tot_19_sif FROM `tabel_capaian_kpi` where tahun_ajaran='2019/2020' and nama_prodi='$nama_prodi' ");
+    }
+    function jmlkpi20sif($nama_prodi = null)
+    {
+        return $this->db->query("SELECT SUM(nilai_bobot) as tot_20_sif FROM `tabel_capaian_kpi` where tahun_ajaran='2020/2021' and nama_prodi='$nama_prodi' ");
+    }
+    function jmlkpi21sif($nama_prodi = null)
+    {
+        return $this->db->query("SELECT SUM(nilai_bobot) as tot_21_sif FROM `tabel_capaian_kpi` where tahun_ajaran='2021/2022' and nama_prodi='$nama_prodi' ");
+    }
+
+    //query penjumlahan semua nilai bonbot prodi teksip
+    function jmlkpi18tsp($nama_prodi = null)
+    {
+        return $this->db->query("SELECT SUM(nilai_bobot) as tot_18_tsp FROM `tabel_capaian_kpi` where tahun_ajaran='2018/2019' and nama_prodi='$nama_prodi'  ");
+    }
+    function jmlkpi19tsp($nama_prodi = null)
+    {
+        return $this->db->query("SELECT SUM(nilai_bobot) as tot_19_tsp FROM `tabel_capaian_kpi` where tahun_ajaran='2019/2020' and nama_prodi='$nama_prodi' ");
+    }
+    function jmlkpi20tsp($nama_prodi = null)
+    {
+        return $this->db->query("SELECT SUM(nilai_bobot) as tot_20_tsp FROM `tabel_capaian_kpi` where tahun_ajaran='2020/2021' and nama_prodi='$nama_prodi' ");
+    }
+    function jmlkpi21tsp($nama_prodi = null)
+    {
+        return $this->db->query("SELECT SUM(nilai_bobot) as tot_21_tsp FROM `tabel_capaian_kpi` where tahun_ajaran='2021/2022' and nama_prodi='$nama_prodi' ");
+    }
+
+    //query penjumlahan semua nilai bonbot prodi arsitek
+    function jmlkpi18ars($nama_prodi = null)
+    {
+        return $this->db->query("SELECT SUM(nilai_bobot) as tot_18_ars FROM `tabel_capaian_kpi` where tahun_ajaran='2018/2019' and nama_prodi='$nama_prodi'  ");
+    }
+    function jmlkpi19ars($nama_prodi = null)
+    {
+        return $this->db->query("SELECT SUM(nilai_bobot) as tot_19_ars FROM `tabel_capaian_kpi` where tahun_ajaran='2019/2020' and nama_prodi='$nama_prodi' ");
+    }
+    function jmlkpi20ars($nama_prodi = null)
+    {
+        return $this->db->query("SELECT SUM(nilai_bobot) as tot_20_ars FROM `tabel_capaian_kpi` where tahun_ajaran='2020/2021' and nama_prodi='$nama_prodi' ");
+    }
+    function jmlkpi21ars($nama_prodi = null)
+    {
+        return $this->db->query("SELECT SUM(nilai_bobot) as tot_21_ars FROM `tabel_capaian_kpi` where tahun_ajaran='2021/2022' and nama_prodi='$nama_prodi' ");
+    }
+
     function simpancapaian($data)
     {
         return $this->db->table('tabel_capaian_kpi')->insert($data);
@@ -206,5 +387,21 @@ class DataCapaianKpiModel extends Model
             ->join('tabel_kpi', 'tabel_kpi.idkpi=tabel_capaian_kpi.idkpi')
             ->where('nama_prodi', session('nama_prodi'))
             ->get();
+    }
+    function ambildatacapaian($id)
+    {
+        return $this->db->table('tabel_capaian_kpi')->getWhere(['id' => $id]);
+    }
+    function updatecapaian($data, $id)
+    {
+        return $this->db->table('tabel_capaian_kpi')->update($data, ['id' => $id]);
+    }
+    function simpankpicapaian($data)
+    {
+        return $this->db->table('tabel_capaian_kpi')->insert($data);
+    }
+    function hapuskpicapaian($id)
+    {
+        return $this->db->table('tabel_capaian_kpi')->delete(['id' => $id]);
     }
 }

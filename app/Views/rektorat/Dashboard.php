@@ -39,7 +39,7 @@
 
 			<!-- Nav Item - Dashboard -->
 			<li class="nav-item active">
-				<a class="nav-link " href="<?php echo site_url(); ?>admin">
+				<a class="nav-link " href="<?php echo site_url(); ?>rektorat">
 					<i class="fas fa-fw fa-tachometer-alt"></i>
 					<span>Dashboard</span></a>
 			</li>
@@ -55,11 +55,11 @@
 				</a>
 				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
-						<a class="collapse-item" href="<?= base_url('rkat/createbyadmin') ?>">Tambah RKAT</a>
-						<a class="collapse-item" href="<?= base_url('rkat/indexbyadmin') ?>">Lihat Data</a>
-						<a class="collapse-item" href="<?= base_url('pagurkat/create') ?>">Buat Pagu</a>
-						<a class="collapse-item" href="<?= base_url('pagurkat/index') ?>">List Pagu</a>
-						<a class="collapse-item" href="<?= base_url('tahunakademik/indextahun') ?>">Tahun Akademik</a>
+						<a class="collapse-item" href="<?= base_url('#') ?>">Tambah RKAT</a>
+						<a class="collapse-item" href="<?= base_url('#') ?>">Lihat Data</a>
+						<a class="collapse-item" href="<?= base_url('#') ?>">Buat Pagu</a>
+						<a class="collapse-item" href="<?= base_url('#') ?>">List Pagu</a>
+						<a class="collapse-item" href="<?= base_url('#') ?>">Tahun Akademik</a>
 					</div>
 				</div>
 			</li>
@@ -74,23 +74,13 @@
 					<span>KPI</span></a>
 				<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
-
-						<a class="collapse-item" href="<?= base_url('/admin/listkpi') ?>">Lihat KPI</a>
-						<a class="collapse-item" href="<?= base_url('/admin/listbutirkpi') ?>">Lihat Butir KPI</a>
-						<a class="collapse-item" href="<?= base_url('/admin/listcapaiankpi') ?>">Lihat Capaian</a>
+						<a class="collapse-item" href="<?= base_url('/rektorat/listcapaiankpi') ?>">Lihat Capaian</a>
+						<a class="collapse-item" href="<?= base_url('/rektorat/tabelcapaiankpi') ?>">Lihat Data Tabel</a>
+						<a class="collapse-item" href="<?= base_url('/rektorat/grafikcapaian') ?>">Lihat Data Grafik</a>
 					</div>
 				</div>
 			</li>
 
-			<!-- Heading -->
-			<div class="sidebar-heading">
-				User
-			</div>
-			<li class="nav-item ">
-				<a class="nav-link " href="<?= base_url('auth/index') ?>">
-					<i class="fas fa-fw fa-tachometer-alt"></i>
-					<span>Tabel User</span></a>
-			</li>
 
 		</ul>
 		<!-- End of Sidebar -->

@@ -137,7 +137,12 @@
                     </div>
                     <div class="col-sm">
                         <br>
-                        <a href="<?= base_url('kpi/kesimpulan_grafik') ?>" class="btn btn-primary btn-block">Data Grafik</a>
+                        <a href="<?= base_url('kpi/grafik_rencana') ?>" class="btn btn-primary btn-block">Data Grafik Rencana</a>
+                        <br>
+                    </div>
+                    <div class="col-sm">
+                        <br>
+                        <a href="<?= base_url('kpi/kesimpulan_grafik') ?>" class="btn btn-primary btn-block">Data Grafik Realisasi</a>
                         <br>
                     </div>
                 </div>
@@ -204,7 +209,9 @@
                                         <td><?= $row->realisasi ?></td>
                                         <td><?= $row->nilai_bobot ?></td>
                                         <td><?= $row->upload_file ?></td>
-                                        <td></td>
+                                        <td>
+                                            <!-- <a href="<?= base_url('kpi/form_updatecapaian/' . $row->id); ?>" class="button button2"><i class="fas fa-edit"></i></a> -->
+                                        </td>
                                     <?php
                                 endforeach;
                                     ?>

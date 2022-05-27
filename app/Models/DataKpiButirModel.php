@@ -21,6 +21,42 @@ class DataKpiButirModel extends Model
     {
         return $this->db->query("SELECT ROUND(SUM(bobot), 2) AS total_bobot from tabel_butir_kpi");
     }
+    function jml_kpi1()
+    {
+        return $this->db->query("SELECT SUM(bobot) as jumlah_rencana1 FROM `tabel_butir_kpi` where idkpi=1");
+    }
+    function jml_kpi2()
+    {
+        return $this->db->query("SELECT SUM(bobot) as jumlah_rencana2 FROM `tabel_butir_kpi` where idkpi=2");
+    }
+    function jml_kpi3()
+    {
+        return $this->db->query("SELECT SUM(bobot) as jumlah_rencana3 FROM `tabel_butir_kpi` where idkpi=3");
+    }
+    function jml_kpi4()
+    {
+        return $this->db->query("SELECT SUM(bobot) as jumlah_rencana4 FROM `tabel_butir_kpi` where idkpi=4");
+    }
+    function jml_kpi5()
+    {
+        return $this->db->query("SELECT SUM(bobot) as jumlah_rencana5 FROM `tabel_butir_kpi` where idkpi=5");
+    }
+    function jml_kpi6()
+    {
+        return $this->db->query("SELECT SUM(bobot) as jumlah_rencana6 FROM `tabel_butir_kpi` where idkpi=6");
+    }
+    function jml_kpi7()
+    {
+        return $this->db->query("SELECT SUM(bobot) as jumlah_rencana7 FROM `tabel_butir_kpi` where idkpi=7");
+    }
+    function jml_kpi8()
+    {
+        return $this->db->query("SELECT SUM(bobot) as jumlah_rencana8 FROM `tabel_butir_kpi` where idkpi=8");
+    }
+    function jml_kpi9()
+    {
+        return $this->db->query("SELECT SUM(bobot) as jumlah_rencana9 FROM `tabel_butir_kpi` where idkpi=9");
+    }
     function ambildatabutir($id)
     {
         return $this->db->table('tabel_butir_kpi')->getWhere(['id' => $id]);

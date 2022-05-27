@@ -133,7 +133,12 @@
                     </div>
                     <div class="col-sm">
                         <br>
-                        <a href="<?= base_url('kpi/kesimpulan_grafik') ?>" class="btn btn-primary btn-block">Data Grafik</a>
+                        <a href="<?= base_url('kpi/grafik_rencana') ?>" class="btn btn-primary btn-block">Data Grafik Rencana</a>
+                        <br>
+                    </div>
+                    <div class="col-sm">
+                        <br>
+                        <a href="<?= base_url('kpi/kesimpulan_grafik') ?>" class="btn btn-primary btn-block">Data Grafik Realisasi</a>
                         <br>
                     </div>
                 </div>
