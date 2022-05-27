@@ -33,7 +33,8 @@ class DetailRkatModel extends Model
     public function tampilDataSetRKAT($username=null){
         return $this->db->table('pagu_rkat')
         ->join('user', 'user.id=pagu_rkat.id_user')
-        // ->join('detail_rkat2', 'detail_rkat2.id_user=user.id')
+        ->join('tahun_akademik', 'tahun_akademik.id_tahun=pagu_rkat.id_tahun')
+        ->where('aktif', '1')
         ->where('username',$username)
         ->get()->getResultArray();
     }
