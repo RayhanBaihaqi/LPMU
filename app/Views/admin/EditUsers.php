@@ -31,7 +31,7 @@
 
 			<!-- Sidebar - Brand -->
 			<a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
-			<img src="<?php echo base_url(); ?>/public/img/monev_logo_putih.png" alt="Logo" style="width: 70px; height: 70px;">
+				<img src="<?php echo base_url(); ?>/public/img/monev_logo_putih.png" alt="Logo" style="width: 70px; height: 70px;">
 				<div class="sidebar-brand-text mx-3">Admin</div>
 			</a>
 
@@ -164,6 +164,7 @@
 											<option value="<?= $user['level']; ?>"><?= $user['level']; ?></option>
 											<option value="prodi">Prodi</option>
 											<option value="unit">Unit</option>
+											<option value="bpsdm">BPSDM</option>
 											<option value="rektorat">Rektorat</option>
 											<option value="admin">Admin</option>
 										</select>

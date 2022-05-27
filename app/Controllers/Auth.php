@@ -114,13 +114,20 @@ class Auth extends BaseController
                     <strong>Login Success!</strong> Selamat anda telah berhasil login.
                 </div>');
                 return redirect()->to('/admin');
+            } else if (session('level') == 'bpsdm') {
+                session()->setFlashdata('pesan', '
+                <div class="alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>Login Success!</strong> Selamat anda telah berhasil login.
+                </div>');
+                return redirect()->to('/bpsdm');
             } else if (session('level') == 'rektorat') {
                 session()->setFlashdata('pesan', '
                 <div class="alert alert-success">
                     <button type="button" class="close" data-dismiss="alert">&times;</button>
                     <strong>Login Success!</strong> Selamat anda telah berhasil login.
                 </div>');
-                return redirect()->to('/backend');
+                return redirect()->to('/rektorat');
             }
         } else {
             session()->setFlashdata('pesan', 'Password anda salah');

@@ -17,7 +17,6 @@
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 	<!-- Custom styles for this template-->
 	<link href="<?php echo base_url(); ?>/public/css/style_admin.css" rel="stylesheet">
-	<link href="<?php echo base_url(); ?>/public/css/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
@@ -32,14 +31,14 @@
 			<!-- Sidebar - Brand -->
 			<a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
 				<img src="<?php echo base_url(); ?>/public/img/monev_logo_putih.png" alt="Logo" style="width: 70px; height: 70px;">
-				<div class="sidebar-brand-text mx-3">Admin</div>
+				<div class="sidebar-brand-text mx-3">Rektorat</div>
 			</a>
 
 			<!-- Divider -->
 			<hr class="sidebar-divider my-0">
 
 			<!-- Nav Item - Dashboard -->
-			<li class="nav-item ">
+			<li class="nav-item active">
 				<a class="nav-link " href="<?php echo site_url(); ?>admin">
 					<i class="fas fa-fw fa-tachometer-alt"></i>
 					<span>Dashboard</span></a>
@@ -75,6 +74,7 @@
 					<span>KPI</span></a>
 				<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
+
 						<a class="collapse-item" href="<?= base_url('/admin/listkpi') ?>">Lihat KPI</a>
 						<a class="collapse-item" href="<?= base_url('/admin/listbutirkpi') ?>">Lihat Butir KPI</a>
 						<a class="collapse-item" href="<?= base_url('/admin/listcapaiankpi') ?>">Lihat Capaian</a>
@@ -86,7 +86,7 @@
 			<div class="sidebar-heading">
 				User
 			</div>
-			<li class="nav-item">
+			<li class="nav-item ">
 				<a class="nav-link " href="<?= base_url('auth/index') ?>">
 					<i class="fas fa-fw fa-tachometer-alt"></i>
 					<span>Tabel User</span></a>
@@ -120,6 +120,7 @@
 								</span>
 								<img class="img-profile rounded-circle" src="<?php echo base_url(); ?>/public/img/inf-logo.jpg">
 							</a>
+
 							<!-- Dropdown - User Information -->
 							<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
 								<div class="dropdown-divider"></div>
@@ -134,73 +135,67 @@
 
 				</nav>
 				<!-- End of Topbar -->
+
 				<!-- Begin Page Content -->
 				<div class="container-fluid">
+					<div class="row">
 
-					<!-- Page Heading -->
-					<h1 class="h3 mb-2 text-gray-800">Tambah User</h1>
-					<?php if (session()->getFlashdata('success')) : ?>
-						<div class="alert alert-danger"><?= session()->getFlashdata('status') ?></div>
-					<?php endif ?>
-					<!-- DataTales Example -->
-					<div class="card shadow mb-4">
-						<div class="card-body">
-							<div class="table-responsive">
-								<form action="<?= base_url('auth/store'); ?>" method="POST" enctype="multipart/form-data">
-									<div class="form-group">
-										<label for="username">Username</label>
-										<input required type="text" name="username" class="form-control" id="username" placeholder="Masukkan Username">
+						<!-- Earnings (Monthly) Card Example -->
+						<div class="col">
+							<div class="card border-left-primary shadow h-100 py-2">
+								<div class="card-body">
+									<div class="row no-gutters align-items-center">
+										<div class="col mr-2">
+											<div class="h3  font-weight-bold text-primary text-uppercase mb-1">
+												SELAMAT DATANG</div>
+											<br>
+											<div class="mb-0  col mr-2 text-gray-800 text-justify">Saat ini anda login sebagai Rektorat. xxxxxxxxx.</div>
+										</div>
+
+										<div class="col-auto">
+											<img src="<?php echo base_url(); ?>/public/img/monev_logo.png" alt="Logo" style="width: 150px; height: 150px;">
+
+										</div>
 									</div>
-									<div class="form-group">
-										<label for="password">Password</label>
-										<input type="password" class="form-control" name="password" placeholder="Password" id='password'>
-									</div>
-									<div class="form-group">
-										<label for="nama_prodi">Nama Prodi/Unit</label>
-										<input required type="text" name="nama_prodi" class="form-control" id="nama_prodi" name='nama_prodi' placeholder="Masukkan Nama Prodi/Unit">
-									</div>
-									<div class="form-group">
-										<label for="level">Kategori User</label>
-										<select required class="form-control" id="level" name="level">
-											<option value="prodi">Prodi</option>
-											<option value="unit">Unit</option>
-											<option value="bpsdm">BPSDM</option>
-											<option value="rektorat">Rektorat</option>
-											<option value="admin">Admin</option>
-										</select>
-									</div>
-									<div class="form-group">
-										<button type="submit" id="tambah" class="btn btn-success">Tambahkan</button>
-									</div>
-								</form>
+								</div>
 							</div>
 						</div>
+
+
 					</div>
+					<!-- Page Heading -->
+
 
 				</div>
-
+				<!-- /.container-fluid -->
 
 			</div>
-			<!-- End of Content Wrapper -->
+			<!-- End of Main Content -->
+
+			<!-- Footer -->
+			<footer class="sticky-footer bg-white">
+				<div class="container my-auto">
+					<div class="copyright text-center my-auto">
+						<span>Copyright &copy; Your Website 2020</span>
+					</div>
+				</div>
+			</footer>
+			<!-- End of Footer -->
 
 		</div>
-		<!-- End of Page Wrapper -->
+		<!-- End of Content Wrapper -->
 
-		<!-- Scroll to Top Button-->
-		<a class="scroll-to-top rounded" href="#page-top">
-			<i class="fas fa-angle-up"></i>
-		</a>
+	</div>
+	<!-- End of Page Wrapper -->
 
-		<!-- Bootstrap core JavaScript-->
-		<script src="<?php echo base_url(); ?>/public/js/jquery.min.js"></script>
-		<script src="<?php echo base_url(); ?>/public/js/bootstrap.bundle.min.js"></script>
+	<!-- Scroll to Top Button-->
+	<a class="scroll-to-top rounded" href="#page-top">
+		<i class="fas fa-angle-up"></i>
+	</a>
 
-		<!-- Page level plugins -->
-		<script src="<?php echo base_url(); ?>/public/js/jquery.dataTables.min.js"></script>
-		<script src="<?php echo base_url(); ?>/public/js/dataTables.bootstrap4.min.js"></script>
-
-		<!-- Page level custom scripts -->
-		<script src="<?php echo base_url(); ?>/public/js/datatables-demo.js"></script>
+	<!-- Bootstrap core JavaScript-->
+	<script src="<?php echo base_url(); ?>/public/js/jquery.min.js"></script>
+	<script src="<?php echo base_url(); ?>/public/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
