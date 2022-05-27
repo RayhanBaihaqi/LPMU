@@ -87,9 +87,6 @@
 						<div class="user-info-dropdown">
 							<div class="dropdown">
 								<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-									<!-- <span class="user-icon">
-										<img src="<?php echo base_url(); ?>/public/img/inf-logo.jpg" alt="">
-									</span> -->
 									<span class="user-name">
 										<?php
                                             $nama_prodi = session('nama_prodi');
@@ -109,8 +106,6 @@
 			</nav>
 		</div>
 		<!-- Nav Bar End -->
-
-        <div class="container">
             <div class="row" style="margin: 15px auto;">
 				<div class="col-md-12">
 					<div class="card-box pd-30 height-100-p">
@@ -120,51 +115,49 @@
             </div>
             <!-- ====================================================================================================================== -->
             <div class="row" style="margin: 15px auto;">
-                <div class="col-lg-3 col-6">
+                <!-- ./col -->
+                <div class="col-lg-4 col-4">
                     <!-- small box -->
-                    <div class="small-box bg-info">
+                    <div class="small-box bg-danger text-white">
                         <div class="inner">
-                            <h3>150</h3>
-                            <p>Dosen</p>
+                            <h3>
+                                <?= $tahunAkademik['tahunAkademik'] ?>
+                            </h3>
+                            <p>Tahun Akademik</p>
                         </div>
                         <div class="icon">
-                            <i class="fas fa-users"></i>
+                            <i class="fas fa-solid fa-calendar"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-4">
+                    <!-- small box -->
+                    <div class="small-box bg-warning text-white">
+                        <div class="inner">
+                            <h3>
+                                <?php foreach ($pagu_rkat as $key => $value) :?>
+							        RP. <?= $value['jumlah_pagu'] ?>
+						        <?php endforeach; ?>
+                            </h3>
+                            <p>Jumlah Pagu</p>
+                        </div>
+                        <div class="icon">
+                        <i class="fas fa-solid fa-money-bill"></i>
                         </div>
                     </div>
                 </div>
                 <!-- ./col -->
-                <div class="col-lg-3 col-6">
+                <div class="col-lg-4 col-4">
                     <!-- small box -->
-                    <div class="small-box bg-success">
+                    <div class="small-box bg-success text-white">
                         <div class="inner">
-                            <h3>53</h3>
-                            <p>Tenaga Pendidik</p>
-                        </div>
-                        <div class="icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                    </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-warning">
-                        <div class="inner">
-                            <h3>10</h3>
-                            <p>Program Studi</p>
-                        </div>
-                        <div class="icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                    </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-danger">
-                        <div class="inner">
-                            <h3>12</h3>
-                            <p>Unit Universitas</p>
+                            <h3>
+                                <?php
+                                    $nama_prodi = session('nama_prodi');
+                                    echo "$nama_prodi"
+                                ?>
+                            </h3>
+                            <p>Program Studi/Unit Universitas</p>
                         </div>
                         <div class="icon">
                             <i class="fas fa-university"></i>
@@ -172,17 +165,90 @@
                     </div>
                 </div>
             </div>
+            
             <!-- ====================================================================================================================== -->
+                    <!-- PK -->
+                    <?php $totalPkGenap=0; foreach ($pk as $key => $value) : $totalPkGenap = $totalPkGenap+$value['anggaranGenap']; endforeach; ?>
+                    <?php $totalPkGenapSerap=0; foreach ($pk as $key => $value) : $totalPkGenapSerap = $totalPkGenapSerap+$value['serapGenap']; endforeach; ?>
+                    <?php $persenPkGenap = $totalPkGenapSerap/$totalPkGenap*100; ?>
 
-        <section class="content">
-                <div class="row">
+                    <?php $totalPkGanjil=0; foreach ($pk as $key => $value) : $totalPkGanjil = $totalPkGanjil+$value['anggaranGanjil']; endforeach; ?>
+                    <?php $totalPkGanjilSerap=0; foreach ($pk as $key => $value) : $totalPkGanjilSerap = $totalPkGanjilSerap+$value['serapGanjil']; endforeach; ?>
+                    <?php $persenPkGanjil = $totalPkGanjilSerap/$totalPkGanjil*100; ?>
+                    <!-- OPS -->
+                    <?php $totalOpsGenap=0; foreach ($ops as $key => $value) : $totalOpsGenap = $totalOpsGenap+$value['anggaranGenap']; endforeach; ?>
+                    <?php $totalOpsGenapSerap=0; foreach ($ops as $key => $value) : $totalOpsGenapSerap = $totalOpsGenapSerap+$value['serapGenap']; endforeach; ?>
+                    <?php $persenOpsGenap = $totalOpsGenapSerap/$totalOpsGenap*100; ?>
+
+                    <?php $totalOpsGanjil=0; foreach ($ops as $key => $value) : $totalOpsGanjil = $totalOpsGanjil+$value['anggaranGanjil']; endforeach; ?>
+                    <?php $totalOpsGanjilSerap=0; foreach ($ops as $key => $value) : $totalOpsGanjilSerap = $totalOpsGanjilSerap+$value['serapGanjil']; endforeach; ?>
+                    <?php $persenOpsGanjil = $totalOpsGanjilSerap/$totalOpsGanjil*100; ?>
+                    <!-- INV -->
+                    <?php $totalInvGenap=0; foreach ($inv as $key => $value) : $totalInvGenap = $totalInvGenap+$value['total']; endforeach; ?>
+                    <?php $totalInvGenapSerap=0; foreach ($inv as $key => $value) : $totalInvGenapSerap = $totalInvGenapSerap+$value['serapGenap']; endforeach; ?>
+                    <?php $persenInvGenap = $totalInvGenapSerap/$totalInvGenap*100; ?>
+
+                    <?php $totalInvGanjil=0; foreach ($inv as $key => $value) : $totalInvGanjil = $totalInvGanjil+$value['anggaranGanjil']; endforeach; ?>
+                    <?php $totalInvGanjilSerap=0; foreach ($inv as $key => $value) : $totalInvGanjilSerap = $totalInvGanjilSerap+$value['serapGanjil']; endforeach; ?>
+                    <?php $persenInvGanjil = $totalInvGanjilSerap/$totalInvGanjil*100; ?>
+
+            <section class="content">
+                <div class="row" style="margin: 15px auto;">
                     <div class="col-md-6">
-                        
-
+                        <div class="card-box pd-30 height-100-p">
+                            <div class="card ">
+                                <div class="card-header bg-info text-white">Capain PK</div>
+                                <div class="card-body"><div id="capaian_pk"></div></div>
+                            </div>
+                        </div>
                     </div>
-                    <!-- /.col (RIGHT) -->
+                    <div class="col-md-6">
+                        <div class="card-box pd-30 height-100-p">
+                            <div class="card ">
+                                <div class="card-header bg-info text-white">Capain OPS</div>
+                                <div class="card-body"><div id="capaian_ops"></div></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- /.row -->
+                <div class="row" style="margin: 15px auto;">
+                    <div class="col-md-12">
+                        <div class="card-box pd-30 height-100-p">
+                            <div class="card ">
+                                <div class="card-header bg-info text-white">Capain INV</div>
+                                <div class="card-body"><div id="capaian_inv"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin: 15px auto;">
+                    <div class="col-md-6">
+                        <div class="card-box pd-30 height-100-p">
+                            <div class="card ">
+                                <div class="card-header bg-info text-white">Persentase Capain PK</div>
+                                <div class="card-body"><div id="capaian_persen_pk"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-box pd-30 height-100-p">
+                            <div class="card ">
+                                <div class="card-header bg-info text-white">Persentase Capain OPS</div>
+                                <div class="card-body"><div id="capaian_persen_ops"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin: 15px auto;">
+                    <div class="col-md-12">
+                        <div class="card-box pd-30 height-100-p">
+                            <div class="card ">
+                                <div class="card-header bg-info text-white">Persentase Capain INV</div>
+                                <div class="card-body"><div id="capaian_persen_inv"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </section>
     </div>
 
@@ -200,6 +266,163 @@
             return i;
         }
     </script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <!-- Grafik Capaian -->
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Semester','Rencana (Rp.)', 'Realisasi(Rp.)'],
+          ['Ganjil', <?= $totalPkGanjil ?>, <?= $totalPkGanjilSerap ?>],
+          ['Genap', <?= $totalPkGenap ?>, <?= $totalPkGenapSerap ?>],
+        ]);
+
+        var options = {
+          chart: {
+            title: '',
+            subtitle: 'Periode Tahun : <?= $tahunAkademik['tahunAkademik'] ?>',
+          },
+          bars: 'horizontal', // Required for Material Bar Charts.
+          hAxis: {format: 'decimal'},
+          height: 400,
+          colors: ['#1b9e77', '#d95f02', '#7570b3']
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('capaian_pk'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Semester','Rencana (Rp.)', 'Realisasi(Rp.)'],
+          ['Ganjil', <?= $totalOpsGanjil ?>, <?= $totalOpsGanjilSerap ?>],
+          ['Genap', <?= $totalOpsGenap ?>, <?= $totalOpsGenapSerap ?>],
+        ]);
+
+        var options = {
+          chart: {
+            title: '',
+            subtitle: 'Periode Tahun : <?= $tahunAkademik['tahunAkademik'] ?>',
+          },
+          bars: 'horizontal', // Required for Material Bar Charts.
+          hAxis: {format: 'decimal'},
+          height: 400,
+          colors: ['#1b9e77', '#d95f02', '#7570b3']
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('capaian_ops'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Semester','Rencana (Rp.)', 'Realisasi(Rp.)'],
+          ['Ganjil', <?= $totalInvGanjil ?>, <?= $totalInvGanjilSerap ?>],
+          ['Genap', <?= $totalInvGenap ?>, <?= $totalInvGenapSerap ?>],
+        ]);
+
+        var options = {
+          chart: {
+            title: '',
+            subtitle: 'Periode Tahun : <?= $tahunAkademik['tahunAkademik'] ?>',
+          },
+          bars: 'horizontal', // Required for Material Bar Charts.
+          hAxis: {format: 'decimal'},
+          height: 400,
+          colors: ['#1b9e77', '#d95f02']
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('capaian_inv'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+    <!-- Grafik Persentase capaian -->
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Semester', 'Persen(%)'],
+          ['Ganjil', <?=$persenPkGenap ?>],
+          ['Genap', <?=$persenPkGanjil ?>],
+        ]);
+
+        var options = {
+          chart: {
+            title: '',
+            subtitle: 'Periode Tahun : <?= $tahunAkademik['tahunAkademik'] ?>',
+          },
+          bars: 'horizontal' // Required for Material Bar Charts.
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('capaian_persen_pk'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Semester', 'Persen(%)'],
+          ['Ganjil', <?=$persenOpsGenap ?>],
+          ['Genap', <?=$persenOpsGanjil ?>],
+        ]);
+
+        var options = {
+          chart: {
+            title: '',
+            subtitle: 'Periode Tahun : <?= $tahunAkademik['tahunAkademik'] ?>',
+          },
+          bars: 'horizontal' // Required for Material Bar Charts.
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('capaian_persen_ops'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Semester', 'Persen(%)'],
+          ['Ganjil', <?=$persenInvGenap ?>],
+          ['Genap', <?=$persenInvGanjil ?>],
+        ]);
+
+        var options = {
+          chart: {
+            title: '',
+            subtitle: 'Periode Tahun : <?= $tahunAkademik['tahunAkademik'] ?>',
+          },
+          bars: 'horizontal' // Required for Material Bar Charts.
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('capaian_persen_inv'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+    
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

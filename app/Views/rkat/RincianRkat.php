@@ -86,9 +86,6 @@
 						<div class="user-info-dropdown">
 							<div class="dropdown">
 								<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-									<span class="user-icon">
-										<img src="<?php echo base_url(); ?>/public/img/inf-logo.jpg" alt="">
-									</span>
 									<span class="user-name">
 										<?php
                                             $nama_prodi = session('nama_prodi');
@@ -109,15 +106,126 @@
 		</div>
 		<!-- Nav Bar End -->
 		<br>
+        
+        <input type="button" value="Download PDF" onclick="window.open('<?php echo base_url('pdf/pdfRincian') ?>','blank')">
+        <?php } ?>
+		<!-- Responsive tables Start -->
+		<div class="col-lg-12 grid-margin stretch-card">
+      <div class="card">
+				<div class="card-header">
+					<h4 class="card-title">Rincian RKAT
+					</h4>
+				</div>
+                     <!-- PK -->
+                    <?php $totalPkGenap=0; foreach ($pk as $key => $value) : $totalPkGenap = $totalPkGenap+$value['anggaranGenap']; endforeach; ?>
+                    <?php $totalPkGanjil=0; foreach ($pk as $key => $value) : $totalPkGanjil = $totalPkGanjil+$value['anggaranGanjil']; endforeach; ?>
+                    <?php $totalAnggaranPk = $totalPkGanjil+$totalPkGenap; ?>
+
+                    <?php $totalPkGenapSerap=0; foreach ($pk as $key => $value) : $totalPkGenapSerap = $totalPkGenapSerap+$value['serapGenap']; endforeach; ?>
+                    <?php $totalPkGanjilSerap=0; foreach ($pk as $key => $value) : $totalPkGanjilSerap = $totalPkGanjilSerap+$value['serapGanjil']; endforeach; ?>
+                    <?php $totalSerapPk = $totalPkGenapSerap+$totalPkGanjilSerap; ?>
+
+                    <?php $persenPk = $totalSerapPk/$totalAnggaranPk*100; ?>
+                    <!-- OPS -->
+                    <?php $totalOpsGenap=0; foreach ($ops as $key => $value) : $totalOpsGenap = $totalOpsGenap+$value['anggaranGenap']; endforeach; ?>
+                    <?php $totalOpsGanjil=0; foreach ($ops as $key => $value) : $totalOpsGanjil = $totalOpsGanjil+$value['anggaranGanjil']; endforeach; ?>
+                    <?php $totalAnggaranOps = $totalOpsGanjil+$totalOpsGenap; ?>
+
+                    <?php $totalOpsGanjilSerap=0; foreach ($ops as $key => $value) : $totalOpsGanjilSerap = $totalOpsGanjilSerap+$value['serapGanjil']; endforeach; ?>
+                    <?php $totalOpsGenapSerap=0; foreach ($ops as $key => $value) : $totalOpsGenapSerap = $totalOpsGenapSerap+$value['serapGenap']; endforeach; ?>
+                    <?php $totalSerapOps = $totalOpsGenapSerap+$totalOpsGanjilSerap; ?>
+
+                    <?php $persenOps = $totalSerapOps/$totalAnggaranOps*100; ?>
+                    <!-- INV -->
+                    <?php $totalInvGenap=0; foreach ($inv as $key => $value) : $totalInvGenap = $totalInvGenap+$value['total']; endforeach; ?>
+                    <?php $totalInvGanjil=0; foreach ($inv as $key => $value) : $totalInvGanjil = $totalInvGanjil+$value['anggaranGanjil']; endforeach; ?>
+                    <?php $totalAnggaranInv = $totalInvGanjil+$totalInvGenap; ?>
+
+                    <?php $totalInvGanjilSerap=0; foreach ($inv as $key => $value) : $totalInvGanjilSerap = $totalInvGanjilSerap+$value['serapGanjil']; endforeach; ?>
+                    <?php $totalInvGenapSerap=0; foreach ($inv as $key => $value) : $totalInvGenapSerap = $totalInvGenapSerap+$value['serapGenap']; endforeach; ?>
+                    <?php $totalSerapInv = $totalInvGenapSerap+$totalInvGanjilSerap; ?>
+
+                    <?php $persenInv = $totalSerapInv/$totalAnggaranInv*100; ?>
+      <form action="<?= base_url('rkat/updateRincian'); ?>" method="POST" enctype="multipart/form-data">
+      <div class="card-body">
+        <?php foreach ($set_rkat as $key => $reading) : ?>
+        <input required type="hidden" name="id_user" value="<?= $reading['id_user']; ?>">
+        <input type="hidden" class="form-control" id="id_tahun" value="<?=  $reading['id_tahun'] ?>" name="id_tahun" required>
+        <table class="table table-hover">
+          <tbody>
+          <tr>
+            <td><h5>PK</h5></td>
+          </tr>
+          <tr>
+            <td>Total Anggaran</td>
+            <td>:</td>
+            <td id='totalAnggaranPk'name='totalAnggaranPk'>RP. <?=$totalAnggaranPk?></td>
+          </tr>
+          <tr>
+            <td>Total Realisasi</td>
+            <td>:</td>
+            <td id='totalSerapPk'name='totalSerapPk'>RP. <?=$totalSerapPk?></td>
+          </tr>
+          <tr>
+            <td>Persentase</td>
+            <td>:</td>
+            <td id='persenPk'name='persenPk'><?=$persenPk?>%</td>
+          </tr>
+          <tr>
+            <td><h5>OPS</h5></td>
+          </tr>
+          <tr>
+            <td>Total Anggaran</td>
+            <td>:</td>
+            <td id='totalAnggaranOps'name='totalAnggaranOps'>RP. <?=$totalAnggaranOps?></td>
+          </tr>
+          <tr>
+            <td>Total Realisasi</td>
+            <td>:</td>
+            <td id='totalSerapOps'name='totalSerapOps'>RP. <?=$totalSerapOps?></td>
+          </tr>
+          <tr>
+            <td>Persentase</td>
+            <td>:</td>
+            <td id='persenOps'name='persenOps'><?=$persenOps?>%</td>
+          </tr>
+          <tr>
+            <td><h5>INV</h5></td>
+          </tr>
+          <tr>
+            <td>Total Anggaran</td>
+            <td>:</td>
+            <td id='totalAnggaranInv'name='totalAnggaranInv'>RP. <?=$totalAnggaranInv?></td>
+          </tr>
+          <tr>
+            <td>Total Realisasi</td>
+            <td>:</td>
+            <td id='totalSerapInv'name='totalSerapInv'>RP. <?=$totalSerapInv?></td>
+          </tr>
+          <tr>
+            <td>Persentase</td>
+            <td>:</td>
+            <td id='persenInv'name='persenInv'><?=$persenInv?>%</td>
+          </tr>
+          </tbody>
+        </table>
+        <?php endforeach; ?>
+      </div>
+      <div class="card-footer" align="center">
+					<button type="submit" class="btn btn-primary" id="btnJumlah" value="submit">Update Data</button>
+						<span id="textError"></span>
+			</div>
+      </form>
+      </div>
+    </div>
         <div class="modal" id="myModal">
-    <div class="modal-dialog">
-      <div class="modal-content">
-      
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">Kesimpulan</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
+          <div class="modal-dialog">
+            <div class="modal-content">
+               <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title">Kesimpulan</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
         
         <!-- Modal body -->
         <div class="modal-body">
@@ -133,82 +241,15 @@
           <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
         </div>
         
-      </div>
-    </div>
+      
   </div>
-        <input type="button" value="Download PDF" onclick="window.open('<?php echo base_url('pdf/pdfRincian') ?>','blank')">
-        <?php } ?>
-		<!-- Responsive tables Start -->
-		<div class="col-lg-12 grid-margin stretch-card">
-            <div class="card">
-				<div class="card-header">
-					<h4 class="card-title">Rincian RKAT
-					</h4>
-				</div>
-                <div class="card-body">
-                    <?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat'];?>
-					<input type="hidden" class="form-control" id="id_set" value="<?= $id_set ?>" name="id_set" required>
-					<br>
-					<div class="card-body">
-
-						<div class="form-inline" style="margin-bottom:20px;">
-							<label for="prodiunit" class="mb-2 mr-sm-2" style="width: 150px;">Program Studi/Unit</label>
-							<input type="text" class="form-control mb-2 mr-sm-2" id="prodiunit" 
-                            value="<?= $value['nama_prodi'] ?>" name="prodiunit"required disabled>
-							<label for="pagu" class="mb-2 mr-sm-2">Jumlah Pagu</label>
-							<input type="text" class="form-control mb-2 mr-sm-2" id= "pagu" name="pagu" 
-                            value="RP. <?= $value['pagu'] ?>" required disabled>
-						</div>
-					<?php endforeach; ?>
-                    <?php $totalPk=0; foreach ($pk as $key => $value) : $totalPk = $totalPk+$value['total']; endforeach; ?>
-                    <?php $totalOps=0; foreach ($ops as $key => $value) : $totalOps = $totalOps+$value['total']; endforeach; ?>
-                    <?php $pkops = $totalPk+$totalOps; ?>
-                    <?php $totalInv=0; foreach ($inv as $key => $value) : $totalInv = $totalInv+$value['total']; endforeach; ?>
-                    <?php $totalSeluruh = $pkops+$totalInv; ?>
-                    <table class="table table-hover">
-                        
-                        <tbody>
-                        <canvas id="myChart"></canvas>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                            Kesimpulan
-                        </button>
-                        <tr>
-                            <td>PK</td>
-                            <td>:</td>
-                            <td>RP. <?= $totalPk ?></td>
-                        </tr>
-                        <tr>
-                            <td>OPS</td>
-                            <td>:</td>
-                            <td>Rp. <?= $totalOps ?></td>
-                        </tr>
-                        <tr>
-                            <td>Total PK + OPS</td>
-                            <td>:</td>
-                            <td>Rp. <?= $pkops ?></td>
-                        </tr>
-                        </tbody>
-                        <tbody>
-                        <tr>
-                            <td>INV</td>
-                            <td>:</td>
-                            <td>Rp. <?= $totalInv ?></td>
-                        </tr>
-                        <tr>
-                            <td>Total RKAT</td>
-                            <td>:</td>
-                            <td>Rp. <?= $totalSeluruh ?></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                    
-                        <div class="container">
-  <h2>Toggleable Tabs</h2>
-  <br>
-  <div class="dropdown nav-tabs" >
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                        Dropdown button
-                        </button>
+  <div id="columnchart_material"></div>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"> Kesimpulan </button>
+      <div class="container">
+        <h2>Toggleable Tabs</h2>
+        <br>
+        <div class="dropdown nav-tabs" >
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Dropdown button</button>
                         <div class="dropdown-menu" role="tablist">
                         <a class="nav-link active" data-toggle="tab" href="#home">ops</a>
                         <a class="nav-link" data-toggle="tab" href="#menu1">pk</a>
@@ -266,7 +307,7 @@
 											<td><?= $value['anggaranGanjil']; ?></td>
 											<td><?= $value['anggaranGenap']; ?></td>
 											<td><?= $value['total']; ?></td>
-											<td></td>
+											<td><?= $value['serapGenap']; ?></td>
 										</tr>
 									<?php endforeach; ?>
 							</tbody>
@@ -332,44 +373,30 @@
     <!-- <script src="lib/easing/easing.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/isotope/isotope.pkgd.min.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-    <script>
-		var ctx = document.getElementById("myChart").getContext('2d');
-		var myChart = new Chart(ctx, {
-			type: 'bar',
-			data: {
-				labels: ["OPS", "PK", "INV"],
-				datasets: [{
-					label: '',
-					data: [
-                        <?php echo $totalOps; ?>,
-                        <?php echo $totalPk; ?>, 
-                        <?php echo $totalInv; ?>, 
-					],
-					backgroundColor: [
-					'rgba(255, 99, 132, 0.2)',
-					'rgba(54, 162, 235, 0.2)',
-					'rgba(255, 206, 86, 0.2)',
-					],
-					borderColor: [
-					'rgba(255,99,132,1)',
-					'rgba(54, 162, 235, 1)',
-					'rgba(255, 206, 86, 1)',
-					],
-					borderWidth: 1
-				}]
-			},
-            options: {
-    legend: {display: false},
-    title: {
-      display: true,
-      text: "World Wine Production 2018"
-    }
-  }
-		});
-	</script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
 
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Semester','Rencana (Rp.)', 'Realisasi(Rp.)'],
+          ['Ganjil', <?= $totalPkGanjil ?>, <?= $totalPkGanjilSerap ?>],
+          ['Genap', <?= $totalPkGenap ?>, <?= $totalPkGenapSerap ?>],
+        ]);
 
+        var options = {
+          chart: {
+            title: 'Company Performance',
+            subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+          }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
     <script>
         function startTime() {
             var today = new Date();

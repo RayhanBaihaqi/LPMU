@@ -77,9 +77,6 @@
 						<div class="user-info-dropdown">
 							<div class="dropdown">
 								<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-									<span class="user-icon">
-										<img src="<?php echo base_url(); ?>/public/img/inf-logo.jpg" alt="">
-									</span>
 									<span class="user-name">
 										<?php
 										$nama_prodi = session('nama_prodi');
@@ -107,21 +104,12 @@
 				<h4 class="card-title">Formulir Target Capaian</h4>
 			</div>
 			<div class="card-body">
-				<!-- <div class="form-group ">
-					<label for="sel1">Kategori:</label>
-					<select class="form-control kpi" id="sel1">
-						<option>Pilih Kategori</option>
-						<option>PK</option>
-						<option>OPS</option>
-						<option>INV</option>
-					</select>
-				</div> -->
 				<form action="<?= base_url('rkat/updatebyuser'); ?>" method="POST" enctype="multipart/form-data">
 				<div class="form-inline">
-									<label class="mb-2 mr-sm-2" for="exampleFormControlSelect1" style="width: 150px;">Tahun Akademik</label>
-									<input type="text" class="form-control mb-2 mr-sm-2" name="tahunAkademik" id="tahunAkademik" value="<?= $tahunAkademik['tahunAkademik'] ?>" disabled>
-								</div>
-					<div class="table-responsive">
+					<label class="mb-2 mr-sm-2" for="exampleFormControlSelect1" style="width: 150px;">Tahun Akademik</label>
+					<input type="text" class="form-control mb-2 mr-sm-2" name="tahunAkademik" id="tahunAkademik" value="<?= $tahunAkademik['tahunAkademik'] ?>" disabled>
+				</div>
+					<div class="">
 						<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 							<thead>
 								<tr>
@@ -136,9 +124,6 @@
 									<th >Anggaran Genap</th>
 									<th width="600px">Serapan Genap</th>
 									<th >peren Genap</th>
-									<!-- <th >Total Anggaran</th>
-									<th width="600px">Total Serapan</th> -->
-									<!-- <th width="600px">Bukti</th> -->
 								</tr>
 							</thead>
 							<tbody id="nilai">
@@ -182,11 +167,10 @@
 								<td></td>
 								<td><span id="totalanggaranganjil"></span></td>
 								<td><span id="tampilTotalGanjil"></span></td>
-								<td><p>Persentase Serap: <input type="text" class="form-control form-control-sm" name="persenSerapGanjil" id="persenSerapGanjil" disabled /></p></td>
+								<td><p>Persentase Serap: <input type="text" class="form-control form-control-sm " id="persenSerapGanjil" placeholder="0%" name="persenSerapGanjil"disabled></p></td>
 								<td><span id="totalanggarangenap"></span></td>
 								<td><span id="tampilTotalGenap"></span></td>
-								<td><p>Persentase Serap: <input type="text" class="form-control form-control-sm" name="persenSerapGenap" id="persenSerapGenap" disabled /></p></td>
-								<!-- <td><span id="total"></span></td> -->
+								<td><p>Persentase Serap: <input type="text" class="form-control form-control-sm" name="persenSerapGenap" id="persenSerapGenap"  /></p></td>
 
 							</tfoot>
 
@@ -249,7 +233,7 @@
 
 			hitungGanjil = parseInt(totalGanjil) / parseInt(aGanjil) * 100;
 			document.getElementById('persenSerapGanjil').value = hitungGanjil + "%";
-			console.log(hitungGanjil);
+			console.log(persenSerapGanjil);
 		}
 		function AddInputs2(clicked_id)
 		{
@@ -309,35 +293,33 @@
 			document.getElementById('totalBayarSerap' + id).value = totalPersenSerap + "%";
 		}
 	</script>
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-	<!-- <script type="text/javascript">
+	<script type='text/javascript'>
+		// baseURL variable
+		var baseURL= "<?php echo base_url();?>";
 		$(document).ready(function(){
-		$("#diskon").keyup(function(){
-			var harga  = parseInt($("#harga").val());
-			var diskon  = parseInt($("#diskon").val());
-			for(var t = 1; t < table.rows.length; t++)
-		{
-			(parseInt($("#harga")/parseInt($("#diskon"))*100 + parseInt(table.rows[t].innerHTML;
+		// Department change
+		$('#sel_depart').change(function(){
+		var department = $(this).val();
+		// AJAX request
+		$.ajax({
+		url:'<?=base_url()?>index.php/User/getDepartmentUsers',
+		method: 'post',
+		data: {department: department},
+		dataType: 'json',
+		success: function(response){
+		// Remove options
+		$('#sel_user').find('option').not(':first').remove();
+		// Add options
+		$.each(response,function(index,data){
+		$('#sel_user').append('<option value="'+data['id']+'">'+data['name']+'</option>');
+		});
 		}
-			
-			console.log(diskon);
-			$("#totBayar").val(total);
 		});
 		});
-	</script> -->
-	<!-- <script>
-		$(".perhitungan").keyup(function(){
-			var anggaranGasal = pareseInt($("#anggaranGasal").val())
-			var SerapGasal = pareseInt($("#SerapGasal").val())
-
-			var hasilSerapGasal = (anggaranGasal / SerapanGasal) * 100;
-			$("#hasilSerapGasal").atter("value", hasilSerapGasal)
 		});
-	</script> -->
+	</script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-	<!-- <script src="lib/easing/easing.min.js"></script>
-	<script src="lib/owlcarousel/owl.carousel.min.js"></script>
-	<script src="lib/isotope/isotope.pkgd.min.js"></script> -->
 	<script>
 		// Add the following code if you want the name of the file appear on select
 		$(".custom-file-input").on("change", function() {
@@ -347,18 +329,6 @@
 	</script>
 
 	<script>
-		function startTime() {
-			var today = new Date();
-			var h = today.getHours();
-			var m = today.getMinutes();
-			var s = today.getSeconds();
-			m = checkTime(m);
-			s = checkTime(s);
-			document.getElementById('txt').innerHTML =
-				h + ":" + m + ":" + s;
-			var t = setTimeout(startTime, 500);
-		}
-
 		function checkTime(i) {
 			if (i < 10) {
 				i = "0" + i
@@ -380,8 +350,6 @@
 			});
 		});
 	</script>
-	<!-- <script src="http://localhost:8080/chart/apexcharts.min.js"></script>
-	<script src="http://localhost:8080/chart/dashboard.js"></script> -->
 	<script src="<?php echo base_url(); ?>/public/chart/jquery.knob.min.js"></script>
 	<script src="<?php echo base_url(); ?>/public/chart/knob-chart-setting.js"></script>
 	<script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>

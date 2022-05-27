@@ -45,12 +45,33 @@ class Rkat extends BaseController
         $data = [
             'detail_rkat2' => $this->DetailRkatModel->gabung($username),
             'set_rkat' => $this->DetailRkatModel->tampilDataSetRKAT($username),
-            'pk' => $model->join('set_rkat', 'set_rkat.id_setrkat=detail_rkat2.id_set')->join('user', 'user.id=set_rkat.id_user')->where('username', $username)->where('kategori', 'PK')->findAll(),
-            'ops' => $model->join('set_rkat', 'set_rkat.id_setrkat=detail_rkat2.id_set')->join('user', 'user.id=set_rkat.id_user')->where('username', $username)->where('kategori', 'OPS')->findAll(),
-            'inv' => $model->join('set_rkat', 'set_rkat.id_setrkat=detail_rkat2.id_set')->join('user', 'user.id=set_rkat.id_user')->where('username', $username)->where('kategori', 'INV')->findAll(),
-            'tahunAkademik' => $model-> join('tahun_akademik', 'tahun_akademik.id_tahun=detail_rkat2.id_tahun')->join('set_rkat', 'set_rkat.id_setrkat=detail_rkat2.id_set')->join('user', 'user.id=set_rkat.id_user')->where('username', $username)->where('aktif', '1')->findAll(),
+            'pk' => $model->join('pagu_rkat', 'pagu_rkat.id_pagu=detail_rkat2.id_pagu')->join('tahun_akademik', 'tahun_akademik.id_tahun=detail_rkat2.id_tahun')->where('aktif', '1')->join('user', 'user.id=pagu_rkat.id_user')->where('username', $username)->where('kategori', 'PK')->findAll(),
+            'ops' => $model->join('pagu_rkat', 'pagu_rkat.id_pagu=detail_rkat2.id_pagu')->join('tahun_akademik', 'tahun_akademik.id_tahun=detail_rkat2.id_tahun')->where('aktif', '1')->join('user', 'user.id=pagu_rkat.id_user')->where('username', $username)->where('kategori', 'OPS')->findAll(),
+            'inv' => $model->join('pagu_rkat', 'pagu_rkat.id_pagu=detail_rkat2.id_pagu')->join('tahun_akademik', 'tahun_akademik.id_tahun=detail_rkat2.id_tahun')->where('aktif', '1')->join('user', 'user.id=pagu_rkat.id_user')->where('username', $username)->where('kategori', 'INV')->findAll(),
+            'tahunAkademik' => $model-> join('tahun_akademik', 'tahun_akademik.id_tahun=detail_rkat2.id_tahun')->join('pagu_rkat', 'pagu_rkat.id_pagu=detail_rkat2.id_pagu')->join('user', 'user.id=pagu_rkat.id_user')->where('username', $username)->where('aktif', '1')->findAll(),
         ];
         return view('rkat/RincianRkat', $data);
+    }
+    public function updateRincian() {
+        $model = new PersenSerapModel();
+        $id_persen = $this->request->getVar('id_persen');
+
+        $data = [
+			'id_tahun' => $this->request->getVar('id_tahun'),
+            'id_user' => $this->request->getVar('id_user'),
+            'totalAnggaranPk' => $this->request->getVar('totalAnggaranPk'),
+            'totalSerapPk' => $this->request->getVar('totalSerapPk'),
+            'persenPk' => $this->request->getVar('persenPk'),
+            'totalAnggaranOps' => $this->request->getVar('totalAnggaranOps'),
+            'totalSerapOps' => $this->request->getVar('totalSerapOps'),
+            'persenOps' => $this->request->getVar('persenOps'),
+            'totalAnggaranInv' => $this->request->getVar('totalAnggaranInv'),
+            'totalSerapInv' => $this->request->getVar('totalSerapInv'),
+            'persenInv' => $this->request->getVar('persenInv'),
+        ];
+        $save = $model->update($id_persen,$data);
+
+        return redirect()->to(base_url('rkat/rincian'));
     }
     public function createbyuser()
     {
