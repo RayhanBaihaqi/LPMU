@@ -336,17 +336,17 @@
                         pointHighlightStroke: 'rgba(220,220,220,1)',
                         data: [<?php echo json_encode($jumlahkpi1_20) ?>, <?php echo json_encode($jumlahkpi2_20) ?>, <?php echo json_encode($jumlahkpi3_20) ?>, <?php echo json_encode($jumlahkpi4_20) ?>, <?php echo json_encode($jumlahkpi5_20) ?>, <?php echo json_encode($jumlahkpi6_20) ?>, <?php echo json_encode($jumlahkpi7_20) ?>, <?php echo json_encode($jumlahkpi8_20) ?>, <?php echo json_encode($jumlahkpi9_20) ?>]
                     },
-                    {
-                        label: <?php echo json_encode($tahun_ajaran = '2021/2022') ?>,
-                        backgroundColor: 'rgba(93, 78, 246,1)',
-                        borderColor: 'rgba(93, 78, 246,1)',
-                        pointRadius: false,
-                        pointColor: 'rgba(210, 214, 222, 1)',
-                        pointStrokeColor: '#c1c7d1',
-                        pointHighlightFill: '#fff',
-                        pointHighlightStroke: 'rgba(220,220,220,1)',
-                        data: [<?php echo json_encode($jumlahkpi1_21) ?>, <?php echo json_encode($jumlahkpi2_21) ?>, <?php echo json_encode($jumlahkpi3_21) ?>, <?php echo json_encode($jumlahkpi4_21) ?>, <?php echo json_encode($jumlahkpi5_21) ?>, <?php echo json_encode($jumlahkpi6_21) ?>, <?php echo json_encode($jumlahkpi7_21) ?>, <?php echo json_encode($jumlahkpi8_21) ?>, <?php echo json_encode($jumlahkpi9_21) ?>]
-                    },
+                    // {
+                    //     label: <?php echo json_encode($tahun_ajaran = '2021/2022') ?>,
+                    //     backgroundColor: 'rgba(93, 78, 246,1)',
+                    //     borderColor: 'rgba(93, 78, 246,1)',
+                    //     pointRadius: false,
+                    //     pointColor: 'rgba(210, 214, 222, 1)',
+                    //     pointStrokeColor: '#c1c7d1',
+                    //     pointHighlightFill: '#fff',
+                    //     pointHighlightStroke: 'rgba(220,220,220,1)',
+                    //     data: [<?php echo json_encode($jumlahkpi1_21) ?>, <?php echo json_encode($jumlahkpi2_21) ?>, <?php echo json_encode($jumlahkpi3_21) ?>, <?php echo json_encode($jumlahkpi4_21) ?>, <?php echo json_encode($jumlahkpi5_21) ?>, <?php echo json_encode($jumlahkpi6_21) ?>, <?php echo json_encode($jumlahkpi7_21) ?>, <?php echo json_encode($jumlahkpi8_21) ?>, <?php echo json_encode($jumlahkpi9_21) ?>]
+                    // },
                 ]
             },
             options: {

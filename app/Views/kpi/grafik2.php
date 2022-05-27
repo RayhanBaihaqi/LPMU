@@ -393,7 +393,7 @@
                                         endforeach;
                                         ?>
                                     </tr>
-                                    <tr>
+                                    <!-- <tr>
                                         <?php
                                         foreach ($hasilkpi1_21 as $rows) :
                                         ?>
@@ -465,7 +465,7 @@
                                         <?php
                                         endforeach;
                                         ?>
-                                    </tr>
+                                    </tr> -->
 
                                 </tbody>
                                 <!-- <tfoot>
