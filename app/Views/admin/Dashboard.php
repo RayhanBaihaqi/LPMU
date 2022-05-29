@@ -118,7 +118,6 @@
 									echo "$nama_prodi"
 									?>
 								</span>
-								<img class="img-profile rounded-circle" src="<?php echo base_url(); ?>/public/img/inf-logo.jpg">
 							</a>
 
 							<!-- Dropdown - User Information -->
