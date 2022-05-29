@@ -32,7 +32,7 @@ class CapaianRkat extends BaseController
             'pagu_rkat' => $this->DetailRkatModel->tampilDataSetRKAT($username),
             'tahunAkademik2' => $model-> join('tahun_akademik', 'tahun_akademik.id_tahun=detail_rkat2.id_tahun')->
                                          join('pagu_rkat', 'pagu_rkat.id_pagu=detail_rkat2.id_pagu')->
-                                         join('user', 'user.id=pagu_rkat.id_user')->
+                                         join('user', 'user.id=detail_rkat2.id_user')->
                                          where('username', $username)->
                                          where('aktif', '1')->
                                          findAll(),

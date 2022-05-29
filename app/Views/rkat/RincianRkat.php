@@ -121,8 +121,8 @@
                     <?php $totalPkGanjil=0; foreach ($pk as $key => $value) : $totalPkGanjil = $totalPkGanjil+$value['anggaranGanjil']; endforeach; ?>
                     <?php $totalAnggaranPk = $totalPkGanjil+$totalPkGenap; ?>
 
-                    <?php $totalPkGenapSerap=0; foreach ($pk as $key => $value) : $totalPkGenapSerap = $totalPkGenapSerap+$value['serapGenap']; endforeach; ?>
                     <?php $totalPkGanjilSerap=0; foreach ($pk as $key => $value) : $totalPkGanjilSerap = $totalPkGanjilSerap+$value['serapGanjil']; endforeach; ?>
+                    <?php $totalPkGenapSerap=0; foreach ($pk as $key => $value) : $totalPkGenapSerap = $totalPkGenapSerap+$value['serapGenap']; endforeach; ?>
                     <?php $totalSerapPk = $totalPkGenapSerap+$totalPkGanjilSerap; ?>
 
                     <?php $persenPk = $totalSerapPk/$totalAnggaranPk*100; ?>
@@ -136,8 +136,15 @@
                     <?php $totalSerapOps = $totalOpsGenapSerap+$totalOpsGanjilSerap; ?>
 
                     <?php $persenOps = $totalSerapOps/$totalAnggaranOps*100; ?>
+
+                    <!-- Ops + PK -->
+                    <?php $totalAnggaranPkOps = $totalAnggaranPk+$totalAnggaranOps; ?>
+                    <?php $totalSerapPkOps = $totalSerapPk+$totalSerapOps; ?>
+
+                    <?php $persenPkOps = $totalSerapPkOps/$totalAnggaranPkOps*100; ?>
+
                     <!-- INV -->
-                    <?php $totalInvGenap=0; foreach ($inv as $key => $value) : $totalInvGenap = $totalInvGenap+$value['total']; endforeach; ?>
+                    <?php $totalInvGenap=0; foreach ($inv as $key => $value) : $totalInvGenap = $totalInvGenap+$value['anggaranGenap']; endforeach; ?>
                     <?php $totalInvGanjil=0; foreach ($inv as $key => $value) : $totalInvGanjil = $totalInvGanjil+$value['anggaranGanjil']; endforeach; ?>
                     <?php $totalAnggaranInv = $totalInvGanjil+$totalInvGenap; ?>
 
@@ -146,7 +153,9 @@
                     <?php $totalSerapInv = $totalInvGenapSerap+$totalInvGanjilSerap; ?>
 
                     <?php $persenInv = $totalSerapInv/$totalAnggaranInv*100; ?>
-      <form action="<?= base_url('rkat/updateRincian'); ?>" method="POST" enctype="multipart/form-data">
+      <?= session()->getFlashdata('statusSimpan'); ?>
+      <?= session()->getFlashdata('statusUpdate'); ?>
+      <form action="<?= base_url('rkat/saveRincian'); ?>" method="POST" enctype="multipart/form-data">
       <div class="card-body">
         <?php foreach ($set_rkat as $key => $reading) : ?>
         <input required type="hidden" name="id_user" value="<?= $reading['id_user']; ?>">
@@ -167,9 +176,9 @@
             <td id='totalSerapPk'name='totalSerapPk'>RP. <?=$totalSerapPk?></td>
           </tr>
           <tr>
-            <td>Persentase</td>
+            <td>Persentase (%)</td>
             <td>:</td>
-            <td id='persenPk'name='persenPk'><?=$persenPk?>%</td>
+            <td id='persenPk'name='persenPk'><input type="test" class="form-control" id="persenPk" value="<?=$persenPk?>" name="persenPk" required></td>
           </tr>
           <tr>
             <td><h5>OPS</h5></td>
@@ -185,9 +194,27 @@
             <td id='totalSerapOps'name='totalSerapOps'>RP. <?=$totalSerapOps?></td>
           </tr>
           <tr>
-            <td>Persentase</td>
+            <td>Persentase (%)</td>
             <td>:</td>
-            <td id='persenOps'name='persenOps'><?=$persenOps?>%</td>
+            <td id='persenOps'name='persenOps'><input type="test" class="form-control" id="persenOps" value="<?=$persenOps?>" name="persenOps" required></td>
+          </tr>
+          <tr>
+            <td><h5>PK + OPS</h5></td>
+          </tr>
+          <tr>
+            <td>Total Anggaran</td>
+            <td>:</td>
+            <td id='totalAnggaranPkOps'name='totalAnggaranPkOps'>RP. <?=$totalAnggaranPkOps?></td>
+          </tr>
+          <tr>
+            <td>Total Realisasi</td>
+            <td>:</td>
+            <td id='totalSerapPkOps'name='totalSerapPkOps'>RP. <?=$totalSerapPkOps?></td>
+          </tr>
+          <tr>
+            <td>Persentase (%)</td>
+            <td>:</td>
+            <td id='persenPkOps'name='persenPkOps'><input type="test" class="form-control" id="persenPkOps" value="<?=$persenPkOps?>" name="persenPkOps" required></td>
           </tr>
           <tr>
             <td><h5>INV</h5></td>
@@ -203,20 +230,19 @@
             <td id='totalSerapInv'name='totalSerapInv'>RP. <?=$totalSerapInv?></td>
           </tr>
           <tr>
-            <td>Persentase</td>
+            <td>Persentase (%)</td>
             <td>:</td>
-            <td id='persenInv'name='persenInv'><?=$persenInv?>%</td>
+            <td id='persenInv'name='persenInv'><input type="test" class="form-control" id="persenInv" value="<?=$persenInv?>" name="persenInv" required></td>
           </tr>
           </tbody>
         </table>
         <?php endforeach; ?>
       </div>
       <div class="card-footer" align="center">
-					<button type="submit" class="btn btn-primary" id="btnJumlah" value="submit">Update Data</button>
+					<button type="submit" class="btn btn-primary" id="btnJumlah" value="submit" onclick="myFunction()">Simpan Data</button>
 						<span id="textError"></span>
 			</div>
       </form>
-      </div>
     </div>
         <div class="modal" id="myModal">
           <div class="modal-dialog">
@@ -226,146 +252,21 @@
                 <h4 class="modal-title">Kesimpulan</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
               </div>
-        
-        <!-- Modal body -->
-        <div class="modal-body">
-          Serapan Terendah Prodi <?php $nama_prodi = session('nama_prodi'); echo "$nama_prodi" ?> : <br>
-          Serapan Tertinggi Prodi <?php $nama_prodi = session('nama_prodi'); echo "$nama_prodi" ?> : <br><hr>
-          rata-rata serapan prodi <?php $nama_prodi = session('nama_prodi'); echo "$nama_prodi" ?> per TA <br> 
-          - TA 20--     : <br>
-          - TA 20--     : 
-        </div>
-        
-        <!-- Modal footer -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        </div>
-        
-      
-  </div>
-  <div id="columnchart_material"></div>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"> Kesimpulan </button>
-      <div class="container">
-        <h2>Toggleable Tabs</h2>
-        <br>
-        <div class="dropdown nav-tabs" >
-            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Dropdown button</button>
-                        <div class="dropdown-menu" role="tablist">
-                        <a class="nav-link active" data-toggle="tab" href="#home">ops</a>
-                        <a class="nav-link" data-toggle="tab" href="#menu1">pk</a>
-                        <a class="nav-link" data-toggle="tab" href="#menu2">Menu 2</a>
-                        </div>
-                    </div>
-  <!-- Nav tabs -->
-  <ul class="nav nav-tabs" role="tablist">
-  <li class="nav-item">
-  <a class="nav-link disabled" href="#">Disabled</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link active" data-toggle="tab" href="#home">ops</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#menu1">pk</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#menu2">Menu 2</a>
-    </li>
-  </ul>
-
-  <!-- Tab panes -->
-  <div class="tab-content">
-    <div id="home" class="container tab-pane active"><br>
-    <table class="table table-striped" id="dataTable1" width="100%" cellspacing="0">
-							<thead>
-								<tr>
-									<th>No</th>
-									<th>Kategori</th>
-									<th>No Kegiatan</th>
-									<th>Target</th>
-									<th>Indikator</th>
-									<th>Nama Kegiatan</th>
-									<th>KPI</th>
-									<th>Butir</th>
-									<th>Anggaran Gasal</th>
-									<th>Anggaran Ganjil</th>
-									<th>Total Anggaran Rencana</th>
-									<th>Total Anggaran Realisasi</th>
-								</tr>
-							</thead>
-							<tbody>
-								<?php $i = 1;?>
-								<?php foreach ($detail_rkat2 as $value) : ?>
-										<tr>
-											<td scope="row"><?= $i++; ?></td>
-											<td><?= $value['kategori']; ?></td>
-											<td><?= $value['no_kegiatan']; ?></td>
-											<td><?= $value['target']; ?></td>
-											<td><?= $value['indikator']; ?></td>
-											<td><?= $value['nama_kegiatan']; ?></td>
-											<td><?= $value['kpi']; ?></td>
-											<td><?= $value['butir']; ?></td>
-											<td><?= $value['anggaranGanjil']; ?></td>
-											<td><?= $value['anggaranGenap']; ?></td>
-											<td><?= $value['total']; ?></td>
-											<td><?= $value['serapGenap']; ?></td>
-										</tr>
-									<?php endforeach; ?>
-							</tbody>
-						</table>
-    </div>
-    <div id="menu1" class="container tab-pane fade"><br>
-    <table class="table table-striped" id="dataTable1" width="100%" cellspacing="0">
-							<thead>
-								<tr>
-									<th>No</th>
-									<th>Kategori</th>
-									<th>No Kegiatan</th>
-									<th>Target</th>
-									<th>Indikator</th>
-									<th>Nama Kegiatan</th>
-									<th>KPI</th>
-									<th>Butir</th>
-									<th>Anggaran Gasal</th>
-									<th>Anggaran Ganjil</th>
-									<th>Total Anggaran Rencana</th>
-									<th>Total Anggaran Realisasi</th>
-								</tr>
-							</thead>
-							<tbody>
-								<?php $i = 1;?>
-								<?php foreach ($tahunAkademik as $key => $value) : ?>
-										<tr>
-											<td scope="row"><?= $i++; ?></td>
-											<td><?= $value['kategori']; ?></td>
-             
-											<td><?= $value['no_kegiatan']; ?></td>
-											<td><?= $value['target']; ?></td>
-											<td><?= $value['indikator']; ?></td>
-											<td><?= $value['nama_kegiatan']; ?></td>
-											<td><?= $value['kpi']; ?></td>
-											<td><?= $value['butir']; ?></td>
-											<td><?= $value['anggaranGanjil']; ?></td>
-											<td><?= $value['anggaranGenap']; ?></td>
-											<td><?= $value['total']; ?></td>
-											<td></td>
-										</tr>
-									<?php endforeach; ?>
-							</tbody>
-						</table>
-    </div>
-    <div id="menu2" class="container tab-pane fade"><br>
-      <h3>Menu 2</h3>
-      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-    </div>
-  </div>
-</div>
-                    </div>
-                </div>
+              <!-- Modal body -->
+              <div class="modal-body">
+                Serapan Terendah Prodi <?php $nama_prodi = session('nama_prodi'); echo "$nama_prodi" ?> : <br>
+                Serapan Tertinggi Prodi <?php $nama_prodi = session('nama_prodi'); echo "$nama_prodi" ?> : <br><hr>
+                rata-rata serapan prodi <?php $nama_prodi = session('nama_prodi'); echo "$nama_prodi" ?> per TA <br> 
+                - TA 20--     : <br>
+                - TA 20--     : 
+              </div>
+              <!-- Modal footer -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              </div>
             </div>
-		</div>
-		<!-- Responsive tables End -->
-        <!-- The Modal -->
-	</div>
+          </div>
+        </div>
 
 	 <!-- JavaScript Libraries -->
 	 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -374,6 +275,27 @@
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/isotope/isotope.pkgd.min.js"></script> -->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+    function myFunction() {
+        
+        var x = document.getElementById("btn");
+        x.disabled = true;
+    }
+    </script>
+    <script>
+    let input = document.querySelector(".input");
+    let button = document.getElementById("btn");
+    button.disabled = true;
+    input.addEventListener("change", stateHandle);
+
+    function stateHandle() {
+        if(document.querySelector(".input").value === "") {
+            button.disabled = true;
+        } else {
+            button.disabled = false;
+        }
+    }
+    </script>
     <script type="text/javascript">
       google.charts.load('current', {'packages':['bar']});
       google.charts.setOnLoadCallback(drawChart);
@@ -381,8 +303,8 @@
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['Semester','Rencana (Rp.)', 'Realisasi(Rp.)'],
-          ['Ganjil', <?= $totalPkGanjil ?>, <?= $totalPkGanjilSerap ?>],
-          ['Genap', <?= $totalPkGenap ?>, <?= $totalPkGenapSerap ?>],
+          ['Ganjil', <?//= $totalPkGanjil ?>, <?//= $totalPkGanjilSerap ?>],
+          ['Genap', <?//= $totalPkGenap ?>, <?//= $totalPkGenapSerap ?>],
         ]);
 
         var options = {

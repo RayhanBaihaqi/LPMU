@@ -24,12 +24,13 @@ class Backend extends BaseController
 	}
 	public function rkat()
 	{
-		$model = new DetailRkatModel();
+		$model = new PersenSerapModel();
         $username = session('username');
 		$data = [
-			'pk' => $model->join('pagu_rkat', 'pagu_rkat.id_pagu=detail_rkat2.id_pagu')->join('tahun_akademik', 'tahun_akademik.id_tahun=detail_rkat2.id_tahun')->where('aktif', '1')->join('user', 'user.id=pagu_rkat.id_user')->where('username', $username)->where('kategori', 'PK')->findAll(),
-            'ops' => $model->join('pagu_rkat', 'pagu_rkat.id_pagu=detail_rkat2.id_pagu')->join('tahun_akademik', 'tahun_akademik.id_tahun=detail_rkat2.id_tahun')->where('aktif', '1')->join('user', 'user.id=pagu_rkat.id_user')->where('username', $username)->where('kategori', 'OPS')->findAll(),
-            'inv' => $model->join('pagu_rkat', 'pagu_rkat.id_pagu=detail_rkat2.id_pagu')->join('tahun_akademik', 'tahun_akademik.id_tahun=detail_rkat2.id_tahun')->where('aktif', '1')->join('user', 'user.id=pagu_rkat.id_user')->where('username', $username)->where('kategori', 'INV')->findAll(),
+			'tahun' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('username', $username)->findAll(),
+            'tahunAktif' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('username', $username)->where('aktif', '1')->findAll(),
+			'seluruhDataUser' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->findAll(),
+            // 'inv' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=detail_rkat2.id_tahun')->where('aktif', '1')->join('user', 'user.id=detail_rkat2.id_user')->where('username', $username)->where('kategori', 'INV')->findAll(),
             'pagu_rkat' => $this->DetailRkatModel->tampilDataSetRKAT($username),
             'tahunAkademik' => $this->TahunAkademikModel->where('aktif', '1')->first(),
         ];

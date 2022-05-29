@@ -47,5 +47,63 @@ class DetailRkatModel extends Model
     {
         return $this->findAll();
     }
+    function jumlahPk($username=null)
+    {
+        return $this->db->table('detail_rkat2')
+        ->selectSum('anggaranGenap','jumPk')
+        ->selectSum('anggaranGanjil','jumPk2')
+        ->select('SUM(anggaranGenap) + SUM(anggaranGanjil) as totalAnggaranPk', FALSE)
+
+        ->selectSum('serapGenap','jumPk')
+        ->selectSum('serapGanjil','jumPk2')
+        ->select('SUM(serapGenap) + SUM(serapGanjil) as totalSerapPk', FALSE)
+        ->join('tahun_akademik', 'tahun_akademik.id_tahun=detail_rkat2.id_tahun')
+        ->join('user', 'user.id=detail_rkat2.id_user')
+
+        ->where('username',$username)
+        ->where('aktif', '1')
+        ->where('kategori','PK')
+        ->groupBy('kategori')
+        ->get()->getResultArray();
+    }
+    function jumlahOps($username=null)
+    {
+        return $this->db->table('detail_rkat2')
+        ->join('tahun_akademik', 'tahun_akademik.id_tahun=detail_rkat2.id_tahun')
+        ->join('user', 'user.id=detail_rkat2.id_user')
+
+        ->where('username',$username)
+        ->where('aktif', '1')
+        ->selectSum('anggaranGenap','jumOps')
+        ->selectSum('anggaranGanjil','jumOps2')
+        ->select('SUM(anggaranGenap) + SUM(anggaranGanjil) as totalAnggaranOps', FALSE)
+
+        ->selectSum('serapGenap','jumOps')
+        ->selectSum('serapGanjil','jumOps2')
+        ->select('SUM(serapGenap) + SUM(serapGanjil) as totalSerapOps', FALSE)
+        
+        ->where('kategori','Ops')
+        ->groupBy('kategori')
+        ->get()->getResultArray();
+    }
+    function jumlahInv($username=null)
+    {
+        return $this->db->table('detail_rkat2')
+        ->selectSum('anggaranGenap','jumInv')
+        ->selectSum('anggaranGanjil','jumInv2')
+        ->select('SUM(anggaranGenap) + SUM(anggaranGanjil) as totalAnggaranInv', FALSE)
+
+        ->selectSum('serapGenap','jumInv')
+        ->selectSum('serapGanjil','jumInv2')
+        ->select('SUM(serapGenap) + SUM(serapGanjil) as totalSerapInv', FALSE)
+        ->join('tahun_akademik', 'tahun_akademik.id_tahun=detail_rkat2.id_tahun')
+        ->join('user', 'user.id=detail_rkat2.id_user')
+
+        ->where('username',$username)
+        ->where('aktif', '1')
+        ->where('kategori','Inv')
+        ->groupBy('kategori')
+        ->get()->getResultArray();
+    }
 }
 

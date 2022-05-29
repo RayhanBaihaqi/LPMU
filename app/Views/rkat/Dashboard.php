@@ -167,65 +167,13 @@
             </div>
             
             <!-- ====================================================================================================================== -->
-                    <!-- PK -->
-                    <?php $totalPkGenap=0; foreach ($pk as $key => $value) : $totalPkGenap = $totalPkGenap+$value['anggaranGenap']; endforeach; ?>
-                    <?php $totalPkGenapSerap=0; foreach ($pk as $key => $value) : $totalPkGenapSerap = $totalPkGenapSerap+$value['serapGenap']; endforeach; ?>
-                    <?php $persenPkGenap = $totalPkGenapSerap/$totalPkGenap*100; ?>
-
-                    <?php $totalPkGanjil=0; foreach ($pk as $key => $value) : $totalPkGanjil = $totalPkGanjil+$value['anggaranGanjil']; endforeach; ?>
-                    <?php $totalPkGanjilSerap=0; foreach ($pk as $key => $value) : $totalPkGanjilSerap = $totalPkGanjilSerap+$value['serapGanjil']; endforeach; ?>
-                    <?php $persenPkGanjil = $totalPkGanjilSerap/$totalPkGanjil*100; ?>
-                    <!-- OPS -->
-                    <?php $totalOpsGenap=0; foreach ($ops as $key => $value) : $totalOpsGenap = $totalOpsGenap+$value['anggaranGenap']; endforeach; ?>
-                    <?php $totalOpsGenapSerap=0; foreach ($ops as $key => $value) : $totalOpsGenapSerap = $totalOpsGenapSerap+$value['serapGenap']; endforeach; ?>
-                    <?php $persenOpsGenap = $totalOpsGenapSerap/$totalOpsGenap*100; ?>
-
-                    <?php $totalOpsGanjil=0; foreach ($ops as $key => $value) : $totalOpsGanjil = $totalOpsGanjil+$value['anggaranGanjil']; endforeach; ?>
-                    <?php $totalOpsGanjilSerap=0; foreach ($ops as $key => $value) : $totalOpsGanjilSerap = $totalOpsGanjilSerap+$value['serapGanjil']; endforeach; ?>
-                    <?php $persenOpsGanjil = $totalOpsGanjilSerap/$totalOpsGanjil*100; ?>
-                    <!-- INV -->
-                    <?php $totalInvGenap=0; foreach ($inv as $key => $value) : $totalInvGenap = $totalInvGenap+$value['total']; endforeach; ?>
-                    <?php $totalInvGenapSerap=0; foreach ($inv as $key => $value) : $totalInvGenapSerap = $totalInvGenapSerap+$value['serapGenap']; endforeach; ?>
-                    <?php $persenInvGenap = $totalInvGenapSerap/$totalInvGenap*100; ?>
-
-                    <?php $totalInvGanjil=0; foreach ($inv as $key => $value) : $totalInvGanjil = $totalInvGanjil+$value['anggaranGanjil']; endforeach; ?>
-                    <?php $totalInvGanjilSerap=0; foreach ($inv as $key => $value) : $totalInvGanjilSerap = $totalInvGanjilSerap+$value['serapGanjil']; endforeach; ?>
-                    <?php $persenInvGanjil = $totalInvGanjilSerap/$totalInvGanjil*100; ?>
 
             <section class="content">
                 <div class="row" style="margin: 15px auto;">
                     <div class="col-md-6">
                         <div class="card-box pd-30 height-100-p">
                             <div class="card ">
-                                <div class="card-header bg-info text-white">Capain PK</div>
-                                <div class="card-body"><div id="capaian_pk"></div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card-box pd-30 height-100-p">
-                            <div class="card ">
-                                <div class="card-header bg-info text-white">Capain OPS</div>
-                                <div class="card-body"><div id="capaian_ops"></div></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row" style="margin: 15px auto;">
-                    <div class="col-md-12">
-                        <div class="card-box pd-30 height-100-p">
-                            <div class="card ">
-                                <div class="card-header bg-info text-white">Capain INV</div>
-                                <div class="card-body"><div id="capaian_inv"></div></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row" style="margin: 15px auto;">
-                    <div class="col-md-6">
-                        <div class="card-box pd-30 height-100-p">
-                            <div class="card ">
-                                <div class="card-header bg-info text-white">Persentase Capain PK</div>
+                                <div class="card-header bg-info text-white">Persentase Serapan Tahunan</div>
                                 <div class="card-body"><div id="capaian_persen_pk"></div></div>
                             </div>
                         </div>
@@ -233,7 +181,7 @@
                     <div class="col-md-6">
                         <div class="card-box pd-30 height-100-p">
                             <div class="card ">
-                                <div class="card-header bg-info text-white">Persentase Capain OPS</div>
+                                <div class="card-header bg-info text-white">Persentase Serap Tahun Aktif</div>
                                 <div class="card-body"><div id="capaian_persen_ops"></div></div>
                             </div>
                         </div>
@@ -243,7 +191,7 @@
                     <div class="col-md-12">
                         <div class="card-box pd-30 height-100-p">
                             <div class="card ">
-                                <div class="card-header bg-info text-white">Persentase Capain INV</div>
+                                <div class="card-header bg-info text-white">Persentase Serap Seluruh Prodi/Unit</div>
                                 <div class="card-body"><div id="capaian_persen_inv"></div></div>
                             </div>
                         </div>
@@ -267,88 +215,6 @@
         }
     </script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <!-- Grafik Capaian -->
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['bar']});
-      google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Semester','Rencana (Rp.)', 'Realisasi(Rp.)'],
-          ['Ganjil', <?= $totalPkGanjil ?>, <?= $totalPkGanjilSerap ?>],
-          ['Genap', <?= $totalPkGenap ?>, <?= $totalPkGenapSerap ?>],
-        ]);
-
-        var options = {
-          chart: {
-            title: '',
-            subtitle: 'Periode Tahun : <?= $tahunAkademik['tahunAkademik'] ?>',
-          },
-          bars: 'horizontal', // Required for Material Bar Charts.
-          hAxis: {format: 'decimal'},
-          height: 400,
-          colors: ['#1b9e77', '#d95f02', '#7570b3']
-        };
-
-        var chart = new google.charts.Bar(document.getElementById('capaian_pk'));
-
-        chart.draw(data, google.charts.Bar.convertOptions(options));
-      }
-    </script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['bar']});
-      google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Semester','Rencana (Rp.)', 'Realisasi(Rp.)'],
-          ['Ganjil', <?= $totalOpsGanjil ?>, <?= $totalOpsGanjilSerap ?>],
-          ['Genap', <?= $totalOpsGenap ?>, <?= $totalOpsGenapSerap ?>],
-        ]);
-
-        var options = {
-          chart: {
-            title: '',
-            subtitle: 'Periode Tahun : <?= $tahunAkademik['tahunAkademik'] ?>',
-          },
-          bars: 'horizontal', // Required for Material Bar Charts.
-          hAxis: {format: 'decimal'},
-          height: 400,
-          colors: ['#1b9e77', '#d95f02', '#7570b3']
-        };
-
-        var chart = new google.charts.Bar(document.getElementById('capaian_ops'));
-
-        chart.draw(data, google.charts.Bar.convertOptions(options));
-      }
-    </script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['bar']});
-      google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Semester','Rencana (Rp.)', 'Realisasi(Rp.)'],
-          ['Ganjil', <?= $totalInvGanjil ?>, <?= $totalInvGanjilSerap ?>],
-          ['Genap', <?= $totalInvGenap ?>, <?= $totalInvGenapSerap ?>],
-        ]);
-
-        var options = {
-          chart: {
-            title: '',
-            subtitle: 'Periode Tahun : <?= $tahunAkademik['tahunAkademik'] ?>',
-          },
-          bars: 'horizontal', // Required for Material Bar Charts.
-          hAxis: {format: 'decimal'},
-          height: 400,
-          colors: ['#1b9e77', '#d95f02']
-        };
-
-        var chart = new google.charts.Bar(document.getElementById('capaian_inv'));
-
-        chart.draw(data, google.charts.Bar.convertOptions(options));
-      }
-    </script>
     <!-- Grafik Persentase capaian -->
     <script type="text/javascript">
       google.charts.load('current', {'packages':['bar']});
@@ -356,15 +222,17 @@
 
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Semester', 'Persen(%)'],
-          ['Ganjil', <?=$persenPkGenap ?>],
-          ['Genap', <?=$persenPkGanjil ?>],
+          ['Tahun', 'Persen PK & OPS(%)', 'Persen INV(%)'],
+          <?php
+		    foreach ($tahun as $key => $reading) : ?>
+          ['<?= $reading['tahunAkademik'] ?>', <?= $reading['persenPkOps'] ?>,<?= $reading['persenInv'] ?>],
+          <?php endforeach; ?>
         ]);
 
         var options = {
           chart: {
-            title: '',
-            subtitle: 'Periode Tahun : <?= $tahunAkademik['tahunAkademik'] ?>',
+            title: 'Data Prodi/Unit : <?php $nama_prodi = session('nama_prodi'); echo "$nama_prodi"?>',
+            subtitle: '',
           },
           bars: 'horizontal' // Required for Material Bar Charts.
         };
@@ -380,15 +248,17 @@
 
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Semester', 'Persen(%)'],
-          ['Ganjil', <?=$persenOpsGenap ?>],
-          ['Genap', <?=$persenOpsGanjil ?>],
+            ['Tahun', 'Persen PK & OPS(%)', 'Persen INV(%)'],
+          <?php
+		    foreach ($tahunAktif as $key => $reading) : ?>
+          ['<?= $reading['tahunAkademik'] ?>', <?= $reading['persenPkOps'] ?>,<?= $reading['persenInv'] ?>],
+          <?php endforeach; ?>
         ]);
 
         var options = {
           chart: {
-            title: '',
-            subtitle: 'Periode Tahun : <?= $tahunAkademik['tahunAkademik'] ?>',
+            title: 'Periode Tahun : <?= $tahunAkademik['tahunAkademik'] ?>',
+            subtitle: '',
           },
           bars: 'horizontal' // Required for Material Bar Charts.
         };
@@ -404,9 +274,11 @@
 
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Semester', 'Persen(%)'],
-          ['Ganjil', <?=$persenInvGenap ?>],
-          ['Genap', <?=$persenInvGanjil ?>],
+            ['Prodi','Tahun', 'Persen PK & OPS(%)', 'Persen INV(%)'],
+          <?php
+		    foreach ($seluruhDataUser as $key => $reading) : ?>
+          ['<?= $reading['nama_prodi'] ?>','<?= $reading['tahunAkademik'] ?>', <?= $reading['persenPkOps'] ?>,<?= $reading['persenInv'] ?>],
+          <?php endforeach; ?>
         ]);
 
         var options = {

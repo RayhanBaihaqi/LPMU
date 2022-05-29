@@ -7,6 +7,7 @@ use App\Models\DetailRkatModel;
 use App\Models\TahunAkademikModel;
 use App\Models\PersenSerapModel;
 use App\Models\PaguRkatModel;
+use App\Models\ModelKpiAdmin;
 use App\Models\UsersModel;
 
 class Rkat extends BaseController
@@ -18,6 +19,7 @@ class Rkat extends BaseController
         $this->PersenSerapModel = new PersenSerapModel();
         $this->PaguModel = new PaguRkatModel();
         $this->UsersModel = new UsersModel();
+        $this->ModelKpiAdmin = new ModelKpiAdmin();
     }
 
     //User
@@ -42,36 +44,97 @@ class Rkat extends BaseController
     {
         $model = new DetailRkatModel();
         $username = session('username');
+        
         $data = [
             'detail_rkat2' => $this->DetailRkatModel->gabung($username),
+            // 'pk' => $this->DetailRkatModel->jumlahPk(),
+            // 'ops' => $this->DetailRkatModel->jumlahOps(),
+            // 'inv' => $this->DetailRkatModel->jumlahInv(),
             'set_rkat' => $this->DetailRkatModel->tampilDataSetRKAT($username),
-            'pk' => $model->join('pagu_rkat', 'pagu_rkat.id_pagu=detail_rkat2.id_pagu')->join('tahun_akademik', 'tahun_akademik.id_tahun=detail_rkat2.id_tahun')->where('aktif', '1')->join('user', 'user.id=pagu_rkat.id_user')->where('username', $username)->where('kategori', 'PK')->findAll(),
-            'ops' => $model->join('pagu_rkat', 'pagu_rkat.id_pagu=detail_rkat2.id_pagu')->join('tahun_akademik', 'tahun_akademik.id_tahun=detail_rkat2.id_tahun')->where('aktif', '1')->join('user', 'user.id=pagu_rkat.id_user')->where('username', $username)->where('kategori', 'OPS')->findAll(),
-            'inv' => $model->join('pagu_rkat', 'pagu_rkat.id_pagu=detail_rkat2.id_pagu')->join('tahun_akademik', 'tahun_akademik.id_tahun=detail_rkat2.id_tahun')->where('aktif', '1')->join('user', 'user.id=pagu_rkat.id_user')->where('username', $username)->where('kategori', 'INV')->findAll(),
+            'pk' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=detail_rkat2.id_tahun')->where('aktif', '1')->join('user', 'user.id=detail_rkat2.id_user')->where('username', $username)->where('kategori', 'PK')->findAll(),
+            'ops' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=detail_rkat2.id_tahun')->where('aktif', '1')->join('user', 'user.id=detail_rkat2.id_user')->where('username', $username)->where('kategori', 'OPS')->findAll(),
+            'inv' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=detail_rkat2.id_tahun')->where('aktif', '1')->join('user', 'user.id=detail_rkat2.id_user')->where('username', $username)->where('kategori', 'INV')->findAll(),
             'tahunAkademik' => $model-> join('tahun_akademik', 'tahun_akademik.id_tahun=detail_rkat2.id_tahun')->join('pagu_rkat', 'pagu_rkat.id_pagu=detail_rkat2.id_pagu')->join('user', 'user.id=pagu_rkat.id_user')->where('username', $username)->where('aktif', '1')->findAll(),
         ];
+        // $jumPk = $data["jumPk"];
+        // var_dump($data);die();
         return view('rkat/RincianRkat', $data);
     }
-    public function updateRincian() {
+    public function saveRincian() {
         $model = new PersenSerapModel();
-        $id_persen = $this->request->getVar('id_persen');
+        $jumlah = $this->request->getVar('jumlah');
+        $id_tahun = $this->request->getVar('id_tahun');
+        $id_user = $this->request->getVar('id_user');
+        $persenPk = $this->request->getVar('persenPk');
+        $persenOps = $this->request->getVar('persenOps');
+        $persenInv = $this->request->getVar('persenInv');
+        $persenPkOps = $this->request->getVar('persenPkOps');
+        // print_r($persenPk); die();
+        for ($i = 0; $i <= $jumlah; $i++) {
+            $this->PersenSerapModel->insert([
+                'id_tahun' => $id_tahun,
+                'id_user' => $id_user,
+                'persenPk' => $persenPk,
+                'persenOps' => $persenOps,
+                'persenInv' => $persenInv,
+                'persenPkOps' => $persenPkOps,
+            ]);
+        }
+        return redirect()->to(base_url('rkat/rincian'))->with('statusSimpan', '
+           <div class="alert alert-success">
+               <button type="button" class="close" data-dismiss="alert">&times;</button>
+               <strong>Berhasil!</strong> Data Anda Berhasil Terinput.
+           </div>
+        ');
+    }
+    public function updateRincian()
+    {
+        $model = new PersenSerapModel();
+        // $id = $_POST['id'];
+        // $id_tahun = $_POST['id_tahun'];
+        // $id_user = $_POST['id_user'];
+        // $persenPk = $_POST['persenPk'];
+        // $persenOps = $_POST['persenOps'];
+        // $persenInv = $_POST['persenInv'];
+        // $persenPkOps = $_POST['persenPkOps'];
+        
+        // // $bukti = $_POST['bukti'];
+
+        // foreach ($id as $key => $n) {
+            
+        //     $id = $n;
+        //     $data = [
+        //         'id_tahun' => $id_tahun[$key],
+        //         'id_user' => $id_user[$key],
+        //         'persenPk' => $persenPk[$key],
+        //         'persenOps' => $persenOps[$key],
+        //         'persenInv' => $persenInv[$key],
+        //         'persenPkOps' => $persenPkOps[$key],
+
+        //     ];
+
+        //     $save = $model->update($id, $data);
+
+        // }
+        
+        $id = $this->request->getVar('id_persen');
 
         $data = [
-			'id_tahun' => $this->request->getVar('id_tahun'),
+            'id_tahun' => $this->request->getVar('id_tahun'),
             'id_user' => $this->request->getVar('id_user'),
-            'totalAnggaranPk' => $this->request->getVar('totalAnggaranPk'),
-            'totalSerapPk' => $this->request->getVar('totalSerapPk'),
             'persenPk' => $this->request->getVar('persenPk'),
-            'totalAnggaranOps' => $this->request->getVar('totalAnggaranOps'),
-            'totalSerapOps' => $this->request->getVar('totalSerapOps'),
             'persenOps' => $this->request->getVar('persenOps'),
-            'totalAnggaranInv' => $this->request->getVar('totalAnggaranInv'),
-            'totalSerapInv' => $this->request->getVar('totalSerapInv'),
             'persenInv' => $this->request->getVar('persenInv'),
+            'persenPkOps' => $this->request->getVar('persenPkOps'),
         ];
-        $save = $model->update($id_persen,$data);
+        $save = $model->update($id, $data);
 
-        return redirect()->to(base_url('rkat/rincian'));
+        return redirect()->to(base_url('rkat/rincian'))->with('statusUpdate', '
+        <div class="alert alert-success">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Berhasil!</strong> Data Anda Berhasil Terupdate.
+        </div>
+     ');
     }
     public function createbyuser()
     {
@@ -79,6 +142,7 @@ class Rkat extends BaseController
         $username = session('username');
         $data = [
             'pagu_rkat' => $this->DetailRkatModel->tampilDataSetRKAT($username),
+            'kpi' => $this->ModelKpiAdmin->findAll(),
             'tahunAkademik' => $this->TahunAkademikModel->where('aktif', '1')->first(),
         ];
 
@@ -150,29 +214,12 @@ class Rkat extends BaseController
             $data = [
                 'serapGanjil' => $serapGanjil[$key],
                 'serapGenap' => $serapGenap[$key],
-                // 'persenSerapGanjil' => $persenSerapGanjil[$key],
-                // 'persenSerapGenap' => $persenSerapGenap[$key],
-                // 'bukti' => $bukti[$key],
+
             ];
 
             $save = $model->update($id, $data);
 
-            // print "The serapGanjil is " . $n . ", serapGenap is " . $serapGenap[$key] .
-            //     ", and totalSerap is " . $totalSerap[$key] . ". Thank you\n";
         }
-        $persenSerapGanjil = $_POST['persenSerapGanjil'];
-        $persenSerapGenap = $_POST['persenSerapGenap'];
-        $id_tahun = $_POST['id_tahun'];
-        $id_user = $_POST['id_user'];
-        
-            $data2 = [
-                'persenSerapGanjil' => $persenSerapGanjil,
-                'persenSerapGenap' => $persenSerapGenap,
-                'id_tahun' => $id_tahun,
-                'id_user' => $id_user,
-                
-            ];
-            $tambahPersen = $modelPersen->insert($data2);
         return redirect()->to(base_url('CapaianRkat/createcapaianbyuser'));
     }
 

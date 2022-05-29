@@ -15,6 +15,6 @@ class PersenSerapModel extends Model
     // protected $returnType     = 'array';
     //protected $useSoftDeletes = true;
 
-    protected $allowedFields = ['totalAnggaranPk','totalSerapPk','persenPk','id_tahun' ,'id_user','totalSerapPk','totalAnggaranOps','totalSerapOps','persenOps','totalAnggaranInv','totalSerapInv','persenInv'];
+    protected $allowedFields = ['persenPk','id_tahun' ,'id_user','persenOps','persenInv','persenPkOps'];
 
 }
