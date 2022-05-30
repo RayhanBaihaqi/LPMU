@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>List Capaian KPI</title>
+    <title>List Rkat</title>
 
     <!-- Custom fonts for this template-->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
@@ -131,76 +131,70 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">List Capaian KPI</h1>
+                    <h1 class="h3 mb-2 text-gray-800">List Data Rkat Unit</h1>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <span></span></a>
                         </div>
+                        
                         <div class="container-fluid">
                             <div class="form-group">
-                                <label for="exampleFormControlSelect1">Pilih Nama KPI</label>
+                                <label for="exampleFormControlSelect1">Pilih Nama Unit</label>
                                 <select class="form-control filter-satuan" id="categoryFilter">
-                                    <option selected disabled>-Daftar Kategori KPI-</option>
-                                    <option value="Visi, Misi, Tujuan dan Strategi">Visi, Misi, Tujuan dan Strategi</option>
-                                    <option value="Tata Pamong, Tata Kelola dan Kerjasama">Tata Pamong, Tata Kelola dan Kerjasama</option>
-                                    <option value="Mahasiswa">Mahasiswa</option>
-                                    <option value="Sumber Daya Manusia">Sumber Daya Manusia</option>
-                                    <option value="Keuangan, Sarana dan Prasarana">Keuangan, Sarana dan Prasarana</option>
-                                    <option value="Pendidikan">Pendidikan</option>
-                                    <option value="Penelitian">Penelitian</option>
-                                    <option value="Pengabdian Kepada Masyarakat">Pengabdian Kepada Masyarakat</option>
-                                    <option value="Luaran dan Capaian Tridharma">Luaran dan Capaian Tridharma</option>
+                                    <option value="" disabled selected>Pilih Nama Unit</option>
+                                    <?php foreach ($userunit as $value) : ?>
+                                        <option value="<?= $value['id']; ?>"><?= $value['nama_prodi']; ?></option>
+                                    <?php endforeach; ?>
                                 </select>
                             </div>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable_rencana" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Nama Prodi</th>
-                                            <th>Tahun Ajaran</th>
-                                            <th>Level</th>
-                                            <th>Nama KPI</th>
-                                            <th>Angka Butir</th>
-                                            <th>Nama Butir</th>
-                                            <th>Bobot</th>
-                                            <th>Target</th>
-                                            <th>Realisasi</th>
-                                            <th>Nilai Bobot</th>
-                                            <th>File</th>
-                                            <th>Actions</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                        $nomor = 0;
-                                        foreach ($tampilcapaiankpi as $row) :
-                                            $nomor++;
-                                        ?>
-                                            <tr>
-                                                <th><?= $nomor; ?></th>
-                                                <td><?= $row->nama_prodi ?></td>
-                                                <td><?= $row->tahun_ajaran ?></td>
-                                                <td><?= $row->level ?></td>
-                                                <td><?= $row->nama_kpi ?></td>
-                                                <td><?= $row->idkpi . '.' . $row->angka_butir ?></td>
-                                                <td><?= $row->nama_butir ?></td>
-                                                <td><?= $row->bobot ?></td>
-                                                <td><?= $row->target ?></td>
-                                                <td><?= $row->realisasi ?></td>
-                                                <td><?= $row->nilai_bobot ?></td>
-                                                <td><?= $row->upload_file ?></td>
-                                                <td></td>
-                                            <?php
-                                        endforeach;
-                                            ?>
-                                            </tr>
-                                    </tbody>
-                                </table>
+                            <table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
+							<thead>
+								<tr>
+									<th>No</th>
+                                    <th>id</th>
+									<th>Prodi/Unit</th>
+                                    <th>Kategori</th>
+									<th>No Kegiatan</th>
+									<th>Target</th>
+									<th>Indikator</th>
+									<th>Nama Kegiatan</th>
+									<th>KPI</th>
+									<th>Butir</th>
+									<th>Anggaran Gasal</th>
+									<th>Anggaran Ganjil</th>
+									<th>Serap Ganjil</th>
+									<th>Serap Genap</th>
+								</tr>
+							</thead>
+							<tbody>
+								<?php $i = 1;?>
+								<?php if ($detail_rkat) : ?>
+									<?php foreach ($detail_rkat as $value) : ?>
+										<tr>
+											<td scope="row"><?= $i++; ?></td>
+                                            <td><?= $value['id']; ?></td>
+                                            <td><?= $value['nama_prodi']; ?></td>
+											<td><?= $value['kategori']; ?></td>
+											<td><?= $value['no_kegiatan']; ?></td>
+											<td><?= $value['target']; ?></td>
+											<td><?= $value['indikator']; ?></td>
+											<td><?= $value['nama_kegiatan']; ?></td>
+											<td><?= $value['kpi']; ?></td>
+											<td><?= $value['butir']; ?></td>
+											<td><?= $value['anggaranGanjil']; ?></td>
+											<td><?= $value['anggaranGenap']; ?></td>
+											<td><?= $value['serapGanjil']; ?></td>
+											<td><?= $value['serapGenap']; ?></td>
+										</tr>
+									<?php endforeach; ?>
+								<?php endif; ?>
+							</tbody>
+						</table>
                             </div>
                         </div>
                     </div>

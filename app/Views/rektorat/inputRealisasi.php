@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>List Capaian KPI</title>
+    <title>List Rkat</title>
 
     <!-- Custom fonts for this template-->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
@@ -131,94 +131,177 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">List Capaian KPI</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Formulir Realisasi RKAT</h1>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <span></span></a>
-                        </div>
-                        <div class="container-fluid">
-                            <div class="form-group">
-                                <label for="exampleFormControlSelect1">Pilih Nama KPI</label>
-                                <select class="form-control filter-satuan" id="categoryFilter">
-                                    <option selected disabled>-Daftar Kategori KPI-</option>
-                                    <option value="Visi, Misi, Tujuan dan Strategi">Visi, Misi, Tujuan dan Strategi</option>
-                                    <option value="Tata Pamong, Tata Kelola dan Kerjasama">Tata Pamong, Tata Kelola dan Kerjasama</option>
-                                    <option value="Mahasiswa">Mahasiswa</option>
-                                    <option value="Sumber Daya Manusia">Sumber Daya Manusia</option>
-                                    <option value="Keuangan, Sarana dan Prasarana">Keuangan, Sarana dan Prasarana</option>
-                                    <option value="Pendidikan">Pendidikan</option>
-                                    <option value="Penelitian">Penelitian</option>
-                                    <option value="Pengabdian Kepada Masyarakat">Pengabdian Kepada Masyarakat</option>
-                                    <option value="Luaran dan Capaian Tridharma">Luaran dan Capaian Tridharma</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable_rencana" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Nama Prodi</th>
-                                            <th>Tahun Ajaran</th>
-                                            <th>Level</th>
-                                            <th>Nama KPI</th>
-                                            <th>Angka Butir</th>
-                                            <th>Nama Butir</th>
-                                            <th>Bobot</th>
-                                            <th>Target</th>
-                                            <th>Realisasi</th>
-                                            <th>Nilai Bobot</th>
-                                            <th>File</th>
-                                            <th>Actions</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                        $nomor = 0;
-                                        foreach ($tampilcapaiankpi as $row) :
-                                            $nomor++;
-                                        ?>
-                                            <tr>
-                                                <th><?= $nomor; ?></th>
-                                                <td><?= $row->nama_prodi ?></td>
-                                                <td><?= $row->tahun_ajaran ?></td>
-                                                <td><?= $row->level ?></td>
-                                                <td><?= $row->nama_kpi ?></td>
-                                                <td><?= $row->idkpi . '.' . $row->angka_butir ?></td>
-                                                <td><?= $row->nama_butir ?></td>
-                                                <td><?= $row->bobot ?></td>
-                                                <td><?= $row->target ?></td>
-                                                <td><?= $row->realisasi ?></td>
-                                                <td><?= $row->nilai_bobot ?></td>
-                                                <td><?= $row->upload_file ?></td>
-                                                <td></td>
-                                            <?php
-                                        endforeach;
-                                            ?>
-                                            </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="card-body">
+				<form action="<?= base_url('rektorat/update'); ?>" method="POST" enctype="multipart/form-data">
+				<div class="form-inline">
+					<label class="mb-2 mr-sm-2" for="exampleFormControlSelect1" style="width: 150px;">Tahun Akademik</label>
+					<input type="text" class="form-control mb-2 mr-sm-2" name="tahunAkademik" id="tahunAkademik" value="<?= $tahunAkademik['tahunAkademik'] ?>" disabled>
+				</div>
+					<div class="">
+						<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+							<thead>
+								<tr>
+									<th >No Kegiatan</th>
+									<th >KPI-Butir</th>
+									<th >Kategori</th>
+									<th width="600px">Indikator - Nama Kegiatan</th>
+									<th >Target</th>
+									<th >Anggaran Ganjil</th>
+									<th width="600px">Serapan Ganjil</th>
+									<th >peren Ganjil</th>
+									<th >Anggaran Genap</th>
+									<th width="600px">Serapan Genap</th>
+									<th >peren Genap</th>
+								</tr>
+							</thead>
+							<tbody id="nilai">
+								
+									<?php
+									$no = 1;
+									foreach ($tahunAkademik2 as $key => $reading) : ?>
+										<input required type="hidden" name="id_user" value="<?= $reading['id_user']; ?>">
+										<tr>
+											<td><?= $no; ?></td>
+											<td><?= $reading['kpi']; ?> . <?= $reading['butir']; ?></td>
+											<td><?= $reading['kategori']; ?></td>
+											<td>
+											<input type="hidden" class="form-control" id="id_tahun" value="<?= $tahunAkademik['id_tahun'] ?>" name="id_tahun" required>
+												<ul class="list-group list-group-flush">
+													<li class="list-group-item" width="600px"><?= $reading['indikator']; ?></li>
+													<li class="list-group-item"><?= $reading['nama_kegiatan']; ?></li>
+												</ul>
+											</td>
+											<td><?= $reading['target']; ?></td>
+											<td><input type="text" class="form-control form-control-sm" id="aGanjil<?= $no; ?>" value="<?= $reading['anggaranGanjil']; ?>" disabled /></td>
+											<td>
+												<input style="display: none;" required type="text" name="id[]" id="id" value="<?= $reading['id_rkat']; ?>">
+												<input type="text" class="form-control form-control-sm serapGanjil" id="serapGanjil<?= $no; ?>" placeholder="Rp. 0" name="serapGanjil[]" onkeyup="AddInputs(this.id);" required <?= ($reading['serapGanjil'] != "") ? "value='".$reading['serapGanjil']."' disabled" : "" ?>>
+											</td>
+											<td></td>
+											<td><input type="text" class="form-control form-control-sm" id="aGenap<?= $no; ?>" value="<?= $reading['anggaranGenap']; ?>" disabled /></td>
+											<td>
+											<input type="text" class="form-control form-control-sm serapGenap" id="serapGenap<?= $no; ?>" placeholder="Rp. 0" name="serapGenap[]" onkeyup="AddInputs2(this.id);" required <?= ($reading['serapGenap'] != "") ? "value='".$reading['serapGanjil']."' disabled" : "" ?>>
+											</td>
+											<td></td>
+										</tr>
+									<?php $no++;
+									endforeach; ?>
+							</tbody>
+							<tfoot>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td><span id="totalanggaranganjil"></span></td>
+								<td><span id="tampilTotalGanjil"></span></td>
+								<td><p>Persentase Serap: <input type="text" class="form-control form-control-sm " id="persenSerapGanjil" placeholder="0%" name="persenSerapGanjil"disabled></p></td>
+								<td><span id="totalanggarangenap"></span></td>
+								<td><span id="tampilTotalGenap"></span></td>
+								<td><p>Persentase Serap: <input type="text" class="form-control form-control-sm" name="persenSerapGenap" id="persenSerapGenap"  /></p></td>
 
+							</tfoot>
+
+
+						</table>
+						<div class="card-footer" align="center">
+							<button type="submit" class="btn btn-primary" id="btnJumlah" value="submit">Simpan Data</button>
+							<span id="textError"></span>
+						</div>
+				</form>
+			</div>
+                    </div>
                 </div>
 
-
             </div>
-            <!-- End of Content Wrapper -->
+
 
         </div>
+            <!-- End of Content Wrapper -->
+
+    </div>
         <!-- End of Page Wrapper -->
 
         <!-- Scroll to Top Button-->
         <a class="scroll-to-top rounded" href="#page-top">
             <i class="fas fa-angle-up"></i>
         </a>
+    <!-- JavaScript Libraries -->
+	<script>
+		var table = document.getElementById("nilai"),
+			sumHsl = 0;
+		for (var t = 0; t < table.rows.length; t++) {
+			sumHsl = sumHsl + parseInt(table.rows[t].cells[5].getElementsByTagName('input')[0].value);
+		}
+		document.getElementById("totalanggaranganjil").innerHTML = sumHsl;
+	</script>
+	<script>
+		var table = document.getElementById("nilai"),
+			sumHsl = 0;
+		for (var t = 0; t < table.rows.length; t++) {
+			sumHsl = sumHsl + parseInt(table.rows[t].cells[8].getElementsByTagName('input')[0].value);
+		}
+		document.getElementById("totalanggarangenap").innerHTML = sumHsl;
+	</script>
+	<script>
+		var table = document.getElementById("nilai"),
+			sumHsl = 0;
+		for (var t = 0; t < table.rows.length; t++) {
+			sumHsl = sumHsl + parseInt(table.rows[t].cells[9].getElementsByTagName('input')[0].value);
+		}
+		document.getElementById("total").innerHTML = "Rp." + sumHsl;
+	</script>
+	<script>
+		function AddInputs(clicked_id)
+		{
+			var totalGanjil = 0;
+			var aGanjil = document.getElementById('totalanggaranganjil').innerHTML;
+			
+			var panjangDataSerapGanjil = document.querySelectorAll (".serapGanjil")
+			// console.log(panjangDataSerapGanjil.length)
+			for (let index = 1; index <= panjangDataSerapGanjil.length; index++) {
+				var nilaiKolomGanjil = document.getElementById("serapGanjil"+index).value;
+				totalGanjil += parseInt(nilaiKolomGanjil);
+			}
+			if (isNaN(totalGanjil)) {
+				// console.log("Silahkan Isi Seluruh Kolom Data");
+				var tampilTotalGanjil = document.getElementById("tampilTotalGanjil").innerHTML = "Silahkan Isi Seluruh Kolom Data";
+			} else {
+				console.log(totalGanjil);
+				var tampilTotalGanjil = document.getElementById("tampilTotalGanjil").innerHTML = totalGanjil;
+				
+			}
 
+			hitungGanjil = parseInt(totalGanjil) / parseInt(aGanjil) * 100;
+			document.getElementById('persenSerapGanjil').value = hitungGanjil + "%";
+			console.log(persenSerapGanjil);
+		}
+		function AddInputs2(clicked_id)
+		{
+			var totalGenap = 0;
+			var aGenap = document.getElementById('totalanggarangenap').innerHTML;
+			var panjangDataSerapGenap = document.querySelectorAll (".serapGenap")
+			console.log(panjangDataSerapGenap.length)
+			for (let index = 1; index <= panjangDataSerapGenap.length; index++) {
+				var nilaiKolomGenap = document.getElementById("serapGenap"+index).value;
+				totalGenap += parseInt(nilaiKolomGenap);
+			}
+			if (isNaN(totalGenap)) {
+				console.log("Silahkan Isi Seluruh Kolom Data");
+				var tampilTotalGenap = document.getElementById("tampilTotalGenap").innerHTML = "Silahkan Isi Seluruh Kolom Data";
+			} else {
+				console.log(totalGenap);
+				var tampilTotalGenap = document.getElementById("tampilTotalGenap").innerHTML = totalGenap;
+			}
+
+			hitungGenap = parseInt(totalGenap) / parseInt(aGenap) * 100;
+			document.getElementById('persenSerapGenap').value = hitungGenap + "%";
+		}
+	</script>
         <!-- Bootstrap core JavaScript-->
         <script src="<?php echo base_url(); ?>/public/js/jquery.min.js"></script>
         <script src="<?php echo base_url(); ?>/public/js/bootstrap.bundle.min.js"></script>

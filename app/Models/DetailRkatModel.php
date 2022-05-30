@@ -20,8 +20,19 @@ class DetailRkatModel extends Model
     public function gabung($username=null){
         return $this->db->table('detail_rkat2')
         ->join('pagu_rkat', 'pagu_rkat.id_pagu = detail_rkat2.id_pagu')
+        ->join('tahun_akademik', 'tahun_akademik.id_tahun=detail_rkat2.id_tahun')
         ->join('user', 'user.id=detail_rkat2.id_user')
         ->where('username',$username)
+        ->where('aktif', '1')
+        ->get()->getResultArray();
+    }
+
+    public function gabungRektor(){
+        return $this->db->table('detail_rkat2')
+        ->join('pagu_rkat', 'pagu_rkat.id_pagu = detail_rkat2.id_pagu')
+        ->join('tahun_akademik', 'tahun_akademik.id_tahun=detail_rkat2.id_tahun')
+        ->join('user', 'user.id=detail_rkat2.id_user')
+        ->where('aktif', '1')
         ->get()->getResultArray();
     }
 

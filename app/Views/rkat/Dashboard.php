@@ -187,16 +187,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="row" style="margin: 15px auto;">
-                    <div class="col-md-12">
-                        <div class="card-box pd-30 height-100-p">
-                            <div class="card ">
-                                <div class="card-header bg-info text-white">Persentase Serap Seluruh Prodi/Unit</div>
-                                <div class="card-body"><div id="capaian_persen_inv"></div></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
         </section>
     </div>
 
@@ -264,32 +254,6 @@
         };
 
         var chart = new google.charts.Bar(document.getElementById('capaian_persen_ops'));
-
-        chart.draw(data, google.charts.Bar.convertOptions(options));
-      }
-    </script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['bar']});
-      google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['Prodi','Tahun', 'Persen PK & OPS(%)', 'Persen INV(%)'],
-          <?php
-		    foreach ($seluruhDataUser as $key => $reading) : ?>
-          ['<?= $reading['nama_prodi'] ?>','<?= $reading['tahunAkademik'] ?>', <?= $reading['persenPkOps'] ?>,<?= $reading['persenInv'] ?>],
-          <?php endforeach; ?>
-        ]);
-
-        var options = {
-          chart: {
-            title: '',
-            subtitle: 'Periode Tahun : <?= $tahunAkademik['tahunAkademik'] ?>',
-          },
-          bars: 'horizontal' // Required for Material Bar Charts.
-        };
-
-        var chart = new google.charts.Bar(document.getElementById('capaian_persen_inv'));
 
         chart.draw(data, google.charts.Bar.convertOptions(options));
       }
