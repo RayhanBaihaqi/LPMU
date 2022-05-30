@@ -150,10 +150,10 @@
                         <label class="mb-2 mr-sm-1" for="exampleFormControlSelect1" style="width: 150px;">Tahun Ajaran</label>
                         <select class="form-control mb-2 mr-sm-2" id="exampleFormControlSelect1" name="tahun_ajaran" required>
                             <option value="" disabled selected>Pilih Tahun</option>
-                            <option value="2018/2019">2018/2019</option>
+                            <!-- <option value="2018/2019">2018/2019</option> -->
                             <option value="2019/2020">2019/2020</option>
                             <option value="2020/2021">2020/2021</option>
-                            <!-- <option value="2021/2022">2021/2022</option> -->
+                            <option value="2021/2022">2021/2022</option>
                         </select>
                     </div>
                     <div class="form-inline" style="margin-bottom:20px;">

@@ -122,11 +122,24 @@
         <div class="card shadow mb-4">
             <div class="card-header">
                 <h3>Ubah capaian</h3>
-                <?= form_open('kpi/updatecapaian') ?>
-                <input required type="hidden" name="id" value="<?= $id ?>">
             </div>
             <div class="card-body">
+                <?= form_open('kpi/updatecapaian') ?>
 
+                <label for="txtRealisasi[]">Ubah nilai realisasi di bawah ini</label>
+
+                <input type="hidden" name="id[]" value="<?= $id ?>" />
+                <input type="hidden" name="tahun_ajaran[]" value="<?= $tahun_ajaran ?>" />
+                <input type="hidden" name="nama_prodi[]" value="<?= $nama_prodi ?>" />
+                <input type="hidden" name="level[]" value="<?= $level ?>" />
+                <input type="number" name="txtRealisasi[]" placeholder='Edit realisasi' value="<?= $realisasi ?>" class="form-control" required>
+                <input type="hidden" name="idkpi[]" value=<?= $idkpi ?> />
+                <input type="hidden" name="id_butir_kpi[]" value="<?= $id_butir_kpi ?>" />
+
+                <br>
+                <div class="form-group">
+                    <button type="submit" id="edit" class="btn btn-success">Submit</button>
+                </div>
             </div>
 
         </div>

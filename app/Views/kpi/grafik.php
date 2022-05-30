@@ -208,7 +208,7 @@
                                         <td><?= $row->nilai_bobot ?></td>
                                         <td><?= $row->upload_file ?></td>
                                         <td>
-                                            <a href="<?= base_url('kpi/form_updatecapaian/' . $row->id); ?>" class="button button2"><i class="fas fa-edit"></i></a>
+                                            <!-- <a href="<?= base_url('kpi/form_updatecapaian/' . $row->id); ?>" class="button button2"><i class="fas fa-edit"></i></a> -->
                                         </td>
                                     <?php
                                 endforeach;

@@ -166,6 +166,8 @@ class Kpi extends BaseController
 		helper('form');
 		$listcapaiankpi = new DataCapaianKpiModel();
 		$ambildatacapaian = $listcapaiankpi->ambildatacapaian($id);
+
+
 		if (count($ambildatacapaian->getResult()) > 0) {
 			$row = $ambildatacapaian->getRow();
 			$data = [
@@ -186,22 +188,36 @@ class Kpi extends BaseController
 	public function updatecapaian()
 	{
 		$id = $this->request->getpost('id');
+		$realisasi = $this->request->getPost('txtRealisasi');
+		$bobot = $this->request->getPost('bobot');
+		$level = $this->request->getPost('level');
+		$nama_prodi = $this->request->getPost('nama_prodi');
+		$tahun_ajaran = $this->request->getPost('tahun_ajaran');
+		//$upload_file = $this->request->getFile('uploadFile');
+		$idkpi = $this->request->getPost('idkpi');
+		$id_butir_kpi = $this->request->getPost('id_butir_kpi');
+
+		$nilai_bobot = array();
+		for ($i = 0; $i < count($id); $i++) {
+			//$nilai_bobot[$i] = $realisasi[$i] * $bobot[$i / 100];
+			$nilai_bobot[$i] = ((float)$realisasi[$i] * (float)$bobot[$i]);
+		}
+
 		$data = [
-			'id' => $this->request->getpost('id'),
-			'tahun_ajaran' => $this->request->getpost('tahun_ajaran'),
-			'nama_prodi' => $this->request->getpost('nama_prodi'),
-			'level' => $this->request->getpost('level'),
-			'realisasi' => $this->request->getpost('realisasi'),
-			'nilai_bobot' => $this->request->getpost('nilai_bobot'),
-			//'upload_file' => $this->request->getpost('upload_file'),
-			'idkpi' => $this->request->getpost('idkpi'),
-			'id_butir_kpi' => $this->request->getpost('id_butir_kpi'),
+			'level' => $level,
+			'nama_prodi' => $nama_prodi,
+			'tahun_ajaran' => $tahun_ajaran,
+			'realisasi' => $realisasi[$i],
+			'nilai_bobot' => $nilai_bobot[$i],
+			//'upload_file' => $upload_file[$i],
+			'idkpi' => $idkpi[$i],
+			'id_butir_kpi' => $id[$i],
 		];
 		$listcapaiankpi = new DataCapaianKpiModel();
-		$updatecapaian = $listcapaiankpi->updatecapaian($data, $id);
+		$editcapaian = $listcapaiankpi->updatecapaian($data, $id);
 
-		if ($updatecapaian) {
-			return redirect()->to('/admin/listbutirkpi');
+		if ($editcapaian) {
+			return redirect()->to('/kpi/kesimpulan');
 		}
 	}
 	public function grafik_rencana()
