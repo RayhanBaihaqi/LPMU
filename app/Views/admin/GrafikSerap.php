@@ -9,7 +9,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>Admin</title>
+	<title>List data user</title>
 
 	<!-- Custom fonts for this template-->
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
@@ -77,11 +77,9 @@
 					<span>KPI</span></a>
 				<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
-
 						<a class="collapse-item" href="<?= base_url('/admin/listkpi') ?>">Lihat KPI</a>
 						<a class="collapse-item" href="<?= base_url('/admin/listbutirkpi') ?>">Lihat Butir KPI</a>
-						<a class="collapse-item" href="<?= base_url('/admin/adminkpi') ?>">Lihat Rencana</a>
-						<a class="collapse-item" href="<?= base_url('#') ?>">Lihat Capaian</a>
+						<a class="collapse-item" href="<?= base_url('/admin/listcapaiankpi') ?>">Lihat Capaian</a>
 					</div>
 				</div>
 			</li>
@@ -137,43 +135,25 @@
 
 				</nav>
 				<!-- End of Topbar -->
-				<!-- Begin Page Content -->
 				<div class="container-fluid">
 
-					<!-- Page Heading -->
-					<h1 class="h3 mb-2 text-gray-800">Tambah User</h1>
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-2 text-gray-800">Grafik Capaian RKAT</h1>
+                    <br>
 
-					<!-- DataTales Example -->
-					<div class="card shadow mb-4">
-						<div class="card-body">
-							<div class="table-responsive">
-								<div class="container">
-									<!-- Akan Dilooping -->
-									<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat']; ?>
-										<div class="form-group">
-											<label for="exampleFormControlSelect1">Tahun Ajaran</label>
-											<select class="form-control" id="exampleFormControlSelect1" disabled>
-												<option value="<?= $value['tahun_akademik'] ?>" selected><?= $value['tahun_akademik'] ?>
-												</option>
-											</select>
-										</div>
-										<div class="form-group">
-											<label for="uname">Jumlah Pagu</label>
-											<input type="hidden" class="form-control" id="uname" name="uname" value="<?= $value['pagu'] ?>" required disabled>
-										</div>
-									<?php endforeach; ?>
-									<form action="<?= base_url('setrkat/tambahbyadmin'); ?>" method="post">
-										<div class="input-group mb-3">
-											<input type="text" class="form-control" placeholder="Jumlah Kegiatan" name="jumlah">
-										</div>
-										<input class="btn btn-primary" type="submit" name="tambah" value="Tambah">
-									</form>
-								</div>
-							</div>
-						</div>
-					</div>
+                    <div class="container col-lg-12">
+                        <section class="content">
 
-				</div>
+                            <div class="card card-success">
+                                <div class="card-body">
+                                    <div class="chart">
+                                        <div id="GrafikCapaianRkat" style="width: 1080px; height: 500px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
 
 
 			</div>
@@ -197,6 +177,32 @@
 
 		<!-- Page level custom scripts -->
 		<script src="<?php echo base_url(); ?>/public/js/datatables-demo.js"></script>
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Prodi/Unit', 'Tahun', 'PK & OPS (%)', 'INV (%)'],
+          <?php
+		    foreach ($seluruhDataUser as $key => $reading) : ?>
+          ['<?= $reading['nama_prodi'] ?>','<?= $reading['tahunAkademik'] ?>', <?= $reading['persenPkOps'] ?>,<?= $reading['persenInv'] ?>],
+          <?php endforeach; ?>
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Data Grafik Capaian RKAT',
+            subtitle: 'PK+OPS & INV Pertahun',
+          }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('GrafikCapaianRkat'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
 
 </body>
 

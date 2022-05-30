@@ -56,11 +56,13 @@
 				</a>
 				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
-						<a class="collapse-item active" href="<?= base_url('rkat/createbyadmin') ?>">Tambah RKAT</a>
-						<a class="collapse-item" href="<?= base_url('rkat/indexbyadmin') ?>">Lihat Data</a>
+						<a class="collapse-item" href="<?= base_url('admin/create') ?>">Tambah Rencana RKAT</a>
+						<a class="collapse-item" href="<?= base_url('admin/listRkatProdi') ?>">Lihat Data Prodi</a>
+						<a class="collapse-item" href="<?= base_url('admin/listRkatUnit') ?>">Lihat Data Unit</a>
 						<a class="collapse-item" href="<?= base_url('pagurkat/create') ?>">Buat Pagu</a>
-						<a class="collapse-item" href="<?= base_url('pagurkat/index') ?>">List Pagu</a>
+						<a class="collapse-item" href="<?= base_url('pagurkat/index') ?>">List Data Pagu</a>
 						<a class="collapse-item" href="<?= base_url('tahunakademik/indextahun') ?>">Tahun Akademik</a>
+						<a class="collapse-item" href="<?= base_url('admin/grafikSerap') ?>">Grafik Capaian Serap</a>
 					</div>
 				</div>
 			</li>
@@ -134,64 +136,79 @@
 				</nav>
 				<!-- End of Topbar -->
 				<!-- Begin Page Content -->
-				<div class="container-fluid">
+				<!-- Begin Page Content -->
+                <div class="container-fluid">
 
-					<!-- Page Heading -->
-					<h1 class="h3 mb-2 text-gray-800">Daftar Rencana RKAT</h1>
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-2 text-gray-800">List Data Rkat Prodi</h1>
 
-					<!-- DataTales Example -->
-					<div class="card shadow mb-4">
-						<div class="card-body">
-							<div class="table-responsive">
-								<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-									<thead>
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <span></span></a>
+                        </div>
+                        
+                        <div class="container-fluid">
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">Pilih Nama Prodi</label>
+                                <select class="form-control filter-satuan" id="categoryFilter">
+                                    <option value="" disabled selected>Pilih Nama Prodi</option>
+                                    <?php foreach ($userprodi as $value) : ?>
+                                        <option value="<?= $value['id']; ?>"><?= $value['nama_prodi']; ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                            <table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
+							<thead>
+								<tr>
+									<th>No</th>
+                                    <th>id</th>
+									<th>Prodi/Unit</th>
+                                    <th>Kategori</th>
+									<th>No Kegiatan</th>
+									<th>Target</th>
+									<th>Indikator</th>
+									<th>Nama Kegiatan</th>
+									<th>KPI</th>
+									<th>Butir</th>
+									<th>Anggaran Gasal</th>
+									<th>Anggaran Ganjil</th>
+									<th>Serap Ganjil</th>
+									<th>Serap Genap</th>
+								</tr>
+							</thead>
+							<tbody>
+								<?php $i = 1;?>
+								<?php if ($detail_rkat) : ?>
+									<?php foreach ($detail_rkat as $value) : ?>
 										<tr>
-											<th>No</th>
-											<th>Kategori</th>
-											<th>No Kegiatan</th>
-											<th>Target</th>
-											<th>Indikator</th>
-											<th>Nama Kegiatan</th>
-											<th>KPI</th>
-											<th>Butir</th>
-											<th>Anggaran Gasal</th>
-											<th>Anggaran Ganjil</th>
-											<th>Total Anggaran Rencana</th>
-											<th>Nama Prodi/Unit</th>
-											<th>Actions</th>
+											<td scope="row"><?= $i++; ?></td>
+                                            <td><?= $value['id']; ?></td>
+                                            <td><?= $value['nama_prodi']; ?></td>
+											<td><?= $value['kategori']; ?></td>
+											<td><?= $value['no_kegiatan']; ?></td>
+											<td><?= $value['target']; ?></td>
+											<td><?= $value['indikator']; ?></td>
+											<td><?= $value['nama_kegiatan']; ?></td>
+											<td><?= $value['kpi']; ?></td>
+											<td><?= $value['butir']; ?></td>
+											<td><?= $value['anggaranGanjil']; ?></td>
+											<td><?= $value['anggaranGenap']; ?></td>
+											<td><?= $value['serapGanjil']; ?></td>
+											<td><?= $value['serapGenap']; ?></td>
 										</tr>
-									</thead>
-									<tbody>
-										<?php $i = 1; ?>
-										<?php if ($detail_rkat2) : ?>
-											<?php foreach ($detail_rkat2 as $reading) : ?>
-												<tr>
-													<td scope="row"><?= $i++; ?></td>
-													<td><?= $reading['kategori']; ?></td>
-													<td><?= $reading['no_kegiatan']; ?></td>
-													<td><?= $reading['target']; ?></td>
-													<td><?= $reading['indikator']; ?></td>
-													<td><?= $reading['nama_kegiatan']; ?></td>
-													<td><?= $reading['kpi']; ?></td>
-													<td><?= $reading['butir']; ?></td>
-													<td><?= $reading['anggaranGanjil']; ?></td>
-													<td><?= $reading['anggaranGenap']; ?></td>
-													<td><?= $reading['total']; ?></td>
-													<td><?= $reading['nama_prodi']; ?></td>
-													<td>
-														<a href="<?= base_url('rkat/editbyadmin/' . $reading['id_rkat']); ?>" class="button button2"><i class="fas fa-edit"></i></a>
-														
-													</td>
-												</tr>
-											<?php endforeach; ?>
-										<?php endif; ?>
-									</tbody>
-								</table>
-							</div>
-						</div>
-					</div>
+									<?php endforeach; ?>
+								<?php endif; ?>
+							</tbody>
+						</table>
+                            </div>
+                        </div>
+                    </div>
 
-				</div>
+                </div>
 
 
 			</div>

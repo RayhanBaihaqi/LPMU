@@ -9,7 +9,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>Admin</title>
+	<title>List data user</title>
 
 	<!-- Custom fonts for this template-->
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
@@ -77,11 +77,9 @@
 					<span>KPI</span></a>
 				<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
-
 						<a class="collapse-item" href="<?= base_url('/admin/listkpi') ?>">Lihat KPI</a>
 						<a class="collapse-item" href="<?= base_url('/admin/listbutirkpi') ?>">Lihat Butir KPI</a>
-						<a class="collapse-item" href="<?= base_url('/admin/adminkpi') ?>">Lihat Rencana</a>
-						<a class="collapse-item" href="<?= base_url('#') ?>">Lihat Capaian</a>
+						<a class="collapse-item" href="<?= base_url('/admin/listcapaiankpi') ?>">Lihat Capaian</a>
 					</div>
 				</div>
 			</li>
@@ -138,42 +136,78 @@
 				</nav>
 				<!-- End of Topbar -->
 				<!-- Begin Page Content -->
-				<div class="container-fluid">
+                <div class="container-fluid">
 
-					<!-- Page Heading -->
-					<h1 class="h3 mb-2 text-gray-800">Tambah User</h1>
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-2 text-gray-800">List Data Rkat Unit</h1>
 
-					<!-- DataTales Example -->
-					<div class="card shadow mb-4">
-						<div class="card-body">
-							<div class="table-responsive">
-								<div class="container">
-									<!-- Akan Dilooping -->
-									<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat']; ?>
-										<div class="form-group">
-											<label for="exampleFormControlSelect1">Tahun Ajaran</label>
-											<select class="form-control" id="exampleFormControlSelect1" disabled>
-												<option value="<?= $value['tahun_akademik'] ?>" selected><?= $value['tahun_akademik'] ?>
-												</option>
-											</select>
-										</div>
-										<div class="form-group">
-											<label for="uname">Jumlah Pagu</label>
-											<input type="hidden" class="form-control" id="uname" name="uname" value="<?= $value['pagu'] ?>" required disabled>
-										</div>
-									<?php endforeach; ?>
-									<form action="<?= base_url('setrkat/tambahbyadmin'); ?>" method="post">
-										<div class="input-group mb-3">
-											<input type="text" class="form-control" placeholder="Jumlah Kegiatan" name="jumlah">
-										</div>
-										<input class="btn btn-primary" type="submit" name="tambah" value="Tambah">
-									</form>
-								</div>
-							</div>
-						</div>
-					</div>
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <span></span></a>
+                        </div>
+                        
+                        <div class="container-fluid">
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">Pilih Nama Unit</label>
+                                <select class="form-control filter-satuan" id="categoryFilter">
+                                    <option value="" disabled selected>Pilih Nama Unit</option>
+                                    <?php foreach ($userunit as $value) : ?>
+                                        <option value="<?= $value['id']; ?>"><?= $value['nama_prodi']; ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>id</th>
+                                            <th>Prodi/Unit</th>
+                                            <th>Kategori</th>
+                                            <th>No Kegiatan</th>
+                                            <th>Target</th>
+                                            <th>Indikator</th>
+                                            <th>Nama Kegiatan</th>
+                                            <th>KPI</th>
+                                            <th>Butir</th>
+                                            <th>Anggaran Gasal</th>
+                                            <th>Anggaran Ganjil</th>
+                                            <th>Serap Ganjil</th>
+                                            <th>Serap Genap</th>
+                                        </tr>
+                                    </thead>
+							        <tbody>
+                                        <?php $i = 1;?>
+                                        <?php if ($detail_rkat) : ?>
+                                            <?php foreach ($detail_rkat as $value) : ?>
+                                                <tr>
+                                                    <td scope="row"><?= $i++; ?></td>
+                                                    <td><?= $value['id']; ?></td>
+                                                    <td><?= $value['nama_prodi']; ?></td>
+                                                    <td><?= $value['kategori']; ?></td>
+                                                    <td><?= $value['no_kegiatan']; ?></td>
+                                                    <td><?= $value['target']; ?></td>
+                                                    <td><?= $value['indikator']; ?></td>
+                                                    <td><?= $value['nama_kegiatan']; ?></td>
+                                                    <td><?= $value['kpi']; ?></td>
+                                                    <td><?= $value['butir']; ?></td>
+                                                    <td><?= $value['anggaranGanjil']; ?></td>
+                                                    <td><?= $value['anggaranGenap']; ?></td>
+                                                    <td><?= $value['serapGanjil']; ?></td>
+                                                    <td><?= $value['serapGenap']; ?></td>
+                                                </tr>
+                                            <?php endforeach; ?>
+                                        <?php endif; ?>
+                                    </tbody>
+						        </table>
+                            </div>
+                        </div>
+                    </div>
 
-				</div>
+                </div>
 
 
 			</div>

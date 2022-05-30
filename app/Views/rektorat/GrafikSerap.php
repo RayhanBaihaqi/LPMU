@@ -139,9 +139,6 @@
                         <section class="content">
 
                             <div class="card card-success">
-                                <div class="card-header">
-                                    <h3 class="card-title">Grafik Capaian KPI</h3>
-                                </div>
                                 <div class="card-body">
                                     <div class="chart">
                                         <div id="GrafikCapaianRkat" style="width: 1080px; height: 500px;"></div>

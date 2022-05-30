@@ -152,49 +152,49 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                            <table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
-							<thead>
-								<tr>
-									<th>No</th>
-                                    <th>id</th>
-									<th>Prodi/Unit</th>
-                                    <th>Kategori</th>
-									<th>No Kegiatan</th>
-									<th>Target</th>
-									<th>Indikator</th>
-									<th>Nama Kegiatan</th>
-									<th>KPI</th>
-									<th>Butir</th>
-									<th>Anggaran Gasal</th>
-									<th>Anggaran Ganjil</th>
-									<th>Serap Ganjil</th>
-									<th>Serap Genap</th>
-								</tr>
-							</thead>
-							<tbody>
-								<?php $i = 1;?>
-								<?php if ($detail_rkat) : ?>
-									<?php foreach ($detail_rkat as $value) : ?>
-										<tr>
-											<td scope="row"><?= $i++; ?></td>
-                                            <td><?= $value['id']; ?></td>
-                                            <td><?= $value['nama_prodi']; ?></td>
-											<td><?= $value['kategori']; ?></td>
-											<td><?= $value['no_kegiatan']; ?></td>
-											<td><?= $value['target']; ?></td>
-											<td><?= $value['indikator']; ?></td>
-											<td><?= $value['nama_kegiatan']; ?></td>
-											<td><?= $value['kpi']; ?></td>
-											<td><?= $value['butir']; ?></td>
-											<td><?= $value['anggaranGanjil']; ?></td>
-											<td><?= $value['anggaranGenap']; ?></td>
-											<td><?= $value['serapGanjil']; ?></td>
-											<td><?= $value['serapGenap']; ?></td>
-										</tr>
-									<?php endforeach; ?>
-								<?php endif; ?>
-							</tbody>
-						</table>
+                                <table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>id</th>
+                                            <th>Prodi/Unit</th>
+                                            <th>Kategori</th>
+                                            <th>No Kegiatan</th>
+                                            <th>Target</th>
+                                            <th>Indikator</th>
+                                            <th>Nama Kegiatan</th>
+                                            <th>KPI</th>
+                                            <th>Butir</th>
+                                            <th>Anggaran Gasal</th>
+                                            <th>Anggaran Ganjil</th>
+                                            <th>Serap Ganjil</th>
+                                            <th>Serap Genap</th>
+                                        </tr>
+                                    </thead>
+							        <tbody>
+                                        <?php $i = 1;?>
+                                        <?php if ($detail_rkat) : ?>
+                                            <?php foreach ($detail_rkat as $value) : ?>
+                                                <tr>
+                                                    <td scope="row"><?= $i++; ?></td>
+                                                    <td><?= $value['id']; ?></td>
+                                                    <td><?= $value['nama_prodi']; ?></td>
+                                                    <td><?= $value['kategori']; ?></td>
+                                                    <td><?= $value['no_kegiatan']; ?></td>
+                                                    <td><?= $value['target']; ?></td>
+                                                    <td><?= $value['indikator']; ?></td>
+                                                    <td><?= $value['nama_kegiatan']; ?></td>
+                                                    <td><?= $value['kpi']; ?></td>
+                                                    <td><?= $value['butir']; ?></td>
+                                                    <td><?= $value['anggaranGanjil']; ?></td>
+                                                    <td><?= $value['anggaranGenap']; ?></td>
+                                                    <td><?= $value['serapGanjil']; ?></td>
+                                                    <td><?= $value['serapGenap']; ?></td>
+                                                </tr>
+                                            <?php endforeach; ?>
+                                        <?php endif; ?>
+                                    </tbody>
+						        </table>
                             </div>
                         </div>
                     </div>
