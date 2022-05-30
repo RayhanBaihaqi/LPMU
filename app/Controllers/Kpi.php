@@ -21,7 +21,18 @@ class Kpi extends BaseController
 	}
 	public function index()
 	{
-		return view('/kpi/Dashboard');
+		$tabelcapaiankpi = new DataCapaianKpiModel();
+		// $db      = \Config\Database::connect();
+		// $builder = $db->table('tabel_capaian_kpi');
+		$nama_prodi = session('nama_prodi');
+		$data = [
+
+			'totalkpi18' => $tabelcapaiankpi->jmlkpi18($nama_prodi)->getResultArray(),
+			'totalkpi19' => $tabelcapaiankpi->jmlkpi19($nama_prodi)->getResultArray(),
+			'totalkpi20' => $tabelcapaiankpi->jmlkpi20($nama_prodi)->getResultArray(),
+			'totalkpi21' => $tabelcapaiankpi->jmlkpi21($nama_prodi)->getResultArray(),
+		];
+		return view('/kpi/Dashboard', $data);
 	}
 
 	public function rencana()

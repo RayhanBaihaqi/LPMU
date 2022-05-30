@@ -175,6 +175,32 @@
                     </div>
                 </div>
             </div>
+
+            <?php foreach ($totalkpi18 as $key => $value) : $tot_18 = $value['tot_18'];
+            endforeach; ?>
+            <?php foreach ($totalkpi19 as $key => $value) : $tot_19 = $value['tot_19'];
+            endforeach; ?>
+            <?php foreach ($totalkpi20 as $key => $value) : $tot_20 = $value['tot_20'];
+            endforeach; ?>
+            <?php foreach ($totalkpi21 as $key => $value) : $tot_21 = $value['tot_21'];
+            endforeach; ?>
+
+            <div class="container col-lg-12">
+                <section class="content">
+                    <!-- BAR CHART -->
+                    <div class="card card-success">
+                        <div class="card-header">
+                            <h3 class="card-title">Grafik Capaian KPI Setiap Tahun</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart">
+                                <canvas id="myChart" height="100"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+                </section>
+            </div>
         </div>
 
     </div>
@@ -185,6 +211,8 @@
     <!-- <script src="lib/easing/easing.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/isotope/isotope.pkgd.min.js"></script> -->
+
+
     <script>
         function startTime() {
             var today = new Date();
@@ -230,7 +258,79 @@
         });
     </script>
     <script>
+        const ctx = document.getElementById('myChart');
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['2019/2020', '2020/2021', '2021/2022'],
+                datasets: [
+                    // Data Batang Grafik Standar 1
 
+                    {
+
+                        label: 'Total Capaian KPI per Tahun',
+                        backgroundColor: ['rgba(255, 165, 0, 1)', 'rgba(93, 255, 223,1)', 'rgba(93, 78, 246,1)'],
+                        borderColor: ['rgba(255, 165, 0, 1)', 'rgba(93, 255, 223,1)', 'rgba(93, 78, 246,1)'],
+                        pointRadius: false,
+                        pointColor: 'rgba(210, 214, 222, 1)',
+                        pointStrokeColor: '#c1c7d1',
+                        pointHighlightFill: '#fff',
+                        pointHighlightStroke: 'rgba(220,220,220,1)',
+                        data: [<?php echo json_encode($tot_19) ?>, <?php echo json_encode($tot_20) ?>, <?php echo json_encode($tot_21) ?>]
+                    },
+
+                    // {
+                    //     label: <?php echo json_encode($tahun_ajaran = '2020/2021') ?>,
+                    //     backgroundColor: 'rgba(93, 255, 223,1)',
+                    //     borderColor: 'rgba(93, 255, 223,1)',
+                    //     pointRadius: false,
+                    //     pointColor: 'rgba(210, 214, 222, 1)',
+                    //     pointStrokeColor: '#c1c7d1',
+                    //     pointHighlightFill: '#fff',
+                    //     pointHighlightStroke: 'rgba(220,220,220,1)',
+                    //     data: [<?php echo json_encode($tot_20) ?>]
+                    // },
+                    // {
+                    //     label: <?php echo json_encode($tahun_ajaran = '2021/2022') ?>,
+                    //     backgroundColor: 'rgba(93, 78, 246,1)',
+                    //     borderColor: 'rgba(93, 78, 246,1)',
+                    //     pointRadius: false,
+                    //     pointColor: 'rgba(210, 214, 222, 1)',
+                    //     pointStrokeColor: '#c1c7d1',
+                    //     pointHighlightFill: '#fff',
+                    //     pointHighlightStroke: 'rgba(220,220,220,1)',
+                    //     data: [<?php echo json_encode($tot_21) ?>]
+                    // },
+                ]
+            },
+            options: {
+                responsive: true,
+                legend: {
+                    position: 'top',
+                },
+                hover: {
+                    mode: 'label'
+                },
+                scales: {
+                    xAxes: [{
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+
+                        }
+                    }],
+                    yAxes: [{
+                        display: true,
+                        ticks: {
+                            beginAtZero: true,
+                            steps: 10,
+                            stepValue: 5,
+
+                        }
+                    }]
+                },
+            }
+        });
     </script>
 
 
