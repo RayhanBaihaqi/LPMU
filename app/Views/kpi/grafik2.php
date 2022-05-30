@@ -95,9 +95,7 @@
                         <div class="user-info-dropdown">
                             <div class="dropdown">
                                 <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-                                    <span class="user-icon">
-                                        <img src="<?php echo base_url(); ?>/public/img/inf-logo.jpg" alt="">
-                                    </span>
+
                                     <span class="user-name">
                                         <?php
                                         $nama_prodi = session('nama_prodi');
@@ -173,7 +171,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                    <!-- <tr>
                                         <?php
                                         foreach ($hasilkpi1_18 as $rows) :
                                         ?>
@@ -246,7 +244,7 @@
                                         endforeach;
                                         ?>
 
-                                    </tr>
+                                    </tr> -->
                                     <tr>
                                         <?php
                                         foreach ($hasilkpi1_19 as $rows) :
@@ -393,7 +391,7 @@
                                         endforeach;
                                         ?>
                                     </tr>
-                                    <!-- <tr>
+                                    <tr>
                                         <?php
                                         foreach ($hasilkpi1_21 as $rows) :
                                         ?>
@@ -465,7 +463,7 @@
                                         <?php
                                         endforeach;
                                         ?>
-                                    </tr> -->
+                                    </tr>
 
                                 </tbody>
                                 <!-- <tfoot>

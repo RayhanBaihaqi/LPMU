@@ -165,7 +165,7 @@
                     <div class="container col-lg-12">
                         <section class="content">
                             <!-- BAR CHART -->
-                            <div class="card card-success">
+                            <!-- <div class="card card-success">
                                 <div class="card-header">
                                     <h3 class="card-title">Grafik Rencana KPI</h3>
                                 </div>
@@ -175,7 +175,7 @@
 
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- /.card-body -->
                         </section>
                     </div>
@@ -230,7 +230,7 @@
         $(".pre-loader").fadeOut("slow");
     });
 </script>
-<script>
+<!-- <script>
     const ctx = document.getElementById('myChart');
     const myChart = new Chart(ctx, {
         type: 'bar',
@@ -281,6 +281,6 @@
             },
         }
     });
-</script>
+</script> -->
 
 </html>

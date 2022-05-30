@@ -269,7 +269,7 @@
                     <div class="container col-lg-12">
                         <section class="content">
                             <!-- BAR CHART -->
-                            <div class="card card-success">
+                            <!-- <div class="card card-success">
                                 <div class="card-header">
                                     <h3 class="card-title">Grafik Rencana KPI</h3>
                                 </div>
@@ -278,7 +278,7 @@
                                         <canvas id="myChart" height="100"></canvas>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <br>
                             <!-- /.card-body -->
                             <div class="card card-success">
@@ -345,56 +345,56 @@
     });
 </script>
 <script>
-    const ctx = document.getElementById('myChart');
-    const myChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['Standar 1', 'Standar 2', 'Standar 3', 'Standar 4', 'Standar 5', 'Standar 6', 'Standar 7', 'Standar 8', 'Standar 9'],
-            datasets: [
-                //Data Batang Grafik Standar 1
-                {
-                    label: 'Total bobot rencana',
-                    backgroundColor: 'rgba(60,141,188,0.9)',
-                    borderColor: 'rgba(60,141,188,0.8)',
-                    pointRadius: false,
-                    pointColor: '#3b8bba',
-                    pointStrokeColor: 'rgba(60,141,188,1)',
-                    pointHighlightFill: '#fff',
-                    pointHighlightStroke: 'rgba(60,141,188,1)',
-                    data: [<?php echo json_encode($jumlah_rencana1) ?>, <?php echo json_encode($jumlah_rencana2) ?>, <?php echo json_encode($jumlah_rencana3) ?>, <?php echo json_encode($jumlah_rencana4) ?>, <?php echo json_encode($jumlah_rencana5) ?>, <?php echo json_encode($jumlah_rencana6) ?>, <?php echo json_encode($jumlah_rencana7) ?>, <?php echo json_encode($jumlah_rencana8) ?>, <?php echo json_encode($jumlah_rencana9) ?>]
+    // const ctx = document.getElementById('myChart');
+    // const myChart = new Chart(ctx, {
+    //     type: 'bar',
+    //     data: {
+    //         labels: ['Standar 1', 'Standar 2', 'Standar 3', 'Standar 4', 'Standar 5', 'Standar 6', 'Standar 7', 'Standar 8', 'Standar 9'],
+    //         datasets: [
+    //             //Data Batang Grafik Standar 1
+    //             {
+    //                 label: 'Total bobot rencana',
+    //                 backgroundColor: 'rgba(60,141,188,0.9)',
+    //                 borderColor: 'rgba(60,141,188,0.8)',
+    //                 pointRadius: false,
+    //                 pointColor: '#3b8bba',
+    //                 pointStrokeColor: 'rgba(60,141,188,1)',
+    //                 pointHighlightFill: '#fff',
+    //                 pointHighlightStroke: 'rgba(60,141,188,1)',
+    //                 data: [<?php echo json_encode($jumlah_rencana1) ?>, <?php echo json_encode($jumlah_rencana2) ?>, <?php echo json_encode($jumlah_rencana3) ?>, <?php echo json_encode($jumlah_rencana4) ?>, <?php echo json_encode($jumlah_rencana5) ?>, <?php echo json_encode($jumlah_rencana6) ?>, <?php echo json_encode($jumlah_rencana7) ?>, <?php echo json_encode($jumlah_rencana8) ?>, <?php echo json_encode($jumlah_rencana9) ?>]
 
-                },
+    //             },
 
-            ]
-        },
-        options: {
-            responsive: true,
-            legend: {
-                position: 'top',
-            },
-            hover: {
-                mode: 'label'
-            },
-            scales: {
-                xAxes: [{
-                    display: true,
-                    scaleLabel: {
-                        display: true,
+    //         ]
+    //     },
+    //     options: {
+    //         responsive: true,
+    //         legend: {
+    //             position: 'top',
+    //         },
+    //         hover: {
+    //             mode: 'label'
+    //         },
+    //         scales: {
+    //             xAxes: [{
+    //                 display: true,
+    //                 scaleLabel: {
+    //                     display: true,
 
-                    }
-                }],
-                yAxes: [{
-                    display: true,
-                    ticks: {
-                        beginAtZero: true,
-                        steps: 10,
-                        stepValue: 5,
+    //                 }
+    //             }],
+    //             yAxes: [{
+    //                 display: true,
+    //                 ticks: {
+    //                     beginAtZero: true,
+    //                     steps: 10,
+    //                     stepValue: 5,
 
-                    }
-                }]
-            },
-        }
-    });
+    //                 }
+    //             }]
+    //         },
+    //     }
+    // });
 
     const ctx2 = document.getElementById('ChartProdi');
     const ChartProdi = new Chart(ctx2, {
@@ -403,19 +403,19 @@
             labels: ['Akuntansi', 'Manajemen', 'Psikologi', 'Ilmu Komunikasi', 'Desain Produk', 'Desain Komunikasi Visual', 'Informatika', 'Sistem Informasi', 'Teknik Sipil', 'Arsitektur'],
             datasets: [
                 //Data Batang Grafik Standar 1
-                {
-                    label: '2018/2019',
-                    backgroundColor: 'rgba(60,141,188,0.9)',
-                    borderColor: 'rgba(60,141,188,0.8)',
-                    pointRadius: false,
-                    pointColor: '#3b8bba',
-                    pointStrokeColor: 'rgba(60,141,188,1)',
-                    pointHighlightFill: '#fff',
-                    pointHighlightStroke: 'rgba(60,141,188,1)',
-                    data: [<?php echo json_encode($tot_18_akt) ?>, <?php echo json_encode($tot_18_mnj) ?>, <?php echo json_encode($tot_18_psi) ?>, <?php echo json_encode($tot_18_kom) ?>, <?php echo json_encode($tot_18_dpi) ?>, <?php echo json_encode($tot_18_dkv) ?>, <?php echo json_encode($tot_18_inf) ?>, <?php echo json_encode($tot_18_sif) ?>, <?php echo json_encode($tot_18_tsp) ?>, <?php echo json_encode($tot_18_ars) ?>]
+                // {
+                //     label: '2018/2019',
+                //     backgroundColor: 'rgba(60,141,188,0.9)',
+                //     borderColor: 'rgba(60,141,188,0.8)',
+                //     pointRadius: false,
+                //     pointColor: '#3b8bba',
+                //     pointStrokeColor: 'rgba(60,141,188,1)',
+                //     pointHighlightFill: '#fff',
+                //     pointHighlightStroke: 'rgba(60,141,188,1)',
+                //     data: [<?php echo json_encode($tot_18_akt) ?>, <?php echo json_encode($tot_18_mnj) ?>, <?php echo json_encode($tot_18_psi) ?>, <?php echo json_encode($tot_18_kom) ?>, <?php echo json_encode($tot_18_dpi) ?>, <?php echo json_encode($tot_18_dkv) ?>, <?php echo json_encode($tot_18_inf) ?>, <?php echo json_encode($tot_18_sif) ?>, <?php echo json_encode($tot_18_tsp) ?>, <?php echo json_encode($tot_18_ars) ?>]
 
 
-                },
+                // },
                 {
                     label: '2019/2020',
                     backgroundColor: 'rgba(255, 165, 0, 1)',
@@ -439,6 +439,18 @@
                     pointHighlightFill: '#fff',
                     pointHighlightStroke: 'rgba(60,141,188,1)',
                     data: [<?php echo json_encode($tot_20_akt) ?>, <?php echo json_encode($tot_20_mnj) ?>, <?php echo json_encode($tot_20_psi) ?>, <?php echo json_encode($tot_20_kom) ?>, <?php echo json_encode($tot_20_dpi) ?>, <?php echo json_encode($tot_20_dkv) ?>, <?php echo json_encode($tot_20_inf) ?>, <?php echo json_encode($tot_20_sif) ?>, <?php echo json_encode($tot_20_tsp) ?>, <?php echo json_encode($tot_20_ars) ?>]
+
+                },
+                {
+                    label: '2021/2022',
+                    backgroundColor: 'rgba(93, 78, 246,1)',
+                    borderColor: 'rgba(93, 78, 246,1)',
+                    pointRadius: false,
+                    pointColor: '#3b8bba',
+                    pointStrokeColor: 'rgba(60,141,188,1)',
+                    pointHighlightFill: '#fff',
+                    pointHighlightStroke: 'rgba(60,141,188,1)',
+                    data: [<?php echo json_encode($tot_21_akt) ?>, <?php echo json_encode($tot_21_mnj) ?>, <?php echo json_encode($tot_21_psi) ?>, <?php echo json_encode($tot_21_kom) ?>, <?php echo json_encode($tot_21_dpi) ?>, <?php echo json_encode($tot_21_dkv) ?>, <?php echo json_encode($tot_21_inf) ?>, <?php echo json_encode($tot_21_sif) ?>, <?php echo json_encode($tot_21_tsp) ?>, <?php echo json_encode($tot_21_ars) ?>]
 
                 },
 
