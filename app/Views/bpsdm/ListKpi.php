@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>List Capaian KPI</title>
+    <title>List KPI</title>
 
     <!-- Custom fonts for this template-->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
@@ -18,7 +18,6 @@
     <!-- Custom styles for this template-->
     <link href="<?php echo base_url(); ?>/public/css/style_admin.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>/public/css/dataTables.bootstrap4.min.css" rel="stylesheet">
-
 
 </head>
 
@@ -40,7 +39,7 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link " href="<?php echo site_url(); ?>bpsdm">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
@@ -70,7 +69,7 @@
             <hr class="sidebar-divider">
 
             <!-- Heading -->
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>KPI</span></a>
@@ -85,6 +84,7 @@
                 </div>
             </li>
 
+            <!-- Heading -->
 
 
         </ul>
@@ -116,6 +116,14 @@
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Settings
+                                </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="<?= base_url('auth/logout') ?>">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -130,77 +138,88 @@
                 <!-- End of Topbar -->
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
+                    <h2>List KPI</h2>
 
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Grafik Capaian KPI</h1>
-                    <br>
-                    <div class="form-group">
-                        <label for="exampleFormControlSelect1">Pilih Tingkatan</label>
-                        <select class="form-control" id="exampleFormControlSelect1" onchange="location = this.value;">
-                            <option disabled selected>--Pilih ingin melihat total capaian prodi/unit--</option>
-                            <option value="tabelprodi/">Prodi</option>
-                            <option value="tabelunit/">Unit</option>
-                        </select>
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <a href="<?= base_url('/bpsdm/form_tambahkpi') ?>" class="btn btn-success"><span>Tambah
+                                    KPI</span></a>
+
+                        </div>
+
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+
+                                            <th>ID KPI</th>
+                                            <th>Nama KPI</th>
+                                            <th>Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                        $nomor = 0;
+                                        foreach ($tampildata as $row) :
+                                            $nomor++;
+                                        ?>
+                                            <tr>
+                                                <th><?= $nomor; ?></th>
+
+                                                <td><?= $row->nama_kpi ?></td>
+
+
+                                                <td>
+                                                    <a href="<?= base_url('bpsdm/form_updatekpi/' . $row->idkpi); ?>" class="button button2"><i class="fas fa-edit"></i></a>
+                                                    <a href="<?= base_url('bpsdm/hapuskpi/' . $row->idkpi); ?>" class="button button2"><i class="fas fa-trash-alt"></i></a>
+
+
+                                                </td>
+
+                                            </tr>
+
+                                        <?php
+                                        endforeach;
+                                        ?>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
-
-
-                    <div class="container col-lg-12">
-                        <section class="content">
-                            <!-- BAR CHART -->
-
-                        </section>
-                    </div>
-
-                    <br>
-
-
-
                 </div>
 
 
+
             </div>
-            <!-- End of Content Wrapper -->
+
 
         </div>
-        <!-- End of Page Wrapper -->
+        <!-- End of Content Wrapper -->
 
-        <!-- Scroll to Top Button-->
-        <a class="scroll-to-top rounded" href="#page-top">
-            <i class="fas fa-angle-up"></i>
-        </a>
+    </div>
+    <!-- End of Page Wrapper -->
 
-        <!-- Bootstrap core JavaScript-->
-        <script src="<?php echo base_url(); ?>/public/js/jquery.min.js"></script>
-        <script src="<?php echo base_url(); ?>/public/js/bootstrap.bundle.min.js"></script>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
 
-        <!-- Page level plugins -->
-        <script src="<?php echo base_url(); ?>/public/js/jquery.dataTables.min.js"></script>
-        <script src="<?php echo base_url(); ?>/public/js/dataTables.bootstrap4.min.js"></script>
 
-        <!-- Page level custom scripts -->
-        <script src="<?php echo base_url(); ?>/public/js/datatables-demo.js"></script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="<?php echo base_url(); ?>/public/js/jquery.min.js"></script>
+    <script src="<?php echo base_url(); ?>/public/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="<?php echo base_url(); ?>/public/js/jquery.dataTables.min.js"></script>
+    <script src="<?php echo base_url(); ?>/public/js/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="<?php echo base_url(); ?>/public/js/datatables-demo.js"></script>
+
 
 </body>
-<!-- jQuery -->
-<script src="<?php echo base_url(); ?>/public/plugins/jquery/jquery.min.js"></script>
-<!-- ChartJS -->
-<script src="<?php echo base_url(); ?>/public/plugins/chart.js/Chart.min.js"></script>
-<!-- AdminLTE App -->
-<script src="<?php echo base_url(); ?>/public/dist/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-
-<!-- Page level custom scripts -->
-<script src="<?php echo base_url(); ?>/public/dist/js/demo.js"></script>
-<script src="<?php echo base_url(); ?>/public/chart/apexcharts.min.js"></script>
-<script src="<?php echo base_url(); ?>/public/chart/dashboard.js"></script>
-<script src="<?php echo base_url(); ?>/public/chart/jquery.knob.min.js"></script>
-<script src="<?php echo base_url(); ?>/public/chart/knob-chart-setting.js"></script>
-<script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
-<script>
-    $(window).load(function() {
-        $(".pre-loader").fadeOut("slow");
-    });
-</script>
-
 
 </html>

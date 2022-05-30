@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>List Capaian KPI</title>
+    <title>List KPI dan Butir</title>
 
     <!-- Custom fonts for this template-->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
@@ -39,7 +39,7 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link " href="<?php echo site_url(); ?>bpsdm">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
@@ -69,7 +69,7 @@
             <hr class="sidebar-divider">
 
             <!-- Heading -->
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>KPI</span></a>
@@ -84,6 +84,7 @@
                 </div>
             </li>
 
+            <!-- Heading -->
 
 
         </ul>
@@ -129,14 +130,14 @@
                 <!-- End of Topbar -->
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">List Capaian KPI</h1>
+                    <h2>List KPI + Butir</h2>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <span></span></a>
+
+                            <a href="<?= base_url('/bpsdm/form_tambahbutirKpi') ?>" class="btn btn-success"><span>Tambah
+                                    Butir KPI</span></a>
                         </div>
                         <div class="container-fluid">
                             <div class="form-group">
@@ -157,78 +158,96 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable_rencana" width="100%" cellspacing="0">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Nama Prodi</th>
-                                            <th>Tahun Ajaran</th>
-                                            <th>Level</th>
                                             <th>Nama KPI</th>
                                             <th>Angka Butir</th>
                                             <th>Nama Butir</th>
-                                            <th>Bobot</th>
+                                            <th>Unit Utama</th>
+                                            <th>Unit Pendukung</th>
                                             <th>Target</th>
-                                            <th>Realisasi</th>
-                                            <th>Nilai Bobot</th>
-                                            <th>File</th>
-                                            <th>Actions</th>
+                                            <th>Kategori</th>
+                                            <th>Kegiatan</th>
+                                            <th>Bobot</th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
                                         $nomor = 0;
-                                        foreach ($tampilcapaiankpi as $row) :
+                                        foreach ($tampildata as $row) :
                                             $nomor++;
                                         ?>
                                             <tr>
                                                 <th><?= $nomor; ?></th>
-                                                <td><?= $row->nama_prodi ?></td>
-                                                <td><?= $row->tahun_ajaran ?></td>
-                                                <td><?= $row->level ?></td>
                                                 <td><?= $row->nama_kpi ?></td>
                                                 <td><?= $row->idkpi . '.' . $row->angka_butir ?></td>
                                                 <td><?= $row->nama_butir ?></td>
-                                                <td><?= $row->bobot ?></td>
+                                                <td><?= $row->unit_utama ?></td>
+                                                <td><?= $row->unit_pendukung ?></td>
                                                 <td><?= $row->target ?></td>
-                                                <td><?= $row->realisasi ?></td>
-                                                <td><?= $row->nilai_bobot ?></td>
-                                                <td><?= $row->upload_file ?></td>
-                                                <td></td>
-                                            <?php
-                                        endforeach;
-                                            ?>
+                                                <td><?= $row->kategori ?></td>
+                                                <td><?= $row->kegiatan ?></td>
+                                                <td><?= $row->bobot ?></td>
+
+                                                <td>
+                                                    <a href="<?= base_url('bpsdm/form_updatebutirkpi/' . $row->id); ?>"><i class="fas fa-edit"></i></a>
+                                                    <a href="<?= base_url('bpsdm/hapusbutirkpi/' . $row->id); ?>" class="button button2"><i class="fas fa-trash-alt"></i></a>
+                                                </td>
+
                                             </tr>
+
+                                        <?php
+                                        endforeach;
+                                        ?>
+
                                     </tbody>
+                                    <tfoot>
+                                        <?php
+                                        foreach ($sum as $rows) {
+                                        ?>
+                                            <tr style="font-weight: bold;">
+                                                <td colspan="9"> TOTAL </td>
+                                                <td><?php echo $rows->total_bobot; ?></td>
+                                                <td></td>
+                                            </tr>
+                                        <?php
+                                        }
+                                        ?>
+                                    </tfoot>
                                 </table>
                             </div>
                         </div>
                     </div>
-
                 </div>
 
 
             </div>
-            <!-- End of Content Wrapper -->
+
 
         </div>
-        <!-- End of Page Wrapper -->
+        <!-- End of Content Wrapper -->
 
-        <!-- Scroll to Top Button-->
-        <a class="scroll-to-top rounded" href="#page-top">
-            <i class="fas fa-angle-up"></i>
-        </a>
+    </div>
+    <!-- End of Page Wrapper -->
 
-        <!-- Bootstrap core JavaScript-->
-        <script src="<?php echo base_url(); ?>/public/js/jquery.min.js"></script>
-        <script src="<?php echo base_url(); ?>/public/js/bootstrap.bundle.min.js"></script>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
 
-        <!-- Page level plugins -->
-        <script src="<?php echo base_url(); ?>/public/js/jquery.dataTables.min.js"></script>
-        <script src="<?php echo base_url(); ?>/public/js/dataTables.bootstrap4.min.js"></script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="<?php echo base_url(); ?>/public/js/jquery.min.js"></script>
+    <script src="<?php echo base_url(); ?>/public/js/bootstrap.bundle.min.js"></script>
 
-        <!-- Page level custom scripts -->
-        <script src="<?php echo base_url(); ?>/public/js/datatables-demo.js"></script>
+    <!-- Page level plugins -->
+    <script src="<?php echo base_url(); ?>/public/js/jquery.dataTables.min.js"></script>
+    <script src="<?php echo base_url(); ?>/public/js/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="<?php echo base_url(); ?>/public/js/datatables-demo.js"></script>
 
 </body>
 

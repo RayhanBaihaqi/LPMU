@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>List Capaian KPI</title>
+    <title>Form Tambah Butir KPI</title>
 
     <!-- Custom fonts for this template-->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
@@ -18,7 +18,6 @@
     <!-- Custom styles for this template-->
     <link href="<?php echo base_url(); ?>/public/css/style_admin.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>/public/css/dataTables.bootstrap4.min.css" rel="stylesheet">
-
 
 </head>
 
@@ -33,14 +32,14 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
                 <img src="<?php echo base_url(); ?>/public/img/monev_logo_putih.png" alt="Logo" style="width: 70px; height: 70px;">
-                <div class="sidebar-brand-text mx-3">BPSDM</div>
+                <div class="sidebar-brand-text mx-3">Admin</div>
             </a>
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link " href="<?php echo site_url(); ?>bpsdm">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
@@ -57,11 +56,11 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="<?= base_url('#') ?>">Tambah RKAT</a>
-                        <a class="collapse-item" href="<?= base_url('#') ?>">Lihat Data</a>
-                        <a class="collapse-item" href="<?= base_url('#') ?>">Buat Pagu</a>
-                        <a class="collapse-item" href="<?= base_url('#') ?>">List Pagu</a>
-                        <a class="collapse-item" href="<?= base_url('#') ?>">Tahun Akademik</a>
+                        <a class="collapse-item" href="<?= base_url('rkat/createbyadmin') ?>">Tambah RKAT</a>
+                        <a class="collapse-item" href="<?= base_url('rkat/indexbyadmin') ?>">Lihat Data</a>
+                        <a class="collapse-item" href="<?= base_url('pagurkat/create') ?>">Buat Pagu</a>
+                        <a class="collapse-item" href="<?= base_url('pagurkat/index') ?>">List Pagu</a>
+                        <a class="collapse-item" href="<?= base_url('tahunakademik/indextahun') ?>">Tahun Akademik</a>
                     </div>
                 </div>
             </li>
@@ -70,7 +69,7 @@
             <hr class="sidebar-divider">
 
             <!-- Heading -->
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>KPI</span></a>
@@ -130,34 +129,70 @@
                 <!-- End of Topbar -->
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
+                    <div class="card shadow mb-4">
+                        <div class="card-body">
+                            <h2>Tambah Butir KPI</h2>
+                            <?= form_open('bpsdm/simpanbutirkpi') ?>
+                            <div class="form-group">
+                                <label for="idkpi">ID KPI</label>
+                                <select required class="form-control" id="idkpi" name="idkpi">
+                                    <option selected disabled>Pilih Kategori KPI</option>
+                                    <option value="1">1. Visi, Misi, Tujuan dan Strategi</option>
+                                    <option value="2">2. Tata Pamong, Tata Kelola dan Kerjasama</option>
+                                    <option value="3">3. Mahasiswa</option>
+                                    <option value="4">4. Sumber Daya Manusia </option>
+                                    <option value="5">5. Keuangan, Sarana dan Prasarana</option>
+                                    <option value="6">6. Pendidikan</option>
+                                    <option value="7">7. Penelitian</option>
+                                    <option value="8">8 Pengabdian Kepada Masyarakat</option>
+                                    <option value="9">9. Luaran dan Capaian Tridharma</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="angka_butir">Angka butir</label>
+                                <input type="text" class="form-control" id="angka_butir" name="angka_butir" placeholder="Masukkan angka butir KPI" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="nama_butir">Nama butir</label>
+                                <input type="text" class="form-control" id="nama_butir" name="nama_butir" placeholder="Masukkan nama butir KPI" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="unit_utama">Unit utama</label>
+                                <input type="text" class="form-control" id="unit_utama" name="unit_utama" placeholder="Masukkan unit utama KPI">
+                            </div>
+                            <div class="form-group">
+                                <label for="unit_pendukung">Unit pendukung</label>
+                                <input type="text" class="form-control" id="unit_pendukung" name="unit_pendukung" placeholder="Masukkan unit pendukung KPI">
+                            </div>
+                            <div class="form-group">
+                                <label for="target">Target</label>
+                                <input type="text" class="form-control" id="target" name="target" placeholder="Masukkan target KPI">
+                            </div>
+                            <div class="form-group">
+                                <label for="kategori">Kategori</label>
+                                <select required class="form-control" id="kategori" name="kategori">
+                                    <option selected disabled>Pilih Kategori KPI</option>
+                                    <option value="OPS">OPS</option>
+                                    <option value="PK">PK</option>
+                                    <option value="INV">INV</option>
 
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Grafik Capaian KPI</h1>
-                    <br>
-                    <div class="form-group">
-                        <label for="exampleFormControlSelect1">Pilih Tingkatan</label>
-                        <select class="form-control" id="exampleFormControlSelect1" onchange="location = this.value;">
-                            <option disabled selected>--Pilih ingin melihat total capaian prodi/unit--</option>
-                            <option value="tabelprodi/">Prodi</option>
-                            <option value="tabelunit/">Unit</option>
-                        </select>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="kegiatan">Kegiatan</label>
+                                <input type="text" class="form-control" id="kegiatan" name="kegiatan" placeholder="Masukkan kegiatan">
+                            </div>
+                            <div class="form-group">
+                                <label for="bobot">Bobot</label>
+                                <input type="number" step=0.01 class="form-control" id="bobot" name="bobot" placeholder="Masukkan bobot">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <?= form_close(); ?>
+
+                        </div>
+
                     </div>
-
-
-                    <div class="container col-lg-12">
-                        <section class="content">
-                            <!-- BAR CHART -->
-
-                        </section>
-                    </div>
-
-                    <br>
-
-
-
                 </div>
-
-
             </div>
             <!-- End of Content Wrapper -->
 
@@ -181,26 +216,5 @@
         <script src="<?php echo base_url(); ?>/public/js/datatables-demo.js"></script>
 
 </body>
-<!-- jQuery -->
-<script src="<?php echo base_url(); ?>/public/plugins/jquery/jquery.min.js"></script>
-<!-- ChartJS -->
-<script src="<?php echo base_url(); ?>/public/plugins/chart.js/Chart.min.js"></script>
-<!-- AdminLTE App -->
-<script src="<?php echo base_url(); ?>/public/dist/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-
-<!-- Page level custom scripts -->
-<script src="<?php echo base_url(); ?>/public/dist/js/demo.js"></script>
-<script src="<?php echo base_url(); ?>/public/chart/apexcharts.min.js"></script>
-<script src="<?php echo base_url(); ?>/public/chart/dashboard.js"></script>
-<script src="<?php echo base_url(); ?>/public/chart/jquery.knob.min.js"></script>
-<script src="<?php echo base_url(); ?>/public/chart/knob-chart-setting.js"></script>
-<script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
-<script>
-    $(window).load(function() {
-        $(".pre-loader").fadeOut("slow");
-    });
-</script>
-
 
 </html>

@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>List Capaian KPI</title>
+    <title>Form Edit KPI</title>
 
     <!-- Custom fonts for this template-->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
@@ -18,7 +18,6 @@
     <!-- Custom styles for this template-->
     <link href="<?php echo base_url(); ?>/public/css/style_admin.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>/public/css/dataTables.bootstrap4.min.css" rel="stylesheet">
-
 
 </head>
 
@@ -33,15 +32,15 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
                 <img src="<?php echo base_url(); ?>/public/img/monev_logo_putih.png" alt="Logo" style="width: 70px; height: 70px;">
-                <div class="sidebar-brand-text mx-3">BPSDM</div>
+                <div class="sidebar-brand-text mx-3">Admin</div>
             </a>
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
-                <a class="nav-link " href="<?php echo site_url(); ?>bpsdm">
+            <li class="nav-item active">
+                <a class="nav-link " href="<?php echo site_url(); ?>admin">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -57,11 +56,11 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="<?= base_url('#') ?>">Tambah RKAT</a>
-                        <a class="collapse-item" href="<?= base_url('#') ?>">Lihat Data</a>
-                        <a class="collapse-item" href="<?= base_url('#') ?>">Buat Pagu</a>
-                        <a class="collapse-item" href="<?= base_url('#') ?>">List Pagu</a>
-                        <a class="collapse-item" href="<?= base_url('#') ?>">Tahun Akademik</a>
+                        <a class="collapse-item" href="<?= base_url('rkat/createbyadmin') ?>">Tambah RKAT</a>
+                        <a class="collapse-item" href="<?= base_url('rkat/indexbyadmin') ?>">Lihat Data</a>
+                        <a class="collapse-item" href="<?= base_url('pagurkat/create') ?>">Buat Pagu</a>
+                        <a class="collapse-item" href="<?= base_url('pagurkat/index') ?>">List Pagu</a>
+                        <a class="collapse-item" href="<?= base_url('tahunakademik/indextahun') ?>">Tahun Akademik</a>
                     </div>
                 </div>
             </li>
@@ -70,7 +69,7 @@
             <hr class="sidebar-divider">
 
             <!-- Heading -->
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>KPI</span></a>
@@ -85,7 +84,15 @@
                 </div>
             </li>
 
-
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                User
+            </div>
+            <li class="nav-item ">
+                <a class="nav-link " href="<?= base_url('auth/index') ?>">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Tabel User</span></a>
+            </li>
 
         </ul>
         <!-- End of Sidebar -->
@@ -130,29 +137,24 @@
                 <!-- End of Topbar -->
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
+                    <div class="card shadow mb-4">
+                        <div class="card-body">
+                            <h2>Edit KPI</h2>
+                            <br>
 
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Grafik Capaian KPI</h1>
-                    <br>
-                    <div class="form-group">
-                        <label for="exampleFormControlSelect1">Pilih Tingkatan</label>
-                        <select class="form-control" id="exampleFormControlSelect1" onchange="location = this.value;">
-                            <option disabled selected>--Pilih ingin melihat total capaian prodi/unit--</option>
-                            <option value="tabelprodi/">Prodi</option>
-                            <option value="tabelunit/">Unit</option>
-                        </select>
+                            <?= form_open('bpsdm/updatekpi') ?>
+                            <div class="form-group">
+                                <label for="idkpi">ID KPI</label>
+                                <input type="text" class="form-control" id="idkpi" name="idkpi" placeholder="Masukkan nomor ID KPI Baru" readonly value="<?= $idkpi ?>" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="nama_kpi">Nama KPI</label>
+                                <input type="text" class="form-control" id="nama_kpi" name="nama_kpi" placeholder="Masukkan nama KPI Baru" value="<?= $nama_kpi ?>" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <?= form_close(); ?>
+                        </div>
                     </div>
-
-
-                    <div class="container col-lg-12">
-                        <section class="content">
-                            <!-- BAR CHART -->
-
-                        </section>
-                    </div>
-
-                    <br>
-
 
 
                 </div>
@@ -181,26 +183,5 @@
         <script src="<?php echo base_url(); ?>/public/js/datatables-demo.js"></script>
 
 </body>
-<!-- jQuery -->
-<script src="<?php echo base_url(); ?>/public/plugins/jquery/jquery.min.js"></script>
-<!-- ChartJS -->
-<script src="<?php echo base_url(); ?>/public/plugins/chart.js/Chart.min.js"></script>
-<!-- AdminLTE App -->
-<script src="<?php echo base_url(); ?>/public/dist/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-
-<!-- Page level custom scripts -->
-<script src="<?php echo base_url(); ?>/public/dist/js/demo.js"></script>
-<script src="<?php echo base_url(); ?>/public/chart/apexcharts.min.js"></script>
-<script src="<?php echo base_url(); ?>/public/chart/dashboard.js"></script>
-<script src="<?php echo base_url(); ?>/public/chart/jquery.knob.min.js"></script>
-<script src="<?php echo base_url(); ?>/public/chart/knob-chart-setting.js"></script>
-<script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
-<script>
-    $(window).load(function() {
-        $(".pre-loader").fadeOut("slow");
-    });
-</script>
-
 
 </html>

@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>List Capaian KPI</title>
+    <title>Form Edit Butir KPI</title>
 
     <!-- Custom fonts for this template-->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
@@ -18,7 +18,6 @@
     <!-- Custom styles for this template-->
     <link href="<?php echo base_url(); ?>/public/css/style_admin.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>/public/css/dataTables.bootstrap4.min.css" rel="stylesheet">
-
 
 </head>
 
@@ -57,11 +56,11 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="<?= base_url('#') ?>">Tambah RKAT</a>
-                        <a class="collapse-item" href="<?= base_url('#') ?>">Lihat Data</a>
-                        <a class="collapse-item" href="<?= base_url('#') ?>">Buat Pagu</a>
-                        <a class="collapse-item" href="<?= base_url('#') ?>">List Pagu</a>
-                        <a class="collapse-item" href="<?= base_url('#') ?>">Tahun Akademik</a>
+                        <a class="collapse-item" href="<?= base_url('rkat/createbyadmin') ?>">Tambah RKAT</a>
+                        <a class="collapse-item" href="<?= base_url('rkat/indexbyadmin') ?>">Lihat Data</a>
+                        <a class="collapse-item" href="<?= base_url('pagurkat/create') ?>">Buat Pagu</a>
+                        <a class="collapse-item" href="<?= base_url('pagurkat/index') ?>">List Pagu</a>
+                        <a class="collapse-item" href="<?= base_url('tahunakademik/indextahun') ?>">Tahun Akademik</a>
                     </div>
                 </div>
             </li>
@@ -70,7 +69,7 @@
             <hr class="sidebar-divider">
 
             <!-- Heading -->
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>KPI</span></a>
@@ -85,6 +84,7 @@
                 </div>
             </li>
 
+            <!-- Heading -->
 
 
         </ul>
@@ -130,65 +130,71 @@
                 <!-- End of Topbar -->
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
+                    <div class="card shadow mb-4">
+                        <div class="card-body">
+                            <h2>Edit Butir KPI</h2>
+                            <?= form_open('bpsdm/updatebutirkpi') ?>
+                            <input required type="hidden" name="id" value="<?= $id ?>">
+                            <div class="form-group">
+                                <label for="idkpi">ID KPI</label>
+                                <select required class="form-control" id="idkpi" name="idkpi">
+                                    <option value="<?= $idkpi; ?>"><?= $idkpi; ?></option>
+                                    <option value="1">1. Visi, Misi, Tujuan dan Strategi</option>
+                                    <option value="2">2. Tata Pamong, Tata Kelola dan Kerjasama</option>
+                                    <option value="3">3. Mahasiswa</option>
+                                    <option value="4">4. Sumber Daya Manusia </option>
+                                    <option value="5">5. Keuangan, Sarana dan Prasarana</option>
+                                    <option value="6">6. Pendidikan</option>
+                                    <option value="7">7. Penelitian</option>
+                                    <option value="8">8 Pengabdian Kepada Masyarakat</option>
+                                    <option value="9">9. Luaran dan Capaian Tridharma</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="angka_butir">Angka butir</label>
+                                <input type="text" class="form-control" id="angka_butir" name="angka_butir" placeholder="Masukkan angka butir KPI" value="<?= $angka_butir ?>">
+                            </div>
+                            <div class=" form-group">
+                                <label for="nama_butir">Nama butir</label>
+                                <input type="text" class="form-control" id="nama_butir" name="nama_butir" placeholder="Masukkan nama butir KPI" value="<?= $nama_butir ?>">
+                            </div>
+                            <div class="form-group">
+                                <label for="unit_utama">Unit utama</label>
+                                <input type="text" class="form-control" id="unit_utama" name="unit_utama" placeholder="Masukkan unit utama KPI" value="<?= $unit_utama ?>">
+                            </div>
+                            <div class="form-group">
+                                <label for="unit_pendukung">Unit pendukung</label>
+                                <input type="text" class="form-control" id="unit_pendukung" name="unit_pendukung" placeholder="Masukkan unit pendukung KPI" value="<?= $unit_pendukung ?>">
+                            </div>
+                            <div class="form-group">
+                                <label for="target">Target</label>
+                                <input type="text" class="form-control" id="target" name="target" placeholder="Masukkan target KPI" value="<?= $target ?>">
+                            </div>
+                            <div class="form-group">
+                                <label for="kategori">Kategori</label>
+                                <select required class="form-control" id="kategori" name="kategori">
+                                    <option value="<?= $kategori; ?>"><?= $kategori; ?></option>
+                                    <option value="OPS">OPS</option>
+                                    <option value="PK">PK</option>
+                                    <option value="INV">INV</option>
 
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Grafik Capaian KPI</h1>
-                    <br>
-                    <div class="form-group">
-                        <label for="exampleFormControlSelect1">Pilih Tingkatan</label>
-                        <select class="form-control" id="exampleFormControlSelect1" onchange="location = this.value;">
-                            <option disabled selected>--Pilih ingin bandingkan dengan prodi/unit--</option>
-                            <option value="grafikprodi/">Prodi</option>
-                            <option value="grafikunit/">Unit</option>
-                        </select>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="kegiatan">Kegiatan</label>
+                                <input type="text" class="form-control" id="kegiatan" name="kegiatan" placeholder="Masukkan kegiatan" value="<?= $kegiatan ?>">
+                            </div>
+                            <div class="form-group">
+                                <label for="bobot">Bobot</label>
+                                <input type="number" step=0.01 class="form-control" id="bobot" name="bobot" placeholder="Masukkan bobot" value="<?= $bobot ?>">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <?= form_close(); ?>
+
+                        </div>
+
                     </div>
-                    <!-- foreach ambil hasil penjumlahan nilai bobot KPI TA 2018 -->
-                    <?php foreach ($hasilrencanakpi_1 as $key => $value) : $jumlah_rencana1 = $value['jumlah_rencana1'];
-                    endforeach; ?>
-                    <?php foreach ($hasilrencanakpi_2 as $key => $value) : $jumlah_rencana2 = $value['jumlah_rencana2'];
-                    endforeach; ?>
-                    <?php foreach ($hasilrencanakpi_3 as $key => $value) : $jumlah_rencana3 = $value['jumlah_rencana3'];
-                    endforeach; ?>
-                    <?php foreach ($hasilrencanakpi_4 as $key => $value) : $jumlah_rencana4 = $value['jumlah_rencana4'];
-                    endforeach; ?>
-                    <?php foreach ($hasilrencanakpi_5 as $key => $value) : $jumlah_rencana5 = $value['jumlah_rencana5'];
-                    endforeach; ?>
-                    <?php foreach ($hasilrencanakpi_6 as $key => $value) : $jumlah_rencana6 = $value['jumlah_rencana6'];
-                    endforeach; ?>
-                    <?php foreach ($hasilrencanakpi_7 as $key => $value) : $jumlah_rencana7 = $value['jumlah_rencana7'];
-                    endforeach; ?>
-                    <?php foreach ($hasilrencanakpi_8 as $key => $value) : $jumlah_rencana8 = $value['jumlah_rencana8'];
-                    endforeach; ?>
-                    <?php foreach ($hasilrencanakpi_9 as $key => $value) : $jumlah_rencana9 = $value['jumlah_rencana9'];
-                    endforeach; ?>
-
-
-
-                    <div class="container col-lg-12">
-                        <section class="content">
-                            <!-- BAR CHART -->
-                            <!-- <div class="card card-success">
-                                <div class="card-header">
-                                    <h3 class="card-title">Grafik Rencana KPI</h3>
-                                </div>
-                                <div class="card-body">
-                                    <div class="chart">
-                                        <canvas id="myChart" height="100"></canvas>
-
-                                    </div>
-                                </div>
-                            </div> -->
-                            <!-- /.card-body -->
-                        </section>
-                    </div>
-
-                    <br>
-
-
-
                 </div>
-
-
             </div>
             <!-- End of Content Wrapper -->
 
@@ -212,77 +218,5 @@
         <script src="<?php echo base_url(); ?>/public/js/datatables-demo.js"></script>
 
 </body>
-<!-- jQuery -->
-<script src="<?php echo base_url(); ?>/public/plugins/jquery/jquery.min.js"></script>
-<!-- ChartJS -->
-<script src="<?php echo base_url(); ?>/public/plugins/chart.js/Chart.min.js"></script>
-<!-- AdminLTE App -->
-<script src="<?php echo base_url(); ?>/public/dist/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-
-<!-- Page level custom scripts -->
-<script src="<?php echo base_url(); ?>/public/dist/js/demo.js"></script>
-<script src="<?php echo base_url(); ?>/public/chart/apexcharts.min.js"></script>
-<script src="<?php echo base_url(); ?>/public/chart/dashboard.js"></script>
-<script src="<?php echo base_url(); ?>/public/chart/jquery.knob.min.js"></script>
-<script src="<?php echo base_url(); ?>/public/chart/knob-chart-setting.js"></script>
-<script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
-<script>
-    $(window).load(function() {
-        $(".pre-loader").fadeOut("slow");
-    });
-</script>
-<script>
-    const ctx = document.getElementById('myChart');
-    const myChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['Standar 1', 'Standar 2', 'Standar 3', 'Standar 4', 'Standar 5', 'Standar 6', 'Standar 7', 'Standar 8', 'Standar 9'],
-            datasets: [
-                //Data Batang Grafik Standar 1
-                {
-                    label: 'Total bobot rencana',
-                    backgroundColor: 'rgba(60,141,188,0.9)',
-                    borderColor: 'rgba(60,141,188,0.8)',
-                    pointRadius: false,
-                    pointColor: '#3b8bba',
-                    pointStrokeColor: 'rgba(60,141,188,1)',
-                    pointHighlightFill: '#fff',
-                    pointHighlightStroke: 'rgba(60,141,188,1)',
-                    data: [<?php echo json_encode($jumlah_rencana1) ?>, <?php echo json_encode($jumlah_rencana2) ?>, <?php echo json_encode($jumlah_rencana3) ?>, <?php echo json_encode($jumlah_rencana4) ?>, <?php echo json_encode($jumlah_rencana5) ?>, <?php echo json_encode($jumlah_rencana6) ?>, <?php echo json_encode($jumlah_rencana7) ?>, <?php echo json_encode($jumlah_rencana8) ?>, <?php echo json_encode($jumlah_rencana9) ?>]
-
-                },
-
-            ]
-        },
-        options: {
-            responsive: true,
-            legend: {
-                position: 'top',
-            },
-            hover: {
-                mode: 'label'
-            },
-            scales: {
-                xAxes: [{
-                    display: true,
-                    scaleLabel: {
-                        display: true,
-
-                    }
-                }],
-                yAxes: [{
-                    display: true,
-                    ticks: {
-                        beginAtZero: true,
-                        steps: 10,
-                        stepValue: 5,
-
-                    }
-                }]
-            },
-        }
-    });
-</script>
 
 </html>

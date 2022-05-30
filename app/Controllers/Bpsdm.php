@@ -15,6 +15,155 @@ class Bpsdm extends BaseController
     {
         return view('bpsdm/Dashboard');
     }
+    public function listkpi()
+    {
+        $listkpi = new DataKpiModel();
+        $data = [
+            'tampildata' => $listkpi->tampildata()->getResult()
+        ];
+        echo view('/bpsdm/ListKpi', $data);
+    }
+
+
+    //proses kpi
+    public function form_tambahkpi()
+    {
+        helper('form');
+        return view('/bpsdm/TambahKpi');
+    }
+    public function simpankpi()
+    {
+        $data = [
+            'idkpi' => $this->request->getpost('idkpi'),
+            'nama_kpi' => $this->request->getpost('nama_kpi'),
+        ];
+        $listkpi = new DataKpiModel();
+        $save = $listkpi->simpankpi($data);
+
+        if ($save) {
+            return redirect()->to('/bpsdm/listkpi');
+        }
+    }
+    public function form_updatekpi($idkpi)
+    {
+        helper('form');
+        $listkpi = new DataKpiModel();
+        $ambildatakpi = $listkpi->ambildatakpi($idkpi);
+        if (count($ambildatakpi->getResult()) > 0) {
+            $row = $ambildatakpi->getRow();
+            $data = [
+                'idkpi' => $idkpi,
+                'nama_kpi' => $row->nama_kpi,
+            ];
+            echo view('bpsdm/UpdateKpi', $data);
+        }
+    }
+    public function updatekpi()
+    {
+        $idkpi = $this->request->getpost('idkpi');
+        $data = [
+            'nama_kpi' => $this->request->getpost('nama_kpi'),
+        ];
+        $listkpi = new DataKpiModel();
+        $update1 = $listkpi->update1($data, $idkpi);
+
+        if ($update1) {
+            return redirect()->to('/bpsdm/listkpi');
+        }
+    }
+    public function hapuskpi($idkpi)
+    {
+        $listkpi = new DataKpiModel();
+        $listkpi->hapuskpi($idkpi);
+        return redirect()->to('/bpsdm/listkpi');
+    }
+
+    public function listbutirkpi()
+    {
+        $listbutirkpi = new DataKpiButirModel();
+        $data = [
+            'tampildata' => $listbutirkpi->tampildatabutir()->getResult(),
+            'sum' => $listbutirkpi->get_sum()->getResult()
+        ];
+        echo view('/bpsdm/ListKpiButir', $data);
+    }
+    public function form_tambahbutirkpi()
+    {
+        helper('form');
+        return view('/bpsdm/TambahButirKpi');
+    }
+    public function simpanbutirkpi()
+    {
+        $data = [
+            'idkpi' => $this->request->getpost('idkpi'),
+            'angka_butir' => $this->request->getpost('angka_butir'),
+            'nama_butir' => $this->request->getpost('nama_butir'),
+            'unit_utama' => $this->request->getpost('unit_utama'),
+            'unit_pendukung' => $this->request->getpost('unit_pendukung'),
+            'target' => $this->request->getpost('target'),
+            'kategori' => $this->request->getpost('kategori'),
+            'kegiatan' => $this->request->getpost('kegiatan'),
+            'bobot' => $this->request->getpost('bobot'),
+        ];
+        $listbutirkpi = new DataKpiButirModel();
+        $simpan = $listbutirkpi->simpankpibutir($data);
+
+        if ($simpan) {
+            return redirect()->to('/bpsdm/listbutirkpi');
+        }
+    }
+
+    public function form_updatebutirkpi($id)
+    {
+        helper('form');
+        $listbutirkpi = new DataKpiButirModel();
+        $ambildatabutir = $listbutirkpi->ambildatabutir($id);
+        if (count($ambildatabutir->getResult()) > 0) {
+            $row = $ambildatabutir->getRow();
+            $data = [
+                'id' => $id,
+                'idkpi' => $row->idkpi,
+                'angka_butir' => $row->angka_butir,
+                'nama_butir' => $row->nama_butir,
+                'unit_utama' => $row->unit_utama,
+                'unit_pendukung' => $row->unit_pendukung,
+                'target' => $row->target,
+                'kategori' => $row->kategori,
+                'kegiatan' => $row->kegiatan,
+                'bobot' => $row->bobot,
+            ];
+            echo view('bpsdm/UpdateButirKpi', $data);
+        }
+    }
+    public function updatebutirkpi()
+    {
+        $id = $this->request->getpost('id');
+        $data = [
+            'idkpi' => $this->request->getpost('idkpi'),
+            'angka_butir' => $this->request->getpost('angka_butir'),
+            'nama_butir' => $this->request->getpost('nama_butir'),
+            'unit_utama' => $this->request->getpost('unit_utama'),
+            'unit_pendukung' => $this->request->getpost('unit_pendukung'),
+            'target' => $this->request->getpost('target'),
+            'kategori' => $this->request->getpost('kategori'),
+            'kegiatan' => $this->request->getpost('kegiatan'),
+            'bobot' => $this->request->getpost('bobot'),
+        ];
+        $listbutirkpi = new DataKpiButirModel();
+        $update2 = $listbutirkpi->update2($data, $id);
+
+        if ($update2) {
+            return redirect()->to('/bpsdm/listbutirkpi');
+        }
+    }
+
+    public function hapusbutirkpi($id)
+    {
+        $listbutirkpi = new DataKpiButirModel();
+        $listbutirkpi->hapuskpibutir($id);
+        return redirect()->to('/bpsdm/listbutirkpi');
+    }
+
     public function listcapaiankpi()
     {
         $listcapaiankpi = new DataCapaianKpiModel();
