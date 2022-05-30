@@ -99,9 +99,7 @@
                         <div class="user-info-dropdown">
                             <div class="dropdown">
                                 <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-                                    <span class="user-icon">
-                                        <img src="<?php echo base_url(); ?>/public/img/inf-logo.jpg" alt="">
-                                    </span>
+
                                     <span class="user-name">
                                         <?php
                                         $nama_prodi = session('nama_prodi');

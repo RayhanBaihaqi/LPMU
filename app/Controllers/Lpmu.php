@@ -8,176 +8,27 @@ use App\Models\DataKpiButirModel;
 use App\Models\DataCapaianKpiModel;
 
 
-class Bpsdm extends BaseController
+class Lpmu extends BaseController
 {
 
     public function index()
     {
-        return view('bpsdm/Dashboard');
+        return view('lpmu/Dashboard');
     }
-    public function listkpi()
-    {
-        $listkpi = new DataKpiModel();
-        $data = [
-            'tampildata' => $listkpi->tampildata()->getResult()
-        ];
-        echo view('/bpsdm/ListKpi', $data);
-    }
-
-
-    //proses kpi
-    public function form_tambahkpi()
-    {
-        helper('form');
-        return view('/bpsdm/TambahKpi');
-    }
-    public function simpankpi()
-    {
-        $data = [
-            'idkpi' => $this->request->getpost('idkpi'),
-            'nama_kpi' => $this->request->getpost('nama_kpi'),
-        ];
-        $listkpi = new DataKpiModel();
-        $save = $listkpi->simpankpi($data);
-
-        if ($save) {
-            return redirect()->to('/bpsdm/listkpi');
-        }
-    }
-    public function form_updatekpi($idkpi)
-    {
-        helper('form');
-        $listkpi = new DataKpiModel();
-        $ambildatakpi = $listkpi->ambildatakpi($idkpi);
-        if (count($ambildatakpi->getResult()) > 0) {
-            $row = $ambildatakpi->getRow();
-            $data = [
-                'idkpi' => $idkpi,
-                'nama_kpi' => $row->nama_kpi,
-            ];
-            echo view('bpsdm/UpdateKpi', $data);
-        }
-    }
-    public function updatekpi()
-    {
-        $idkpi = $this->request->getpost('idkpi');
-        $data = [
-            'nama_kpi' => $this->request->getpost('nama_kpi'),
-        ];
-        $listkpi = new DataKpiModel();
-        $update1 = $listkpi->update1($data, $idkpi);
-
-        if ($update1) {
-            return redirect()->to('/bpsdm/listkpi');
-        }
-    }
-    public function hapuskpi($idkpi)
-    {
-        $listkpi = new DataKpiModel();
-        $listkpi->hapuskpi($idkpi);
-        return redirect()->to('/bpsdm/listkpi');
-    }
-
-    public function listbutirkpi()
-    {
-        $listbutirkpi = new DataKpiButirModel();
-        $data = [
-            'tampildata' => $listbutirkpi->tampildatabutir()->getResult(),
-            'sum' => $listbutirkpi->get_sum()->getResult()
-        ];
-        echo view('/bpsdm/ListKpiButir', $data);
-    }
-    public function form_tambahbutirkpi()
-    {
-        helper('form');
-        return view('/bpsdm/TambahButirKpi');
-    }
-    public function simpanbutirkpi()
-    {
-        $data = [
-            'idkpi' => $this->request->getpost('idkpi'),
-            'angka_butir' => $this->request->getpost('angka_butir'),
-            'nama_butir' => $this->request->getpost('nama_butir'),
-            'unit_utama' => $this->request->getpost('unit_utama'),
-            'unit_pendukung' => $this->request->getpost('unit_pendukung'),
-            'target' => $this->request->getpost('target'),
-            'kategori' => $this->request->getpost('kategori'),
-            'kegiatan' => $this->request->getpost('kegiatan'),
-            'bobot' => $this->request->getpost('bobot'),
-        ];
-        $listbutirkpi = new DataKpiButirModel();
-        $simpan = $listbutirkpi->simpankpibutir($data);
-
-        if ($simpan) {
-            return redirect()->to('/bpsdm/listbutirkpi');
-        }
-    }
-
-    public function form_updatebutirkpi($id)
-    {
-        helper('form');
-        $listbutirkpi = new DataKpiButirModel();
-        $ambildatabutir = $listbutirkpi->ambildatabutir($id);
-        if (count($ambildatabutir->getResult()) > 0) {
-            $row = $ambildatabutir->getRow();
-            $data = [
-                'id' => $id,
-                'idkpi' => $row->idkpi,
-                'angka_butir' => $row->angka_butir,
-                'nama_butir' => $row->nama_butir,
-                'unit_utama' => $row->unit_utama,
-                'unit_pendukung' => $row->unit_pendukung,
-                'target' => $row->target,
-                'kategori' => $row->kategori,
-                'kegiatan' => $row->kegiatan,
-                'bobot' => $row->bobot,
-            ];
-            echo view('bpsdm/UpdateButirKpi', $data);
-        }
-    }
-    public function updatebutirkpi()
-    {
-        $id = $this->request->getpost('id');
-        $data = [
-            'idkpi' => $this->request->getpost('idkpi'),
-            'angka_butir' => $this->request->getpost('angka_butir'),
-            'nama_butir' => $this->request->getpost('nama_butir'),
-            'unit_utama' => $this->request->getpost('unit_utama'),
-            'unit_pendukung' => $this->request->getpost('unit_pendukung'),
-            'target' => $this->request->getpost('target'),
-            'kategori' => $this->request->getpost('kategori'),
-            'kegiatan' => $this->request->getpost('kegiatan'),
-            'bobot' => $this->request->getpost('bobot'),
-        ];
-        $listbutirkpi = new DataKpiButirModel();
-        $update2 = $listbutirkpi->update2($data, $id);
-
-        if ($update2) {
-            return redirect()->to('/bpsdm/listbutirkpi');
-        }
-    }
-
-    public function hapusbutirkpi($id)
-    {
-        $listbutirkpi = new DataKpiButirModel();
-        $listbutirkpi->hapuskpibutir($id);
-        return redirect()->to('/bpsdm/listbutirkpi');
-    }
-
     public function listcapaiankpi()
     {
         $listcapaiankpi = new DataCapaianKpiModel();
         $data = [
             'tampilcapaiankpi' => $listcapaiankpi->tampilcapaiankpi()->getResult(),
         ];
-        echo view('/bpsdm/ListCapaianKpi', $data);
+        echo view('/lpmu/ListCapaianKpi', $data);
     }
     public function tabelcapaiankpi()
     {
         $tabelcapaiankpi = new DataKpiButirModel();
 
 
-        return view('/bpsdm/TabelCapaian');
+        return view('/lpmu/TabelCapaian');
     }
 
     public function tabelprodi()
@@ -236,7 +87,7 @@ class Bpsdm extends BaseController
             'totalkpi20_ars' => $tabelcapaianprodi->jmlkpi20ars('Arsitektur')->getResult(),
             'totalkpi21_ars' => $tabelcapaianprodi->jmlkpi21ars('Arsitektur')->getResult(),
         ];
-        return view('/bpsdm/TabelCapaianProdi', $data);
+        return view('/lpmu/TabelCapaianProdi', $data);
     }
 
     public function grafikcapaian()
@@ -267,7 +118,7 @@ class Bpsdm extends BaseController
         //}
         // return view('kpi/grafik3_rencana', $data);
 
-        return view('/bpsdm/GrafikCapaian', $data);
+        return view('/lpmu/GrafikCapaian', $data);
     }
     public function grafikprodi()
     {
@@ -351,6 +202,6 @@ class Bpsdm extends BaseController
         ];
 
 
-        return view('/bpsdm/GrafikCapaianProdi', $data);
+        return view('/lpmu/GrafikCapaianProdi', $data);
     }
 }

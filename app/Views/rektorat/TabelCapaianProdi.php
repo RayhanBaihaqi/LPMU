@@ -33,7 +33,10 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
                 <img src="<?php echo base_url(); ?>/public/img/monev_logo_putih.png" alt="Logo" style="width: 70px; height: 70px;">
-                <div class="sidebar-brand-text mx-3">Rektorat</div>
+                <div class="sidebar-brand-text mx-3"><?php
+                                                        $nama_prodi = session('nama_prodi');
+                                                        echo "$nama_prodi"
+                                                        ?></div>
             </a>
 
             <!-- Divider -->
@@ -78,7 +81,7 @@
                     <span>KPI</span></a>
                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="<?= base_url('/rektorat/listcapaiankpi') ?>">Lihat Capaian</a>
+
                         <a class="collapse-item" href="<?= base_url('/rektorat/tabelcapaiankpi') ?>">Lihat Data Tabel</a>
                         <a class="collapse-item" href="<?= base_url('/rektorat/grafikcapaian') ?>">Lihat Data Grafik</a>
                     </div>
@@ -169,7 +172,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
+                                                <!-- <tr>
                                                     <?php
                                                     foreach ($totalkpi18_akt as $rows) :
                                                     ?>
@@ -234,7 +237,7 @@
                                                     <?php
                                                             endforeach;
                                                     ?>
-                                                </tr>
+                                                </tr> -->
                                                 <tr>
                                                     <?php
                                                     foreach ($totalkpi19_akt as $rows) :
@@ -363,6 +366,73 @@
                                                             foreach ($totalkpi20_ars as $rows) :
                                                             ?>
                                                         <td><?php echo $rows->tot_20_ars; ?></td>
+                                                    <?php
+                                                            endforeach;
+                                                    ?>
+                                                </tr>
+
+                                                <tr>
+                                                    <?php
+                                                    foreach ($totalkpi21_akt as $rows) :
+                                                    ?>
+                                                        <th>2021/2022</th>
+                                                        <td><?php echo $rows->tot_21_akt; ?></td>
+                                                    <?php
+                                                    endforeach;
+                                                    ?>
+                                                    <?php
+                                                    foreach ($totalkpi21_mnj as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->tot_21_mnj; ?></td>
+                                                    <?php
+                                                    endforeach;
+                                                    ?>
+                                                    <?php
+                                                    foreach ($totalkpi21_psi as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->tot_21_psi; ?></td>
+                                                        <?php
+                                                    endforeach;
+                                                        ?><?php
+                                                            foreach ($totalkpi21_kom as $rows) :
+                                                            ?>
+                                                        <td><?php echo $rows->tot_21_kom; ?></td>
+                                                        <?php
+                                                            endforeach;
+                                                        ?><?php
+                                                            foreach ($totalkpi21_dpi as $rows) :
+                                                            ?>
+                                                        <td><?php echo $rows->tot_21_dpi; ?></td>
+                                                        <?php
+                                                            endforeach;
+                                                        ?><?php
+                                                            foreach ($totalkpi21_dkv as $rows) :
+                                                            ?>
+                                                        <td><?php echo $rows->tot_21_dkv; ?></td>
+                                                        <?php
+                                                            endforeach;
+                                                        ?><?php
+                                                            foreach ($totalkpi21_inf as $rows) :
+                                                            ?>
+                                                        <td><?php echo $rows->tot_21_inf; ?></td>
+                                                        <?php
+                                                            endforeach;
+                                                        ?><?php
+                                                            foreach ($totalkpi21_sif as $rows) :
+                                                            ?>
+                                                        <td><?php echo $rows->tot_21_sif; ?></td>
+                                                        <?php
+                                                            endforeach;
+                                                        ?><?php
+                                                            foreach ($totalkpi21_tsp as $rows) :
+                                                            ?>
+                                                        <td><?php echo $rows->tot_21_tsp; ?></td>
+                                                        <?php
+                                                            endforeach;
+                                                        ?><?php
+                                                            foreach ($totalkpi21_ars as $rows) :
+                                                            ?>
+                                                        <td><?php echo $rows->tot_21_ars; ?></td>
                                                     <?php
                                                             endforeach;
                                                     ?>

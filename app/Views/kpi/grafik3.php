@@ -95,9 +95,7 @@
                         <div class="user-info-dropdown">
                             <div class="dropdown">
                                 <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-                                    <span class="user-icon">
-                                        <img src="<?php echo base_url(); ?>/public/img/inf-logo.jpg" alt="">
-                                    </span>
+
                                     <span class="user-name">
                                         <?php
                                         $nama_prodi = session('nama_prodi');
@@ -243,7 +241,7 @@
                 </div>
                 <!-- /.card-body -->
             </section>
-        </div> -->
+        </div>
 
     </div>
 
@@ -301,18 +299,18 @@
                 labels: ['Standar 1', 'Standar 2', 'Standar 3', 'Standar 4', 'Standar 5', 'Standar 6', 'Standar 7', 'Standar 8', 'Standar 9'],
                 datasets: [
                     //Data Batang Grafik Standar 1
-                    {
-                        label: <?php echo json_encode($tahun_ajaran = '2018/2019') ?>,
-                        backgroundColor: 'rgba(60,141,188,0.9)',
-                        borderColor: 'rgba(60,141,188,0.8)',
-                        pointRadius: false,
-                        pointColor: '#3b8bba',
-                        pointStrokeColor: 'rgba(60,141,188,1)',
-                        pointHighlightFill: '#fff',
-                        pointHighlightStroke: 'rgba(60,141,188,1)',
-                        data: [<?php echo json_encode($jumlahkpi1_18) ?>, <?php echo json_encode($jumlahkpi2_18) ?>, <?php echo json_encode($jumlahkpi3_18) ?>, <?php echo json_encode($jumlahkpi4_18) ?>, <?php echo json_encode($jumlahkpi5_18) ?>, <?php echo json_encode($jumlahkpi6_18) ?>, <?php echo json_encode($jumlahkpi7_18) ?>, <?php echo json_encode($jumlahkpi8_18) ?>, <?php echo json_encode($jumlahkpi9_18) ?>]
+                    // {
+                    //     label: <?php echo json_encode($tahun_ajaran = '2018/2019') ?>,
+                    //     backgroundColor: 'rgba(60,141,188,0.9)',
+                    //     borderColor: 'rgba(60,141,188,0.8)',
+                    //     pointRadius: false,
+                    //     pointColor: '#3b8bba',
+                    //     pointStrokeColor: 'rgba(60,141,188,1)',
+                    //     pointHighlightFill: '#fff',
+                    //     pointHighlightStroke: 'rgba(60,141,188,1)',
+                    //     data: [<?php echo json_encode($jumlahkpi1_18) ?>, <?php echo json_encode($jumlahkpi2_18) ?>, <?php echo json_encode($jumlahkpi3_18) ?>, <?php echo json_encode($jumlahkpi4_18) ?>, <?php echo json_encode($jumlahkpi5_18) ?>, <?php echo json_encode($jumlahkpi6_18) ?>, <?php echo json_encode($jumlahkpi7_18) ?>, <?php echo json_encode($jumlahkpi8_18) ?>, <?php echo json_encode($jumlahkpi9_18) ?>]
 
-                    },
+                    // },
                     {
                         label: <?php echo json_encode($tahun_ajaran = '2019/2020') ?>,
                         backgroundColor: 'rgba(255, 165, 0, 1)',
@@ -336,17 +334,17 @@
                         pointHighlightStroke: 'rgba(220,220,220,1)',
                         data: [<?php echo json_encode($jumlahkpi1_20) ?>, <?php echo json_encode($jumlahkpi2_20) ?>, <?php echo json_encode($jumlahkpi3_20) ?>, <?php echo json_encode($jumlahkpi4_20) ?>, <?php echo json_encode($jumlahkpi5_20) ?>, <?php echo json_encode($jumlahkpi6_20) ?>, <?php echo json_encode($jumlahkpi7_20) ?>, <?php echo json_encode($jumlahkpi8_20) ?>, <?php echo json_encode($jumlahkpi9_20) ?>]
                     },
-                    // {
-                    //     label: <?php echo json_encode($tahun_ajaran = '2021/2022') ?>,
-                    //     backgroundColor: 'rgba(93, 78, 246,1)',
-                    //     borderColor: 'rgba(93, 78, 246,1)',
-                    //     pointRadius: false,
-                    //     pointColor: 'rgba(210, 214, 222, 1)',
-                    //     pointStrokeColor: '#c1c7d1',
-                    //     pointHighlightFill: '#fff',
-                    //     pointHighlightStroke: 'rgba(220,220,220,1)',
-                    //     data: [<?php echo json_encode($jumlahkpi1_21) ?>, <?php echo json_encode($jumlahkpi2_21) ?>, <?php echo json_encode($jumlahkpi3_21) ?>, <?php echo json_encode($jumlahkpi4_21) ?>, <?php echo json_encode($jumlahkpi5_21) ?>, <?php echo json_encode($jumlahkpi6_21) ?>, <?php echo json_encode($jumlahkpi7_21) ?>, <?php echo json_encode($jumlahkpi8_21) ?>, <?php echo json_encode($jumlahkpi9_21) ?>]
-                    // },
+                    {
+                        label: <?php echo json_encode($tahun_ajaran = '2021/2022') ?>,
+                        backgroundColor: 'rgba(93, 78, 246,1)',
+                        borderColor: 'rgba(93, 78, 246,1)',
+                        pointRadius: false,
+                        pointColor: 'rgba(210, 214, 222, 1)',
+                        pointStrokeColor: '#c1c7d1',
+                        pointHighlightFill: '#fff',
+                        pointHighlightStroke: 'rgba(220,220,220,1)',
+                        data: [<?php echo json_encode($jumlahkpi1_21) ?>, <?php echo json_encode($jumlahkpi2_21) ?>, <?php echo json_encode($jumlahkpi3_21) ?>, <?php echo json_encode($jumlahkpi4_21) ?>, <?php echo json_encode($jumlahkpi5_21) ?>, <?php echo json_encode($jumlahkpi6_21) ?>, <?php echo json_encode($jumlahkpi7_21) ?>, <?php echo json_encode($jumlahkpi8_21) ?>, <?php echo json_encode($jumlahkpi9_21) ?>]
+                    },
                 ]
             },
             options: {
