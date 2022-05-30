@@ -31,7 +31,7 @@
 
 			<!-- Sidebar - Brand -->
 			<a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
-			<img src="<?php echo base_url(); ?>/public/img/monev_logo_putih.png" alt="Logo" style="width: 70px; height: 70px;">
+				<img src="<?php echo base_url(); ?>/public/img/monev_logo_putih.png" alt="Logo" style="width: 70px; height: 70px;">
 				<div class="sidebar-brand-text mx-3">Admin</div>
 			</a>
 
@@ -76,10 +76,11 @@
 					<span>KPI</span></a>
 				<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
-
 						<a class="collapse-item" href="<?= base_url('/admin/listkpi') ?>">Lihat KPI</a>
 						<a class="collapse-item" href="<?= base_url('/admin/listbutirkpi') ?>">Lihat Butir KPI</a>
 						<a class="collapse-item" href="<?= base_url('/admin/listcapaiankpi') ?>">Lihat Capaian</a>
+						<a class="collapse-item" href="<?= base_url('/admin/tabelcapaiankpi') ?>">Lihat Data Tabel</a>
+						<a class="collapse-item" href="<?= base_url('/admin/grafikcapaian') ?>">Lihat Data Grafik</a>
 					</div>
 				</div>
 			</li>
@@ -136,37 +137,46 @@
 				</nav>
 				<!-- End of Topbar -->
 				<!-- Begin Page Content -->
-			<div class="container-fluid">
+				<div class="container-fluid">
 					<!-- Page Heading -->
 					<h1 class="h3 mb-2 text-gray-800">Tambah Rencana RKAT</h1>
 					<!-- DataTales Example -->
-				<div class="card shadow mb-4">
-					<div class="card-body">
-						<div class="table-responsive">
-							<form id="satuan" name="formD" action="<?= base_url('rkat/savebyadmin'); ?>" method="POST" enctype="multipart/form-data">
-								<input type="hidden" name="jumlah" id="jumlah" value="0">
-									<?= session()->getFlashdata('status'); ?>	
-								<div class="card">
-									<div class="card-header">Tambah Rencana RKAT</div>
+					<div class="card shadow mb-4">
+						<div class="card-body">
+							<div class="table-responsive">
+								<form id="satuan" name="formD" action="<?= base_url('rkat/savebyadmin'); ?>" method="POST" enctype="multipart/form-data">
+									<input type="hidden" name="jumlah" id="jumlah" value="0">
+									<?= session()->getFlashdata('status'); ?>
+									<div class="card">
+										<div class="card-header">Tambah Rencana RKAT</div>
 										<table class="table table-borded table-responsive table-striped">
 
 											<input type="hidden" class="form-control" id="id_tahun" value="<?= $tahunAkademik['id_tahun'] ?>" name="id_tahun" required>
 											<div class="form-inline">
-											
+
 												<label class="mb-2 mr-sm-2" for="exampleFormControlSelect1" style="width: 150px;">Tahun Akademik</label>
 												<input type="text" class="form-control mb-2 mr-sm-2" name="tahunAkademik" id="tahunAkademik" value="<?= $tahunAkademik['tahunAkademik'] ?>" disabled>
 											</div>
-											
+
 											<select class="form-control form-control-sm" id="id_user" name="id_user[]" required>
 												<option value="" disabled selected>Nama Prodi/Unit</option>
+<<<<<<< HEAD
 												<?php foreach ($user as $value) : ?>
 												<option value="<?= $value['id']; ?>"><?= $value['nama_prodi']; ?></option>
+=======
+												<?php foreach ($pagu as $value) : ?>
+													<option value="<?= $value['id_user']; ?>"><?= $value['nama_prodi']; ?></option>
+>>>>>>> 023b34fab8d642f9d37521eb9495cff1e265f908
 												<?php endforeach; ?>
 											</select>
 											<select class="form-control form-control-sm" id="id_pagu" name="id_pagu[]" required>
 												<option value="" disabled selected>Pagu Dari</option>
 												<?php foreach ($pagu as $value) : ?>
+<<<<<<< HEAD
 												<option value="<?= $value['id_pagu']; ?>"><?= $value['nama_prodi']; ?>=<?= $value['jumlah_pagu']; ?></option>
+=======
+													<option value="<?= $value['id_pagu']; ?>"><?= $value['nama_prodi']; ?></option>
+>>>>>>> 023b34fab8d642f9d37521eb9495cff1e265f908
 												<?php endforeach; ?>
 											</select>
 											<thead class="table-dark">
@@ -182,7 +192,7 @@
 											</thead>
 											<tbody id="tbody2">
 												<tr>
-													<td><input name="chk_a[]" type="checkbox" class="checkall_a" value=""/></td>
+													<td><input name="chk_a[]" type="checkbox" class="checkall_a" value="" /></td>
 													<td>
 														<select class="form-control form-control-sm" id="kategori" name="kategori[]" required>
 															<option value="" disabled selected>Kategori</option>
@@ -190,7 +200,7 @@
 															<option value="OPS">OPS</option>
 															<option value="INV">INV</option>
 														</select>
-														
+
 														<select class="form-control form-control-sm" id="kpi" name="kpi[]" required>
 															<option value="" disabled selected>Kriteria KPI</option>
 															<option value="1">1 - Visi Misi Tujuan dan Strategi</option>
@@ -203,7 +213,7 @@
 															<option value="8">8 - Pengabdian kepada Masyarakat (PkM)</option>
 															<option value="9">9 - Luaran dan Capaian Tridharma</option>
 														</select>
-														
+
 														<select class="form-control form-control-sm" id="butir" name="butir[]" required>
 															<option value="" disabled selected>Butir</option>
 															<option value="1">1</option>
@@ -213,12 +223,12 @@
 													</td>
 													<td>
 														<input type="text" class="form-control form-control-sm" id="no_kegiatan" placeholder="No Kegiatan" name="no_kegiatan[]" required>
-													
+
 														<input type="text" class="form-control form-control-sm" id="indikator" placeholder="Indikator" name="indikator[]" required>
 													</td>
 													<td>
 														<input type="text" class="form-control form-control-sm" id="target" placeholder="Masukan Target" name="target[]" required>
-													
+
 														<input type="text" class="form-control form-control-sm" id="nama_kegiatan" placeholder="Nama Kegiatan" name="nama_kegiatan[]" required>
 													</td>
 													<td>
@@ -229,11 +239,11 @@
 													</td>
 													<td>
 														<input type="text" class="form-control form-control-sm" id="total" name="total[]" placeholder="Rp. 0" readonly="readonly" required>
-													</td>	
-												</tr>								
+													</td>
+												</tr>
 											</tbody>
 											<tfoot>
-												<td><button type="button" class="btn btn-danger btn-sm" onclick="deleteRow('tbody2')"><i class="fa fa-minus"></i>Hapus Baris</button></th> 
+												<td><button type="button" class="btn btn-danger btn-sm" onclick="deleteRow('tbody2')"><i class="fa fa-minus"></i>Hapus Baris</button></th>
 												<td><button class="btn btn-success btn-sm" onclick="addRow('tbody2')" id="BarisBaru"><i class="fa fa-plus"></i> Baris Baru</button></td>
 												<td></td>
 												<td>Total Keseluruhan</td>
@@ -242,130 +252,132 @@
 												<td><input type="text" class="form-control" style="width: 150px;" id="pagu3" name="pagu" value="RP. 0" required disabled></td>
 											</tfoot>
 										</table>
-								</div>
-								<div class="card-footer" align="center">
-									<button type="submit" class="btn btn-primary" id="btnJumlah" value="Tambah Data">Tambah Data</button>
-									<span id="textError"></span>
-								</div>
-							</form>
+									</div>
+									<div class="card-footer" align="center">
+										<button type="submit" class="btn btn-primary" id="btnJumlah" value="Tambah Data">Tambah Data</button>
+										<span id="textError"></span>
+									</div>
+								</form>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
 			<!-- End of Content Wrapper -->
-	</div>
+		</div>
 		<!-- End of Page Wrapper -->
 		<script>
-		function totalAnggaran1() {
-			var txtFirstNumberValue = document.getElementById('anggaranGanjil').value;
-			var txtSecondNumberValue = document.getElementById('anggaranGenap').value;
-			var result = parseInt(txtFirstNumberValue) + parseInt(txtSecondNumberValue);
-			if (!isNaN(result)) { document.getElementById('total').value = result; }
-			
+			function totalAnggaran1() {
+				var txtFirstNumberValue = document.getElementById('anggaranGanjil').value;
+				var txtSecondNumberValue = document.getElementById('anggaranGenap').value;
+				var result = parseInt(txtFirstNumberValue) + parseInt(txtSecondNumberValue);
+				if (!isNaN(result)) {
+					document.getElementById('total').value = result;
+				}
 
-			var table = document.getElementById('tbody2');
-			let pagu1 = txtFirstNumberValue;
-			let pagu2 = txtSecondNumberValue;
-			let pagu3 = result;
-			document.getElementById('pagu1').value = pagu1;
-			document.getElementById('pagu2').value = pagu2;
-			document.getElementById('pagu3').value = pagu3;
-			
-			var buttonSend = document.getElementById('btnJumlah');
-			if (document.getElementById('anggaranGanjil1').value != null || document.getElementById('anggaranGenap1').value != null) {
-				for (let index = 1; index <= table.rows.length; index++) {
-				if (document.getElementById('anggaranGanjil'+index).value != null || document.getElementById('anggaranGenap'+index).value != null) {
-					var txtFirstNumberValue = document.getElementById('anggaranGanjil'+index).value;
-					var txtSecondNumberValue = document.getElementById('anggaranGenap'+index).value;
-					var result = parseInt(txtFirstNumberValue) + parseInt(txtSecondNumberValue);
-					if (!isNaN(result)) { document.getElementById('total'+index).value = result; }
-					pagu1 = parseInt(pagu1) + parseInt(document.getElementById('anggaranGanjil'+index).value)
-					document.getElementById('pagu1').value = pagu1;
-					console.log(anggaranGanjil1);
-					pagu2 = parseInt(pagu2) + parseInt(document.getElementById('anggaranGenap'+index).value)
-					document.getElementById('pagu2').value = pagu2;
-					pagu3 = parseInt(pagu3) + parseInt(document.getElementById('total'+index).value)
-					document.getElementById('pagu3').value = pagu3;
-				}
-				}
-			}
-		}
-	</script>
-	<script>
-		// JavaScript Document
-		function addRow(tableID) {
-			var table = document.getElementById(tableID);
-			//  console.log(table);
-			var rowCount = table.rows.length;
-			 console.log(rowCount);
-			var row = table.insertRow(rowCount);
-			//  console.log(row);
-			document.getElementById("jumlah").value = rowCount;
-			var colCount = table.rows[0].cells.length;
-			 //console.log(colCount);
-			for(var i=0; i<colCount; i++) {
-				var newcell = row.insertCell(i);
-				newcell.innerHTML = table.rows[0].cells[i].innerHTML;
-				var child = newcell.children;
-				for(var i2=0; i2<child.length; i2++) {
-					var test = newcell.children[i2].tagName;
-					// console.log(test)
-					switch(test) {
-						case "INPUT":
-							if(newcell.children[i2].type=='checkbox'){
-								newcell.children[i2].value = "";
-								newcell.children[i2].checked = false;
-							}else{
-								if (i2==4) {
-									newcell.children[i2].setAttribute("required","required");
-									newcell.children[i2].setAttribute("id","anggaranGanjil1");
-									newcell.children[i2].value = "";
-								}
-								else if (i2==5) {
-									newcell.children[i2].setAttribute("required","required");
-									newcell.children[i2].setAttribute("id","anggaranGenap1");
-									newcell.children[i2].value = "";
-								}
-								else {
-									newcell.children[i2].setAttribute("required","required");
-									var ambilID = newcell.children[i2].getAttribute('id');
-									newcell.children[i2].setAttribute("id",ambilID + rowCount);
-									newcell.children[i2].value = "";
-								}
+
+				var table = document.getElementById('tbody2');
+				let pagu1 = txtFirstNumberValue;
+				let pagu2 = txtSecondNumberValue;
+				let pagu3 = result;
+				document.getElementById('pagu1').value = pagu1;
+				document.getElementById('pagu2').value = pagu2;
+				document.getElementById('pagu3').value = pagu3;
+
+				var buttonSend = document.getElementById('btnJumlah');
+				if (document.getElementById('anggaranGanjil1').value != null || document.getElementById('anggaranGenap1').value != null) {
+					for (let index = 1; index <= table.rows.length; index++) {
+						if (document.getElementById('anggaranGanjil' + index).value != null || document.getElementById('anggaranGenap' + index).value != null) {
+							var txtFirstNumberValue = document.getElementById('anggaranGanjil' + index).value;
+							var txtSecondNumberValue = document.getElementById('anggaranGenap' + index).value;
+							var result = parseInt(txtFirstNumberValue) + parseInt(txtSecondNumberValue);
+							if (!isNaN(result)) {
+								document.getElementById('total' + index).value = result;
 							}
-						break;
-						case "SELECT":
-							newcell.children[i2].value = "";
-						break;
-						default:
-						break;
+							pagu1 = parseInt(pagu1) + parseInt(document.getElementById('anggaranGanjil' + index).value)
+							document.getElementById('pagu1').value = pagu1;
+							console.log(anggaranGanjil1);
+							pagu2 = parseInt(pagu2) + parseInt(document.getElementById('anggaranGenap' + index).value)
+							document.getElementById('pagu2').value = pagu2;
+							pagu3 = parseInt(pagu3) + parseInt(document.getElementById('total' + index).value)
+							document.getElementById('pagu3').value = pagu3;
+						}
 					}
 				}
 			}
-		}
-		function deleteRow(tableID){
-			var table = document.getElementById(tableID);
-			var rowCount = table.rows.length;
-			console.log(rowCount);
-			for(var i=0; i<rowCount; i++){
-				var row = table.rows[i];
-				var chkbox = row.cells[0].childNodes[0];
-				if (null != chkbox && true == chkbox.checked){
-					if (rowCount <= 1){
-						alert("Tidak dapat menghapus semua baris.");
-						break;
+		</script>
+		<script>
+			// JavaScript Document
+			function addRow(tableID) {
+				var table = document.getElementById(tableID);
+				//  console.log(table);
+				var rowCount = table.rows.length;
+				console.log(rowCount);
+				var row = table.insertRow(rowCount);
+				//  console.log(row);
+				document.getElementById("jumlah").value = rowCount;
+				var colCount = table.rows[0].cells.length;
+				//console.log(colCount);
+				for (var i = 0; i < colCount; i++) {
+					var newcell = row.insertCell(i);
+					newcell.innerHTML = table.rows[0].cells[i].innerHTML;
+					var child = newcell.children;
+					for (var i2 = 0; i2 < child.length; i2++) {
+						var test = newcell.children[i2].tagName;
+						// console.log(test)
+						switch (test) {
+							case "INPUT":
+								if (newcell.children[i2].type == 'checkbox') {
+									newcell.children[i2].value = "";
+									newcell.children[i2].checked = false;
+								} else {
+									if (i2 == 4) {
+										newcell.children[i2].setAttribute("required", "required");
+										newcell.children[i2].setAttribute("id", "anggaranGanjil1");
+										newcell.children[i2].value = "";
+									} else if (i2 == 5) {
+										newcell.children[i2].setAttribute("required", "required");
+										newcell.children[i2].setAttribute("id", "anggaranGenap1");
+										newcell.children[i2].value = "";
+									} else {
+										newcell.children[i2].setAttribute("required", "required");
+										var ambilID = newcell.children[i2].getAttribute('id');
+										newcell.children[i2].setAttribute("id", ambilID + rowCount);
+										newcell.children[i2].value = "";
+									}
+								}
+								break;
+							case "SELECT":
+								newcell.children[i2].value = "";
+								break;
+							default:
+								break;
+						}
 					}
-					table.deleteRow(i);
-					rowCount--;
-					i--;
 				}
 			}
-			console.log(rowCount);
-			document.getElementById("jumlah").value = rowCount;
-		}
-		
-	</script>
+
+			function deleteRow(tableID) {
+				var table = document.getElementById(tableID);
+				var rowCount = table.rows.length;
+				console.log(rowCount);
+				for (var i = 0; i < rowCount; i++) {
+					var row = table.rows[i];
+					var chkbox = row.cells[0].childNodes[0];
+					if (null != chkbox && true == chkbox.checked) {
+						if (rowCount <= 1) {
+							alert("Tidak dapat menghapus semua baris.");
+							break;
+						}
+						table.deleteRow(i);
+						rowCount--;
+						i--;
+					}
+				}
+				console.log(rowCount);
+				document.getElementById("jumlah").value = rowCount;
+			}
+		</script>
 		<!-- Bootstrap core JavaScript-->
 		<script src="<?php echo base_url(); ?>/public/js/jquery.min.js"></script>
 		<script src="<?php echo base_url(); ?>/public/js/bootstrap.bundle.min.js"></script>

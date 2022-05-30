@@ -31,7 +31,7 @@
 
 			<!-- Sidebar - Brand -->
 			<a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
-			<img src="<?php echo base_url(); ?>/public/img/monev_logo_putih.png" alt="Logo" style="width: 70px; height: 70px;">
+				<img src="<?php echo base_url(); ?>/public/img/monev_logo_putih.png" alt="Logo" style="width: 70px; height: 70px;">
 				<div class="sidebar-brand-text mx-3">Admin</div>
 			</a>
 
@@ -81,6 +81,8 @@
 						<a class="collapse-item" href="<?= base_url('/admin/listkpi') ?>">Lihat KPI</a>
 						<a class="collapse-item" href="<?= base_url('/admin/listbutirkpi') ?>">Lihat Butir KPI</a>
 						<a class="collapse-item" href="<?= base_url('/admin/listcapaiankpi') ?>">Lihat Capaian</a>
+						<a class="collapse-item" href="<?= base_url('/admin/tabelcapaiankpi') ?>">Lihat Data Tabel</a>
+						<a class="collapse-item" href="<?= base_url('/admin/grafikcapaian') ?>">Lihat Data Grafik</a>
 					</div>
 				</div>
 			</li>
@@ -197,12 +199,12 @@
 									<div class="form-group">
 										<label for="anggaranGanjil">Anggaran Ganjil</label>
 										<input type="text" class="form-control" id="anggaranGanjil" placeholder="Masukan Total Anggaran" name="anggaranGanjil" required value="<?= $detail_rkat2['anggaranGanjil']; ?>">
-										
+
 									</div>
 									<div class="form-group">
 										<label for="anggaranGenap">Anggaran Genap</label>
 										<input type="text" class="form-control" id="anggaranGenap" placeholder="Masukan Total Anggaran" name="anggaranGenap" required value="<?= $detail_rkat2['anggaranGenap']; ?>">
-										
+
 									</div>
 									<div class="form-group">
 										<label for="total">Total Kegiatan</label>

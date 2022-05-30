@@ -30,10 +30,10 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-			<a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
-			<img src="<?php echo base_url(); ?>/public/img/monev_logo_putih.png" alt="Logo" style="width: 70px; height: 70px;">
-				<div class="sidebar-brand-text mx-3">Admin</div>
-			</a>
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
+                <img src="<?php echo base_url(); ?>/public/img/monev_logo_putih.png" alt="Logo" style="width: 70px; height: 70px;">
+                <div class="sidebar-brand-text mx-3">Admin</div>
+            </a>
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
@@ -55,16 +55,16 @@
                     <span>RKAT</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-					<div class="bg-white py-2 collapse-inner rounded">
-						<a class="collapse-item" href="<?= base_url('admin/create') ?>">Tambah Rencana RKAT</a>
-						<a class="collapse-item" href="<?= base_url('admin/listRkatProdi') ?>">Lihat Data Prodi</a>
-						<a class="collapse-item" href="<?= base_url('admin/listRkatUnit') ?>">Lihat Data Unit</a>
-						<a class="collapse-item" href="<?= base_url('pagurkat/create') ?>">Buat Pagu</a>
-						<a class="collapse-item" href="<?= base_url('pagurkat/index') ?>">List Data Pagu</a>
-						<a class="collapse-item" href="<?= base_url('tahunakademik/indextahun') ?>">Tahun Akademik</a>
-						<a class="collapse-item" href="<?= base_url('admin/grafikSerap') ?>">Grafik Capaian Serap</a>
-					</div>
-				</div>
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="<?= base_url('admin/create') ?>">Tambah Rencana RKAT</a>
+                        <a class="collapse-item" href="<?= base_url('admin/listRkatProdi') ?>">Lihat Data Prodi</a>
+                        <a class="collapse-item" href="<?= base_url('admin/listRkatUnit') ?>">Lihat Data Unit</a>
+                        <a class="collapse-item" href="<?= base_url('pagurkat/create') ?>">Buat Pagu</a>
+                        <a class="collapse-item" href="<?= base_url('pagurkat/index') ?>">List Data Pagu</a>
+                        <a class="collapse-item" href="<?= base_url('tahunakademik/indextahun') ?>">Tahun Akademik</a>
+                        <a class="collapse-item" href="<?= base_url('admin/grafikSerap') ?>">Grafik Capaian Serap</a>
+                    </div>
+                </div>
             </li>
 
             <!-- Divider -->
@@ -80,6 +80,8 @@
                         <a class="collapse-item" href="<?= base_url('/admin/listkpi') ?>">Lihat KPI</a>
                         <a class="collapse-item" href="<?= base_url('/admin/listbutirkpi') ?>">Lihat Butir KPI</a>
                         <a class="collapse-item" href="<?= base_url('/admin/listcapaiankpi') ?>">Lihat Capaian</a>
+                        <a class="collapse-item" href="<?= base_url('/admin/tabelcapaiankpi') ?>">Lihat Data Tabel</a>
+                        <a class="collapse-item" href="<?= base_url('/admin/grafikcapaian') ?>">Lihat Data Grafik</a>
                     </div>
                 </div>
             </li>

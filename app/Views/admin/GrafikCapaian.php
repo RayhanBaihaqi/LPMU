@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Form Tambah KPI</title>
+    <title>List Capaian KPI</title>
 
     <!-- Custom fonts for this template-->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
@@ -18,6 +18,7 @@
     <!-- Custom styles for this template-->
     <link href="<?php echo base_url(); ?>/public/css/style_admin.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>/public/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+
 
 </head>
 
@@ -32,14 +33,14 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
                 <img src="<?php echo base_url(); ?>/public/img/monev_logo_putih.png" alt="Logo" style="width: 70px; height: 70px;">
-                <div class="sidebar-brand-text mx-3">Admin</div>
+                <div class="sidebar-brand-text mx-3">ADMIN</div>
             </a>
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link " href="<?php echo site_url(); ?>admin">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
@@ -71,7 +72,7 @@
             <hr class="sidebar-divider">
 
             <!-- Heading -->
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>KPI</span></a>
@@ -86,7 +87,6 @@
                 </div>
             </li>
 
-            <!-- Heading -->
             <div class="sidebar-heading">
                 User
             </div>
@@ -95,6 +95,8 @@
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Tabel User</span></a>
             </li>
+
+
 
         </ul>
         <!-- End of Sidebar -->
@@ -139,24 +141,60 @@
                 <!-- End of Topbar -->
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    <div class="card shadow mb-4">
-                        <div class="card-body">
-                            <h2>Tambah KPI</h2>
-                            <br>
 
-                            <?= form_open('admin/simpankpi') ?>
-                            <div class="form-group">
-                                <label for="idkpi">ID KPI</label>
-                                <input type="text" class="form-control" id="idkpi" name="idkpi" placeholder="Masukkan nomor ID KPI Baru" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="nama_kpi">Nama KPI</label>
-                                <input type="text" class="form-control" id="nama_kpi" name="nama_kpi" placeholder="Masukkan nama KPI Baru" required>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                            <?= form_close(); ?>
-                        </div>
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-2 text-gray-800">Grafik Capaian KPI</h1>
+                    <br>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Pilih Tingkatan</label>
+                        <select class="form-control" id="exampleFormControlSelect1" onchange="location = this.value;">
+                            <option disabled selected>--Pilih ingin bandingkan dengan prodi/unit--</option>
+                            <option value="grafikprodi/">Prodi</option>
+                            <option value="grafikunit/">Unit</option>
+                        </select>
                     </div>
+                    <!-- foreach ambil hasil penjumlahan nilai bobot KPI TA 2018 -->
+                    <?php foreach ($hasilrencanakpi_1 as $key => $value) : $jumlah_rencana1 = $value['jumlah_rencana1'];
+                    endforeach; ?>
+                    <?php foreach ($hasilrencanakpi_2 as $key => $value) : $jumlah_rencana2 = $value['jumlah_rencana2'];
+                    endforeach; ?>
+                    <?php foreach ($hasilrencanakpi_3 as $key => $value) : $jumlah_rencana3 = $value['jumlah_rencana3'];
+                    endforeach; ?>
+                    <?php foreach ($hasilrencanakpi_4 as $key => $value) : $jumlah_rencana4 = $value['jumlah_rencana4'];
+                    endforeach; ?>
+                    <?php foreach ($hasilrencanakpi_5 as $key => $value) : $jumlah_rencana5 = $value['jumlah_rencana5'];
+                    endforeach; ?>
+                    <?php foreach ($hasilrencanakpi_6 as $key => $value) : $jumlah_rencana6 = $value['jumlah_rencana6'];
+                    endforeach; ?>
+                    <?php foreach ($hasilrencanakpi_7 as $key => $value) : $jumlah_rencana7 = $value['jumlah_rencana7'];
+                    endforeach; ?>
+                    <?php foreach ($hasilrencanakpi_8 as $key => $value) : $jumlah_rencana8 = $value['jumlah_rencana8'];
+                    endforeach; ?>
+                    <?php foreach ($hasilrencanakpi_9 as $key => $value) : $jumlah_rencana9 = $value['jumlah_rencana9'];
+                    endforeach; ?>
+
+
+
+                    <div class="container col-lg-12">
+                        <section class="content">
+                            <!-- BAR CHART -->
+                            <!-- <div class="card card-success">
+                                <div class="card-header">
+                                    <h3 class="card-title">Grafik Rencana KPI</h3>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart">
+                                        <canvas id="myChart" height="100"></canvas>
+
+                                    </div>
+                                </div>
+                            </div> -->
+                            <!-- /.card-body -->
+                        </section>
+                    </div>
+
+                    <br>
+
 
 
                 </div>
@@ -185,5 +223,77 @@
         <script src="<?php echo base_url(); ?>/public/js/datatables-demo.js"></script>
 
 </body>
+<!-- jQuery -->
+<script src="<?php echo base_url(); ?>/public/plugins/jquery/jquery.min.js"></script>
+<!-- ChartJS -->
+<script src="<?php echo base_url(); ?>/public/plugins/chart.js/Chart.min.js"></script>
+<!-- AdminLTE App -->
+<script src="<?php echo base_url(); ?>/public/dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+
+<!-- Page level custom scripts -->
+<script src="<?php echo base_url(); ?>/public/dist/js/demo.js"></script>
+<script src="<?php echo base_url(); ?>/public/chart/apexcharts.min.js"></script>
+<script src="<?php echo base_url(); ?>/public/chart/dashboard.js"></script>
+<script src="<?php echo base_url(); ?>/public/chart/jquery.knob.min.js"></script>
+<script src="<?php echo base_url(); ?>/public/chart/knob-chart-setting.js"></script>
+<script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+<script>
+    $(window).load(function() {
+        $(".pre-loader").fadeOut("slow");
+    });
+</script>
+<script>
+    const ctx = document.getElementById('myChart');
+    const myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Standar 1', 'Standar 2', 'Standar 3', 'Standar 4', 'Standar 5', 'Standar 6', 'Standar 7', 'Standar 8', 'Standar 9'],
+            datasets: [
+                //Data Batang Grafik Standar 1
+                {
+                    label: 'Total bobot rencana',
+                    backgroundColor: 'rgba(60,141,188,0.9)',
+                    borderColor: 'rgba(60,141,188,0.8)',
+                    pointRadius: false,
+                    pointColor: '#3b8bba',
+                    pointStrokeColor: 'rgba(60,141,188,1)',
+                    pointHighlightFill: '#fff',
+                    pointHighlightStroke: 'rgba(60,141,188,1)',
+                    data: [<?php echo json_encode($jumlah_rencana1) ?>, <?php echo json_encode($jumlah_rencana2) ?>, <?php echo json_encode($jumlah_rencana3) ?>, <?php echo json_encode($jumlah_rencana4) ?>, <?php echo json_encode($jumlah_rencana5) ?>, <?php echo json_encode($jumlah_rencana6) ?>, <?php echo json_encode($jumlah_rencana7) ?>, <?php echo json_encode($jumlah_rencana8) ?>, <?php echo json_encode($jumlah_rencana9) ?>]
+
+                },
+
+            ]
+        },
+        options: {
+            responsive: true,
+            legend: {
+                position: 'top',
+            },
+            hover: {
+                mode: 'label'
+            },
+            scales: {
+                xAxes: [{
+                    display: true,
+                    scaleLabel: {
+                        display: true,
+
+                    }
+                }],
+                yAxes: [{
+                    display: true,
+                    ticks: {
+                        beginAtZero: true,
+                        steps: 10,
+                        stepValue: 5,
+
+                    }
+                }]
+            },
+        }
+    });
+</script>
 
 </html>
