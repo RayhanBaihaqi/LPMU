@@ -145,8 +145,8 @@
 					<div class="card shadow mb-4">
 						<div class="card-body">
 							<div class="table-responsive">
-								<form action="<?= base_url('setrkat/update'); ?>" method="POST" enctype="multipart/form-data">
-								<input required type="hidden" name="id" value="<?= $pagu_rkat['id_pagu']; ?>">
+								<form action="<?= base_url('pagurkat/update'); ?>" method="POST" enctype="multipart/form-data">
+								<input required type="hidden" name="id_pagu" value="<?= $pagu_rkat['id_pagu']; ?>">
 										<div class="form-group">
 											<label for="id_tahun">Tahun Ajaran</label>
 											<select class="form-control" id="id_tahun" name="id_tahun">

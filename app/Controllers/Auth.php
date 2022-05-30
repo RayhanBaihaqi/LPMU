@@ -127,10 +127,14 @@ class Auth extends BaseController
                     <button type="button" class="close" data-dismiss="alert">&times;</button>
                     <strong>Login Success!</strong> Selamat anda telah berhasil login.
                 </div>');
-<<<<<<< HEAD
                 return redirect()->to('/rektorat/rkat');
-=======
-                return redirect()->to('/rektorat');
+            } else if (session('level') == 'keuangan') {
+                session()->setFlashdata('pesan', '
+                <div class="alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>Login Success!</strong> Selamat anda telah berhasil login.
+                </div>');
+                return redirect()->to('/keuangan/index');
             } else if (session('level') == 'lpmu') {
                 session()->setFlashdata('pesan', '
                 <div class="alert alert-success">
@@ -138,7 +142,6 @@ class Auth extends BaseController
                     <strong>Login Success!</strong> Selamat anda telah berhasil login.
                 </div>');
                 return redirect()->to('/rektorat');
->>>>>>> ac32b66e484a36e5f222bdc48585e1e9456a3862
             }
         } else {
             session()->setFlashdata('pesan', 'Password anda salah');

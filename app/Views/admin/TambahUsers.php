@@ -169,6 +169,7 @@
 											<option value="rektorat">Rektorat</option>
 											<option value="lpmu">LPMU</option>
 											<option value="admin">Admin</option>
+											<option value="keuangan">Keuangan</option>
 										</select>
 									</div>
 									<div class="form-group">

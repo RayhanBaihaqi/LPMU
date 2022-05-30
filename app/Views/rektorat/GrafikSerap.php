@@ -40,7 +40,7 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-			<li class="nav-item active">
+			<li class="nav-item">
 				<a class="nav-link " href="<?= base_url('/rektorat/rkat') ?>">
 					<i class="fas fa-fw fa-tachometer-alt"></i>
 					<span>Dashboard</span></a>
@@ -72,7 +72,7 @@
             <hr class="sidebar-divider">
 
             <!-- Heading -->
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>KPI</span></a>
@@ -137,21 +137,37 @@
 
                     <div class="container col-lg-12">
                         <section class="content">
-
                             <div class="card card-success">
                                 <div class="card-body">
                                     <div class="chart">
-                                        <div id="GrafikCapaianRkat" style="width: 1080px; height: 500px;"></div>
+                                        <div id="GrafikCapaianRkatProdi" style="width: 1080px; height: 500px;"></div>
                                     </div>
                                 </div>
                             </div>
                         </section>
                     </div>
-
-                    <br>
-
-
-
+                    <div class="container col-lg-12">
+                        <section class="content">
+                            <div class="card card-success">
+                                <div class="card-body">
+                                    <div class="chart">
+                                        <div id="GrafikCapaianRkatUnit" style="width: 1080px; height: 500px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="container col-lg-12">
+                        <section class="content">
+                            <div class="card card-success">
+                                <div class="card-body">
+                                    <div class="chart">
+                                        <div id="GrafikCapaianRkatRektorat" style="width: 1080px; height: 500px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
                 </div>
 
 
@@ -198,7 +214,7 @@
         $(".pre-loader").fadeOut("slow");
     });
 </script>
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load('current', {'packages':['bar']});
       google.charts.setOnLoadCallback(drawChart);
@@ -207,19 +223,69 @@
         var data = google.visualization.arrayToDataTable([
           ['Prodi/Unit', 'Tahun', 'PK & OPS (%)', 'INV (%)'],
           <?php
-		    foreach ($seluruhDataUser as $key => $reading) : ?>
+		    foreach ($seluruhDataUserProdi as $key => $reading) : ?>
           ['<?= $reading['nama_prodi'] ?>','<?= $reading['tahunAkademik'] ?>', <?= $reading['persenPkOps'] ?>,<?= $reading['persenInv'] ?>],
           <?php endforeach; ?>
         ]);
 
         var options = {
           chart: {
-            title: 'Data Grafik Capaian RKAT',
+            title: 'Data Grafik Capaian RKAT Prodi',
             subtitle: 'PK+OPS & INV Pertahun',
           }
         };
 
-        var chart = new google.charts.Bar(document.getElementById('GrafikCapaianRkat'));
+        var chart = new google.charts.Bar(document.getElementById('GrafikCapaianRkatProdi'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Prodi/Unit', 'Tahun', 'PK & OPS (%)', 'INV (%)'],
+          <?php
+		    foreach ($seluruhDataUserUnit as $key => $reading) : ?>
+          ['<?= $reading['nama_prodi'] ?>','<?= $reading['tahunAkademik'] ?>', <?= $reading['persenPkOps'] ?>,<?= $reading['persenInv'] ?>],
+          <?php endforeach; ?>
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Data Grafik Capaian RKAT Unit',
+            subtitle: 'PK+OPS & INV Pertahun',
+          }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('GrafikCapaianRkatUnit'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Rektorat', 'Tahun', 'PK & OPS (%)', 'INV (%)'],
+          <?php
+		    foreach ($seluruhDataUserRektorat as $key => $reading) : ?>
+          ['<?= $reading['nama_prodi'] ?>','<?= $reading['tahunAkademik'] ?>', <?= $reading['persenPkOps'] ?>,<?= $reading['persenInv'] ?>],
+          <?php endforeach; ?>
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Data Grafik Capaian RKAT Rektorat',
+            subtitle: 'PK+OPS & INV Pertahun',
+          }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('GrafikCapaianRkatRektorat'));
 
         chart.draw(data, google.charts.Bar.convertOptions(options));
       }

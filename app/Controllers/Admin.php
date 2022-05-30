@@ -57,7 +57,7 @@ class Admin extends BaseController
         $model2 = new PaguRkatModel();
         $data = [
             'user' => $model->orderBy('id', 'DESC')->findAll(),
-            'pagu' => $model2->join('user', 'user.id=pagu_rkat.id_user')->findAll(),
+            'pagu' => $model2->join('user', 'user.id=pagu_rkat.id_user')-> join('tahun_akademik', 'tahun_akademik.id_tahun=pagu_rkat.id_tahun')->where('aktif', '1')->findAll(),
             'tahunAkademik' => $this->TahunAkademikModel->where('aktif', '1')->first(),
         ];
         return view('admin/inputData', $data);
@@ -151,7 +151,9 @@ class Admin extends BaseController
 		$data = [
 			'tahun' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('username', $username)->findAll(),
             'tahunAktif' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('username', $username)->where('aktif', '1')->findAll(),
-			'seluruhDataUser' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->findAll(),
+			'seluruhDataUserProdi' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('level', 'prodi')->findAll(),
+            'seluruhDataUserUnit' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('level', 'unit')->findAll(),
+            'seluruhDataUserRektorat' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('level', 'rektorat')->findAll(),
             'pagu_rkat' => $this->DetailRkatModel->tampilDataSetRKAT($username),
             'tahunAkademik' => $this->TahunAkademikModel->where('aktif', '1')->first(),
         ];
