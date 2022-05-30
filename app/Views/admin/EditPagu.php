@@ -31,7 +31,7 @@
 
 			<!-- Sidebar - Brand -->
 			<a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
-			<img src="<?php echo base_url(); ?>/public/img/monev_logo_putih.png" alt="Logo" style="width: 70px; height: 70px;">
+				<img src="<?php echo base_url(); ?>/public/img/monev_logo_putih.png" alt="Logo" style="width: 70px; height: 70px;">
 				<div class="sidebar-brand-text mx-3">Admin</div>
 			</a>
 
@@ -80,6 +80,8 @@
 						<a class="collapse-item" href="<?= base_url('/admin/listkpi') ?>">Lihat KPI</a>
 						<a class="collapse-item" href="<?= base_url('/admin/listbutirkpi') ?>">Lihat Butir KPI</a>
 						<a class="collapse-item" href="<?= base_url('/admin/listcapaiankpi') ?>">Lihat Capaian</a>
+						<a class="collapse-item" href="<?= base_url('/admin/tabelcapaiankpi') ?>">Lihat Data Tabel</a>
+						<a class="collapse-item" href="<?= base_url('/admin/grafikcapaian') ?>">Lihat Data Grafik</a>
 					</div>
 				</div>
 			</li>
@@ -146,24 +148,24 @@
 						<div class="card-body">
 							<div class="table-responsive">
 								<form action="<?= base_url('setrkat/update'); ?>" method="POST" enctype="multipart/form-data">
-								<input required type="hidden" name="id" value="<?= $pagu_rkat['id_pagu']; ?>">
-										<div class="form-group">
-											<label for="id_tahun">Tahun Ajaran</label>
-											<select class="form-control" id="id_tahun" name="id_tahun">
-												<option value="<?= $pagu_rkat['id_tahun']; ?>"><?= $pagu_rkat['id_tahun']; ?></option>
-											</select>
-										</div>
-										<div class="form-group">
-											<label for="semester">Prodi/Unit</label>
-											<select class="form-control" id="id_user" name="id_user">
-												<option pagu_rkat="<?= $pagu_rkat['id_user']; ?>"><b><?= $pagu_rkat['id_user']; ?></b></option>
-													<option pagu_rkat="<?= $pagu_rkat['id_user']; ?>"><?= $pagu_rkat['id_user']; ?></option>
-											</select>
-										</div>
-										<div class="form-group">
-											<label for="jumlah_pagu">Jumlah Pagu (Rp)</label>
-											<input required type="text" class="form-control" id="jumlah_pagu" name='jumlah_pagu' placeholder="Masukkan Jumlah Pagu" value="<?= $pagu_rkat['jumlah_pagu']; ?>">
-										</div>
+									<input required type="hidden" name="id" value="<?= $pagu_rkat['id_pagu']; ?>">
+									<div class="form-group">
+										<label for="id_tahun">Tahun Ajaran</label>
+										<select class="form-control" id="id_tahun" name="id_tahun">
+											<option value="<?= $pagu_rkat['id_tahun']; ?>"><?= $pagu_rkat['id_tahun']; ?></option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label for="semester">Prodi/Unit</label>
+										<select class="form-control" id="id_user" name="id_user">
+											<option pagu_rkat="<?= $pagu_rkat['id_user']; ?>"><b><?= $pagu_rkat['id_user']; ?></b></option>
+											<option pagu_rkat="<?= $pagu_rkat['id_user']; ?>"><?= $pagu_rkat['id_user']; ?></option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label for="jumlah_pagu">Jumlah Pagu (Rp)</label>
+										<input required type="text" class="form-control" id="jumlah_pagu" name='jumlah_pagu' placeholder="Masukkan Jumlah Pagu" value="<?= $pagu_rkat['jumlah_pagu']; ?>">
+									</div>
 									<div class="form-group">
 										<button type="submit" id="tambah" class="btn btn-success">edit</button>
 									</div>

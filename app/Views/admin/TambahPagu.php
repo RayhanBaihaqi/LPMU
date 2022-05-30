@@ -31,7 +31,7 @@
 
 			<!-- Sidebar - Brand -->
 			<a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
-			<img src="<?php echo base_url(); ?>/public/img/monev_logo_putih.png" alt="Logo" style="width: 70px; height: 70px;">
+				<img src="<?php echo base_url(); ?>/public/img/monev_logo_putih.png" alt="Logo" style="width: 70px; height: 70px;">
 				<div class="sidebar-brand-text mx-3">Admin</div>
 			</a>
 
@@ -77,10 +77,11 @@
 					<span>KPI</span></a>
 				<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
-
 						<a class="collapse-item" href="<?= base_url('/admin/listkpi') ?>">Lihat KPI</a>
 						<a class="collapse-item" href="<?= base_url('/admin/listbutirkpi') ?>">Lihat Butir KPI</a>
 						<a class="collapse-item" href="<?= base_url('/admin/listcapaiankpi') ?>">Lihat Capaian</a>
+						<a class="collapse-item" href="<?= base_url('/admin/tabelcapaiankpi') ?>">Lihat Data Tabel</a>
+						<a class="collapse-item" href="<?= base_url('/admin/grafikcapaian') ?>">Lihat Data Grafik</a>
 					</div>
 				</div>
 			</li>
@@ -148,7 +149,7 @@
 							<div class="table-responsive">
 								<form action="<?= base_url('pagurkat/store'); ?>" method="POST" enctype="multipart/form-data">
 									<div class="container">
-									<?= session()->getFlashdata('status'); ?>	
+										<?= session()->getFlashdata('status'); ?>
 										<div class="form-group">
 											<input type="hidden" class="form-control" id="id_tahun" value="<?= $tahunAkademik['id_tahun'] ?>" name="id_tahun" required>
 											<label for="tahunAkademik">Tahun Akademik</label>
@@ -159,7 +160,7 @@
 											<select class="form-control" id="id_user" name="id_user">
 												<option value="" disabled selected>Pilih Prodi/Unit</option>
 												<?php foreach ($user as $reading) : ?>
-												<option value="<?= $reading['id']; ?>"><?= $reading['nama_prodi']; ?></option>
+													<option value="<?= $reading['id']; ?>"><?= $reading['nama_prodi']; ?></option>
 												<?php endforeach; ?>
 											</select>
 										</div>
