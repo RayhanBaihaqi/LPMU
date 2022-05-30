@@ -141,7 +141,10 @@
 											<div class="h3  font-weight-bold text-primary text-uppercase mb-1">
 												SELAMAT DATANG</div>
 											<br>
-											<div class="mb-0  col mr-2 text-gray-800 text-justify">Saat ini anda login sebagai Rektorat. xxxxxxxxx.</div>
+											<div class="mb-0  col mr-2 text-gray-800 text-justify">Saat ini anda login sebagai <?php
+																																$nama_prodi = session('nama_prodi');
+																																echo "$nama_prodi"
+																																?>. Disini anda bisa melihat grafik capaian KPI.</div>
 										</div>
 
 										<div class="col-auto">

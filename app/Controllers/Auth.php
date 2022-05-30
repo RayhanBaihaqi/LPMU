@@ -128,6 +128,13 @@ class Auth extends BaseController
                     <strong>Login Success!</strong> Selamat anda telah berhasil login.
                 </div>');
                 return redirect()->to('/rektorat');
+            } else if (session('level') == 'lpmu') {
+                session()->setFlashdata('pesan', '
+                <div class="alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>Login Success!</strong> Selamat anda telah berhasil login.
+                </div>');
+                return redirect()->to('/rektorat');
             }
         } else {
             session()->setFlashdata('pesan', 'Password anda salah');

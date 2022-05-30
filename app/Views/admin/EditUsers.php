@@ -165,6 +165,7 @@
 											<option value="unit">Unit</option>
 											<option value="bpsdm">BPSDM</option>
 											<option value="rektorat">Rektorat</option>
+											<option value="lpmu">LPMU</option>
 											<option value="admin">Admin</option>
 										</select>
 									</div>
