@@ -147,7 +147,6 @@
 					<div class="card shadow mb-4">
 						<div class="card-body">
 							<div class="table-responsive">
-<<<<<<< HEAD
 								<form action="<?= base_url('pagurkat/update'); ?>" method="POST" enctype="multipart/form-data">
 								<input required type="hidden" name="id_pagu" value="<?= $pagu_rkat['id_pagu']; ?>">
 										<div class="form-group">
@@ -167,27 +166,6 @@
 											<label for="jumlah_pagu">Jumlah Pagu (Rp)</label>
 											<input required type="text" class="form-control" id="jumlah_pagu" name='jumlah_pagu' placeholder="Masukkan Jumlah Pagu" value="<?= $pagu_rkat['jumlah_pagu']; ?>">
 										</div>
-=======
-								<form action="<?= base_url('setrkat/update'); ?>" method="POST" enctype="multipart/form-data">
-									<input required type="hidden" name="id" value="<?= $pagu_rkat['id_pagu']; ?>">
-									<div class="form-group">
-										<label for="id_tahun">Tahun Ajaran</label>
-										<select class="form-control" id="id_tahun" name="id_tahun">
-											<option value="<?= $pagu_rkat['id_tahun']; ?>"><?= $pagu_rkat['id_tahun']; ?></option>
-										</select>
-									</div>
-									<div class="form-group">
-										<label for="semester">Prodi/Unit</label>
-										<select class="form-control" id="id_user" name="id_user">
-											<option pagu_rkat="<?= $pagu_rkat['id_user']; ?>"><b><?= $pagu_rkat['id_user']; ?></b></option>
-											<option pagu_rkat="<?= $pagu_rkat['id_user']; ?>"><?= $pagu_rkat['id_user']; ?></option>
-										</select>
-									</div>
-									<div class="form-group">
-										<label for="jumlah_pagu">Jumlah Pagu (Rp)</label>
-										<input required type="text" class="form-control" id="jumlah_pagu" name='jumlah_pagu' placeholder="Masukkan Jumlah Pagu" value="<?= $pagu_rkat['jumlah_pagu']; ?>">
-									</div>
->>>>>>> 023b34fab8d642f9d37521eb9495cff1e265f908
 									<div class="form-group">
 										<button type="submit" id="tambah" class="btn btn-success">edit</button>
 									</div>

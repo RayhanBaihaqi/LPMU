@@ -128,7 +128,6 @@ class Auth extends BaseController
                     <strong>Login Success!</strong> Selamat anda telah berhasil login.
                 </div>');
                 return redirect()->to('/rektorat/rkat');
-<<<<<<< HEAD
             } else if (session('level') == 'keuangan') {
                 session()->setFlashdata('pesan', '
                 <div class="alert alert-success">
@@ -143,8 +142,6 @@ class Auth extends BaseController
                     <strong>Login Success!</strong> Selamat anda telah berhasil login.
                 </div>');
                 return redirect()->to('/rektorat');
-=======
->>>>>>> 023b34fab8d642f9d37521eb9495cff1e265f908
             }
         } else {
             session()->setFlashdata('pesan', 'Password anda salah');

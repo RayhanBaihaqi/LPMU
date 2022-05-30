@@ -142,8 +142,6 @@
 					<!-- Page Heading -->
 					<h1 class="h3 mb-2 text-gray-800">Grafik Capaian RKAT</h1>
 					<br>
-
-<<<<<<< HEAD
                     <div class="container col-lg-12">
                         <section class="content">
                             <div class="card card-success">
@@ -178,21 +176,6 @@
                         </section>
                     </div>
                 </div>
-=======
-					<div class="container col-lg-12">
-						<section class="content">
-
-							<div class="card card-success">
-								<div class="card-body">
-									<div class="chart">
-										<div id="GrafikCapaianRkat" style="width: 1080px; height: 500px;"></div>
-									</div>
-								</div>
-							</div>
-						</section>
-					</div>
-				</div>
->>>>>>> 023b34fab8d642f9d37521eb9495cff1e265f908
 
 
 			</div>
@@ -218,7 +201,6 @@
 		<script src="<?php echo base_url(); ?>/public/js/datatables-demo.js"></script>
 		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 		<script type="text/javascript">
-<<<<<<< HEAD
       google.charts.load('current', {'packages':['bar']});
       google.charts.setOnLoadCallback(drawChart);
 
@@ -293,33 +275,6 @@
         chart.draw(data, google.charts.Bar.convertOptions(options));
       }
     </script>
-=======
-			google.charts.load('current', {
-				'packages': ['bar']
-			});
-			google.charts.setOnLoadCallback(drawChart);
-
-			function drawChart() {
-				var data = google.visualization.arrayToDataTable([
-					['Prodi/Unit', 'Tahun', 'PK & OPS (%)', 'INV (%)'],
-					<?php
-					foreach ($seluruhDataUser as $key => $reading) : ?>['<?= $reading['nama_prodi'] ?>', '<?= $reading['tahunAkademik'] ?>', <?= $reading['persenPkOps'] ?>, <?= $reading['persenInv'] ?>],
-					<?php endforeach; ?>
-				]);
-
-				var options = {
-					chart: {
-						title: 'Data Grafik Capaian RKAT',
-						subtitle: 'PK+OPS & INV Pertahun',
-					}
-				};
-
-				var chart = new google.charts.Bar(document.getElementById('GrafikCapaianRkat'));
-
-				chart.draw(data, google.charts.Bar.convertOptions(options));
-			}
-		</script>
->>>>>>> 023b34fab8d642f9d37521eb9495cff1e265f908
 
 </body>
 
