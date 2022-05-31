@@ -71,7 +71,6 @@
         <!-- Nav Bar Start -->
 		<div class="nav-bar">
 			<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-				<a href="<?php echo site_url(); ?>backend"><i class="fas fa-long-arrow-alt-left"></i></a>
 				<a href="#" class="navbar-brand">MENU</a>
 				<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
 					<span class="navbar-toggler-icon"></span>
@@ -96,6 +95,7 @@
 								</a>
 								<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
 									<a class="dropdown-item" href="<?= base_url('/rkat/form_ubahpass') ?>"><i class="fas fa-cog"></i> Ubah Password</a>
+                                    <a class="dropdown-item" href="<?php echo site_url(); ?>backend"><i class="fas fa-long-arrow-alt-left"></i>Kembali Halaman Awal</a>
 									<a class="dropdown-item" href="<?= base_url('/auth/logout') ?>"><i class="fas fa-sign-out-alt"></i> Log
 										Out</a>
 								</div>
@@ -175,6 +175,7 @@
                             <div class="card ">
                                 <div class="card-header bg-info text-white">Persentase Serapan Tahunan</div>
                                 <div class="card-body"><div id="capaian_persen_pk"></div></div>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Kesimpulan Capaian</button>
                             </div>
                         </div>
                     </div>
@@ -188,6 +189,58 @@
                     </div>
                 </div>
         </section>
+        <!-- The Modal -->
+        <div class="modal" id="myModal">
+            <div class="modal-dialog">
+            <div class="modal-content">
+            
+                <!-- Modal Header -->
+                <div class="modal-header">
+                <h4 class="modal-title">Kesimpulan Capaian</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                
+                <!-- Modal body -->
+                <div class="modal-body">
+                Kesimpulan PK & OPS : <br>
+                Serap Terendah : 
+                <?php foreach ($maxPkOps as $rows) : ?>
+                    <?php echo $rows->maxPkOps?> 
+                <?php endforeach;?>
+                <br>
+                Serap Tertinggi : 
+                <?php foreach ($minPkOps as $rows) : ?>
+                    <?php echo $rows->minPkOps?> 
+                <?php endforeach;?><br>
+                Rata-Rata Serap: 
+                <?php foreach ($avgPkOps as $rows) : ?>
+                    <?php echo $rows->avgPkOps?> 
+                <?php endforeach;?><br>
+                <hr>
+                Kesimpulan INV : <br>
+                Serap Terendah : 
+                <?php foreach ($maxInv as $rows) : ?>
+                    <?php echo $rows->maxInv?> 
+                <?php endforeach;?>
+                <br>
+                Serap Tertinggi : 
+                <?php foreach ($minInv as $rows) : ?>
+                    <?php echo $rows->minInv?> 
+                <?php endforeach;?><br>
+                Rata-Rata Serap: 
+                <?php foreach ($avgInv as $rows) : ?>
+                    <?php echo $rows->avgInv?> 
+                <?php endforeach;?><br>
+                </div>
+                
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+                
+            </div>
+            </div>
+        </div>
     </div>
 
     <!-- JavaScript Libraries -->

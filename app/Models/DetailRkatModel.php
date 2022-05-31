@@ -58,23 +58,15 @@ class DetailRkatModel extends Model
     {
         return $this->findAll();
     }
-    function jumlahPk($username=null)
+    function minPkOps($username=null)
     {
-        return $this->db->table('detail_rkat2')
-        ->selectSum('anggaranGenap','jumPk')
-        ->selectSum('anggaranGanjil','jumPk2')
-        ->select('SUM(anggaranGenap) + SUM(anggaranGanjil) as totalAnggaranPk', FALSE)
-
-        ->selectSum('serapGenap','jumPk')
-        ->selectSum('serapGanjil','jumPk2')
-        ->select('SUM(serapGenap) + SUM(serapGanjil) as totalSerapPk', FALSE)
-        ->join('tahun_akademik', 'tahun_akademik.id_tahun=detail_rkat2.id_tahun')
-        ->join('user', 'user.id=detail_rkat2.id_user')
+        return $this->db->table('persen_serap')
+        ->selectMin('serapPkOps','minPkOps')
+        ->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')
+        ->join('user', 'user.id=persen_serap.id_user')
 
         ->where('username',$username)
-        ->where('aktif', '1')
-        ->where('kategori','PK')
-        ->groupBy('kategori')
+        ->groupBy('id_persen')
         ->get()->getResultArray();
     }
     function jumlahOps($username=null)

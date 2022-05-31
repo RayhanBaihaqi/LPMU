@@ -61,7 +61,6 @@
 		<!-- Nav Bar Start -->
 		<div class="nav-bar">
 			<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-				<a href="<?php echo site_url(); ?>backend"><i class="fas fa-long-arrow-alt-left"></i></a>
 				<a href="#" class="navbar-brand">MENU</a>
 				<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
 					<span class="navbar-toggler-icon"></span>
@@ -70,8 +69,8 @@
 					<div class="navbar-nav mr-auto">
 						<a href="<?php echo site_url(); ?>backend/rkat" class="nav-item nav-link ">Home</a>
 						<a href="<?= base_url('/rkat/createbyuser') ?>" class="nav-item nav-link">Rencana Anggaran</a>
-						<a href="<?= base_url('/CapaianRkat/createcapaianbyuser') ?>" class="nav-item nav-link active">Realisasi Anggaran</a>
-						<a href="<?= base_url('/rkat/indexbyuser') ?>" class="nav-item nav-link">Kesimpulan</a>
+                        <a href="<?= base_url('/CapaianRkat/createcapaianbyuser') ?>" class="nav-item nav-link active">Realisasi Anggaran</a>
+                        <a href="<?= base_url('/rkat/indexbyuser') ?>" class="nav-item nav-link">Kesimpulan</a>
 					</div>
 					<div class="ml-auto">
 						<div class="user-info-dropdown">
@@ -79,13 +78,14 @@
 								<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
 									<span class="user-name">
 										<?php
-										$nama_prodi = session('nama_prodi');
-										echo "$nama_prodi"
-										?>
+                                            $nama_prodi = session('nama_prodi');
+                                            echo "$nama_prodi"
+                                        ?>
 									</span>
 								</a>
 								<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
 									<a class="dropdown-item" href="<?= base_url('/rkat/form_ubahpass') ?>"><i class="fas fa-cog"></i> Ubah Password</a>
+                                    <a class="dropdown-item" href="<?php echo site_url(); ?>backend"><i class="fas fa-long-arrow-alt-left"></i>Kembali Halaman Awal</a>
 									<a class="dropdown-item" href="<?= base_url('/auth/logout') ?>"><i class="fas fa-sign-out-alt"></i> Log
 										Out</a>
 								</div>
@@ -110,7 +110,7 @@
 					<input type="text" class="form-control mb-2 mr-sm-2" name="tahunAkademik" id="tahunAkademik" value="<?= $tahunAkademik['tahunAkademik'] ?>" disabled>
 				</div>
 					<div class="">
-						<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+						<table class="table table-bordered" id="" width="100%" cellspacing="0">
 							<thead>
 								<tr>
 									<th >No Kegiatan</th>
@@ -120,10 +120,10 @@
 									<th >Target</th>
 									<th >Anggaran Ganjil</th>
 									<th width="600px">Serapan Ganjil</th>
-									<th >peren Ganjil</th>
+									<!-- <th >peren Ganjil</th> -->
 									<th >Anggaran Genap</th>
 									<th width="600px">Serapan Genap</th>
-									<th >peren Genap</th>
+									<!-- <th >peren Genap</th> -->
 								</tr>
 							</thead>
 							<tbody id="nilai">
@@ -149,12 +149,12 @@
 												<input style="display: none;" required type="text" name="id[]" id="id" value="<?= $reading['id_rkat']; ?>">
 												<input type="text" class="form-control form-control-sm serapGanjil" id="serapGanjil<?= $no; ?>" placeholder="Rp. 0" name="serapGanjil[]" onkeyup="AddInputs(this.id);" required <?= ($reading['serapGanjil'] != "") ? "value='".$reading['serapGanjil']."' disabled" : "" ?>>
 											</td>
-											<td></td>
+											<!-- <td></td> -->
 											<td><input type="text" class="form-control form-control-sm" id="aGenap<?= $no; ?>" value="<?= $reading['anggaranGenap']; ?>" disabled /></td>
 											<td>
 											<input type="text" class="form-control form-control-sm serapGenap" id="serapGenap<?= $no; ?>" placeholder="Rp. 0" name="serapGenap[]" onkeyup="AddInputs2(this.id);" required <?= ($reading['serapGenap'] != "") ? "value='".$reading['serapGanjil']."' disabled" : "" ?>>
 											</td>
-											<td></td>
+											<!-- <td></td> -->
 										</tr>
 									<?php $no++;
 									endforeach; ?>
@@ -167,14 +167,11 @@
 								<td></td>
 								<td><span id="totalanggaranganjil"></span></td>
 								<td><span id="tampilTotalGanjil"></span></td>
-								<td><p>Persentase Serap: <input type="text" class="form-control form-control-sm " id="persenSerapGanjil" placeholder="0%" name="persenSerapGanjil"disabled></p></td>
+								<!-- <td><p>Persentase Serap: <input type="text" class="form-control form-control-sm " id="persenSerapGanjil" placeholder="0%" name="persenSerapGanjil"disabled></p></td> -->
 								<td><span id="totalanggarangenap"></span></td>
 								<td><span id="tampilTotalGenap"></span></td>
-								<td><p>Persentase Serap: <input type="text" class="form-control form-control-sm" name="persenSerapGenap" id="persenSerapGenap"  /></p></td>
-
+								<!-- <td><p>Persentase Serap: <input type="text" class="form-control form-control-sm" name="persenSerapGenap" id="persenSerapGenap"  /></p></td> -->
 							</tfoot>
-
-
 						</table>
 						<div class="card-footer" align="center">
 							<button type="submit" class="btn btn-primary" id="btnJumlah" value="submit">Simpan Data</button>
@@ -198,7 +195,7 @@
 		var table = document.getElementById("nilai"),
 			sumHsl = 0;
 		for (var t = 0; t < table.rows.length; t++) {
-			sumHsl = sumHsl + parseInt(table.rows[t].cells[8].getElementsByTagName('input')[0].value);
+			sumHsl = sumHsl + parseInt(table.rows[t].cells[7].getElementsByTagName('input')[0].value);
 		}
 		document.getElementById("totalanggarangenap").innerHTML = sumHsl;
 	</script>
@@ -340,14 +337,6 @@
 		$(document).ready(function() {
 			$('#tabelData').DataTable();
 
-			function filterData() {
-				$('#tabelData').DataTable().search(
-					$('.kpi').val()
-				).draw();
-			}
-			$('.kpi').on('change', function() {
-				filterData();
-			});
 		});
 	</script>
 	<script src="<?php echo base_url(); ?>/public/chart/jquery.knob.min.js"></script>

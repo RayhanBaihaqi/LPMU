@@ -71,7 +71,6 @@
         <!-- Nav Bar Start -->
 		<div class="nav-bar">
 			<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-				<a href="<?php echo site_url(); ?>keuangan/index"><i class="fas fa-long-arrow-alt-left"></i></a>
 				<a href="#" class="navbar-brand">MENU</a>
 				<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
 					<span class="navbar-toggler-icon"></span>
@@ -97,6 +96,7 @@
 								</a>
 								<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
 									<a class="dropdown-item" href="<?= base_url('/keuangan/form_ubahpass') ?>"><i class="fas fa-cog"></i> Ubah Password</a>
+                                    <a class="dropdown-item" href="<?php echo site_url(); ?>keuangan/index"><i class="fas fa-long-arrow-alt-left"></i> Kembali Halaman Awal</a>
 									<a class="dropdown-item" href="<?= base_url('/auth/logout') ?>"><i class="fas fa-sign-out-alt"></i> Log
 										Out</a>
 								</div>

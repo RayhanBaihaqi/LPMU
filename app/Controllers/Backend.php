@@ -27,6 +27,12 @@ class Backend extends BaseController
 		$model = new PersenSerapModel();
         $username = session('username');
 		$data = [
+			'minPkOps' => $model->minPkOps($username)->getResult(),
+			'maxPkOps' => $model->maxPkOps($username)->getResult(),
+			'avgPkOps' => $model->avgPkOps($username)->getResult(),
+			'minInv' => $model->minInv($username)->getResult(),
+			'maxInv' => $model->maxInv($username)->getResult(),
+			'avgInv' => $model->avgInv($username)->getResult(),
 			'tahun' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('username', $username)->findAll(),
             'tahunAktif' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('username', $username)->where('aktif', '1')->findAll(),
 			'seluruhDataUser' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->findAll(),
