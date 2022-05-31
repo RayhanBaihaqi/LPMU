@@ -168,8 +168,8 @@
                                         <th>Standar ke-8</th>
                                         <th>Standar ke-9</th>
                                         <th>Total Capaian/TA</th>
-                                        <th>Terbesar</th>
                                         <th>Terkecil</th>
+                                        <th>Terbesar</th>
                                         <th>Rata-rata</th>
                                     </tr>
                                 </thead>

@@ -260,7 +260,7 @@
     <script>
         const ctx = document.getElementById('myChart');
         const myChart = new Chart(ctx, {
-            type: 'bar',
+            type: 'horizontalBar',
             data: {
                 labels: ['2019/2020', '2020/2021', '2021/2022'],
                 datasets: [
@@ -313,18 +313,19 @@
                 },
                 scales: {
                     xAxes: [{
-                        display: true,
-                        scaleLabel: {
-                            display: true,
 
-                        }
-                    }],
-                    yAxes: [{
                         display: true,
                         ticks: {
                             beginAtZero: true,
                             steps: 10,
                             stepValue: 5,
+
+                        }
+                    }],
+                    yAxes: [{
+                        display: true,
+                        scaleLabel: {
+                            display: true,
 
                         }
                     }]
