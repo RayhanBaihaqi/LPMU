@@ -376,6 +376,90 @@ class DataCapaianKpiModel extends Model
         return $this->db->query("SELECT SUM(nilai_bobot) as tot_21_ars FROM `tabel_capaian_kpi` where tahun_ajaran='2021/2022' and nama_prodi='$nama_prodi' ");
     }
 
+    //query minimal, max,rata2 tiap prodi TA 19/20
+    function minkpi19($nama_prodi = null)
+    {
+        return $this->db->query("SELECT min(tot19) as min_19 FROM (SELECT SUM(nilai_bobot) as tot19 FROM `tabel_capaian_kpi` where tahun_ajaran='2019/2020' and nama_prodi='$nama_prodi' GROUP BY idkpi) as m");
+    }
+    function maxkpi19($nama_prodi = null)
+    {
+        return $this->db->query("SELECT max(tot19) as max_19 FROM (SELECT SUM(nilai_bobot) as tot19 FROM `tabel_capaian_kpi` where tahun_ajaran='2019/2020' and nama_prodi='$nama_prodi' GROUP BY idkpi) as m");
+    }
+    function avgkpi19($nama_prodi = null)
+    {
+        return $this->db->query("SELECT avg(tot19) as avg_19 FROM (SELECT SUM(nilai_bobot) as tot19 FROM `tabel_capaian_kpi` where tahun_ajaran='2019/2020' and nama_prodi='$nama_prodi' GROUP BY idkpi) as m");
+    }
+
+    //query minimal, max,rata2 tiap prodi TA 20/21
+    function minkpi20($nama_prodi = null)
+    {
+        return $this->db->query("SELECT min(tot20) as min_20 FROM (SELECT SUM(nilai_bobot) as tot20 FROM `tabel_capaian_kpi` where tahun_ajaran='2020/2021' and nama_prodi='$nama_prodi' GROUP BY idkpi) as m");
+    }
+    function maxkpi20($nama_prodi = null)
+    {
+        return $this->db->query("SELECT max(tot20) as max_20 FROM (SELECT SUM(nilai_bobot) as tot20 FROM `tabel_capaian_kpi` where tahun_ajaran='2020/2021' and nama_prodi='$nama_prodi' GROUP BY idkpi) as m");
+    }
+    function avgkpi20($nama_prodi = null)
+    {
+        return $this->db->query("SELECT avg(tot20) as avg_20 FROM (SELECT SUM(nilai_bobot) as tot20 FROM `tabel_capaian_kpi` where tahun_ajaran='2020/2021' and nama_prodi='$nama_prodi' GROUP BY idkpi) as m");
+    }
+
+    //query minimal, max,rata2 tiap prodi TA 21/22
+    function minkpi21($nama_prodi = null)
+    {
+        return $this->db->query("SELECT min(tot21) as min_21 FROM (SELECT SUM(nilai_bobot) as tot21 FROM `tabel_capaian_kpi` where tahun_ajaran='2021/2022' and nama_prodi='$nama_prodi' GROUP BY idkpi) as m");
+    }
+    function maxkpi21($nama_prodi = null)
+    {
+        return $this->db->query("SELECT max(tot21) as max_21 FROM (SELECT SUM(nilai_bobot) as tot21 FROM `tabel_capaian_kpi` where tahun_ajaran='2021/2022' and nama_prodi='$nama_prodi' GROUP BY idkpi) as m");
+    }
+    function avgkpi21($nama_prodi = null)
+    {
+        return $this->db->query("SELECT avg(tot21) as avg_21 FROM (SELECT SUM(nilai_bobot) as tot21 FROM `tabel_capaian_kpi` where tahun_ajaran='2021/2022' and nama_prodi='$nama_prodi' GROUP BY idkpi) as m");
+    }
+
+    //query minimal, max,rata2 seluruh prodi TA 19/20
+    function minkpi19_all($nama_prodi = null)
+    {
+        return $this->db->query("SELECT min(tot19all) as min_19_all FROM (SELECT SUM(nilai_bobot) as tot19all FROM `tabel_capaian_kpi` where tahun_ajaran='2019/2020' GROUP BY nama_prodi) as m");
+    }
+    function maxkpi19_all($nama_prodi = null)
+    {
+        return $this->db->query("SELECT max(tot19all) as max_19_all FROM (SELECT SUM(nilai_bobot) as tot19all FROM `tabel_capaian_kpi` where tahun_ajaran='2019/2020' GROUP BY nama_prodi) as m");
+    }
+    function avgkpi19_all($nama_prodi = null)
+    {
+        return $this->db->query("SELECT avg(tot19all) as avg_19_all FROM (SELECT SUM(nilai_bobot) as tot19all FROM `tabel_capaian_kpi` where tahun_ajaran='2019/2020' GROUP BY nama_prodi) as m");
+    }
+
+    //query minimal, max,rata2 seluruh prodi TA 20/21
+    function minkpi20_all($nama_prodi = null)
+    {
+        return $this->db->query("SELECT min(tot20all) as min_20_all FROM (SELECT SUM(nilai_bobot) as tot20all FROM `tabel_capaian_kpi` where tahun_ajaran='2020/2021' GROUP BY nama_prodi) as m");
+    }
+    function maxkpi20_all($nama_prodi = null)
+    {
+        return $this->db->query("SELECT max(tot20all) as max_20_all FROM (SELECT SUM(nilai_bobot) as tot20all FROM `tabel_capaian_kpi` where tahun_ajaran='2020/2021' GROUP BY nama_prodi) as m");
+    }
+    function avgkpi20_all($nama_prodi = null)
+    {
+        return $this->db->query("SELECT avg(tot20all) as avg_20_all FROM (SELECT SUM(nilai_bobot) as tot20all FROM `tabel_capaian_kpi` where tahun_ajaran='2020/2021' GROUP BY nama_prodi) as m");
+    }
+
+    //query minimal, max,rata2 seluruh prodi TA 21/22
+    function minkpi21_all($nama_prodi = null)
+    {
+        return $this->db->query("SELECT min(tot21all) as min_21_all FROM (SELECT SUM(nilai_bobot) as tot21all FROM `tabel_capaian_kpi` where tahun_ajaran='2021/2022' GROUP BY nama_prodi) as m");
+    }
+    function maxkpi21_all($nama_prodi = null)
+    {
+        return $this->db->query("SELECT max(tot21all) as max_21_all FROM (SELECT SUM(nilai_bobot) as tot21all FROM `tabel_capaian_kpi` where tahun_ajaran='2021/2022' GROUP BY nama_prodi) as m");
+    }
+    function avgkpi21_all($nama_prodi = null)
+    {
+        return $this->db->query("SELECT avg(tot21all) as avg_21_all FROM (SELECT SUM(nilai_bobot) as tot21all FROM `tabel_capaian_kpi` where tahun_ajaran='2021/2022' GROUP BY nama_prodi) as m");
+    }
+
     function simpancapaian($data)
     {
         return $this->db->table('tabel_capaian_kpi')->insert($data);

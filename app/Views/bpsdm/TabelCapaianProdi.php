@@ -166,6 +166,9 @@
                                                     <th>Sistem Informasi</th>
                                                     <th>Teknik Sipil</th>
                                                     <th>Arsitektur</th>
+                                                    <th style="color: red;">Terkecil</th>
+                                                    <th style="color: green;">Terbesar</th>
+                                                    <th style="color: blue;">Rata-rata</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -300,6 +303,27 @@
                                                     <?php
                                                             endforeach;
                                                     ?>
+                                                    <?php
+                                                    foreach ($minimalkpi19_all as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->min_19_all; ?></td>
+                                                    <?php
+                                                    endforeach;
+                                                    ?>
+                                                    <?php
+                                                    foreach ($maximalkpi19_all as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->max_19_all; ?></td>
+                                                    <?php
+                                                    endforeach;
+                                                    ?>
+                                                    <?php
+                                                    foreach ($averagekpi19_all as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->avg_19_all; ?></td>
+                                                    <?php
+                                                    endforeach;
+                                                    ?>
                                                 </tr>
                                                 <tr>
                                                     <?php
@@ -365,6 +389,27 @@
                                                         <td><?php echo $rows->tot_20_ars; ?></td>
                                                     <?php
                                                             endforeach;
+                                                    ?>
+                                                    <?php
+                                                    foreach ($minimalkpi20_all as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->min_20_all; ?></td>
+                                                    <?php
+                                                    endforeach;
+                                                    ?>
+                                                    <?php
+                                                    foreach ($maximalkpi20_all as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->max_20_all; ?></td>
+                                                    <?php
+                                                    endforeach;
+                                                    ?>
+                                                    <?php
+                                                    foreach ($averagekpi20_all as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->avg_20_all; ?></td>
+                                                    <?php
+                                                    endforeach;
                                                     ?>
                                                 </tr>
 
@@ -432,6 +477,27 @@
                                                         <td><?php echo $rows->tot_21_ars; ?></td>
                                                     <?php
                                                             endforeach;
+                                                    ?>
+                                                    <?php
+                                                    foreach ($minimalkpi21_all as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->min_21_all; ?></td>
+                                                    <?php
+                                                    endforeach;
+                                                    ?>
+                                                    <?php
+                                                    foreach ($maximalkpi21_all as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->max_21_all; ?></td>
+                                                    <?php
+                                                    endforeach;
+                                                    ?>
+                                                    <?php
+                                                    foreach ($averagekpi21_all as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->avg_21_all; ?></td>
+                                                    <?php
+                                                    endforeach;
                                                     ?>
                                                 </tr>
 

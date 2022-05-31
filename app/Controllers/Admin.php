@@ -57,7 +57,7 @@ class Admin extends BaseController
         $model2 = new PaguRkatModel();
         $data = [
             'user' => $model->orderBy('id', 'DESC')->findAll(),
-            'pagu' => $model2->join('user', 'user.id=pagu_rkat.id_user')-> join('tahun_akademik', 'tahun_akademik.id_tahun=pagu_rkat.id_tahun')->where('aktif', '1')->findAll(),
+            'pagu' => $model2->join('user', 'user.id=pagu_rkat.id_user')->join('tahun_akademik', 'tahun_akademik.id_tahun=pagu_rkat.id_tahun')->where('aktif', '1')->findAll(),
             'tahunAkademik' => $this->TahunAkademikModel->where('aktif', '1')->first(),
         ];
         return view('admin/inputData', $data);
@@ -151,7 +151,7 @@ class Admin extends BaseController
         $data = [
             'tahun' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('username', $username)->findAll(),
             'tahunAktif' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('username', $username)->where('aktif', '1')->findAll(),
-			'seluruhDataUserProdi' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('level', 'prodi')->findAll(),
+            'seluruhDataUserProdi' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('level', 'prodi')->findAll(),
             'seluruhDataUserUnit' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('level', 'unit')->findAll(),
             'seluruhDataUserRektorat' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('level', 'rektorat')->findAll(),
             'pagu_rkat' => $this->DetailRkatModel->tampilDataSetRKAT($username),
@@ -383,6 +383,19 @@ class Admin extends BaseController
             'totalkpi19_ars' => $tabelcapaianprodi->jmlkpi19ars('Arsitektur')->getResult(),
             'totalkpi20_ars' => $tabelcapaianprodi->jmlkpi20ars('Arsitektur')->getResult(),
             'totalkpi21_ars' => $tabelcapaianprodi->jmlkpi21ars('Arsitektur')->getResult(),
+
+            //nilai min nilai bobot KPI per TA
+            'minimalkpi19_all' => $tabelcapaianprodi->minkpi19_all()->getResult(),
+            'minimalkpi20_all' => $tabelcapaianprodi->minkpi20_all()->getResult(),
+            'minimalkpi21_all' => $tabelcapaianprodi->minkpi21_all()->getResult(),
+            //nilai min nilai bobot KPI per TA
+            'maximalkpi19_all' => $tabelcapaianprodi->maxkpi19_all()->getResult(),
+            'maximalkpi20_all' => $tabelcapaianprodi->maxkpi20_all()->getResult(),
+            'maximalkpi21_all' => $tabelcapaianprodi->maxkpi21_all()->getResult(),
+            //nilai min nilai bobot KPI per TA
+            'averagekpi19_all' => $tabelcapaianprodi->avgkpi19_all()->getResult(),
+            'averagekpi20_all' => $tabelcapaianprodi->avgkpi20_all()->getResult(),
+            'averagekpi21_all' => $tabelcapaianprodi->avgkpi21_all()->getResult(),
         ];
         return view('/admin/TabelCapaianProdi', $data);
     }

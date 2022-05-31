@@ -168,6 +168,18 @@ class Kpi extends BaseController
 			'totalkpi19' => $tabelcapaiankpi->jmlkpi19($nama_prodi)->getResult(),
 			'totalkpi20' => $tabelcapaiankpi->jmlkpi20($nama_prodi)->getResult(),
 			'totalkpi21' => $tabelcapaiankpi->jmlkpi21($nama_prodi)->getResult(),
+			//nilai min nilai bobot KPI per TA
+			'minimalkpi19' => $tabelcapaiankpi->minkpi19($nama_prodi)->getResult(),
+			'minimalkpi20' => $tabelcapaiankpi->minkpi20($nama_prodi)->getResult(),
+			'minimalkpi21' => $tabelcapaiankpi->minkpi21($nama_prodi)->getResult(),
+			//nilai min nilai bobot KPI per TA
+			'maximalkpi19' => $tabelcapaiankpi->maxkpi19($nama_prodi)->getResult(),
+			'maximalkpi20' => $tabelcapaiankpi->maxkpi20($nama_prodi)->getResult(),
+			'maximalkpi21' => $tabelcapaiankpi->maxkpi21($nama_prodi)->getResult(),
+			//nilai min nilai bobot KPI per TA
+			'averagekpi19' => $tabelcapaiankpi->avgkpi19($nama_prodi)->getResult(),
+			'averagekpi20' => $tabelcapaiankpi->avgkpi20($nama_prodi)->getResult(),
+			'averagekpi21' => $tabelcapaiankpi->avgkpi21($nama_prodi)->getResult(),
 		];
 		return view('kpi/grafik2', $data);
 	}

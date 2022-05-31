@@ -168,9 +168,9 @@
                                         <th>Standar ke-8</th>
                                         <th>Standar ke-9</th>
                                         <th>Total Capaian/TA</th>
-                                        <th>Terkecil</th>
-                                        <th>Terbesar</th>
-                                        <th>Rata-rata</th>
+                                        <th style="color: red;">Terkecil</th>
+                                        <th style="color: green;">Terbesar</th>
+                                        <th style="color: blue;">Rata-rata</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -320,9 +320,21 @@
                                         <?php
                                         endforeach;
                                         ?>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                        <?php
+                                        foreach ($minimalkpi19 as $rows) :
+                                        ?>
+                                            <td><?php echo $rows->min_19 ?></td>
+                                        <?php endforeach; ?>
+                                        <?php
+                                        foreach ($maximalkpi19 as $rows) :
+                                        ?>
+                                            <td><?php echo $rows->max_19 ?></td>
+                                        <?php endforeach; ?>
+                                        <?php
+                                        foreach ($averagekpi19 as $rows) :
+                                        ?>
+                                            <td><?php echo $rows->avg_19 ?></td>
+                                        <?php endforeach; ?>
                                     </tr>
                                     <tr>
                                         <?php
@@ -396,9 +408,21 @@
                                         <?php
                                         endforeach;
                                         ?>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                        <?php
+                                        foreach ($minimalkpi20 as $rows) :
+                                        ?>
+                                            <td><?php echo $rows->min_20 ?></td>
+                                        <?php endforeach; ?>
+                                        <?php
+                                        foreach ($maximalkpi20 as $rows) :
+                                        ?>
+                                            <td><?php echo $rows->max_20 ?></td>
+                                        <?php endforeach; ?>
+                                        <?php
+                                        foreach ($averagekpi20 as $rows) :
+                                        ?>
+                                            <td><?php echo $rows->avg_20 ?></td>
+                                        <?php endforeach; ?>
                                     </tr>
                                     <tr>
                                         <?php
@@ -472,9 +496,21 @@
                                         <?php
                                         endforeach;
                                         ?>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                        <?php
+                                        foreach ($minimalkpi21 as $rows) :
+                                        ?>
+                                            <td><?php echo $rows->min_21 ?></td>
+                                        <?php endforeach; ?>
+                                        <?php
+                                        foreach ($maximalkpi21 as $rows) :
+                                        ?>
+                                            <td><?php echo $rows->max_21 ?></td>
+                                        <?php endforeach; ?>
+                                        <?php
+                                        foreach ($averagekpi21 as $rows) :
+                                        ?>
+                                            <td><?php echo $rows->avg_21 ?></td>
+                                        <?php endforeach; ?>
                                     </tr>
 
                                 </tbody>

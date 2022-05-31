@@ -43,33 +43,33 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-			<li class="nav-item active">
-				<a class="nav-link " href="<?= base_url('/rektorat/rkat') ?>">
-					<i class="fas fa-fw fa-tachometer-alt"></i>
-					<span>Dashboard</span></a>
-			</li>
+            <li class="nav-item active">
+                <a class="nav-link " href="<?= base_url('/rektorat/rkat') ?>">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
 
-			<!-- Divider -->
-			<hr class="sidebar-divider">
+            <!-- Divider -->
+            <hr class="sidebar-divider">
 
-			<!-- Heading -->
-			<li class="nav-item">
-				<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-					<i class="fas fa-fw fa-cog"></i>
-					<span>RKAT</span>
-				</a>
-				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-					<div class="bg-white py-2 collapse-inner rounded">
-						<a class="collapse-item" href="<?= base_url('/rektorat/inputRencana') ?>">Input Rencana Anggaran</a>
-						<a class="collapse-item" href="<?= base_url('/rektorat/inputRealisasi') ?>">Input Realisasi Anggaran</a>
-						<a class="collapse-item" href="<?= base_url('/rektorat/listRkatRektorat') ?>">Daftar Data RKAT Rektorat</a>
-						<a class="collapse-item" href="<?= base_url('/rektorat/rincian') ?>">Rincian Rkat</a>
-						<a class="collapse-item" href="<?= base_url('/rektorat/listRkatProdi') ?>">Daftar Data RKAT Prodi</a>
-						<a class="collapse-item" href="<?= base_url('/rektorat/listRkatUnit') ?>">Daftar Data RKAT Unit</a>
-						<a class="collapse-item" href="<?= base_url('/rektorat/grafikSerap') ?>">Grafik Serapan</a>
-					</div>
-				</div>
-			</li>
+            <!-- Heading -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>RKAT</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="<?= base_url('/rektorat/inputRencana') ?>">Input Rencana Anggaran</a>
+                        <a class="collapse-item" href="<?= base_url('/rektorat/inputRealisasi') ?>">Input Realisasi Anggaran</a>
+                        <a class="collapse-item" href="<?= base_url('/rektorat/listRkatRektorat') ?>">Daftar Data RKAT Rektorat</a>
+                        <a class="collapse-item" href="<?= base_url('/rektorat/rincian') ?>">Rincian Rkat</a>
+                        <a class="collapse-item" href="<?= base_url('/rektorat/listRkatProdi') ?>">Daftar Data RKAT Prodi</a>
+                        <a class="collapse-item" href="<?= base_url('/rektorat/listRkatUnit') ?>">Daftar Data RKAT Unit</a>
+                        <a class="collapse-item" href="<?= base_url('/rektorat/grafikSerap') ?>">Grafik Serapan</a>
+                    </div>
+                </div>
+            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -169,6 +169,9 @@
                                                     <th>Sistem Informasi</th>
                                                     <th>Teknik Sipil</th>
                                                     <th>Arsitektur</th>
+                                                    <th style="color: red;">Terkecil</th>
+                                                    <th style="color: green;">Terbesar</th>
+                                                    <th style="color: blue;">Rata-rata</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -303,6 +306,27 @@
                                                     <?php
                                                             endforeach;
                                                     ?>
+                                                    <?php
+                                                    foreach ($minimalkpi19_all as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->min_19_all; ?></td>
+                                                    <?php
+                                                    endforeach;
+                                                    ?>
+                                                    <?php
+                                                    foreach ($maximalkpi19_all as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->max_19_all; ?></td>
+                                                    <?php
+                                                    endforeach;
+                                                    ?>
+                                                    <?php
+                                                    foreach ($averagekpi19_all as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->avg_19_all; ?></td>
+                                                    <?php
+                                                    endforeach;
+                                                    ?>
                                                 </tr>
                                                 <tr>
                                                     <?php
@@ -368,6 +392,27 @@
                                                         <td><?php echo $rows->tot_20_ars; ?></td>
                                                     <?php
                                                             endforeach;
+                                                    ?>
+                                                    <?php
+                                                    foreach ($minimalkpi20_all as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->min_20_all; ?></td>
+                                                    <?php
+                                                    endforeach;
+                                                    ?>
+                                                    <?php
+                                                    foreach ($maximalkpi20_all as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->max_20_all; ?></td>
+                                                    <?php
+                                                    endforeach;
+                                                    ?>
+                                                    <?php
+                                                    foreach ($averagekpi20_all as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->avg_20_all; ?></td>
+                                                    <?php
+                                                    endforeach;
                                                     ?>
                                                 </tr>
 
@@ -435,6 +480,27 @@
                                                         <td><?php echo $rows->tot_21_ars; ?></td>
                                                     <?php
                                                             endforeach;
+                                                    ?>
+                                                    <?php
+                                                    foreach ($minimalkpi21_all as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->min_21_all; ?></td>
+                                                    <?php
+                                                    endforeach;
+                                                    ?>
+                                                    <?php
+                                                    foreach ($maximalkpi21_all as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->max_21_all; ?></td>
+                                                    <?php
+                                                    endforeach;
+                                                    ?>
+                                                    <?php
+                                                    foreach ($averagekpi21_all as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->avg_21_all; ?></td>
+                                                    <?php
+                                                    endforeach;
                                                     ?>
                                                 </tr>
 

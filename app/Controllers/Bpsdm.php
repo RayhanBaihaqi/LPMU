@@ -235,6 +235,19 @@ class Bpsdm extends BaseController
             'totalkpi19_ars' => $tabelcapaianprodi->jmlkpi19ars('Arsitektur')->getResult(),
             'totalkpi20_ars' => $tabelcapaianprodi->jmlkpi20ars('Arsitektur')->getResult(),
             'totalkpi21_ars' => $tabelcapaianprodi->jmlkpi21ars('Arsitektur')->getResult(),
+
+            //nilai min nilai bobot KPI per TA
+            'minimalkpi19_all' => $tabelcapaianprodi->minkpi19_all()->getResult(),
+            'minimalkpi20_all' => $tabelcapaianprodi->minkpi20_all()->getResult(),
+            'minimalkpi21_all' => $tabelcapaianprodi->minkpi21_all()->getResult(),
+            //nilai min nilai bobot KPI per TA
+            'maximalkpi19_all' => $tabelcapaianprodi->maxkpi19_all()->getResult(),
+            'maximalkpi20_all' => $tabelcapaianprodi->maxkpi20_all()->getResult(),
+            'maximalkpi21_all' => $tabelcapaianprodi->maxkpi21_all()->getResult(),
+            //nilai min nilai bobot KPI per TA
+            'averagekpi19_all' => $tabelcapaianprodi->avgkpi19_all()->getResult(),
+            'averagekpi20_all' => $tabelcapaianprodi->avgkpi20_all()->getResult(),
+            'averagekpi21_all' => $tabelcapaianprodi->avgkpi21_all()->getResult(),
         ];
         return view('/bpsdm/TabelCapaianProdi', $data);
     }

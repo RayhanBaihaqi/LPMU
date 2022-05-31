@@ -129,29 +129,24 @@ class Rektorat extends BaseController
             // 'detail_rkat2' => $model->join('set_rkat', 'set_rkat.id_setrkat = detail_rkat2.id_set')->join('user', 'user.id=set_rkat.id_user')->where('username',$username)->findAll(),
             'tahunAkademik' => $this->TahunAkademikModel->where('aktif', '1')->first(),
             'pagu_rkat' => $this->DetailRkatModel->tampilDataSetRKAT($username),
-            'tahunAkademik2' => $model-> join('tahun_akademik', 'tahun_akademik.id_tahun=detail_rkat2.id_tahun')->
-                                         join('pagu_rkat', 'pagu_rkat.id_pagu=detail_rkat2.id_pagu')->
-                                         join('user', 'user.id=detail_rkat2.id_user')->
-                                         where('username', $username)->
-                                         where('aktif', '1')->
-                                         findAll(),
+            'tahunAkademik2' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=detail_rkat2.id_tahun')->join('pagu_rkat', 'pagu_rkat.id_pagu=detail_rkat2.id_pagu')->join('user', 'user.id=detail_rkat2.id_user')->where('username', $username)->where('aktif', '1')->findAll(),
             // 'count_detail_rkat2' => $model->join('set_rkat', 'set_rkat.id_setrkat = detail_rkat2.id_set')->join('user', 'user.id=set_rkat.id_user')->where('username',$username)->countAllResults()
         ];
         return view('rektorat/inputRealisasi', $data);
     }
     public function update()
     {
-        
+
         $model = new DetailRkatModel();
         $modelPersen = new PersenSerapModel();
         $id = $_POST['id'];
         $serapGanjil = $_POST['serapGanjil'];
         $serapGenap = $_POST['serapGenap'];
-        
+
         // $bukti = $_POST['bukti'];
 
         foreach ($id as $key => $n) {
-            
+
             $id = $n;
             $data = [
                 'serapGanjil' => $serapGanjil[$key],
@@ -160,7 +155,6 @@ class Rektorat extends BaseController
             ];
 
             $save = $model->update($id, $data);
-
         }
         return redirect()->to(base_url('rektorat/inputRealisasi'));
     }
@@ -169,7 +163,7 @@ class Rektorat extends BaseController
     {
         $model = new DetailRkatModel();
         $username = session('username');
-        
+
         $data = [
             'detail_rkat2' => $this->DetailRkatModel->gabung($username),
             // 'pk' => $this->DetailRkatModel->jumlahPk(),
@@ -179,13 +173,14 @@ class Rektorat extends BaseController
             'pk' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=detail_rkat2.id_tahun')->where('aktif', '1')->join('user', 'user.id=detail_rkat2.id_user')->where('username', $username)->where('kategori', 'PK')->findAll(),
             'ops' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=detail_rkat2.id_tahun')->where('aktif', '1')->join('user', 'user.id=detail_rkat2.id_user')->where('username', $username)->where('kategori', 'OPS')->findAll(),
             'inv' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=detail_rkat2.id_tahun')->where('aktif', '1')->join('user', 'user.id=detail_rkat2.id_user')->where('username', $username)->where('kategori', 'INV')->findAll(),
-            'tahunAkademik' => $model-> join('tahun_akademik', 'tahun_akademik.id_tahun=detail_rkat2.id_tahun')->join('pagu_rkat', 'pagu_rkat.id_pagu=detail_rkat2.id_pagu')->join('user', 'user.id=pagu_rkat.id_user')->where('username', $username)->where('aktif', '1')->findAll(),
+            'tahunAkademik' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=detail_rkat2.id_tahun')->join('pagu_rkat', 'pagu_rkat.id_pagu=detail_rkat2.id_pagu')->join('user', 'user.id=pagu_rkat.id_user')->where('username', $username)->where('aktif', '1')->findAll(),
         ];
         // $jumPk = $data["jumPk"];
         // var_dump($data);die();
         return view('rektorat/RincianRkatRektorat', $data);
     }
-    public function saveRincian() {
+    public function saveRincian()
+    {
         $model = new PersenSerapModel();
         $jumlah = $this->request->getVar('jumlah');
         $id_tahun = $this->request->getVar('id_tahun');
@@ -213,27 +208,27 @@ class Rektorat extends BaseController
         ');
     }
     public function rkat()
-	{
-		$model = new PersenSerapModel();
+    {
+        $model = new PersenSerapModel();
         $username = session('username');
-		$data = [
-			'tahun' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('username', $username)->findAll(),
+        $data = [
+            'tahun' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('username', $username)->findAll(),
             'tahunAktif' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('username', $username)->where('aktif', '1')->findAll(),
-			'seluruhDataUser' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->findAll(),
+            'seluruhDataUser' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->findAll(),
             'pagu_rkat' => $this->DetailRkatModel->tampilDataSetRKAT($username),
             'tahunAkademik' => $this->TahunAkademikModel->where('aktif', '1')->first(),
         ];
-		return view('/rektorat/Dashboard', $data);
-	}
-    
+        return view('/rektorat/Dashboard', $data);
+    }
+
     public function grafikSerap()
     {
         $model = new PersenSerapModel();
         $username = session('username');
-		$data = [
-			'tahun' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('username', $username)->findAll(),
+        $data = [
+            'tahun' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('username', $username)->findAll(),
             'tahunAktif' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('username', $username)->where('aktif', '1')->findAll(),
-			'seluruhDataUserProdi' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('level', 'prodi')->findAll(),
+            'seluruhDataUserProdi' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('level', 'prodi')->findAll(),
             'seluruhDataUserUnit' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('level', 'unit')->findAll(),
             'seluruhDataUserRektorat' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('level', 'rektorat')->findAll(),
             'pagu_rkat' => $this->DetailRkatModel->tampilDataSetRKAT($username),
@@ -304,6 +299,19 @@ class Rektorat extends BaseController
             'totalkpi19_ars' => $tabelcapaianprodi->jmlkpi19ars('Arsitektur')->getResult(),
             'totalkpi20_ars' => $tabelcapaianprodi->jmlkpi20ars('Arsitektur')->getResult(),
             'totalkpi21_ars' => $tabelcapaianprodi->jmlkpi21ars('Arsitektur')->getResult(),
+
+            //nilai min nilai bobot KPI per TA
+            'minimalkpi19_all' => $tabelcapaianprodi->minkpi19_all()->getResult(),
+            'minimalkpi20_all' => $tabelcapaianprodi->minkpi20_all()->getResult(),
+            'minimalkpi21_all' => $tabelcapaianprodi->minkpi21_all()->getResult(),
+            //nilai min nilai bobot KPI per TA
+            'maximalkpi19_all' => $tabelcapaianprodi->maxkpi19_all()->getResult(),
+            'maximalkpi20_all' => $tabelcapaianprodi->maxkpi20_all()->getResult(),
+            'maximalkpi21_all' => $tabelcapaianprodi->maxkpi21_all()->getResult(),
+            //nilai min nilai bobot KPI per TA
+            'averagekpi19_all' => $tabelcapaianprodi->avgkpi19_all()->getResult(),
+            'averagekpi20_all' => $tabelcapaianprodi->avgkpi20_all()->getResult(),
+            'averagekpi21_all' => $tabelcapaianprodi->avgkpi21_all()->getResult(),
         ];
         return view('/rektorat/TabelCapaianProdi', $data);
     }
@@ -414,6 +422,8 @@ class Rektorat extends BaseController
             'totalkpi19_ars' => $grafikcapaian_prodi->jmlkpi19ars('Arsitektur')->getResultArray(),
             'totalkpi20_ars' => $grafikcapaian_prodi->jmlkpi20ars('Arsitektur')->getResultArray(),
             'totalkpi21_ars' => $grafikcapaian_prodi->jmlkpi21ars('Arsitektur')->getResultArray(),
+
+
 
 
 
