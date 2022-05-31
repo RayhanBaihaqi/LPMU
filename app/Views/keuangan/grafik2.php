@@ -79,17 +79,17 @@
         <!-- Nav Bar Start -->
         <div class="nav-bar">
             <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-                <a href="<?php echo site_url(); ?>backend"><i class="fas fa-long-arrow-alt-left"></i></a>
+                <a href="<?php echo site_url(); ?>keuangan"><i class="fas fa-long-arrow-alt-left"></i></a>
                 <a href="#" class="navbar-brand">MENU</a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-between">
                     <div class="navbar-nav mr-auto">
-                        <a href="<?php echo site_url(); ?>kpi" class="nav-item nav-link">Home</a>
-                        <a href="<?php echo site_url(); ?>kpi/rencana" class="nav-item nav-link">Rencana</a>
-                        <a href="<?php echo site_url(); ?>kpi/inputcapaian" class="nav-item nav-link">Input Realisasi</a>
-                        <a href="<?php echo site_url(); ?>kpi/kesimpulan" class="nav-item nav-link active">Kesimpulan</a>
+                        <a href="<?php echo site_url(); ?>keuangan/homekpi" class="nav-item nav-link">Home</a>
+                        <a href="<?php echo site_url(); ?>keuangan/rencana" class="nav-item nav-link">Rencana</a>
+                        <a href="<?php echo site_url(); ?>keuangan/inputcapaian" class="nav-item nav-link">Input Realisasi</a>
+                        <a href="<?php echo site_url(); ?>keuangan/kesimpulan" class="nav-item nav-link active">Kesimpulan</a>
                     </div>
                     <div class="ml-auto">
                         <div class="user-info-dropdown">
@@ -104,7 +104,7 @@
                                     </span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                                    <a class="dropdown-item" href="<?= base_url('/kpi/form_ubahpass') ?>"><i class="fas fa-cog"></i> Ubah Password</a>
+                                    <a class="dropdown-item" href="<?= base_url('/keuangan/form_ubahpass') ?>"><i class="fas fa-cog"></i> Ubah Password</a>
                                     <a class="dropdown-item" href="<?= base_url('/auth/logout') ?>"><i class="fas fa-sign-out-alt"></i> Log
                                         Out</a>
                                 </div>
@@ -121,22 +121,22 @@
                 <div class="row">
                     <div class="col-sm">
                         <br>
-                        <a href="<?= base_url('kpi/kesimpulan') ?>" class="btn btn-primary btn-block">Daftar Capaian</a>
+                        <a href="<?= base_url('keuangan/kesimpulan') ?>" class="btn btn-primary btn-block">Daftar Capaian</a>
                         <br>
                     </div>
                     <div class="col-sm">
                         <br>
-                        <a href="<?= base_url('kpi/kesimpulan_tabel') ?>" class="btn btn-primary btn-block">Data Tabel</a>
+                        <a href="<?= base_url('keuangan/kesimpulan_tabel') ?>" class="btn btn-primary btn-block">Data Tabel</a>
                         <br>
                     </div>
                     <div class="col-sm">
                         <br>
-                        <a href="<?= base_url('kpi/grafik_rencana') ?>" class="btn btn-primary btn-block">Data Grafik Rencana</a>
+                        <a href="<?= base_url('keuangan/grafik_rencana') ?>" class="btn btn-primary btn-block">Data Grafik Rencana</a>
                         <br>
                     </div>
                     <div class="col-sm">
                         <br>
-                        <a href="<?= base_url('kpi/kesimpulan_grafik') ?>" class="btn btn-primary btn-block">Data Grafik Realisasi</a>
+                        <a href="<?= base_url('keuangan/kesimpulan_grafik') ?>" class="btn btn-primary btn-block">Data Grafik Realisasi</a>
                         <br>
                     </div>
                 </div>
