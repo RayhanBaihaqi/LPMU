@@ -43,33 +43,33 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-			<li class="nav-item active">
-				<a class="nav-link " href="<?= base_url('/rektorat/rkat') ?>">
-					<i class="fas fa-fw fa-tachometer-alt"></i>
-					<span>Dashboard</span></a>
-			</li>
+            <li class="nav-item active">
+                <a class="nav-link " href="<?= base_url('/rektorat/rkat') ?>">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
 
-			<!-- Divider -->
-			<hr class="sidebar-divider">
+            <!-- Divider -->
+            <hr class="sidebar-divider">
 
-			<!-- Heading -->
-			<li class="nav-item">
-				<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-					<i class="fas fa-fw fa-cog"></i>
-					<span>RKAT</span>
-				</a>
-				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-					<div class="bg-white py-2 collapse-inner rounded">
-						<a class="collapse-item" href="<?= base_url('/rektorat/inputRencana') ?>">Input Rencana Anggaran</a>
-						<a class="collapse-item" href="<?= base_url('/rektorat/inputRealisasi') ?>">Input Realisasi Anggaran</a>
-						<a class="collapse-item" href="<?= base_url('/rektorat/listRkatRektorat') ?>">Daftar Data RKAT Rektorat</a>
-						<a class="collapse-item" href="<?= base_url('/rektorat/rincian') ?>">Rincian Rkat</a>
-						<a class="collapse-item" href="<?= base_url('/rektorat/listRkatProdi') ?>">Daftar Data RKAT Prodi</a>
-						<a class="collapse-item" href="<?= base_url('/rektorat/listRkatUnit') ?>">Daftar Data RKAT Unit</a>
-						<a class="collapse-item" href="<?= base_url('/rektorat/grafikSerap') ?>">Grafik Serapan</a>
-					</div>
-				</div>
-			</li>
+            <!-- Heading -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>RKAT</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="<?= base_url('/rektorat/inputRencana') ?>">Input Rencana Anggaran</a>
+                        <a class="collapse-item" href="<?= base_url('/rektorat/inputRealisasi') ?>">Input Realisasi Anggaran</a>
+                        <a class="collapse-item" href="<?= base_url('/rektorat/listRkatRektorat') ?>">Daftar Data RKAT Rektorat</a>
+                        <a class="collapse-item" href="<?= base_url('/rektorat/rincian') ?>">Rincian Rkat</a>
+                        <a class="collapse-item" href="<?= base_url('/rektorat/listRkatProdi') ?>">Daftar Data RKAT Prodi</a>
+                        <a class="collapse-item" href="<?= base_url('/rektorat/listRkatUnit') ?>">Daftar Data RKAT Unit</a>
+                        <a class="collapse-item" href="<?= base_url('/rektorat/grafikSerap') ?>">Grafik Serapan</a>
+                    </div>
+                </div>
+            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -150,30 +150,13 @@
                     <?php print_r($totalkpi19_dkv) ?> -->
 
                     <!-- foreach ambil hasil penjumlahan nilai bobot  -->
-                    <?php foreach ($hasilrencanakpi_1 as $key => $value) : $jumlah_rencana1 = $value['jumlah_rencana1'];
-                    endforeach; ?>
-                    <?php foreach ($hasilrencanakpi_2 as $key => $value) : $jumlah_rencana2 = $value['jumlah_rencana2'];
-                    endforeach; ?>
-                    <?php foreach ($hasilrencanakpi_3 as $key => $value) : $jumlah_rencana3 = $value['jumlah_rencana3'];
-                    endforeach; ?>
-                    <?php foreach ($hasilrencanakpi_4 as $key => $value) : $jumlah_rencana4 = $value['jumlah_rencana4'];
-                    endforeach; ?>
-                    <?php foreach ($hasilrencanakpi_5 as $key => $value) : $jumlah_rencana5 = $value['jumlah_rencana5'];
-                    endforeach; ?>
-                    <?php foreach ($hasilrencanakpi_6 as $key => $value) : $jumlah_rencana6 = $value['jumlah_rencana6'];
-                    endforeach; ?>
-                    <?php foreach ($hasilrencanakpi_7 as $key => $value) : $jumlah_rencana7 = $value['jumlah_rencana7'];
-                    endforeach; ?>
-                    <?php foreach ($hasilrencanakpi_8 as $key => $value) : $jumlah_rencana8 = $value['jumlah_rencana8'];
-                    endforeach; ?>
-                    <?php foreach ($hasilrencanakpi_9 as $key => $value) : $jumlah_rencana9 = $value['jumlah_rencana9'];
-                    endforeach; ?>
+
 
                     <!-- foreach ambil hasil penjumlahan nilai bobot KPI per TA tiap prodi -->
 
                     <!-- foreach ambil hasil penjumlahan nilai bobot KPI per TA akuntansi -->
-                    <?php foreach ($totalkpi18_akt as $key => $value) : $tot_18_akt = $value['tot_18_akt'];
-                    endforeach; ?>
+                    <!-- <?php foreach ($totalkpi18_akt as $key => $value) : $tot_18_akt = $value['tot_18_akt'];
+                            endforeach; ?>
                     <?php foreach ($totalkpi19_akt as $key => $value) : $tot_19_akt = $value['tot_19_akt'];
                     endforeach; ?>
                     <?php foreach ($totalkpi20_akt as $key => $value) : $tot_20_akt = $value['tot_20_akt'];
@@ -269,7 +252,7 @@
                     <?php foreach ($totalkpi20_ars as $key => $value) : $tot_20_ars = $value['tot_20_ars'];
                     endforeach; ?>
                     <?php foreach ($totalkpi21_ars as $key => $value) : $tot_21_ars = $value['tot_21_ars'];
-                    endforeach; ?>
+                    endforeach; ?> -->
 
                     <div class="container col-lg-12">
                         <section class="content">
@@ -349,7 +332,7 @@
         $(".pre-loader").fadeOut("slow");
     });
 </script>
-<script>
+<!-- <script>
     const ctx = document.getElementById('myChart');
     const myChart = new Chart(ctx, {
         type: 'bar',
@@ -478,6 +461,6 @@
             },
         }
     });
-</script>
+</script> -->
 
 </html>

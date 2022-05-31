@@ -146,7 +146,7 @@
                     <br>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Pilih Tingkatan</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
+                        <select class="form-control" id="exampleFormControlSelect1" onchange="location = this.value;">
                             <option value="grafikunit/" disabled selected>Unit</option>
                             <option value="grafikprodi/">Prodi</option>
 
