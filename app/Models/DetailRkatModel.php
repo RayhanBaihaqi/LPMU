@@ -58,55 +58,45 @@ class DetailRkatModel extends Model
     {
         return $this->findAll();
     }
-    function minPkOps($username=null)
-    {
-        return $this->db->table('persen_serap')
-        ->selectMin('serapPkOps','minPkOps')
-        ->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')
-        ->join('user', 'user.id=persen_serap.id_user')
 
-        ->where('username',$username)
-        ->groupBy('id_persen')
-        ->get()->getResultArray();
+    //PK
+    function totalGanjilPk($username=null)
+    {
+        return $this->db->query("SELECT SUM(anggaranGanjil) as totalGanjilPk FROM `detail_rkat2` join user on user.id=detail_rkat2.id_user join tahun_akademik on tahun_akademik.id_tahun=detail_rkat2.id_tahun where username='$username' and kategori='PK' and aktif='1'");
     }
-    function jumlahOps($username=null)
+    function totalGenapPk($username=null)
     {
-        return $this->db->table('detail_rkat2')
-        ->join('tahun_akademik', 'tahun_akademik.id_tahun=detail_rkat2.id_tahun')
-        ->join('user', 'user.id=detail_rkat2.id_user')
-
-        ->where('username',$username)
-        ->where('aktif', '1')
-        ->selectSum('anggaranGenap','jumOps')
-        ->selectSum('anggaranGanjil','jumOps2')
-        ->select('SUM(anggaranGenap) + SUM(anggaranGanjil) as totalAnggaranOps', FALSE)
-
-        ->selectSum('serapGenap','jumOps')
-        ->selectSum('serapGanjil','jumOps2')
-        ->select('SUM(serapGenap) + SUM(serapGanjil) as totalSerapOps', FALSE)
-        
-        ->where('kategori','Ops')
-        ->groupBy('kategori')
-        ->get()->getResultArray();
+        return $this->db->query("SELECT SUM(anggaranGenap) as totalGenapPk FROM `detail_rkat2` join user on user.id=detail_rkat2.id_user join tahun_akademik on tahun_akademik.id_tahun=detail_rkat2.id_tahun where username='$username' and kategori='PK'and aktif='1'");
     }
-    function jumlahInv($username=null)
+    function totalPk($username=null)
     {
-        return $this->db->table('detail_rkat2')
-        ->selectSum('anggaranGenap','jumInv')
-        ->selectSum('anggaranGanjil','jumInv2')
-        ->select('SUM(anggaranGenap) + SUM(anggaranGanjil) as totalAnggaranInv', FALSE)
-
-        ->selectSum('serapGenap','jumInv')
-        ->selectSum('serapGanjil','jumInv2')
-        ->select('SUM(serapGenap) + SUM(serapGanjil) as totalSerapInv', FALSE)
-        ->join('tahun_akademik', 'tahun_akademik.id_tahun=detail_rkat2.id_tahun')
-        ->join('user', 'user.id=detail_rkat2.id_user')
-
-        ->where('username',$username)
-        ->where('aktif', '1')
-        ->where('kategori','Inv')
-        ->groupBy('kategori')
-        ->get()->getResultArray();
+        return $this->db->query("SELECT SUM(anggaranGenap) + SUM(anggaranGanjil) as totalPk FROM `detail_rkat2` join user on user.id=detail_rkat2.id_user join tahun_akademik on tahun_akademik.id_tahun=detail_rkat2.id_tahun where username='$username' and kategori='PK'and aktif='1'");
+    }
+    //Ops
+    function totalGanjilOps($username=null)
+    {
+        return $this->db->query("SELECT SUM(anggaranGanjil) as totalGanjilOps FROM `detail_rkat2` join user on user.id=detail_rkat2.id_user join tahun_akademik on tahun_akademik.id_tahun=detail_rkat2.id_tahun where username='$username' and kategori='OPS'and aktif='1'");
+    }
+    function totalGenapOps($username=null)
+    {
+        return $this->db->query("SELECT SUM(anggaranGenap) as totalGenapOps FROM `detail_rkat2` join user on user.id=detail_rkat2.id_user join tahun_akademik on tahun_akademik.id_tahun=detail_rkat2.id_tahun where username='$username' and kategori='OPS'and aktif='1'");
+    }
+    function totalOps($username=null)
+    {
+        return $this->db->query("SELECT SUM(anggaranGenap) + SUM(anggaranGanjil) as totalOps FROM `detail_rkat2` join user on user.id=detail_rkat2.id_user join tahun_akademik on tahun_akademik.id_tahun=detail_rkat2.id_tahun where username='$username' and kategori='OPS'and aktif='1'");
+    }
+    //Inv
+    function totalGanjilInv($username=null)
+    {
+        return $this->db->query("SELECT SUM(anggaranGanjil) as totalGanjilInv FROM `detail_rkat2` join user on user.id=detail_rkat2.id_user join tahun_akademik on tahun_akademik.id_tahun=detail_rkat2.id_tahun where username='$username' and kategori='INV'and aktif='1'");
+    }
+    function totalGenapInv($username=null)
+    {
+        return $this->db->query("SELECT SUM(anggaranGenap) as totalGenapInv FROM `detail_rkat2` join user on user.id=detail_rkat2.id_user join tahun_akademik on tahun_akademik.id_tahun=detail_rkat2.id_tahun where username='$username' and kategori='INV'and aktif='1'");
+    }
+    function totalInv($username=null)
+    {
+        return $this->db->query("SELECT SUM(anggaranGenap) + SUM(anggaranGanjil) as totalInv FROM `detail_rkat2` join user on user.id=detail_rkat2.id_user join tahun_akademik on tahun_akademik.id_tahun=detail_rkat2.id_tahun where username='$username' and kategori='INV'and aktif='1'");
     }
 }
 

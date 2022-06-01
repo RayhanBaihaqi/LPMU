@@ -152,7 +152,7 @@
 											<!-- <td></td> -->
 											<td><input type="text" class="form-control form-control-sm" id="aGenap<?= $no; ?>" value="<?= $reading['anggaranGenap']; ?>" disabled /></td>
 											<td>
-											<input type="text" class="form-control form-control-sm serapGenap" id="serapGenap<?= $no; ?>" placeholder="Rp. 0" name="serapGenap[]" onkeyup="AddInputs2(this.id);" required <?= ($reading['serapGenap'] != "") ? "value='".$reading['serapGanjil']."' disabled" : "" ?>>
+											<input type="text" class="form-control form-control-sm serapGenap" id="serapGenap<?= $no; ?>" placeholder="Rp. 0" name="serapGenap[]" onkeyup="AddInputs2(this.id);" required <?= ($reading['serapGenap'] != "") ? "value='".$reading['serapGenap']."' disabled" : "" ?>>
 											</td>
 											<!-- <td></td> -->
 										</tr>

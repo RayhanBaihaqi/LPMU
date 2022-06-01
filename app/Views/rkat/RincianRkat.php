@@ -113,7 +113,6 @@
 		<!-- Nav Bar End -->
 		<br>
         
-        <input type="button" value="Download PDF" onclick="window.open('<?php echo base_url('pdf/pdfRincian') ?>','blank')">
         <?php } ?>
 		<!-- Responsive tables Start -->
 		<div class="col-lg-12 grid-margin stretch-card">
