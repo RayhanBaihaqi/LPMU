@@ -22,6 +22,39 @@
 </head>
 
 <body id="page-top">
+<style>
+		@page{
+			margin: 10px;
+		}
+		.h4{
+				font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+			}
+		.table {
+                font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+            .table td, .table th {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+
+            .table th {
+                padding-top: 10px;
+                padding-bottom: 10px;
+                text-align: left;
+                background-color:Gray;
+                color: white;
+            }
+	</style>
+		<?php
+			$pdf = false;
+			if (strpos(current_url(), "pdfListData")) {
+				$pdf = true;
+			}
+			if($pdf == false){
+		?>
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -127,24 +160,33 @@
 
                 </nav>
                 <!-- End of Topbar -->
+                
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">List Data Rkat Rektorat</h1>
-
-                    <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <span></span></a>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                            <table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
+                    <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card">
+                                    <div class="card-body"><input type="button" class="btn btn-outline-secondary" style="float: right;" value="Download PDF" onclick="window.open('<?php echo base_url('pdf/pdfListData') ?>','blank')"></div>
+                                </div>
+                            </div>
+                        
+                    <?php } ?>
+                    <div class="col-lg-12 grid-margin stretch-card">
+			
+            <div class="card">
+                <div class="card-body">
+					<h4 >Data Rencana Kegiatan dan Anggaran Tahunan (RKAT) </h4><hr>
+						<p>Tahun Akademik : <?= $tahunAkademik['tahunAkademik'] ?></p>	
+						<p>Prodi/Unit : <?php $nama_prodi = session('nama_prodi');
+							echo "$nama_prodi"
+                    	?></p>					
+						<table class="table" id="dataTable" width="100%" cellspacing="0">
 							<thead>
 								<tr>
 									<th>No</th>
-                                    <th>Kategori</th>
+									<th>Kategori</th>
 									<th>No Kegiatan</th>
 									<th>Target</th>
 									<th>Indikator</th>
@@ -159,8 +201,8 @@
 							</thead>
 							<tbody>
 								<?php $i = 1;?>
-								<?php if ($detail_rkat) : ?>
-									<?php foreach ($detail_rkat as $value) : ?>
+								<?php if ($detail_rkat2) : ?>
+									<?php foreach ($detail_rkat2 as $value) : ?>
 										<tr>
 											<td scope="row"><?= $i++; ?></td>
 											<td><?= $value['kategori']; ?></td>
@@ -170,23 +212,122 @@
 											<td><?= $value['nama_kegiatan']; ?></td>
 											<td><?= $value['kpi']; ?></td>
 											<td><?= $value['butir']; ?></td>
-											<td><?= $value['anggaranGanjil']; ?></td>
-											<td><?= $value['anggaranGenap']; ?></td>
-											<td><?= $value['serapGanjil']; ?></td>
-											<td><?= $value['serapGenap']; ?></td>
+											<td>Rp.<?= $value['anggaranGanjil']; ?></td>
+											<td>Rp.<?= $value['anggaranGenap']; ?></td>
+											<td>Rp.<?= $value['serapGanjil']; ?></td>
+											<td>Rp.<?= $value['serapGenap']; ?></td>
 										</tr>
 									<?php endforeach; ?>
 								<?php endif; ?>
 							</tbody>
 						</table>
-                            </div>
-                        </div>
-                    </div>
-
+					<h4 >Kesimpulan
+						<?php 
+							$nama_prodi = session('nama_prodi');
+							echo "$nama_prodi"
+                    	?>
+					</h4>
+					
+					<div class="row">
+						<div class="col-sm-6">
+							<p>Total Rencana:</p>
+							<table class="table" id="dataTable" width="100%" cellspacing="0">
+								<thead>
+									<tr>
+										<th>Kategori</th>
+										<th>Ganjil</th>
+										<th>Genap</th>
+										<th>total</th>
+									</tr>
+								</thead>
+								<tbody>
+											<tr>
+												<td >PK</td>
+												<td>
+												<?php foreach ($totalGanjilPk as $rows) : ?>
+													Rp. <?php echo $rows->totalGanjilPk?> 
+												<?php endforeach;?>
+												</td>
+												<td>
+												<?php foreach ($totalGenapPk as $rows) : ?>
+													Rp. <?php echo $rows->totalGenapPk?> 
+												<?php endforeach;?>
+												</td>
+												<td>
+												<?php foreach ($totalPk as $rows) : ?>
+													Rp. <?php echo $rows->totalPk?> 
+												<?php endforeach;?>
+												</td>
+											</tr>
+											<tr>
+												<td >Ops</td>
+												<td>
+												<?php foreach ($totalGanjilOps as $rows) : ?>
+													Rp. <?php echo $rows->totalGanjilOps?> 
+												<?php endforeach;?>
+												</td>
+												<td>
+												<?php foreach ($totalGenapOps as $rows) : ?>
+													Rp. <?php echo $rows->totalGenapOps?> 
+												<?php endforeach;?>
+												</td>
+												<td>
+												<?php foreach ($totalOps as $rows) : ?>
+													Rp. <?php echo $rows->totalOps?> 
+												<?php endforeach;?>
+												</td>
+											</tr>
+											<tr>
+												<td >Inv</td>
+												<td>
+												<?php foreach ($totalGanjilInv as $rows) : ?>
+													Rp. <?php echo $rows->totalGanjilInv?> 
+												<?php endforeach;?>
+												</td>
+												<td>
+												<?php foreach ($totalGenapInv as $rows) : ?>
+													Rp. <?php echo $rows->totalGenapInv?> 
+												<?php endforeach;?>
+												</td>
+												<td>
+												<?php foreach ($totalInv as $rows) : ?>
+													Rp. <?php echo $rows->totalInv?> 
+												<?php endforeach;?>
+												</td>
+											</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="col-sm-6">
+							<p>Persen Serap:</p>
+							<table class="table" id="dataTable" width="100%" cellspacing="0">
+								<thead>
+									<tr>
+										<th>Tahun</th>
+										<th>PK</th>
+										<th>OPS</th>
+										<th>PK & OPS</th>
+										<th>INV</th>
+									</tr>
+								</thead>
+								<tbody>
+									<?php foreach ($tahunAktif as $key => $reading) : ?>
+											<tr>
+												<td ><?= $reading['tahunAkademik'] ?></td>
+												<td><?= $reading['persenPk'] ?>%</td>
+												<td><?= $reading['persenOps'] ?>%</td>
+												<td><?= $reading['persenPkOps'] ?>%</td>
+												<td><?= $reading['persenInv'] ?>%</td>
+											</tr>
+									<?php endforeach;?>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					
                 </div>
-
-
             </div>
+		</div>
             <!-- End of Content Wrapper -->
 
         </div>
