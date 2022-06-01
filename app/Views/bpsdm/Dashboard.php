@@ -9,7 +9,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>Admin</title>
+	<title>BPSDM</title>
 
 	<!-- Custom fonts for this template-->
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
@@ -140,7 +140,7 @@
 											<div class="h3  font-weight-bold text-primary text-uppercase mb-1">
 												SELAMAT DATANG</div>
 											<br>
-											<div class="mb-0  col mr-2 text-gray-800 text-justify">Saat ini anda login sebagai BPSDM. xxxxxxxxx.</div>
+											<div class="mb-0  col mr-2 text-gray-800 text-justify">Saat ini anda login sebagai BPSDM. Disini anda bisa membuat data KPI beserta butir KPI. Selain itu anda juga bisa melihat capaian KPI seluruh prodi/unit </div>
 										</div>
 
 										<div class="col-auto">

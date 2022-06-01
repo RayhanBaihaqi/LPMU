@@ -20,7 +20,13 @@ class Filters extends BaseConfig
 		'csrf'     => CSRF::class,
 		'toolbar'  => DebugToolbar::class,
 		'honeypot' => Honeypot::class,
-		'authFilter' => \App\Filters\AuthFilter::class,
+		//'authFilter' => \App\Filters\AuthFilter::class,
+		'filterAdmin' => \App\Filters\FilterAdmin::class,
+		'filterProdi' => \App\Filters\FilterProdi::class,
+		'filterUnit' => \App\Filters\FilterUnit::class,
+		'filterRektorat' => \App\Filters\FilterRektorat::class,
+		'filterBpsdm' => \App\Filters\FilterBpsdm::class,
+		'filterKeuangan' => \App\Filters\FilterKeuangan::class,
 	];
 
 	/**
@@ -31,12 +37,48 @@ class Filters extends BaseConfig
 	 */
 	public $globals = [
 		'before' => [
-			'authFilter' => ['except' => ['/', 'auth/*', 'frontend/*']],
+			'filterAdmin' => [
+				'except' => ['/', 'auth/*', 'frontend/*']
+			],
+			'filterProdi' => [
+				'except' => ['/', 'auth/*', 'frontend/*']
+			],
+			'filterUnit' => [
+				'except' => ['/', 'auth/*', 'frontend/*']
+			],
+			'filterRektorat' => [
+				'except' => ['/', 'auth/*', 'frontend/*']
+			],
+			'filterBpsdm' => [
+				'except' => ['/', 'auth/*', 'frontend/*']
+			],
+			'filterKeuangan' => [
+				'except' => ['/', 'auth/*', 'frontend/*']
+			],
+			// 'authFilter' => ['except' => ['/', 'auth/*', 'frontend/*']],
 			// 'honeypot',
 			// 'csrf',
 		],
 		'after'  => [
-			'authFilter' => ['except' => ['/backend', '/backend/*']],
+			'filterAdmin' => [
+				'except' => ['admin/*', 'admin', 'auth/*']
+			],
+			'filterProdi' => [
+				'except' => ['backend/*', 'backend', 'kpi', 'kpi/*', 'rkat/*']
+			],
+			'filterUnit' => [
+				'except' => ['backend/*', 'backend', 'kpi', 'kpi/*', 'rkat/*']
+			],
+			'filterRektorat' => [
+				'except' => ['rektorat', 'rektorat/*']
+			],
+			'filterBpsdm' => [
+				'except' => ['bpsdm', 'bpsdm/*']
+			],
+			'filterKeuangan' => [
+				'except' => ['keuangan', 'keuangan/*']
+			],
+			// 'authFilter' => ['except' => ['/backend', '/backend/*']],
 			'toolbar',
 			// 'honeypot',
 		],

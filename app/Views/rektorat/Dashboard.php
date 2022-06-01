@@ -9,7 +9,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>Admin</title>
+	<title>Rektorat</title>
 
 	<!-- Custom fonts for this template-->
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
@@ -163,10 +163,10 @@
 								<div class="card-body">
 									<div class="row no-gutters align-items-center">
 										<div class="inner">
-										<h3>
-											<?= $tahunAkademik['tahunAkademik'] ?>
-										</h3>
-										<p>Tahun Akademik</p>
+											<h3>
+												<?= $tahunAkademik['tahunAkademik'] ?>
+											</h3>
+											<p>Tahun Akademik</p>
 										</div>
 										<div class="icon">
 											<i class="fas fa-solid fa-calendar"></i>
@@ -179,17 +179,17 @@
 							<div class="card border-left-primary shadow h-100 py-2">
 								<div class="card-body">
 									<div class="row no-gutters align-items-center">
-									<div class="inner">
-									<h3>
-										<?php foreach ($pagu_rkat as $key => $value) :?>
-											RP. <?= $value['jumlah_pagu'] ?>
-										<?php endforeach; ?>
-									</h3>
-									<p>Jumlah Pagu</p>
-								</div>
-								<div class="icon">
-								<i class="fas fa-solid fa-money-bill"></i>
-								</div>
+										<div class="inner">
+											<h3>
+												<?php foreach ($pagu_rkat as $key => $value) : ?>
+													RP. <?= $value['jumlah_pagu'] ?>
+												<?php endforeach; ?>
+											</h3>
+											<p>Jumlah Pagu</p>
+										</div>
+										<div class="icon">
+											<i class="fas fa-solid fa-money-bill"></i>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -198,154 +198,164 @@
 							<div class="card border-left-primary shadow h-100 py-2">
 								<div class="card-body">
 									<div class="row no-gutters align-items-center">
-									<div class="inner">
-									<h3>
-										<?php
-											$nama_prodi = session('nama_prodi');
-											echo "$nama_prodi"
-										?>
-									</h3>
-									<p>Program Studi/Unit Universitas</p>
-								</div>
-								<div class="icon">
-									<i class="fas fa-university"></i>
-								</div>
+										<div class="inner">
+											<h3>
+												<?php
+												$nama_prodi = session('nama_prodi');
+												echo "$nama_prodi"
+												?>
+											</h3>
+											<p>Program Studi/Unit Universitas</p>
+										</div>
+										<div class="icon">
+											<i class="fas fa-university"></i>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="row" style="margin: 15px auto;">
-                    <div class="col-md-6">
-                        <div class="card-box pd-30 height-100-p">
-                            <div class="card ">
-                                <div class="card-header bg-info text-white">Persentase Serapan Tahunan</div>
-                                <div class="card-body"><div id="capaian_persen_pk"></div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card-box pd-30 height-100-p">
-                            <div class="card ">
-                                <div class="card-header bg-info text-white">Persentase Serap Tahun Aktif</div>
-                                <div class="card-body"><div id="capaian_persen_ops"></div></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row" style="margin: 15px auto;">
-                    <div class="col-md-12">
-                        <div class="card-box pd-30 height-100-p">
-                            <div class="card ">
-                                <div class="card-header bg-info text-white">Persentase Serap Seluruh Prodi/Unit</div>
-                                <div class="card-body"><div id="GrafikCapaianRkat" style="width: 1080px; height: 400px;"></div></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-			<!-- Footer -->
-			<footer class="sticky-footer bg-white">
-				<div class="container my-auto">
-					<div class="copyright text-center my-auto">
-						<span>Copyright &copy; Your Website 2020</span>
+						<div class="col-md-6">
+							<div class="card-box pd-30 height-100-p">
+								<div class="card ">
+									<div class="card-header bg-info text-white">Persentase Serapan Tahunan</div>
+									<div class="card-body">
+										<div id="capaian_persen_pk"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="card-box pd-30 height-100-p">
+								<div class="card ">
+									<div class="card-header bg-info text-white">Persentase Serap Tahun Aktif</div>
+									<div class="card-body">
+										<div id="capaian_persen_ops"></div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
+					<div class="row" style="margin: 15px auto;">
+						<div class="col-md-12">
+							<div class="card-box pd-30 height-100-p">
+								<div class="card ">
+									<div class="card-header bg-info text-white">Persentase Serap Seluruh Prodi/Unit</div>
+									<div class="card-body">
+										<div id="GrafikCapaianRkat" style="width: 1080px; height: 400px;"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Footer -->
+					<footer class="sticky-footer bg-white">
+						<div class="container my-auto">
+							<div class="copyright text-center my-auto">
+								<span>Copyright &copy; Your Website 2020</span>
+							</div>
+						</div>
+					</footer>
+					<!-- End of Footer -->
+
 				</div>
-			</footer>
-			<!-- End of Footer -->
+				<!-- End of Content Wrapper -->
 
-		</div>
-		<!-- End of Content Wrapper -->
+			</div>
+			<!-- End of Page Wrapper -->
 
-	</div>
-	<!-- End of Page Wrapper -->
+			<!-- Scroll to Top Button-->
+			<a class="scroll-to-top rounded" href="#page-top">
+				<i class="fas fa-angle-up"></i>
+			</a>
+			<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+			<!-- Grafik Persentase capaian -->
+			<script type="text/javascript">
+				google.charts.load('current', {
+					'packages': ['bar']
+				});
+				google.charts.setOnLoadCallback(drawChart);
 
-	<!-- Scroll to Top Button-->
-	<a class="scroll-to-top rounded" href="#page-top">
-		<i class="fas fa-angle-up"></i>
-	</a>
-	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <!-- Grafik Persentase capaian -->
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['bar']});
-      google.charts.setOnLoadCallback(drawChart);
+				function drawChart() {
+					var data = google.visualization.arrayToDataTable([
+						['Tahun', 'Persen PK & OPS(%)', 'Persen INV(%)'],
+						<?php
+						foreach ($tahun as $key => $reading) : ?>['<?= $reading['tahunAkademik'] ?>', <?= $reading['persenPkOps'] ?>, <?= $reading['persenInv'] ?>],
+						<?php endforeach; ?>
+					]);
 
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Tahun', 'Persen PK & OPS(%)', 'Persen INV(%)'],
-          <?php
-		    foreach ($tahun as $key => $reading) : ?>
-          ['<?= $reading['tahunAkademik'] ?>', <?= $reading['persenPkOps'] ?>,<?= $reading['persenInv'] ?>],
-          <?php endforeach; ?>
-        ]);
+					var options = {
+						chart: {
+							title: 'Data Prodi/Unit : <?php $nama_prodi = session('nama_prodi');
+														echo "$nama_prodi" ?>',
+							subtitle: '',
+						},
+						bars: 'horizontal' // Required for Material Bar Charts.
+					};
 
-        var options = {
-          chart: {
-            title: 'Data Prodi/Unit : <?php $nama_prodi = session('nama_prodi'); echo "$nama_prodi"?>',
-            subtitle: '',
-          },
-          bars: 'horizontal' // Required for Material Bar Charts.
-        };
+					var chart = new google.charts.Bar(document.getElementById('capaian_persen_pk'));
 
-        var chart = new google.charts.Bar(document.getElementById('capaian_persen_pk'));
+					chart.draw(data, google.charts.Bar.convertOptions(options));
+				}
+			</script>
+			<script type="text/javascript">
+				google.charts.load('current', {
+					'packages': ['bar']
+				});
+				google.charts.setOnLoadCallback(drawChart);
 
-        chart.draw(data, google.charts.Bar.convertOptions(options));
-      }
-    </script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['bar']});
-      google.charts.setOnLoadCallback(drawChart);
+				function drawChart() {
+					var data = google.visualization.arrayToDataTable([
+						['Tahun', 'Persen PK & OPS(%)', 'Persen INV(%)'],
+						<?php
+						foreach ($tahunAktif as $key => $reading) : ?>['<?= $reading['tahunAkademik'] ?>', <?= $reading['persenPkOps'] ?>, <?= $reading['persenInv'] ?>],
+						<?php endforeach; ?>
+					]);
 
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['Tahun', 'Persen PK & OPS(%)', 'Persen INV(%)'],
-          <?php
-		    foreach ($tahunAktif as $key => $reading) : ?>
-          ['<?= $reading['tahunAkademik'] ?>', <?= $reading['persenPkOps'] ?>,<?= $reading['persenInv'] ?>],
-          <?php endforeach; ?>
-        ]);
+					var options = {
+						chart: {
+							title: 'Periode Tahun : <?= $tahunAkademik['tahunAkademik'] ?>',
+							subtitle: '',
+						},
+						bars: 'horizontal' // Required for Material Bar Charts.
+					};
 
-        var options = {
-          chart: {
-            title: 'Periode Tahun : <?= $tahunAkademik['tahunAkademik'] ?>',
-            subtitle: '',
-          },
-          bars: 'horizontal' // Required for Material Bar Charts.
-        };
+					var chart = new google.charts.Bar(document.getElementById('capaian_persen_ops'));
 
-        var chart = new google.charts.Bar(document.getElementById('capaian_persen_ops'));
+					chart.draw(data, google.charts.Bar.convertOptions(options));
+				}
+			</script>
+			<script type="text/javascript">
+				google.charts.load('current', {
+					'packages': ['bar']
+				});
+				google.charts.setOnLoadCallback(drawChart);
 
-        chart.draw(data, google.charts.Bar.convertOptions(options));
-      }
-    </script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['bar']});
-      google.charts.setOnLoadCallback(drawChart);
+				function drawChart() {
+					var data = google.visualization.arrayToDataTable([
+						['Prodi/Unit', 'Tahun', 'PK & OPS (%)', 'INV (%)'],
+						<?php
+						foreach ($seluruhDataUser as $key => $reading) : ?>['<?= $reading['nama_prodi'] ?>', '<?= $reading['tahunAkademik'] ?>', <?= $reading['persenPkOps'] ?>, <?= $reading['persenInv'] ?>],
+						<?php endforeach; ?>
+					]);
 
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Prodi/Unit', 'Tahun', 'PK & OPS (%)', 'INV (%)'],
-          <?php
-		    foreach ($seluruhDataUser as $key => $reading) : ?>
-          ['<?= $reading['nama_prodi'] ?>','<?= $reading['tahunAkademik'] ?>', <?= $reading['persenPkOps'] ?>,<?= $reading['persenInv'] ?>],
-          <?php endforeach; ?>
-        ]);
+					var options = {
+						chart: {
+							title: 'Data Grafik Capaian RKAT',
+							subtitle: 'PK+OPS & INV Pertahun',
+						}
+					};
 
-        var options = {
-          chart: {
-            title: 'Data Grafik Capaian RKAT',
-            subtitle: 'PK+OPS & INV Pertahun',
-          }
-        };
+					var chart = new google.charts.Bar(document.getElementById('GrafikCapaianRkat'));
 
-        var chart = new google.charts.Bar(document.getElementById('GrafikCapaianRkat'));
+					chart.draw(data, google.charts.Bar.convertOptions(options));
+				}
+			</script>
 
-        chart.draw(data, google.charts.Bar.convertOptions(options));
-      }
-    </script>
-	
-	<!-- Bootstrap core JavaScript-->
-	<script src="<?php echo base_url(); ?>/public/js/jquery.min.js"></script>
-	<script src="<?php echo base_url(); ?>/public/js/bootstrap.bundle.min.js"></script>
+			<!-- Bootstrap core JavaScript-->
+			<script src="<?php echo base_url(); ?>/public/js/jquery.min.js"></script>
+			<script src="<?php echo base_url(); ?>/public/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
