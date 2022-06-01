@@ -105,8 +105,8 @@
             <div class="card">
                 <div class="card-body">
 					<div class="table-responsive">
-                    <a href="<?= base_url('/rkat/listrkat') ?>" class="btn btn-primary btn-block">Rincian Anggaran</a>
-                    <a href="<?= base_url('/rkat/rincian') ?>" class="btn btn-primary btn-block">Rincian RKAT</a>
+                    <a href="<?= base_url('/rkat/listrkat') ?>" class="btn btn-primary btn-block">Rincian Kesimpulan RKAT</a>
+                    <a href="<?= base_url('/rkat/rincian') ?>" class="btn btn-primary btn-block">Rincian Persentase Capaian</a>
                 	</div>
                 </div>
             </div>

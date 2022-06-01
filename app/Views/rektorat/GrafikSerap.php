@@ -221,7 +221,7 @@
 
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Prodi/Unit', 'Tahun', 'PK & OPS (%)', 'INV (%)'],
+          ['Prodi', 'Tahun', 'PK & OPS (%)', 'INV (%)'],
           <?php
 		    foreach ($seluruhDataUserProdi as $key => $reading) : ?>
           ['<?= $reading['nama_prodi'] ?>','<?= $reading['tahunAkademik'] ?>', <?= $reading['persenPkOps'] ?>,<?= $reading['persenInv'] ?>],
@@ -246,7 +246,7 @@
 
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Prodi/Unit', 'Tahun', 'PK & OPS (%)', 'INV (%)'],
+          ['Unit', 'Tahun', 'PK & OPS (%)', 'INV (%)'],
           <?php
 		    foreach ($seluruhDataUserUnit as $key => $reading) : ?>
           ['<?= $reading['nama_prodi'] ?>','<?= $reading['tahunAkademik'] ?>', <?= $reading['persenPkOps'] ?>,<?= $reading['persenInv'] ?>],
