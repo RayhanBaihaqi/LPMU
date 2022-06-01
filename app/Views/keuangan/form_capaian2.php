@@ -182,8 +182,7 @@
                                     <th class="text-center">Rencana</th>
                                     <th class="text-center">Bobot</th>
                                     <th class="text-center">Realisasi</th>
-                                    <th class="text-center">Upload File</th>
-                                    <th class="text-center">Aksi</th>
+
                                 </tr>
                             </thead>
                             <tbody>
@@ -205,8 +204,7 @@
                                             <input type="hidden" name="idkpi[]" value="2" />
                                             <input type="hidden" name="id_butir_kpi[]" value="<?= $row->angka_butir ?>" />
                                         </td>
-                                        <td><a href="" class="button button2"><i class="fas fa-upload"></i></a></td>
-                                        <td></td>
+
                                     </tr>
                                 <?php
                                 endforeach;
