@@ -12,14 +12,14 @@ enough to be used inside any testing framework out there with minimal effort.
 ```php
 <?php
 
-class UserTest extends PHPUnit\Framework\TestCase
+class userTest extends PHPUnit\Framework\TestCase
 {
     private $prophet;
 
     public function testPasswordHashing()
     {
         $hasher = $this->prophet->prophesize('App\Security\Hasher');
-        $user   = new App\Entity\User($hasher->reveal());
+        $user   = new App\Entity\user($hasher->reveal());
 
         $hasher->generateHash($user, 'qwerty')->willReturn('hashed_pass');
 
@@ -396,7 +396,7 @@ manually by using the `MethodProphecy::shouldHave(PredictionInterface $predictio
 ```php
 $em = $prophet->prophesize('Doctrine\ORM\EntityManager');
 
-$controller->createUser($em->reveal());
+$controller->createuser($em->reveal());
 
 $em->flush()->shouldHaveBeenCalled();
 ```

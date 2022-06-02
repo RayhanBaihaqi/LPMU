@@ -69,7 +69,7 @@ class ModelGenerator extends BaseCommand
         '--dbgroup'   => 'Database group to use. Default: "default".',
         '--return'    => 'Return type, Options: [array, object, entity]. Default: "array".',
         '--namespace' => 'Set root namespace. Default: "APP_NAMESPACE".',
-        '--suffix'    => 'Append the component title to the class name (e.g. User => UserModel).',
+        '--suffix'    => 'Append the component title to the class name (e.g. user => userModel).',
         '--force'     => 'Force overwrite existing file.',
     ];
 

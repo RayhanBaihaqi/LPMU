@@ -218,8 +218,8 @@
 							<td><?= $request->isSecure() ? 'yes' : 'no' ?></td>
 						</tr>
 						<tr>
-							<td>User Agent</td>
-							<td><?= esc($request->getUserAgent()->getAgentString()) ?></td>
+							<td>user Agent</td>
+							<td><?= esc($request->getuserAgent()->getAgentString()) ?></td>
 						</tr>
 
 					</tbody>

@@ -50,11 +50,11 @@ class Email extends BaseConfig
     public $SMTPHost;
 
     /**
-     * SMTP Username
+     * SMTP username
      *
      * @var string
      */
-    public $SMTPUser;
+    public $SMTPuser;
 
     /**
      * SMTP Password

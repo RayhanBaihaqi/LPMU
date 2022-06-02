@@ -7,7 +7,7 @@ use App\Models\DetailRkatModel;
 use App\Models\TahunAkademikModel;
 use App\Models\PersenSerapModel;
 use App\Models\PaguRkatModel;
-use App\Models\UsersModel;
+use App\Models\usersModel;
 
 class PaguRkat extends BaseController
 {
@@ -16,13 +16,13 @@ class PaguRkat extends BaseController
         $this->TahunAkademikModel = new TahunAkademikModel();
         $this->PersenSerapModel = new PersenSerapModel();
         $this->PaguModel = new PaguRkatModel();
-        $this->UsersModel = new UsersModel();
+        $this->usersModel = new usersModel();
     }
     public function index()
     {
         $data = [
 			'pagu_rkat' => $this->PaguModel->join('user', 'user.id=pagu_rkat.id_user')->join('tahun_akademik', 'tahun_akademik.id_tahun=pagu_rkat.id_tahun')->orderBy('id_pagu', 'DESC')->findAll(),
-            'user' => $this->UsersModel->orderBy('id', 'DESC')->findAll(),
+            'user' => $this->usersModel->orderBy('id', 'DESC')->findAll(),
 		];
 
         return view('admin/ListPagu', $data);
@@ -32,7 +32,7 @@ class PaguRkat extends BaseController
         $model = new PaguRkatModel();
         $data = [
 			'tahunAkademik' => $this->TahunAkademikModel->where('aktif', '1')->first(),
-            'user' => $this->UsersModel->orderBy('id', 'DESC')->findAll(),
+            'user' => $this->usersModel->orderBy('id', 'DESC')->findAll(),
 		];
 
         return view('admin/TambahPagu',$data);
@@ -81,7 +81,7 @@ class PaguRkat extends BaseController
         return redirect()->to(base_url('PaguRkat/index'));
     }
 
-    //User rencana rkat
+    //user rencana rkat
     public function indexbyuser()
     {
         $model = new PaguRkatModel();
@@ -153,7 +153,7 @@ class PaguRkat extends BaseController
 
         return view('rkat/ListData', $data);
     }
-    //User capaian rkat
+    //user capaian rkat
     public function indexcapaianbyuser()
     {
         $model = new PaguRkatModel();

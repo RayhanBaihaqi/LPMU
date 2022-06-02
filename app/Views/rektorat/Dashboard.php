@@ -104,7 +104,7 @@
 
 						<div class="topbar-divider d-none d-sm-block"></div>
 
-						<!-- Nav Item - User Information -->
+						<!-- Nav Item - user Information -->
 						<li class="nav-item dropdown no-arrow">
 							<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<span class="mr-2 d-none d-lg-inline text-gray-600 small">
@@ -115,7 +115,7 @@
 								</span>
 							</a>
 
-							<!-- Dropdown - User Information -->
+							<!-- Dropdown - user Information -->
 							<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="<?= base_url('auth/logout') ?>">
@@ -335,7 +335,7 @@
 					var data = google.visualization.arrayToDataTable([
 						['Prodi/Unit', 'Tahun', 'PK & OPS (%)', 'INV (%)'],
 						<?php
-						foreach ($seluruhDataUser as $key => $reading) : ?>['<?= $reading['nama_prodi'] ?>', '<?= $reading['tahunAkademik'] ?>', <?= $reading['persenPkOps'] ?>, <?= $reading['persenInv'] ?>],
+						foreach ($seluruhDatauser as $key => $reading) : ?>['<?= $reading['nama_prodi'] ?>', '<?= $reading['tahunAkademik'] ?>', <?= $reading['persenPkOps'] ?>, <?= $reading['persenInv'] ?>],
 						<?php endforeach; ?>
 					]);
 

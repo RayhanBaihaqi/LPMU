@@ -282,7 +282,7 @@ class vfsStreamWrapper
         $mode     = str_replace(array('t', 'b', '+'), '', $mode);
         if (in_array($mode, array('r', 'w', 'a', 'x', 'c')) === false) {
             if (($options & STREAM_REPORT_ERRORS) === STREAM_REPORT_ERRORS) {
-                trigger_error('Illegal mode ' . $mode . ', use r, w, a, x  or c, flavoured with t, b and/or +', E_USER_WARNING);
+                trigger_error('Illegal mode ' . $mode . ', use r, w, a, x  or c, flavoured with t, b and/or +', E_user_WARNING);
             }
 
             return false;
@@ -294,7 +294,7 @@ class vfsStreamWrapper
         if (null !== $this->content) {
             if (self::WRITE === $mode) {
                 if (($options & STREAM_REPORT_ERRORS) === STREAM_REPORT_ERRORS) {
-                    trigger_error('File ' . $path . ' already exists, can not open with mode x', E_USER_WARNING);
+                    trigger_error('File ' . $path . ' already exists, can not open with mode x', E_user_WARNING);
                 }
 
                 return false;
@@ -302,7 +302,7 @@ class vfsStreamWrapper
 
             if (
                 (self::TRUNCATE === $mode || self::APPEND === $mode) &&
-                $this->content->isWritable(vfsStream::getCurrentUser(), vfsStream::getCurrentGroup()) === false
+                $this->content->isWritable(vfsStream::getCurrentuser(), vfsStream::getCurrentGroup()) === false
             ) {
                 return false;
             }
@@ -312,9 +312,9 @@ class vfsStreamWrapper
             } elseif (self::APPEND === $mode) {
                 $this->content->openForAppend();
             } else {
-                if (!$this->content->isReadable(vfsStream::getCurrentUser(), vfsStream::getCurrentGroup())) {
+                if (!$this->content->isReadable(vfsStream::getCurrentuser(), vfsStream::getCurrentGroup())) {
                     if (($options & STREAM_REPORT_ERRORS) === STREAM_REPORT_ERRORS) {
-                        trigger_error('Permission denied', E_USER_WARNING);
+                        trigger_error('Permission denied', E_user_WARNING);
                     }
                     return false;
                 }
@@ -346,7 +346,7 @@ class vfsStreamWrapper
         $names = $this->splitPath($path);
         if (empty($names['dirname']) === true) {
             if (($options & STREAM_REPORT_ERRORS) === STREAM_REPORT_ERRORS) {
-                trigger_error('File ' . $names['basename'] . ' does not exist', E_USER_WARNING);
+                trigger_error('File ' . $names['basename'] . ' does not exist', E_user_WARNING);
             }
 
             return false;
@@ -355,13 +355,13 @@ class vfsStreamWrapper
         $dir = $this->getContentOfType($names['dirname'], vfsStreamContent::TYPE_DIR);
         if (null === $dir) {
             if (($options & STREAM_REPORT_ERRORS) === STREAM_REPORT_ERRORS) {
-                trigger_error('Directory ' . $names['dirname'] . ' does not exist', E_USER_WARNING);
+                trigger_error('Directory ' . $names['dirname'] . ' does not exist', E_user_WARNING);
             }
 
             return false;
         } elseif ($dir->hasChild($names['basename']) === true) {
             if (($options & STREAM_REPORT_ERRORS) === STREAM_REPORT_ERRORS) {
-                trigger_error('Directory ' . $names['dirname'] . ' already contains a director named ' . $names['basename'], E_USER_WARNING);
+                trigger_error('Directory ' . $names['dirname'] . ' already contains a director named ' . $names['basename'], E_user_WARNING);
             }
 
             return false;
@@ -369,15 +369,15 @@ class vfsStreamWrapper
 
         if (self::READ === $mode) {
             if (($options & STREAM_REPORT_ERRORS) === STREAM_REPORT_ERRORS) {
-                trigger_error('Can not open non-existing file ' . $path . ' for reading', E_USER_WARNING);
+                trigger_error('Can not open non-existing file ' . $path . ' for reading', E_user_WARNING);
             }
 
             return false;
         }
 
-        if ($dir->isWritable(vfsStream::getCurrentUser(), vfsStream::getCurrentGroup()) === false) {
+        if ($dir->isWritable(vfsStream::getCurrentuser(), vfsStream::getCurrentGroup()) === false) {
             if (($options & STREAM_REPORT_ERRORS) === STREAM_REPORT_ERRORS) {
-                trigger_error('Can not create new file in non-writable path ' . $names['dirname'], E_USER_WARNING);
+                trigger_error('Can not create new file in non-writable path ' . $names['dirname'], E_user_WARNING);
             }
 
             return false;
@@ -428,7 +428,7 @@ class vfsStreamWrapper
             return '';
         }
 
-        if ($this->content->isReadable(vfsStream::getCurrentUser(), vfsStream::getCurrentGroup()) === false) {
+        if ($this->content->isReadable(vfsStream::getCurrentuser(), vfsStream::getCurrentGroup()) === false) {
             return '';
         }
 
@@ -447,7 +447,7 @@ class vfsStreamWrapper
             return 0;
         }
 
-        if ($this->content->isWritable(vfsStream::getCurrentUser(), vfsStream::getCurrentGroup()) === false) {
+        if ($this->content->isWritable(vfsStream::getCurrentuser(), vfsStream::getCurrentGroup()) === false) {
             return 0;
         }
 
@@ -471,7 +471,7 @@ class vfsStreamWrapper
             return false;
         }
 
-        if ($this->content->isWritable(vfsStream::getCurrentUser(), vfsStream::getCurrentGroup()) === false) {
+        if ($this->content->isWritable(vfsStream::getCurrentuser(), vfsStream::getCurrentGroup()) === false) {
             return false;
         }
 
@@ -581,14 +581,14 @@ class vfsStreamWrapper
      */
     private function doPermChange($path, vfsStreamAbstractContent $content, \Closure $change)
     {
-        if (!$content->isOwnedByUser(vfsStream::getCurrentUser())) {
+        if (!$content->isOwnedByuser(vfsStream::getCurrentuser())) {
             return false;
         }
 
         if (self::$root->getName() !== $path) {
             $names   = $this->splitPath($path);
             $parent = $this->getContent($names['dirname']);
-            if (!$parent->isWritable(vfsStream::getCurrentUser(), vfsStream::getCurrentGroup())) {
+            if (!$parent->isWritable(vfsStream::getCurrentuser(), vfsStream::getCurrentGroup())) {
                 return false;
             }
         }
@@ -650,7 +650,7 @@ class vfsStreamWrapper
                           'ino'     => 0,
                           'mode'    => $this->content->getType() | $this->content->getPermissions(),
                           'nlink'   => 0,
-                          'uid'     => $this->content->getUser(),
+                          'uid'     => $this->content->getuser(),
                           'gid'     => $this->content->getGroup(),
                           'rdev'    => 0,
                           'size'    => $this->content->size(),
@@ -739,12 +739,12 @@ class vfsStreamWrapper
         $realPath = $this->resolvePath(vfsStream::path($path));
         $content  = $this->getContent($realPath);
         if (null === $content) {
-            trigger_error('unlink(' . $path . '): No such file or directory', E_USER_WARNING);
+            trigger_error('unlink(' . $path . '): No such file or directory', E_user_WARNING);
             return false;
         }
 
         if ($content->getType() !== vfsStreamContent::TYPE_FILE) {
-            trigger_error('unlink(' . $path . '): Operation not permitted', E_USER_WARNING);
+            trigger_error('unlink(' . $path . '): Operation not permitted', E_user_WARNING);
             return false;
         }
 
@@ -768,7 +768,7 @@ class vfsStreamWrapper
 
         $names   = $this->splitPath($path);
         $content = $this->getContent($names['dirname']);
-        if (!$content->isWritable(vfsStream::getCurrentUser(), vfsStream::getCurrentGroup())) {
+        if (!$content->isWritable(vfsStream::getCurrentuser(), vfsStream::getCurrentGroup())) {
             return false;
         }
 
@@ -790,21 +790,21 @@ class vfsStreamWrapper
         $dstRealPath = $this->resolvePath(vfsStream::path($path_to));
         $srcContent  = $this->getContent($srcRealPath);
         if (null == $srcContent) {
-            trigger_error(' No such file or directory', E_USER_WARNING);
+            trigger_error(' No such file or directory', E_user_WARNING);
             return false;
         }
         $dstNames = $this->splitPath($dstRealPath);
         $dstParentContent = $this->getContent($dstNames['dirname']);
         if (null == $dstParentContent) {
-            trigger_error('No such file or directory', E_USER_WARNING);
+            trigger_error('No such file or directory', E_user_WARNING);
             return false;
         }
-        if (!$dstParentContent->isWritable(vfsStream::getCurrentUser(), vfsStream::getCurrentGroup())) {
-            trigger_error('Permission denied', E_USER_WARNING);
+        if (!$dstParentContent->isWritable(vfsStream::getCurrentuser(), vfsStream::getCurrentGroup())) {
+            trigger_error('Permission denied', E_user_WARNING);
             return false;
         }
         if ($dstParentContent->getType() !== vfsStreamContent::TYPE_DIR) {
-            trigger_error('Target is not a directory', E_USER_WARNING);
+            trigger_error('Target is not a directory', E_user_WARNING);
             return false;
         }
 
@@ -841,7 +841,7 @@ class vfsStreamWrapper
 
         $path = $this->resolvePath(vfsStream::path($path));
         if (null !== $this->getContent($path)) {
-            trigger_error('mkdir(): Path vfs://' . $path . ' exists', E_USER_WARNING);
+            trigger_error('mkdir(): Path vfs://' . $path . ' exists', E_user_WARNING);
             return false;
         }
 
@@ -867,7 +867,7 @@ class vfsStreamWrapper
 
         if (null === $dir
           || $dir->getType() !== vfsStreamContent::TYPE_DIR
-          || $dir->isWritable(vfsStream::getCurrentUser(), vfsStream::getCurrentGroup()) === false) {
+          || $dir->isWritable(vfsStream::getCurrentuser(), vfsStream::getCurrentGroup()) === false) {
             return false;
         }
 
@@ -910,7 +910,7 @@ class vfsStreamWrapper
 
         $names = $this->splitPath($path);
         $dir   = $this->getContentOfType($names['dirname'], vfsStreamContent::TYPE_DIR);
-        if ($dir->isWritable(vfsStream::getCurrentUser(), vfsStream::getCurrentGroup()) === false) {
+        if ($dir->isWritable(vfsStream::getCurrentuser(), vfsStream::getCurrentGroup()) === false) {
             return false;
         }
 
@@ -929,7 +929,7 @@ class vfsStreamWrapper
     {
         $path      = $this->resolvePath(vfsStream::path($path));
         $this->dir = $this->getContentOfType($path, vfsStreamContent::TYPE_DIR);
-        if (null === $this->dir || $this->dir->isReadable(vfsStream::getCurrentUser(), vfsStream::getCurrentGroup()) === false) {
+        if (null === $this->dir || $this->dir->isReadable(vfsStream::getCurrentuser(), vfsStream::getCurrentGroup()) === false) {
             return false;
         }
 
@@ -986,7 +986,7 @@ class vfsStreamWrapper
         $content = $this->getContent($this->resolvePath(vfsStream::path($path)));
         if (null === $content) {
             if (($flags & STREAM_URL_STAT_QUIET) != STREAM_URL_STAT_QUIET) {
-                trigger_error(' No such file or directory: ' . $path, E_USER_WARNING);
+                trigger_error(' No such file or directory: ' . $path, E_user_WARNING);
             }
 
             return false;
@@ -997,7 +997,7 @@ class vfsStreamWrapper
                           'ino'     => 0,
                           'mode'    => $content->getType() | $content->getPermissions(),
                           'nlink'   => 0,
-                          'uid'     => $content->getUser(),
+                          'uid'     => $content->getuser(),
                           'gid'     => $content->getGroup(),
                           'rdev'    => 0,
                           'size'    => $content->size(),

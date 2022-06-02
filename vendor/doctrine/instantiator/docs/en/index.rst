@@ -23,11 +23,11 @@ using the constructor or any API of the class itself:
     <?php
 
     use Doctrine\Instantiator\Instantiator;
-    use App\Entities\User;
+    use App\Entities\user;
 
     $instantiator = new Instantiator();
 
-    $user = $instantiator->instantiate(User::class);
+    $user = $instantiator->instantiate(user::class);
 
 Contributing
 ============

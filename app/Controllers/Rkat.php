@@ -8,7 +8,7 @@ use App\Models\TahunAkademikModel;
 use App\Models\PersenSerapModel;
 use App\Models\PaguRkatModel;
 use App\Models\ModelKpiAdmin;
-use App\Models\UsersModel;
+use App\Models\usersModel;
 
 class Rkat extends BaseController
 {
@@ -18,11 +18,11 @@ class Rkat extends BaseController
         $this->TahunAkademikModel = new TahunAkademikModel();
         $this->PersenSerapModel = new PersenSerapModel();
         $this->PaguModel = new PaguRkatModel();
-        $this->UsersModel = new UsersModel();
+        $this->usersModel = new usersModel();
         $this->ModelKpiAdmin = new ModelKpiAdmin();
     }
 
-    //User
+    //user
     public function indexbyuser()
     {
         $model = new DetailRkatModel();
@@ -244,17 +244,17 @@ class Rkat extends BaseController
         return redirect()->to(base_url('rkat/indexbyuser'));
     }
 
-    //Ubah Pssword User
+    //Ubah Pssword user
     public function form_ubahpass($id = null)
     {
-        $model = new UsersModel();
+        $model = new usersModel();
         $username = session('username');
         $data['user'] = $model->where('id', $id)->first();
         return view('/rkat/ubah_pwd', $data);
     }
     public function ubahpwd()
     {
-        $model = new UsersModel();
+        $model = new usersModel();
         $id = session('id');
         $data = [
             'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),

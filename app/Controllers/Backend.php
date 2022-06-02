@@ -5,7 +5,7 @@ use App\Models\DetailRkatModel;
 use App\Models\TahunAkademikModel;
 use App\Models\PersenSerapModel;
 use App\Models\PaguRkatModel;
-use App\Models\UsersModel;
+use App\Models\usersModel;
 use App\Models\DataModel;
 
 class Backend extends BaseController
@@ -16,7 +16,7 @@ class Backend extends BaseController
         $this->TahunAkademikModel = new TahunAkademikModel();
         $this->PersenSerapModel = new PersenSerapModel();
         $this->PaguModel = new PaguRkatModel();
-        $this->UsersModel = new UsersModel();
+        $this->usersModel = new usersModel();
     }
 	public function index()
 	{
@@ -35,7 +35,7 @@ class Backend extends BaseController
 			'avgInv' => $model->avgInv($username)->getResult(),
 			'tahun' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('username', $username)->findAll(),
             'tahunAktif' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('username', $username)->where('aktif', '1')->findAll(),
-			'seluruhDataUser' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->findAll(),
+			'seluruhDatauser' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->findAll(),
             // 'inv' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=detail_rkat2.id_tahun')->where('aktif', '1')->join('user', 'user.id=detail_rkat2.id_user')->where('username', $username)->where('kategori', 'INV')->findAll(),
             'pagu_rkat' => $this->DetailRkatModel->tampilDataSetRKAT($username),
             'tahunAkademik' => $this->TahunAkademikModel->where('aktif', '1')->first(),

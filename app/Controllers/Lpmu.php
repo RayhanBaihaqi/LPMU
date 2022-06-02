@@ -10,7 +10,7 @@ use App\Models\TahunAkademikModel;
 use App\Models\PersenSerapModel;
 use App\Models\PaguRkatModel;
 use App\Models\ModelKpiAdmin;
-use App\Models\UsersModel;
+use App\Models\usersModel;
 
 
 class Lpmu extends BaseController
@@ -21,7 +21,7 @@ class Lpmu extends BaseController
         $this->TahunAkademikModel = new TahunAkademikModel();
         $this->PersenSerapModel = new PersenSerapModel();
         $this->PaguModel = new PaguRkatModel();
-        $this->UsersModel = new UsersModel();
+        $this->usersModel = new usersModel();
         $this->ModelKpiAdmin = new ModelKpiAdmin();
     }
     public function index()
@@ -35,14 +35,14 @@ class Lpmu extends BaseController
         $data = [
             'tahun' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('username', $username)->findAll(),
             'tahunAktif' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('username', $username)->where('aktif', '1')->findAll(),
-            'seluruhDataUser' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->findAll(),
+            'seluruhDatauser' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->findAll(),
             // 'inv' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=detail_rkat2.id_tahun')->where('aktif', '1')->join('user', 'user.id=detail_rkat2.id_user')->where('username', $username)->where('kategori', 'INV')->findAll(),
             'pagu_rkat' => $this->DetailRkatModel->tampilDataSetRKAT($username),
             'tahunAkademik' => $this->TahunAkademikModel->where('aktif', '1')->first(),
         ];
         return view('/lpmu/Dashboard', $data);
     }
-    //User
+    //user
     public function indexbyuser()
     {
         $model = new DetailRkatModel();
@@ -238,17 +238,17 @@ class Lpmu extends BaseController
         return redirect()->to(base_url('lpmu/indexbyuser'));
     }
 
-    //Ubah Pssword User
+    //Ubah Pssword user
     public function form_ubahpass($id = null)
     {
-        $model = new UsersModel();
+        $model = new usersModel();
         $username = session('username');
         $data['user'] = $model->where('id', $id)->first();
         return view('/lpmu/ubah_pwd', $data);
     }
     public function ubahpwd()
     {
-        $model = new UsersModel();
+        $model = new usersModel();
         $id = session('id');
         $data = [
             'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
@@ -278,9 +278,9 @@ class Lpmu extends BaseController
         $data = [
             'tahun' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('username', $username)->findAll(),
             'tahunAktif' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('username', $username)->where('aktif', '1')->findAll(),
-            'seluruhDataUserProdi' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('level', 'prodi')->findAll(),
-            'seluruhDataUserUnit' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('level', 'unit')->findAll(),
-            'seluruhDataUserRektorat' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('level', 'rektorat')->findAll(),
+            'seluruhDatauserProdi' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('level', 'prodi')->findAll(),
+            'seluruhDatauserUnit' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('level', 'unit')->findAll(),
+            'seluruhDatauserRektorat' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('level', 'rektorat')->findAll(),
             'pagu_rkat' => $this->DetailRkatModel->tampilDataSetRKAT($username),
             'tahunAkademik' => $this->TahunAkademikModel->where('aktif', '1')->first(),
         ];
@@ -924,14 +924,14 @@ class Lpmu extends BaseController
 
     // public function form_ubahpass($id = null)
     // {
-    //     $model = new UsersModel();
+    //     $model = new usersModel();
     //     $username = session('username');
     //     $data['user'] = $model->where('id', $id)->first();
     //     return view('/lpmu/ubah_pwd', $data);
     // }
     // public function ubahpwd()
     // {
-    //     $model = new UsersModel();
+    //     $model = new usersModel();
     //     $id = session('id');
     //     //exit();
     //     $data = [

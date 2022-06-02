@@ -310,11 +310,11 @@ class vfsStreamDirectoryTestCase extends \BC_PHPUnit_Framework_TestCase
      */
     public function owner()
     {
-        $this->assertEquals(vfsStream::getCurrentUser(), $this->dir->getUser());
-        $this->assertTrue($this->dir->isOwnedByUser(vfsStream::getCurrentUser()));
-        $this->assertSame($this->dir, $this->dir->chown(vfsStream::OWNER_USER_1));
-        $this->assertEquals(vfsStream::OWNER_USER_1, $this->dir->getUser());
-        $this->assertTrue($this->dir->isOwnedByUser(vfsStream::OWNER_USER_1));
+        $this->assertEquals(vfsStream::getCurrentuser(), $this->dir->getuser());
+        $this->assertTrue($this->dir->isOwnedByuser(vfsStream::getCurrentuser()));
+        $this->assertSame($this->dir, $this->dir->chown(vfsStream::OWNER_user_1));
+        $this->assertEquals(vfsStream::OWNER_user_1, $this->dir->getuser());
+        $this->assertTrue($this->dir->isOwnedByuser(vfsStream::OWNER_user_1));
     }
 
     /**
@@ -327,8 +327,8 @@ class vfsStreamDirectoryTestCase extends \BC_PHPUnit_Framework_TestCase
     {
         $this->assertEquals(vfsStream::getCurrentGroup(), $this->dir->getGroup());
         $this->assertTrue($this->dir->isOwnedByGroup(vfsStream::getCurrentGroup()));
-        $this->assertSame($this->dir, $this->dir->chgrp(vfsStream::GROUP_USER_1));
-        $this->assertEquals(vfsStream::GROUP_USER_1, $this->dir->getGroup());
-        $this->assertTrue($this->dir->isOwnedByGroup(vfsStream::GROUP_USER_1));
+        $this->assertSame($this->dir, $this->dir->chgrp(vfsStream::GROUP_user_1));
+        $this->assertEquals(vfsStream::GROUP_user_1, $this->dir->getGroup());
+        $this->assertTrue($this->dir->isOwnedByGroup(vfsStream::GROUP_user_1));
     }
 }

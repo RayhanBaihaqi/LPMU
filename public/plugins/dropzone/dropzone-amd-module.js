@@ -5949,7 +5949,7 @@ var includesCredentials = function (url) {
   return url.username != '' || url.password != '';
 };
 
-var cannotHaveUsernamePasswordPort = function (url) {
+var cannotHaveusernamePasswordPort = function (url) {
   return !url.host || url.cannotBeABaseURL || url.scheme == 'file';
 };
 
@@ -6433,7 +6433,7 @@ var URLConstructor = function URL(url /* , base */) {
     that.href = serializeURL.call(that);
     that.origin = getOrigin.call(that);
     that.protocol = getProtocol.call(that);
-    that.username = getUsername.call(that);
+    that.username = getusername.call(that);
     that.password = getPassword.call(that);
     that.host = getHost.call(that);
     that.hostname = getHostname.call(that);
@@ -6489,7 +6489,7 @@ var getProtocol = function () {
   return getInternalURLState(this).scheme + ':';
 };
 
-var getUsername = function () {
+var getusername = function () {
   return getInternalURLState(this).username;
 };
 
@@ -6562,10 +6562,10 @@ if (DESCRIPTORS) {
     }),
     // `URL.prototype.username` accessors pair
     // https://url.spec.whatwg.org/#dom-url-username
-    username: accessorDescriptor(getUsername, function (username) {
+    username: accessorDescriptor(getusername, function (username) {
       var url = getInternalURLState(this);
       var codePoints = arrayFrom(String(username));
-      if (cannotHaveUsernamePasswordPort(url)) return;
+      if (cannotHaveusernamePasswordPort(url)) return;
       url.username = '';
       for (var i = 0; i < codePoints.length; i++) {
         url.username += percentEncode(codePoints[i], userinfoPercentEncodeSet);
@@ -6576,7 +6576,7 @@ if (DESCRIPTORS) {
     password: accessorDescriptor(getPassword, function (password) {
       var url = getInternalURLState(this);
       var codePoints = arrayFrom(String(password));
-      if (cannotHaveUsernamePasswordPort(url)) return;
+      if (cannotHaveusernamePasswordPort(url)) return;
       url.password = '';
       for (var i = 0; i < codePoints.length; i++) {
         url.password += percentEncode(codePoints[i], userinfoPercentEncodeSet);
@@ -6600,7 +6600,7 @@ if (DESCRIPTORS) {
     // https://url.spec.whatwg.org/#dom-url-port
     port: accessorDescriptor(getPort, function (port) {
       var url = getInternalURLState(this);
-      if (cannotHaveUsernamePasswordPort(url)) return;
+      if (cannotHaveusernamePasswordPort(url)) return;
       port = String(port);
       if (port == '') url.port = null;
       else parseURL(url, port, PORT);

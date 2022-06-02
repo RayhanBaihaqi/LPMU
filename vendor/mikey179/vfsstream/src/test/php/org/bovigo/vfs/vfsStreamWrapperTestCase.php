@@ -290,14 +290,14 @@ class vfsStreamWrapperTestCase extends vfsStreamWrapperBaseTestCase
      * @test
      * @group  permissions
      */
-    public function fileownerIsCurrentUserByDefault()
+    public function fileownerIsCurrentuserByDefault()
     {
-        $this->assertEquals(vfsStream::getCurrentUser(), fileowner($this->fooURL));
-        $this->assertEquals(vfsStream::getCurrentUser(), fileowner($this->fooURL . '/.'));
-        $this->assertEquals(vfsStream::getCurrentUser(), fileowner($this->barURL));
-        $this->assertEquals(vfsStream::getCurrentUser(), fileowner($this->barURL . '/.'));
-        $this->assertEquals(vfsStream::getCurrentUser(), fileowner($this->baz1URL));
-        $this->assertEquals(vfsStream::getCurrentUser(), fileowner($this->baz2URL));
+        $this->assertEquals(vfsStream::getCurrentuser(), fileowner($this->fooURL));
+        $this->assertEquals(vfsStream::getCurrentuser(), fileowner($this->fooURL . '/.'));
+        $this->assertEquals(vfsStream::getCurrentuser(), fileowner($this->barURL));
+        $this->assertEquals(vfsStream::getCurrentuser(), fileowner($this->barURL . '/.'));
+        $this->assertEquals(vfsStream::getCurrentuser(), fileowner($this->baz1URL));
+        $this->assertEquals(vfsStream::getCurrentuser(), fileowner($this->baz2URL));
     }
 
     /**
@@ -305,26 +305,26 @@ class vfsStreamWrapperTestCase extends vfsStreamWrapperBaseTestCase
      * @group  issue_11
      * @group  permissions
      */
-    public function chownChangesUser()
+    public function chownChangesuser()
     {
         if (version_compare(phpversion(), '5.4.0', '<')) {
-            $this->foo->chown(vfsStream::OWNER_USER_1);
-            $this->bar->chown(vfsStream::OWNER_USER_1);
-            $this->baz1->chown(vfsStream::OWNER_USER_2);
-            $this->baz2->chown(vfsStream::OWNER_USER_2);
+            $this->foo->chown(vfsStream::OWNER_user_1);
+            $this->bar->chown(vfsStream::OWNER_user_1);
+            $this->baz1->chown(vfsStream::OWNER_user_2);
+            $this->baz2->chown(vfsStream::OWNER_user_2);
         } else {
-            chown($this->fooURL, vfsStream::OWNER_USER_1);
-            chown($this->barURL, vfsStream::OWNER_USER_1);
-            chown($this->baz1URL, vfsStream::OWNER_USER_2);
-            chown($this->baz2URL, vfsStream::OWNER_USER_2);
+            chown($this->fooURL, vfsStream::OWNER_user_1);
+            chown($this->barURL, vfsStream::OWNER_user_1);
+            chown($this->baz1URL, vfsStream::OWNER_user_2);
+            chown($this->baz2URL, vfsStream::OWNER_user_2);
         }
 
-        $this->assertEquals(vfsStream::OWNER_USER_1, fileowner($this->fooURL));
-        $this->assertEquals(vfsStream::OWNER_USER_1, fileowner($this->fooURL . '/.'));
-        $this->assertEquals(vfsStream::OWNER_USER_1, fileowner($this->barURL));
-        $this->assertEquals(vfsStream::OWNER_USER_1, fileowner($this->barURL . '/.'));
-        $this->assertEquals(vfsStream::OWNER_USER_2, fileowner($this->baz1URL));
-        $this->assertEquals(vfsStream::OWNER_USER_2, fileowner($this->baz2URL));
+        $this->assertEquals(vfsStream::OWNER_user_1, fileowner($this->fooURL));
+        $this->assertEquals(vfsStream::OWNER_user_1, fileowner($this->fooURL . '/.'));
+        $this->assertEquals(vfsStream::OWNER_user_1, fileowner($this->barURL));
+        $this->assertEquals(vfsStream::OWNER_user_1, fileowner($this->barURL . '/.'));
+        $this->assertEquals(vfsStream::OWNER_user_2, fileowner($this->baz1URL));
+        $this->assertEquals(vfsStream::OWNER_user_2, fileowner($this->baz2URL));
     }
 
     /**
@@ -335,8 +335,8 @@ class vfsStreamWrapperTestCase extends vfsStreamWrapperBaseTestCase
     public function chownDoesNotWorkOnVfsStreamUrls()
     {
         if (version_compare(phpversion(), '5.4.0', '<')) {
-            $this->assertFalse(@chown($this->fooURL, vfsStream::OWNER_USER_2));
-            $this->assertEquals(vfsStream::getCurrentUser(), fileowner($this->fooURL));
+            $this->assertFalse(@chown($this->fooURL, vfsStream::OWNER_user_2));
+            $this->assertEquals(vfsStream::getCurrentuser(), fileowner($this->fooURL));
         }
     }
 
@@ -363,23 +363,23 @@ class vfsStreamWrapperTestCase extends vfsStreamWrapperBaseTestCase
     public function chgrp()
     {
         if (version_compare(phpversion(), '5.4.0', '<')) {
-            $this->foo->chgrp(vfsStream::GROUP_USER_1);
-            $this->bar->chgrp(vfsStream::GROUP_USER_1);
-            $this->baz1->chgrp(vfsStream::GROUP_USER_2);
-            $this->baz2->chgrp(vfsStream::GROUP_USER_2);
+            $this->foo->chgrp(vfsStream::GROUP_user_1);
+            $this->bar->chgrp(vfsStream::GROUP_user_1);
+            $this->baz1->chgrp(vfsStream::GROUP_user_2);
+            $this->baz2->chgrp(vfsStream::GROUP_user_2);
         } else {
-            chgrp($this->fooURL, vfsStream::GROUP_USER_1);
-            chgrp($this->barURL, vfsStream::GROUP_USER_1);
-            chgrp($this->baz1URL, vfsStream::GROUP_USER_2);
-            chgrp($this->baz2URL, vfsStream::GROUP_USER_2);
+            chgrp($this->fooURL, vfsStream::GROUP_user_1);
+            chgrp($this->barURL, vfsStream::GROUP_user_1);
+            chgrp($this->baz1URL, vfsStream::GROUP_user_2);
+            chgrp($this->baz2URL, vfsStream::GROUP_user_2);
         }
 
-        $this->assertEquals(vfsStream::GROUP_USER_1, filegroup($this->fooURL));
-        $this->assertEquals(vfsStream::GROUP_USER_1, filegroup($this->fooURL . '/.'));
-        $this->assertEquals(vfsStream::GROUP_USER_1, filegroup($this->barURL));
-        $this->assertEquals(vfsStream::GROUP_USER_1, filegroup($this->barURL . '/.'));
-        $this->assertEquals(vfsStream::GROUP_USER_2, filegroup($this->baz1URL));
-        $this->assertEquals(vfsStream::GROUP_USER_2, filegroup($this->baz2URL));
+        $this->assertEquals(vfsStream::GROUP_user_1, filegroup($this->fooURL));
+        $this->assertEquals(vfsStream::GROUP_user_1, filegroup($this->fooURL . '/.'));
+        $this->assertEquals(vfsStream::GROUP_user_1, filegroup($this->barURL));
+        $this->assertEquals(vfsStream::GROUP_user_1, filegroup($this->barURL . '/.'));
+        $this->assertEquals(vfsStream::GROUP_user_2, filegroup($this->baz1URL));
+        $this->assertEquals(vfsStream::GROUP_user_2, filegroup($this->baz2URL));
     }
 
     /**
@@ -390,7 +390,7 @@ class vfsStreamWrapperTestCase extends vfsStreamWrapperBaseTestCase
     public function chgrpDoesNotWorkOnVfsStreamUrls()
     {
         if (version_compare(phpversion(), '5.4.0', '<')) {
-            $this->assertFalse(@chgrp($this->fooURL, vfsStream::GROUP_USER_2));
+            $this->assertFalse(@chgrp($this->fooURL, vfsStream::GROUP_user_2));
             $this->assertEquals(vfsStream::getCurrentGroup(), filegroup($this->fooURL));
         }
     }
@@ -518,7 +518,7 @@ class vfsStreamWrapperTestCase extends vfsStreamWrapperBaseTestCase
                                   1         => 0,
                                   2         => 0100666,
                                   3         => 0,
-                                  4         => vfsStream::getCurrentUser(),
+                                  4         => vfsStream::getCurrentuser(),
                                   5         => vfsStream::getCurrentGroup(),
                                   6         => 0,
                                   7         => 4,
@@ -531,7 +531,7 @@ class vfsStreamWrapperTestCase extends vfsStreamWrapperBaseTestCase
                                   'ino'     => 0,
                                   'mode'    => 0100666,
                                   'nlink'   => 0,
-                                  'uid'     => vfsStream::getCurrentUser(),
+                                  'uid'     => vfsStream::getCurrentuser(),
                                   'gid'     => vfsStream::getCurrentGroup(),
                                   'rdev'    => 0,
                                   'size'    => 4,
@@ -554,7 +554,7 @@ class vfsStreamWrapperTestCase extends vfsStreamWrapperBaseTestCase
                                   1         => 0,
                                   2         => 0040777,
                                   3         => 0,
-                                  4         => vfsStream::getCurrentUser(),
+                                  4         => vfsStream::getCurrentuser(),
                                   5         => vfsStream::getCurrentGroup(),
                                   6         => 0,
                                   7         => 0,
@@ -567,7 +567,7 @@ class vfsStreamWrapperTestCase extends vfsStreamWrapperBaseTestCase
                                   'ino'     => 0,
                                   'mode'    => 0040777,
                                   'nlink'   => 0,
-                                  'uid'     => vfsStream::getCurrentUser(),
+                                  'uid'     => vfsStream::getCurrentuser(),
                                   'gid'     => vfsStream::getCurrentGroup(),
                                   'rdev'    => 0,
                                   'size'    => 0,
@@ -590,7 +590,7 @@ class vfsStreamWrapperTestCase extends vfsStreamWrapperBaseTestCase
                                   1         => 0,
                                   2         => 0040777,
                                   3         => 0,
-                                  4         => vfsStream::getCurrentUser(),
+                                  4         => vfsStream::getCurrentuser(),
                                   5         => vfsStream::getCurrentGroup(),
                                   6         => 0,
                                   7         => 0,
@@ -603,7 +603,7 @@ class vfsStreamWrapperTestCase extends vfsStreamWrapperBaseTestCase
                                   'ino'     => 0,
                                   'mode'    => 0040777,
                                   'nlink'   => 0,
-                                  'uid'     => vfsStream::getCurrentUser(),
+                                  'uid'     => vfsStream::getCurrentuser(),
                                   'gid'     => vfsStream::getCurrentGroup(),
                                   'rdev'    => 0,
                                   'size'    => 0,

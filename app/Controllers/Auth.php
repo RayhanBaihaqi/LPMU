@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use CodeIgniter\Controller;
-use App\Models\UsersModel;
+use App\Models\usersModel;
 use App\Models\AuthModel;
 use App\Models\PaguRkatModel;
 
@@ -11,7 +11,7 @@ class Auth extends BaseController
 {
     public function index()
     {
-        $model = new UsersModel();
+        $model = new usersModel();
 
         $data['user'] = $model->orderBy('id', 'DESC')->findAll();
 
@@ -19,13 +19,13 @@ class Auth extends BaseController
     }
     public function create()
     {
-        $model = new UsersModel();
+        $model = new usersModel();
         $data['user'] = $model->orderBy('id', 'ASC')->findAll();
-        return view('admin/TambahUsers', $data);
+        return view('admin/Tambahusers', $data);
     }
     public function store()
     {
-        $model = new UsersModel();
+        $model = new usersModel();
         $data = [
             'username' => $this->request->getVar('username'),
             'nama_prodi' => $this->request->getVar('nama_prodi'),
@@ -37,14 +37,14 @@ class Auth extends BaseController
     }
     public function edit($id = null)
     {
-        $model = new UsersModel();
+        $model = new usersModel();
         $data['user'] = $model->where('id', $id)->first();
 
-        return view('/admin/EditUsers', $data);
+        return view('/admin/Editusers', $data);
     }
     public function update()
     {
-        $model = new UsersModel();
+        $model = new usersModel();
         $id = $this->request->getVar('id');
 
         $data = [
@@ -59,7 +59,7 @@ class Auth extends BaseController
     }
     public function delete($id = null)
     {
-        $model = new UsersModel();
+        $model = new usersModel();
         $data['user'] = $model->where('id', $id)->delete();
 
         return redirect()->to(base_url('auth/index'));
@@ -156,7 +156,7 @@ class Auth extends BaseController
         return redirect()->to('/');
     }
 
-    //Ubah Password User
+    //Ubah Password user
     public function ubahpass($id_setrkat = null)
     {
         $model = new PaguRkatModel();
@@ -169,7 +169,7 @@ class Auth extends BaseController
     }
     public function updatepass()
     {
-        $model = new UsersModel();
+        $model = new usersModel();
         $id = $this->request->getVar('id');
 
         $data = [

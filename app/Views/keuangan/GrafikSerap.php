@@ -173,7 +173,7 @@
         var data = google.visualization.arrayToDataTable([
           ['Prodi', 'Tahun', 'PK & OPS (%)', 'INV (%)'],
           <?php
-		    foreach ($seluruhDataUserProdi as $key => $reading) : ?>
+		    foreach ($seluruhDatauserProdi as $key => $reading) : ?>
           ['<?= $reading['nama_prodi'] ?>','<?= $reading['tahunAkademik'] ?>', <?= $reading['persenPkOps'] ?>,<?= $reading['persenInv'] ?>],
           <?php endforeach; ?>
         ]);
@@ -198,7 +198,7 @@
         var data = google.visualization.arrayToDataTable([
           ['Unit', 'Tahun', 'PK & OPS (%)', 'INV (%)'],
           <?php
-		    foreach ($seluruhDataUserUnit as $key => $reading) : ?>
+		    foreach ($seluruhDatauserUnit as $key => $reading) : ?>
           ['<?= $reading['nama_prodi'] ?>','<?= $reading['tahunAkademik'] ?>', <?= $reading['persenPkOps'] ?>,<?= $reading['persenInv'] ?>],
           <?php endforeach; ?>
         ]);
@@ -223,7 +223,7 @@
         var data = google.visualization.arrayToDataTable([
           ['Rektorat', 'Tahun', 'PK & OPS (%)', 'INV (%)'],
           <?php
-		    foreach ($seluruhDataUserRektorat as $key => $reading) : ?>
+		    foreach ($seluruhDatauserRektorat as $key => $reading) : ?>
           ['<?= $reading['nama_prodi'] ?>','<?= $reading['tahunAkademik'] ?>', <?= $reading['persenPkOps'] ?>,<?= $reading['persenInv'] ?>],
           <?php endforeach; ?>
         ]);

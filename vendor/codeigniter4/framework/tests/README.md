@@ -6,7 +6,7 @@ It is not intended to be a full description of the test features that you can
 use to test your application. Those details can be found in the documentation.
 
 ## Resources
-* [CodeIgniter 4 User Guide on Testing](https://codeigniter4.github.io/userguide/testing/index.html)
+* [CodeIgniter 4 user Guide on Testing](https://codeigniter4.github.io/userguide/testing/index.html)
 * [PHPUnit docs](https://phpunit.readthedocs.io/en/8.5/index.html)
 
 ## Requirements
@@ -91,7 +91,7 @@ All tests go in the **tests/** directory. Each test file is a class that extends
 **Test Case** (see above) and contains methods for the individual tests. These method
 names must start with the word "test" and should have descriptive names for precisely what
 they are testing:
-`testUserCanModifyFile()` `testOutputColorMatchesInput()` `testIsLoggedInFailsWithInvalidUser()`
+`testuserCanModifyFile()` `testOutputColorMatchesInput()` `testIsLoggedInFailsWithInvaliduser()`
 
 Writing tests is an art, and there are many resources available to help learn how.
 Review the links above and always pay attention to your code coverage.

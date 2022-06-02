@@ -112,7 +112,7 @@ class CURLRequest extends Request
         parent::__construct($config);
 
         $this->response       = $response;
-        $this->baseURI        = $uri->useRawQueryString();
+        $this->baseURI        = $uri->userawQueryString();
         $this->defaultOptions = $options;
 
         /** @var ConfigCURLRequest|null $configCURLRequest */
@@ -492,7 +492,7 @@ class CURLRequest extends Request
     {
         // Auth Headers
         if (! empty($config['auth'])) {
-            $curlOptions[CURLOPT_USERPWD] = $config['auth'][0] . ':' . $config['auth'][1];
+            $curlOptions[CURLOPT_userPWD] = $config['auth'][0] . ':' . $config['auth'][1];
 
             if (! empty($config['auth'][2]) && strtolower($config['auth'][2]) === 'digest') {
                 $curlOptions[CURLOPT_HTTPAUTH] = CURLAUTH_DIGEST;
@@ -629,9 +629,9 @@ class CURLRequest extends Request
             $curlOptions[CURLOPT_COOKIEFILE] = $config['cookie'];
         }
 
-        // User Agent
+        // user Agent
         if (isset($config['user_agent'])) {
-            $curlOptions[CURLOPT_USERAGENT] = $config['user_agent'];
+            $curlOptions[CURLOPT_userAGENT] = $config['user_agent'];
         }
 
         return $curlOptions;

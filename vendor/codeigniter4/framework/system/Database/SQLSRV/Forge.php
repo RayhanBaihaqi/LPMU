@@ -107,7 +107,7 @@ class Forge extends BaseForge
             . 'INNER JOIN sys.schemas s on s.schema_id = t.schema_id '
             . "WHERE s.name=N'" . $this->db->schema . "' "
             . "AND t.name=REPLACE(N'%s', '\"', '') "
-            . "AND t.type_desc='USER_TABLE')\nCREATE TABLE ";
+            . "AND t.type_desc='user_TABLE')\nCREATE TABLE ";
 
         $this->createTableStr = '%s ' . $this->db->escapeIdentifiers($this->db->schema) . ".%s (%s\n) ";
         $this->renameTableStr = 'EXEC sp_rename [' . $this->db->escapeIdentifiers($this->db->schema) . '.%s] , %s ;';

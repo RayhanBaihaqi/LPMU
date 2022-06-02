@@ -69,7 +69,7 @@ class MigrationGenerator extends BaseCommand
         '--table'     => 'Table name to use for database sessions. Default: "ci_sessions".',
         '--dbgroup'   => 'Database group to use for database sessions. Default: "default".',
         '--namespace' => 'Set root namespace. Default: "APP_NAMESPACE".',
-        '--suffix'    => 'Append the component title to the class name (e.g. User => UserMigration).',
+        '--suffix'    => 'Append the component title to the class name (e.g. user => userMigration).',
     ];
 
     /**

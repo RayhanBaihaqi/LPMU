@@ -126,8 +126,8 @@
 				<div class="card-body">
 					<input required type="hidden" name="id" value="<?= $user['id']; ?>">
 					<div class="form-group">
-						<label for="username">Username</label>
-						<input required type="text" name="username" class="form-control" id="username" placeholder="Masukkan Username" value="<?= $user['username']; ?>">
+						<label for="username">username</label>
+						<input required type="text" name="username" class="form-control" id="username" placeholder="Masukkan username" value="<?= $user['username']; ?>">
 					</div>
 					<div class="form-group">
 						<label for="nama_prodi">Nama Prodi/Unit</label>

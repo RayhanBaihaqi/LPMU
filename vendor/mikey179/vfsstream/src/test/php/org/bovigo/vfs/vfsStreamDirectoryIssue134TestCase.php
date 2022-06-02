@@ -2,7 +2,7 @@
 /**
  * Created by PhpStorm.
  * Project: vfsStream
- * User: Sebastian Hopfe
+ * user: Sebastian Hopfe
  * Date: 14.07.16
  * Time: 14:07
  */

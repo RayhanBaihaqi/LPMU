@@ -53,14 +53,14 @@ class URI
     protected $scheme = 'http';
 
     /**
-     * URI User Info
+     * URI user Info
      *
      * @var string
      */
     protected $user;
 
     /**
-     * URI User Password
+     * URI user Password
      *
      * @var string
      */
@@ -255,7 +255,7 @@ class URI
      *
      * @return URI
      */
-    public function useRawQueryString(bool $raw = true)
+    public function userawQueryString(bool $raw = true)
     {
         $this->rawQueryString = $raw;
 
@@ -333,8 +333,8 @@ class URI
 
         $authority = $this->host;
 
-        if (! empty($this->getUserInfo())) {
-            $authority = $this->getUserInfo() . '@' . $authority;
+        if (! empty($this->getuserInfo())) {
+            $authority = $this->getuserInfo() . '@' . $authority;
         }
 
         // Don't add port if it's a standard port for
@@ -368,7 +368,7 @@ class URI
      *
      * @return string|null The URI user information, in "username[:password]" format.
      */
-    public function getUserInfo()
+    public function getuserInfo()
     {
         $userInfo = $this->user;
 
@@ -661,7 +661,7 @@ class URI
      *
      * @return $this
      */
-    public function setUserInfo(string $user, string $pass)
+    public function setuserInfo(string $user, string $pass)
     {
         $this->user     = trim($user);
         $this->password = trim($pass);

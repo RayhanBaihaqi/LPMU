@@ -88,10 +88,10 @@ return function ($rootDir) {
             ],
         'dejavu serif' =>
             [
-                'bold' => $distFontDir . '/DejaVuSerif-Bold',
-                'bold_italic' => $distFontDir . '/DejaVuSerif-BoldItalic',
-                'italic' => $distFontDir . '/DejaVuSerif-Italic',
-                'normal' => $distFontDir . '/DejaVuSerif'
+                'bold' => $distFontDir . '/DejaVuserif-Bold',
+                'bold_italic' => $distFontDir . '/DejaVuserif-BoldItalic',
+                'italic' => $distFontDir . '/DejaVuserif-Italic',
+                'normal' => $distFontDir . '/DejaVuserif'
             ]
     ];
 };

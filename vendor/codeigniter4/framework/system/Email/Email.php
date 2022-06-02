@@ -47,7 +47,7 @@ class Email
     public $fromName;
 
     /**
-     * Used as the User-Agent and X-Mailer headers' value.
+     * Used as the user-Agent and X-Mailer headers' value.
      *
      * @var string
      */
@@ -75,11 +75,11 @@ class Email
     public $SMTPHost = '';
 
     /**
-     * SMTP Username
+     * SMTP username
      *
      * @var string
      */
-    public $SMTPUser = '';
+    public $SMTPuser = '';
 
     /**
      * SMTP Password
@@ -422,7 +422,7 @@ class Email
         }
 
         $this->charset  = strtoupper($this->charset);
-        $this->SMTPAuth = isset($this->SMTPUser[0], $this->SMTPPass[0]);
+        $this->SMTPAuth = isset($this->SMTPuser[0], $this->SMTPPass[0]);
 
         return $this;
     }
@@ -1060,7 +1060,7 @@ class Email
      */
     protected function buildHeaders()
     {
-        $this->setHeader('User-Agent', $this->userAgent);
+        $this->setHeader('user-Agent', $this->userAgent);
         $this->setHeader('X-Sender', $this->cleanEmail($this->headers['From']));
         $this->setHeader('X-Mailer', $this->userAgent);
         $this->setHeader('X-Priority', $this->priorities[$this->priority]);
@@ -1963,7 +1963,7 @@ class Email
             return true;
         }
 
-        if ($this->SMTPUser === '' && $this->SMTPPass === '') {
+        if ($this->SMTPuser === '' && $this->SMTPPass === '') {
             $this->setErrorMessage(lang('Email.noSMTPAuth'));
 
             return false;
@@ -1982,11 +1982,11 @@ class Email
             return false;
         }
 
-        $this->sendData(base64_encode($this->SMTPUser));
+        $this->sendData(base64_encode($this->SMTPuser));
         $reply = $this->getSMTPData();
 
         if (strpos($reply, '334') !== 0) {
-            $this->setErrorMessage(lang('Email.SMTPAuthUsername', [$reply]));
+            $this->setErrorMessage(lang('Email.SMTPAuthusername', [$reply]));
 
             return false;
         }

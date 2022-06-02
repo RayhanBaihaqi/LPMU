@@ -153,7 +153,7 @@
                     </tr>
                     <tr>
                       <td>Role:</td>
-                      <td>User</td>
+                      <td>user</td>
                     </tr>
                     <tr>
                       <td>Status:</td>
@@ -174,7 +174,7 @@
                       <th>Delete</th>
                     </tr>
                     <tr>
-                      <td>Users</td>
+                      <td>users</td>
                       <td><span class="fa fa-check text-primary"></span></td>
                       <td><span class="fa fa-times text-light"></span></td>
                       <td><span class="fa fa-times text-light"></span></td>
@@ -226,7 +226,7 @@
                 <table class="table user-view-table m-0">
                   <tbody>
                     <tr>
-                      <td>Username:</td>
+                      <td>username:</td>
                       <td>nmaxwell</td>
                     </tr>
                     <tr>

@@ -111,7 +111,7 @@ class SplFileInfoRepresentation extends Representation
 
         $this->flags = [$this->typeflag];
 
-        // User
+        // user
         $this->flags[] = (($this->perms & 0400) ? 'r' : '-');
         $this->flags[] = (($this->perms & 0200) ? 'w' : '-');
         if ($this->perms & 0100) {

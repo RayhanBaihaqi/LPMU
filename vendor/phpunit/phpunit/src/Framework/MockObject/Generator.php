@@ -685,7 +685,7 @@ EOT;
         $methods = [];
 
         foreach ($interface->getMethods() as $method) {
-            if (!$method->isUserDefined()) {
+            if (!$method->isuserDefined()) {
                 continue;
             }
 

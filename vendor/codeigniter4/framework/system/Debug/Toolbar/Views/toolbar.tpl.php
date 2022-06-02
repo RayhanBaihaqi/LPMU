@@ -143,7 +143,7 @@
 
 		<!-- Session -->
 		<a href="javascript:void(0)" onclick="ciDebugBar.toggleDataTable('session'); return false;">
-			<h2>Session User Data</h2>
+			<h2>Session user Data</h2>
 		</a>
 
 		<?php if (isset($vars['session'])) : ?>

@@ -114,8 +114,8 @@
                             <input required type="hidden" name="id" value="<?php $id = session('id');?>">
 
                             <div class="form-group">
-                                <label for="username">Username</label>
-                                <input required type="text" name="username" class="form-control" id="username" placeholder="Masukkan Username" value="<?php
+                                <label for="username">username</label>
+                                <input required type="text" name="username" class="form-control" id="username" placeholder="Masukkan username" value="<?php
                                                                                                                                                         $username = session('username');
                                                                                                                                                         echo "$username"
                                                                                                                                                         ?>" disabled>
@@ -132,7 +132,7 @@
                                                                                                                                                                                     ?>" disabled>
                             </div>
                             <div class=" form-group">
-                                <label for="level">Kategori User</label>
+                                <label for="level">Kategori user</label>
                                 <select required class="form-control" id="level" name="level" disabled>
                                     <option value="<?php
                                                     $level = session('level');

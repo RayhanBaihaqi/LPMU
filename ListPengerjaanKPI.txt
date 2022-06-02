@@ -4,7 +4,7 @@ ADMIN :
 1. memanggil data capaian kpi dari database
 2. database tabel_capaian_kpi dibanyakin kolomnya utk dibuat sbg penyimpanan inputan dari user
 
-USER : 
+user : 
 2. menampilkan grafik kesimpulan
 4. buat perhitungan antara bobot dan realisasi --> hasil jumlah_bobot
 11. kesimpulan diperlihatkan dalam tabel grafik

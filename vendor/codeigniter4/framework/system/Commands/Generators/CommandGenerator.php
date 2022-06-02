@@ -69,7 +69,7 @@ class CommandGenerator extends BaseCommand
         '--type'      => 'The command type. Options [basic, generator]. Default: "basic".',
         '--group'     => 'The command group. Default: [basic -> "CodeIgniter", generator -> "Generators"].',
         '--namespace' => 'Set root namespace. Default: "APP_NAMESPACE".',
-        '--suffix'    => 'Append the component title to the class name (e.g. User => UserCommand).',
+        '--suffix'    => 'Append the component title to the class name (e.g. user => userCommand).',
         '--force'     => 'Force overwrite existing file.',
     ];
 

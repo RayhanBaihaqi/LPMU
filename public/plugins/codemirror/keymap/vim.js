@@ -1747,16 +1747,16 @@
     // All of the functions below return Cursor objects.
     var motions = {
       moveToTopLine: function(cm, _head, motionArgs) {
-        var line = getUserVisibleLines(cm).top + motionArgs.repeat -1;
+        var line = getuserVisibleLines(cm).top + motionArgs.repeat -1;
         return Pos(line, findFirstNonWhiteSpaceCharacter(cm.getLine(line)));
       },
       moveToMiddleLine: function(cm) {
-        var range = getUserVisibleLines(cm);
+        var range = getuserVisibleLines(cm);
         var line = Math.floor((range.top + range.bottom) * 0.5);
         return Pos(line, findFirstNonWhiteSpaceCharacter(cm.getLine(line)));
       },
       moveToBottomLine: function(cm, _head, motionArgs) {
-        var line = getUserVisibleLines(cm).bottom - motionArgs.repeat +1;
+        var line = getuserVisibleLines(cm).bottom - motionArgs.repeat +1;
         return Pos(line, findFirstNonWhiteSpaceCharacter(cm.getLine(line)));
       },
       expandToLine: function(_cm, head, motionArgs) {
@@ -4535,7 +4535,7 @@
         }
       }
     }
-    function getUserVisibleLines(cm) {
+    function getuserVisibleLines(cm) {
       var scrollInfo = cm.getScrollInfo();
       var occludeToleranceTop = 6;
       var occludeToleranceBottom = 10;
