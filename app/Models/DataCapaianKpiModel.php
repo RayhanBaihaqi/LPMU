@@ -421,35 +421,35 @@ class DataCapaianKpiModel extends Model
     //query minimal, max,rata2 seluruh prodi TA 19/20
     function minkpi19_all($nama_prodi = null)
     {
-        return $this->db->query("SELECT min(tot19all) as min_19_all FROM (SELECT SUM(nilai_bobot) as tot19all FROM `tabel_capaian_kpi` where tahun_ajaran='2019/2020' GROUP BY nama_prodi) as m");
+        return $this->db->query("SELECT min(tot19all) as min_19_all FROM (SELECT SUM(nilai_bobot) as tot19all FROM `tabel_capaian_kpi` where tahun_ajaran='2019/2020' and level='prodi' GROUP BY nama_prodi) as m");
     }
     function maxkpi19_all($nama_prodi = null)
     {
-        return $this->db->query("SELECT max(tot19all) as max_19_all FROM (SELECT SUM(nilai_bobot) as tot19all FROM `tabel_capaian_kpi` where tahun_ajaran='2019/2020' GROUP BY nama_prodi) as m");
+        return $this->db->query("SELECT max(tot19all) as max_19_all FROM (SELECT SUM(nilai_bobot) as tot19all FROM `tabel_capaian_kpi` where tahun_ajaran='2019/2020' and level='prodi' GROUP BY nama_prodi) as m");
     }
     function avgkpi19_all($nama_prodi = null)
     {
-        return $this->db->query("SELECT avg(tot19all) as avg_19_all FROM (SELECT SUM(nilai_bobot) as tot19all FROM `tabel_capaian_kpi` where tahun_ajaran='2019/2020' GROUP BY nama_prodi) as m");
+        return $this->db->query("SELECT avg(tot19all) as avg_19_all FROM (SELECT SUM(nilai_bobot) as tot19all FROM `tabel_capaian_kpi` where tahun_ajaran='2019/2020' and level='prodi' GROUP BY nama_prodi) as m");
     }
 
     //query minimal, max,rata2 seluruh prodi TA 20/21
     function minkpi20_all($nama_prodi = null)
     {
-        return $this->db->query("SELECT min(tot20all) as min_20_all FROM (SELECT SUM(nilai_bobot) as tot20all FROM `tabel_capaian_kpi` where tahun_ajaran='2020/2021' GROUP BY nama_prodi) as m");
+        return $this->db->query("SELECT min(tot20all) as min_20_all FROM (SELECT SUM(nilai_bobot) as tot20all FROM `tabel_capaian_kpi` where tahun_ajaran='2020/2021' and level='prodi' GROUP BY nama_prodi) as m");
     }
     function maxkpi20_all($nama_prodi = null)
     {
-        return $this->db->query("SELECT max(tot20all) as max_20_all FROM (SELECT SUM(nilai_bobot) as tot20all FROM `tabel_capaian_kpi` where tahun_ajaran='2020/2021' GROUP BY nama_prodi) as m");
+        return $this->db->query("SELECT max(tot20all) as max_20_all FROM (SELECT SUM(nilai_bobot) as tot20all FROM `tabel_capaian_kpi` where tahun_ajaran='2020/2021' and level='prodi' GROUP BY nama_prodi) as m");
     }
     function avgkpi20_all($nama_prodi = null)
     {
-        return $this->db->query("SELECT avg(tot20all) as avg_20_all FROM (SELECT SUM(nilai_bobot) as tot20all FROM `tabel_capaian_kpi` where tahun_ajaran='2020/2021' GROUP BY nama_prodi) as m");
+        return $this->db->query("SELECT avg(tot20all) as avg_20_all FROM (SELECT SUM(nilai_bobot) as tot20all FROM `tabel_capaian_kpi` where tahun_ajaran='2020/2021' and level='prodi' GROUP BY nama_prodi) as m");
     }
 
     //query minimal, max,rata2 seluruh prodi TA 21/22
     function minkpi21_all($nama_prodi = null)
     {
-        return $this->db->query("SELECT min(tot21all) as min_21_all FROM (SELECT SUM(nilai_bobot) as tot21all FROM `tabel_capaian_kpi` where tahun_ajaran='2021/2022' GROUP BY nama_prodi) as m");
+        return $this->db->query("SELECT min(tot21all) as min_21_all FROM (SELECT SUM(nilai_bobot) as tot21all FROM `tabel_capaian_kpi` where tahun_ajaran='2021/2022' and level='prodi' GROUP BY nama_prodi) as m");
     }
     function maxkpi21_all($nama_prodi = null)
     {
@@ -457,7 +457,7 @@ class DataCapaianKpiModel extends Model
     }
     function avgkpi21_all($nama_prodi = null)
     {
-        return $this->db->query("SELECT avg(tot21all) as avg_21_all FROM (SELECT SUM(nilai_bobot) as tot21all FROM `tabel_capaian_kpi` where tahun_ajaran='2021/2022' GROUP BY nama_prodi) as m");
+        return $this->db->query("SELECT avg(tot21all) as avg_21_all FROM (SELECT SUM(nilai_bobot) as tot21all FROM `tabel_capaian_kpi` where tahun_ajaran='2021/2022' and level='prodi' GROUP BY nama_prodi) as m");
     }
 
     function simpancapaian($data)

@@ -184,8 +184,8 @@
                                     <th>Target</th>
                                     <th>Realisasi</th>
                                     <th>Nilai Bobot</th>
-                                    <th>File</th>
-                                    <th>Actions</th>
+                                    <!-- <th>File</th>
+                                    <th>Actions</th> -->
                                 </tr>
                             </thead>
                             <tbody>
@@ -206,10 +206,10 @@
                                         <td><?= $row->target ?></td>
                                         <td><?= $row->realisasi ?></td>
                                         <td><?= $row->nilai_bobot ?></td>
-                                        <td><?= $row->upload_file ?></td>
+                                        <!-- <td><?= $row->upload_file ?></td>
                                         <td>
-                                            <!-- <a href="<?= base_url('kpi/form_updatecapaian/' . $row->id); ?>" class="button button2"><i class="fas fa-edit"></i></a> -->
-                                        </td>
+                                            <a href="<?= base_url('kpi/form_updatecapaian/' . $row->id); ?>" class="button button2"><i class="fas fa-edit"></i></a>
+                                        </td> -->
                                     <?php
                                 endforeach;
                                     ?>

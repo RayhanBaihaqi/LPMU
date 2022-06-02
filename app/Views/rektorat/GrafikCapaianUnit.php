@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>List Capaian KPI</title>
+    <title>Grafik Capaian KPI</title>
 
     <!-- Custom fonts for this template-->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
@@ -134,7 +134,7 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">List Capaian KPI</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Grafik Capaian KPI</h1>
                     <br>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Pilih Tingkatan</label>
