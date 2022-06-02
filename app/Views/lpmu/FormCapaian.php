@@ -71,7 +71,7 @@
 						<a href="<?= base_url('/lpmu/createbyuser') ?>" class="nav-item nav-link">Rencana Anggaran</a>
                         <a href="<?= base_url('/CapaianRkat/createcapaianbylpmu') ?>" class="nav-item nav-link active">Realisasi Anggaran</a>
                         <a href="<?= base_url('/lpmu/indexbyuser') ?>" class="nav-item nav-link">Kesimpulan</a>
-                        <a href="<?= base_url('/lpmu/grafikSerap') ?>" class="nav-item nav-link">Grafik Serap</a>
+                        <!-- <a href="<?= base_url('/lpmu/grafikSerap') ?>" class="nav-item nav-link">Grafik Serap</a> -->
 					</div>
 					<div class="ml-auto">
 						<div class="user-info-dropdown">

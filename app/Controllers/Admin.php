@@ -39,7 +39,6 @@ class Admin extends BaseController
             'detail_rkat' => $this->DetailRkatModel->gabungRektor(),
             'userprodi' => $this->UsersModel->where('level', 'prodi')->findAll(),
         ];
-        $data['detail_rkat'] = $this->DetailRkatModel->gabungRektor();
         echo view('/admin/ListRkatProdi', $data);
     }
     public function listRkatUnit()
