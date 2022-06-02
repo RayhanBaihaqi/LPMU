@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>List Capaian KPI</title>
+    <title>Grafik Capaian KPI</title>
 
     <!-- Custom fonts for this template-->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
@@ -166,7 +166,7 @@
                             <!-- BAR CHART -->
                             <div class="card card-dark">
                                 <div class="card-header">
-                                    <h3 class="text-center">Grafik Total Capaian KPI Prodi Setiap Tahun</h3>
+                                    <h3 class="text-center">Grafik Rata-rata Capaian KPI Prodi Setiap Tahun</h3>
                                     <div class="card-tools">
                                         <button type="button" class="btn btn-tool" data-card-widget="collapse">
                                             <i class="fas fa-minus"></i>
@@ -184,7 +184,7 @@
 
                             <div class="card card-dark">
                                 <div class="card-header">
-                                    <h3 class="text-center">Grafik Total Capaian KPI Unit Setiap Tahun</h3>
+                                    <h3 class="text-center">Grafik Rata-rata Capaian KPI Unit Setiap Tahun</h3>
                                     <div class="card-tools">
                                         <button type="button" class="btn btn-tool" data-card-widget="collapse">
                                             <i class="fas fa-minus"></i>

@@ -396,7 +396,7 @@ class Rektorat extends BaseController
 
     public function grafikcapaian()
     {
-        $tabelcapaiankpi = new DataCapaianKpiModel();
+        $grafikrencanakpi = new DataCapaianKpiModel();
         $data = [
             // //'tampilgrafikrencana' => $grafikrencanakpi->get_grafik(),
             // //standar 1 per TA
@@ -418,13 +418,13 @@ class Rektorat extends BaseController
             // //standar 9 per TA
             // 'hasilrencanakpi_9' => $grafikrencanakpi->jml_kpi9()->getResultArray(),
             // // 'tampilgrafikkpi' => $this->DataCapaianKpiModel->get_grafik(),
-            'averagekpi19prodi' => $tabelcapaiankpi->avgkpi19_all()->getResultArray(),
-            'averagekpi20prodi' => $tabelcapaiankpi->avgkpi20_all()->getResultArray(),
-            'averagekpi21prodi' => $tabelcapaiankpi->avgkpi21_all()->getResultArray(),
+            'averagekpi19prodi' => $grafikrencanakpi->avgkpi19_all()->getResultArray(),
+            'averagekpi20prodi' => $grafikrencanakpi->avgkpi20_all()->getResultArray(),
+            'averagekpi21prodi' => $grafikrencanakpi->avgkpi21_all()->getResultArray(),
 
-            'averagekpi19unit' => $tabelcapaiankpi->avgkpi19_unit()->getResultArray(),
-            'averagekpi20unit' => $tabelcapaiankpi->avgkpi20_unit()->getResultArray(),
-            'averagekpi21unit' => $tabelcapaiankpi->avgkpi21_unit()->getResultArray(),
+            'averagekpi19unit' => $grafikrencanakpi->avgkpi19_unit()->getResultArray(),
+            'averagekpi20unit' => $grafikrencanakpi->avgkpi20_unit()->getResultArray(),
+            'averagekpi21unit' => $grafikrencanakpi->avgkpi21_unit()->getResultArray(),
 
         ];
         //}
