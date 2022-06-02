@@ -55,14 +55,15 @@
 					<span>RKAT</span>
 				</a>
 				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-					<div class="bg-white py-2 collapse-inner rounded">
+				<div class="bg-white py-2 collapse-inner rounded">
 						<a class="collapse-item" href="<?= base_url('/rektorat/inputRencana') ?>">Input Rencana Anggaran</a>
 						<a class="collapse-item" href="<?= base_url('/rektorat/inputRealisasi') ?>">Input Realisasi Anggaran</a>
 						<a class="collapse-item" href="<?= base_url('/rektorat/listRkatRektorat') ?>">Daftar Data RKAT Rektorat</a>
 						<a class="collapse-item" href="<?= base_url('/rektorat/rincian') ?>">Rincian Rkat</a>
 						<a class="collapse-item" href="<?= base_url('/rektorat/listRkatProdi') ?>">Daftar Data RKAT Prodi</a>
 						<a class="collapse-item" href="<?= base_url('/rektorat/listRkatUnit') ?>">Daftar Data RKAT Unit</a>
-						<a class="collapse-item" href="<?= base_url('/rektorat/grafikSerap') ?>">Grafik Serapan</a>
+						<a class="collapse-item" href="<?= base_url('/rektorat/grafikSerapProdi') ?>">Grafik Capaian Prodi</a>
+						<a class="collapse-item" href="<?= base_url('/rektorat/grafikSerapUnit') ?>">Grafik Capaian Unit</a>
 					</div>
 				</div>
 			</li>
@@ -152,10 +153,8 @@
 									<th >Target</th>
 									<th >Anggaran Ganjil</th>
 									<th width="600px">Serapan Ganjil</th>
-									<th >peren Ganjil</th>
 									<th >Anggaran Genap</th>
 									<th width="600px">Serapan Genap</th>
-									<th >peren Genap</th>
 								</tr>
 							</thead>
 							<tbody id="nilai">
@@ -181,12 +180,10 @@
 												<input style="display: none;" required type="text" name="id[]" id="id" value="<?= $reading['id_rkat']; ?>">
 												<input type="text" class="form-control form-control-sm serapGanjil" id="serapGanjil<?= $no; ?>" placeholder="Rp. 0" name="serapGanjil[]" onkeyup="AddInputs(this.id);" required <?= ($reading['serapGanjil'] != "") ? "value='".$reading['serapGanjil']."' disabled" : "" ?>>
 											</td>
-											<td></td>
 											<td><input type="text" class="form-control form-control-sm" id="aGenap<?= $no; ?>" value="<?= $reading['anggaranGenap']; ?>" disabled /></td>
 											<td>
 											<input type="text" class="form-control form-control-sm serapGenap" id="serapGenap<?= $no; ?>" placeholder="Rp. 0" name="serapGenap[]" onkeyup="AddInputs2(this.id);" required <?= ($reading['serapGenap'] != "") ? "value='".$reading['serapGanjil']."' disabled" : "" ?>>
 											</td>
-											<td></td>
 										</tr>
 									<?php $no++;
 									endforeach; ?>
@@ -199,10 +196,8 @@
 								<td></td>
 								<td><span id="totalanggaranganjil"></span></td>
 								<td><span id="tampilTotalGanjil"></span></td>
-								<td><p>Persentase Serap: <input type="text" class="form-control form-control-sm " id="persenSerapGanjil" placeholder="0%" name="persenSerapGanjil"disabled></p></td>
 								<td><span id="totalanggarangenap"></span></td>
 								<td><span id="tampilTotalGenap"></span></td>
-								<td><p>Persentase Serap: <input type="text" class="form-control form-control-sm" name="persenSerapGenap" id="persenSerapGenap"  /></p></td>
 
 							</tfoot>
 
@@ -243,7 +238,7 @@
 		var table = document.getElementById("nilai"),
 			sumHsl = 0;
 		for (var t = 0; t < table.rows.length; t++) {
-			sumHsl = sumHsl + parseInt(table.rows[t].cells[8].getElementsByTagName('input')[0].value);
+			sumHsl = sumHsl + parseInt(table.rows[t].cells[7].getElementsByTagName('input')[0].value);
 		}
 		document.getElementById("totalanggarangenap").innerHTML = sumHsl;
 	</script>

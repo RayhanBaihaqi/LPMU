@@ -227,16 +227,13 @@ class Rektorat extends BaseController
         ');
     }
 
-    public function grafikSerap()
+    public function grafikSerapProdi()
     {
         $model = new PersenSerapModel();
         $username = session('username');
         $data = [
             'tahun' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('username', $username)->findAll(),
             'tahunAktif' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('username', $username)->where('aktif', '1')->findAll(),
-            'seluruhDatauserProdi' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('level', 'prodi')->findAll(),
-            'seluruhDatauserUnit' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('level', 'unit')->findAll(),
-            'seluruhDatauserRektorat' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('level', 'rektorat')->findAll(),
             'pagu_rkat' => $this->DetailRkatModel->tampilDataSetRKAT($username),
             'tahunAkademik' => $this->TahunAkademikModel->where('aktif', '1')->first(),
             //Data Program Studi
@@ -244,16 +241,106 @@ class Rektorat extends BaseController
             'dataProdiAkt1920' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'prodi')->where('id_tahun', '1')->where('nama_prodi', 'Akuntansi')->findAll(),
             'dataProdiAkt2021' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'prodi')->where('id_tahun', '2')->where('nama_prodi', 'Akuntansi')->findAll(),
             'dataProdiAkt2122' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'prodi')->where('id_tahun', '3')->where('nama_prodi', 'Akuntansi')->findAll(),
+            //MAN
+            'dataProdiMan1920' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'prodi')->where('id_tahun', '1')->where('nama_prodi', 'Manajemen')->findAll(),
+            'dataProdiMan2021' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'prodi')->where('id_tahun', '2')->where('nama_prodi', 'Manajemen')->findAll(),
+            'dataProdiMan2122' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'prodi')->where('id_tahun', '3')->where('nama_prodi', 'Manajemen')->findAll(),
+            //PSI
+            'dataProdiPsi1920' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'prodi')->where('id_tahun', '1')->where('nama_prodi', 'Psikologi')->findAll(),
+            'dataProdiPsi2021' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'prodi')->where('id_tahun', '2')->where('nama_prodi', 'Psikologi')->findAll(),
+            'dataProdiPsi2122' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'prodi')->where('id_tahun', '3')->where('nama_prodi', 'Psikologi')->findAll(),
             //KOM
             'dataProdiKom1920' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'prodi')->where('id_tahun', '1')->where('nama_prodi', 'Ilmu Komunikasi')->findAll(),
             'dataProdiKom2021' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'prodi')->where('id_tahun', '2')->where('nama_prodi', 'Ilmu Komunikasi')->findAll(),
             'dataProdiKom2122' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'prodi')->where('id_tahun', '3')->where('nama_prodi', 'Ilmu Komunikasi')->findAll(),
+            //DP
+            'dataProdiDp1920' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'prodi')->where('id_tahun', '1')->where('nama_prodi', 'Desain Produk')->findAll(),
+            'dataProdiDp2021' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'prodi')->where('id_tahun', '2')->where('nama_prodi', 'Desain Produk')->findAll(),
+            'dataProdiDp2122' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'prodi')->where('id_tahun', '3')->where('nama_prodi', 'Desain Produk')->findAll(),
+            //DKV
+            'dataProdiDkv1920' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'prodi')->where('id_tahun', '1')->where('nama_prodi', 'Desain Komunikasi Visual')->findAll(),
+            'dataProdiDkv2021' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'prodi')->where('id_tahun', '2')->where('nama_prodi', 'Desain Komunikasi Visual')->findAll(),
+            'dataProdiDkv2122' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'prodi')->where('id_tahun', '3')->where('nama_prodi', 'Desain Komunikasi Visual')->findAll(),
             //INF
             'dataProdiInf1920' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'prodi')->where('id_tahun', '1')->where('nama_prodi', 'Informatika')->findAll(),
             'dataProdiInf2021' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'prodi')->where('id_tahun', '2')->where('nama_prodi', 'Informatika')->findAll(),
             'dataProdiInf2122' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'prodi')->where('id_tahun', '3')->where('nama_prodi', 'Informatika')->findAll(),
+            //SIF
+            'dataProdiSif1920' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'prodi')->where('id_tahun', '1')->where('nama_prodi', 'Sistem Informasi')->findAll(),
+            'dataProdiSif2021' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'prodi')->where('id_tahun', '2')->where('nama_prodi', 'Sistem Informasi')->findAll(),
+            'dataProdiSif2122' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'prodi')->where('id_tahun', '3')->where('nama_prodi', 'Sistem Informasi')->findAll(),
+            //TSP
+            'dataProdiTsp1920' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'prodi')->where('id_tahun', '1')->where('nama_prodi', 'Teknik Sipil')->findAll(),
+            'dataProdiTsp2021' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'prodi')->where('id_tahun', '2')->where('nama_prodi', 'Teknik Sipil')->findAll(),
+            'dataProdiTsp2122' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'prodi')->where('id_tahun', '3')->where('nama_prodi', 'Teknik Sipil')->findAll(),
+            //ARS
+            'dataProdiArs1920' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'prodi')->where('id_tahun', '1')->where('nama_prodi', 'Arsitektur')->findAll(),
+            'dataProdiArs2021' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'prodi')->where('id_tahun', '2')->where('nama_prodi', 'Arsitektur')->findAll(),
+            'dataProdiArs2122' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'prodi')->where('id_tahun', '3')->where('nama_prodi', 'Arsitektur')->findAll(),
         ];
-        return view('/rektorat/GrafikSerap', $data);
+        return view('/rektorat/GrafikSerapProdi', $data);
+    }
+    public function grafikSerapUnit()
+    {
+        $model = new PersenSerapModel();
+        $username = session('username');
+        $data = [
+            'tahun' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('username', $username)->findAll(),
+            'tahunAktif' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('username', $username)->where('aktif', '1')->findAll(),
+            'pagu_rkat' => $this->DetailRkatModel->tampilDataSetRKAT($username),
+            'tahunAkademik' => $this->TahunAkademikModel->where('aktif', '1')->first(),
+            //Data Unit
+            //Keuangan
+            'dataUnitKeuangan1920' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'keuangan')->where('id_tahun', '1')->where('nama_prodi', 'Keuangan')->findAll(),
+            'dataUnitKeuangan2021' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'keuangan')->where('id_tahun', '2')->where('nama_prodi', 'Keuangan')->findAll(),
+            'dataUnitKeuangan2122' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'keuangan')->where('id_tahun', '3')->where('nama_prodi', 'Keuangan')->findAll(),
+            //LPMU
+            'dataUnitLpmu1920' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'lpmu')->where('id_tahun', '1')->where('nama_prodi', 'Lembaga Penjamin Mutu Universitas')->findAll(),
+            'dataUnitLpmu2021' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'lpmu')->where('id_tahun', '2')->where('nama_prodi', 'Lembaga Penjamin Mutu Universitas')->findAll(),
+            'dataUnitLpmu2122' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'lpmu')->where('id_tahun', '3')->where('nama_prodi', 'Lembaga Penjamin Mutu Universitas')->findAll(),
+            //BKAL
+            'dataUnitBkal1920' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'unit')->where('id_tahun', '1')->where('nama_prodi', 'Biro Kemahasiswaan Dan Alumni')->findAll(),
+            'dataUnitBkal2021' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'unit')->where('id_tahun', '2')->where('nama_prodi', 'Biro Kemahasiswaan Dan Alumni')->findAll(),
+            'dataUnitBkal2122' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'unit')->where('id_tahun', '3')->where('nama_prodi', 'Biro Kemahasiswaan Dan Alumni')->findAll(),
+            //JCAL
+            'dataUnitJcal1920' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'unit')->where('id_tahun', '1')->where('nama_prodi', 'Jaya Center for Advanced Language')->findAll(),
+            'dataUnitJcal2021' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'unit')->where('id_tahun', '2')->where('nama_prodi', 'Jaya Center for Advanced Language')->findAll(),
+            'dataUnitJcal2122' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'unit')->where('id_tahun', '3')->where('nama_prodi', 'Jaya Center for Advanced Language')->findAll(),
+            //BP
+            'dataUnitBp1920' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'unit')->where('id_tahun', '1')->where('nama_prodi', 'Biro Pendidikan')->findAll(),
+            'dataUnitBp2021' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'unit')->where('id_tahun', '2')->where('nama_prodi', 'Biro Pendidikan')->findAll(),
+            'dataUnitBp2122' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'unit')->where('id_tahun', '3')->where('nama_prodi', 'Biro Pendidikan')->findAll(),
+            //KHI
+            'dataUnitKhi1920' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'unit')->where('id_tahun', '1')->where('nama_prodi', 'Kerjasama dan Hubungan Internasional')->findAll(),
+            'dataUnitKhi2021' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'unit')->where('id_tahun', '2')->where('nama_prodi', 'Kerjasama dan Hubungan Internasional')->findAll(),
+            'dataUnitKhi2122' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'unit')->where('id_tahun', '3')->where('nama_prodi', 'Kerjasama dan Hubungan Internasional')->findAll(),
+            //PERPUSTAKAAN
+            'dataUnitPerpus1920' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'unit')->where('id_tahun', '1')->where('nama_prodi', 'Perpustakaan')->findAll(),
+            'dataUnitPerpus2021' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'unit')->where('id_tahun', '2')->where('nama_prodi', 'Perpustakaan')->findAll(),
+            'dataUnitPerpus2122' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'unit')->where('id_tahun', '3')->where('nama_prodi', 'Perpustakaan')->findAll(),
+            //PHA
+            'dataUnitPha1920' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'unit')->where('id_tahun', '1')->where('nama_prodi', 'Promotion, Humas dan Admisi')->findAll(),
+            'dataUnitPha2021' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'unit')->where('id_tahun', '2')->where('nama_prodi', 'Promotion, Humas dan Admisi')->findAll(),
+            'dataUnitPha2122' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'unit')->where('id_tahun', '3')->where('nama_prodi', 'Promotion, Humas dan Admisi')->findAll(),
+            //JLP
+            'dataUnitJlp1920' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'unit')->where('id_tahun', '1')->where('nama_prodi', 'Jaya Launch Pad')->findAll(),
+            'dataUnitJlp2021' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'unit')->where('id_tahun', '2')->where('nama_prodi', 'Jaya Launch Pad')->findAll(),
+            'dataUnitJlp2122' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'unit')->where('id_tahun', '3')->where('nama_prodi', 'Jaya Launch Pad')->findAll(),
+            //JSDP
+            'dataUnitJsdp1920' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'unit')->where('id_tahun', '1')->where('nama_prodi', 'Jaya Softskill Development Program')->findAll(),
+            'dataUnitJsdp2021' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'unit')->where('id_tahun', '2')->where('nama_prodi', 'Jaya Softskill Development Program')->findAll(),
+            'dataUnitJsdp2122' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'unit')->where('id_tahun', '3')->where('nama_prodi', 'Jaya Softskill Development Program')->findAll(),
+            //LSE
+            'dataUnitLse1920' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'unit')->where('id_tahun', '1')->where('nama_prodi', 'Liberal Art, Sustainable and Enterpreneurship')->findAll(),
+            'dataUnitLse2021' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'unit')->where('id_tahun', '2')->where('nama_prodi', 'Liberal Art, Sustainable and Enterpreneurship')->findAll(),
+            'dataUnitLse2122' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'unit')->where('id_tahun', '3')->where('nama_prodi', 'Liberal Art, Sustainable and Enterpreneurship')->findAll(),
+            //TIK
+            'dataUnitTik1920' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'unit')->where('id_tahun', '1')->where('nama_prodi', 'Teknologi Informasi dan Komunikasi')->findAll(),
+            'dataUnitTik2021' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'unit')->where('id_tahun', '2')->where('nama_prodi', 'Teknologi Informasi dan Komunikasi')->findAll(),
+            'dataUnitTik2122' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'unit')->where('id_tahun', '3')->where('nama_prodi', 'Teknologi Informasi dan Komunikasi')->findAll(),
+            
+        ];
+        return view('rektorat/GrafikSerapUnit', $data);
     }
 
     public function tabelcapaiankpi()

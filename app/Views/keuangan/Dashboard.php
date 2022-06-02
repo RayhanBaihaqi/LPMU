@@ -81,7 +81,8 @@
 						<a href="<?= base_url('/keuangan/createbyuser') ?>" class="nav-item nav-link">Rencana Anggaran</a>
                         <a href="<?= base_url('/CapaianRkat/createcapaianbykeuangan') ?>" class="nav-item nav-link">Realisasi Anggaran</a>
                         <a href="<?= base_url('/keuangan/indexbyuser') ?>" class="nav-item nav-link">Kesimpulan</a>
-                        <a href="<?= base_url('/keuangan/grafikSerap') ?>" class="nav-item nav-link">Grafik Serap</a>
+                        <a href="<?= base_url('/keuangan/grafikSerapProdi') ?>" class="nav-item nav-link">Grafik Serap Prodi</a>
+                        <a href="<?= base_url('/keuangan/grafikSerapUnit') ?>" class="nav-item nav-link">Grafik Serap Unit</a>
 					</div>
 					<div class="ml-auto">
 						<div class="user-info-dropdown">
