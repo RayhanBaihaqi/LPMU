@@ -83,7 +83,7 @@ class Rektorat extends BaseController
             'totalInv' => $model->totalInv($username)->getResult(),
             'tahunAktif' => $model2->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('username', $username)->where('aktif', '1')->findAll(),
             'tahunAkademik' => $this->TahunAkademikModel->where('aktif', '1')->first(),
-        ]; 
+        ];
         echo view('/rektorat/ListRkatRektorat', $data);
     }
 
@@ -271,55 +271,45 @@ class Rektorat extends BaseController
         $nama_prodi = 'nama_prodi';
         $data = [
             //jumlah nilai bobot KPI prodi akuntansi
-            'totalkpi18_akt' => $tabelcapaianprodi->jmlkpi18akt('Akuntansi')->getResult(),
-            'totalkpi19_akt' => $tabelcapaianprodi->jmlkpi19akt('Akuntansi')->getResult(),
-            'totalkpi20_akt' => $tabelcapaianprodi->jmlkpi20akt('Akuntansi')->getResult(),
-            'totalkpi21_akt' => $tabelcapaianprodi->jmlkpi21akt('Akuntansi')->getResult(),
+            'totalkpi19_akt' => $tabelcapaianprodi->jmlkpi19prodi('Akuntansi')->getResult(),
+            'totalkpi20_akt' => $tabelcapaianprodi->jmlkpi20prodi('Akuntansi')->getResult(),
+            'totalkpi21_akt' => $tabelcapaianprodi->jmlkpi21prodi('Akuntansi')->getResult(),
             //jumlah nilai bobot KPI prodi manajemen
-            'totalkpi18_mnj' => $tabelcapaianprodi->jmlkpi18mnj('Manajemen')->getResult(),
-            'totalkpi19_mnj' => $tabelcapaianprodi->jmlkpi19mnj('Manajemen')->getResult(),
-            'totalkpi20_mnj' => $tabelcapaianprodi->jmlkpi20mnj('Manajemen')->getResult(),
-            'totalkpi21_mnj' => $tabelcapaianprodi->jmlkpi21mnj('Manajemen')->getResult(),
+            'totalkpi19_mnj' => $tabelcapaianprodi->jmlkpi19prodi('Manajemen')->getResult(),
+            'totalkpi20_mnj' => $tabelcapaianprodi->jmlkpi20prodi('Manajemen')->getResult(),
+            'totalkpi21_mnj' => $tabelcapaianprodi->jmlkpi21prodi('Manajemen')->getResult(),
             //jumlah nilai bobot KPI prodi psikologi
-            'totalkpi18_psi' => $tabelcapaianprodi->jmlkpi18psi('Psikologi')->getResult(),
-            'totalkpi19_psi' => $tabelcapaianprodi->jmlkpi19psi('Psikologi')->getResult(),
-            'totalkpi20_psi' => $tabelcapaianprodi->jmlkpi20psi('Psikologi')->getResult(),
-            'totalkpi21_psi' => $tabelcapaianprodi->jmlkpi21psi('Psikologi')->getResult(),
+            'totalkpi19_psi' => $tabelcapaianprodi->jmlkpi19prodi('Psikologi')->getResult(),
+            'totalkpi20_psi' => $tabelcapaianprodi->jmlkpi20prodi('Psikologi')->getResult(),
+            'totalkpi21_psi' => $tabelcapaianprodi->jmlkpi21prodi('Psikologi')->getResult(),
             //jumlah nilai bobot KPI prodi IlKom
-            'totalkpi18_kom' => $tabelcapaianprodi->jmlkpi18kom('Ilmu Komunikasi')->getResult(),
-            'totalkpi19_kom' => $tabelcapaianprodi->jmlkpi19kom('Ilmu Komunikasi')->getResult(),
-            'totalkpi20_kom' => $tabelcapaianprodi->jmlkpi20kom('Ilmu Komunikasi')->getResult(),
-            'totalkpi21_kom' => $tabelcapaianprodi->jmlkpi21kom('Ilmu Komunikasi')->getResult(),
+            'totalkpi19_kom' => $tabelcapaianprodi->jmlkpi19prodi('Ilmu Komunikasi')->getResult(),
+            'totalkpi20_kom' => $tabelcapaianprodi->jmlkpi20prodi('Ilmu Komunikasi')->getResult(),
+            'totalkpi21_kom' => $tabelcapaianprodi->jmlkpi21prodi('Ilmu Komunikasi')->getResult(),
             //jumlah nilai bobot KPI prodi Desain Produk
-            'totalkpi18_dpi' => $tabelcapaianprodi->jmlkpi18dpi('Desain Produk')->getResult(),
-            'totalkpi19_dpi' => $tabelcapaianprodi->jmlkpi19dpi('Desain Produk')->getResult(),
-            'totalkpi20_dpi' => $tabelcapaianprodi->jmlkpi20dpi('Desain Produk')->getResult(),
-            'totalkpi21_dpi' => $tabelcapaianprodi->jmlkpi21dpi('Desain Produk')->getResult(),
+            'totalkpi19_dpi' => $tabelcapaianprodi->jmlkpi19prodi('Desain Produk')->getResult(),
+            'totalkpi20_dpi' => $tabelcapaianprodi->jmlkpi20prodi('Desain Produk')->getResult(),
+            'totalkpi21_dpi' => $tabelcapaianprodi->jmlkpi21prodi('Desain Produk')->getResult(),
             //jumlah nilai bobot KPI prodi Desain Produk
-            'totalkpi18_dkv' => $tabelcapaianprodi->jmlkpi18dkv('Desain Komunikasi Visual')->getResult(),
-            'totalkpi19_dkv' => $tabelcapaianprodi->jmlkpi19dkv('Desain Komunikasi Visual')->getResult(),
-            'totalkpi20_dkv' => $tabelcapaianprodi->jmlkpi20dkv('Desain Komunikasi Visual')->getResult(),
-            'totalkpi21_dkv' => $tabelcapaianprodi->jmlkpi21dkv('Desain Komunikasi Visual')->getResult(),
+            'totalkpi19_dkv' => $tabelcapaianprodi->jmlkpi19prodi('Desain Komunikasi Visual')->getResult(),
+            'totalkpi20_dkv' => $tabelcapaianprodi->jmlkpi20prodi('Desain Komunikasi Visual')->getResult(),
+            'totalkpi21_dkv' => $tabelcapaianprodi->jmlkpi21prodi('Desain Komunikasi Visual')->getResult(),
             //jumlah nilai bobot KPI prodi Informatika
-            'totalkpi18_inf' => $tabelcapaianprodi->jmlkpi18inf('Informatika')->getResult(),
-            'totalkpi19_inf' => $tabelcapaianprodi->jmlkpi19inf('Informatika')->getResult(),
-            'totalkpi20_inf' => $tabelcapaianprodi->jmlkpi20inf('Informatika')->getResult(),
-            'totalkpi21_inf' => $tabelcapaianprodi->jmlkpi21inf('Informatika')->getResult(),
+            'totalkpi19_inf' => $tabelcapaianprodi->jmlkpi19prodi('Informatika')->getResult(),
+            'totalkpi20_inf' => $tabelcapaianprodi->jmlkpi20prodi('Informatika')->getResult(),
+            'totalkpi21_inf' => $tabelcapaianprodi->jmlkpi21prodi('Informatika')->getResult(),
             //jumlah nilai bobot KPI prodi Sistem Informasi
-            'totalkpi18_sif' => $tabelcapaianprodi->jmlkpi18sif('Sistem Informasi')->getResult(),
-            'totalkpi19_sif' => $tabelcapaianprodi->jmlkpi19sif('Sistem Informasi')->getResult(),
-            'totalkpi20_sif' => $tabelcapaianprodi->jmlkpi20sif('Sistem Informasi')->getResult(),
-            'totalkpi21_sif' => $tabelcapaianprodi->jmlkpi21sif('Sistem Informasi')->getResult(),
+            'totalkpi19_sif' => $tabelcapaianprodi->jmlkpi19prodi('Sistem Informasi')->getResult(),
+            'totalkpi20_sif' => $tabelcapaianprodi->jmlkpi20prodi('Sistem Informasi')->getResult(),
+            'totalkpi21_sif' => $tabelcapaianprodi->jmlkpi21prodi('Sistem Informasi')->getResult(),
             //jumlah nilai bobot KPI prodi Teksip
-            'totalkpi18_tsp' => $tabelcapaianprodi->jmlkpi18tsp('Teknik Sipil')->getResult(),
-            'totalkpi19_tsp' => $tabelcapaianprodi->jmlkpi19tsp('Teknik Sipil')->getResult(),
-            'totalkpi20_tsp' => $tabelcapaianprodi->jmlkpi20tsp('Teknik Sipil')->getResult(),
-            'totalkpi21_tsp' => $tabelcapaianprodi->jmlkpi21tsp('Teknik Sipil')->getResult(),
+            'totalkpi19_tsp' => $tabelcapaianprodi->jmlkpi19prodi('Teknik Sipil')->getResult(),
+            'totalkpi20_tsp' => $tabelcapaianprodi->jmlkpi20prodi('Teknik Sipil')->getResult(),
+            'totalkpi21_tsp' => $tabelcapaianprodi->jmlkpi21prodi('Teknik Sipil')->getResult(),
             //jumlah nilai bobot KPI prodi Arsitektur
-            'totalkpi18_ars' => $tabelcapaianprodi->jmlkpi18ars('Arsitektur')->getResult(),
-            'totalkpi19_ars' => $tabelcapaianprodi->jmlkpi19ars('Arsitektur')->getResult(),
-            'totalkpi20_ars' => $tabelcapaianprodi->jmlkpi20ars('Arsitektur')->getResult(),
-            'totalkpi21_ars' => $tabelcapaianprodi->jmlkpi21ars('Arsitektur')->getResult(),
+            'totalkpi19_ars' => $tabelcapaianprodi->jmlkpi19prodi('Arsitektur')->getResult(),
+            'totalkpi20_ars' => $tabelcapaianprodi->jmlkpi20prodi('Arsitektur')->getResult(),
+            'totalkpi21_ars' => $tabelcapaianprodi->jmlkpi21prodi('Arsitektur')->getResult(),
 
             //nilai min nilai bobot KPI per TA
             'minimalkpi19_all' => $tabelcapaianprodi->minkpi19_all()->getResult(),
@@ -342,68 +332,78 @@ class Rektorat extends BaseController
         $nama_prodi = 'nama_prodi';
         $data = [
             //jumlah nilai bobot KPI prodi akuntansi
-            'totalkpi18_akt' => $tabelcapaianprodi->jmlkpi18akt('Akuntansi')->getResult(),
-            'totalkpi19_akt' => $tabelcapaianprodi->jmlkpi19akt('Akuntansi')->getResult(),
-            'totalkpi20_akt' => $tabelcapaianprodi->jmlkpi20akt('Akuntansi')->getResult(),
-            'totalkpi21_akt' => $tabelcapaianprodi->jmlkpi21akt('Akuntansi')->getResult(),
-            //jumlah nilai bobot KPI prodi manajemen
-            'totalkpi18_mnj' => $tabelcapaianprodi->jmlkpi18mnj('Manajemen')->getResult(),
-            'totalkpi19_mnj' => $tabelcapaianprodi->jmlkpi19mnj('Manajemen')->getResult(),
-            'totalkpi20_mnj' => $tabelcapaianprodi->jmlkpi20mnj('Manajemen')->getResult(),
-            'totalkpi21_mnj' => $tabelcapaianprodi->jmlkpi21mnj('Manajemen')->getResult(),
-            //jumlah nilai bobot KPI prodi psikologi
-            'totalkpi18_psi' => $tabelcapaianprodi->jmlkpi18psi('Psikologi')->getResult(),
-            'totalkpi19_psi' => $tabelcapaianprodi->jmlkpi19psi('Psikologi')->getResult(),
-            'totalkpi20_psi' => $tabelcapaianprodi->jmlkpi20psi('Psikologi')->getResult(),
-            'totalkpi21_psi' => $tabelcapaianprodi->jmlkpi21psi('Psikologi')->getResult(),
-            //jumlah nilai bobot KPI prodi IlKom
-            'totalkpi18_kom' => $tabelcapaianprodi->jmlkpi18kom('Ilmu Komunikasi')->getResult(),
-            'totalkpi19_kom' => $tabelcapaianprodi->jmlkpi19kom('Ilmu Komunikasi')->getResult(),
-            'totalkpi20_kom' => $tabelcapaianprodi->jmlkpi20kom('Ilmu Komunikasi')->getResult(),
-            'totalkpi21_kom' => $tabelcapaianprodi->jmlkpi21kom('Ilmu Komunikasi')->getResult(),
-            //jumlah nilai bobot KPI prodi Desain Produk
-            'totalkpi18_dpi' => $tabelcapaianprodi->jmlkpi18dpi('Desain Produk')->getResult(),
-            'totalkpi19_dpi' => $tabelcapaianprodi->jmlkpi19dpi('Desain Produk')->getResult(),
-            'totalkpi20_dpi' => $tabelcapaianprodi->jmlkpi20dpi('Desain Produk')->getResult(),
-            'totalkpi21_dpi' => $tabelcapaianprodi->jmlkpi21dpi('Desain Produk')->getResult(),
-            //jumlah nilai bobot KPI prodi Desain Produk
-            'totalkpi18_dkv' => $tabelcapaianprodi->jmlkpi18dkv('Desain Komunikasi Visual')->getResult(),
-            'totalkpi19_dkv' => $tabelcapaianprodi->jmlkpi19dkv('Desain Komunikasi Visual')->getResult(),
-            'totalkpi20_dkv' => $tabelcapaianprodi->jmlkpi20dkv('Desain Komunikasi Visual')->getResult(),
-            'totalkpi21_dkv' => $tabelcapaianprodi->jmlkpi21dkv('Desain Komunikasi Visual')->getResult(),
-            //jumlah nilai bobot KPI prodi Informatika
-            'totalkpi18_inf' => $tabelcapaianprodi->jmlkpi18inf('Informatika')->getResult(),
-            'totalkpi19_inf' => $tabelcapaianprodi->jmlkpi19inf('Informatika')->getResult(),
-            'totalkpi20_inf' => $tabelcapaianprodi->jmlkpi20inf('Informatika')->getResult(),
-            'totalkpi21_inf' => $tabelcapaianprodi->jmlkpi21inf('Informatika')->getResult(),
-            //jumlah nilai bobot KPI prodi Sistem Informasi
-            'totalkpi18_sif' => $tabelcapaianprodi->jmlkpi18sif('Sistem Informasi')->getResult(),
-            'totalkpi19_sif' => $tabelcapaianprodi->jmlkpi19sif('Sistem Informasi')->getResult(),
-            'totalkpi20_sif' => $tabelcapaianprodi->jmlkpi20sif('Sistem Informasi')->getResult(),
-            'totalkpi21_sif' => $tabelcapaianprodi->jmlkpi21sif('Sistem Informasi')->getResult(),
-            //jumlah nilai bobot KPI prodi Teksip
-            'totalkpi18_tsp' => $tabelcapaianprodi->jmlkpi18tsp('Teknik Sipil')->getResult(),
-            'totalkpi19_tsp' => $tabelcapaianprodi->jmlkpi19tsp('Teknik Sipil')->getResult(),
-            'totalkpi20_tsp' => $tabelcapaianprodi->jmlkpi20tsp('Teknik Sipil')->getResult(),
-            'totalkpi21_tsp' => $tabelcapaianprodi->jmlkpi21tsp('Teknik Sipil')->getResult(),
-            //jumlah nilai bobot KPI prodi Arsitektur
-            'totalkpi18_ars' => $tabelcapaianprodi->jmlkpi18ars('Arsitektur')->getResult(),
-            'totalkpi19_ars' => $tabelcapaianprodi->jmlkpi19ars('Arsitektur')->getResult(),
-            'totalkpi20_ars' => $tabelcapaianprodi->jmlkpi20ars('Arsitektur')->getResult(),
-            'totalkpi21_ars' => $tabelcapaianprodi->jmlkpi21ars('Arsitektur')->getResult(),
+            'totalkpi19_bp' => $tabelcapaianprodi->jmlkpi19unit('Biro Pendidikan')->getResult(),
+            'totalkpi20_bp' => $tabelcapaianprodi->jmlkpi19unit('Biro Pendidikan')->getResult(),
+            'totalkpi21_bp' => $tabelcapaianprodi->jmlkpi19unit('Biro Pendidikan')->getResult(),
+
+            'totalkpi19_jcal' => $tabelcapaianprodi->jmlkpi19unit('Jaya Center for Advanced Language')->getResult(),
+            'totalkpi20_jcal' => $tabelcapaianprodi->jmlkpi19unit('Jaya Center for Advanced Language')->getResult(),
+            'totalkpi21_jcal' => $tabelcapaianprodi->jmlkpi19unit('Jaya Center for Advanced Language')->getResult(),
+
+            'totalkpi19_bkal' => $tabelcapaianprodi->jmlkpi19unit('Biro Kemahasiswaan dan Alumni')->getResult(),
+            'totalkpi20_bkal' => $tabelcapaianprodi->jmlkpi19unit('Biro Kemahasiswaan dan Alumni')->getResult(),
+            'totalkpi21_bkal' => $tabelcapaianprodi->jmlkpi19unit('Biro Kemahasiswaan dan Alumni')->getResult(),
+
+            'totalkpi19_keuangan' => $tabelcapaianprodi->jmlkpi19unit('Keuangan')->getResult(),
+            'totalkpi20_keuangan' => $tabelcapaianprodi->jmlkpi19unit('Keuangan')->getResult(),
+            'totalkpi21_keuangan' => $tabelcapaianprodi->jmlkpi19unit('Keuangan')->getResult(),
+
+            'totalkpi19_khi' => $tabelcapaianprodi->jmlkpi19unit('Kerjasama dan Hubungan Internasional')->getResult(),
+            'totalkpi20_khi' => $tabelcapaianprodi->jmlkpi19unit('Kerjasama dan Hubungan Internasional')->getResult(),
+            'totalkpi21_khi' => $tabelcapaianprodi->jmlkpi19unit('Kerjasama dan Hubungan Internasional')->getResult(),
+
+            'totalkpi19_perpustakaan' => $tabelcapaianprodi->jmlkpi19unit('Perpustakaan')->getResult(),
+            'totalkpi20_perpustakaan' => $tabelcapaianprodi->jmlkpi19unit('Perpustakaan')->getResult(),
+            'totalkpi21_perpustakaan' => $tabelcapaianprodi->jmlkpi19unit('Perpustakaan')->getResult(),
+
+            'totalkpi19_pha' => $tabelcapaianprodi->jmlkpi19unit('Promotion, Humas dan Admisi')->getResult(),
+            'totalkpi20_pha' => $tabelcapaianprodi->jmlkpi19unit('Promotion, Humas dan Admisi')->getResult(),
+            'totalkpi21_pha' => $tabelcapaianprodi->jmlkpi19unit('Promotion, Humas dan Admisi')->getResult(),
+
+            'totalkpi19_lpmu' => $tabelcapaianprodi->jmlkpi19unit('Lembaga Penjaminan Mutu Universitas')->getResult(),
+            'totalkpi20_lpmu' => $tabelcapaianprodi->jmlkpi19unit('Lembaga Penjaminan Mutu Universitas')->getResult(),
+            'totalkpi21_lpmu' => $tabelcapaianprodi->jmlkpi19unit('Lembaga Penjaminan Mutu Universitas')->getResult(),
+
+            'totalkpi19_jlp' => $tabelcapaianprodi->jmlkpi19unit('Jaya Launch Pad')->getResult(),
+            'totalkpi20_jlp' => $tabelcapaianprodi->jmlkpi19unit('Jaya Launch Pad')->getResult(),
+            'totalkpi21_jlp' => $tabelcapaianprodi->jmlkpi19unit('Jaya Launch Pad')->getResult(),
+
+            'totalkpi19_jsdp' => $tabelcapaianprodi->jmlkpi19unit('Jaya Softskill Development Program')->getResult(),
+            'totalkpi20_jsdp' => $tabelcapaianprodi->jmlkpi19unit('Jaya Softskill Development Program')->getResult(),
+            'totalkpi21_jsdp' => $tabelcapaianprodi->jmlkpi19unit('Jaya Softskill Development Program')->getResult(),
+
+            'totalkpi19_lse' => $tabelcapaianprodi->jmlkpi19unit('Liberal Art, Sustainable and Enterpreneurship')->getResult(),
+            'totalkpi20_lse' => $tabelcapaianprodi->jmlkpi19unit('Liberal Art, Sustainable and Enterpreneurship')->getResult(),
+            'totalkpi21_lse' => $tabelcapaianprodi->jmlkpi19unit('Liberal Art, Sustainable and Enterpreneurship')->getResult(),
+
+            'totalkpi19_tik' => $tabelcapaianprodi->jmlkpi19unit('Teknologi Informasi dan Komunikasi')->getResult(),
+            'totalkpi20_tik' => $tabelcapaianprodi->jmlkpi19unit('Teknologi Informasi dan Komunikasi')->getResult(),
+            'totalkpi21_tik' => $tabelcapaianprodi->jmlkpi19unit('Teknologi Informasi dan Komunikasi')->getResult(),
+
+            'totalkpi19_umum' => $tabelcapaianprodi->jmlkpi19unit('Umum')->getResult(),
+            'totalkpi20_umum' => $tabelcapaianprodi->jmlkpi19unit('Umum')->getResult(),
+            'totalkpi21_umum' => $tabelcapaianprodi->jmlkpi19unit('Umum')->getResult(),
+
+            'totalkpi19_bpsdm' => $tabelcapaianprodi->jmlkpi19unit('BPSDM')->getResult(),
+            'totalkpi20_bpsdm' => $tabelcapaianprodi->jmlkpi19unit('BPSDM')->getResult(),
+            'totalkpi21_bpsdm' => $tabelcapaianprodi->jmlkpi19unit('BPSDM')->getResult(),
+
+            'totalkpi19_lp2m' => $tabelcapaianprodi->jmlkpi19unit('Lembaga Penelitian dan Pengabdian kepada Masyarakat')->getResult(),
+            'totalkpi20_lp2m' => $tabelcapaianprodi->jmlkpi19unit('Lembaga Penelitian dan Pengabdian kepada Masyarakat')->getResult(),
+            'totalkpi21_lp2m' => $tabelcapaianprodi->jmlkpi19unit('Lembaga Penelitian dan Pengabdian kepada Masyarakat')->getResult(),
 
             //nilai min nilai bobot KPI per TA
-            'minimalkpi19_all' => $tabelcapaianprodi->minkpi19_all()->getResult(),
-            'minimalkpi20_all' => $tabelcapaianprodi->minkpi20_all()->getResult(),
-            'minimalkpi21_all' => $tabelcapaianprodi->minkpi21_all()->getResult(),
+            'minimalkpi19_unit' => $tabelcapaianprodi->minkpi19_unit()->getResult(),
+            'minimalkpi20_unit' => $tabelcapaianprodi->minkpi20_unit()->getResult(),
+            'minimalkpi21_unit' => $tabelcapaianprodi->minkpi21_unit()->getResult(),
             //nilai min nilai bobot KPI per TA
-            'maximalkpi19_all' => $tabelcapaianprodi->maxkpi19_all()->getResult(),
-            'maximalkpi20_all' => $tabelcapaianprodi->maxkpi20_all()->getResult(),
-            'maximalkpi21_all' => $tabelcapaianprodi->maxkpi21_all()->getResult(),
+            'maximalkpi19_unit' => $tabelcapaianprodi->maxkpi19_unit()->getResult(),
+            'maximalkpi20_unit' => $tabelcapaianprodi->maxkpi20_unit()->getResult(),
+            'maximalkpi21_unit' => $tabelcapaianprodi->maxkpi21_unit()->getResult(),
             //nilai min nilai bobot KPI per TA
-            'averagekpi19_all' => $tabelcapaianprodi->avgkpi19_all()->getResult(),
-            'averagekpi20_all' => $tabelcapaianprodi->avgkpi20_all()->getResult(),
-            'averagekpi21_all' => $tabelcapaianprodi->avgkpi21_all()->getResult(),
+            'averagekpi19_unit' => $tabelcapaianprodi->avgkpi19_unit()->getResult(),
+            'averagekpi20_unit' => $tabelcapaianprodi->avgkpi20_unit()->getResult(),
+            'averagekpi21_unit' => $tabelcapaianprodi->avgkpi21_unit()->getResult(),
         ];
         return view('/rektorat/TabelCapaianUnit', $data);
     }
@@ -465,55 +465,45 @@ class Rektorat extends BaseController
             'hasilrencanakpi_9' => $grafikrencana->jml_kpi9()->getResultArray(),
 
             //jumlah nilai bobot KPI prodi akuntansi
-            'totalkpi18_akt' => $grafikcapaian_prodi->jmlkpi18akt('Akuntansi')->getResultArray(),
-            'totalkpi19_akt' => $grafikcapaian_prodi->jmlkpi19akt('Akuntansi')->getResultArray(),
-            'totalkpi20_akt' => $grafikcapaian_prodi->jmlkpi20akt('Akuntansi')->getResultArray(),
-            'totalkpi21_akt' => $grafikcapaian_prodi->jmlkpi21akt('Akuntansi')->getResultArray(),
+            'totalkpi19_akt' => $grafikcapaian_prodi->jmlkpi19prodi('Akuntansi')->getResultArray(),
+            'totalkpi20_akt' => $grafikcapaian_prodi->jmlkpi20prodi('Akuntansi')->getResultArray(),
+            'totalkpi21_akt' => $grafikcapaian_prodi->jmlkpi21prodi('Akuntansi')->getResultArray(),
             //jumlah nilai bobot KPI prodi manajemen
-            'totalkpi18_mnj' => $grafikcapaian_prodi->jmlkpi18mnj('Manajemen')->getResultArray(),
-            'totalkpi19_mnj' => $grafikcapaian_prodi->jmlkpi19mnj('Manajemen')->getResultArray(),
-            'totalkpi20_mnj' => $grafikcapaian_prodi->jmlkpi20mnj('Manajemen')->getResultArray(),
-            'totalkpi21_mnj' => $grafikcapaian_prodi->jmlkpi21mnj('Manajemen')->getResultArray(),
+            'totalkpi19_mnj' => $grafikcapaian_prodi->jmlkpi19prodi('Manajemen')->getResultArray(),
+            'totalkpi20_mnj' => $grafikcapaian_prodi->jmlkpi20prodi('Manajemen')->getResultArray(),
+            'totalkpi21_mnj' => $grafikcapaian_prodi->jmlkpi21prodi('Manajemen')->getResultArray(),
             //jumlah nilai bobot KPI prodi psikologi
-            'totalkpi18_psi' => $grafikcapaian_prodi->jmlkpi18psi('Psikologi')->getResultArray(),
-            'totalkpi19_psi' => $grafikcapaian_prodi->jmlkpi19psi('Psikologi')->getResultArray(),
-            'totalkpi20_psi' => $grafikcapaian_prodi->jmlkpi20psi('Psikologi')->getResultArray(),
-            'totalkpi21_psi' => $grafikcapaian_prodi->jmlkpi21psi('Psikologi')->getResultArray(),
+            'totalkpi19_psi' => $grafikcapaian_prodi->jmlkpi19prodi('Psikologi')->getResultArray(),
+            'totalkpi20_psi' => $grafikcapaian_prodi->jmlkpi20prodi('Psikologi')->getResultArray(),
+            'totalkpi21_psi' => $grafikcapaian_prodi->jmlkpi21prodi('Psikologi')->getResultArray(),
             //jumlah nilai bobot KPI prodi IlKom
-            'totalkpi18_kom' => $grafikcapaian_prodi->jmlkpi18kom('Ilmu Komunikasi')->getResultArray(),
-            'totalkpi19_kom' => $grafikcapaian_prodi->jmlkpi19kom('Ilmu Komunikasi')->getResultArray(),
-            'totalkpi20_kom' => $grafikcapaian_prodi->jmlkpi20kom('Ilmu Komunikasi')->getResultArray(),
-            'totalkpi21_kom' => $grafikcapaian_prodi->jmlkpi21kom('Ilmu Komunikasi')->getResultArray(),
+            'totalkpi19_kom' => $grafikcapaian_prodi->jmlkpi19prodi('Ilmu Komunikasi')->getResultArray(),
+            'totalkpi20_kom' => $grafikcapaian_prodi->jmlkpi20prodi('Ilmu Komunikasi')->getResultArray(),
+            'totalkpi21_kom' => $grafikcapaian_prodi->jmlkpi21prodi('Ilmu Komunikasi')->getResultArray(),
             //jumlah nilai bobot KPI prodi Desain Produk
-            'totalkpi18_dpi' => $grafikcapaian_prodi->jmlkpi18dpi('Desain Produk')->getResultArray(),
-            'totalkpi19_dpi' => $grafikcapaian_prodi->jmlkpi19dpi('Desain Produk')->getResultArray(),
-            'totalkpi20_dpi' => $grafikcapaian_prodi->jmlkpi20dpi('Desain Produk')->getResultArray(),
-            'totalkpi21_dpi' => $grafikcapaian_prodi->jmlkpi21dpi('Desain Produk')->getResultArray(),
+            'totalkpi19_dpi' => $grafikcapaian_prodi->jmlkpi19prodi('Desain Produk')->getResultArray(),
+            'totalkpi20_dpi' => $grafikcapaian_prodi->jmlkpi20prodi('Desain Produk')->getResultArray(),
+            'totalkpi21_dpi' => $grafikcapaian_prodi->jmlkpi21prodi('Desain Produk')->getResultArray(),
             //jumlah nilai bobot KPI prodi Desain Produk
-            'totalkpi18_dkv' => $grafikcapaian_prodi->jmlkpi18dkv('Desain Komunikasi Visual')->getResultArray(),
-            'totalkpi19_dkv' => $grafikcapaian_prodi->jmlkpi19dkv('Desain Komunikasi Visual')->getResultArray(),
-            'totalkpi20_dkv' => $grafikcapaian_prodi->jmlkpi20dkv('Desain Komunikasi Visual')->getResultArray(),
-            'totalkpi21_dkv' => $grafikcapaian_prodi->jmlkpi21dkv('Desain Komunikasi Visual')->getResultArray(),
+            'totalkpi19_dkv' => $grafikcapaian_prodi->jmlkpi19prodi('Desain Komunikasi Visual')->getResultArray(),
+            'totalkpi20_dkv' => $grafikcapaian_prodi->jmlkpi20prodi('Desain Komunikasi Visual')->getResultArray(),
+            'totalkpi21_dkv' => $grafikcapaian_prodi->jmlkpi21prodi('Desain Komunikasi Visual')->getResultArray(),
             //jumlah nilai bobot KPI prodi Informatika
-            'totalkpi18_inf' => $grafikcapaian_prodi->jmlkpi18inf('Informatika')->getResultArray(),
-            'totalkpi19_inf' => $grafikcapaian_prodi->jmlkpi19inf('Informatika')->getResultArray(),
-            'totalkpi20_inf' => $grafikcapaian_prodi->jmlkpi20inf('Informatika')->getResultArray(),
-            'totalkpi21_inf' => $grafikcapaian_prodi->jmlkpi21inf('Informatika')->getResultArray(),
+            'totalkpi19_inf' => $grafikcapaian_prodi->jmlkpi19prodi('Informatika')->getResultArray(),
+            'totalkpi20_inf' => $grafikcapaian_prodi->jmlkpi20prodi('Informatika')->getResultArray(),
+            'totalkpi21_inf' => $grafikcapaian_prodi->jmlkpi21prodi('Informatika')->getResultArray(),
             //jumlah nilai bobot KPI prodi Sistem Informasi
-            'totalkpi18_sif' => $grafikcapaian_prodi->jmlkpi18sif('Sistem Informasi')->getResultArray(),
-            'totalkpi19_sif' => $grafikcapaian_prodi->jmlkpi19sif('Sistem Informasi')->getResultArray(),
-            'totalkpi20_sif' => $grafikcapaian_prodi->jmlkpi20sif('Sistem Informasi')->getResultArray(),
-            'totalkpi21_sif' => $grafikcapaian_prodi->jmlkpi21sif('Sistem Informasi')->getResultArray(),
+            'totalkpi19_sif' => $grafikcapaian_prodi->jmlkpi19prodi('Sistem Informasi')->getResultArray(),
+            'totalkpi20_sif' => $grafikcapaian_prodi->jmlkpi20prodi('Sistem Informasi')->getResultArray(),
+            'totalkpi21_sif' => $grafikcapaian_prodi->jmlkpi21prodi('Sistem Informasi')->getResultArray(),
             //jumlah nilai bobot KPI prodi Teksip
-            'totalkpi18_tsp' => $grafikcapaian_prodi->jmlkpi18tsp('Teknik Sipil')->getResultArray(),
-            'totalkpi19_tsp' => $grafikcapaian_prodi->jmlkpi19tsp('Teknik Sipil')->getResultArray(),
-            'totalkpi20_tsp' => $grafikcapaian_prodi->jmlkpi20tsp('Teknik Sipil')->getResultArray(),
-            'totalkpi21_tsp' => $grafikcapaian_prodi->jmlkpi21tsp('Teknik Sipil')->getResultArray(),
+            'totalkpi19_tsp' => $grafikcapaian_prodi->jmlkpi19prodi('Teknik Sipil')->getResultArray(),
+            'totalkpi20_tsp' => $grafikcapaian_prodi->jmlkpi20prodi('Teknik Sipil')->getResultArray(),
+            'totalkpi21_tsp' => $grafikcapaian_prodi->jmlkpi21prodi('Teknik Sipil')->getResultArray(),
             //jumlah nilai bobot KPI prodi Arsitektur
-            'totalkpi18_ars' => $grafikcapaian_prodi->jmlkpi18ars('Arsitektur')->getResultArray(),
-            'totalkpi19_ars' => $grafikcapaian_prodi->jmlkpi19ars('Arsitektur')->getResultArray(),
-            'totalkpi20_ars' => $grafikcapaian_prodi->jmlkpi20ars('Arsitektur')->getResultArray(),
-            'totalkpi21_ars' => $grafikcapaian_prodi->jmlkpi21ars('Arsitektur')->getResultArray(),
+            'totalkpi19_ars' => $grafikcapaian_prodi->jmlkpi19prodi('Arsitektur')->getResultArray(),
+            'totalkpi20_ars' => $grafikcapaian_prodi->jmlkpi20prodi('Arsitektur')->getResultArray(),
+            'totalkpi21_ars' => $grafikcapaian_prodi->jmlkpi21prodi('Arsitektur')->getResultArray(),
 
 
 
