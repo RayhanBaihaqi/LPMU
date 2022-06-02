@@ -153,9 +153,28 @@
                             <option value="grafikunit/">Unit</option>
                         </select>
                     </div>
-                    <!-- <?php print_r($totalkpi18_inf) ?>
-                    <?php print_r($totalkpi18_dkv) ?>
-                    <?php print_r($totalkpi19_dkv) ?> -->
+
+                    <!-- foreach ambil hasil penjumlahan nilai bobot  -->
+                    <?php foreach ($hasilrencanakpi_1 as $key => $value) : $jumlah_rencana1 = $value['jumlah_rencana1'];
+                    endforeach; ?>
+                    <?php foreach ($hasilrencanakpi_2 as $key => $value) : $jumlah_rencana2 = $value['jumlah_rencana2'];
+                    endforeach; ?>
+                    <?php foreach ($hasilrencanakpi_3 as $key => $value) : $jumlah_rencana3 = $value['jumlah_rencana3'];
+                    endforeach; ?>
+                    <?php foreach ($hasilrencanakpi_4 as $key => $value) : $jumlah_rencana4 = $value['jumlah_rencana4'];
+                    endforeach; ?>
+                    <?php foreach ($hasilrencanakpi_5 as $key => $value) : $jumlah_rencana5 = $value['jumlah_rencana5'];
+                    endforeach; ?>
+                    <?php foreach ($hasilrencanakpi_6 as $key => $value) : $jumlah_rencana6 = $value['jumlah_rencana6'];
+                    endforeach; ?>
+                    <?php foreach ($hasilrencanakpi_7 as $key => $value) : $jumlah_rencana7 = $value['jumlah_rencana7'];
+                    endforeach; ?>
+                    <?php foreach ($hasilrencanakpi_8 as $key => $value) : $jumlah_rencana8 = $value['jumlah_rencana8'];
+                    endforeach; ?>
+                    <?php foreach ($hasilrencanakpi_9 as $key => $value) : $jumlah_rencana9 = $value['jumlah_rencana9'];
+                    endforeach; ?>
+
+                    <!-- foreach ambil hasil penjumlahan nilai bobot KPI per TA tiap prodi -->
 
                     <!-- foreach ambil hasil penjumlahan nilai bobot  -->
                     <?php foreach ($hasilrencanakpi_1 as $key => $value) : $jumlah_rencana1 = $value['jumlah_rencana1'];
@@ -180,103 +199,83 @@
                     <!-- foreach ambil hasil penjumlahan nilai bobot KPI per TA tiap prodi -->
 
                     <!-- foreach ambil hasil penjumlahan nilai bobot KPI per TA akuntansi -->
-                    <?php foreach ($totalkpi18_akt as $key => $value) : $tot_18_akt = $value['tot_18_akt'];
+                    <?php foreach ($totalkpi19_akt as $key => $value) : $tot_19_akt = $value['tot_19_prodi'];
                     endforeach; ?>
-                    <?php foreach ($totalkpi19_akt as $key => $value) : $tot_19_akt = $value['tot_19_akt'];
+                    <?php foreach ($totalkpi20_akt as $key => $value) : $tot_20_akt = $value['tot_20_prodi'];
                     endforeach; ?>
-                    <?php foreach ($totalkpi20_akt as $key => $value) : $tot_20_akt = $value['tot_20_akt'];
-                    endforeach; ?>
-                    <?php foreach ($totalkpi21_akt as $key => $value) : $tot_21_akt = $value['tot_21_akt'];
+                    <?php foreach ($totalkpi21_akt as $key => $value) : $tot_21_akt = $value['tot_21_prodi'];
                     endforeach; ?>
 
                     <!-- foreach ambil hasil penjumlahan nilai bobot KPI per TA manajemen -->
-                    <?php foreach ($totalkpi18_mnj as $key => $value) : $tot_18_mnj = $value['tot_18_mnj'];
+                    <?php foreach ($totalkpi19_mnj as $key => $value) : $tot_19_mnj = $value['tot_19_prodi'];
                     endforeach; ?>
-                    <?php foreach ($totalkpi19_mnj as $key => $value) : $tot_19_mnj = $value['tot_19_mnj'];
+                    <?php foreach ($totalkpi20_mnj as $key => $value) : $tot_20_mnj = $value['tot_20_prodi'];
                     endforeach; ?>
-                    <?php foreach ($totalkpi20_mnj as $key => $value) : $tot_20_mnj = $value['tot_20_mnj'];
-                    endforeach; ?>
-                    <?php foreach ($totalkpi21_mnj as $key => $value) : $tot_21_mnj = $value['tot_21_mnj'];
+                    <?php foreach ($totalkpi21_mnj as $key => $value) : $tot_21_mnj = $value['tot_21_prodi'];
                     endforeach; ?>
 
                     <!-- foreach ambil hasil penjumlahan nilai bobot KPI per TA psikologi -->
-                    <?php foreach ($totalkpi18_psi as $key => $value) : $tot_18_psi = $value['tot_18_psi'];
+                    <?php foreach ($totalkpi19_psi as $key => $value) : $tot_19_psi = $value['tot_19_prodi'];
                     endforeach; ?>
-                    <?php foreach ($totalkpi19_psi as $key => $value) : $tot_19_psi = $value['tot_19_psi'];
+                    <?php foreach ($totalkpi20_psi as $key => $value) : $tot_20_psi = $value['tot_20_prodi'];
                     endforeach; ?>
-                    <?php foreach ($totalkpi20_psi as $key => $value) : $tot_20_psi = $value['tot_20_psi'];
-                    endforeach; ?>
-                    <?php foreach ($totalkpi21_psi as $key => $value) : $tot_21_psi = $value['tot_21_psi'];
+                    <?php foreach ($totalkpi21_psi as $key => $value) : $tot_21_psi = $value['tot_21_prodi'];
                     endforeach; ?>
 
                     <!-- foreach ambil hasil penjumlahan nilai bobot KPI per TA ilkom -->
-                    <?php foreach ($totalkpi18_kom as $key => $value) : $tot_18_kom = $value['tot_18_kom'];
+                    <?php foreach ($totalkpi19_kom as $key => $value) : $tot_19_kom = $value['tot_19_prodi'];
                     endforeach; ?>
-                    <?php foreach ($totalkpi19_kom as $key => $value) : $tot_19_kom = $value['tot_19_kom'];
+                    <?php foreach ($totalkpi20_kom as $key => $value) : $tot_20_kom = $value['tot_20_prodi'];
                     endforeach; ?>
-                    <?php foreach ($totalkpi20_kom as $key => $value) : $tot_20_kom = $value['tot_20_kom'];
-                    endforeach; ?>
-                    <?php foreach ($totalkpi21_kom as $key => $value) : $tot_21_kom = $value['tot_21_kom'];
+                    <?php foreach ($totalkpi21_kom as $key => $value) : $tot_21_kom = $value['tot_21_prodi'];
                     endforeach; ?>
 
                     <!-- foreach ambil hasil penjumlahan nilai bobot KPI per TA desain produk -->
-                    <?php foreach ($totalkpi18_dpi as $key => $value) : $tot_18_dpi = $value['tot_18_dpi'];
+                    <?php foreach ($totalkpi19_dpi as $key => $value) : $tot_19_dpi = $value['tot_19_prodi'];
                     endforeach; ?>
-                    <?php foreach ($totalkpi19_dpi as $key => $value) : $tot_19_dpi = $value['tot_19_dpi'];
+                    <?php foreach ($totalkpi20_dpi as $key => $value) : $tot_20_dpi = $value['tot_20_prodi'];
                     endforeach; ?>
-                    <?php foreach ($totalkpi20_dpi as $key => $value) : $tot_20_dpi = $value['tot_20_dpi'];
-                    endforeach; ?>
-                    <?php foreach ($totalkpi21_dpi as $key => $value) : $tot_21_dpi = $value['tot_21_dpi'];
+                    <?php foreach ($totalkpi21_dpi as $key => $value) : $tot_21_dpi = $value['tot_21_prodi'];
                     endforeach; ?>
 
                     <!-- foreach ambil hasil penjumlahan nilai bobot KPI per TA dkv -->
-                    <?php foreach ($totalkpi18_dkv as $key => $value) : $tot_18_dkv = $value['tot_18_dkv'];
+                    <?php foreach ($totalkpi19_dkv as $key => $value) : $tot_19_dkv = $value['tot_19_prodi'];
                     endforeach; ?>
-                    <?php foreach ($totalkpi19_dkv as $key => $value) : $tot_19_dkv = $value['tot_19_dkv'];
+                    <?php foreach ($totalkpi20_dkv as $key => $value) : $tot_20_dkv = $value['tot_20_prodi'];
                     endforeach; ?>
-                    <?php foreach ($totalkpi20_dkv as $key => $value) : $tot_20_dkv = $value['tot_20_dkv'];
-                    endforeach; ?>
-                    <?php foreach ($totalkpi21_dkv as $key => $value) : $tot_21_dkv = $value['tot_21_dkv'];
+                    <?php foreach ($totalkpi21_dkv as $key => $value) : $tot_21_dkv = $value['tot_21_prodi'];
                     endforeach; ?>
 
                     <!-- foreach ambil hasil penjumlahan nilai bobot KPI per TA Informatika -->
-                    <?php foreach ($totalkpi18_inf as $key => $value) : $tot_18_inf = $value['tot_18_inf'];
+                    <?php foreach ($totalkpi19_inf as $key => $value) : $tot_19_inf = $value['tot_19_prodi'];
                     endforeach; ?>
-                    <?php foreach ($totalkpi19_inf as $key => $value) : $tot_19_inf = $value['tot_19_inf'];
+                    <?php foreach ($totalkpi20_inf as $key => $value) : $tot_20_inf = $value['tot_20_prodi'];
                     endforeach; ?>
-                    <?php foreach ($totalkpi20_inf as $key => $value) : $tot_20_inf = $value['tot_20_inf'];
-                    endforeach; ?>
-                    <?php foreach ($totalkpi21_inf as $key => $value) : $tot_21_inf = $value['tot_21_inf'];
+                    <?php foreach ($totalkpi21_inf as $key => $value) : $tot_21_inf = $value['tot_21_prodi'];
                     endforeach; ?>
 
                     <!-- foreach ambil hasil penjumlahan nilai bobot KPI per TA Sistem Informasi -->
-                    <?php foreach ($totalkpi18_sif as $key => $value) : $tot_18_sif = $value['tot_18_sif'];
+                    <?php foreach ($totalkpi19_sif as $key => $value) : $tot_19_sif = $value['tot_19_prodi'];
                     endforeach; ?>
-                    <?php foreach ($totalkpi19_sif as $key => $value) : $tot_19_sif = $value['tot_19_sif'];
+                    <?php foreach ($totalkpi20_sif as $key => $value) : $tot_20_sif = $value['tot_20_prodi'];
                     endforeach; ?>
-                    <?php foreach ($totalkpi20_sif as $key => $value) : $tot_20_sif = $value['tot_20_sif'];
-                    endforeach; ?>
-                    <?php foreach ($totalkpi21_sif as $key => $value) : $tot_21_sif = $value['tot_21_sif'];
+                    <?php foreach ($totalkpi21_sif as $key => $value) : $tot_21_sif = $value['tot_21_prodi'];
                     endforeach; ?>
 
                     <!-- foreach ambil hasil penjumlahan nilai bobot KPI per TA Teknik Sipil -->
-                    <?php foreach ($totalkpi18_tsp as $key => $value) : $tot_18_tsp = $value['tot_18_tsp'];
+                    <?php foreach ($totalkpi19_tsp as $key => $value) : $tot_19_tsp = $value['tot_19_prodi'];
                     endforeach; ?>
-                    <?php foreach ($totalkpi19_tsp as $key => $value) : $tot_19_tsp = $value['tot_19_tsp'];
+                    <?php foreach ($totalkpi20_tsp as $key => $value) : $tot_20_tsp = $value['tot_20_prodi'];
                     endforeach; ?>
-                    <?php foreach ($totalkpi20_tsp as $key => $value) : $tot_20_tsp = $value['tot_20_tsp'];
-                    endforeach; ?>
-                    <?php foreach ($totalkpi21_tsp as $key => $value) : $tot_21_tsp = $value['tot_21_tsp'];
+                    <?php foreach ($totalkpi21_tsp as $key => $value) : $tot_21_tsp = $value['tot_21_prodi'];
                     endforeach; ?>
 
                     <!-- foreach ambil hasil penjumlahan nilai bobot KPI per TA Arsitektur -->
-                    <?php foreach ($totalkpi18_ars as $key => $value) : $tot_18_ars = $value['tot_18_ars'];
+                    <?php foreach ($totalkpi19_ars as $key => $value) : $tot_19_ars = $value['tot_19_prodi'];
                     endforeach; ?>
-                    <?php foreach ($totalkpi19_ars as $key => $value) : $tot_19_ars = $value['tot_19_ars'];
+                    <?php foreach ($totalkpi20_ars as $key => $value) : $tot_20_ars = $value['tot_20_prodi'];
                     endforeach; ?>
-                    <?php foreach ($totalkpi20_ars as $key => $value) : $tot_20_ars = $value['tot_20_ars'];
-                    endforeach; ?>
-                    <?php foreach ($totalkpi21_ars as $key => $value) : $tot_21_ars = $value['tot_21_ars'];
+                    <?php foreach ($totalkpi21_ars as $key => $value) : $tot_21_ars = $value['tot_21_prodi'];
                     endforeach; ?>
 
                     <div class="container col-lg-12">
@@ -416,16 +415,7 @@
             labels: ['Akuntansi', 'Manajemen', 'Psikologi', 'Ilmu Komunikasi', 'Desain Produk', 'Desain Komunikasi Visual', 'Informatika', 'Sistem Informasi', 'Teknik Sipil', 'Arsitektur'],
             datasets: [
                 //Data Batang Grafik Standar 1
-                // {
-                //     label: '2018/2019',
-                //     backgroundColor: 'rgba(60,141,188,0.9)',
-                //     borderColor: 'rgba(60,141,188,0.8)',
-                //     pointRadius: false,
-                //     pointColor: '#3b8bba',
-                //     pointStrokeColor: 'rgba(60,141,188,1)',
-                //     pointHighlightFill: '#fff',
-                //     pointHighlightStroke: 'rgba(60,141,188,1)',
-                //     data: [<?php echo json_encode($tot_18_akt) ?>, <?php echo json_encode($tot_18_mnj) ?>, <?php echo json_encode($tot_18_psi) ?>, <?php echo json_encode($tot_18_kom) ?>, <?php echo json_encode($tot_18_dpi) ?>, <?php echo json_encode($tot_18_dkv) ?>, <?php echo json_encode($tot_18_inf) ?>, <?php echo json_encode($tot_18_sif) ?>, <?php echo json_encode($tot_18_tsp) ?>, <?php echo json_encode($tot_18_ars) ?>]
+
 
 
                 // },
