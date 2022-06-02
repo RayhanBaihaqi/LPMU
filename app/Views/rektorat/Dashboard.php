@@ -42,7 +42,7 @@
 
 			<!-- Nav Item - Dashboard -->
 			<li class="nav-item active">
-				<a class="nav-link " href="<?= base_url('/rektorat/rkat') ?>">
+				<a class="nav-link " href="<?= base_url('/rektorat') ?>">
 					<i class="fas fa-fw fa-tachometer-alt"></i>
 					<span>Dashboard</span></a>
 			</li>
@@ -287,8 +287,7 @@
 
 					var options = {
 						chart: {
-							title: 'Data Prodi/Unit : <?php $nama_prodi = session('nama_prodi');
-														echo "$nama_prodi" ?>',
+							title: 'Data Prodi/Unit : <?php $nama_prodi = session('nama_prodi'); echo "$nama_prodi" ?>',
 							subtitle: '',
 						},
 						bars: 'horizontal' // Required for Material Bar Charts.

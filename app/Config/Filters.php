@@ -64,10 +64,10 @@ class Filters extends BaseConfig
 				'except' => ['admin/*', 'admin', 'auth/*']
 			],
 			'filterProdi' => [
-				'except' => ['backend/*', 'backend', 'kpi', 'kpi/*', 'rkat/*']
+				'except' => ['backend/*', 'backend', 'kpi', 'kpi/*', 'rkat/*','capaianRkat', 'capaianRkat/*','pdf', 'pdf/*']
 			],
 			'filterUnit' => [
-				'except' => ['backend/*', 'backend', 'kpi', 'kpi/*', 'rkat/*']
+				'except' => ['backend/*', 'backend', 'kpi', 'kpi/*', 'rkat/*','capaianRkat', 'capaianRkat/*','pdf', 'pdf/*']
 			],
 			'filterRektorat' => [
 				'except' => ['rektorat', 'rektorat/*']
