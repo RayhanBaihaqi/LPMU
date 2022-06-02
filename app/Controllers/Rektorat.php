@@ -27,7 +27,16 @@ class Rektorat extends BaseController
     }
     public function index()
     {
-        return view('rektorat/Dashboard');
+        $model = new PersenSerapModel();
+        $username = session('username');
+        $data = [
+            'tahun' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('username', $username)->findAll(),
+            'tahunAktif' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('username', $username)->where('aktif', '1')->findAll(),
+            'seluruhDataUser' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->findAll(),
+            'pagu_rkat' => $this->DetailRkatModel->tampilDataSetRKAT($username),
+            'tahunAkademik' => $this->TahunAkademikModel->where('aktif', '1')->first(),
+        ];
+        return view('/rektorat/Dashboard', $data);
     }
     public function listcapaiankpi()
     {

@@ -24,7 +24,7 @@ class FilterRektorat implements FilterInterface
         // }
         $session = session();
         if ($session->get('level') == "rektorat") {
-            return redirect()->to('/rektorat/rkat');
+            return redirect()->to('/rektorat');
         }
     }
 }
