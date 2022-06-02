@@ -159,7 +159,7 @@
 										<input type="password" class="form-control" name="password" placeholder="Password" id='password'>
 									</div>
 									<div class="form-group">
-										<label for="nama_prodi">Nama User</label>
+										<label for="nama_prodi">Nama Pengguna</label>
 										<input required type="text" name="nama_prodi" class="form-control" id="nama_prodi" name='nama_prodi' placeholder="Masukkan Nama Prodi/Unit">
 									</div>
 									<div class="form-group">

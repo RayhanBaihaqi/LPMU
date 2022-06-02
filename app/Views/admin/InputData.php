@@ -160,23 +160,14 @@
 
 											<select class="form-control form-control-sm" id="id_user" name="id_user[]" required>
 												<option value="" disabled selected>Nama Prodi/Unit</option>
-<<<<<<< HEAD
 												<?php foreach ($user as $value) : ?>
 												<option value="<?= $value['id']; ?>"><?= $value['nama_prodi']; ?></option>
-=======
-												<?php foreach ($pagu as $value) : ?>
-													<option value="<?= $value['id_user']; ?>"><?= $value['nama_prodi']; ?></option>
->>>>>>> 023b34fab8d642f9d37521eb9495cff1e265f908
 												<?php endforeach; ?>
 											</select>
 											<select class="form-control form-control-sm" id="id_pagu" name="id_pagu[]" required>
 												<option value="" disabled selected>Pagu Dari</option>
 												<?php foreach ($pagu as $value) : ?>
-<<<<<<< HEAD
 												<option value="<?= $value['id_pagu']; ?>"><?= $value['nama_prodi']; ?>=<?= $value['jumlah_pagu']; ?></option>
-=======
-													<option value="<?= $value['id_pagu']; ?>"><?= $value['nama_prodi']; ?></option>
->>>>>>> 023b34fab8d642f9d37521eb9495cff1e265f908
 												<?php endforeach; ?>
 											</select>
 											<thead class="table-dark">

@@ -53,7 +53,6 @@ class Rektorat extends BaseController
             'detail_rkat' => $this->DetailRkatModel->gabungRektor(),
             'userprodi' => $this->UsersModel->where('level', 'prodi')->findAll(),
         ];
-        $data['detail_rkat'] = $this->DetailRkatModel->gabungRektor();
         echo view('/rektorat/ListRkatProdi', $data);
     }
     public function listRkatUnit()
