@@ -266,7 +266,7 @@
                             <!-- /.card-body -->
                             <div class="card card-success">
                                 <div class="card-header">
-                                    <h3 class="card-title">Grafik Capaian KPI</h3>
+                                    <h3 class="card-title">Grafik Capaian Prodi</h3>
                                 </div>
                                 <div class="card-body">
                                     <div class="chart">

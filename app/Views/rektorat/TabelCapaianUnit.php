@@ -135,7 +135,7 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Grafik Capaian KPI</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Tabel Capaian KPI Unit</h1>
                     <br>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Pilih Tingkatan</label>
@@ -275,24 +275,209 @@
                                                     <?php
                                                     foreach ($averagekpi19_unit as $rows) :
                                                     ?>
-                                                        <td><?php echo $rows->average_19_unit; ?></td>
+                                                        <td><?php echo $rows->avg_19_unit; ?></td>
                                                     <?php
                                                     endforeach;
                                                     ?>
-
-
-
                                                 </tr>
                                                 <tr>
-
-                                                    <th>2020/2021</th>
-
+                                                    <?php
+                                                    foreach ($totalkpi20_bp as $rows) :
+                                                    ?>
+                                                        <th>2020/2021</th>
+                                                        <td><?php echo $rows->tot_20_unit; ?></td>
+                                                    <?php endforeach; ?>
+                                                    <?php
+                                                    foreach ($totalkpi20_jcal as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->tot_20_unit; ?></td>
+                                                    <?php endforeach; ?>
+                                                    <?php
+                                                    foreach ($totalkpi20_bkal as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->tot_20_unit; ?></td>
+                                                    <?php endforeach; ?>
+                                                    <?php
+                                                    foreach ($totalkpi20_keuangan as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->tot_20_unit; ?></td>
+                                                    <?php endforeach; ?>
+                                                    <?php
+                                                    foreach ($totalkpi20_khi as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->tot_20_unit; ?></td>
+                                                    <?php endforeach; ?>
+                                                    <?php
+                                                    foreach ($totalkpi20_perpustakaan as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->tot_20_unit; ?></td>
+                                                    <?php endforeach; ?>
+                                                    <?php
+                                                    foreach ($totalkpi20_pha as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->tot_20_unit; ?></td>
+                                                    <?php endforeach; ?>
+                                                    <?php
+                                                    foreach ($totalkpi20_lpmu as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->tot_20_unit; ?></td>
+                                                    <?php endforeach; ?>
+                                                    <?php
+                                                    foreach ($totalkpi20_jlp as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->tot_20_unit; ?></td>
+                                                    <?php endforeach; ?>
+                                                    <?php
+                                                    foreach ($totalkpi20_jsdp as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->tot_20_unit; ?></td>
+                                                    <?php endforeach; ?>
+                                                    <?php
+                                                    foreach ($totalkpi20_lse as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->tot_20_unit; ?></td>
+                                                    <?php endforeach; ?>
+                                                    <?php
+                                                    foreach ($totalkpi20_tik as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->tot_20_unit; ?></td>
+                                                    <?php endforeach; ?>
+                                                    <?php
+                                                    foreach ($totalkpi20_umum as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->tot_20_unit; ?></td>
+                                                    <?php endforeach; ?>
+                                                    <?php
+                                                    foreach ($totalkpi20_bpsdm as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->tot_20_unit; ?></td>
+                                                    <?php endforeach; ?>
+                                                    <?php
+                                                    foreach ($totalkpi20_lp2m as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->tot_20_unit; ?></td>
+                                                    <?php endforeach; ?>
+                                                    <?php
+                                                    foreach ($minimalkpi20_unit as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->min_20_unit; ?></td>
+                                                    <?php
+                                                    endforeach;
+                                                    ?>
+                                                    <?php
+                                                    foreach ($maximalkpi20_unit as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->max_20_unit; ?></td>
+                                                    <?php
+                                                    endforeach;
+                                                    ?>
+                                                    <?php
+                                                    foreach ($averagekpi20_unit as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->avg_20_unit; ?></td>
+                                                    <?php
+                                                    endforeach;
+                                                    ?>
                                                 </tr>
 
                                                 <tr>
-
-                                                    <th>2021/2022</th>
-
+                                                    <?php
+                                                    foreach ($totalkpi21_bp as $rows) :
+                                                    ?>
+                                                        <th>2021/2022</th>
+                                                        <td><?php echo $rows->tot_21_unit; ?></td>
+                                                    <?php endforeach; ?>
+                                                    <?php
+                                                    foreach ($totalkpi21_jcal as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->tot_21_unit; ?></td>
+                                                    <?php endforeach; ?>
+                                                    <?php
+                                                    foreach ($totalkpi21_bkal as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->tot_21_unit; ?></td>
+                                                    <?php endforeach; ?>
+                                                    <?php
+                                                    foreach ($totalkpi21_keuangan as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->tot_21_unit; ?></td>
+                                                    <?php endforeach; ?>
+                                                    <?php
+                                                    foreach ($totalkpi21_khi as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->tot_21_unit; ?></td>
+                                                    <?php endforeach; ?>
+                                                    <?php
+                                                    foreach ($totalkpi21_perpustakaan as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->tot_21_unit; ?></td>
+                                                    <?php endforeach; ?>
+                                                    <?php
+                                                    foreach ($totalkpi21_pha as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->tot_21_unit; ?></td>
+                                                    <?php endforeach; ?>
+                                                    <?php
+                                                    foreach ($totalkpi21_lpmu as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->tot_21_unit; ?></td>
+                                                    <?php endforeach; ?>
+                                                    <?php
+                                                    foreach ($totalkpi21_jlp as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->tot_21_unit; ?></td>
+                                                    <?php endforeach; ?>
+                                                    <?php
+                                                    foreach ($totalkpi21_jsdp as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->tot_21_unit; ?></td>
+                                                    <?php endforeach; ?>
+                                                    <?php
+                                                    foreach ($totalkpi21_lse as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->tot_21_unit; ?></td>
+                                                    <?php endforeach; ?>
+                                                    <?php
+                                                    foreach ($totalkpi21_tik as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->tot_21_unit; ?></td>
+                                                    <?php endforeach; ?>
+                                                    <?php
+                                                    foreach ($totalkpi21_umum as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->tot_21_unit; ?></td>
+                                                    <?php endforeach; ?>
+                                                    <?php
+                                                    foreach ($totalkpi21_bpsdm as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->tot_21_unit; ?></td>
+                                                    <?php endforeach; ?>
+                                                    <?php
+                                                    foreach ($totalkpi21_lp2m as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->tot_21_unit; ?></td>
+                                                    <?php endforeach; ?>
+                                                    <?php
+                                                    foreach ($minimalkpi21_unit as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->min_21_unit; ?></td>
+                                                    <?php
+                                                    endforeach;
+                                                    ?>
+                                                    <?php
+                                                    foreach ($maximalkpi21_unit as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->max_21_unit; ?></td>
+                                                    <?php
+                                                    endforeach;
+                                                    ?>
+                                                    <?php
+                                                    foreach ($averagekpi21_unit as $rows) :
+                                                    ?>
+                                                        <td><?php echo $rows->avg_21_unit; ?></td>
+                                                    <?php
+                                                    endforeach;
+                                                    ?>
                                                 </tr>
 
                                             </tbody>

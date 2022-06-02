@@ -153,6 +153,126 @@
 
                         </select>
                     </div>
+                    <?php foreach ($totalkpi19_bp as $key => $value) : $tot_19_bp = $value['tot_19_unit'];
+                    endforeach; ?>
+                    <?php foreach ($totalkpi20_bp as $key => $value) : $tot_20_bp = $value['tot_20_unit'];
+                    endforeach; ?>
+                    <?php foreach ($totalkpi21_bp as $key => $value) : $tot_21_bp = $value['tot_21_unit'];
+                    endforeach; ?>
+
+                    <?php foreach ($totalkpi19_jcal as $key => $value) : $tot_19_jcal = $value['tot_19_unit'];
+                    endforeach; ?>
+                    <?php foreach ($totalkpi20_jcal as $key => $value) : $tot_20_jcal = $value['tot_20_unit'];
+                    endforeach; ?>
+                    <?php foreach ($totalkpi21_jcal as $key => $value) : $tot_21_jcal = $value['tot_21_unit'];
+                    endforeach; ?>
+
+                    <?php foreach ($totalkpi19_bkal as $key => $value) : $tot_19_bkal = $value['tot_19_unit'];
+                    endforeach; ?>
+                    <?php foreach ($totalkpi20_bkal as $key => $value) : $tot_20_bkal = $value['tot_20_unit'];
+                    endforeach; ?>
+                    <?php foreach ($totalkpi21_bkal as $key => $value) : $tot_21_bkal = $value['tot_21_unit'];
+                    endforeach; ?>
+
+                    <?php foreach ($totalkpi19_keuangan as $key => $value) : $tot_19_keuangan = $value['tot_19_unit'];
+                    endforeach; ?>
+                    <?php foreach ($totalkpi20_keuangan as $key => $value) : $tot_20_keuangan = $value['tot_20_unit'];
+                    endforeach; ?>
+                    <?php foreach ($totalkpi21_keuangan as $key => $value) : $tot_21_keuangan = $value['tot_21_unit'];
+                    endforeach; ?>
+
+                    <?php foreach ($totalkpi19_khi as $key => $value) : $tot_19_khi = $value['tot_19_unit'];
+                    endforeach; ?>
+                    <?php foreach ($totalkpi20_khi as $key => $value) : $tot_20_khi = $value['tot_20_unit'];
+                    endforeach; ?>
+                    <?php foreach ($totalkpi21_khi as $key => $value) : $tot_21_khi = $value['tot_21_unit'];
+                    endforeach; ?>
+
+                    <?php foreach ($totalkpi19_perpustakaan as $key => $value) : $tot_19_perpustakaan = $value['tot_19_unit'];
+                    endforeach; ?>
+                    <?php foreach ($totalkpi20_perpustakaan as $key => $value) : $tot_20_perpustakaan = $value['tot_20_unit'];
+                    endforeach; ?>
+                    <?php foreach ($totalkpi21_perpustakaan as $key => $value) : $tot_21_perpustakaan = $value['tot_21_unit'];
+                    endforeach; ?>
+
+                    <?php foreach ($totalkpi19_pha as $key => $value) : $tot_19_pha = $value['tot_19_unit'];
+                    endforeach; ?>
+                    <?php foreach ($totalkpi20_pha as $key => $value) : $tot_20_pha = $value['tot_20_unit'];
+                    endforeach; ?>
+                    <?php foreach ($totalkpi21_pha as $key => $value) : $tot_21_pha = $value['tot_21_unit'];
+                    endforeach; ?>
+
+                    <?php foreach ($totalkpi19_lpmu as $key => $value) : $tot_19_lpmu = $value['tot_19_unit'];
+                    endforeach; ?>
+                    <?php foreach ($totalkpi20_lpmu as $key => $value) : $tot_20_lpmu = $value['tot_20_unit'];
+                    endforeach; ?>
+                    <?php foreach ($totalkpi21_lpmu as $key => $value) : $tot_21_lpmu = $value['tot_21_unit'];
+                    endforeach; ?>
+
+                    <?php foreach ($totalkpi19_jlp as $key => $value) : $tot_19_jlp = $value['tot_19_unit'];
+                    endforeach; ?>
+                    <?php foreach ($totalkpi20_jlp as $key => $value) : $tot_20_jlp = $value['tot_20_unit'];
+                    endforeach; ?>
+                    <?php foreach ($totalkpi21_jlp as $key => $value) : $tot_21_jlp = $value['tot_21_unit'];
+                    endforeach; ?>
+
+                    <?php foreach ($totalkpi19_jsdp as $key => $value) : $tot_19_jsdp = $value['tot_19_unit'];
+                    endforeach; ?>
+                    <?php foreach ($totalkpi20_jsdp as $key => $value) : $tot_20_jsdp = $value['tot_20_unit'];
+                    endforeach; ?>
+                    <?php foreach ($totalkpi21_jsdp as $key => $value) : $tot_21_jsdp = $value['tot_21_unit'];
+                    endforeach; ?>
+
+                    <?php foreach ($totalkpi19_lse as $key => $value) : $tot_19_lse = $value['tot_19_unit'];
+                    endforeach; ?>
+                    <?php foreach ($totalkpi20_lse as $key => $value) : $tot_20_lse = $value['tot_20_unit'];
+                    endforeach; ?>
+                    <?php foreach ($totalkpi21_lse as $key => $value) : $tot_21_lse = $value['tot_21_unit'];
+                    endforeach; ?>
+
+                    <?php foreach ($totalkpi19_tik as $key => $value) : $tot_19_tik = $value['tot_19_unit'];
+                    endforeach; ?>
+                    <?php foreach ($totalkpi20_tik as $key => $value) : $tot_20_tik = $value['tot_20_unit'];
+                    endforeach; ?>
+                    <?php foreach ($totalkpi21_tik as $key => $value) : $tot_21_tik = $value['tot_21_unit'];
+                    endforeach; ?>
+
+                    <?php foreach ($totalkpi19_umum as $key => $value) : $tot_19_umum = $value['tot_19_unit'];
+                    endforeach; ?>
+                    <?php foreach ($totalkpi20_umum as $key => $value) : $tot_20_umum = $value['tot_20_unit'];
+                    endforeach; ?>
+                    <?php foreach ($totalkpi21_umum as $key => $value) : $tot_21_umum = $value['tot_21_unit'];
+                    endforeach; ?>
+
+                    <?php foreach ($totalkpi19_bpsdm as $key => $value) : $tot_19_bpsdm = $value['tot_19_unit'];
+                    endforeach; ?>
+                    <?php foreach ($totalkpi20_bpsdm as $key => $value) : $tot_20_bpsdm = $value['tot_20_unit'];
+                    endforeach; ?>
+                    <?php foreach ($totalkpi21_bpsdm as $key => $value) : $tot_21_bpsdm = $value['tot_21_unit'];
+                    endforeach; ?>
+
+                    <?php foreach ($totalkpi19_lp2m as $key => $value) : $tot_19_lp2m = $value['tot_19_unit'];
+                    endforeach; ?>
+                    <?php foreach ($totalkpi20_lp2m as $key => $value) : $tot_20_lp2m = $value['tot_20_unit'];
+                    endforeach; ?>
+                    <?php foreach ($totalkpi21_lp2m as $key => $value) : $tot_21_lp2m = $value['tot_21_unit'];
+                    endforeach; ?>
+
+                    <div class="container col-lg-12">
+                        <section class="content">
+
+                            <div class="card card-success">
+                                <div class="card-header">
+                                    <h3 class="card-title">Grafik Capaian Unit</h3>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart">
+                                        <canvas id="ChartUnit" height="100"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
 
 
 
@@ -182,5 +302,104 @@
         <script src="<?php echo base_url(); ?>/public/js/datatables-demo.js"></script>
 
 </body>
+<!-- jQuery -->
+<script src="<?php echo base_url(); ?>/public/plugins/jquery/jquery.min.js"></script>
+<!-- ChartJS -->
+<script src="<?php echo base_url(); ?>/public/plugins/chart.js/Chart.min.js"></script>
+<!-- AdminLTE App -->
+<script src="<?php echo base_url(); ?>/public/dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+
+<!-- Page level custom scripts -->
+<script src="<?php echo base_url(); ?>/public/dist/js/demo.js"></script>
+<script src="<?php echo base_url(); ?>/public/chart/apexcharts.min.js"></script>
+<script src="<?php echo base_url(); ?>/public/chart/dashboard.js"></script>
+<script src="<?php echo base_url(); ?>/public/chart/jquery.knob.min.js"></script>
+<script src="<?php echo base_url(); ?>/public/chart/knob-chart-setting.js"></script>
+<script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+<script>
+    $(window).load(function() {
+        $(".pre-loader").fadeOut("slow");
+    });
+</script>
+
+<script>
+    const ctx = document.getElementById('ChartUnit');
+    const ChartUnit = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['BP', 'JCAL', 'BKAL', 'Keuangan', 'KHI', 'Perpustakaan', 'PHA', 'LPMU', 'JLP', 'JSDP', 'LSE', 'TIK', 'Umum', 'BPSDM', 'LP2M'],
+            datasets: [
+
+                {
+                    label: '2019/2020',
+                    backgroundColor: 'rgba(255, 165, 0, 1)',
+                    borderColor: 'rgba(255, 165, 0, 1)',
+                    pointRadius: false,
+                    pointColor: '#3b8bba',
+                    pointStrokeColor: 'rgba(60,141,188,1)',
+                    pointHighlightFill: '#fff',
+                    pointHighlightStroke: 'rgba(60,141,188,1)',
+                    data: [<?php echo json_encode($tot_19_bp) ?>, <?php echo json_encode($tot_19_jcal) ?>, <?php echo json_encode($tot_19_bkal) ?>, <?php echo json_encode($tot_19_keuangan) ?>, <?php echo json_encode($tot_19_khi) ?>, <?php echo json_encode($tot_19_perpustakaan) ?>, <?php echo json_encode($tot_19_pha) ?>, <?php echo json_encode($tot_19_lpmu) ?>, <?php echo json_encode($tot_19_jlp) ?>, <?php echo json_encode($tot_19_jsdp) ?>, <?php echo json_encode($tot_19_lse) ?>, <?php echo json_encode($tot_19_tik) ?>, <?php echo json_encode($tot_19_umum) ?>, <?php echo json_encode($tot_19_bpsdm) ?>, <?php echo json_encode($tot_19_lp2m) ?>]
+
+
+                },
+                {
+                    label: '2020/2021',
+                    backgroundColor: 'rgba(93, 255, 223,1)',
+                    borderColor: 'rgba(93, 255, 223,1)',
+                    pointRadius: false,
+                    pointColor: '#3b8bba',
+                    pointStrokeColor: 'rgba(60,141,188,1)',
+                    pointHighlightFill: '#fff',
+                    pointHighlightStroke: 'rgba(60,141,188,1)',
+                    data: [<?php echo json_encode($tot_20_bp) ?>, <?php echo json_encode($tot_20_jcal) ?>, <?php echo json_encode($tot_20_bkal) ?>, <?php echo json_encode($tot_20_keuangan) ?>, <?php echo json_encode($tot_20_khi) ?>, <?php echo json_encode($tot_20_perpustakaan) ?>, <?php echo json_encode($tot_20_pha) ?>, <?php echo json_encode($tot_20_lpmu) ?>, <?php echo json_encode($tot_20_jlp) ?>, <?php echo json_encode($tot_20_jsdp) ?>, <?php echo json_encode($tot_20_lse) ?>, <?php echo json_encode($tot_20_tik) ?>, <?php echo json_encode($tot_20_umum) ?>, <?php echo json_encode($tot_20_bpsdm) ?>, <?php echo json_encode($tot_20_lp2m) ?>]
+
+                },
+                {
+                    label: '2021/2022',
+                    backgroundColor: 'rgba(93, 78, 246,1)',
+                    borderColor: 'rgba(93, 78, 246,1)',
+                    pointRadius: false,
+                    pointColor: '#3b8bba',
+                    pointStrokeColor: 'rgba(60,141,188,1)',
+                    pointHighlightFill: '#fff',
+                    pointHighlightStroke: 'rgba(60,141,188,1)',
+                    data: [<?php echo json_encode($tot_21_bp) ?>, <?php echo json_encode($tot_21_jcal) ?>, <?php echo json_encode($tot_21_bkal) ?>, <?php echo json_encode($tot_21_keuangan) ?>, <?php echo json_encode($tot_21_khi) ?>, <?php echo json_encode($tot_21_perpustakaan) ?>, <?php echo json_encode($tot_21_pha) ?>, <?php echo json_encode($tot_21_lpmu) ?>, <?php echo json_encode($tot_21_jlp) ?>, <?php echo json_encode($tot_21_jsdp) ?>, <?php echo json_encode($tot_21_lse) ?>, <?php echo json_encode($tot_21_tik) ?>, <?php echo json_encode($tot_21_umum) ?>, <?php echo json_encode($tot_21_bpsdm) ?>, <?php echo json_encode($tot_21_lp2m) ?>]
+
+                },
+
+
+            ]
+        },
+        options: {
+            responsive: true,
+            legend: {
+                position: 'top',
+            },
+            hover: {
+                mode: 'label'
+            },
+            scales: {
+                xAxes: [{
+                    display: true,
+                    scaleLabel: {
+                        display: true,
+
+                    }
+                }],
+                yAxes: [{
+                    display: true,
+                    ticks: {
+                        beginAtZero: true,
+                        steps: 10,
+                        stepValue: 5,
+
+                    }
+                }]
+            },
+        }
+    });
+</script>
 
 </html>
