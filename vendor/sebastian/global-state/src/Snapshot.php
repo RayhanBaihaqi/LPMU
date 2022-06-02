@@ -233,7 +233,7 @@ class Snapshot
         foreach (array_reverse(get_declared_classes()) as $className) {
             $class = new ReflectionClass($className);
 
-            if (!$class->isUserDefined()) {
+            if (!$class->isuserDefined()) {
                 break;
             }
 
@@ -251,7 +251,7 @@ class Snapshot
         foreach (array_reverse(get_declared_interfaces()) as $interfaceName) {
             $class = new ReflectionClass($interfaceName);
 
-            if (!$class->isUserDefined()) {
+            if (!$class->isuserDefined()) {
                 break;
             }
 

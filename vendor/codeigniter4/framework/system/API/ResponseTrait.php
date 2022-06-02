@@ -189,7 +189,7 @@ trait ResponseTrait
 
     /**
      * Used when the client is either didn't send authorization information,
-     * or had bad authorization credentials. User is encouraged to try again
+     * or had bad authorization credentials. user is encouraged to try again
      * with the proper information.
      *
      * @return Response

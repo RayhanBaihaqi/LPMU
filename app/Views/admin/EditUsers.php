@@ -88,12 +88,12 @@
 
 			<!-- Heading -->
 			<div class="sidebar-heading">
-				User
+				user
 			</div>
 			<li class="nav-item ">
 				<a class="nav-link " href="<?= base_url('auth/index') ?>">
 					<i class="fas fa-fw fa-tachometer-alt"></i>
-					<span>Tabel User</span></a>
+					<span>Tabel user</span></a>
 			</li>
 
 		</ul>
@@ -113,7 +113,7 @@
 
 						<div class="topbar-divider d-none d-sm-block"></div>
 
-						<!-- Nav Item - User Information -->
+						<!-- Nav Item - user Information -->
 						<li class="nav-item dropdown no-arrow">
 							<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<span class="mr-2 d-none d-lg-inline text-gray-600 small">
@@ -123,7 +123,7 @@
 									?>
 								</span>
 							</a>
-							<!-- Dropdown - User Information -->
+							<!-- Dropdown - user Information -->
 							<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="<?= base_url('auth/logout') ?>">
@@ -141,7 +141,7 @@
 				<div class="container-fluid">
 
 					<!-- Page Heading -->
-					<h1 class="h3 mb-2 text-gray-800">Edit User</h1>
+					<h1 class="h3 mb-2 text-gray-800">Edit user</h1>
 
 					<!-- DataTales Example -->
 					<div class="card shadow mb-4">
@@ -150,8 +150,8 @@
 								<form action="<?= base_url('auth/update'); ?>" method="POST" enctype="multipart/form-data">
 									<input required type="hidden" name="id" value="<?= $user['id']; ?>">
 									<div class="form-group">
-										<label for="username">Username</label>
-										<input required type="text" name="username" class="form-control" id="username" placeholder="Masukkan Username" value="<?= $user['username']; ?>">
+										<label for="username">username</label>
+										<input required type="text" name="username" class="form-control" id="username" placeholder="Masukkan username" value="<?= $user['username']; ?>">
 									</div>
 									<div class="form-group">
 										<label for="password">Password</label>
@@ -162,7 +162,7 @@
 										<input required type="text" name="nama_prodi" class="form-control" id="nama_prodi" name='nama_prodi' placeholder="Masukkan Nama Prodi/Unit" value="<?= $user['nama_prodi']; ?>">
 									</div>
 									<div class="form-group">
-										<label for="level">Kategori User</label>
+										<label for="level">Kategori user</label>
 										<select required class="form-control" id="level" name="level">
 											<option value="<?= $user['level']; ?>"><?= $user['level']; ?></option>
 											<option value="prodi">Prodi</option>

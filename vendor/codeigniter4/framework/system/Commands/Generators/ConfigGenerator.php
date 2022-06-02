@@ -65,7 +65,7 @@ class ConfigGenerator extends BaseCommand
      */
     protected $options = [
         '--namespace' => 'Set root namespace. Default: "APP_NAMESPACE".',
-        '--suffix'    => 'Append the component title to the class name (e.g. User => UserConfig).',
+        '--suffix'    => 'Append the component title to the class name (e.g. user => userConfig).',
         '--force'     => 'Force overwrite existing file.',
     ];
 

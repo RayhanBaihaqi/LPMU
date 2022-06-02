@@ -86,7 +86,7 @@ abstract class vfsStreamAbstractContent implements vfsStreamContent
         $this->lastAttributeModified = $time;
         $this->lastModified          = $time;
         $this->permissions           = $permissions;
-        $this->user                  = vfsStream::getCurrentUser();
+        $this->user                  = vfsStream::getCurrentuser();
         $this->group                 = vfsStream::getCurrentGroup();
     }
 
@@ -329,7 +329,7 @@ abstract class vfsStreamAbstractContent implements vfsStreamContent
      * @param   int  $user
      * @return  bool
      */
-    public function isOwnedByUser($user)
+    public function isOwnedByuser($user)
     {
         return $this->user === $user;
     }
@@ -339,7 +339,7 @@ abstract class vfsStreamAbstractContent implements vfsStreamContent
      *
      * @return  int
      */
-    public function getUser()
+    public function getuser()
     {
         return $this->user;
     }

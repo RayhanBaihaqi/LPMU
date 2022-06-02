@@ -104,7 +104,7 @@
 
                         <div class="topbar-divider d-none d-sm-block"></div>
 
-                        <!-- Nav Item - User Information -->
+                        <!-- Nav Item - user Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
@@ -114,7 +114,7 @@
                                     ?>
                                 </span>
                             </a>
-                            <!-- Dropdown - User Information -->
+                            <!-- Dropdown - user Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="<?= base_url('auth/logout') ?>">
@@ -140,7 +140,8 @@
                             <div class="card card-success">
                                 <div class="card-body">
                                     <div class="chart">
-                                        <div id="GrafikCapaianRkatProdi" style="width: 1080px; height: 500px;"></div>
+                                    <label>Data Capaian Program Studi</label>
+                                    <canvas id="ChartProdi" height="100"></canvas>
                                     </div>
                                 </div>
                             </div>
@@ -151,7 +152,7 @@
                             <div class="card card-success">
                                 <div class="card-body">
                                     <div class="chart">
-                                        <div id="GrafikCapaianRkatUnit" style="width: 1080px; height: 500px;"></div>
+                                        <!-- <div id="GrafikCapaianRkatUnit" style="width: 1080px; height: 500px;"></div> -->
                                     </div>
                                 </div>
                             </div>
@@ -162,7 +163,7 @@
                             <div class="card card-success">
                                 <div class="card-body">
                                     <div class="chart">
-                                        <div id="GrafikCapaianRkatRektorat" style="width: 1080px; height: 500px;"></div>
+                                        <!-- <div id="GrafikCapaianRkatRektorat" style="width: 1080px; height: 500px;"></div> -->
                                     </div>
                                 </div>
                             </div>
@@ -214,7 +215,7 @@
         $(".pre-loader").fadeOut("slow");
     });
 </script>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> -->
     <script type="text/javascript">
       google.charts.load('current', {'packages':['bar']});
       google.charts.setOnLoadCallback(drawChart);
@@ -223,7 +224,7 @@
         var data = google.visualization.arrayToDataTable([
           ['Prodi', 'Tahun', 'PK & OPS (%)', 'INV (%)'],
           <?php
-		    foreach ($seluruhDataUserProdi as $key => $reading) : ?>
+		    foreach ($seluruhDatauserProdi as $key => $reading) : ?>
           ['<?= $reading['nama_prodi'] ?>','<?= $reading['tahunAkademik'] ?>', <?= $reading['persenPkOps'] ?>,<?= $reading['persenInv'] ?>],
           <?php endforeach; ?>
         ]);
@@ -248,8 +249,8 @@
         var data = google.visualization.arrayToDataTable([
           ['Unit', 'Tahun', 'PK & OPS (%)', 'INV (%)'],
           <?php
-		    foreach ($seluruhDataUserUnit as $key => $reading) : ?>
-          ['<?= $reading['nama_prodi'] ?>','<?= $reading['tahunAkademik'] ?>', <?= $reading['persenPkOps'] ?>,<?= $reading['persenInv'] ?>],
+		    foreach ($seluruhDatauserUnit as $key => $reading) : ?>
+            ['<?= $reading['nama_prodi'] ?>','<?= $reading['tahunAkademik'] ?>', <?= $reading['persenPkOps'] ?>,<?= $reading['persenInv'] ?>],
           <?php endforeach; ?>
         ]);
 
@@ -273,7 +274,7 @@
         var data = google.visualization.arrayToDataTable([
           ['Rektorat', 'Tahun', 'PK & OPS (%)', 'INV (%)'],
           <?php
-		    foreach ($seluruhDataUserRektorat as $key => $reading) : ?>
+		    foreach ($seluruhDatauserRektorat as $key => $reading) : ?>
           ['<?= $reading['nama_prodi'] ?>','<?= $reading['tahunAkademik'] ?>', <?= $reading['persenPkOps'] ?>,<?= $reading['persenInv'] ?>],
           <?php endforeach; ?>
         ]);
@@ -290,4 +291,116 @@
         chart.draw(data, google.charts.Bar.convertOptions(options));
       }
     </script>
+    <script>
+
+    const ctx2 = document.getElementById('ChartProdi');
+    const ChartProdi = new Chart(ctx2, {
+        type: 'bar',
+        data: {
+            labels: ['Akuntansi', 'Manajemen', 'Psikologi', 'Ilmu Komunikasi', 'Desain Produk', 'Desain Komunikasi Visual', 'Informatika', 'Sistem Informasi', 'Teknik Sipil', 'Arsitektur'],
+            datasets: [
+
+                {
+                    label: '2019/2020',
+                    backgroundColor: 'rgba(255, 165, 0, 1)',
+                    borderColor: 'rgba(255, 165, 0, 1)',
+                    pointRadius: false,
+                    pointColor: '#3b8bba',
+                    pointStrokeColor: 'rgba(60,141,188,1)',
+                    pointHighlightFill: '#fff',
+                    pointHighlightStroke: 'rgba(60,141,188,1)',
+                    data: [
+                        <?php foreach ($dataProdiAkt1920 as $key => $reading) : ?><?= $reading['persenOps'] ?><?php endforeach; ?>,
+                        <?php foreach ($dataProdiMan1920 as $key => $reading) : ?><?= $reading['persenOps'] ?><?php endforeach; ?>, 
+                        <?php foreach ($dataProdiPsi1920 as $key => $reading) : ?><?= $reading['persenOps'] ?><?php endforeach; ?>,
+                        <?php foreach ($dataProdiKom1920 as $key => $reading) : ?><?= $reading['persenOps'] ?><?php endforeach; ?>, 
+                        <?php foreach ($dataProdiDp1920 as $key => $reading) : ?><?= $reading['persenOps'] ?><?php endforeach; ?>,
+                        <?php foreach ($dataProdiDkv1920 as $key => $reading) : ?><?= $reading['persenOps'] ?><?php endforeach; ?>, 
+                        <?php foreach ($dataProdiInf1920 as $key => $reading) : ?><?= $reading['persenOps'] ?><?php endforeach; ?>, 
+                        <?php foreach ($dataProdiSif1920 as $key => $reading) : ?><?= $reading['persenOps'] ?><?php endforeach; ?>, 
+                        <?php foreach ($dataProdiTsp1920 as $key => $reading) : ?><?= $reading['persenOps'] ?><?php endforeach; ?>,
+                        <?php foreach ($dataProdiArs1920 as $key => $reading) : ?><?= $reading['persenOps'] ?><?php endforeach; ?> 
+                    ]
+
+
+                },
+                {
+                    label: '2020/2021',
+                    backgroundColor: 'rgba(93, 255, 223,1)',
+                    borderColor: 'rgba(93, 255, 223,1)',
+                    pointRadius: false,
+                    pointColor: '#3b8bba',
+                    pointStrokeColor: 'rgba(60,141,188,1)',
+                    pointHighlightFill: '#fff',
+                    pointHighlightStroke: 'rgba(60,141,188,1)',
+                    data: [
+                        <?php foreach ($dataProdiAkt2021 as $key => $reading) : ?><?= $reading['persenOps'] ?><?php endforeach; ?>,
+                        <?php foreach ($dataProdiMan2021 as $key => $reading) : ?><?= $reading['persenOps'] ?><?php endforeach; ?>, 
+                        <?php foreach ($dataProdiPsi2021 as $key => $reading) : ?><?= $reading['persenOps'] ?><?php endforeach; ?>,
+                        <?php foreach ($dataProdiKom2021 as $key => $reading) : ?><?= $reading['persenOps'] ?><?php endforeach; ?>, 
+                        <?php foreach ($dataProdiDp2021 as $key => $reading) : ?><?= $reading['persenOps'] ?><?php endforeach; ?>,
+                        <?php foreach ($dataProdiDkv2021 as $key => $reading) : ?><?= $reading['persenOps'] ?><?php endforeach; ?>, 
+                        <?php foreach ($dataProdiInf2021 as $key => $reading) : ?><?= $reading['persenOps'] ?><?php endforeach; ?>, 
+                        <?php foreach ($dataProdiSif2021 as $key => $reading) : ?><?= $reading['persenOps'] ?><?php endforeach; ?>, 
+                        <?php foreach ($dataProdiTsp2021 as $key => $reading) : ?><?= $reading['persenOps'] ?><?php endforeach; ?>,
+                        <?php foreach ($dataProdiArs2021 as $key => $reading) : ?><?= $reading['persenOps'] ?><?php endforeach; ?>  
+                    ]
+
+                },
+                {
+                    label: '2021/2022',
+                    backgroundColor: 'rgba(93, 78, 246,1)',
+                    borderColor: 'rgba(93, 78, 246,1)',
+                    pointRadius: false,
+                    pointColor: '#3b8bba',
+                    pointStrokeColor: 'rgba(60,141,188,1)',
+                    pointHighlightFill: '#fff',
+                    pointHighlightStroke: 'rgba(60,141,188,1)',
+                    data: [
+                        <?php foreach ($dataProdiAkt2122 as $key => $reading) : ?><?= $reading['persenOps'] ?><?php endforeach; ?>,
+                        <?php foreach ($dataProdiMan2122 as $key => $reading) : ?><?= $reading['persenOps'] ?><?php endforeach; ?>, 
+                        <?php foreach ($dataProdiPsi2122 as $key => $reading) : ?><?= $reading['persenOps'] ?><?php endforeach; ?>,
+                        <?php foreach ($dataProdiKom2122 as $key => $reading) : ?><?= $reading['persenOps'] ?><?php endforeach; ?>, 
+                        <?php foreach ($dataProdiDp2122 as $key => $reading) : ?><?= $reading['persenOps'] ?><?php endforeach; ?>,
+                        <?php foreach ($dataProdiDkv2122 as $key => $reading) : ?><?= $reading['persenOps'] ?><?php endforeach; ?>, 
+                        <?php foreach ($dataProdiInf2122 as $key => $reading) : ?><?= $reading['persenOps'] ?><?php endforeach; ?>, 
+                        <?php foreach ($dataProdiSif2122 as $key => $reading) : ?><?= $reading['persenOps'] ?><?php endforeach; ?>, 
+                        <?php foreach ($dataProdiTsp2122 as $key => $reading) : ?><?= $reading['persenOps'] ?><?php endforeach; ?>,
+                        <?php foreach ($dataProdiArs2122 as $key => $reading) : ?><?= $reading['persenOps'] ?><?php endforeach; ?> 
+                    ]
+                },
+
+
+            ]
+        },
+        options: {
+            responsive: true,
+            legend: {
+                position: 'top',
+            },
+            hover: {
+                mode: 'label'
+            },
+            scales: {
+                xAxes: [{
+                    display: true,
+                    scaleLabel: {
+                        display: true,
+
+                    }
+                }],
+                yAxes: [{
+                    display: true,
+                    ticks: {
+                        beginAtZero: true,
+                        steps: 10,
+                        stepValue: 5,
+
+                    }
+                }]
+            },
+        }
+    });
+</script>
+
 </html>

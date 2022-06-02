@@ -8,7 +8,7 @@ use App\Models\TahunAkademikModel;
 use App\Models\PersenSerapModel;
 use App\Models\PaguRkatModel;
 use App\Models\ModelKpiAdmin;
-use App\Models\UsersModel;
+use App\Models\usersModel;
 use Dompdf\Dompdf;
 
 class Pdf extends BaseController
@@ -19,7 +19,7 @@ class Pdf extends BaseController
         $this->TahunAkademikModel = new TahunAkademikModel();
         $this->PersenSerapModel = new PersenSerapModel();
         $this->PaguModel = new PaguRkatModel();
-        $this->UsersModel = new UsersModel();
+        $this->usersModel = new usersModel();
         $this->ModelKpiAdmin = new ModelKpiAdmin();
     }
 

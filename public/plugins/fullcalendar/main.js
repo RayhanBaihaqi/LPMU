@@ -9128,11 +9128,11 @@ var FullCalendar = (function (exports) {
             func();
             this.renderRunner.resume('batchRendering');
         };
-        Calendar.prototype.pauseRendering = function () {
-            this.renderRunner.pause('pauseRendering');
+        Calendar.prototype.pauserendering = function () {
+            this.renderRunner.pause('pauserendering');
         };
         Calendar.prototype.resumeRendering = function () {
-            this.renderRunner.resume('pauseRendering', true);
+            this.renderRunner.resume('pauserendering', true);
         };
         Calendar.prototype.resetOptions = function (optionOverrides, append) {
             this.currentDataManager.resetOptions(optionOverrides, append);

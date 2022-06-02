@@ -217,7 +217,7 @@ class vfsStreamWrapperMkDirTestCase extends vfsStreamWrapperBaseTestCase
      * @expectedException PHPUnit_Framework_Error
      * @expectedExceptionMessage  mkdir(): Path vfs://root/dir exists
      */
-    public function mkDirShouldNotOverwriteExistingDirectoriesAndTriggerE_USER_WARNING()
+    public function mkDirShouldNotOverwriteExistingDirectoriesAndTriggerE_user_WARNING()
     {
         vfsStream::setup('root');
         $dir = vfsStream::url('root/dir');
@@ -242,7 +242,7 @@ class vfsStreamWrapperMkDirTestCase extends vfsStreamWrapperBaseTestCase
      * @expectedException PHPUnit_Framework_Error
      * @expectedExceptionMessage  mkdir(): Path vfs://root/test.txt exists
      */
-    public function mkDirShouldNotOverwriteExistingFilesAndTriggerE_USER_WARNING()
+    public function mkDirShouldNotOverwriteExistingFilesAndTriggerE_user_WARNING()
     {
         $root = vfsStream::setup('root');
         vfsStream::newFile('test.txt')->at($root);
@@ -395,8 +395,8 @@ class vfsStreamWrapperMkDirTestCase extends vfsStreamWrapperBaseTestCase
     {
         vfsStreamWrapper::register();
         vfsStreamWrapper::setRoot(new vfsStreamDirectory('root', 0770));
-        vfsStreamWrapper::getRoot()->chgrp(vfsStream::GROUP_USER_1)
-                                   ->chown(vfsStream::OWNER_USER_1);
+        vfsStreamWrapper::getRoot()->chgrp(vfsStream::GROUP_user_1)
+                                   ->chown(vfsStream::OWNER_user_1);
         $this->assertFalse(mkdir(vfsStream::url('root/doesNotWork')));
         $this->assertFalse(vfsStreamWrapper::getRoot()->hasChild('doesNotWork'));
     }
@@ -429,12 +429,12 @@ class vfsStreamWrapperMkDirTestCase extends vfsStreamWrapperBaseTestCase
      */
     public function alwaysResolvesRootDirectoryAsOwnParentWithDoubleDot()
     {
-        vfsStreamWrapper::getRoot()->chown(vfsStream::OWNER_USER_1);
+        vfsStreamWrapper::getRoot()->chown(vfsStream::OWNER_user_1);
 
         $this->assertTrue(is_dir(vfsStream::url('foo/..')));
         $stat = stat(vfsStream::url('foo/..'));
         $this->assertEquals(
-            vfsStream::OWNER_USER_1,
+            vfsStream::OWNER_user_1,
             $stat['uid']
         );
     }

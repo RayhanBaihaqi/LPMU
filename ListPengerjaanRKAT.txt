@@ -4,7 +4,7 @@ ADMIN
 10. menambahkan nama-nama pengisi data 
 
 
-USER
+user
 3. Menampilkan grafik capaian kinerja prodi atau unit
 4. membuat backand di halaman tambah rencana RKAT ( memasukan data ke dalam database ) 
 8. Buat perhitungan dan memasukan ke databae formulir realisasi RKAT
@@ -19,7 +19,7 @@ Catatan
 4. pada login, jika ingin logout wajib dari tombol logout bukan dari tombol sebelumnya.
 
 DONE
-USER
+user
 6. Tambahkan linkpada tombol sosmet di kanan atas (Selesai)
 14. Tambahan Kata-kata sapaan pada halaman setelah login (Selesai)
 2. Hapus Halaman profil (Selesai)

@@ -152,12 +152,12 @@
 									<td>
 										<input type="text" class="form-control form-control-sm" id="no_kegiatan" placeholder="No Kegiatan" name="no_kegiatan[]" required>
 									
-										<input type="text" class="form-control form-control-sm" id="indikator" placeholder="Indikator" name="indikator[]" required>
+										<textarea type="text" class="form-control form-control-sm" id="indikator" placeholder="Indikator" name="indikator[]" rows="5" required> </textarea>
 									</td>
 									<td>
 										<input type="text" class="form-control form-control-sm" id="target" placeholder="Masukan Target" name="target[]" required>
-									
-										<input type="text" class="form-control form-control-sm" id="nama_kegiatan" placeholder="Nama Kegiatan" name="nama_kegiatan[]" required>
+										
+										<textarea type="text" class="form-control form-control-sm" id="nama_kegiatan" placeholder="Nama Kegiatan" name="nama_kegiatan[]" rows="5" required> </textarea>
 									</td>
 									<td>
 										<input type="text" class="form-control form-control-sm" id="anggaranGanjil" placeholder="Rp. 0" name="anggaranGanjil[]" onkeyup="totalAnggaran1();" required>

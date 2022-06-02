@@ -44,7 +44,7 @@ abstract class CodeUnit
      */
     public static function forClass(string $className): ClassUnit
     {
-        self::ensureUserDefinedClass($className);
+        self::ensureuserDefinedClass($className);
 
         $reflector = self::reflectorForClass($className);
 
@@ -66,7 +66,7 @@ abstract class CodeUnit
      */
     public static function forClassMethod(string $className, string $methodName): ClassMethodUnit
     {
-        self::ensureUserDefinedClass($className);
+        self::ensureuserDefinedClass($className);
 
         $reflector = self::reflectorForClassMethod($className, $methodName);
 
@@ -88,7 +88,7 @@ abstract class CodeUnit
      */
     public static function forInterface(string $interfaceName): InterfaceUnit
     {
-        self::ensureUserDefinedInterface($interfaceName);
+        self::ensureuserDefinedInterface($interfaceName);
 
         $reflector = self::reflectorForClass($interfaceName);
 
@@ -110,7 +110,7 @@ abstract class CodeUnit
      */
     public static function forInterfaceMethod(string $interfaceName, string $methodName): InterfaceMethodUnit
     {
-        self::ensureUserDefinedInterface($interfaceName);
+        self::ensureuserDefinedInterface($interfaceName);
 
         $reflector = self::reflectorForClassMethod($interfaceName, $methodName);
 
@@ -132,7 +132,7 @@ abstract class CodeUnit
      */
     public static function forTrait(string $traitName): TraitUnit
     {
-        self::ensureUserDefinedTrait($traitName);
+        self::ensureuserDefinedTrait($traitName);
 
         $reflector = self::reflectorForClass($traitName);
 
@@ -154,7 +154,7 @@ abstract class CodeUnit
      */
     public static function forTraitMethod(string $traitName, string $methodName): TraitMethodUnit
     {
-        self::ensureUserDefinedTrait($traitName);
+        self::ensureuserDefinedTrait($traitName);
 
         $reflector = self::reflectorForClassMethod($traitName, $methodName);
 
@@ -178,7 +178,7 @@ abstract class CodeUnit
     {
         $reflector = self::reflectorForFunction($functionName);
 
-        if (!$reflector->isUserDefined()) {
+        if (!$reflector->isuserDefined()) {
             throw new InvalidCodeUnitException(
                 sprintf(
                     '"%s" is not a user-defined function',
@@ -265,7 +265,7 @@ abstract class CodeUnit
      *
      * @throws InvalidCodeUnitException
      */
-    private static function ensureUserDefinedClass(string $className): void
+    private static function ensureuserDefinedClass(string $className): void
     {
         try {
             $reflector = new ReflectionClass($className);
@@ -288,7 +288,7 @@ abstract class CodeUnit
                 );
             }
 
-            if (!$reflector->isUserDefined()) {
+            if (!$reflector->isuserDefined()) {
                 throw new InvalidCodeUnitException(
                     sprintf(
                         '"%s" is not a user-defined class',
@@ -312,7 +312,7 @@ abstract class CodeUnit
      *
      * @throws InvalidCodeUnitException
      */
-    private static function ensureUserDefinedInterface(string $interfaceName): void
+    private static function ensureuserDefinedInterface(string $interfaceName): void
     {
         try {
             $reflector = new ReflectionClass($interfaceName);
@@ -326,7 +326,7 @@ abstract class CodeUnit
                 );
             }
 
-            if (!$reflector->isUserDefined()) {
+            if (!$reflector->isuserDefined()) {
                 throw new InvalidCodeUnitException(
                     sprintf(
                         '"%s" is not a user-defined interface',
@@ -350,7 +350,7 @@ abstract class CodeUnit
      *
      * @throws InvalidCodeUnitException
      */
-    private static function ensureUserDefinedTrait(string $traitName): void
+    private static function ensureuserDefinedTrait(string $traitName): void
     {
         try {
             $reflector = new ReflectionClass($traitName);
@@ -365,7 +365,7 @@ abstract class CodeUnit
             }
 
             // @codeCoverageIgnoreStart
-            if (!$reflector->isUserDefined()) {
+            if (!$reflector->isuserDefined()) {
                 throw new InvalidCodeUnitException(
                     sprintf(
                         '"%s" is not a user-defined trait',

@@ -304,7 +304,7 @@ class RouteCollection implements RouteCollectionInterface
     /**
      * Sets the class/method that should be called if routing doesn't
      * find a match. It can be either a closure or the controller/method
-     * name exactly like a route is defined: Users::index
+     * name exactly like a route is defined: users::index
      *
      * This setting is passed to the Router class and handled there.
      *

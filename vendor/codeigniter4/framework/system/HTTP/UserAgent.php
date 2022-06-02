@@ -11,12 +11,12 @@
 
 namespace CodeIgniter\HTTP;
 
-use Config\UserAgents;
+use Config\userAgents;
 
 /**
  * Abstraction for an HTTP user agent
  */
-class UserAgent
+class userAgent
 {
     /**
      * Current user-agent
@@ -49,7 +49,7 @@ class UserAgent
     /**
      * Holds the config file contents.
      *
-     * @var UserAgents
+     * @var userAgents
      */
     protected $config;
 
@@ -98,14 +98,14 @@ class UserAgent
     /**
      * Constructor
      *
-     * Sets the User Agent and runs the compilation routine
+     * Sets the user Agent and runs the compilation routine
      */
-    public function __construct(?UserAgents $config = null)
+    public function __construct(?userAgents $config = null)
     {
-        $this->config = $config ?? new UserAgents();
+        $this->config = $config ?? new userAgents();
 
-        if (isset($_SERVER['HTTP_USER_AGENT'])) {
-            $this->agent = trim($_SERVER['HTTP_USER_AGENT']);
+        if (isset($_SERVER['HTTP_user_AGENT'])) {
+            $this->agent = trim($_SERVER['HTTP_user_AGENT']);
             $this->compileData();
         }
     }
@@ -268,7 +268,7 @@ class UserAgent
     }
 
     /**
-     * Compile the User Agent Data
+     * Compile the user Agent Data
      */
     protected function compileData()
     {

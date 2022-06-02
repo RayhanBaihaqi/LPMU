@@ -24779,16 +24779,16 @@ var PDFSecurity = /*#__PURE__*/function () {
           break;
       }
 
-      var paddedUserPassword = processPasswordR2R3R4(options.userPassword);
-      var paddedOwnerPassword = options.ownerPassword ? processPasswordR2R3R4(options.ownerPassword) : paddedUserPassword;
-      var ownerPasswordEntry = getOwnerPasswordR2R3R4(r, this.keyBits, paddedUserPassword, paddedOwnerPassword);
-      this.encryptionKey = getEncryptionKeyR2R3R4(r, this.keyBits, this.document._id, paddedUserPassword, ownerPasswordEntry, permissions);
+      var paddeduserPassword = processPasswordR2R3R4(options.userPassword);
+      var paddedOwnerPassword = options.ownerPassword ? processPasswordR2R3R4(options.ownerPassword) : paddeduserPassword;
+      var ownerPasswordEntry = getOwnerPasswordR2R3R4(r, this.keyBits, paddeduserPassword, paddedOwnerPassword);
+      this.encryptionKey = getEncryptionKeyR2R3R4(r, this.keyBits, this.document._id, paddeduserPassword, ownerPasswordEntry, permissions);
       var userPasswordEntry;
 
       if (r === 2) {
-        userPasswordEntry = getUserPasswordR2(this.encryptionKey);
+        userPasswordEntry = getuserPasswordR2(this.encryptionKey);
       } else {
-        userPasswordEntry = getUserPasswordR3R4(this.document._id, this.encryptionKey);
+        userPasswordEntry = getuserPasswordR3R4(this.document._id, this.encryptionKey);
       }
 
       encDict.V = v;
@@ -24819,14 +24819,14 @@ var PDFSecurity = /*#__PURE__*/function () {
     value: function _setupEncryptionV5(encDict, options) {
       this.keyBits = 256;
       var permissions = getPermissionsR3(options);
-      var processedUserPassword = processPasswordR5(options.userPassword);
-      var processedOwnerPassword = options.ownerPassword ? processPasswordR5(options.ownerPassword) : processedUserPassword;
+      var processeduserPassword = processPasswordR5(options.userPassword);
+      var processedOwnerPassword = options.ownerPassword ? processPasswordR5(options.ownerPassword) : processeduserPassword;
       this.encryptionKey = getEncryptionKeyR5(PDFSecurity.generateRandomWordArray);
-      var userPasswordEntry = getUserPasswordR5(processedUserPassword, PDFSecurity.generateRandomWordArray);
+      var userPasswordEntry = getuserPasswordR5(processeduserPassword, PDFSecurity.generateRandomWordArray);
 
       var userKeySalt = _cryptoJs.default.lib.WordArray.create(userPasswordEntry.words.slice(10, 12), 8);
 
-      var userEncryptionKeyEntry = getUserEncryptionKeyR5(processedUserPassword, userKeySalt, this.encryptionKey);
+      var userEncryptionKeyEntry = getuserEncryptionKeyR5(processeduserPassword, userKeySalt, this.encryptionKey);
       var ownerPasswordEntry = getOwnerPasswordR5(processedOwnerPassword, userPasswordEntry, PDFSecurity.generateRandomWordArray);
 
       var ownerKeySalt = _cryptoJs.default.lib.WordArray.create(ownerPasswordEntry.words.slice(10, 12), 8);
@@ -24960,11 +24960,11 @@ function getPermissionsR3() {
   return permissions;
 }
 
-function getUserPasswordR2(encryptionKey) {
+function getuserPasswordR2(encryptionKey) {
   return _cryptoJs.default.RC4.encrypt(processPasswordR2R3R4(), encryptionKey).ciphertext;
 }
 
-function getUserPasswordR3R4(documentId, encryptionKey) {
+function getuserPasswordR3R4(documentId, encryptionKey) {
   var key = encryptionKey.clone();
 
   var cipher = _cryptoJs.default.MD5(processPasswordR2R3R4().concat(_cryptoJs.default.lib.WordArray.create(documentId)));
@@ -24982,7 +24982,7 @@ function getUserPasswordR3R4(documentId, encryptionKey) {
   return cipher.concat(_cryptoJs.default.lib.WordArray.create(null, 16));
 }
 
-function getOwnerPasswordR2R3R4(r, keyBits, paddedUserPassword, paddedOwnerPassword) {
+function getOwnerPasswordR2R3R4(r, keyBits, paddeduserPassword, paddedOwnerPassword) {
   var digest = paddedOwnerPassword;
   var round = r >= 3 ? 51 : 1;
 
@@ -24992,7 +24992,7 @@ function getOwnerPasswordR2R3R4(r, keyBits, paddedUserPassword, paddedOwnerPassw
 
   var key = digest.clone();
   key.sigBytes = keyBits / 8;
-  var cipher = paddedUserPassword;
+  var cipher = paddeduserPassword;
   round = r >= 3 ? 20 : 1;
 
   for (var _i = 0; _i < round; _i++) {
@@ -25008,8 +25008,8 @@ function getOwnerPasswordR2R3R4(r, keyBits, paddedUserPassword, paddedOwnerPassw
   return cipher;
 }
 
-function getEncryptionKeyR2R3R4(r, keyBits, documentId, paddedUserPassword, ownerPasswordEntry, permissions) {
-  var key = paddedUserPassword.clone().concat(ownerPasswordEntry).concat(_cryptoJs.default.lib.WordArray.create([lsbFirstWord(permissions)], 4)).concat(_cryptoJs.default.lib.WordArray.create(documentId));
+function getEncryptionKeyR2R3R4(r, keyBits, documentId, paddeduserPassword, ownerPasswordEntry, permissions) {
+  var key = paddeduserPassword.clone().concat(ownerPasswordEntry).concat(_cryptoJs.default.lib.WordArray.create([lsbFirstWord(permissions)], 4)).concat(_cryptoJs.default.lib.WordArray.create(documentId));
   var round = r >= 3 ? 51 : 1;
 
   for (var i = 0; i < round; i++) {
@@ -25020,14 +25020,14 @@ function getEncryptionKeyR2R3R4(r, keyBits, documentId, paddedUserPassword, owne
   return key;
 }
 
-function getUserPasswordR5(processedUserPassword, generateRandomWordArray) {
+function getuserPasswordR5(processeduserPassword, generateRandomWordArray) {
   var validationSalt = generateRandomWordArray(8);
   var keySalt = generateRandomWordArray(8);
-  return _cryptoJs.default.SHA256(processedUserPassword.clone().concat(validationSalt)).concat(validationSalt).concat(keySalt);
+  return _cryptoJs.default.SHA256(processeduserPassword.clone().concat(validationSalt)).concat(validationSalt).concat(keySalt);
 }
 
-function getUserEncryptionKeyR5(processedUserPassword, userKeySalt, encryptionKey) {
-  var key = _cryptoJs.default.SHA256(processedUserPassword.clone().concat(userKeySalt));
+function getuserEncryptionKeyR5(processeduserPassword, userKeySalt, encryptionKey) {
+  var key = _cryptoJs.default.SHA256(processeduserPassword.clone().concat(userKeySalt));
 
   var options = {
     mode: _cryptoJs.default.mode.CBC,
@@ -33250,7 +33250,7 @@ function deflate(strm, flush) {
     return err(strm, Z_BUF_ERROR);
   }
 
-  /* User must not provide more input after the first FINISH: */
+  /* user must not provide more input after the first FINISH: */
   if (s.status === FINISH_STATE && strm.avail_in !== 0) {
     return err(strm, Z_BUF_ERROR);
   }
@@ -50045,8 +50045,8 @@ var GSUBProcessor = function (_OTProcessor) {
           // Alternate Substitution
           var _index2 = this.coverageIndex(table.coverage);
           if (_index2 !== -1) {
-            var USER_INDEX = 0; // TODO
-            this.glyphIterator.cur.id = table.alternateSet.get(_index2)[USER_INDEX];
+            var user_INDEX = 0; // TODO
+            this.glyphIterator.cur.id = table.alternateSet.get(_index2)[user_INDEX];
             return true;
           }
 

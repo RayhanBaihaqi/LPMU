@@ -427,7 +427,7 @@ class Parser
 
         $reflector = new ReflectionObject($var);
 
-        if ($reflector->isUserDefined()) {
+        if ($reflector->isuserDefined()) {
             $object->filename = $reflector->getFileName();
             $object->startline = $reflector->getStartLine();
         }
@@ -605,7 +605,7 @@ class Parser
             } catch (Exception $e) {
                 \trigger_error(
                     'An exception ('.\get_class($e).') was thrown in '.$e->getFile().' on line '.$e->getLine().' while executing Kint Parser Plugin "'.\get_class($plugin).'". Error message: '.$e->getMessage(),
-                    E_USER_WARNING
+                    E_user_WARNING
                 );
             }
 

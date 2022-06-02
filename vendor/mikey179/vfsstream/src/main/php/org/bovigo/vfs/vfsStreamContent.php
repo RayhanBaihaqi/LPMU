@@ -154,14 +154,14 @@ interface vfsStreamContent
      * @param   int  $user
      * @return  bool
      */
-    public function isOwnedByUser($user);
+    public function isOwnedByuser($user);
 
     /**
      * returns owner of file
      *
      * @return  int
      */
-    public function getUser();
+    public function getuser();
 
     /**
      * change owner group of file to given group

@@ -221,7 +221,7 @@ class Logger implements LoggerInterface
     /**
      * Interesting events.
      *
-     * Example: User logs in, SQL logs.
+     * Example: user logs in, SQL logs.
      *
      * @param string $message
      */

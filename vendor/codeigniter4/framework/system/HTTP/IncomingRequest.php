@@ -135,7 +135,7 @@ class IncomingRequest extends Request
     /**
      * The user agent this request is from.
      *
-     * @var UserAgent
+     * @var userAgent
      */
     protected $userAgent;
 
@@ -145,9 +145,9 @@ class IncomingRequest extends Request
      * @param App         $config
      * @param URI         $uri
      * @param string|null $body
-     * @param UserAgent   $userAgent
+     * @param userAgent   $userAgent
      */
-    public function __construct($config, ?URI $uri = null, $body = 'php://input', ?UserAgent $userAgent = null)
+    public function __construct($config, ?URI $uri = null, $body = 'php://input', ?userAgent $userAgent = null)
     {
         if (empty($uri) || empty($userAgent)) {
             throw new InvalidArgumentException('You must supply the parameters: uri, userAgent.');
@@ -653,9 +653,9 @@ class IncomingRequest extends Request
     /**
      * Fetch the user agent string
      *
-     * @return UserAgent
+     * @return userAgent
      */
-    public function getUserAgent()
+    public function getuserAgent()
     {
         return $this->userAgent;
     }

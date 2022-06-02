@@ -69,7 +69,7 @@ abstract class BaseConnection implements ConnectionInterface
     protected $hostname;
 
     /**
-     * Username
+     * username
      *
      * @var string
      */

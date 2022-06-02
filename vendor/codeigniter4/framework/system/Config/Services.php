@@ -37,7 +37,7 @@ use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\Response;
 use CodeIgniter\HTTP\ResponseInterface;
 use CodeIgniter\HTTP\URI;
-use CodeIgniter\HTTP\UserAgent;
+use CodeIgniter\HTTP\userAgent;
 use CodeIgniter\Images\Handlers\BaseHandler;
 use CodeIgniter\Language\Language;
 use CodeIgniter\Log\Logger;
@@ -464,7 +464,7 @@ class Services extends BaseService
             $config,
             AppServices::uri(),
             'php://input',
-            new UserAgent()
+            new userAgent()
         );
     }
 

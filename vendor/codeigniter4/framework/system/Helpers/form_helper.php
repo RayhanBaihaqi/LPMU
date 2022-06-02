@@ -472,7 +472,7 @@ if (! function_exists('form_datalist')) {
      * Datalist
      *
      * The <datalist> element specifies a list of pre-defined options for an <input> element.
-     * Users will see a drop-down list of pre-defined options as they input data.
+     * users will see a drop-down list of pre-defined options as they input data.
      * The list attribute of the <input> element, must refer to the id attribute of the <datalist> element.
      */
     function form_datalist(string $name, string $value, array $options): string

@@ -323,77 +323,12 @@
 <!-- Page level custom scripts -->
 <script src="<?php echo base_url(); ?>/public/js/datatables-demo.js"></script>
 <script>
-    // const ctx = document.getElementById('myChart');
-    // const myChart = new Chart(ctx, {
-    //     type: 'bar',
-    //     data: {
-    //         labels: ['Standar 1', 'Standar 2', 'Standar 3', 'Standar 4', 'Standar 5', 'Standar 6', 'Standar 7', 'Standar 8', 'Standar 9'],
-    //         datasets: [
-    //             //Data Batang Grafik Standar 1
-    //             {
-    //                 label: 'Total bobot rencana',
-    //                 backgroundColor: 'rgba(60,141,188,0.9)',
-    //                 borderColor: 'rgba(60,141,188,0.8)',
-    //                 pointRadius: false,
-    //                 pointColor: '#3b8bba',
-    //                 pointStrokeColor: 'rgba(60,141,188,1)',
-    //                 pointHighlightFill: '#fff',
-    //                 pointHighlightStroke: 'rgba(60,141,188,1)',
-    //                 data: [<?php echo json_encode($jumlah_rencana1) ?>, <?php echo json_encode($jumlah_rencana2) ?>, <?php echo json_encode($jumlah_rencana3) ?>, <?php echo json_encode($jumlah_rencana4) ?>, <?php echo json_encode($jumlah_rencana5) ?>, <?php echo json_encode($jumlah_rencana6) ?>, <?php echo json_encode($jumlah_rencana7) ?>, <?php echo json_encode($jumlah_rencana8) ?>, <?php echo json_encode($jumlah_rencana9) ?>]
-
-    //             },
-
-    //         ]
-    //     },
-    //     options: {
-    //         responsive: true,
-    //         legend: {
-    //             position: 'top',
-    //         },
-    //         hover: {
-    //             mode: 'label'
-    //         },
-    //         scales: {
-    //             xAxes: [{
-    //                 display: true,
-    //                 scaleLabel: {
-    //                     display: true,
-
-    //                 }
-    //             }],
-    //             yAxes: [{
-    //                 display: true,
-    //                 ticks: {
-    //                     beginAtZero: true,
-    //                     steps: 10,
-    //                     stepValue: 5,
-
-    //                 }
-    //             }]
-    //         },
-    //     }
-    // });
-
     const ctx2 = document.getElementById('ChartProdi');
     const ChartProdi = new Chart(ctx2, {
         type: 'bar',
         data: {
             labels: ['Akuntansi', 'Manajemen', 'Psikologi', 'Ilmu Komunikasi', 'Desain Produk', 'Desain Komunikasi Visual', 'Informatika', 'Sistem Informasi', 'Teknik Sipil', 'Arsitektur'],
             datasets: [
-                //Data Batang Grafik Standar 1
-                // {
-                //     label: '2018/2019',
-                //     backgroundColor: 'rgba(60,141,188,0.9)',
-                //     borderColor: 'rgba(60,141,188,0.8)',
-                //     pointRadius: false,
-                //     pointColor: '#3b8bba',
-                //     pointStrokeColor: 'rgba(60,141,188,1)',
-                //     pointHighlightFill: '#fff',
-                //     pointHighlightStroke: 'rgba(60,141,188,1)',
-                //     data: []
-
-
-                // },
                 {
                     label: '2019/2020',
                     backgroundColor: 'rgba(255, 165, 0, 1)',

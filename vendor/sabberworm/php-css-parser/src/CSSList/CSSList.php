@@ -215,14 +215,14 @@ abstract class CSSList implements Renderable, Commentable
                     throw new SourceException("Unmatched brace count in media query", $oParserState->currentLine());
                 }
             }
-            $bUseRuleSet = true;
+            $buseruleSet = true;
             foreach (explode('/', AtRule::BLOCK_RULES) as $sBlockRuleName) {
                 if (self::identifierIs($sIdentifier, $sBlockRuleName)) {
-                    $bUseRuleSet = false;
+                    $buseruleSet = false;
                     break;
                 }
             }
-            if ($bUseRuleSet) {
+            if ($buseruleSet) {
                 $oAtRule = new AtRuleSet($sIdentifier, $sArgs, $iIdentifierLineNum);
                 RuleSet::parseRuleSet($oParserState, $oAtRule);
             } else {

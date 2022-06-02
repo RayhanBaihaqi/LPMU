@@ -101,7 +101,7 @@ abstract class AbstractLogger implements LoggerInterface
     /**
      * Interesting events.
      *
-     * Example: User logs in, SQL logs.
+     * Example: user logs in, SQL logs.
      *
      * @param string  $message
      * @param mixed[] $context

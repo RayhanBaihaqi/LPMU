@@ -299,7 +299,7 @@
 		var department = $(this).val();
 		// AJAX request
 		$.ajax({
-		url:'<?=base_url()?>index.php/User/getDepartmentUsers',
+		url:'<?=base_url()?>index.php/user/getDepartmentusers',
 		method: 'post',
 		data: {department: department},
 		dataType: 'json',

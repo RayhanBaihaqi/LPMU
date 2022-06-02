@@ -15,7 +15,7 @@ use CodeIgniter\Events\Events;
 use CodeIgniter\HTTP\IncomingRequest;
 use CodeIgniter\HTTP\Request;
 use CodeIgniter\HTTP\URI;
-use CodeIgniter\HTTP\UserAgent;
+use CodeIgniter\HTTP\userAgent;
 use CodeIgniter\Router\Exceptions\RedirectException;
 use CodeIgniter\Router\RouteCollection;
 use Config\App;
@@ -306,7 +306,7 @@ class FeatureTestCase extends CIUnitTestCase
         $config = config(App::class);
         $uri    = new URI(rtrim($config->baseURL, '/') . '/' . trim($path, '/ '));
 
-        $request      = new IncomingRequest($config, clone $uri, null, new UserAgent());
+        $request      = new IncomingRequest($config, clone $uri, null, new userAgent());
         $request->uri = $uri;
 
         $request->setMethod($method);

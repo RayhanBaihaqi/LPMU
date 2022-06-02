@@ -2,7 +2,7 @@
 
 namespace Faker\Provider;
 
-class UserAgent extends Base
+class userAgent extends Base
 {
     protected static $userAgents = ['firefox', 'chrome', 'internetExplorer', 'opera', 'safari'];
 

@@ -34,7 +34,7 @@ final class ResourceOperations
             'MongoGridFSFile::getResource',
             'MysqlndUhConnection::stmtInit',
             'MysqlndUhConnection::storeResult',
-            'MysqlndUhConnection::useResult',
+            'MysqlndUhConnection::useresult',
             'PDF_activate_item',
             'PDF_add_launchlink',
             'PDF_add_locallink',

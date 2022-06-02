@@ -12,9 +12,9 @@ namespace PHPUnit\Util;
 use const E_DEPRECATED;
 use const E_NOTICE;
 use const E_STRICT;
-use const E_USER_DEPRECATED;
-use const E_USER_NOTICE;
-use const E_USER_WARNING;
+use const E_user_DEPRECATED;
+use const E_user_NOTICE;
+use const E_user_WARNING;
 use const E_WARNING;
 use function error_reporting;
 use function restore_error_handler;
@@ -95,7 +95,7 @@ final class ErrorHandler
 
         switch ($errorNumber) {
             case E_NOTICE:
-            case E_USER_NOTICE:
+            case E_user_NOTICE:
             case E_STRICT:
                 if (!$this->convertNoticesToExceptions) {
                     return false;
@@ -104,7 +104,7 @@ final class ErrorHandler
                 throw new Notice($errorString, $errorNumber, $errorFile, $errorLine);
 
             case E_WARNING:
-            case E_USER_WARNING:
+            case E_user_WARNING:
                 if (!$this->convertWarningsToExceptions) {
                     return false;
                 }
@@ -112,7 +112,7 @@ final class ErrorHandler
                 throw new Warning($errorString, $errorNumber, $errorFile, $errorLine);
 
             case E_DEPRECATED:
-            case E_USER_DEPRECATED:
+            case E_user_DEPRECATED:
                 if (!$this->convertDeprecationsToExceptions) {
                     return false;
                 }

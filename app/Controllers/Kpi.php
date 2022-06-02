@@ -9,7 +9,7 @@ use App\Models\DetailKpiModel;
 use App\Models\ModelKpiAdmin;
 use App\Models\DataKpiModel;
 use App\Models\DataKpiButirModel;
-use App\Models\UsersModel;
+use App\Models\usersModel;
 use App\Models\DataCapaianKpiModel;
 
 class Kpi extends BaseController
@@ -337,14 +337,14 @@ class Kpi extends BaseController
 
 	public function form_ubahpass($id = null)
 	{
-		$model = new UsersModel();
+		$model = new usersModel();
 		$username = session('username');
 		$data['user'] = $model->where('id', $id)->first();
 		return view('/kpi/ubah_pwd', $data);
 	}
 	public function ubahpwd()
 	{
-		$model = new UsersModel();
+		$model = new usersModel();
 		$id = session('id');
 		//exit();
 		$data = [

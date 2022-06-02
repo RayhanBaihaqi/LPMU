@@ -65,7 +65,7 @@ class ValidationGenerator extends BaseCommand
      */
     protected $options = [
         '--namespace' => 'Set root namespace. Default: "APP_NAMESPACE".',
-        '--suffix'    => 'Append the component title to the class name (e.g. User => UserValidation).',
+        '--suffix'    => 'Append the component title to the class name (e.g. user => userValidation).',
         '--force'     => 'Force overwrite existing file.',
     ];
 

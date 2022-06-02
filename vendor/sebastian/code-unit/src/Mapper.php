@@ -67,11 +67,11 @@ final class Mapper
         if (strpos($unit, '::') !== false) {
             [$firstPart, $secondPart] = explode('::', $unit);
 
-            if (empty($firstPart) && $this->isUserDefinedFunction($secondPart)) {
+            if (empty($firstPart) && $this->isuserDefinedFunction($secondPart)) {
                 return CodeUnitCollection::fromList(CodeUnit::forFunction($secondPart));
             }
 
-            if ($this->isUserDefinedClass($firstPart)) {
+            if ($this->isuserDefinedClass($firstPart)) {
                 if ($secondPart === '<public>') {
                     return $this->publicMethodsOfClass($firstPart);
                 }
@@ -96,24 +96,24 @@ final class Mapper
                     return $this->publicAndProtectedMethodsOfClass($firstPart);
                 }
 
-                if ($this->isUserDefinedMethod($firstPart, $secondPart)) {
+                if ($this->isuserDefinedMethod($firstPart, $secondPart)) {
                     return CodeUnitCollection::fromList(CodeUnit::forClassMethod($firstPart, $secondPart));
                 }
             }
 
-            if ($this->isUserDefinedInterface($firstPart)) {
+            if ($this->isuserDefinedInterface($firstPart)) {
                 return CodeUnitCollection::fromList(CodeUnit::forInterfaceMethod($firstPart, $secondPart));
             }
 
-            if ($this->isUserDefinedTrait($firstPart)) {
+            if ($this->isuserDefinedTrait($firstPart)) {
                 return CodeUnitCollection::fromList(CodeUnit::forTraitMethod($firstPart, $secondPart));
             }
         } else {
-            if ($this->isUserDefinedClass($unit)) {
+            if ($this->isuserDefinedClass($unit)) {
                 $units = [CodeUnit::forClass($unit)];
 
                 foreach ($this->reflectorForClass($unit)->getTraits() as $trait) {
-                    if (!$trait->isUserDefined()) {
+                    if (!$trait->isuserDefined()) {
                         // @codeCoverageIgnoreStart
                         continue;
                         // @codeCoverageIgnoreEnd
@@ -125,21 +125,21 @@ final class Mapper
                 return CodeUnitCollection::fromArray($units);
             }
 
-            if ($this->isUserDefinedInterface($unit)) {
+            if ($this->isuserDefinedInterface($unit)) {
                 return CodeUnitCollection::fromList(CodeUnit::forInterface($unit));
             }
 
-            if ($this->isUserDefinedTrait($unit)) {
+            if ($this->isuserDefinedTrait($unit)) {
                 return CodeUnitCollection::fromList(CodeUnit::forTrait($unit));
             }
 
-            if ($this->isUserDefinedFunction($unit)) {
+            if ($this->isuserDefinedFunction($unit)) {
                 return CodeUnitCollection::fromList(CodeUnit::forFunction($unit));
             }
 
             $unit = str_replace('<extended>', '', $unit);
 
-            if ($this->isUserDefinedClass($unit)) {
+            if ($this->isuserDefinedClass($unit)) {
                 return $this->classAndParentClassesAndTraits($unit);
             }
         }
@@ -222,7 +222,7 @@ final class Mapper
         $units = [];
 
         foreach ($this->reflectorForClass($className)->getMethods($filter) as $method) {
-            if (!$method->isUserDefined()) {
+            if (!$method->isuserDefined()) {
                 continue;
             }
 
@@ -244,7 +244,7 @@ final class Mapper
         $reflector = $this->reflectorForClass($className);
 
         foreach ($this->reflectorForClass($className)->getTraits() as $trait) {
-            if (!$trait->isUserDefined()) {
+            if (!$trait->isuserDefined()) {
                 // @codeCoverageIgnoreStart
                 continue;
                 // @codeCoverageIgnoreEnd
@@ -254,14 +254,14 @@ final class Mapper
         }
 
         while ($reflector = $reflector->getParentClass()) {
-            if (!$reflector->isUserDefined()) {
+            if (!$reflector->isuserDefined()) {
                 break;
             }
 
             $units[] = CodeUnit::forClass($reflector->getName());
 
             foreach ($reflector->getTraits() as $trait) {
-                if (!$trait->isUserDefined()) {
+                if (!$trait->isuserDefined()) {
                     // @codeCoverageIgnoreStart
                     continue;
                     // @codeCoverageIgnoreEnd
@@ -297,14 +297,14 @@ final class Mapper
     /**
      * @throws ReflectionException
      */
-    private function isUserDefinedFunction(string $functionName): bool
+    private function isuserDefinedFunction(string $functionName): bool
     {
         if (!function_exists($functionName)) {
             return false;
         }
 
         try {
-            return (new ReflectionFunction($functionName))->isUserDefined();
+            return (new ReflectionFunction($functionName))->isuserDefined();
             // @codeCoverageIgnoreStart
         } catch (\ReflectionException $e) {
             throw new ReflectionException(
@@ -319,14 +319,14 @@ final class Mapper
     /**
      * @throws ReflectionException
      */
-    private function isUserDefinedClass(string $className): bool
+    private function isuserDefinedClass(string $className): bool
     {
         if (!class_exists($className)) {
             return false;
         }
 
         try {
-            return (new ReflectionClass($className))->isUserDefined();
+            return (new ReflectionClass($className))->isuserDefined();
             // @codeCoverageIgnoreStart
         } catch (\ReflectionException $e) {
             throw new ReflectionException(
@@ -341,14 +341,14 @@ final class Mapper
     /**
      * @throws ReflectionException
      */
-    private function isUserDefinedInterface(string $interfaceName): bool
+    private function isuserDefinedInterface(string $interfaceName): bool
     {
         if (!interface_exists($interfaceName)) {
             return false;
         }
 
         try {
-            return (new ReflectionClass($interfaceName))->isUserDefined();
+            return (new ReflectionClass($interfaceName))->isuserDefined();
             // @codeCoverageIgnoreStart
         } catch (\ReflectionException $e) {
             throw new ReflectionException(
@@ -363,14 +363,14 @@ final class Mapper
     /**
      * @throws ReflectionException
      */
-    private function isUserDefinedTrait(string $traitName): bool
+    private function isuserDefinedTrait(string $traitName): bool
     {
         if (!trait_exists($traitName)) {
             return false;
         }
 
         try {
-            return (new ReflectionClass($traitName))->isUserDefined();
+            return (new ReflectionClass($traitName))->isuserDefined();
             // @codeCoverageIgnoreStart
         } catch (\ReflectionException $e) {
             throw new ReflectionException(
@@ -385,7 +385,7 @@ final class Mapper
     /**
      * @throws ReflectionException
      */
-    private function isUserDefinedMethod(string $className, string $methodName): bool
+    private function isuserDefinedMethod(string $className, string $methodName): bool
     {
         if (!class_exists($className)) {
             // @codeCoverageIgnoreStart
@@ -400,7 +400,7 @@ final class Mapper
         }
 
         try {
-            return (new ReflectionMethod($className, $methodName))->isUserDefined();
+            return (new ReflectionMethod($className, $methodName))->isuserDefined();
             // @codeCoverageIgnoreStart
         } catch (\ReflectionException $e) {
             throw new ReflectionException(

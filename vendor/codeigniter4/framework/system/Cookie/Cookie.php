@@ -23,7 +23,7 @@ use ReturnTypeWillChange;
  * A `Cookie` class represents an immutable HTTP cookie value object.
  *
  * Being immutable, modifying one or more of its attributes will return
- * a new `Cookie` instance, rather than modifying itself. Users should
+ * a new `Cookie` instance, rather than modifying itself. users should
  * reassign this new instance to a new variable to capture it.
  *
  * ```php

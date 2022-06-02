@@ -29,11 +29,11 @@ class vfsStream
     /**
      * owner: user 1
      */
-    const OWNER_USER_1       = 1;
+    const OWNER_user_1       = 1;
     /**
      * owner: user 2
      */
-    const OWNER_USER_2       = 2;
+    const OWNER_user_2       = 2;
     /**
      * group: root
      */
@@ -41,11 +41,11 @@ class vfsStream
     /**
      * group: user 1
      */
-    const GROUP_USER_1       = 1;
+    const GROUP_user_1       = 1;
     /**
      * group: user 2
      */
-    const GROUP_USER_2       = 2;
+    const GROUP_user_2       = 2;
     /**
      * initial umask setting
      *
@@ -389,7 +389,7 @@ class vfsStream
      *
      * @return  int
      */
-    public static function getCurrentUser()
+    public static function getCurrentuser()
     {
         return function_exists('posix_getuid') ? posix_getuid() : self::OWNER_ROOT;
     }

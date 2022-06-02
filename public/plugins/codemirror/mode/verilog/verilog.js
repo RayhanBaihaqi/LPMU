@@ -16,12 +16,12 @@ CodeMirror.defineMode("verilog", function(config, parserConfig) {
   var indentUnit = config.indentUnit,
       statementIndentUnit = parserConfig.statementIndentUnit || indentUnit,
       dontAlignCalls = parserConfig.dontAlignCalls,
-      // compilerDirectivesUseRegularIndentation - If set, Compiler directive
+      // compilerDirectivesuseregularIndentation - If set, Compiler directive
       // indentation follows the same rules as everything else. Otherwise if
       // false, compiler directives will track their own indentation.
       // For example, `ifdef nested inside another `ifndef will be indented,
       // but a `ifdef inside a function block may not be indented.
-      compilerDirectivesUseRegularIndentation = parserConfig.compilerDirectivesUseRegularIndentation,
+      compilerDirectivesuseregularIndentation = parserConfig.compilerDirectivesuseregularIndentation,
       noIndentKeywords = parserConfig.noIndentKeywords || [],
       multiLineStrings = parserConfig.multiLineStrings,
       hooks = parserConfig.hooks || {};
@@ -459,7 +459,7 @@ CodeMirror.defineMode("verilog", function(config, parserConfig) {
       var possibleClosing = textAfter.match(closingBracketOrWord);
       if (possibleClosing)
         closing = isClosing(possibleClosing[0], ctx.type);
-      if (!compilerDirectivesUseRegularIndentation && textAfter.match(compilerDirectiveRegex)) {
+      if (!compilerDirectivesuseregularIndentation && textAfter.match(compilerDirectiveRegex)) {
         if (textAfter.match(compilerDirectiveEndRegex)) {
           return state.compilerDirectiveIndented - statementIndentUnit;
         }

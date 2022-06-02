@@ -21,7 +21,7 @@
 				<div class="contact">
 					<form action="<?= base_url('auth/login') ?>" method="post">
 						<h3>LOGIN</h3>
-						<input type="text" class="form-control" name="username" placeholder="Username">
+						<input type="text" class="form-control" name="username" placeholder="username">
 						<div class="input-group" id="show_hide_password">
 							<input type="password" class="form-control" name="password" placeholder="Password">
 							<div class="input-group-append">

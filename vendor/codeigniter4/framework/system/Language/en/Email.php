@@ -26,7 +26,7 @@ return [
     'SMTPError'            => 'The following SMTP error was encountered: {0}',
     'noSMTPAuth'           => 'Error: You must assign a SMTP username and password.',
     'failedSMTPLogin'      => 'Failed to send AUTH LOGIN command. Error: {0}',
-    'SMTPAuthUsername'     => 'Failed to authenticate username. Error: {0}',
+    'SMTPAuthusername'     => 'Failed to authenticate username. Error: {0}',
     'SMTPAuthPassword'     => 'Failed to authenticate password. Error: {0}',
     'SMTPDataFailure'      => 'Unable to send data: {0}',
     'exitStatus'           => 'Exit status code: {0}',
