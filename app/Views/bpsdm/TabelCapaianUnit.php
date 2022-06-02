@@ -156,24 +156,24 @@
                                             <thead>
                                                 <tr>
                                                     <th></th>
-                                                    <th>BP</th>
-                                                    <th>JCAL</th>
-                                                    <th>BKAL</th>
-                                                    <th>Keuangan</th>
-                                                    <th>KHI</th>
-                                                    <th>Perpustakaan</th>
-                                                    <th>PHA</th>
-                                                    <th>LPMU</th>
-                                                    <th>JLP</th>
-                                                    <th>JSDP</th>
-                                                    <th>LSE</th>
-                                                    <th>TIK</th>
-                                                    <th>Umum</th>
-                                                    <th>BPSDM</th>
-                                                    <th>LP2M</th>
-                                                    <th style="color: red;">Terkecil</th>
-                                                    <th style="color: green;">Terbesar</th>
-                                                    <th style="color: blue;">Rata-rata</th>
+                                                    <th>BP (%)</th>
+                                                    <th>JCAL (%)</th>
+                                                    <th>BKAL (%)</th>
+                                                    <th>Keuangan (%)</th>
+                                                    <th>KHI (%)</th>
+                                                    <th>Perpustakaan (%)</th>
+                                                    <th>PHA (%)</th>
+                                                    <th>LPMU (%)</th>
+                                                    <th>JLP (%)</th>
+                                                    <th>JSDP (%)</th>
+                                                    <th>LSE (%)</th>
+                                                    <th>TIK (%)</th>
+                                                    <th>Umum (%)</th>
+                                                    <th>BPSDM (%)</th>
+                                                    <th>LP2M (%)</th>
+                                                    <th style="color: red;">Terkecil (%)</th>
+                                                    <th style="color: green;">Terbesar (%)</th>
+                                                    <th style="color: blue;">Rata-rata (%)</th>
                                                 </tr>
                                             </thead>
                                             <tbody>

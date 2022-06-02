@@ -158,19 +158,19 @@
                                 <thead>
                                     <tr>
                                         <th></th>
-                                        <th>Standar ke-1</th>
-                                        <th>Standar ke-2</th>
-                                        <th>Standar ke-3</th>
-                                        <th>Standar ke-4</th>
-                                        <th>Standar ke-5</th>
-                                        <th>Standar ke-6</th>
-                                        <th>Standar ke-7</th>
-                                        <th>Standar ke-8</th>
-                                        <th>Standar ke-9</th>
-                                        <th>Total Capaian/TA</th>
-                                        <th style="color: red;">Terkecil</th>
-                                        <th style="color: green;">Terbesar</th>
-                                        <th style="color: blue;">Rata-rata</th>
+                                        <th>Standar ke-1 (%)</th>
+                                        <th>Standar ke-2 (%)</th>
+                                        <th>Standar ke-3 (%)</th>
+                                        <th>Standar ke-4 (%)</th>
+                                        <th>Standar ke-5 (%)</th>
+                                        <th>Standar ke-6 (%)</th>
+                                        <th>Standar ke-7 (%)</th>
+                                        <th>Standar ke-8 (%)</th>
+                                        <th>Standar ke-9 (%)</th>
+                                        <th>Total Capaian/TA (%)</th>
+                                        <th style="color: red;">Terkecil (%)</th>
+                                        <th style="color: green;">Terbesar (%)</th>
+                                        <th style="color: blue;">Rata-rata (%)</th>
                                     </tr>
                                 </thead>
                                 <tbody>

@@ -143,19 +143,19 @@
                                 <thead>
                                     <tr>
                                         <th></th>
-                                        <th>Akuntansi</th>
-                                        <th>Manajemen</th>
-                                        <th>Psikologi</th>
-                                        <th>Ilmu Komunikasi</th>
-                                        <th>Desain Produk</th>
-                                        <th>Desain Komunikasi Visual</th>
-                                        <th>Informatika</th>
-                                        <th>Sistem Informasi</th>
-                                        <th>Teknik Sipil</th>
-                                        <th>Arsitektur</th>
-                                        <th style="color: red;">Terkecil</th>
-                                        <th style="color: green;">Terbesar</th>
-                                        <th style="color: blue;">Rata-rata</th>
+                                        <th>Akuntansi (%)</th>
+                                        <th>Manajemen (%)</th>
+                                        <th>Psikologi (%)</th>
+                                        <th>Ilmu Komunikasi (%)</th>
+                                        <th>Desain Produk (%)</th>
+                                        <th>Desain Komunikasi Visual (%)</th>
+                                        <th>Informatika (%)</th>
+                                        <th>Sistem Informasi (%)</th>
+                                        <th>Teknik Sipil (%)</th>
+                                        <th>Arsitektur (%)</th>
+                                        <th style="color: red;">Terkecil (%)</th>
+                                        <th style="color: green;">Terbesar (%)</th>
+                                        <th style="color: blue;">Rata-rata (%)</th>
                                     </tr>
                                 </thead>
                                 <tbody>
