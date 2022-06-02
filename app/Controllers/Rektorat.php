@@ -409,28 +409,36 @@ class Rektorat extends BaseController
 
     public function grafikcapaian()
     {
-        $grafikrencanakpi = new DataKpiButirModel();
+        $tabelcapaiankpi = new DataCapaianKpiModel();
         $data = [
-            //'tampilgrafikrencana' => $grafikrencanakpi->get_grafik(),
-            //standar 1 per TA
-            'hasilrencanakpi_1' => $grafikrencanakpi->jml_kpi1()->getResultArray(),
-            //standar 2 per TA
-            'hasilrencanakpi_2' => $grafikrencanakpi->jml_kpi2()->getResultArray(),
-            //standar 3 per TA
-            'hasilrencanakpi_3' => $grafikrencanakpi->jml_kpi3()->getResultArray(),
-            //standar 4 per TA
-            'hasilrencanakpi_4' => $grafikrencanakpi->jml_kpi4()->getResultArray(),
-            //standar 5 per TA
-            'hasilrencanakpi_5' => $grafikrencanakpi->jml_kpi5()->getResultArray(),
-            //standar 6 per TA
-            'hasilrencanakpi_6' => $grafikrencanakpi->jml_kpi6()->getResultArray(),
-            //standar 7 per TA
-            'hasilrencanakpi_7' => $grafikrencanakpi->jml_kpi7()->getResultArray(),
-            //standar 8 per TA
-            'hasilrencanakpi_8' => $grafikrencanakpi->jml_kpi8()->getResultArray(),
-            //standar 9 per TA
-            'hasilrencanakpi_9' => $grafikrencanakpi->jml_kpi9()->getResultArray(),
-            // 'tampilgrafikkpi' => $this->DataCapaianKpiModel->get_grafik(),
+            // //'tampilgrafikrencana' => $grafikrencanakpi->get_grafik(),
+            // //standar 1 per TA
+            // 'hasilrencanakpi_1' => $grafikrencanakpi->jml_kpi1()->getResultArray(),
+            // //standar 2 per TA
+            // 'hasilrencanakpi_2' => $grafikrencanakpi->jml_kpi2()->getResultArray(),
+            // //standar 3 per TA
+            // 'hasilrencanakpi_3' => $grafikrencanakpi->jml_kpi3()->getResultArray(),
+            // //standar 4 per TA
+            // 'hasilrencanakpi_4' => $grafikrencanakpi->jml_kpi4()->getResultArray(),
+            // //standar 5 per TA
+            // 'hasilrencanakpi_5' => $grafikrencanakpi->jml_kpi5()->getResultArray(),
+            // //standar 6 per TA
+            // 'hasilrencanakpi_6' => $grafikrencanakpi->jml_kpi6()->getResultArray(),
+            // //standar 7 per TA
+            // 'hasilrencanakpi_7' => $grafikrencanakpi->jml_kpi7()->getResultArray(),
+            // //standar 8 per TA
+            // 'hasilrencanakpi_8' => $grafikrencanakpi->jml_kpi8()->getResultArray(),
+            // //standar 9 per TA
+            // 'hasilrencanakpi_9' => $grafikrencanakpi->jml_kpi9()->getResultArray(),
+            // // 'tampilgrafikkpi' => $this->DataCapaianKpiModel->get_grafik(),
+            'averagekpi19prodi' => $tabelcapaiankpi->avgkpi19_all()->getResultArray(),
+            'averagekpi20prodi' => $tabelcapaiankpi->avgkpi20_all()->getResultArray(),
+            'averagekpi21prodi' => $tabelcapaiankpi->avgkpi21_all()->getResultArray(),
+
+            'averagekpi19unit' => $tabelcapaiankpi->avgkpi19_unit()->getResultArray(),
+            'averagekpi20unit' => $tabelcapaiankpi->avgkpi20_unit()->getResultArray(),
+            'averagekpi21unit' => $tabelcapaiankpi->avgkpi21_unit()->getResultArray(),
+
         ];
         //}
         // return view('kpi/grafik3_rencana', $data);
