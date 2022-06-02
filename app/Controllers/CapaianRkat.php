@@ -57,6 +57,23 @@ class CapaianRkat extends BaseController
         ];
         return view('keuangan/FormCapaian', $data);
     }
+    public function createcapaianbylpmu() {
+        $model = new DetailRkatModel();
+        $username = session('username');
+        $data = [
+            // 'detail_rkat2' => $model->join('set_rkat', 'set_rkat.id_setrkat = detail_rkat2.id_set')->join('user', 'user.id=set_rkat.id_user')->where('username',$username)->findAll(),
+            'tahunAkademik' => $this->TahunAkademikModel->where('aktif', '1')->first(),
+            'pagu_rkat' => $this->DetailRkatModel->tampilDataSetRKAT($username),
+            'tahunAkademik2' => $model-> join('tahun_akademik', 'tahun_akademik.id_tahun=detail_rkat2.id_tahun')->
+                                         join('pagu_rkat', 'pagu_rkat.id_pagu=detail_rkat2.id_pagu')->
+                                         join('user', 'user.id=detail_rkat2.id_user')->
+                                         where('username', $username)->
+                                         where('aktif', '1')->
+                                         findAll(),
+            // 'count_detail_rkat2' => $model->join('set_rkat', 'set_rkat.id_setrkat = detail_rkat2.id_set')->join('user', 'user.id=set_rkat.id_user')->where('username',$username)->countAllResults()
+        ];
+        return view('lpmu/FormCapaian', $data);
+    }
     public function savecapaian()
 	{
 		$nama_kegiatan = $this->request->getVar('nama_kegiatan');

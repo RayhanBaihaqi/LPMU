@@ -27,6 +27,7 @@ class Filters extends BaseConfig
 		'filterRektorat' => \App\Filters\FilterRektorat::class,
 		'filterBpsdm' => \App\Filters\FilterBpsdm::class,
 		'filterKeuangan' => \App\Filters\FilterKeuangan::class,
+		'filterLpmu' => \App\Filters\FilterLpmu::class,
 	];
 
 	/**
@@ -55,13 +56,16 @@ class Filters extends BaseConfig
 			'filterKeuangan' => [
 				'except' => ['/', 'auth/*', 'frontend/*']
 			],
+			'filterLpmu' => [
+				'except' => ['/', 'auth/*', 'frontend/*']
+			],
 			// 'authFilter' => ['except' => ['/', 'auth/*', 'frontend/*']],
 			// 'honeypot',
 			// 'csrf',
 		],
 		'after'  => [
 			'filterAdmin' => [
-				'except' => ['admin/*', 'admin', 'auth/*']
+				'except' => ['admin/*', 'admin', 'auth/*','tahunAkademik', 'tahunAkademik/*','paguRkat', 'paguRkat/*']
 			],
 			'filterProdi' => [
 				'except' => ['backend/*', 'backend', 'kpi', 'kpi/*', 'rkat/*','capaianRkat', 'capaianRkat/*','pdf', 'pdf/*']
@@ -70,13 +74,16 @@ class Filters extends BaseConfig
 				'except' => ['backend/*', 'backend', 'kpi', 'kpi/*', 'rkat/*','capaianRkat', 'capaianRkat/*','pdf', 'pdf/*']
 			],
 			'filterRektorat' => [
-				'except' => ['rektorat', 'rektorat/*']
+				'except' => ['rektorat', 'rektorat/*','pdf', 'pdf/*']
 			],
 			'filterBpsdm' => [
 				'except' => ['bpsdm', 'bpsdm/*']
 			],
 			'filterKeuangan' => [
-				'except' => ['keuangan', 'keuangan/*']
+				'except' => ['keuangan', 'keuangan/*','capaianRkat', 'capaianRkat/*','pdf', 'pdf/*']
+			],
+			'filterLpmu' => [
+				'except' => ['Lpmu', 'Lpmu/*','capaianRkat', 'capaianRkat/*','pdf', 'pdf/*']
 			],
 			// 'authFilter' => ['except' => ['/backend', '/backend/*']],
 			'toolbar',

@@ -151,12 +151,13 @@
 						</div>
 						<div class="card-body">
 							<div class="table-responsive">
+							<form action="<?= base_url('tahunAkademik/update'); ?>" method="POST" enctype="multipart/form-data">
 								<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 									<thead>
 										<tr>
 											<th>No</th>
 											<th>Tahun</th>
-											<th>Actions</th>
+											<th>Setatus</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -165,13 +166,23 @@
 											<?php foreach ($tahun_Akademik as $reading) : ?>
 												<tr>
 													<td scope="row"><?= $i++; ?></td>
-													<td><?= $reading['tahunAkademik']; ?></td>
-													<td><?= $reading['aktif']; ?><?= session()->getFlashdata('status'); ?> </td>
+													<td><?= $reading['tahunAkademik']; ?><input style="display: none;" required type="text" name="id[]" id="id" value="<?= $reading['id_tahun']; ?>"></td>
+													<td><select class="form-control form-control-sm" id="aktif" name="aktif[]" required>
+															<option value="" disabled selected><?= $reading['aktif']; ?></option>
+															<option value="0">0 = Tidak Aktif</option>
+															<option value="1">1 = Aktif</option>
+													</select></td>
 												</tr>
 											<?php endforeach; ?>
 										<?php endif; ?>
 									</tbody>
+									
 								</table>
+								<div class="card-footer" align="center">
+										<button type="submit" class="btn btn-primary" id="btnJumlah" value="submit">Update Data</button>
+										<span id="textError"></span>
+									</div>
+							</form>
 							</div>
 						</div>
 					</div>
