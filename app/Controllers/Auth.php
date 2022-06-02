@@ -127,7 +127,7 @@ class Auth extends BaseController
                     <button type="button" class="close" data-dismiss="alert">&times;</button>
                     <strong>Login Success!</strong> Selamat anda telah berhasil login.
                 </div>');
-                return redirect()->to('/rektorat/rkat');
+                return redirect()->to('/rektorat');
             } else if (session('level') == 'keuangan') {
                 session()->setFlashdata('pesan', '
                 <div class="alert alert-success">
