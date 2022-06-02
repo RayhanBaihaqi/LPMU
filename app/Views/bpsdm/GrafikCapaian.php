@@ -142,32 +142,26 @@
                             <option value="grafikunit/">Unit</option>
                         </select>
                     </div>
-                    <!-- foreach ambil hasil penjumlahan nilai bobot KPI TA 2018 -->
-                    <?php foreach ($hasilrencanakpi_1 as $key => $value) : $jumlah_rencana1 = $value['jumlah_rencana1'];
-                    endforeach; ?>
-                    <?php foreach ($hasilrencanakpi_2 as $key => $value) : $jumlah_rencana2 = $value['jumlah_rencana2'];
-                    endforeach; ?>
-                    <?php foreach ($hasilrencanakpi_3 as $key => $value) : $jumlah_rencana3 = $value['jumlah_rencana3'];
-                    endforeach; ?>
-                    <?php foreach ($hasilrencanakpi_4 as $key => $value) : $jumlah_rencana4 = $value['jumlah_rencana4'];
-                    endforeach; ?>
-                    <?php foreach ($hasilrencanakpi_5 as $key => $value) : $jumlah_rencana5 = $value['jumlah_rencana5'];
-                    endforeach; ?>
-                    <?php foreach ($hasilrencanakpi_6 as $key => $value) : $jumlah_rencana6 = $value['jumlah_rencana6'];
-                    endforeach; ?>
-                    <?php foreach ($hasilrencanakpi_7 as $key => $value) : $jumlah_rencana7 = $value['jumlah_rencana7'];
-                    endforeach; ?>
-                    <?php foreach ($hasilrencanakpi_8 as $key => $value) : $jumlah_rencana8 = $value['jumlah_rencana8'];
-                    endforeach; ?>
-                    <?php foreach ($hasilrencanakpi_9 as $key => $value) : $jumlah_rencana9 = $value['jumlah_rencana9'];
-                    endforeach; ?>
 
 
+                    <?php foreach ($averagekpi19prodi as $key => $value) : $avg_19_p = $value['avg_19_all'];
+                    endforeach; ?>
+                    <?php foreach ($averagekpi20prodi as $key => $value) : $avg_20_p = $value['avg_20_all'];
+                    endforeach; ?>
+                    <?php foreach ($averagekpi21prodi as $key => $value) : $avg_21_p = $value['avg_21_all'];
+                    endforeach; ?>
+
+                    <?php foreach ($averagekpi19unit as $key => $value) : $avg_19 = $value['avg_19_unit'];
+                    endforeach; ?>
+                    <?php foreach ($averagekpi20unit as $key => $value) : $avg_20 = $value['avg_20_unit'];
+                    endforeach; ?>
+                    <?php foreach ($averagekpi21unit as $key => $value) : $avg_21 = $value['avg_21_unit'];
+                    endforeach; ?>
 
                     <div class="container col-lg-12">
-                        <section class="content">
+                        <!-- <section class="content">
                             <!-- BAR CHART -->
-                            <!-- <div class="card card-success">
+                        <!-- <div class="card card-success">
                                 <div class="card-header">
                                     <h3 class="card-title">Grafik Rencana KPI</h3>
                                 </div>
@@ -178,8 +172,47 @@
                                     </div>
                                 </div>
                             </div> -->
+                        <!-- /.card-body -->
+                        </section> -->
+                        <section class="content">
+                            <!-- BAR CHART -->
+                            <div class="card card-dark">
+                                <div class="card-header">
+                                    <h3 class="text-center">Grafik Rata-rata Capaian KPI Prodi Setiap Tahun</h3>
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart">
+                                        <canvas id="myChart" height="100"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+
+                            <div class="card card-dark">
+                                <div class="card-header">
+                                    <h3 class="text-center">Grafik Rata-rata Capaian KPI Unit Setiap Tahun</h3>
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart">
+                                        <canvas id="myChart2" height="100"></canvas>
+                                    </div>
+                                </div>
+                            </div>
                             <!-- /.card-body -->
                         </section>
+
                     </div>
 
                     <br>
@@ -235,23 +268,25 @@
 <script>
     const ctx = document.getElementById('myChart');
     const myChart = new Chart(ctx, {
-        type: 'bar',
+        type: 'horizontalBar',
         data: {
-            labels: ['Standar 1', 'Standar 2', 'Standar 3', 'Standar 4', 'Standar 5', 'Standar 6', 'Standar 7', 'Standar 8', 'Standar 9'],
+            labels: ['2019/2020', '2020/2021', '2021/2022'],
             datasets: [
-                //Data Batang Grafik Standar 1
-                {
-                    label: 'Total bobot rencana',
-                    backgroundColor: 'rgba(60,141,188,0.9)',
-                    borderColor: 'rgba(60,141,188,0.8)',
-                    pointRadius: false,
-                    pointColor: '#3b8bba',
-                    pointStrokeColor: 'rgba(60,141,188,1)',
-                    pointHighlightFill: '#fff',
-                    pointHighlightStroke: 'rgba(60,141,188,1)',
-                    data: [<?php echo json_encode($jumlah_rencana1) ?>, <?php echo json_encode($jumlah_rencana2) ?>, <?php echo json_encode($jumlah_rencana3) ?>, <?php echo json_encode($jumlah_rencana4) ?>, <?php echo json_encode($jumlah_rencana5) ?>, <?php echo json_encode($jumlah_rencana6) ?>, <?php echo json_encode($jumlah_rencana7) ?>, <?php echo json_encode($jumlah_rencana8) ?>, <?php echo json_encode($jumlah_rencana9) ?>]
+                // Data Batang Grafik Standar 1
 
+                {
+
+                    label: 'Total Capaian KPI per Tahun',
+                    backgroundColor: ['rgba(255, 165, 0, 1)', 'rgba(93, 255, 223,1)', 'rgba(93, 78, 246,1)'],
+                    borderColor: ['rgba(255, 165, 0, 1)', 'rgba(93, 255, 223,1)', 'rgba(93, 78, 246,1)'],
+                    pointRadius: false,
+                    pointColor: 'rgba(210, 214, 222, 1)',
+                    pointStrokeColor: '#c1c7d1',
+                    pointHighlightFill: '#fff',
+                    pointHighlightStroke: 'rgba(220,220,220,1)',
+                    data: [<?php echo json_encode($avg_19_p) ?>, <?php echo json_encode($avg_20_p) ?>, <?php echo json_encode($avg_21_p) ?>]
                 },
+
 
             ]
         },
@@ -265,18 +300,73 @@
             },
             scales: {
                 xAxes: [{
-                    display: true,
-                    scaleLabel: {
-                        display: true,
 
-                    }
-                }],
-                yAxes: [{
                     display: true,
                     ticks: {
                         beginAtZero: true,
                         steps: 10,
                         stepValue: 5,
+
+                    }
+                }],
+                yAxes: [{
+                    display: true,
+                    scaleLabel: {
+                        display: true,
+
+                    }
+                }]
+            },
+        }
+    });
+
+    const ctx2 = document.getElementById('myChart2');
+    const myChart2 = new Chart(ctx2, {
+        type: 'horizontalBar',
+        data: {
+            labels: ['2019/2020', '2020/2021', '2021/2022'],
+            datasets: [
+                // Data Batang Grafik Standar 1
+
+                {
+
+                    label: 'Total Capaian KPI per Tahun',
+                    backgroundColor: ['rgba(255, 165, 0, 1)', 'rgba(93, 255, 223,1)', 'rgba(93, 78, 246,1)'],
+                    borderColor: ['rgba(255, 165, 0, 1)', 'rgba(93, 255, 223,1)', 'rgba(93, 78, 246,1)'],
+                    pointRadius: false,
+                    pointColor: 'rgba(210, 214, 222, 1)',
+                    pointStrokeColor: '#c1c7d1',
+                    pointHighlightFill: '#fff',
+                    pointHighlightStroke: 'rgba(220,220,220,1)',
+                    data: [<?php echo json_encode($avg_19) ?>, <?php echo json_encode($avg_20) ?>, <?php echo json_encode($avg_21) ?>]
+                },
+
+
+            ]
+        },
+        options: {
+            responsive: true,
+            legend: {
+                position: 'top',
+            },
+            hover: {
+                mode: 'label'
+            },
+            scales: {
+                xAxes: [{
+
+                    display: true,
+                    ticks: {
+                        beginAtZero: true,
+                        steps: 10,
+                        stepValue: 5,
+
+                    }
+                }],
+                yAxes: [{
+                    display: true,
+                    scaleLabel: {
+                        display: true,
 
                     }
                 }]
