@@ -42,36 +42,27 @@ class TahunAkademik extends BaseController
         </div>
      ');
     }
-    public function savecapaian()
-	{
-		$nama_kegiatan = $this->request->getVar('nama_kegiatan');
-        $semester = $this->request->getVar('semester');
-        $anggaran = $this->request->getVar('anggaran');
-        $keterangan = $this->request->getVar('keterangan');
-        $id_kpi = $this->request->getVar('id_kpi');
-        $jenis_anggaran = $this->request->getVar('jenis_anggaran');
-        $id_set = $this->request->getVar('id_set');
-        $jumlah = $this->request->getVar('jumlah');
+    public function update()
+    {
+        
+        $model = new TahunAkademikModel();
+        $id = $_POST['id'];
+        $aktif = $_POST['aktif'];
+        
+        // $bukti = $_POST['bukti'];
 
+        foreach ($id as $key => $n) {
+            
+            $id = $n;
+            $data = [
+                'aktif' => $aktif[$key],
 
-            for ($i=0; $i < $jumlah; $i++) { 
-                $this->DetailRkatModel->insert([
-                    'nama_kegiatan'=>$nama_kegiatan[$i],
-                    'semester'=>$semester[$i],  
-                    'anggaran'=>$anggaran[$i],  
-                    'keterangan'=>$keterangan[$i],  
-                    'id_kpi'=>$id_kpi[$i],  
-                    'jenis_anggaran'=>$jenis_anggaran[$i],  
-                    'id_set'=>$id_set[$i],  
-                ]);
-            }
-		return redirect()->to(base_url('setrkat/createbyuser'))->with('status', 'Data Berhasil ditambah');
-	}
-    public function editcapaianbyuser($id = null) {
-        $model = new DetailRkatModel();
-        $data['detail_rkat2'] = $model->where('id',$id)->first();
+            ];
 
-        return view('rkat/EditDataRkat',$data);
+            $save = $model->update($id, $data);
+
+        }
+        return redirect()->to(base_url('tahunAkademik/indextahun'));
     }
     public function updatecapaianbyuser() {
         $model = new DetailRkatModel();

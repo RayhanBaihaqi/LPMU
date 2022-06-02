@@ -32,8 +32,8 @@
 			</div>
 			<div class="right">
 				<div class="right-text">
-					<h2>LPMU</h2>
-					<h5>LEMBAGA PENJAMINAN MUTU UNIVERSITAS</h5>
+					<h2>SIMONEV</h2>
+					<h5>SISTEM INFORMASI MONITORING DAN EVALUASI</h5>
 				</div>
 				<div class="right-inductor"><img src="<?php echo base_url(); ?>/public/img/monev_logo_putih.png" alt=""></div>
 			</div>
