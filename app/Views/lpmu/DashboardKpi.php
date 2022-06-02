@@ -178,18 +178,18 @@
                 </div>
             </div>
 
-            <?php foreach ($totalkpi19prodi as $key => $value) : $tot_19_p = $value['tot_19_prodi'];
+            <?php foreach ($averagekpi19prodi as $key => $value) : $avg_19_p = $value['avg_19_all'];
             endforeach; ?>
-            <?php foreach ($totalkpi20prodi as $key => $value) : $tot_20_p = $value['tot_20_prodi'];
+            <?php foreach ($averagekpi20prodi as $key => $value) : $avg_20_p = $value['avg_20_all'];
             endforeach; ?>
-            <?php foreach ($totalkpi21prodi as $key => $value) : $tot_21_p = $value['tot_21_prodi'];
+            <?php foreach ($averagekpi21prodi as $key => $value) : $avg_21_p = $value['avg_21_all'];
             endforeach; ?>
 
-            <?php foreach ($totalkpi19unit as $key => $value) : $tot_19 = $value['tot_19_unit'];
+            <?php foreach ($averagekpi19unit as $key => $value) : $avg_19 = $value['avg_19_unit'];
             endforeach; ?>
-            <?php foreach ($totalkpi20unit as $key => $value) : $tot_20 = $value['tot_20_unit'];
+            <?php foreach ($averagekpi20unit as $key => $value) : $avg_20 = $value['avg_20_unit'];
             endforeach; ?>
-            <?php foreach ($totalkpi21unit as $key => $value) : $tot_21 = $value['tot_21_unit'];
+            <?php foreach ($averagekpi21unit as $key => $value) : $avg_21 = $value['avg_21_unit'];
             endforeach; ?>
 
 
@@ -306,31 +306,10 @@
                         pointStrokeColor: '#c1c7d1',
                         pointHighlightFill: '#fff',
                         pointHighlightStroke: 'rgba(220,220,220,1)',
-                        data: [<?php echo json_encode($tot_19_p) ?>, <?php echo json_encode($tot_20_p) ?>, <?php echo json_encode($tot_21_p) ?>]
+                        data: [<?php echo json_encode($avg_19_p) ?>, <?php echo json_encode($avg_20_p) ?>, <?php echo json_encode($avg_21_p) ?>]
                     },
 
-                    // {
-                    //     label: <?php echo json_encode($tahun_ajaran = '2020/2021') ?>,
-                    //     backgroundColor: 'rgba(93, 255, 223,1)',
-                    //     borderColor: 'rgba(93, 255, 223,1)',
-                    //     pointRadius: false,
-                    //     pointColor: 'rgba(210, 214, 222, 1)',
-                    //     pointStrokeColor: '#c1c7d1',
-                    //     pointHighlightFill: '#fff',
-                    //     pointHighlightStroke: 'rgba(220,220,220,1)',
-                    //     data: [<?php echo json_encode($tot_20) ?>]
-                    // },
-                    // {
-                    //     label: <?php echo json_encode($tahun_ajaran = '2021/2022') ?>,
-                    //     backgroundColor: 'rgba(93, 78, 246,1)',
-                    //     borderColor: 'rgba(93, 78, 246,1)',
-                    //     pointRadius: false,
-                    //     pointColor: 'rgba(210, 214, 222, 1)',
-                    //     pointStrokeColor: '#c1c7d1',
-                    //     pointHighlightFill: '#fff',
-                    //     pointHighlightStroke: 'rgba(220,220,220,1)',
-                    //     data: [<?php echo json_encode($tot_21) ?>]
-                    // },
+
                 ]
             },
             options: {
@@ -381,31 +360,10 @@
                         pointStrokeColor: '#c1c7d1',
                         pointHighlightFill: '#fff',
                         pointHighlightStroke: 'rgba(220,220,220,1)',
-                        data: [<?php echo json_encode($tot_19) ?>, <?php echo json_encode($tot_20) ?>, <?php echo json_encode($tot_21) ?>]
+                        data: [<?php echo json_encode($avg_19) ?>, <?php echo json_encode($avg_20) ?>, <?php echo json_encode($avg_21) ?>]
                     },
 
-                    // {
-                    //     label: <?php echo json_encode($tahun_ajaran = '2020/2021') ?>,
-                    //     backgroundColor: 'rgba(93, 255, 223,1)',
-                    //     borderColor: 'rgba(93, 255, 223,1)',
-                    //     pointRadius: false,
-                    //     pointColor: 'rgba(210, 214, 222, 1)',
-                    //     pointStrokeColor: '#c1c7d1',
-                    //     pointHighlightFill: '#fff',
-                    //     pointHighlightStroke: 'rgba(220,220,220,1)',
-                    //     data: [<?php echo json_encode($tot_20) ?>]
-                    // },
-                    // {
-                    //     label: <?php echo json_encode($tahun_ajaran = '2021/2022') ?>,
-                    //     backgroundColor: 'rgba(93, 78, 246,1)',
-                    //     borderColor: 'rgba(93, 78, 246,1)',
-                    //     pointRadius: false,
-                    //     pointColor: 'rgba(210, 214, 222, 1)',
-                    //     pointStrokeColor: '#c1c7d1',
-                    //     pointHighlightFill: '#fff',
-                    //     pointHighlightStroke: 'rgba(220,220,220,1)',
-                    //     data: [<?php echo json_encode($tot_21) ?>]
-                    // },
+
                 ]
             },
             options: {

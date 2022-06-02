@@ -224,7 +224,7 @@ class DataCapaianKpiModel extends Model
     }
     function avgkpi19($nama_prodi = null)
     {
-        return $this->db->query("SELECT avg(tot19) as avg_19 FROM (SELECT SUM(nilai_bobot) as tot19 FROM `tabel_capaian_kpi` where tahun_ajaran='2019/2020' and nama_prodi='$nama_prodi' GROUP BY idkpi) as m");
+        return $this->db->query("SELECT  avg(tot19) as avg_19 FROM (SELECT SUM(nilai_bobot) as tot19 FROM `tabel_capaian_kpi` where tahun_ajaran='2019/2020' and nama_prodi='$nama_prodi' GROUP BY idkpi) as m");
     }
 
     //query minimal, max,rata2 tiap prodi TA 20/21
@@ -266,7 +266,7 @@ class DataCapaianKpiModel extends Model
     }
     function avgkpi19_all($nama_prodi = null)
     {
-        return $this->db->query("SELECT avg(tot19all) as avg_19_all FROM (SELECT SUM(nilai_bobot) as tot19all FROM `tabel_capaian_kpi` where tahun_ajaran='2019/2020' and level='prodi' GROUP BY nama_prodi) as m");
+        return $this->db->query("SELECT round(avg(tot19all),2) as avg_19_all FROM (SELECT SUM(nilai_bobot) as tot19all FROM `tabel_capaian_kpi` where tahun_ajaran='2019/2020' and level='prodi' GROUP BY nama_prodi) as m");
     }
 
     //query minimal, max,rata2 seluruh prodi TA 20/21
@@ -280,7 +280,7 @@ class DataCapaianKpiModel extends Model
     }
     function avgkpi20_all($nama_prodi = null)
     {
-        return $this->db->query("SELECT avg(tot20all) as avg_20_all FROM (SELECT SUM(nilai_bobot) as tot20all FROM `tabel_capaian_kpi` where tahun_ajaran='2020/2021' and level='prodi' GROUP BY nama_prodi) as m");
+        return $this->db->query("SELECT round(avg(tot20all),2) as avg_20_all FROM (SELECT SUM(nilai_bobot) as tot20all FROM `tabel_capaian_kpi` where tahun_ajaran='2020/2021' and level='prodi' GROUP BY nama_prodi) as m");
     }
 
     //query minimal, max,rata2 seluruh prodi TA 21/22
@@ -294,7 +294,7 @@ class DataCapaianKpiModel extends Model
     }
     function avgkpi21_all($nama_prodi = null)
     {
-        return $this->db->query("SELECT avg(tot21all) as avg_21_all FROM (SELECT SUM(nilai_bobot) as tot21all FROM `tabel_capaian_kpi` where tahun_ajaran='2021/2022' and level='prodi' GROUP BY nama_prodi) as m");
+        return $this->db->query("SELECT round(avg(tot21all),2) as avg_21_all FROM (SELECT SUM(nilai_bobot) as tot21all FROM `tabel_capaian_kpi` where tahun_ajaran='2021/2022' and level='prodi' GROUP BY nama_prodi) as m");
     }
 
     //query penjumlahan semua nilai bonbot unit
@@ -350,7 +350,7 @@ class DataCapaianKpiModel extends Model
     }
     function avgkpi19_unit($nama_prodi = null)
     {
-        return $this->db->query("SELECT avg(tot19all) as avg_19_unit FROM (SELECT SUM(nilai_bobot) as tot19all FROM `tabel_capaian_kpi` where tahun_ajaran='2019/2020' and level not in('prodi') GROUP BY nama_prodi) as m");
+        return $this->db->query("SELECT round(avg(tot19all),2) as avg_19_unit FROM (SELECT SUM(nilai_bobot) as tot19all FROM `tabel_capaian_kpi` where tahun_ajaran='2019/2020' and level not in('prodi') GROUP BY nama_prodi) as m");
     }
 
     //query minimal, max,rata2 seluruh prodi TA 20/21
@@ -364,7 +364,7 @@ class DataCapaianKpiModel extends Model
     }
     function avgkpi20_unit($nama_prodi = null)
     {
-        return $this->db->query("SELECT avg(tot20all) as avg_20_unit FROM (SELECT SUM(nilai_bobot) as tot20all FROM `tabel_capaian_kpi` where tahun_ajaran='2020/2021' and level not in('prodi') GROUP BY nama_prodi) as m");
+        return $this->db->query("SELECT round(avg(tot20all),2) as avg_20_unit FROM (SELECT SUM(nilai_bobot) as tot20all FROM `tabel_capaian_kpi` where tahun_ajaran='2020/2021' and level not in('prodi') GROUP BY nama_prodi) as m");
     }
 
     //query minimal, max,rata2 seluruh prodi TA 21/22
@@ -378,7 +378,7 @@ class DataCapaianKpiModel extends Model
     }
     function avgkpi21_unit($nama_prodi = null)
     {
-        return $this->db->query("SELECT avg(tot21all) as avg_21_unit FROM (SELECT SUM(nilai_bobot) as tot21all FROM `tabel_capaian_kpi` where tahun_ajaran='2021/2022' and level not in('prodi') GROUP BY nama_prodi) as m");
+        return $this->db->query("SELECT round(avg(tot21all),2) as avg_21_unit FROM (SELECT SUM(nilai_bobot) as tot21all FROM `tabel_capaian_kpi` where tahun_ajaran='2021/2022' and level not in('prodi') GROUP BY nama_prodi) as m");
     }
 
 

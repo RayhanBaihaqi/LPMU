@@ -293,13 +293,13 @@ class Lpmu extends BaseController
         // $builder = $db->table('tabel_capaian_kpi');
         $nama_prodi = session('nama_prodi');
         $data = [
-            'totalkpi19prodi' => $tabelcapaiankpi->totkpi19prodi()->getResultArray(),
-            'totalkpi20prodi' => $tabelcapaiankpi->totkpi20prodi()->getResultArray(),
-            'totalkpi21prodi' => $tabelcapaiankpi->totkpi21prodi()->getResultArray(),
+            'averagekpi19prodi' => $tabelcapaiankpi->avgkpi19_all()->getResultArray(),
+            'averagekpi20prodi' => $tabelcapaiankpi->avgkpi20_all()->getResultArray(),
+            'averagekpi21prodi' => $tabelcapaiankpi->avgkpi21_all()->getResultArray(),
 
-            'totalkpi19unit' => $tabelcapaiankpi->totkpi19unit()->getResultArray(),
-            'totalkpi20unit' => $tabelcapaiankpi->totkpi20unit()->getResultArray(),
-            'totalkpi21unit' => $tabelcapaiankpi->totkpi21unit()->getResultArray(),
+            'averagekpi19unit' => $tabelcapaiankpi->avgkpi19_unit()->getResultArray(),
+            'averagekpi20unit' => $tabelcapaiankpi->avgkpi20_unit()->getResultArray(),
+            'averagekpi21unit' => $tabelcapaiankpi->avgkpi21_unit()->getResultArray(),
         ];
         return view('/lpmu/DashboardKpi', $data);
     }
