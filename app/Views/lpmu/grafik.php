@@ -92,8 +92,10 @@
                     <div class="navbar-nav mr-auto">
                         <a href="<?php echo site_url(); ?>lpmu/homekpi" class="nav-item nav-link">Home</a>
                         <a href="<?php echo site_url(); ?>lpmu/rencana" class="nav-item nav-link">Rencana</a>
-                        <a href="<?php echo site_url(); ?>lpmu/inputcapaian" class="nav-item nav-link">Input Realisasi</a>
-                        <a href="<?php echo site_url(); ?>lpmu/kesimpulan" class="nav-item nav-link active">Kesimpulan</a>
+                        <!-- <a href="<?php echo site_url(); ?>lpmu/inputcapaian" class="nav-item nav-link ">Input Realisasi</a> -->
+                        <a href="<?php echo site_url(); ?>lpmu/kesimpulan" class="nav-item nav-link active">List Capaian KPI</a>
+                        <a href="<?php echo site_url(); ?>lpmu/tabelcapaian" class="nav-item nav-link">Tabel Capaian</a>
+                        <a href="<?php echo site_url(); ?>lpmu/grafikcapaian" class="nav-item nav-link">Grafik Capaian </a>
                     </div>
                     <div class="ml-auto">
                         <div class="user-info-dropdown">
@@ -122,7 +124,7 @@
 
         <div class="container col-lg-12">
             <div class="container">
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-sm">
                         <br>
                         <a href="<?= base_url('lpmu/kesimpulan') ?>" class="btn btn-primary btn-block">Daftar Capaian</a>
@@ -143,8 +145,9 @@
                         <a href="<?= base_url('lpmu/kesimpulan_grafik') ?>" class="btn btn-primary btn-block">Data Grafik Realisasi</a>
                         <br>
                     </div>
-                </div>
+                </div> -->
             </div>
+            <br>
 
             <div class="card shadow mb-4">
                 <div class="card-header">

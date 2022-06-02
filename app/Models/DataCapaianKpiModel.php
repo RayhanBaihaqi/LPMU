@@ -311,6 +311,34 @@ class DataCapaianKpiModel extends Model
         return $this->db->query("SELECT SUM(nilai_bobot) as tot_21_unit FROM `tabel_capaian_kpi` where tahun_ajaran='2021/2022' and nama_prodi='$nama_prodi' ");
     }
 
+    //query penjumlahan semua nilai bonbot unit
+    function totkpi19prodi($nama_prodi = null)
+    {
+        return $this->db->query("SELECT SUM(nilai_bobot) as tot_19_prodi FROM `tabel_capaian_kpi` where tahun_ajaran='2019/2020' and level in('prodi') ");
+    }
+    function totkpi20prodi($nama_prodi = null)
+    {
+        return $this->db->query("SELECT SUM(nilai_bobot) as tot_20_prodi FROM `tabel_capaian_kpi` where tahun_ajaran='2020/2021' and level in('prodi') ");
+    }
+    function totkpi21prodi($nama_prodi = null)
+    {
+        return $this->db->query("SELECT SUM(nilai_bobot) as tot_21_prodi FROM `tabel_capaian_kpi` where tahun_ajaran='2021/2022' and level in('prodi') ");
+    }
+
+    //query penjumlahan semua nilai bonbot unit
+    function totkpi19unit($nama_prodi = null)
+    {
+        return $this->db->query("SELECT SUM(nilai_bobot) as tot_19_unit FROM `tabel_capaian_kpi` where tahun_ajaran='2019/2020' and level not in('prodi') ");
+    }
+    function totkpi20unit($nama_prodi = null)
+    {
+        return $this->db->query("SELECT SUM(nilai_bobot) as tot_20_unit FROM `tabel_capaian_kpi` where tahun_ajaran='2020/2021' and level not in('prodi') ");
+    }
+    function totkpi21unit($nama_prodi = null)
+    {
+        return $this->db->query("SELECT SUM(nilai_bobot) as tot_21_unit FROM `tabel_capaian_kpi` where tahun_ajaran='2021/2022' and level not in('prodi') ");
+    }
+
     //query minimal, max,rata2 seluruh prodi TA 19/20
     function minkpi19_unit($nama_prodi = null)
     {

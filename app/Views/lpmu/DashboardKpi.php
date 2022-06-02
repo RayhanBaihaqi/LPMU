@@ -85,8 +85,10 @@
                     <div class="navbar-nav mr-auto">
                         <a href="<?php echo site_url(); ?>lpmu/homekpi" class="nav-item nav-link active">Home</a>
                         <a href="<?php echo site_url(); ?>lpmu/rencana" class="nav-item nav-link">Rencana</a>
-                        <a href="<?php echo site_url(); ?>lpmu/inputcapaian" class="nav-item nav-link ">Input Realisasi</a>
-                        <a href="<?php echo site_url(); ?>lpmu/kesimpulan" class="nav-item nav-link">Kesimpulan</a>
+                        <!-- <a href="<?php echo site_url(); ?>lpmu/inputcapaian" class="nav-item nav-link ">Input Realisasi</a> -->
+                        <a href="<?php echo site_url(); ?>lpmu/kesimpulan" class="nav-item nav-link">List Capaian KPI</a>
+                        <a href="<?php echo site_url(); ?>lpmu/tabelcapaian" class="nav-item nav-link">Tabel Capaian</a>
+                        <a href="<?php echo site_url(); ?>lpmu/grafikcapaian" class="nav-item nav-link">Grafik Capaian </a>
                     </div>
                     <div class="ml-auto">
                         <div class="user-info-dropdown">
@@ -176,25 +178,53 @@
                 </div>
             </div>
 
-            <?php foreach ($totalkpi18 as $key => $value) : $tot_18 = $value['tot_18'];
+            <?php foreach ($totalkpi19prodi as $key => $value) : $tot_19_p = $value['tot_19_prodi'];
             endforeach; ?>
-            <?php foreach ($totalkpi19 as $key => $value) : $tot_19 = $value['tot_19'];
+            <?php foreach ($totalkpi20prodi as $key => $value) : $tot_20_p = $value['tot_20_prodi'];
             endforeach; ?>
-            <?php foreach ($totalkpi20 as $key => $value) : $tot_20 = $value['tot_20'];
+            <?php foreach ($totalkpi21prodi as $key => $value) : $tot_21_p = $value['tot_21_prodi'];
             endforeach; ?>
-            <?php foreach ($totalkpi21 as $key => $value) : $tot_21 = $value['tot_21'];
+
+            <?php foreach ($totalkpi19unit as $key => $value) : $tot_19 = $value['tot_19_unit'];
             endforeach; ?>
+            <?php foreach ($totalkpi20unit as $key => $value) : $tot_20 = $value['tot_20_unit'];
+            endforeach; ?>
+            <?php foreach ($totalkpi21unit as $key => $value) : $tot_21 = $value['tot_21_unit'];
+            endforeach; ?>
+
 
             <div class="container col-lg-12">
                 <section class="content">
                     <!-- BAR CHART -->
                     <div class="card card-dark">
                         <div class="card-header">
-                            <h3 class="text-center text-white">Grafik Capaian KPI Setiap Tahun</h3>
+                            <h3 class="text-center text-white">Grafik Total Capaian KPI Prodi Setiap Tahun</h3>
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+
+                            </div>
                         </div>
                         <div class="card-body">
                             <div class="chart">
                                 <canvas id="myChart" height="100"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-dark">
+                        <div class="card-header">
+                            <h3 class="text-center text-white">Grafik Total Capaian KPI Unit Setiap Tahun</h3>
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart">
+                                <canvas id="myChart2" height="100"></canvas>
                             </div>
                         </div>
                     </div>
@@ -260,6 +290,81 @@
     <script>
         const ctx = document.getElementById('myChart');
         const myChart = new Chart(ctx, {
+            type: 'horizontalBar',
+            data: {
+                labels: ['2019/2020', '2020/2021', '2021/2022'],
+                datasets: [
+                    // Data Batang Grafik Standar 1
+
+                    {
+
+                        label: 'Total Capaian KPI per Tahun',
+                        backgroundColor: ['rgba(255, 165, 0, 1)', 'rgba(93, 255, 223,1)', 'rgba(93, 78, 246,1)'],
+                        borderColor: ['rgba(255, 165, 0, 1)', 'rgba(93, 255, 223,1)', 'rgba(93, 78, 246,1)'],
+                        pointRadius: false,
+                        pointColor: 'rgba(210, 214, 222, 1)',
+                        pointStrokeColor: '#c1c7d1',
+                        pointHighlightFill: '#fff',
+                        pointHighlightStroke: 'rgba(220,220,220,1)',
+                        data: [<?php echo json_encode($tot_19_p) ?>, <?php echo json_encode($tot_20_p) ?>, <?php echo json_encode($tot_21_p) ?>]
+                    },
+
+                    // {
+                    //     label: <?php echo json_encode($tahun_ajaran = '2020/2021') ?>,
+                    //     backgroundColor: 'rgba(93, 255, 223,1)',
+                    //     borderColor: 'rgba(93, 255, 223,1)',
+                    //     pointRadius: false,
+                    //     pointColor: 'rgba(210, 214, 222, 1)',
+                    //     pointStrokeColor: '#c1c7d1',
+                    //     pointHighlightFill: '#fff',
+                    //     pointHighlightStroke: 'rgba(220,220,220,1)',
+                    //     data: [<?php echo json_encode($tot_20) ?>]
+                    // },
+                    // {
+                    //     label: <?php echo json_encode($tahun_ajaran = '2021/2022') ?>,
+                    //     backgroundColor: 'rgba(93, 78, 246,1)',
+                    //     borderColor: 'rgba(93, 78, 246,1)',
+                    //     pointRadius: false,
+                    //     pointColor: 'rgba(210, 214, 222, 1)',
+                    //     pointStrokeColor: '#c1c7d1',
+                    //     pointHighlightFill: '#fff',
+                    //     pointHighlightStroke: 'rgba(220,220,220,1)',
+                    //     data: [<?php echo json_encode($tot_21) ?>]
+                    // },
+                ]
+            },
+            options: {
+                responsive: true,
+                legend: {
+                    position: 'top',
+                },
+                hover: {
+                    mode: 'label'
+                },
+                scales: {
+                    xAxes: [{
+
+                        display: true,
+                        ticks: {
+                            beginAtZero: true,
+                            steps: 10,
+                            stepValue: 5,
+
+                        }
+                    }],
+                    yAxes: [{
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+
+                        }
+                    }]
+                },
+            }
+        });
+
+        const ctx2 = document.getElementById('myChart2');
+        const myChart2 = new Chart(ctx2, {
             type: 'horizontalBar',
             data: {
                 labels: ['2019/2020', '2020/2021', '2021/2022'],
