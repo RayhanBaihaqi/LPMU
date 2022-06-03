@@ -173,7 +173,7 @@
                                 </div>
                             </div> -->
                         <!-- /.card-body -->
-                        </section> -->
+                        </section>
                         <section class="content">
                             <!-- BAR CHART -->
                             <div class="card card-dark">
@@ -276,7 +276,7 @@
 
                 {
 
-                    label: 'Total Capaian KPI per Tahun',
+                    label: 'Rata-rata Capaian KPI per Tahun',
                     backgroundColor: ['rgba(255, 165, 0, 1)', 'rgba(93, 255, 223,1)', 'rgba(93, 78, 246,1)'],
                     borderColor: ['rgba(255, 165, 0, 1)', 'rgba(93, 255, 223,1)', 'rgba(93, 78, 246,1)'],
                     pointRadius: false,
@@ -330,7 +330,7 @@
 
                 {
 
-                    label: 'Total Capaian KPI per Tahun',
+                    label: 'Rata-rata Capaian KPI per Tahun',
                     backgroundColor: ['rgba(255, 165, 0, 1)', 'rgba(93, 255, 223,1)', 'rgba(93, 78, 246,1)'],
                     borderColor: ['rgba(255, 165, 0, 1)', 'rgba(93, 255, 223,1)', 'rgba(93, 78, 246,1)'],
                     pointRadius: false,

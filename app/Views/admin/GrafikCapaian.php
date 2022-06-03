@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>List Capaian KPI</title>
+    <title>Grafik Capaian KPI</title>
 
     <!-- Custom fonts for this template-->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
@@ -175,7 +175,7 @@
                             <!-- BAR CHART -->
                             <div class="card card-dark">
                                 <div class="card-header">
-                                    <h3 class="text-center text-white">Grafik Total Capaian KPI Prodi Setiap Tahun</h3>
+                                    <h3 class="text-center">Grafik Rata-rata Capaian KPI Prodi Setiap Tahun</h3>
                                     <div class="card-tools">
                                         <button type="button" class="btn btn-tool" data-card-widget="collapse">
                                             <i class="fas fa-minus"></i>
@@ -191,7 +191,7 @@
                             </div>
                             <div class="card card-dark">
                                 <div class="card-header">
-                                    <h3 class="text-center text-white">Grafik Total Capaian KPI Unit Setiap Tahun</h3>
+                                    <h3 class="text-center">Grafik Rata-rata Capaian KPI Unit Setiap Tahun</h3>
                                     <div class="card-tools">
                                         <button type="button" class="btn btn-tool" data-card-widget="collapse">
                                             <i class="fas fa-minus"></i>
@@ -270,7 +270,7 @@
 
                 {
 
-                    label: 'Total Capaian KPI per Tahun',
+                    label: 'Rata-rata Capaian KPI per Tahun',
                     backgroundColor: ['rgba(255, 165, 0, 1)', 'rgba(93, 255, 223,1)', 'rgba(93, 78, 246,1)'],
                     borderColor: ['rgba(255, 165, 0, 1)', 'rgba(93, 255, 223,1)', 'rgba(93, 78, 246,1)'],
                     pointRadius: false,
@@ -324,7 +324,7 @@
 
                 {
 
-                    label: 'Total Capaian KPI per Tahun',
+                    label: 'Rata-rata Capaian KPI per Tahun',
                     backgroundColor: ['rgba(255, 165, 0, 1)', 'rgba(93, 255, 223,1)', 'rgba(93, 78, 246,1)'],
                     borderColor: ['rgba(255, 165, 0, 1)', 'rgba(93, 255, 223,1)', 'rgba(93, 78, 246,1)'],
                     pointRadius: false,

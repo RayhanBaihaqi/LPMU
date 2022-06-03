@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>List Capaian KPI</title>
+    <title>Grafik Capaian KPI Prodi</title>
 
     <!-- Custom fonts for this template-->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
@@ -295,7 +295,7 @@
                             <!-- /.card-body -->
                             <div class="card card-success">
                                 <div class="card-header">
-                                    <h3 class="card-title">Grafik Capaian KPI</h3>
+                                    <h3 class="card-title">Grafik Capaian Prodi</h3>
                                 </div>
                                 <div class="card-body">
                                     <div class="chart">

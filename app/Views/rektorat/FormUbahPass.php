@@ -44,7 +44,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link " href="<?= base_url('/rektorat/rkat') ?>">
+                <a class="nav-link " href="<?= base_url('/rektorat') ?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -60,13 +60,14 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="<?= base_url('admin/create') ?>">Tambah Rencana RKAT</a>
-                        <a class="collapse-item" href="<?= base_url('admin/listRkatProdi') ?>">Lihat Data Prodi</a>
-                        <a class="collapse-item" href="<?= base_url('admin/listRkatUnit') ?>">Lihat Data Unit</a>
-                        <a class="collapse-item" href="<?= base_url('pagurkat/create') ?>">Buat Pagu</a>
-                        <a class="collapse-item" href="<?= base_url('pagurkat/index') ?>">List Data Pagu</a>
-                        <a class="collapse-item" href="<?= base_url('tahunakademik/indextahun') ?>">Tahun Akademik</a>
-                        <a class="collapse-item" href="<?= base_url('admin/grafikSerap') ?>">Grafik Capaian Serap</a>
+                        <a class="collapse-item" href="<?= base_url('/rektorat/inputRencana') ?>">Input Rencana Anggaran</a>
+                        <a class="collapse-item" href="<?= base_url('/rektorat/inputRealisasi') ?>">Input Realisasi Anggaran</a>
+                        <a class="collapse-item" href="<?= base_url('/rektorat/listRkatRektorat') ?>">Daftar Data RKAT Rektorat</a>
+                        <a class="collapse-item" href="<?= base_url('/rektorat/rincian') ?>">Rincian Rkat</a>
+                        <a class="collapse-item" href="<?= base_url('/rektorat/listRkatProdi') ?>">Daftar Data RKAT Prodi</a>
+                        <a class="collapse-item" href="<?= base_url('/rektorat/listRkatUnit') ?>">Daftar Data RKAT Unit</a>
+                        <a class="collapse-item" href="<?= base_url('/rektorat/grafikSerapProdi') ?>">Grafik Capaian Prodi</a>
+                        <a class="collapse-item" href="<?= base_url('/rektorat/grafikSerapUnit') ?>">Grafik Capaian Unit</a>
                     </div>
                 </div>
             </li>
@@ -81,22 +82,11 @@
                     <span>KPI</span></a>
                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="<?= base_url('/admin/listkpi') ?>">Lihat KPI</a>
-                        <a class="collapse-item" href="<?= base_url('/admin/listbutirkpi') ?>">Lihat Butir KPI</a>
-                        <a class="collapse-item" href="<?= base_url('/admin/listcapaiankpi') ?>">Lihat Capaian</a>
-                        <a class="collapse-item" href="<?= base_url('/admin/tabelcapaiankpi') ?>">Lihat Data Tabel</a>
-                        <a class="collapse-item" href="<?= base_url('/admin/grafikcapaian') ?>">Lihat Data Grafik</a>
+
+                        <a class="collapse-item" href="<?= base_url('/rektorat/tabelcapaiankpi') ?>">Lihat Data Tabel</a>
+                        <a class="collapse-item" href="<?= base_url('/rektorat/grafikcapaian') ?>">Lihat Data Grafik</a>
                     </div>
                 </div>
-            </li>
-
-            <div class="sidebar-heading">
-                user
-            </div>
-            <li class="nav-item ">
-                <a class="nav-link " href="<?= base_url('auth/index') ?>">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Tabel user</span></a>
             </li>
 
 
@@ -146,26 +136,8 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Tabel Capaian KPI</h1>
-                    <br>
-                    <div class="form-group">
-                        <label for="exampleFormControlSelect1">Pilih Tingkatan</label>
-                        <select class="form-control" id="exampleFormControlSelect1" onchange="location = this.value;">
-                            <option disabled selected>--Pilih ingin melihat total capaian prodi/unit--</option>
-                            <option value="tabelprodi/">Prodi</option>
-                            <option value="tabelunit/">Unit</option>
-                        </select>
-                    </div>
+                    <h1 class="h3 mb-2 text-gray-800">Form Ubah Password</h1>
 
-
-                    <div class="container col-lg-12">
-                        <section class="content">
-                            <!-- BAR CHART -->
-
-                        </section>
-                    </div>
-
-                    <br>
 
 
 
