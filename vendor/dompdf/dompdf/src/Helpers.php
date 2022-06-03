@@ -554,7 +554,7 @@ class Helpers
     public static function record_warnings($errno, $errstr, $errfile, $errline)
     {
         // Not a warning or notice
-        if (!($errno & (E_WARNING | E_NOTICE | E_user_NOTICE | E_user_WARNING | E_STRICT | E_DEPRECATED | E_user_DEPRECATED))) {
+        if (!($errno & (E_WARNING | E_NOTICE | E_USER_NOTICE | E_USER_WARNING | E_STRICT | E_DEPRECATED | E_USER_DEPRECATED))) {
             throw new Exception($errstr . " $errno");
         }
 
@@ -697,7 +697,7 @@ class Helpers
 
         // version 1.00
         if (!($fh = fopen($filename, 'rb'))) {
-            trigger_error('imagecreatefrombmp: Can not open ' . $filename, E_user_WARNING);
+            trigger_error('imagecreatefrombmp: Can not open ' . $filename, E_USER_WARNING);
             return false;
         }
 
@@ -708,7 +708,7 @@ class Helpers
 
         // check for bitmap
         if ($meta['type'] != 19778) {
-            trigger_error('imagecreatefrombmp: ' . $filename . ' is not a bitmap!', E_user_WARNING);
+            trigger_error('imagecreatefrombmp: ' . $filename . ' is not a bitmap!', E_USER_WARNING);
             return false;
         }
 
@@ -736,7 +736,7 @@ class Helpers
             if ($meta['imagesize'] < 1) {
                 $meta['imagesize'] = @filesize($filename) - $meta['offset'];
                 if ($meta['imagesize'] < 1) {
-                    trigger_error('imagecreatefrombmp: Can not obtain filesize of ' . $filename . '!', E_user_WARNING);
+                    trigger_error('imagecreatefrombmp: Can not obtain filesize of ' . $filename . '!', E_USER_WARNING);
                     return false;
                 }
             }
@@ -789,14 +789,14 @@ class Helpers
                     case 32:
                     case 24:
                         if (!($part = substr($data, $p, 3 /*$meta['bytes']*/))) {
-                            trigger_error($error, E_user_WARNING);
+                            trigger_error($error, E_USER_WARNING);
                             return $im;
                         }
                         $color = unpack('V', $part . $vide);
                         break;
                     case 16:
                         if (!($part = substr($data, $p, 2 /*$meta['bytes']*/))) {
-                            trigger_error($error, E_user_WARNING);
+                            trigger_error($error, E_USER_WARNING);
                             return $im;
                         }
                         $color = unpack('v', $part);
@@ -847,7 +847,7 @@ class Helpers
                         $color[1] = $palette[$color[1] + 1];
                         break;
                     default:
-                        trigger_error('imagecreatefrombmp: ' . $filename . ' has ' . $meta['bits'] . ' bits and this is not supported!', E_user_WARNING);
+                        trigger_error('imagecreatefrombmp: ' . $filename . ' has ' . $meta['bits'] . ' bits and this is not supported!', E_USER_WARNING);
                         return false;
                 }
                 imagesetpixel($im, $x, $y, $color[1]);
