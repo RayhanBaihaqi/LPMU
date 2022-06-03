@@ -3,20 +3,22 @@
 
 <head>
 
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="">
-	<meta name="author" content="">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-	<title>Rektorat</title>
+    <title>Grafik Capaian KPI</title>
 
-	<!-- Custom fonts for this template-->
-	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-	<!-- Custom styles for this template-->
-	<link href="<?php echo base_url(); ?>/public/css/style_admin.css" rel="stylesheet">
+    <!-- Custom fonts for this template-->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link href="<?php echo base_url(); ?>/public/css/style_admin.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>/public/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+
 
 </head>
 
@@ -250,39 +252,92 @@
 							</div>
 						</div>
 					</div>
-					<div class="row" style="margin: 15px auto;">
-						<div class="col-md-12">
+                    <div class="row" style="margin: 15px auto;">
+						<div class="col-md-6">
 							<div class="card-box pd-30 height-100-p">
 								<div class="card ">
-									<div class="card-header bg-info text-white">Rata-Rata Capaian</div>
+									<div class="card-header bg-info text-white">Rata-Rata Capaian PK+OPS PROGRAM STUDI</div>
 									<div class="card-body">
-									<canvas id="myChart" height="100"></canvas>
+                                        <canvas id="SerapProdiPkOps" height="100"></canvas>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="card-box pd-30 height-100-p">
+								<div class="card ">
+									<div class="card-header bg-info text-white">Rata-Rata Capaian INV PROGRAM STUDI</div>
+									<div class="card-body">
+                                    <canvas id="SerapProdiInv" height="100"></canvas>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<!-- Footer -->
-					<footer class="sticky-footer bg-white">
-						<div class="container my-auto">
-							<div class="copyright text-center my-auto">
-								<span>Copyright &copy; Your Website 2020</span>
+                    <div class="row" style="margin: 15px auto;">
+						<div class="col-md-6">
+							<div class="card-box pd-30 height-100-p">
+								<div class="card ">
+									<div class="card-header bg-info text-white">Rata-Rata Capaian PK+OPS UNIT KERJA</div>
+									<div class="card-body">
+                                        <canvas id="SerapUnitPkOps" height="100"></canvas>
+									</div>
+								</div>
 							</div>
 						</div>
-					</footer>
-					<!-- End of Footer -->
+						<div class="col-md-6">
+							<div class="card-box pd-30 height-100-p">
+								<div class="card ">
+									<div class="card-header bg-info text-white">Rata-Rata Capaian INV UNIT KERJA</div>
+									<div class="card-body">
+                                    <canvas id="SerapUnitInv" height="100"></canvas>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+                </div>
 
-				</div>
-				<!-- End of Content Wrapper -->
 
-			</div>
-			<!-- End of Page Wrapper -->
+            </div>
+            <!-- End of Content Wrapper -->
 
-			<!-- Scroll to Top Button-->
-			<a class="scroll-to-top rounded" href="#page-top">
-				<i class="fas fa-angle-up"></i>
-			</a>
-			<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        </div>
+        <!-- End of Page Wrapper -->
+
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
+
+        <!-- Bootstrap core JavaScript-->
+        <script src="<?php echo base_url(); ?>/public/js/jquery.min.js"></script>
+        <script src="<?php echo base_url(); ?>/public/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Page level plugins -->
+        <script src="<?php echo base_url(); ?>/public/js/jquery.dataTables.min.js"></script>
+        <script src="<?php echo base_url(); ?>/public/js/dataTables.bootstrap4.min.js"></script>
+
+        <!-- Page level custom scripts -->
+        <script src="<?php echo base_url(); ?>/public/js/datatables-demo.js"></script>
+
+</body>
+        <!-- jQuery -->
+        <script src="<?php echo base_url(); ?>/public/plugins/jquery/jquery.min.js"></script>
+        <!-- ChartJS -->
+        <script src="<?php echo base_url(); ?>/public/plugins/chart.js/Chart.min.js"></script>
+        <!-- AdminLTE App -->
+        <script src="<?php echo base_url(); ?>/public/dist/js/adminlte.min.js"></script>
+        <!-- AdminLTE for demo purposes -->
+
+        <!-- Page level custom scripts -->
+        <script src="<?php echo base_url(); ?>/public/dist/js/demo.js"></script>
+        <script src="<?php echo base_url(); ?>/public/chart/apexcharts.min.js"></script>
+        <script src="<?php echo base_url(); ?>/public/chart/dashboard.js"></script>
+        <script src="<?php echo base_url(); ?>/public/chart/jquery.knob.min.js"></script>
+        <script src="<?php echo base_url(); ?>/public/chart/knob-chart-setting.js"></script>
+        <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 			<!-- Grafik Persentase capaian -->
 			<script type="text/javascript">
 				google.charts.load('current', {
@@ -364,110 +419,237 @@
 					chart.draw(data, google.charts.Bar.convertOptions(options));
 				}
 			</script>
-    <!-- Grafik Persentase capaian -->
-	<script>
-		const ctx = document.getElementById('myChart');
-    	const myChart = new Chart(ctx, {
-        type: 'horizontalBar',
-        data: {
-            labels: ['2019/2020', '2020/2021', '2021/2022'],
-            datasets: [
-                // Data Batang Grafik Standar 1
+        <script>
+            $(window).load(function() {
+                $(".pre-loader").fadeOut("slow");
+            });
+        </script>
+        <script>
+            const ctx = document.getElementById('SerapProdiPkOps');
+            const SerapProdiPkOps = new Chart(ctx, {
+                type: 'horizontalBar',
+                data: {
+                    labels: ['2019/2020', '2020/2021', '2021/2022'],
+                    datasets: [
+                        // Data Batang Grafik Standar 1
 
-                {
+                        {
 
-                    label: 'Total Capaian KPI per Tahun',
-                    backgroundColor: ['rgba(255, 165, 0, 1)', 'rgba(93, 255, 223,1)', 'rgba(93, 78, 246,1)'],
-                    borderColor: ['rgba(255, 165, 0, 1)', 'rgba(93, 255, 223,1)', 'rgba(93, 78, 246,1)'],
-                    pointRadius: false,
-                    pointColor: 'rgba(210, 214, 222, 1)',
-                    pointStrokeColor: '#c1c7d1',
-                    pointHighlightFill: '#fff',
-                    pointHighlightStroke: 'rgba(220,220,220,1)',
-                    data: [	<?php foreach ($avgPkOpsSeluruh1920 as $rows) : ?><?php echo $rows->avgPkOpsSeluruh1920?> <?php endforeach;?>, 
-							<?php foreach ($avgPkOpsSeluruh2021 as $rows) : ?><?php echo $rows->avgPkOpsSeluruh2021?> <?php endforeach;?>,
-							<?php foreach ($avgPkOpsSeluruh2122 as $rows) : ?><?php echo $rows->avgPkOpsSeluruh2122?> <?php endforeach;?>]
+                            label: 'Rata-Rata Capaian RKAT PK+OPS',
+                            backgroundColor: ['rgba(255, 165, 0, 1)','rgba(255, 165, 0, 1)','rgba(255, 165, 0, 1)'],
+                            borderColor: ['rgba(255, 165, 0, 1)','rgba(255, 165, 0, 1)','rgba(255, 165, 0, 1)'],
+                            pointRadius: false,
+                            pointColor: 'rgba(210, 214, 222, 1)',
+                            pointStrokeColor: '#c1c7d1',
+                            pointHighlightFill: '#fff',
+                            pointHighlightStroke: 'rgba(220,220,220,1)',
+                            data: [	<?php foreach ($avgPkOpsSeluruh1920 as $rows) : ?><?php echo $rows->avgPkOpsSeluruh1920?> <?php endforeach;?>, 
+                                    <?php foreach ($avgPkOpsSeluruh2021 as $rows) : ?><?php echo $rows->avgPkOpsSeluruh2021?> <?php endforeach;?>,
+                                    <?php foreach ($avgPkOpsSeluruh2122 as $rows) : ?><?php echo $rows->avgPkOpsSeluruh2122?> <?php endforeach;?>]
+                        },
+
+
+                    ]
                 },
+                options: {
+                    responsive: true,
+                    legend: {
+                        position: 'top',
+                    },
+                    hover: {
+                        mode: 'label'
+                    },
+                    scales: {
+                        xAxes: [{
+
+                            display: true,
+                            ticks: {
+                                beginAtZero: true,
+                                steps: 10,
+                                stepValue: 5,
+
+                            }
+                        }],
+                        yAxes: [{
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+
+                            }
+                        }]
+                    },
+                }
+            });
+
+            const ctx2 = document.getElementById('SerapProdiInv');
+            const SerapProdiInv = new Chart(ctx2, {
+                type: 'horizontalBar',
+                data: {
+                    labels: ['2019/2020', '2020/2021', '2021/2022'],
+                    datasets: [
+                        // Data Batang Grafik Standar 1
+
+                        {
+
+                            label: 'Rata-Rata Capaian RKAT INV',
+                            backgroundColor: ['rgba(93, 78, 246,1)','rgba(93, 78, 246,1)','rgba(93, 78, 246,1)'],
+                            borderColor: ['rgba(93, 78, 246,1)','rgba(93, 78, 246,1)','rgba(93, 78, 246,1)'],
+                            pointRadius: false,
+                            pointColor: 'rgba(210, 214, 222, 1)',
+                            pointStrokeColor: '#c1c7d1',
+                            pointHighlightFill: '#fff',
+                            pointHighlightStroke: 'rgba(220,220,220,1)',
+                            data: [	<?php foreach ($avgInvSeluruh1920 as $rows) : ?><?php echo $rows->avgInvSeluruh1920?> <?php endforeach;?>, 
+                                    <?php foreach ($avgInvSeluruh2021 as $rows) : ?><?php echo $rows->avgInvSeluruh2021?> <?php endforeach;?>,
+                                    <?php foreach ($avgInvSeluruh2122 as $rows) : ?><?php echo $rows->avgInvSeluruh2122?> <?php endforeach;?>]
+                        },
 
 
-            ]
-        },
-        options: {
-            responsive: true,
-            legend: {
-                position: 'top',
-            },
-            hover: {
-                mode: 'label'
-            },
-            scales: {
-                xAxes: [{
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    legend: {
+                        position: 'top',
+                    },
+                    hover: {
+                        mode: 'label'
+                    },
+                    scales: {
+                        xAxes: [{
 
-                    display: true,
-                    ticks: {
-                        beginAtZero: true,
-                        steps: 10,
-                        stepValue: 5,
+                            display: true,
+                            ticks: {
+                                beginAtZero: true,
+                                steps: 10,
+                                stepValue: 5,
 
-                    }
-                }],
-                yAxes: [{
-                    display: true,
-                    scaleLabel: {
-                        display: true,
+                            }
+                        }],
+                        yAxes: [{
+                            display: true,
+                            scaleLabel: {
+                                display: true,
 
-                    }
-                }]
-            },
-        }
-    });
-	</script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['bar']});
-      google.charts.setOnLoadCallback(drawChart);
+                            }
+                        }]
+                    },
+                }
+            });
+        </script>
+        <script>
+            const ctx3 = document.getElementById('SerapUnitPkOps');
+            const SerapUnitPkOps = new Chart(ctx3, {
+                type: 'horizontalBar',
+                data: {
+                    labels: ['2019/2020', '2020/2021', '2021/2022'],
+                    datasets: [
+                        // Data Batang Grafik Standar 1
 
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Tahun', 'Persen PK & OPS(%)'],
-          ['2019/2020','<?php foreach ($avgPkOpsSeluruh1920 as $rows) : ?><?php echo $rows->avgPkOpsSeluruh1920?> <?php endforeach;?>'],
-		  ['2020/2021','<?php foreach ($avgPkOpsSeluruh2021 as $rows) : ?><?php echo $rows->avgPkOpsSeluruh2021?> <?php endforeach;?>'],
-		  ['2021/2022','<?php foreach ($avgPkOpsSeluruh2122 as $rows) : ?><?php echo $rows->avgPkOpsSeluruh2122?> <?php endforeach;?>'],
-          
-        ]);
+                        {
 
-        var options = {
-          chart: {
-            title: 'Data Prodi/Unit : <?php $nama_prodi = session('nama_prodi'); echo "$nama_prodi"?>',
-            subtitle: '',
-          },
-          bars: 'horizontal' // Required for Material Bar Charts.
-        };
+                            label: 'Rata-Rata Capaian RKAT PK+OPS',
+                            backgroundColor: ['rgba(255, 165, 0, 1)','rgba(255, 165, 0, 1)','rgba(255, 165, 0, 1)'],
+                            borderColor: ['rgba(255, 165, 0, 1)','rgba(255, 165, 0, 1)','rgba(255, 165, 0, 1)'],
+                            pointRadius: false,
+                            pointColor: 'rgba(210, 214, 222, 1)',
+                            pointStrokeColor: '#c1c7d1',
+                            pointHighlightFill: '#fff',
+                            pointHighlightStroke: 'rgba(220,220,220,1)',
+                            data: [	<?php foreach ($avgPkOpsSeluruhUnit1920 as $rows) : ?><?php echo $rows->avgPkOpsSeluruhUnit1920?> <?php endforeach;?>, 
+                                    <?php foreach ($avgPkOpsSeluruhUnit2021 as $rows) : ?><?php echo $rows->avgPkOpsSeluruhUnit2021?> <?php endforeach;?>,
+                                    <?php foreach ($avgPkOpsSeluruhUnit2122 as $rows) : ?><?php echo $rows->avgPkOpsSeluruhUnit2122?> <?php endforeach;?>]
+                        },
 
-        var chart = new google.charts.Bar(document.getElementById('capaianRataProdi'));
 
-        chart.draw(data, google.charts.Bar.convertOptions(options));
-      }
-    </script>
-			<!-- Bootstrap core JavaScript-->
-			<script src="<?php echo base_url(); ?>/public/js/jquery.min.js"></script>
-			<script src="<?php echo base_url(); ?>/public/js/bootstrap.bundle.min.js"></script>
-			<!-- jQuery -->
-<script src="<?php echo base_url(); ?>/public/plugins/jquery/jquery.min.js"></script>
-<!-- ChartJS -->
-<script src="<?php echo base_url(); ?>/public/plugins/chart.js/Chart.min.js"></script>
-<!-- AdminLTE App -->
-<script src="<?php echo base_url(); ?>/public/dist/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    legend: {
+                        position: 'top',
+                    },
+                    hover: {
+                        mode: 'label'
+                    },
+                    scales: {
+                        xAxes: [{
 
-<!-- Page level custom scripts -->
-<script src="<?php echo base_url(); ?>/public/dist/js/demo.js"></script>
-<script src="<?php echo base_url(); ?>/public/chart/apexcharts.min.js"></script>
-<script src="<?php echo base_url(); ?>/public/chart/dashboard.js"></script>
-<script src="<?php echo base_url(); ?>/public/chart/jquery.knob.min.js"></script>
-<script src="<?php echo base_url(); ?>/public/chart/knob-chart-setting.js"></script>
-<script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
-			
+                            display: true,
+                            ticks: {
+                                beginAtZero: true,
+                                steps: 10,
+                                stepValue: 5,
 
-</body>
+                            }
+                        }],
+                        yAxes: [{
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+
+                            }
+                        }]
+                    },
+                }
+            });
+
+            const ctx4 = document.getElementById('SerapUnitInv');
+            const SerapUnitInv = new Chart(ctx4, {
+                type: 'horizontalBar',
+                data: {
+                    labels: ['2019/2020', '2020/2021', '2021/2022'],
+                    datasets: [
+                        // Data Batang Grafik Standar 1
+
+                        {
+
+                            label: 'Rata-Rata Capaian RKAT INV',
+                            backgroundColor: ['rgba(93, 78, 246,1)','rgba(93, 78, 246,1)','rgba(93, 78, 246,1)'],
+                            borderColor: ['rgba(93, 78, 246,1)','rgba(93, 78, 246,1)','rgba(93, 78, 246,1)'],
+                            pointRadius: false,
+                            pointColor: 'rgba(210, 214, 222, 1)',
+                            pointStrokeColor: '#c1c7d1',
+                            pointHighlightFill: '#fff',
+                            pointHighlightStroke: 'rgba(220,220,220,1)',
+                            data: [	<?php foreach ($avgInvSeluruhUnit1920 as $rows) : ?><?php echo $rows->avgInvSeluruhUnit1920?> <?php endforeach;?>, 
+                                    <?php foreach ($avgInvSeluruhUnit2021 as $rows) : ?><?php echo $rows->avgInvSeluruhUnit2021?> <?php endforeach;?>,
+                                    <?php foreach ($avgInvSeluruhUnit2122 as $rows) : ?><?php echo $rows->avgInvSeluruhUnit2122?> <?php endforeach;?>]
+                        },
+
+
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    legend: {
+                        position: 'top',
+                    },
+                    hover: {
+                        mode: 'label'
+                    },
+                    scales: {
+                        xAxes: [{
+
+                            display: true,
+                            ticks: {
+                                beginAtZero: true,
+                                steps: 10,
+                                stepValue: 5,
+
+                            }
+                        }],
+                        yAxes: [{
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+
+                            }
+                        }]
+                    },
+                }
+            });
+        </script>
+
 
 </html>

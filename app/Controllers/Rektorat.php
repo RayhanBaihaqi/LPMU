@@ -51,7 +51,7 @@ class Rektorat extends BaseController
             'pagu_rkat' => $this->DetailRkatModel->tampilDataSetRKAT($username),
             'tahunAkademik' => $this->TahunAkademikModel->where('aktif', '1')->first(),
         ];
-        return view('/rektorat/GrafikSerap', $data);
+        return view('/rektorat/Dashboard', $data);
     }
     public function listcapaiankpi()
     {
