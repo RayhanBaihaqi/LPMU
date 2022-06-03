@@ -39,34 +39,34 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-			<li class="nav-item active">
-				<a class="nav-link " href="<?= base_url('/rektorat') ?>">
-					<i class="fas fa-fw fa-tachometer-alt"></i>
-					<span>Dashboard</span></a>
-			</li>
+            <li class="nav-item active">
+                <a class="nav-link " href="<?= base_url('/rektorat') ?>">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
 
-			<!-- Divider -->
-			<hr class="sidebar-divider">
+            <!-- Divider -->
+            <hr class="sidebar-divider">
 
-			<!-- Heading -->
-			<li class="nav-item">
-				<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-					<i class="fas fa-fw fa-cog"></i>
-					<span>RKAT</span>
-				</a>
-				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-						<a class="collapse-item" href="<?= base_url('/rektorat/inputRencana') ?>">Input Rencana Anggaran</a>
-						<a class="collapse-item" href="<?= base_url('/rektorat/inputRealisasi') ?>">Input Realisasi Anggaran</a>
-						<a class="collapse-item" href="<?= base_url('/rektorat/listRkatRektorat') ?>">Daftar Data RKAT Rektorat</a>
-						<a class="collapse-item" href="<?= base_url('/rektorat/rincian') ?>">Rincian Rkat</a>
-						<a class="collapse-item" href="<?= base_url('/rektorat/listRkatProdi') ?>">Daftar Data RKAT Prodi</a>
-						<a class="collapse-item" href="<?= base_url('/rektorat/listRkatUnit') ?>">Daftar Data RKAT Unit</a>
-						<a class="collapse-item" href="<?= base_url('/rektorat/grafikSerapProdi') ?>">Grafik Capaian Prodi</a>
-						<a class="collapse-item" href="<?= base_url('/rektorat/grafikSerapUnit') ?>">Grafik Capaian Unit</a>
-					</div>
-				</div>
-			</li>
+            <!-- Heading -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>RKAT</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="<?= base_url('/rektorat/inputRencana') ?>">Input Rencana Anggaran</a>
+                        <a class="collapse-item" href="<?= base_url('/rektorat/inputRealisasi') ?>">Input Realisasi Anggaran</a>
+                        <a class="collapse-item" href="<?= base_url('/rektorat/listRkatRektorat') ?>">Daftar Data RKAT Rektorat</a>
+                        <a class="collapse-item" href="<?= base_url('/rektorat/rincian') ?>">Rincian Rkat</a>
+                        <a class="collapse-item" href="<?= base_url('/rektorat/listRkatProdi') ?>">Daftar Data RKAT Prodi</a>
+                        <a class="collapse-item" href="<?= base_url('/rektorat/listRkatUnit') ?>">Daftar Data RKAT Unit</a>
+                        <a class="collapse-item" href="<?= base_url('/rektorat/grafikSerapProdi') ?>">Grafik Capaian Prodi</a>
+                        <a class="collapse-item" href="<?= base_url('/rektorat/grafikSerapUnit') ?>">Grafik Capaian Unit</a>
+                    </div>
+                </div>
+            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -116,7 +116,7 @@
                             </a>
                             <!-- Dropdown - user Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="<?= base_url('/rektorat/form_ubahpass') ?>"><i class="fas fa-cog fa-sm fa-fw mr-2 text-gray-400"></i> Ubah Password</a>
                                 <a class="dropdown-item" href="<?= base_url('auth/logout') ?>">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
@@ -139,7 +139,7 @@
                         <div class="card-header py-3">
                             <span></span></a>
                         </div>
-                        
+
                         <div class="container-fluid">
                             <div class="form-group">
                                 <label for="exampleFormControlSelect1">Pilih Nama Prodi</label>
@@ -153,49 +153,49 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                            <table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
-							<thead>
-								<tr>
-									<th>No</th>
-                                    <th>id</th>
-									<th>Prodi/Unit</th>
-                                    <th>Kategori</th>
-									<th>No Kegiatan</th>
-									<th>Target</th>
-									<th>Indikator</th>
-									<th>Nama Kegiatan</th>
-									<th>KPI</th>
-									<th>Butir</th>
-									<th>Anggaran Gasal</th>
-									<th>Anggaran Ganjil</th>
-									<th>Serap Ganjil</th>
-									<th>Serap Genap</th>
-								</tr>
-							</thead>
-							<tbody>
-								<?php $i = 1;?>
-								<?php if ($detail_rkat) : ?>
-									<?php foreach ($detail_rkat as $value) : ?>
-										<tr>
-											<td scope="row"><?= $i++; ?></td>
-                                            <td><?= $value['id']; ?></td>
-                                            <td><?= $value['nama_prodi']; ?></td>
-											<td><?= $value['kategori']; ?></td>
-											<td><?= $value['no_kegiatan']; ?></td>
-											<td><?= $value['target']; ?></td>
-											<td><?= $value['indikator']; ?></td>
-											<td><?= $value['nama_kegiatan']; ?></td>
-											<td><?= $value['kpi']; ?></td>
-											<td><?= $value['butir']; ?></td>
-											<td><?= $value['anggaranGanjil']; ?></td>
-											<td><?= $value['anggaranGenap']; ?></td>
-											<td><?= $value['serapGanjil']; ?></td>
-											<td><?= $value['serapGenap']; ?></td>
-										</tr>
-									<?php endforeach; ?>
-								<?php endif; ?>
-							</tbody>
-						</table>
+                                <table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>id</th>
+                                            <th>Prodi/Unit</th>
+                                            <th>Kategori</th>
+                                            <th>No Kegiatan</th>
+                                            <th>Target</th>
+                                            <th>Indikator</th>
+                                            <th>Nama Kegiatan</th>
+                                            <th>KPI</th>
+                                            <th>Butir</th>
+                                            <th>Anggaran Gasal</th>
+                                            <th>Anggaran Ganjil</th>
+                                            <th>Serap Ganjil</th>
+                                            <th>Serap Genap</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php $i = 1; ?>
+                                        <?php if ($detail_rkat) : ?>
+                                            <?php foreach ($detail_rkat as $value) : ?>
+                                                <tr>
+                                                    <td scope="row"><?= $i++; ?></td>
+                                                    <td><?= $value['id']; ?></td>
+                                                    <td><?= $value['nama_prodi']; ?></td>
+                                                    <td><?= $value['kategori']; ?></td>
+                                                    <td><?= $value['no_kegiatan']; ?></td>
+                                                    <td><?= $value['target']; ?></td>
+                                                    <td><?= $value['indikator']; ?></td>
+                                                    <td><?= $value['nama_kegiatan']; ?></td>
+                                                    <td><?= $value['kpi']; ?></td>
+                                                    <td><?= $value['butir']; ?></td>
+                                                    <td><?= $value['anggaranGanjil']; ?></td>
+                                                    <td><?= $value['anggaranGenap']; ?></td>
+                                                    <td><?= $value['serapGanjil']; ?></td>
+                                                    <td><?= $value['serapGenap']; ?></td>
+                                                </tr>
+                                            <?php endforeach; ?>
+                                        <?php endif; ?>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>

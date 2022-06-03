@@ -119,6 +119,7 @@
 							<!-- Dropdown - user Information -->
 							<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
 								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="<?= base_url('/rektorat/form_ubahpass') ?>"><i class="fas fa-cog fa-sm fa-fw mr-2 text-gray-400"></i> Ubah Password</a>
 								<a class="dropdown-item" href="<?= base_url('auth/logout') ?>">
 									<i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
 									Logout
@@ -256,7 +257,7 @@
 								<div class="card ">
 									<div class="card-header bg-info text-white">Rata-Rata Capaian</div>
 									<div class="card-body">
-									<canvas id="myChart" height="100"></canvas>
+										<canvas id="myChart" height="100"></canvas>
 									</div>
 								</div>
 							</div>
@@ -300,8 +301,9 @@
 
 					var options = {
 						chart: {
-							title: 'Data Prodi/Unit : <?php $nama_prodi = session('nama_prodi'); echo "$nama_prodi" ?>',
-							subtitle: '',
+							title: 'Data Prodi/Unit : <?php $nama_prodi = session('nama_prodi');
+														echo "$nama_prodi" ?>',
+
 						},
 						bars: 'horizontal' // Required for Material Bar Charts.
 					};
@@ -364,109 +366,113 @@
 					chart.draw(data, google.charts.Bar.convertOptions(options));
 				}
 			</script>
-    <!-- Grafik Persentase capaian -->
-	<script>
-		const ctx = document.getElementById('myChart');
-    	const myChart = new Chart(ctx, {
-        type: 'horizontalBar',
-        data: {
-            labels: ['2019/2020', '2020/2021', '2021/2022'],
-            datasets: [
-                // Data Batang Grafik Standar 1
+			<!-- Grafik Persentase capaian -->
+			<script>
+				const ctx = document.getElementById('myChart');
+				const myChart = new Chart(ctx, {
+					type: 'horizontalBar',
+					data: {
+						labels: ['2019/2020', '2020/2021', '2021/2022'],
+						datasets: [
+							// Data Batang Grafik Standar 1
 
-                {
+							{
 
-                    label: 'Total Capaian KPI per Tahun',
-                    backgroundColor: ['rgba(255, 165, 0, 1)', 'rgba(93, 255, 223,1)', 'rgba(93, 78, 246,1)'],
-                    borderColor: ['rgba(255, 165, 0, 1)', 'rgba(93, 255, 223,1)', 'rgba(93, 78, 246,1)'],
-                    pointRadius: false,
-                    pointColor: 'rgba(210, 214, 222, 1)',
-                    pointStrokeColor: '#c1c7d1',
-                    pointHighlightFill: '#fff',
-                    pointHighlightStroke: 'rgba(220,220,220,1)',
-                    data: [	<?php foreach ($avgPkOpsSeluruh1920 as $rows) : ?><?php echo $rows->avgPkOpsSeluruh1920?> <?php endforeach;?>, 
-							<?php foreach ($avgPkOpsSeluruh2021 as $rows) : ?><?php echo $rows->avgPkOpsSeluruh2021?> <?php endforeach;?>,
-							<?php foreach ($avgPkOpsSeluruh2122 as $rows) : ?><?php echo $rows->avgPkOpsSeluruh2122?> <?php endforeach;?>]
-                },
+								label: 'Total Capaian KPI per Tahun',
+								backgroundColor: ['rgba(255, 165, 0, 1)', 'rgba(93, 255, 223,1)', 'rgba(93, 78, 246,1)'],
+								borderColor: ['rgba(255, 165, 0, 1)', 'rgba(93, 255, 223,1)', 'rgba(93, 78, 246,1)'],
+								pointRadius: false,
+								pointColor: 'rgba(210, 214, 222, 1)',
+								pointStrokeColor: '#c1c7d1',
+								pointHighlightFill: '#fff',
+								pointHighlightStroke: 'rgba(220,220,220,1)',
+								data: [<?php foreach ($avgPkOpsSeluruh1920 as $rows) : ?><?php echo $rows->avgPkOpsSeluruh1920 ?> <?php endforeach; ?>,
+								<?php foreach ($avgPkOpsSeluruh2021 as $rows) : ?><?php echo $rows->avgPkOpsSeluruh2021 ?> <?php endforeach; ?>,
+								<?php foreach ($avgPkOpsSeluruh2122 as $rows) : ?><?php echo $rows->avgPkOpsSeluruh2122 ?> <?php endforeach; ?>
+								]
+							},
 
 
-            ]
-        },
-        options: {
-            responsive: true,
-            legend: {
-                position: 'top',
-            },
-            hover: {
-                mode: 'label'
-            },
-            scales: {
-                xAxes: [{
+						]
+					},
+					options: {
+						responsive: true,
+						legend: {
+							position: 'top',
+						},
+						hover: {
+							mode: 'label'
+						},
+						scales: {
+							xAxes: [{
 
-                    display: true,
-                    ticks: {
-                        beginAtZero: true,
-                        steps: 10,
-                        stepValue: 5,
+								display: true,
+								ticks: {
+									beginAtZero: true,
+									steps: 10,
+									stepValue: 5,
 
-                    }
-                }],
-                yAxes: [{
-                    display: true,
-                    scaleLabel: {
-                        display: true,
+								}
+							}],
+							yAxes: [{
+								display: true,
+								scaleLabel: {
+									display: true,
 
-                    }
-                }]
-            },
-        }
-    });
-	</script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['bar']});
-      google.charts.setOnLoadCallback(drawChart);
+								}
+							}]
+						},
+					}
+				});
+			</script>
+			<script type="text/javascript">
+				google.charts.load('current', {
+					'packages': ['bar']
+				});
+				google.charts.setOnLoadCallback(drawChart);
 
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Tahun', 'Persen PK & OPS(%)'],
-          ['2019/2020','<?php foreach ($avgPkOpsSeluruh1920 as $rows) : ?><?php echo $rows->avgPkOpsSeluruh1920?> <?php endforeach;?>'],
-		  ['2020/2021','<?php foreach ($avgPkOpsSeluruh2021 as $rows) : ?><?php echo $rows->avgPkOpsSeluruh2021?> <?php endforeach;?>'],
-		  ['2021/2022','<?php foreach ($avgPkOpsSeluruh2122 as $rows) : ?><?php echo $rows->avgPkOpsSeluruh2122?> <?php endforeach;?>'],
-          
-        ]);
+				function drawChart() {
+					var data = google.visualization.arrayToDataTable([
+						['Tahun', 'Persen PK & OPS(%)'],
+						['2019/2020', '<?php foreach ($avgPkOpsSeluruh1920 as $rows) : ?><?php echo $rows->avgPkOpsSeluruh1920 ?> <?php endforeach; ?>'],
+						['2020/2021', '<?php foreach ($avgPkOpsSeluruh2021 as $rows) : ?><?php echo $rows->avgPkOpsSeluruh2021 ?> <?php endforeach; ?>'],
+						['2021/2022', '<?php foreach ($avgPkOpsSeluruh2122 as $rows) : ?><?php echo $rows->avgPkOpsSeluruh2122 ?> <?php endforeach; ?>'],
 
-        var options = {
-          chart: {
-            title: 'Data Prodi/Unit : <?php $nama_prodi = session('nama_prodi'); echo "$nama_prodi"?>',
-            subtitle: '',
-          },
-          bars: 'horizontal' // Required for Material Bar Charts.
-        };
+					]);
 
-        var chart = new google.charts.Bar(document.getElementById('capaianRataProdi'));
+					var options = {
+						chart: {
+							title: 'Data Prodi/Unit : <?php $nama_prodi = session('nama_prodi');
+														echo "$nama_prodi" ?>',
 
-        chart.draw(data, google.charts.Bar.convertOptions(options));
-      }
-    </script>
+						},
+						bars: 'horizontal' // Required for Material Bar Charts.
+					};
+
+					var chart = new google.charts.Bar(document.getElementById('capaianRataProdi'));
+
+					chart.draw(data, google.charts.Bar.convertOptions(options));
+				}
+			</script>
 			<!-- Bootstrap core JavaScript-->
 			<script src="<?php echo base_url(); ?>/public/js/jquery.min.js"></script>
 			<script src="<?php echo base_url(); ?>/public/js/bootstrap.bundle.min.js"></script>
 			<!-- jQuery -->
-<script src="<?php echo base_url(); ?>/public/plugins/jquery/jquery.min.js"></script>
-<!-- ChartJS -->
-<script src="<?php echo base_url(); ?>/public/plugins/chart.js/Chart.min.js"></script>
-<!-- AdminLTE App -->
-<script src="<?php echo base_url(); ?>/public/dist/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
+			<script src="<?php echo base_url(); ?>/public/plugins/jquery/jquery.min.js"></script>
+			<!-- ChartJS -->
+			<script src="<?php echo base_url(); ?>/public/plugins/chart.js/Chart.min.js"></script>
+			<!-- AdminLTE App -->
+			<script src="<?php echo base_url(); ?>/public/dist/js/adminlte.min.js"></script>
+			<!-- AdminLTE for demo purposes -->
 
-<!-- Page level custom scripts -->
-<script src="<?php echo base_url(); ?>/public/dist/js/demo.js"></script>
-<script src="<?php echo base_url(); ?>/public/chart/apexcharts.min.js"></script>
-<script src="<?php echo base_url(); ?>/public/chart/dashboard.js"></script>
-<script src="<?php echo base_url(); ?>/public/chart/jquery.knob.min.js"></script>
-<script src="<?php echo base_url(); ?>/public/chart/knob-chart-setting.js"></script>
-<script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
-			
+			<!-- Page level custom scripts -->
+			<script src="<?php echo base_url(); ?>/public/dist/js/demo.js"></script>
+			<script src="<?php echo base_url(); ?>/public/chart/apexcharts.min.js"></script>
+			<script src="<?php echo base_url(); ?>/public/chart/dashboard.js"></script>
+			<script src="<?php echo base_url(); ?>/public/chart/jquery.knob.min.js"></script>
+			<script src="<?php echo base_url(); ?>/public/chart/knob-chart-setting.js"></script>
+			<script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+
 
 </body>
 

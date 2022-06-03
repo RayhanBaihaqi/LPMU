@@ -39,34 +39,34 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-			<li class="nav-item active">
-				<a class="nav-link " href="<?= base_url('/rektorat') ?>">
-					<i class="fas fa-fw fa-tachometer-alt"></i>
-					<span>Dashboard</span></a>
-			</li>
+            <li class="nav-item active">
+                <a class="nav-link " href="<?= base_url('/rektorat') ?>">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
 
-			<!-- Divider -->
-			<hr class="sidebar-divider">
+            <!-- Divider -->
+            <hr class="sidebar-divider">
 
-			<!-- Heading -->
-			<li class="nav-item">
-				<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-					<i class="fas fa-fw fa-cog"></i>
-					<span>RKAT</span>
-				</a>
-				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-						<a class="collapse-item" href="<?= base_url('/rektorat/inputRencana') ?>">Input Rencana Anggaran</a>
-						<a class="collapse-item" href="<?= base_url('/rektorat/inputRealisasi') ?>">Input Realisasi Anggaran</a>
-						<a class="collapse-item" href="<?= base_url('/rektorat/listRkatRektorat') ?>">Daftar Data RKAT Rektorat</a>
-						<a class="collapse-item" href="<?= base_url('/rektorat/rincian') ?>">Rincian Rkat</a>
-						<a class="collapse-item" href="<?= base_url('/rektorat/listRkatProdi') ?>">Daftar Data RKAT Prodi</a>
-						<a class="collapse-item" href="<?= base_url('/rektorat/listRkatUnit') ?>">Daftar Data RKAT Unit</a>
-						<a class="collapse-item" href="<?= base_url('/rektorat/grafikSerapProdi') ?>">Grafik Capaian Prodi</a>
-						<a class="collapse-item" href="<?= base_url('/rektorat/grafikSerapUnit') ?>">Grafik Capaian Unit</a>
-					</div>
-				</div>
-			</li>
+            <!-- Heading -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>RKAT</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="<?= base_url('/rektorat/inputRencana') ?>">Input Rencana Anggaran</a>
+                        <a class="collapse-item" href="<?= base_url('/rektorat/inputRealisasi') ?>">Input Realisasi Anggaran</a>
+                        <a class="collapse-item" href="<?= base_url('/rektorat/listRkatRektorat') ?>">Daftar Data RKAT Rektorat</a>
+                        <a class="collapse-item" href="<?= base_url('/rektorat/rincian') ?>">Rincian Rkat</a>
+                        <a class="collapse-item" href="<?= base_url('/rektorat/listRkatProdi') ?>">Daftar Data RKAT Prodi</a>
+                        <a class="collapse-item" href="<?= base_url('/rektorat/listRkatUnit') ?>">Daftar Data RKAT Unit</a>
+                        <a class="collapse-item" href="<?= base_url('/rektorat/grafikSerapProdi') ?>">Grafik Capaian Prodi</a>
+                        <a class="collapse-item" href="<?= base_url('/rektorat/grafikSerapUnit') ?>">Grafik Capaian Unit</a>
+                    </div>
+                </div>
+            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -117,6 +117,7 @@
                             <!-- Dropdown - user Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                 <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="<?= base_url('/rektorat/form_ubahpass') ?>"><i class="fas fa-cog fa-sm fa-fw mr-2 text-gray-400"></i> Ubah Password</a>
                                 <a class="dropdown-item" href="<?= base_url('auth/logout') ?>">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
@@ -136,29 +137,29 @@
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
-                    <form id="satuan" name="formD" action="<?= base_url('rektorat/save'); ?>" method="POST" enctype="multipart/form-data">
-                    <input type="hidden" name="jumlah" id="jumlah" value="0">
-                    <?= session()->getFlashdata('status'); ?>	
-                        <div class="card">
+                        <form id="satuan" name="formD" action="<?= base_url('rektorat/save'); ?>" method="POST" enctype="multipart/form-data">
+                            <input type="hidden" name="jumlah" id="jumlah" value="0">
+                            <?= session()->getFlashdata('status'); ?>
+                            <div class="card">
                                 <div class="card-header">Tambah Rencana RKAT</div>
-                                
-                                <?php foreach ($pagu_rkat as $key => $value) : $id_pagu = $value['id_pagu'];?>
-                                <input type="hidden" class="form-control" id="id_pagu" value="<?= $id_pagu ?>" name="id_pagu" required>
-                                <input type="hidden" class="form-control" id="id_user" value="<?= $value['id_user'] ?>" name="id_user" required>
-                                <br>
-                                <div class="card-body">
-                                    <input type="hidden" class="form-control" id="id_tahun" value="<?= $tahunAkademik['id_tahun'] ?>" name="id_tahun" required>
-                                <div class="form-inline">
-                                    <label class="mb-2 mr-sm-2" for="exampleFormControlSelect1" style="width: 150px;">Tahun Akademik</label>
-                                    <input type="text" class="form-control mb-2 mr-sm-2" name="tahunAkademik" id="tahunAkademik" value="<?= $tahunAkademik['tahunAkademik'] ?>" disabled>
-                                                            
-                                </div>
-                                    <div class="form-inline" style="margin-bottom:20px;">
-                                        <label for="prodiunit" class="mb-2 mr-sm-2" style="width: 150px;">Program Studi/Unit</label>
-                                        <input type="text" class="form-control mb-2 mr-sm-2" id="prodiunit" value="<?= $value['nama_prodi'] ?>" name="prodiunit"required disabled>
-                                        <label for="pagu" class="mb-2 mr-sm-2">Jumlah Pagu</label>
-                                        <input type="text" class="form-control mb-2 mr-sm-2" id= "jumlah_pagu" name="jumlah_pagu" value="RP. <?= $value['jumlah_pagu'] ?>" required disabled>
-                                    </div>
+
+                                <?php foreach ($pagu_rkat as $key => $value) : $id_pagu = $value['id_pagu']; ?>
+                                    <input type="hidden" class="form-control" id="id_pagu" value="<?= $id_pagu ?>" name="id_pagu" required>
+                                    <input type="hidden" class="form-control" id="id_user" value="<?= $value['id_user'] ?>" name="id_user" required>
+                                    <br>
+                                    <div class="card-body">
+                                        <input type="hidden" class="form-control" id="id_tahun" value="<?= $tahunAkademik['id_tahun'] ?>" name="id_tahun" required>
+                                        <div class="form-inline">
+                                            <label class="mb-2 mr-sm-2" for="exampleFormControlSelect1" style="width: 150px;">Tahun Akademik</label>
+                                            <input type="text" class="form-control mb-2 mr-sm-2" name="tahunAkademik" id="tahunAkademik" value="<?= $tahunAkademik['tahunAkademik'] ?>" disabled>
+
+                                        </div>
+                                        <div class="form-inline" style="margin-bottom:20px;">
+                                            <label for="prodiunit" class="mb-2 mr-sm-2" style="width: 150px;">Program Studi/Unit</label>
+                                            <input type="text" class="form-control mb-2 mr-sm-2" id="prodiunit" value="<?= $value['nama_prodi'] ?>" name="prodiunit" required disabled>
+                                            <label for="pagu" class="mb-2 mr-sm-2">Jumlah Pagu</label>
+                                            <input type="text" class="form-control mb-2 mr-sm-2" id="jumlah_pagu" name="jumlah_pagu" value="RP. <?= $value['jumlah_pagu'] ?>" required disabled>
+                                        </div>
                                     <?php endforeach; ?>
                                     <table class="table table-borded table-responsive table-striped">
                                         <thead class="table-dark">
@@ -174,7 +175,7 @@
                                         </thead>
                                         <tbody id="tbody2">
                                             <tr>
-                                                <td><input name="chk_a[]" type="checkbox" class="checkall_a" value=""/></td>
+                                                <td><input name="chk_a[]" type="checkbox" class="checkall_a" value="" /></td>
                                                 <td>
                                                     <select class="form-control form-control-sm" id="kategori" name="kategori[]" required>
                                                         <option value="" disabled selected>Kategori</option>
@@ -183,21 +184,21 @@
                                                         <option value="INV">Investasi</option>
                                                     </select>
                                                     <select class="form-control form-control-sm" id="kpi" name="kpi[]" required>
-                                                            <option value="" disabled selected>Pilih Prodi/Unit</option>
-                                                            <?php foreach ($kpi as $reading) : ?>
+                                                        <option value="" disabled selected>Pilih Prodi/Unit</option>
+                                                        <?php foreach ($kpi as $reading) : ?>
                                                             <option value="<?= $reading['idkpi']; ?>"><?= $reading['nama_kpi']; ?></option>
-                                                            <?php endforeach; ?>
+                                                        <?php endforeach; ?>
                                                     </select>
                                                     <input type="text" class="form-control form-control-sm" id="butir" placeholder="Butir" name="butir[]" required>
                                                 </td>
                                                 <td>
                                                     <input type="text" class="form-control form-control-sm" id="no_kegiatan" placeholder="No Kegiatan" name="no_kegiatan[]" required>
-                                                
+
                                                     <input type="text" class="form-control form-control-sm" id="indikator" placeholder="Indikator" name="indikator[]" required>
                                                 </td>
                                                 <td>
                                                     <input type="text" class="form-control form-control-sm" id="target" placeholder="Masukan Target" name="target[]" required>
-                                                
+
                                                     <input type="text" class="form-control form-control-sm" id="nama_kegiatan" placeholder="Nama Kegiatan" name="nama_kegiatan[]" required>
                                                 </td>
                                                 <td>
@@ -208,11 +209,11 @@
                                                 </td>
                                                 <td>
                                                     <input type="text" class="form-control form-control-sm" id="total" name="total[]" placeholder="Rp. 0" readonly="readonly" required>
-                                                </td>	
-                                            </tr>								
+                                                </td>
+                                            </tr>
                                         </tbody>
                                         <tfoot>
-                                            <td><button type="button" class="btn btn-danger btn-sm" onclick="deleteRow('tbody2')"><i class="fa fa-minus"></i>Hapus Baris</button></th> 
+                                            <td><button type="button" class="btn btn-danger btn-sm" onclick="deleteRow('tbody2')"><i class="fa fa-minus"></i>Hapus Baris</button></th>
                                             <td><button class="btn btn-success btn-sm" onclick="addRow('tbody2')" id="BarisBaru"><i class="fa fa-plus"></i> Baris Baru</button></td>
                                             <td></td>
                                             <td>Total Keseluruhan</td>
@@ -221,169 +222,171 @@
                                             <td><input type="text" class="form-control" style="width: 150px;" id="pagu3" name="pagu" value="RP. 0" required disabled></td>
                                         </tfoot>
                                     </table>
-                                </div>
-                                <div class="card-footer" align="center">
-                                <button type="submit" class="btn btn-primary" id="btnJumlah" value="Tambah Data">Tambah Data</button>
-                                <span id="textError"></span>
-                                </div>
+                                    </div>
+                                    <div class="card-footer" align="center">
+                                        <button type="submit" class="btn btn-primary" id="btnJumlah" value="Tambah Data">Tambah Data</button>
+                                        <span id="textError"></span>
+                                    </div>
                             </div>
 
-                    </form>
+                        </form>
                     </div>
                 </div>
 
             </div>
 
 
-    </div>
-            <!-- End of Content Wrapper -->
-
         </div>
-        <!-- End of Page Wrapper -->
+        <!-- End of Content Wrapper -->
 
-        <!-- Scroll to Top Button-->
-        <a class="scroll-to-top rounded" href="#page-top">
-            <i class="fas fa-angle-up"></i>
-        </a>
-        <script>
-		function totalAnggaran1() {
-			var txtFirstNumberValue = document.getElementById('anggaranGanjil').value;
-			var txtSecondNumberValue = document.getElementById('anggaranGenap').value;
-			var result = parseInt(txtFirstNumberValue) + parseInt(txtSecondNumberValue);
-			if (!isNaN(result)) { document.getElementById('total').value = result; }
-			
+    </div>
+    <!-- End of Page Wrapper -->
 
-			var table = document.getElementById('tbody2');
-			let pagu1 = txtFirstNumberValue;
-			let pagu2 = txtSecondNumberValue;
-			let pagu3 = result;
-			document.getElementById('pagu1').value = pagu1;
-			document.getElementById('pagu2').value = pagu2;
-			document.getElementById('pagu3').value = pagu3;
-			
-			var buttonSend = document.getElementById('btnJumlah');
-			if (pagu3 > <?= $value['jumlah_pagu'] ?>) {
-				$('#pagu3').addClass('btn-danger');
-				buttonSend.disabled = true;
-				document.getElementById('textError').innerHTML = "Nilai Pagu yang anda masukkan melebihi Nilai Pagu yang anda miliki";
-			} else {
-				$('#pagu3').removeClass('btn-danger');
-				buttonSend.disabled = false;
-				document.getElementById('textError').innerHTML = "";
-			}
-			if (document.getElementById('anggaranGanjil1').value != null || document.getElementById('anggaranGenap1').value != null) {
-				for (let index = 1; index <= table.rows.length; index++) {
-				if (document.getElementById('anggaranGanjil'+index).value != null || document.getElementById('anggaranGenap'+index).value != null) {
-					var txtFirstNumberValue = document.getElementById('anggaranGanjil'+index).value;
-					var txtSecondNumberValue = document.getElementById('anggaranGenap'+index).value;
-					var result = parseInt(txtFirstNumberValue) + parseInt(txtSecondNumberValue);
-					if (!isNaN(result)) { document.getElementById('total'+index).value = result; }
-					pagu1 = parseInt(pagu1) + parseInt(document.getElementById('anggaranGanjil'+index).value)
-					document.getElementById('pagu1').value = pagu1;
-					console.log(anggaranGanjil1);
-					pagu2 = parseInt(pagu2) + parseInt(document.getElementById('anggaranGenap'+index).value)
-					document.getElementById('pagu2').value = pagu2;
-					pagu3 = parseInt(pagu3) + parseInt(document.getElementById('total'+index).value)
-					document.getElementById('pagu3').value = pagu3;
-				}
-				var buttonSend = document.getElementById('btnJumlah');
-				if (pagu3 > <?= $value['jumlah_pagu'] ?>) {
-					$('#pagu3').addClass('btn-danger');
-					buttonSend.disabled = true;
-					document.getElementById('textError').innerHTML = "Nilai Pagu yang anda masukkan melebihi Nilai Pagu yang anda miliki";
-				} else {
-					$('#pagu3').removeClass('btn-danger');
-					buttonSend.disabled = false;
-					document.getElementById('textError').innerHTML = "";
-				}
-				}
-			}
-		}
-	</script>
-	<script>
-		// JavaScript Document
-		function addRow(tableID) {
-			var table = document.getElementById(tableID);
-			//  console.log(table);
-			var rowCount = table.rows.length;
-			 console.log(rowCount);
-			var row = table.insertRow(rowCount);
-			//  console.log(row);
-			document.getElementById("jumlah").value = rowCount;
-			var colCount = table.rows[0].cells.length;
-			 //console.log(colCount);
-			for(var i=0; i<colCount; i++) {
-				var newcell = row.insertCell(i);
-				newcell.innerHTML = table.rows[0].cells[i].innerHTML;
-				var child = newcell.children;
-				for(var i2=0; i2<child.length; i2++) {
-					var test = newcell.children[i2].tagName;
-					// console.log(test)
-					switch(test) {
-						case "INPUT":
-							if(newcell.children[i2].type=='checkbox'){
-								newcell.children[i2].value = "";
-								newcell.children[i2].checked = false;
-							}else{
-								if (i2==4) {
-									newcell.children[i2].setAttribute("required","required");
-									newcell.children[i2].setAttribute("id","anggaranGanjil1");
-									newcell.children[i2].value = "";
-								}
-								else if (i2==5) {
-									newcell.children[i2].setAttribute("required","required");
-									newcell.children[i2].setAttribute("id","anggaranGenap1");
-									newcell.children[i2].value = "";
-								}
-								else {
-									newcell.children[i2].setAttribute("required","required");
-									var ambilID = newcell.children[i2].getAttribute('id');
-									newcell.children[i2].setAttribute("id",ambilID + rowCount);
-									newcell.children[i2].value = "";
-								}
-							}
-						break;
-						case "SELECT":
-							newcell.children[i2].value = "";
-						break;
-						default:
-						break;
-					}
-				}
-			}
-		}
-		function deleteRow(tableID){
-			var table = document.getElementById(tableID);
-			var rowCount = table.rows.length;
-			console.log(rowCount);
-			for(var i=0; i<rowCount; i++){
-				var row = table.rows[i];
-				var chkbox = row.cells[0].childNodes[0];
-				if (null != chkbox && true == chkbox.checked){
-					if (rowCount <= 1){
-						alert("Tidak dapat menghapus semua baris.");
-						break;
-					}
-					table.deleteRow(i);
-					rowCount--;
-					i--;
-				}
-			}
-			console.log(rowCount);
-			document.getElementById("jumlah").value = rowCount;
-		}
-		
-	</script>
-        <!-- Bootstrap core JavaScript-->
-        <script src="<?php echo base_url(); ?>/public/js/jquery.min.js"></script>
-        <script src="<?php echo base_url(); ?>/public/js/bootstrap.bundle.min.js"></script>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+    <script>
+        function totalAnggaran1() {
+            var txtFirstNumberValue = document.getElementById('anggaranGanjil').value;
+            var txtSecondNumberValue = document.getElementById('anggaranGenap').value;
+            var result = parseInt(txtFirstNumberValue) + parseInt(txtSecondNumberValue);
+            if (!isNaN(result)) {
+                document.getElementById('total').value = result;
+            }
 
-        <!-- Page level plugins -->
-        <script src="<?php echo base_url(); ?>/public/js/jquery.dataTables.min.js"></script>
-        <script src="<?php echo base_url(); ?>/public/js/dataTables.bootstrap4.min.js"></script>
 
-        <!-- Page level custom scripts -->
-        <script src="<?php echo base_url(); ?>/public/js/datatables-demo.js"></script>
+            var table = document.getElementById('tbody2');
+            let pagu1 = txtFirstNumberValue;
+            let pagu2 = txtSecondNumberValue;
+            let pagu3 = result;
+            document.getElementById('pagu1').value = pagu1;
+            document.getElementById('pagu2').value = pagu2;
+            document.getElementById('pagu3').value = pagu3;
+
+            var buttonSend = document.getElementById('btnJumlah');
+            if (pagu3 > <?= $value['jumlah_pagu'] ?>) {
+                $('#pagu3').addClass('btn-danger');
+                buttonSend.disabled = true;
+                document.getElementById('textError').innerHTML = "Nilai Pagu yang anda masukkan melebihi Nilai Pagu yang anda miliki";
+            } else {
+                $('#pagu3').removeClass('btn-danger');
+                buttonSend.disabled = false;
+                document.getElementById('textError').innerHTML = "";
+            }
+            if (document.getElementById('anggaranGanjil1').value != null || document.getElementById('anggaranGenap1').value != null) {
+                for (let index = 1; index <= table.rows.length; index++) {
+                    if (document.getElementById('anggaranGanjil' + index).value != null || document.getElementById('anggaranGenap' + index).value != null) {
+                        var txtFirstNumberValue = document.getElementById('anggaranGanjil' + index).value;
+                        var txtSecondNumberValue = document.getElementById('anggaranGenap' + index).value;
+                        var result = parseInt(txtFirstNumberValue) + parseInt(txtSecondNumberValue);
+                        if (!isNaN(result)) {
+                            document.getElementById('total' + index).value = result;
+                        }
+                        pagu1 = parseInt(pagu1) + parseInt(document.getElementById('anggaranGanjil' + index).value)
+                        document.getElementById('pagu1').value = pagu1;
+                        console.log(anggaranGanjil1);
+                        pagu2 = parseInt(pagu2) + parseInt(document.getElementById('anggaranGenap' + index).value)
+                        document.getElementById('pagu2').value = pagu2;
+                        pagu3 = parseInt(pagu3) + parseInt(document.getElementById('total' + index).value)
+                        document.getElementById('pagu3').value = pagu3;
+                    }
+                    var buttonSend = document.getElementById('btnJumlah');
+                    if (pagu3 > <?= $value['jumlah_pagu'] ?>) {
+                        $('#pagu3').addClass('btn-danger');
+                        buttonSend.disabled = true;
+                        document.getElementById('textError').innerHTML = "Nilai Pagu yang anda masukkan melebihi Nilai Pagu yang anda miliki";
+                    } else {
+                        $('#pagu3').removeClass('btn-danger');
+                        buttonSend.disabled = false;
+                        document.getElementById('textError').innerHTML = "";
+                    }
+                }
+            }
+        }
+    </script>
+    <script>
+        // JavaScript Document
+        function addRow(tableID) {
+            var table = document.getElementById(tableID);
+            //  console.log(table);
+            var rowCount = table.rows.length;
+            console.log(rowCount);
+            var row = table.insertRow(rowCount);
+            //  console.log(row);
+            document.getElementById("jumlah").value = rowCount;
+            var colCount = table.rows[0].cells.length;
+            //console.log(colCount);
+            for (var i = 0; i < colCount; i++) {
+                var newcell = row.insertCell(i);
+                newcell.innerHTML = table.rows[0].cells[i].innerHTML;
+                var child = newcell.children;
+                for (var i2 = 0; i2 < child.length; i2++) {
+                    var test = newcell.children[i2].tagName;
+                    // console.log(test)
+                    switch (test) {
+                        case "INPUT":
+                            if (newcell.children[i2].type == 'checkbox') {
+                                newcell.children[i2].value = "";
+                                newcell.children[i2].checked = false;
+                            } else {
+                                if (i2 == 4) {
+                                    newcell.children[i2].setAttribute("required", "required");
+                                    newcell.children[i2].setAttribute("id", "anggaranGanjil1");
+                                    newcell.children[i2].value = "";
+                                } else if (i2 == 5) {
+                                    newcell.children[i2].setAttribute("required", "required");
+                                    newcell.children[i2].setAttribute("id", "anggaranGenap1");
+                                    newcell.children[i2].value = "";
+                                } else {
+                                    newcell.children[i2].setAttribute("required", "required");
+                                    var ambilID = newcell.children[i2].getAttribute('id');
+                                    newcell.children[i2].setAttribute("id", ambilID + rowCount);
+                                    newcell.children[i2].value = "";
+                                }
+                            }
+                            break;
+                        case "SELECT":
+                            newcell.children[i2].value = "";
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+        }
+
+        function deleteRow(tableID) {
+            var table = document.getElementById(tableID);
+            var rowCount = table.rows.length;
+            console.log(rowCount);
+            for (var i = 0; i < rowCount; i++) {
+                var row = table.rows[i];
+                var chkbox = row.cells[0].childNodes[0];
+                if (null != chkbox && true == chkbox.checked) {
+                    if (rowCount <= 1) {
+                        alert("Tidak dapat menghapus semua baris.");
+                        break;
+                    }
+                    table.deleteRow(i);
+                    rowCount--;
+                    i--;
+                }
+            }
+            console.log(rowCount);
+            document.getElementById("jumlah").value = rowCount;
+        }
+    </script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="<?php echo base_url(); ?>/public/js/jquery.min.js"></script>
+    <script src="<?php echo base_url(); ?>/public/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="<?php echo base_url(); ?>/public/js/jquery.dataTables.min.js"></script>
+    <script src="<?php echo base_url(); ?>/public/js/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="<?php echo base_url(); ?>/public/js/datatables-demo.js"></script>
 
 </body>
 

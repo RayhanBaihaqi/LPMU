@@ -6,6 +6,7 @@ use App\Models\DataModel;
 use App\Models\DataKpiModel;
 use App\Models\DataKpiButirModel;
 use App\Models\DataCapaianKpiModel;
+use App\Models\usersModel;
 
 
 class Bpsdm extends BaseController
@@ -501,5 +502,41 @@ class Bpsdm extends BaseController
 
 
         return view('/bpsdm/GrafikCapaianUnit', $data);
+    }
+    public function form_ubahpass($id = null)
+    {
+        $model = new usersModel();
+        $username = session('username');
+        $data['user'] = $model->where('id', $id)->first();
+        return view('/bpsdm/FormUbahPass', $data);
+    }
+    public function ubahpwd()
+    {
+        $model = new usersModel();
+        $id = session('id');
+        //exit();
+        $data = [
+            'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
+        ];
+        $save = $model->update($id, $data);
+
+        if ($save) {
+            session()->setFlashdata('pesan', '
+		<div class="alert alert-success">
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			<strong>Berhasil!</strong> Password anda telah berubah.
+		</div>');
+        } else {
+            session()->setFlashdata('pesan', '
+		<div class="alert alert-danger">
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			<strong>Tidak berhasil!</strong> Password anda tidak berubah.
+		</div>');
+        }
+        //print_r($save);
+        //exit();
+
+
+        return redirect()->to(base_url('bpsdm/form_ubahpass'));
     }
 }
