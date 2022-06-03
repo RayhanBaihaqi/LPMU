@@ -212,7 +212,7 @@ class FontMetrics
         // Download the remote file
         [$protocol] = Helpers::explode_url($remoteFile);
         if (!$this->options->isRemoteEnabled() && ($protocol !== "" && $protocol !== "file://")) {
-            Helpers::record_warnings(E_user_WARNING, "Remote font resource $remoteFile referenced, but remote file download is disabled.", __FILE__, __LINE__);
+            Helpers::record_warnings(E_USER_WARNING, "Remote font resource $remoteFile referenced, but remote file download is disabled.", __FILE__, __LINE__);
             return false;
         }
         if ($protocol === "" || $protocol === "file://") {
@@ -230,13 +230,13 @@ class FontMetrics
                     }
                 }
                 if ($chrootValid !== true) {
-                    Helpers::record_warnings(E_user_WARNING, "Permission denied on $remoteFile. The file could not be found under the paths specified by Options::chroot.", __FILE__, __LINE__);
+                    Helpers::record_warnings(E_USER_WARNING, "Permission denied on $remoteFile. The file could not be found under the paths specified by Options::chroot.", __FILE__, __LINE__);
                     return false;
                 }
             }
 
             if (!$realfile) {
-                Helpers::record_warnings(E_user_WARNING, "File '$realfile' not found.", __FILE__, __LINE__);
+                Helpers::record_warnings(E_USER_WARNING, "File '$realfile' not found.", __FILE__, __LINE__);
                 return false;
             }
 

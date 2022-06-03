@@ -36,18 +36,18 @@ class Stylesheet
     const DEFAULT_STYLESHEET = "/lib/res/html.css";
 
     /**
-     * user agent stylesheet origin
+     * User agent stylesheet origin
      *
      * @var int
      */
     const ORIG_UA = 1;
 
     /**
-     * user normal stylesheet origin
+     * User normal stylesheet origin
      *
      * @var int
      */
-    const ORIG_user = 2;
+    const ORIG_USER = 2;
 
     /**
      * Author normal stylesheet origin
@@ -68,7 +68,7 @@ class Stylesheet
      */
     private static $_stylesheet_origins = [
         self::ORIG_UA => 0x00000000, // user agent declarations
-        self::ORIG_user => 0x10000000, // user normal declarations
+        self::ORIG_USER => 0x10000000, // user normal declarations
         self::ORIG_AUTHOR => 0x30000000, // author normal declarations
     ];
 
@@ -347,7 +347,7 @@ class Stylesheet
             $options = $this->_dompdf->getOptions();
             // Download the remote file
             if (!$options->isRemoteEnabled() && ($this->_protocol !== "" && $this->_protocol !== "file://")) {
-                Helpers::record_warnings(E_user_WARNING, "Remote CSS resource '$file' referenced, but remote file download is disabled.", __FILE__, __LINE__);
+                Helpers::record_warnings(E_USER_WARNING, "Remote CSS resource '$file' referenced, but remote file download is disabled.", __FILE__, __LINE__);
                 return;
             }
             if ($this->_protocol === "" || $this->_protocol === "file://") {
@@ -365,13 +365,13 @@ class Stylesheet
                         }
                     }
                     if ($chrootValid !== true) {
-                        Helpers::record_warnings(E_user_WARNING, "Permission denied on $file. The file could not be found under the paths specified by Options::chroot.", __FILE__, __LINE__);
+                        Helpers::record_warnings(E_USER_WARNING, "Permission denied on $file. The file could not be found under the paths specified by Options::chroot.", __FILE__, __LINE__);
                         return;
                     }
                 }
 
                 if (!$realfile) {
-                    Helpers::record_warnings(E_user_WARNING, "File '$realfile' not found.", __FILE__, __LINE__);
+                    Helpers::record_warnings(E_USER_WARNING, "File '$realfile' not found.", __FILE__, __LINE__);
                     return;
                 }
 
@@ -394,7 +394,7 @@ class Stylesheet
             }
 
             if (!$good_mime_type || $css === null) {
-                Helpers::record_warnings(E_user_WARNING, "Unable to load css file $file", __FILE__, __LINE__);
+                Helpers::record_warnings(E_USER_WARNING, "Unable to load css file $file", __FILE__, __LINE__);
                 return;
             }
         }
@@ -408,7 +408,7 @@ class Stylesheet
      * @param string $selector
      * @param int $origin :
      *    - Stylesheet::ORIG_UA: user agent style sheet
-     *    - Stylesheet::ORIG_user: user style sheet
+     *    - Stylesheet::ORIG_USER: user style sheet
      *    - Stylesheet::ORIG_AUTHOR: author style sheet
      *
      * @return int
@@ -960,7 +960,7 @@ class Stylesheet
     function apply_styles(FrameTree $tree)
     {
         // Use XPath to select nodes.  This would be easier if we could attach
-        // Frame objects directly to DOMNodes using the setuserData() method, but
+        // Frame objects directly to DOMNodes using the setUserData() method, but
         // we can't do that just yet.  Instead, we set a _node attribute_ in
         // Frame->set_id() and use that as a handle on the Frame object via
         // FrameTree::$_registry.
@@ -989,7 +989,7 @@ class Stylesheet
                 //TODO: If we use a context node can we remove the leading dot?
                 $nodes = @$xp->query('.' . $query["query"]);
                 if ($nodes === false) {
-                    Helpers::record_warnings(E_user_WARNING, "The CSS selector '$selector' is not valid", __FILE__, __LINE__);
+                    Helpers::record_warnings(E_USER_WARNING, "The CSS selector '$selector' is not valid", __FILE__, __LINE__);
                     continue;
                 }
 
@@ -1039,7 +1039,7 @@ class Stylesheet
                 // Retrieve the nodes
                 $nodes = @$xp->query($query["query"]);
                 if ($nodes === false) {
-                    Helpers::record_warnings(E_user_WARNING, "The CSS selector '$selector' is not valid", __FILE__, __LINE__);
+                    Helpers::record_warnings(E_USER_WARNING, "The CSS selector '$selector' is not valid", __FILE__, __LINE__);
                     continue;
                 }
 
@@ -1194,7 +1194,7 @@ class Stylesheet
                                         }
                                         break;
                                     default:
-                                        Helpers::record_warnings(E_user_WARNING, "Unknown media query: $media_query_feature", __FILE__, __LINE__);
+                                        Helpers::record_warnings(E_USER_WARNING, "Unknown media query: $media_query_feature", __FILE__, __LINE__);
                                         break;
                                 }
                             }
