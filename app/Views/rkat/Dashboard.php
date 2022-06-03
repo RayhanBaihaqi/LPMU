@@ -213,9 +213,7 @@
                     <?php echo $rows->minPkOps?> 
                 <?php endforeach;?><br>
                 Rata-Rata Serap: 
-                <?php foreach ($avgPkOps as $rows) : ?>
-                    <?php echo $rows->avgPkOps?> 
-                <?php endforeach;?><br>
+                <?php foreach ($avgPkOps as $rows) : ?><?php echo $rows->avgPkOps?> <?php endforeach;?><br>
                 <hr>
                 Kesimpulan INV : <br>
                 Serap Terendah : 
