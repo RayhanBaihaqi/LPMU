@@ -49,20 +49,20 @@
 			<hr class="sidebar-divider">
 
 			<!-- Heading -->
-			<li class="nav-item">
+			<li class="nav-item active">
 				<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
 					<i class="fas fa-fw fa-cog"></i>
 					<span>RKAT</span>
 				</a>
 				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-					<div class="bg-white py-2 collapse-inner rounded">
+				<div class="bg-white py-2 collapse-inner rounded">
 						<a class="collapse-item" href="<?= base_url('admin/create') ?>">Tambah Rencana RKAT</a>
 						<a class="collapse-item" href="<?= base_url('admin/listRkatProdi') ?>">Lihat Data Prodi</a>
 						<a class="collapse-item" href="<?= base_url('admin/listRkatUnit') ?>">Lihat Data Unit</a>
-						<a class="collapse-item" href="<?= base_url('pagurkat/create') ?>">Buat Pagu</a>
-						<a class="collapse-item" href="<?= base_url('pagurkat/index') ?>">List Data Pagu</a>
+						<a class="collapse-item active" href="<?= base_url('pagurkat/index') ?>">List Data Pagu</a>
 						<a class="collapse-item" href="<?= base_url('tahunakademik/indextahun') ?>">Tahun Akademik</a>
-						<a class="collapse-item" href="<?= base_url('admin/grafikSerap') ?>">Grafik Capaian Serap</a>
+						<a class="collapse-item" href="<?= base_url('admin/grafikSerapProdi') ?>">Grafik Capaian Prodi</a>
+                        <a class="collapse-item" href="<?= base_url('admin/grafikSerapUnit') ?>">Grafik Capaian Unit</a>
 					</div>
 				</div>
 			</li>
@@ -145,6 +145,10 @@
 
 					<!-- DataTales Example -->
 					<div class="card shadow mb-4">
+						<div class="card-header py-3">
+							<a href="<?= base_url('pagurkat/create') ?>" class="btn btn-success"><span>Tambah
+									Data Pagu</span></a>
+						</div>
 						<div class="card-body">
 							<div class="table-responsive">
 								<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
