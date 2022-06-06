@@ -247,7 +247,7 @@ class Rektorat extends BaseController
         $model = new PersenSerapModel();
         $username = session('username');
         $data = [
-            
+
             'tahun' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('username', $username)->findAll(),
             'tahunAktif' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('username', $username)->where('aktif', '1')->findAll(),
             'pagu_rkat' => $this->DetailRkatModel->tampilDataSetRKAT($username),
@@ -354,7 +354,7 @@ class Rektorat extends BaseController
             'dataUnitTik1920' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'unit')->where('id_tahun', '1')->where('nama_prodi', 'Teknologi Informasi dan Komunikasi')->findAll(),
             'dataUnitTik2021' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'unit')->where('id_tahun', '2')->where('nama_prodi', 'Teknologi Informasi dan Komunikasi')->findAll(),
             'dataUnitTik2122' => $model->join('user', 'user.id=persen_serap.id_user')->where('level', 'unit')->where('id_tahun', '3')->where('nama_prodi', 'Teknologi Informasi dan Komunikasi')->findAll(),
-            
+
         ];
         return view('rektorat/GrafikSerapUnit', $data);
     }
@@ -709,5 +709,41 @@ class Rektorat extends BaseController
 
 
         return view('/rektorat/GrafikCapaianUnit', $data);
+    }
+    public function form_ubahpass($id = null)
+    {
+        $model = new usersModel();
+        $username = session('username');
+        $data['user'] = $model->where('id', $id)->first();
+        return view('/rektorat/FormUbahPass', $data);
+    }
+    public function ubahpwd()
+    {
+        $model = new usersModel();
+        $id = session('id');
+        //exit();
+        $data = [
+            'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
+        ];
+        $save = $model->update($id, $data);
+
+        if ($save) {
+            session()->setFlashdata('pesan', '
+		<div class="alert alert-success">
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			<strong>Berhasil!</strong> Password anda telah berubah.
+		</div>');
+        } else {
+            session()->setFlashdata('pesan', '
+		<div class="alert alert-danger">
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			<strong>Tidak berhasil!</strong> Password anda tidak berubah.
+		</div>');
+        }
+        //print_r($save);
+        //exit();
+
+
+        return redirect()->to(base_url('rektorat/form_ubahpass'));
     }
 }

@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Form Tambah Butir KPI</title>
+    <title>Form Ubah Password</title>
 
     <!-- Custom fonts for this template-->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
@@ -18,6 +18,7 @@
     <!-- Custom styles for this template-->
     <link href="<?php echo base_url(); ?>/public/css/style_admin.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>/public/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+
 
 </head>
 
@@ -32,15 +33,15 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
                 <img src="<?php echo base_url(); ?>/public/img/monev_logo_putih.png" alt="Logo" style="width: 70px; height: 70px;">
-                <div class="sidebar-brand-text mx-3">Admin</div>
+                <div class="sidebar-brand-text mx-3">BPSDM</div>
             </a>
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link " href="<?php echo site_url(); ?>bpsdm">
+            <li class="nav-item">
+                <a class="nav-link " href="<?= base_url('/bpsdm') ?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -56,11 +57,14 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="<?= base_url('rkat/createbyadmin') ?>">Tambah RKAT</a>
-                        <a class="collapse-item" href="<?= base_url('rkat/indexbyadmin') ?>">Lihat Data</a>
-                        <a class="collapse-item" href="<?= base_url('pagurkat/create') ?>">Buat Pagu</a>
-                        <a class="collapse-item" href="<?= base_url('pagurkat/index') ?>">List Pagu</a>
-                        <a class="collapse-item" href="<?= base_url('tahunakademik/indextahun') ?>">Tahun Akademik</a>
+                        <a class="collapse-item" href="<?= base_url('/bpsdm/inputRencana') ?>">Input Rencana Anggaran</a>
+                        <a class="collapse-item" href="<?= base_url('/bpsdm/inputRealisasi') ?>">Input Realisasi Anggaran</a>
+                        <a class="collapse-item" href="<?= base_url('/bpsdm/listRkatRektorat') ?>">Daftar Data RKAT Rektorat</a>
+                        <a class="collapse-item" href="<?= base_url('/bpsdm/rincian') ?>">Rincian Rkat</a>
+                        <a class="collapse-item" href="<?= base_url('/bpsdm/listRkatProdi') ?>">Daftar Data RKAT Prodi</a>
+                        <a class="collapse-item" href="<?= base_url('/bpsdm/listRkatUnit') ?>">Daftar Data RKAT Unit</a>
+                        <a class="collapse-item" href="<?= base_url('/bpsdm/grafikSerapProdi') ?>">Grafik Capaian Prodi</a>
+                        <a class="collapse-item" href="<?= base_url('/bpsdm/grafikSerapUnit') ?>">Grafik Capaian Unit</a>
                     </div>
                 </div>
             </li>
@@ -75,9 +79,7 @@
                     <span>KPI</span></a>
                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="<?= base_url('/bpsdm/listkpi') ?>">Lihat KPI</a>
-                        <a class="collapse-item" href="<?= base_url('/bpsdm/listbutirkpi') ?>">Lihat Butir KPI</a>
-                        <a class="collapse-item" href="<?= base_url('/bpsdm/listcapaiankpi') ?>">Lihat Capaian</a>
+
                         <a class="collapse-item" href="<?= base_url('/bpsdm/tabelcapaiankpi') ?>">Lihat Data Tabel</a>
                         <a class="collapse-item" href="<?= base_url('/bpsdm/grafikcapaian') ?>">Lihat Data Grafik</a>
                     </div>
@@ -130,70 +132,68 @@
                 <!-- End of Topbar -->
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
+                    <?= session()->getFlashdata('pesan'); ?>
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-2 text-gray-800">Form Ubah Password</h1>
+
+
+
+
                     <div class="card shadow mb-4">
                         <div class="card-body">
-                            <h2>Tambah Butir KPI</h2>
-                            <?= form_open('bpsdm/simpanbutirkpi') ?>
-                            <div class="form-group">
-                                <label for="idkpi">ID KPI</label>
-                                <select required class="form-control" id="idkpi" name="idkpi">
-                                    <option selected disabled>Pilih Kategori KPI</option>
-                                    <option value="1">1. Visi, Misi, Tujuan dan Strategi</option>
-                                    <option value="2">2. Tata Pamong, Tata Kelola dan Kerjasama</option>
-                                    <option value="3">3. Mahasiswa</option>
-                                    <option value="4">4. Sumber Daya Manusia </option>
-                                    <option value="5">5. Keuangan, Sarana dan Prasarana</option>
-                                    <option value="6">6. Pendidikan</option>
-                                    <option value="7">7. Penelitian</option>
-                                    <option value="8">8 Pengabdian Kepada Masyarakat</option>
-                                    <option value="9">9. Luaran dan Capaian Tridharma</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="angka_butir">Angka butir</label>
-                                <input type="text" class="form-control" id="angka_butir" name="angka_butir" placeholder="Masukkan angka butir KPI" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="nama_butir">Nama butir</label>
-                                <input type="text" class="form-control" id="nama_butir" name="nama_butir" placeholder="Masukkan nama butir KPI" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="unit_utama">Unit utama</label>
-                                <input type="text" class="form-control" id="unit_utama" name="unit_utama" placeholder="Masukkan unit utama KPI">
-                            </div>
-                            <div class="form-group">
-                                <label for="unit_pendukung">Unit pendukung</label>
-                                <input type="text" class="form-control" id="unit_pendukung" name="unit_pendukung" placeholder="Masukkan unit pendukung KPI">
-                            </div>
-                            <div class="form-group">
-                                <label for="target">Target</label>
-                                <input type="text" class="form-control" id="target" name="target" placeholder="Masukkan target KPI">
-                            </div>
-                            <div class="form-group">
-                                <label for="kategori">Kategori</label>
-                                <select required class="form-control" id="kategori" name="kategori">
-                                    <option selected disabled>Pilih Kategori KPI</option>
-                                    <option value="OPS">OPS</option>
-                                    <option value="PK">PK</option>
-                                    <option value="INV">INV</option>
+                            <div class="table-responsive">
+                                <form action="<?= base_url('bpsdm/ubahpwd'); ?>" method="POST" enctype="multipart/form-data">
+                                    <input required type="hidden" name="id" value="<?php
+                                                                                    $id = session('id');
 
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="kegiatan">Kegiatan</label>
-                                <input type="text" class="form-control" id="kegiatan" name="kegiatan" placeholder="Masukkan kegiatan">
-                            </div>
-                            <div class="form-group">
-                                <label for="bobot">Bobot</label>
-                                <input type="number" step=0.01 class="form-control" id="bobot" name="bobot" placeholder="Masukkan bobot">
-                            </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                            <?= form_close(); ?>
+                                                                                    ?>">
 
+                                    <div class="form-group">
+                                        <label for="username">username</label>
+                                        <input required type="text" name="username" class="form-control" id="username" placeholder="Masukkan username" value="<?php
+                                                                                                                                                                $username = session('username');
+                                                                                                                                                                echo "$username"
+                                                                                                                                                                ?>" disabled>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password">Password Baru</label>
+                                        <input type="password" class="form-control" name="password" placeholder="Masukkan password baru" id='password' required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="nama_prodi">Nama Prodi/Unit</label>
+                                        <input required type="text" name="nama_prodi" class="form-control" id="nama_prodi" name='nama_prodi' placeholder="Masukkan Nama Prodi/Unit" value="<?php
+                                                                                                                                                                                            $nama_prodi = session('nama_prodi');
+                                                                                                                                                                                            echo "$nama_prodi"
+                                                                                                                                                                                            ?>" disabled>
+                                    </div>
+                                    <div class=" form-group">
+                                        <label for="level">Kategori user</label>
+                                        <select required class="form-control" id="level" name="level" disabled>
+                                            <option value="<?php
+                                                            $level = session('level');
+
+                                                            ?>"><?php echo "$level" ?></option>
+                                            <option value="prodi">Prodi</option>
+                                            <option value="unit">Unit</option>
+                                            <option value="rektorat">Rektorat</option>
+                                            <option value="admin">Admin</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" id="tambah" class="btn btn-success">edit</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
-
                     </div>
+
                 </div>
+
+
+
+
+
+
             </div>
             <!-- End of Content Wrapper -->
 
@@ -217,5 +217,26 @@
         <script src="<?php echo base_url(); ?>/public/js/datatables-demo.js"></script>
 
 </body>
+<!-- jQuery -->
+<script src="<?php echo base_url(); ?>/public/plugins/jquery/jquery.min.js"></script>
+<!-- ChartJS -->
+<script src="<?php echo base_url(); ?>/public/plugins/chart.js/Chart.min.js"></script>
+<!-- AdminLTE App -->
+<script src="<?php echo base_url(); ?>/public/dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+
+<!-- Page level custom scripts -->
+<script src="<?php echo base_url(); ?>/public/dist/js/demo.js"></script>
+<script src="<?php echo base_url(); ?>/public/chart/apexcharts.min.js"></script>
+<script src="<?php echo base_url(); ?>/public/chart/dashboard.js"></script>
+<script src="<?php echo base_url(); ?>/public/chart/jquery.knob.min.js"></script>
+<script src="<?php echo base_url(); ?>/public/chart/knob-chart-setting.js"></script>
+<script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+<script>
+    $(window).load(function() {
+        $(".pre-loader").fadeOut("slow");
+    });
+</script>
+
 
 </html>
