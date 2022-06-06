@@ -6,11 +6,25 @@ use App\Models\DataModel;
 use App\Models\DataKpiModel;
 use App\Models\DataKpiButirModel;
 use App\Models\DataCapaianKpiModel;
+use App\Models\DetailRkatModel;
+use App\Models\TahunAkademikModel;
+use App\Models\PersenSerapModel;
+use App\Models\PaguRkatModel;
+use App\Models\ModelKpiAdmin;
+use App\Models\usersModel;
 
 
 class Bpsdm extends BaseController
 {
-
+    public function __construct()
+    {
+        $this->DetailRkatModel = new DetailRkatModel();
+        $this->TahunAkademikModel = new TahunAkademikModel();
+        $this->PersenSerapModel = new PersenSerapModel();
+        $this->PaguModel = new PaguRkatModel();
+        $this->usersModel = new usersModel();
+        $this->ModelKpiAdmin = new ModelKpiAdmin();
+    }
     public function index()
     {
         return view('bpsdm/Dashboard');
@@ -24,6 +38,148 @@ class Bpsdm extends BaseController
         echo view('/bpsdm/ListKpi', $data);
     }
 
+    //Proses RKAT
+    public function inputRencana()
+    {
+        $model = new DetailRkatModel();
+        $username = session('username');
+        $data = [
+            'pagu_rkat' => $this->DetailRkatModel->tampilDataSetRKAT($username),
+            'kpi' => $this->ModelKpiAdmin->findAll(),
+            'tahunAkademik' => $this->TahunAkademikModel->where('aktif', '1')->first(),
+        ];
+
+        return view('/bpsdm/inputRencana', $data);
+    }
+    public function save()
+    {
+
+        $jumlah = $this->request->getVar('jumlah');
+        $kategori = $this->request->getVar('kategori');
+        $anggaranGenap = $this->request->getVar('anggaranGenap');
+        $anggaranGanjil = $this->request->getVar('anggaranGanjil');
+        $no_kegiatan = $this->request->getVar('no_kegiatan');
+        $indikator = $this->request->getVar('indikator');
+        $kpi = $this->request->getVar('kpi');
+        $butir = $this->request->getVar('butir');
+        $target = $this->request->getVar('target');
+        $nama_kegiatan = $this->request->getVar('nama_kegiatan');
+        $total = $this->request->getVar('total');
+        $id_pagu = $this->request->getVar('id_pagu');
+        $id_tahun = $this->request->getVar('id_tahun');
+        $id_user = $this->request->getVar('id_user');
+        //print_r($id_set); die();
+        for ($i = 0; $i <= $jumlah; $i++) {
+            $this->DetailRkatModel->insert([
+                'kategori' => $kategori[$i],
+                'anggaranGenap' => $anggaranGenap[$i],
+                'anggaranGanjil' => $anggaranGanjil[$i],
+                'no_kegiatan' => $no_kegiatan[$i],
+                'indikator' => $indikator[$i],
+                'kpi' => $kpi[$i],
+                'butir' => $butir[$i],
+                'target' => $target[$i],
+                'nama_kegiatan' => $nama_kegiatan[$i],
+                'total' => $total[$i],
+                'id_tahun' => $id_tahun,
+                'id_pagu' => $id_pagu,
+                'id_user' => $id_user,
+            ]);
+        }
+        return redirect()->to(base_url('bpsdm/inputRencana'))->with('status', '
+           <div class="alert alert-success">
+               <button type="button" class="close" data-dismiss="alert">&times;</button>
+               <strong>Berhasil!</strong> Data Anda Berhasil Terinput.
+           </div>
+        ');
+    }
+
+    public function inputRealisasi()
+    {
+        $model = new DetailRkatModel();
+        $username = session('username');
+        $data = [
+            // 'detail_rkat2' => $model->join('set_rkat', 'set_rkat.id_setrkat = detail_rkat2.id_set')->join('user', 'user.id=set_rkat.id_user')->where('username',$username)->findAll(),
+            'tahunAkademik' => $this->TahunAkademikModel->where('aktif', '1')->first(),
+            'pagu_rkat' => $this->DetailRkatModel->tampilDataSetRKAT($username),
+            'tahunAkademik2' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=detail_rkat2.id_tahun')->join('pagu_rkat', 'pagu_rkat.id_pagu=detail_rkat2.id_pagu')->join('user', 'user.id=detail_rkat2.id_user')->where('username', $username)->where('aktif', '1')->findAll(),
+            // 'count_detail_rkat2' => $model->join('set_rkat', 'set_rkat.id_setrkat = detail_rkat2.id_set')->join('user', 'user.id=set_rkat.id_user')->where('username',$username)->countAllResults()
+        ];
+        return view('bpsdm/inputRealisasi', $data);
+    }
+    public function update()
+    {
+
+        $model = new DetailRkatModel();
+        $modelPersen = new PersenSerapModel();
+        $id = $_POST['id'];
+        $serapGanjil = $_POST['serapGanjil'];
+        $serapGenap = $_POST['serapGenap'];
+
+        // $bukti = $_POST['bukti'];
+
+        foreach ($id as $key => $n) {
+
+            $id = $n;
+            $data = [
+                'serapGanjil' => $serapGanjil[$key],
+                'serapGenap' => $serapGenap[$key],
+
+            ];
+
+            $save = $model->update($id, $data);
+        }
+        return redirect()->to(base_url('bpsdm/inputRealisasi'));
+    }
+
+    public function rincian()
+    {
+        $model = new DetailRkatModel();
+        $username = session('username');
+
+        $data = [
+            'detail_rkat2' => $this->DetailRkatModel->gabung($username),
+            // 'pk' => $this->DetailRkatModel->jumlahPk(),
+            // 'ops' => $this->DetailRkatModel->jumlahOps(),
+            // 'inv' => $this->DetailRkatModel->jumlahInv(),
+            'set_rkat' => $this->DetailRkatModel->tampilDataSetRKAT($username),
+            'pk' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=detail_rkat2.id_tahun')->where('aktif', '1')->join('user', 'user.id=detail_rkat2.id_user')->where('username', $username)->where('kategori', 'PK')->findAll(),
+            'ops' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=detail_rkat2.id_tahun')->where('aktif', '1')->join('user', 'user.id=detail_rkat2.id_user')->where('username', $username)->where('kategori', 'OPS')->findAll(),
+            'inv' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=detail_rkat2.id_tahun')->where('aktif', '1')->join('user', 'user.id=detail_rkat2.id_user')->where('username', $username)->where('kategori', 'INV')->findAll(),
+            'tahunAkademik' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=detail_rkat2.id_tahun')->join('pagu_rkat', 'pagu_rkat.id_pagu=detail_rkat2.id_pagu')->join('user', 'user.id=pagu_rkat.id_user')->where('username', $username)->where('aktif', '1')->findAll(),
+        ];
+        // $jumPk = $data["jumPk"];
+        // var_dump($data);die();
+        return view('bpsdm/RincianRkatbpsdm', $data);
+    }
+    public function saveRincian()
+    {
+        $model = new PersenSerapModel();
+        $jumlah = $this->request->getVar('jumlah');
+        $id_tahun = $this->request->getVar('id_tahun');
+        $id_user = $this->request->getVar('id_user');
+        $persenPk = $this->request->getVar('persenPk');
+        $persenOps = $this->request->getVar('persenOps');
+        $persenInv = $this->request->getVar('persenInv');
+        $persenPkOps = $this->request->getVar('persenPkOps');
+        // print_r($persenPk); die();
+        for ($i = 0; $i <= $jumlah; $i++) {
+            $this->PersenSerapModel->insert([
+                'id_tahun' => $id_tahun,
+                'id_user' => $id_user,
+                'persenPk' => $persenPk,
+                'persenOps' => $persenOps,
+                'persenInv' => $persenInv,
+                'persenPkOps' => $persenPkOps,
+            ]);
+        }
+        return redirect()->to(base_url('bpsdm/rincian'))->with('statusSimpan', '
+           <div class="alert alert-success">
+               <button type="button" class="close" data-dismiss="alert">&times;</button>
+               <strong>Berhasil!</strong> Data Anda Berhasil Terinput.
+           </div>
+        ');
+    }
 
     //proses kpi
     public function form_tambahkpi()

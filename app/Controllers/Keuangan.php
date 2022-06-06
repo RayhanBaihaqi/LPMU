@@ -34,6 +34,21 @@ class Keuangan extends BaseController
         $model = new PersenSerapModel();
         $username = session('username');
         $data = [
+            'avgPkOpsSeluruh1920' => $model->avgPkOpsSeluruh1920()->getResult(),
+            'avgPkOpsSeluruh2021' => $model->avgPkOpsSeluruh2021()->getResult(),
+            'avgPkOpsSeluruh2122' => $model->avgPkOpsSeluruh2122()->getResult(),
+            'avgInvSeluruh1920' => $model->avgInvSeluruh1920()->getResult(),
+            'avgInvSeluruh2021' => $model->avgInvSeluruh2021()->getResult(),
+            'avgInvSeluruh2122' => $model->avgInvSeluruh2122()->getResult(),
+
+            'avgPkOpsSeluruhUnit1920' => $model->avgPkOpsSeluruhUnit1920()->getResult(),
+            'avgPkOpsSeluruhUnit2021' => $model->avgPkOpsSeluruhUnit2021()->getResult(),
+            'avgPkOpsSeluruhUnit2122' => $model->avgPkOpsSeluruhUnit2122()->getResult(),
+            'avgInvSeluruhUnit1920' => $model->avgInvSeluruhUnit1920()->getResult(),
+            'avgInvSeluruhUnit2021' => $model->avgInvSeluruhUnit2021()->getResult(),
+            'avgInvSeluruhUnit2122' => $model->avgInvSeluruhUnit2122()->getResult(),
+
+            'avgInv' => $model->avgInv($username)->getResult(),
             'tahun' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('username', $username)->findAll(),
             'tahunAktif' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('username', $username)->where('aktif', '1')->findAll(),
             'seluruhDatauser' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->findAll(),

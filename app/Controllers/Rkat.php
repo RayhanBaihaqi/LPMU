@@ -274,7 +274,7 @@ class Rkat extends BaseController
 			<strong>Tidak berhasil!</strong> Password anda tidak berubah.
 		</div>');
         }
-        return redirect()->to(base_url('kpi/form_ubahpass'));
+        return redirect()->to(base_url('rkat/form_ubahpass'));
     }
 
     //Grafik

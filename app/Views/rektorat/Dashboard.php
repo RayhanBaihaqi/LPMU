@@ -240,7 +240,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="row" style="margin: 15px auto;">
+					<!-- <div class="row" style="margin: 15px auto;">
 						<div class="col-md-12">
 							<div class="card-box pd-30 height-100-p">
 								<div class="card ">
@@ -251,7 +251,7 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> -->
                     <div class="row" style="margin: 15px auto;">
 						<div class="col-md-6">
 							<div class="card-box pd-30 height-100-p">
