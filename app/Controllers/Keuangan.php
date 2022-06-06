@@ -89,6 +89,24 @@ class Keuangan extends BaseController
         ]; 
         return view('keuangan/ListData', $data);
     }
+    public function listRkatProdi()
+    {
+        $model = new DetailRkatModel();
+        $data = [
+            'detail_rkat' => $this->DetailRkatModel->gabungRektor(),
+            'userprodi' => $this->usersModel->where('level', 'prodi')->findAll(),
+        ];
+        echo view('/keuangan/ListDataProdi', $data);
+    }
+    public function listRkatUnit()
+    {
+        $model = new DetailRkatModel();
+        $data = [
+            'detail_rkat' => $this->DetailRkatModel->gabungRektor(),
+            'userunit' => $this->usersModel->where('level', 'unit')->findAll(),
+        ];
+        echo view('/keuangan/ListDataUnit', $data);
+    }
     public function rincian()
     {
         $model = new DetailRkatModel();
