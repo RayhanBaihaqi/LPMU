@@ -39,7 +39,7 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link " href="<?= base_url('/rektorat') ?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
@@ -49,22 +49,21 @@
             <hr class="sidebar-divider">
 
             <!-- Heading -->
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>RKAT</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="<?= base_url('/rektorat/inputRencana') ?>">Input Rencana Anggaran</a>
-                        <a class="collapse-item" href="<?= base_url('/rektorat/inputRealisasi') ?>">Input Realisasi Anggaran</a>
-                        <a class="collapse-item" href="<?= base_url('/rektorat/listRkatRektorat') ?>">Daftar Data RKAT Rektorat</a>
-                        <a class="collapse-item" href="<?= base_url('/rektorat/rincian') ?>">Rincian Rkat</a>
-                        <a class="collapse-item" href="<?= base_url('/rektorat/listRkatProdi') ?>">Daftar Data RKAT Prodi</a>
-                        <a class="collapse-item" href="<?= base_url('/rektorat/listRkatUnit') ?>">Daftar Data RKAT Unit</a>
-                        <a class="collapse-item" href="<?= base_url('/rektorat/grafikSerapProdi') ?>">Grafik Capaian Prodi</a>
-                        <a class="collapse-item" href="<?= base_url('/rektorat/grafikSerapUnit') ?>">Grafik Capaian Unit</a>
-                    </div>
+                <div class="bg-white py-2 collapse-inner rounded">
+						<a class="collapse-item active" href="<?= base_url('/rektorat/inputRencana') ?>">Input Rencana Anggaran</a>
+						<a class="collapse-item" href="<?= base_url('/rektorat/inputRealisasi') ?>">Input Realisasi Anggaran</a>
+						<a class="collapse-item" href="<?= base_url('/rektorat/kesimpulan') ?>">Kesimpulan</a>
+						<a class="collapse-item" href="<?= base_url('/rektorat/listRkatProdi') ?>">Daftar Data RKAT Prodi</a>
+						<a class="collapse-item" href="<?= base_url('/rektorat/listRkatUnit') ?>">Daftar Data RKAT Unit</a>
+						<a class="collapse-item" href="<?= base_url('/rektorat/grafikSerapProdi') ?>">Grafik Capaian Prodi</a>
+						<a class="collapse-item" href="<?= base_url('/rektorat/grafikSerapUnit') ?>">Grafik Capaian Unit</a>
+					</div>
                 </div>
             </li>
 
@@ -72,7 +71,7 @@
             <hr class="sidebar-divider">
 
             <!-- Heading -->
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>KPI</span></a>

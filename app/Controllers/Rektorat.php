@@ -79,27 +79,7 @@ class Rektorat extends BaseController
         ];
         echo view('/rektorat/ListRkatUnit', $data);
     }
-    public function listRkatRektorat()
-    {
-        $model = new DetailRkatModel();
-        $model2 = new PersenSerapModel();
-        $username = session('username');
-        $data = [
-            'detail_rkat2' => $this->DetailRkatModel->gabung($username),
-            'totalGanjilPk' => $model->totalGanjilPk($username)->getResult(),
-            'totalGenapPk' => $model->totalGenapPk($username)->getResult(),
-            'totalPk' => $model->totalPk($username)->getResult(),
-            'totalGanjilOps' => $model->totalGanjilOps($username)->getResult(),
-            'totalGenapOps' => $model->totalGenapOps($username)->getResult(),
-            'totalOps' => $model->totalOps($username)->getResult(),
-            'totalGanjilInv' => $model->totalGanjilInv($username)->getResult(),
-            'totalGenapInv' => $model->totalGenapInv($username)->getResult(),
-            'totalInv' => $model->totalInv($username)->getResult(),
-            'tahunAktif' => $model2->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('username', $username)->where('aktif', '1')->findAll(),
-            'tahunAkademik' => $this->TahunAkademikModel->where('aktif', '1')->first(),
-        ];
-        echo view('/rektorat/ListRkatRektorat', $data);
-    }
+    
     public function inputRencana()
     {
         $model = new DetailRkatModel();
@@ -192,7 +172,31 @@ class Rektorat extends BaseController
         }
         return redirect()->to(base_url('rektorat/inputRealisasi'));
     }
-
+    public function kesimpulan()
+    {
+        return view('rektorat/kesimpulan');
+    }
+    public function listRkatRektorat()
+    {
+        $model = new DetailRkatModel();
+        $model2 = new PersenSerapModel();
+        $username = session('username');
+        $data = [
+            'detail_rkat2' => $this->DetailRkatModel->gabung($username),
+            'totalGanjilPk' => $model->totalGanjilPk($username)->getResult(),
+            'totalGenapPk' => $model->totalGenapPk($username)->getResult(),
+            'totalPk' => $model->totalPk($username)->getResult(),
+            'totalGanjilOps' => $model->totalGanjilOps($username)->getResult(),
+            'totalGenapOps' => $model->totalGenapOps($username)->getResult(),
+            'totalOps' => $model->totalOps($username)->getResult(),
+            'totalGanjilInv' => $model->totalGanjilInv($username)->getResult(),
+            'totalGenapInv' => $model->totalGenapInv($username)->getResult(),
+            'totalInv' => $model->totalInv($username)->getResult(),
+            'tahunAktif' => $model2->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('username', $username)->where('aktif', '1')->findAll(),
+            'tahunAkademik' => $this->TahunAkademikModel->where('aktif', '1')->first(),
+        ];
+        echo view('/rektorat/ListRkatRektorat', $data);
+    }
     public function rincian()
     {
         $model = new DetailRkatModel();
