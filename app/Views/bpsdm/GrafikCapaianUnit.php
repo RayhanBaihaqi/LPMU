@@ -56,14 +56,11 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="<?= base_url('/bpsdm/inputRencana') ?>">Input Rencana Anggaran</a>
-                        <a class="collapse-item" href="<?= base_url('/bpsdm/inputRealisasi') ?>">Input Realisasi Anggaran</a>
-                        <a class="collapse-item" href="<?= base_url('/bpsdm/listRkatRektorat') ?>">Daftar Data RKAT Rektorat</a>
-                        <a class="collapse-item" href="<?= base_url('/bpsdm/rincian') ?>">Rincian Rkat</a>
-                        <a class="collapse-item" href="<?= base_url('/bpsdm/listRkatProdi') ?>">Daftar Data RKAT Prodi</a>
-                        <a class="collapse-item" href="<?= base_url('/bpsdm/listRkatUnit') ?>">Daftar Data RKAT Unit</a>
-                        <a class="collapse-item" href="<?= base_url('/bpsdm/grafikSerap') ?>">Grafik Serapan</a>
-                    </div>
+						<a class="collapse-item" href="<?= base_url('/bpsdm/inputRencana') ?>">Input Rencana Anggaran</a>
+						<a class="collapse-item" href="<?= base_url('/bpsdm/inputRealisasi') ?>">Input Realisasi Anggaran</a>
+						<a class="collapse-item" href="<?= base_url('/bpsdm/listRkatbpsdm') ?>">Daftar Data RKAT</a>
+						<a class="collapse-item" href="<?= base_url('/bpsdm/rincian') ?>">Rincian Rkat</a>
+					</div>
                 </div>
             </li>
 

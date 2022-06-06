@@ -6,14 +6,11 @@ use App\Models\DataModel;
 use App\Models\DataKpiModel;
 use App\Models\DataKpiButirModel;
 use App\Models\DataCapaianKpiModel;
-<<<<<<< HEAD
 use App\Models\DetailRkatModel;
 use App\Models\TahunAkademikModel;
 use App\Models\PersenSerapModel;
 use App\Models\PaguRkatModel;
 use App\Models\ModelKpiAdmin;
-=======
->>>>>>> c3de247868f0a66d2ef0278a04205bda9ec836ff
 use App\Models\usersModel;
 
 
@@ -30,7 +27,16 @@ class Bpsdm extends BaseController
     }
     public function index()
     {
-        return view('bpsdm/Dashboard');
+        $model = new PersenSerapModel();
+        $username = session('username');
+        $data = [
+            'tahun' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('username', $username)->findAll(),
+            'tahunAktif' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('username', $username)->where('aktif', '1')->findAll(),
+            'seluruhDatauser' => $model->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->findAll(),
+            'pagu_rkat' => $this->DetailRkatModel->tampilDataSetRKAT($username),
+            'tahunAkademik' => $this->TahunAkademikModel->where('aktif', '1')->first(),
+        ];
+        return view('bpsdm/Dashboard', $data);
     }
     public function listkpi()
     {
@@ -182,6 +188,27 @@ class Bpsdm extends BaseController
                <strong>Berhasil!</strong> Data Anda Berhasil Terinput.
            </div>
         ');
+    }
+    public function listRkatbpsdm()
+    {
+        $model = new DetailRkatModel();
+        $model2 = new PersenSerapModel();
+        $username = session('username');
+        $data = [
+            'detail_rkat2' => $this->DetailRkatModel->gabung($username),
+            'totalGanjilPk' => $model->totalGanjilPk($username)->getResult(),
+            'totalGenapPk' => $model->totalGenapPk($username)->getResult(),
+            'totalPk' => $model->totalPk($username)->getResult(),
+            'totalGanjilOps' => $model->totalGanjilOps($username)->getResult(),
+            'totalGenapOps' => $model->totalGenapOps($username)->getResult(),
+            'totalOps' => $model->totalOps($username)->getResult(),
+            'totalGanjilInv' => $model->totalGanjilInv($username)->getResult(),
+            'totalGenapInv' => $model->totalGenapInv($username)->getResult(),
+            'totalInv' => $model->totalInv($username)->getResult(),
+            'tahunAktif' => $model2->join('tahun_akademik', 'tahun_akademik.id_tahun=persen_serap.id_tahun')->join('user', 'user.id=persen_serap.id_user')->where('username', $username)->where('aktif', '1')->findAll(),
+            'tahunAkademik' => $this->TahunAkademikModel->where('aktif', '1')->first(),
+        ];
+        echo view('/bpsdm/ListRkatbpsdm', $data);
     }
 
     //proses kpi

@@ -149,7 +149,7 @@
 											<div class="mb-0  col mr-2 text-gray-800 text-justify">Saat ini anda login sebagai <?php
 																																$nama_prodi = session('nama_prodi');
 																																echo "$nama_prodi"
-																																?>. Disini anda bisa melihat grafik capaian KPI.</div>
+																																?>. Disini anda bisa melihat grafik capaian KPI dan RKAT.</div>
 										</div>
 
 										<div class="col-auto">
@@ -252,13 +252,9 @@
 								</div>
 							</div>
 						</div>
-<<<<<<< HEAD
 					</div> -->
                     <div class="row" style="margin: 15px auto;">
-=======
-					</div>
-					<div class="row" style="margin: 15px auto;">
->>>>>>> c3de247868f0a66d2ef0278a04205bda9ec836ff
+
 						<div class="col-md-6">
 							<div class="card-box pd-30 height-100-p">
 								<div class="card ">
@@ -361,9 +357,7 @@
 
 		var options = {
 			chart: {
-				title: 'Data Prodi/Unit : <?php $nama_prodi = session('nama_prodi');
-											echo "$nama_prodi" ?>'
-
+				title: 'Data Prodi/Unit : <?php $nama_prodi = session('nama_prodi'); echo "$nama_prodi" ?>'
 			},
 			bars: 'horizontal' // Required for Material Bar Charts.
 		};

@@ -65,7 +65,7 @@ class Filters extends BaseConfig
 		],
 		'after'  => [
 			'filterAdmin' => [
-				'except' => ['admin/*', 'admin', 'auth/*','tahunAkademik', 'tahunAkademik/*','paguRkat', 'paguRkat/*']
+				'except' => ['admin/*', 'admin', 'auth/*','tahunAkademik', 'tahunAkademik/*','paguRkat', 'paguRkat/*','pdf', 'pdf/*']
 			],
 			'filterProdi' => [
 				'except' => ['backend/*', 'backend', 'kpi', 'kpi/*', 'rkat/*','capaianRkat', 'capaianRkat/*','pdf', 'pdf/*']
@@ -77,7 +77,7 @@ class Filters extends BaseConfig
 				'except' => ['rektorat', 'rektorat/*','pdf', 'pdf/*']
 			],
 			'filterBpsdm' => [
-				'except' => ['bpsdm', 'bpsdm/*']
+				'except' => ['bpsdm', 'bpsdm/*','pdf', 'pdf/*']
 			],
 			'filterKeuangan' => [
 				'except' => ['keuangan', 'keuangan/*','capaianRkat', 'capaianRkat/*','pdf', 'pdf/*']

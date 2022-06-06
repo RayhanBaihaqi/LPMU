@@ -56,12 +56,11 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="<?= base_url('#') ?>">Tambah RKAT</a>
-                        <a class="collapse-item" href="<?= base_url('#') ?>">Lihat Data</a>
-                        <a class="collapse-item" href="<?= base_url('#') ?>">Buat Pagu</a>
-                        <a class="collapse-item" href="<?= base_url('#') ?>">List Pagu</a>
-                        <a class="collapse-item" href="<?= base_url('#') ?>">Tahun Akademik</a>
-                    </div>
+						<a class="collapse-item" href="<?= base_url('/bpsdm/inputRencana') ?>">Input Rencana Anggaran</a>
+						<a class="collapse-item" href="<?= base_url('/bpsdm/inputRealisasi') ?>">Input Realisasi Anggaran</a>
+						<a class="collapse-item" href="<?= base_url('/bpsdm/listRkatbpsdm') ?>">Daftar Data RKAT</a>
+						<a class="collapse-item" href="<?= base_url('/bpsdm/rincian') ?>">Rincian Rkat</a>
+					</div>
                 </div>
             </li>
 
