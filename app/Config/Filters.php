@@ -80,7 +80,7 @@ class Filters extends BaseConfig
 				'except' => ['bpsdm', 'bpsdm/*','pdf', 'pdf/*']
 			],
 			'filterKeuangan' => [
-				'except' => ['keuangan', 'keuangan/*','capaianRkat', 'capaianRkat/*','pdf', 'pdf/*']
+				'except' => ['keuangan', 'keuangan/*','capaianRkat', 'capaianRkat/*','pdf', 'pdf/*','rkat/*']
 			],
 			'filterLpmu' => [
 				'except' => ['Lpmu', 'Lpmu/*','capaianRkat', 'capaianRkat/*','pdf', 'pdf/*']
