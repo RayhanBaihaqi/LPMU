@@ -190,7 +190,13 @@
                     <!-- BAR CHART -->
                     <div class="card card-dark">
                         <div class="card-header">
-                            <h3 class="text-center text-white">Grafik Capaian KPI Setiap Tahun</h3>
+                            <h3 class="text-center text-white">Grafik Capaian KPI <?php
+                                                                                    $level = session('level');
+                                                                                    echo "$level"
+                                                                                    ?> <?php
+                                                                                            $nama_prodi = session('nama_prodi');
+                                                                                            echo "$nama_prodi"
+                                                                                            ?> Setiap Tahun</h3>
                         </div>
                         <div class="card-body">
                             <div class="chart">
