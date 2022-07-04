@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title>LPMU UPJ</title>
@@ -24,10 +25,8 @@
 						<input type="text" class="form-control" name="username" placeholder="username">
 						<div class="input-group" id="show_hide_password">
 							<input type="password" class="form-control" name="password" placeholder="Password">
-							<div class="input-group-append">
-								<a href="" class="btn btn-outline-secondary"><i class="fa-solid fa-user" aria-hidden="true"></i></a>
-							</div>
-                   		</div>
+
+						</div>
 						<?php if (session()->getFlashdata('pesan')) : ?>
 							<div class="alert alert-danger"><?= session()->getFlashdata('pesan') ?></div>
 						<?php endif ?>
@@ -46,19 +45,20 @@
 	</section>
 </body>
 <script>
-    $(document).ready(function() {
-    $("#show_hide_password a").on('click', function(event) {
-        event.preventDefault();
-        if($('#show_hide_password input').attr("type") == "text"){
-            $('#show_hide_password input').attr('type', 'password');
-            $('#show_hide_password i').addClass( "bi bi-eye-slash" );
-            $('#show_hide_password i').removeClass( "bi bi-eye" );
-        }else if($('#show_hide_password input').attr("type") == "password"){
-            $('#show_hide_password input').attr('type', 'text');
-            $('#show_hide_password i').removeClass( "bi bi-eye-slash" );
-            $('#show_hide_password i').addClass( "bi bi-eye" );
-        }
-    });
-    });
+	$(document).ready(function() {
+		$("#show_hide_password a").on('click', function(event) {
+			event.preventDefault();
+			if ($('#show_hide_password input').attr("type") == "text") {
+				$('#show_hide_password input').attr('type', 'password');
+				$('#show_hide_password i').addClass("bi bi-eye-slash");
+				$('#show_hide_password i').removeClass("bi bi-eye");
+			} else if ($('#show_hide_password input').attr("type") == "password") {
+				$('#show_hide_password input').attr('type', 'text');
+				$('#show_hide_password i').removeClass("bi bi-eye-slash");
+				$('#show_hide_password i').addClass("bi bi-eye");
+			}
+		});
+	});
 </script>
+
 </html>
