@@ -56,11 +56,11 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-						<a class="collapse-item" href="<?= base_url('/bpsdm/inputRencana') ?>">Input Rencana Anggaran</a>
-						<a class="collapse-item" href="<?= base_url('/bpsdm/inputRealisasi') ?>">Input Realisasi Anggaran</a>
-						<a class="collapse-item" href="<?= base_url('/bpsdm/listRkatbpsdm') ?>">Daftar Data RKAT</a>
-						<a class="collapse-item" href="<?= base_url('/bpsdm/rincian') ?>">Rincian Rkat</a>
-					</div>
+                        <a class="collapse-item" href="<?= base_url('/bpsdm/inputRencana') ?>">Input Rencana Anggaran</a>
+                        <a class="collapse-item" href="<?= base_url('/bpsdm/inputRealisasi') ?>">Input Realisasi Anggaran</a>
+                        <a class="collapse-item" href="<?= base_url('/bpsdm/listRkatbpsdm') ?>">Daftar Data RKAT</a>
+                        <a class="collapse-item" href="<?= base_url('/bpsdm/rincian') ?>">Rincian Rkat</a>
+                    </div>
                 </div>
             </li>
 
@@ -171,8 +171,8 @@
                                             <th>Target</th>
                                             <th>Realisasi</th>
                                             <th>Nilai Bobot</th>
-                                            <th>File</th>
-                                            <th>Actions</th>
+                                            <!-- <th>File</th>
+                                            <th>Actions</th> -->
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -193,8 +193,8 @@
                                                 <td><?= $row->target ?></td>
                                                 <td><?= $row->realisasi ?></td>
                                                 <td><?= $row->nilai_bobot ?></td>
-                                                <td><?= $row->upload_file ?></td>
-                                                <td></td>
+                                                <!-- <td><?= $row->upload_file ?></td>
+                                                <td></td> -->
                                             <?php
                                         endforeach;
                                             ?>

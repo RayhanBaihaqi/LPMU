@@ -40,10 +40,8 @@
 
 </head>
 
-<body onload="startTime()">
-    <div class="pre-loader">
-        <div class="spinner-border text-info"></div>
-    </div>
+<body>
+
     <div class="wrapper">
         <!-- Top Bar Start -->
         <div class="top-bar">
@@ -194,9 +192,9 @@
                                                                                     $level = session('level');
                                                                                     echo "$level"
                                                                                     ?> <?php
-                                                                                            $nama_prodi = session('nama_prodi');
-                                                                                            echo "$nama_prodi"
-                                                                                            ?> Setiap Tahun</h3>
+                                                                                        $nama_prodi = session('nama_prodi');
+                                                                                        echo "$nama_prodi"
+                                                                                        ?> Setiap Tahun</h3>
                         </div>
                         <div class="card-body">
                             <div class="chart">

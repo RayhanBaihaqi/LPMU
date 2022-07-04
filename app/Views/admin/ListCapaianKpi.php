@@ -55,15 +55,15 @@
                     <span>RKAT</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-						<a class="collapse-item" href="<?= base_url('admin/create') ?>">Tambah Rencana RKAT</a>
-						<a class="collapse-item" href="<?= base_url('admin/listRkatProdi') ?>">Lihat Data Prodi</a>
-						<a class="collapse-item" href="<?= base_url('admin/listRkatUnit') ?>">Lihat Data Unit</a>
-						<a class="collapse-item" href="<?= base_url('pagurkat/index') ?>">List Data Pagu</a>
-						<a class="collapse-item" href="<?= base_url('tahunakademik/indextahun') ?>">Tahun Akademik</a>
-						<a class="collapse-item" href="<?= base_url('admin/grafikSerapProdi') ?>">Grafik Capaian Prodi</a>
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="<?= base_url('admin/create') ?>">Tambah Rencana RKAT</a>
+                        <a class="collapse-item" href="<?= base_url('admin/listRkatProdi') ?>">Lihat Data Prodi</a>
+                        <a class="collapse-item" href="<?= base_url('admin/listRkatUnit') ?>">Lihat Data Unit</a>
+                        <a class="collapse-item" href="<?= base_url('pagurkat/index') ?>">List Data Pagu</a>
+                        <a class="collapse-item" href="<?= base_url('tahunakademik/indextahun') ?>">Tahun Akademik</a>
+                        <a class="collapse-item" href="<?= base_url('admin/grafikSerapProdi') ?>">Grafik Capaian Prodi</a>
                         <a class="collapse-item" href="<?= base_url('admin/grafikSerapUnit') ?>">Grafik Capaian Unit</a>
-					</div>
+                    </div>
                 </div>
             </li>
 
@@ -181,8 +181,8 @@
                                             <th>Target</th>
                                             <th>Realisasi</th>
                                             <th>Nilai Bobot</th>
-                                            <th>File</th>
-                                            <th>Actions</th>
+                                            <!-- <th>File</th>
+                                            <th>Actions</th> -->
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -203,8 +203,8 @@
                                                 <td><?= $row->target ?></td>
                                                 <td><?= $row->realisasi ?></td>
                                                 <td><?= $row->nilai_bobot ?></td>
-                                                <td><?= $row->upload_file ?></td>
-                                                <td></td>
+                                                <!-- <td><?= $row->upload_file ?></td>
+                                                <td></td> -->
                                             <?php
                                         endforeach;
                                             ?>
