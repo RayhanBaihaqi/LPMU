@@ -48,10 +48,8 @@
 
 </head>
 
-<body onload="startTime()">
-    <div class="pre-loader">
-        <div class="spinner-border text-info"></div>
-    </div>
+<body>
+
     <div class="wrapper">
         <!-- Top Bar Start -->
         <div class="top-bar">
@@ -328,8 +326,7 @@
         type: 'bar',
         data: {
             labels: ['Akuntansi', 'Manajemen', 'Psikologi', 'Ilmu Komunikasi', 'Desain Produk', 'Desain Komunikasi Visual', 'Informatika', 'Sistem Informasi', 'Teknik Sipil', 'Arsitektur'],
-            datasets: [
-                {
+            datasets: [{
                     label: '2019/2020',
                     backgroundColor: 'rgba(255, 165, 0, 1)',
                     borderColor: 'rgba(255, 165, 0, 1)',

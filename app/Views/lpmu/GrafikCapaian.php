@@ -49,9 +49,7 @@
 </head>
 
 <body onload="startTime()">
-    <div class="pre-loader">
-        <div class="spinner-border text-info"></div>
-    </div>
+
     <div class="wrapper">
         <!-- Top Bar Start -->
         <div class="top-bar">
