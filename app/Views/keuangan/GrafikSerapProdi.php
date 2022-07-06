@@ -23,7 +23,7 @@
     <meta content="Law Firm Website Template" name="description">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/png" href="<?php echo base_url(); ?>/public/favicon.ico" />
+    <link rel="shortcut icon" type="image/png" href="<?php echo base_url(); ?>/public/img/monev_logo.png" />
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,600;1,700;1,800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
@@ -66,7 +66,7 @@
                     </div>
                     <div class="col-sm-2">
                         <div class="logo">
-                        <img src="<?php echo base_url(); ?>/public/img/monev_logo.png" alt="Logo" style="float: right;">
+                            <img src="<?php echo base_url(); ?>/public/img/monev_logo.png" alt="Logo" style="float: right;">
                         </div>
                     </div>
                 </div>
@@ -77,75 +77,75 @@
     <div class="container-fluid">
         <br>
         <!-- Nav Bar Start -->
-		<div class="nav-bar">
-			<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-				<a href="#" class="navbar-brand">MENU</a>
-				<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse justify-content-between">
-                <div class="navbar-nav mr-auto">
-						<a href="<?php echo site_url(); ?>keuangan/home" class="nav-item nav-link">Home</a>
-						<a href="<?= base_url('/keuangan/createbyuser') ?>" class="nav-item nav-link">Rencana Anggaran</a>
+        <div class="nav-bar">
+            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                <a href="#" class="navbar-brand">MENU</a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between">
+                    <div class="navbar-nav mr-auto">
+                        <a href="<?php echo site_url(); ?>keuangan/home" class="nav-item nav-link">Home</a>
+                        <a href="<?= base_url('/keuangan/createbyuser') ?>" class="nav-item nav-link">Rencana Anggaran</a>
                         <a href="<?= base_url('/CapaianRkat/createcapaianbykeuangan') ?>" class="nav-item nav-link">Realisasi Anggaran</a>
                         <a href="<?= base_url('/keuangan/indexbyuser') ?>" class="nav-item nav-link">Kesimpulan</a>
                         <a href="<?= base_url('/keuangan/ListRkatProdi') ?>" class="nav-item nav-link">List Data Prodi</a>
                         <a href="<?= base_url('/keuangan/ListRkatUnit') ?>" class="nav-item nav-link">List Data Unit</a>
                         <a href="<?= base_url('/keuangan/grafikSerapProdi') ?>" class="nav-item nav-link active">Grafik Serap Prodi</a>
                         <a href="<?= base_url('/keuangan/grafikSerapUnit') ?>" class="nav-item nav-link">Grafik Serap Unit</a>
-					</div>
-					<div class="ml-auto">
-						<div class="user-info-dropdown">
-							<div class="dropdown">
-								<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-									<span class="user-name">
-										<?php
-                                            $nama_prodi = session('nama_prodi');
-                                            echo "$nama_prodi"
+                    </div>
+                    <div class="ml-auto">
+                        <div class="user-info-dropdown">
+                            <div class="dropdown">
+                                <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+                                    <span class="user-name">
+                                        <?php
+                                        $nama_prodi = session('nama_prodi');
+                                        echo "$nama_prodi"
                                         ?>
-									</span>
-								</a>
-								<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-									<a class="dropdown-item" href="<?= base_url('/keuangan/form_ubahpass') ?>"><i class="fas fa-cog"></i> Ubah Password</a>
+                                    </span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+                                    <a class="dropdown-item" href="<?= base_url('/keuangan/form_ubahpass') ?>"><i class="fas fa-cog"></i> Ubah Password</a>
                                     <a class="dropdown-item" href="<?php echo site_url(); ?>keuangan/index"><i class="fas fa-long-arrow-alt-left"></i> Kembali Halaman Awal</a>
-									<a class="dropdown-item" href="<?= base_url('/auth/logout') ?>"><i class="fas fa-sign-out-alt"></i> Log
-										Out</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</nav>
-		</div>
-		<!-- Nav Bar End -->
-            <div class="row" style="margin: 15px auto;">
-				<div class="col-md-12">
-					<div class="card-box pd-30 height-100-p">
-                        <h5>Halaman Grafik Capaian PRODI </h5>
-					</div>
-				</div>
+                                    <a class="dropdown-item" href="<?= base_url('/auth/logout') ?>"><i class="fas fa-sign-out-alt"></i> Log
+                                        Out</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- Nav Bar End -->
+        <div class="row" style="margin: 15px auto;">
+            <div class="col-md-12">
+                <div class="card-box pd-30 height-100-p">
+                    <h5>Halaman Grafik Capaian PRODI </h5>
+                </div>
             </div>
-            <section class="content">
-                <div class="row" style="margin: 15px auto;">
-                    <div class="col-md-12">
-                        <div class="card-box pd-30 height-100-p">
-                            <div class="card ">
-                                <label>Data Capaian PK+OPS</label>
-                                <canvas id="ChartProdiPkOps"style="width: 1080px; height: 500px;"></canvas>
-                            </div>
+        </div>
+        <section class="content">
+            <div class="row" style="margin: 15px auto;">
+                <div class="col-md-12">
+                    <div class="card-box pd-30 height-100-p">
+                        <div class="card ">
+                            <label>Data Capaian PK+OPS</label>
+                            <canvas id="ChartProdiPkOps" style="width: 1080px; height: 500px;"></canvas>
                         </div>
                     </div>
                 </div>
-                <div class="row" style="margin: 15px auto;">
-                    <div class="col-md-12">
-                        <div class="card-box pd-30 height-100-p">
-                            <div class="card ">
-                                <label>Data Capaian INV</label>
-                                <canvas id="ChartProdiInv2"style="width: 1080px; height: 500px;"></canvas>
-                            </div>
+            </div>
+            <div class="row" style="margin: 15px auto;">
+                <div class="col-md-12">
+                    <div class="card-box pd-30 height-100-p">
+                        <div class="card ">
+                            <label>Data Capaian INV</label>
+                            <canvas id="ChartProdiInv2" style="width: 1080px; height: 500px;"></canvas>
                         </div>
                     </div>
                 </div>
+            </div>
         </section>
 
 
@@ -216,15 +216,15 @@
                         pointHighlightStroke: 'rgba(60,141,188,1)',
                         data: [
                             <?php foreach ($dataProdiAkt1920 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
-                            <?php foreach ($dataProdiMan1920 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>, 
+                            <?php foreach ($dataProdiMan1920 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
                             <?php foreach ($dataProdiPsi1920 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
-                            <?php foreach ($dataProdiKom1920 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>, 
+                            <?php foreach ($dataProdiKom1920 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
                             <?php foreach ($dataProdiDp1920 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
-                            <?php foreach ($dataProdiDkv1920 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>, 
-                            <?php foreach ($dataProdiInf1920 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>, 
-                            <?php foreach ($dataProdiSif1920 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>, 
+                            <?php foreach ($dataProdiDkv1920 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
+                            <?php foreach ($dataProdiInf1920 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
+                            <?php foreach ($dataProdiSif1920 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
                             <?php foreach ($dataProdiTsp1920 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
-                            <?php foreach ($dataProdiArs1920 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?> 
+                            <?php foreach ($dataProdiArs1920 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>
                         ]
 
 
@@ -240,15 +240,15 @@
                         pointHighlightStroke: 'rgba(60,141,188,1)',
                         data: [
                             <?php foreach ($dataProdiAkt2021 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
-                            <?php foreach ($dataProdiMan2021 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>, 
+                            <?php foreach ($dataProdiMan2021 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
                             <?php foreach ($dataProdiPsi2021 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
-                            <?php foreach ($dataProdiKom2021 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>, 
+                            <?php foreach ($dataProdiKom2021 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
                             <?php foreach ($dataProdiDp2021 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
-                            <?php foreach ($dataProdiDkv2021 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>, 
-                            <?php foreach ($dataProdiInf2021 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>, 
-                            <?php foreach ($dataProdiSif2021 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>, 
+                            <?php foreach ($dataProdiDkv2021 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
+                            <?php foreach ($dataProdiInf2021 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
+                            <?php foreach ($dataProdiSif2021 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
                             <?php foreach ($dataProdiTsp2021 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
-                            <?php foreach ($dataProdiArs2021 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>  
+                            <?php foreach ($dataProdiArs2021 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>
                         ]
 
                     },
@@ -263,15 +263,15 @@
                         pointHighlightStroke: 'rgba(60,141,188,1)',
                         data: [
                             <?php foreach ($dataProdiAkt2122 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
-                            <?php foreach ($dataProdiMan2122 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>, 
+                            <?php foreach ($dataProdiMan2122 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
                             <?php foreach ($dataProdiPsi2122 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
-                            <?php foreach ($dataProdiKom2122 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>, 
+                            <?php foreach ($dataProdiKom2122 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
                             <?php foreach ($dataProdiDp2122 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
-                            <?php foreach ($dataProdiDkv2122 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>, 
-                            <?php foreach ($dataProdiInf2122 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>, 
-                            <?php foreach ($dataProdiSif2122 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>, 
+                            <?php foreach ($dataProdiDkv2122 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
+                            <?php foreach ($dataProdiInf2122 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
+                            <?php foreach ($dataProdiSif2122 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
                             <?php foreach ($dataProdiTsp2122 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
-                            <?php foreach ($dataProdiArs2122 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?> 
+                            <?php foreach ($dataProdiArs2122 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>
                         ]
                     },
 
@@ -307,7 +307,7 @@
             }
         });
     </script>
-<script>
+    <script>
         const ctx4 = document.getElementById('ChartProdiInv2');
         const ChartProdiInv2 = new Chart(ctx4, {
             type: 'bar',
@@ -326,15 +326,15 @@
                         pointHighlightStroke: 'rgba(60,141,188,1)',
                         data: [
                             <?php foreach ($dataProdiAkt1920 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
-                            <?php foreach ($dataProdiMan1920 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>, 
+                            <?php foreach ($dataProdiMan1920 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
                             <?php foreach ($dataProdiPsi1920 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
-                            <?php foreach ($dataProdiKom1920 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>, 
+                            <?php foreach ($dataProdiKom1920 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
                             <?php foreach ($dataProdiDp1920 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
-                            <?php foreach ($dataProdiDkv1920 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>, 
-                            <?php foreach ($dataProdiInf1920 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>, 
-                            <?php foreach ($dataProdiSif1920 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>, 
+                            <?php foreach ($dataProdiDkv1920 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
+                            <?php foreach ($dataProdiInf1920 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
+                            <?php foreach ($dataProdiSif1920 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
                             <?php foreach ($dataProdiTsp1920 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
-                            <?php foreach ($dataProdiArs1920 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?> 
+                            <?php foreach ($dataProdiArs1920 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>
                         ]
 
 
@@ -350,15 +350,15 @@
                         pointHighlightStroke: 'rgba(60,141,188,1)',
                         data: [
                             <?php foreach ($dataProdiAkt2021 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
-                            <?php foreach ($dataProdiMan2021 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>, 
+                            <?php foreach ($dataProdiMan2021 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
                             <?php foreach ($dataProdiPsi2021 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
-                            <?php foreach ($dataProdiKom2021 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>, 
+                            <?php foreach ($dataProdiKom2021 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
                             <?php foreach ($dataProdiDp2021 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
-                            <?php foreach ($dataProdiDkv2021 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>, 
-                            <?php foreach ($dataProdiInf2021 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>, 
-                            <?php foreach ($dataProdiSif2021 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>, 
+                            <?php foreach ($dataProdiDkv2021 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
+                            <?php foreach ($dataProdiInf2021 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
+                            <?php foreach ($dataProdiSif2021 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
                             <?php foreach ($dataProdiTsp2021 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
-                            <?php foreach ($dataProdiArs2021 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>  
+                            <?php foreach ($dataProdiArs2021 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>
                         ]
 
                     },
@@ -373,15 +373,15 @@
                         pointHighlightStroke: 'rgba(60,141,188,1)',
                         data: [
                             <?php foreach ($dataProdiAkt2122 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
-                            <?php foreach ($dataProdiMan2122 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>, 
+                            <?php foreach ($dataProdiMan2122 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
                             <?php foreach ($dataProdiPsi2122 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
-                            <?php foreach ($dataProdiKom2122 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>, 
+                            <?php foreach ($dataProdiKom2122 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
                             <?php foreach ($dataProdiDp2122 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
-                            <?php foreach ($dataProdiDkv2122 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>, 
-                            <?php foreach ($dataProdiInf2122 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>, 
-                            <?php foreach ($dataProdiSif2122 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>, 
+                            <?php foreach ($dataProdiDkv2122 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
+                            <?php foreach ($dataProdiInf2122 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
+                            <?php foreach ($dataProdiSif2122 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
                             <?php foreach ($dataProdiTsp2122 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
-                            <?php foreach ($dataProdiArs2122 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?> 
+                            <?php foreach ($dataProdiArs2122 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>
                         ]
                     },
 

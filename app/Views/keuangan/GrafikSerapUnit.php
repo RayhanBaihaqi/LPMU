@@ -23,7 +23,7 @@
     <meta content="Law Firm Website Template" name="description">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/png" href="<?php echo base_url(); ?>/public/favicon.ico" />
+    <link rel="shortcut icon" type="image/png" href="<?php echo base_url(); ?>/public/img/monev_logo.png" />
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,600;1,700;1,800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
@@ -66,7 +66,7 @@
                     </div>
                     <div class="col-sm-2">
                         <div class="logo">
-                        <img src="<?php echo base_url(); ?>/public/img/monev_logo.png" alt="Logo" style="float: right;">
+                            <img src="<?php echo base_url(); ?>/public/img/monev_logo.png" alt="Logo" style="float: right;">
                         </div>
                     </div>
                 </div>
@@ -77,75 +77,75 @@
     <div class="container-fluid">
         <br>
         <!-- Nav Bar Start -->
-		<div class="nav-bar">
-			<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-				<a href="#" class="navbar-brand">MENU</a>
-				<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse justify-content-between">
-                <div class="navbar-nav mr-auto">
-						<a href="<?php echo site_url(); ?>keuangan/home" class="nav-item nav-link">Home</a>
-						<a href="<?= base_url('/keuangan/createbyuser') ?>" class="nav-item nav-link">Rencana Anggaran</a>
+        <div class="nav-bar">
+            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                <a href="#" class="navbar-brand">MENU</a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between">
+                    <div class="navbar-nav mr-auto">
+                        <a href="<?php echo site_url(); ?>keuangan/home" class="nav-item nav-link">Home</a>
+                        <a href="<?= base_url('/keuangan/createbyuser') ?>" class="nav-item nav-link">Rencana Anggaran</a>
                         <a href="<?= base_url('/CapaianRkat/createcapaianbykeuangan') ?>" class="nav-item nav-link">Realisasi Anggaran</a>
                         <a href="<?= base_url('/keuangan/indexbyuser') ?>" class="nav-item nav-link">Kesimpulan</a>
                         <a href="<?= base_url('/keuangan/ListRkatProdi') ?>" class="nav-item nav-link">List Data Prodi</a>
                         <a href="<?= base_url('/keuangan/ListRkatUnit') ?>" class="nav-item nav-link">List Data Unit</a>
                         <a href="<?= base_url('/keuangan/grafikSerapProdi') ?>" class="nav-item nav-link">Grafik Serap Prodi</a>
                         <a href="<?= base_url('/keuangan/grafikSerapUnit') ?>" class="nav-item nav-link active">Grafik Serap Unit</a>
-					</div>
-					<div class="ml-auto">
-						<div class="user-info-dropdown">
-							<div class="dropdown">
-								<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-									<span class="user-name">
-										<?php
-                                            $nama_prodi = session('nama_prodi');
-                                            echo "$nama_prodi"
+                    </div>
+                    <div class="ml-auto">
+                        <div class="user-info-dropdown">
+                            <div class="dropdown">
+                                <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+                                    <span class="user-name">
+                                        <?php
+                                        $nama_prodi = session('nama_prodi');
+                                        echo "$nama_prodi"
                                         ?>
-									</span>
-								</a>
-								<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-									<a class="dropdown-item" href="<?= base_url('/keuangan/form_ubahpass') ?>"><i class="fas fa-cog"></i> Ubah Password</a>
+                                    </span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+                                    <a class="dropdown-item" href="<?= base_url('/keuangan/form_ubahpass') ?>"><i class="fas fa-cog"></i> Ubah Password</a>
                                     <a class="dropdown-item" href="<?php echo site_url(); ?>keuangan/index"><i class="fas fa-long-arrow-alt-left"></i> Kembali Halaman Awal</a>
-									<a class="dropdown-item" href="<?= base_url('/auth/logout') ?>"><i class="fas fa-sign-out-alt"></i> Log
-										Out</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</nav>
-		</div>
-		<!-- Nav Bar End -->
-            <div class="row" style="margin: 15px auto;">
-				<div class="col-md-12">
-					<div class="card-box pd-30 height-100-p">
-                        <h5>Halaman Grafik Capaian UNIT</h5>
-					</div>
-				</div>
+                                    <a class="dropdown-item" href="<?= base_url('/auth/logout') ?>"><i class="fas fa-sign-out-alt"></i> Log
+                                        Out</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- Nav Bar End -->
+        <div class="row" style="margin: 15px auto;">
+            <div class="col-md-12">
+                <div class="card-box pd-30 height-100-p">
+                    <h5>Halaman Grafik Capaian UNIT</h5>
+                </div>
             </div>
-            <section class="content">
-                <div class="row" style="margin: 15px auto;">
-                    <div class="col-md-12">
-                        <div class="card-box pd-30 height-100-p">
-                            <div class="card ">
-                                <label>Data Capaian PK+OPS</label>
-                                <canvas id="ChartUnitPkOps"style="width: 1080px; height: 500px;"></canvas>
-                            </div>
+        </div>
+        <section class="content">
+            <div class="row" style="margin: 15px auto;">
+                <div class="col-md-12">
+                    <div class="card-box pd-30 height-100-p">
+                        <div class="card ">
+                            <label>Data Capaian PK+OPS</label>
+                            <canvas id="ChartUnitPkOps" style="width: 1080px; height: 500px;"></canvas>
                         </div>
                     </div>
                 </div>
-                <div class="row" style="margin: 15px auto;">
-                    <div class="col-md-12">
-                        <div class="card-box pd-30 height-100-p">
-                            <div class="card ">
-                                <label>Data Capaian INV</label>
-                                <canvas id="ChartUnitInv"style="width: 1080px; height: 500px;"></canvas>
-                            </div>
+            </div>
+            <div class="row" style="margin: 15px auto;">
+                <div class="col-md-12">
+                    <div class="card-box pd-30 height-100-p">
+                        <div class="card ">
+                            <label>Data Capaian INV</label>
+                            <canvas id="ChartUnitInv" style="width: 1080px; height: 500px;"></canvas>
                         </div>
                     </div>
                 </div>
+            </div>
         </section>
 
 
@@ -196,7 +196,7 @@
         const ChartUnitPkOps = new Chart(ctx2, {
             type: 'bar',
             data: {
-                labels: ['Keuangan', 'LPMU', 'BKAL', 'JCAL', 'KHI', 'Perpustakaan', 'PHA', 'JLP', 'JSDP', 'LSE','TIK'],
+                labels: ['Keuangan', 'LPMU', 'BKAL', 'JCAL', 'KHI', 'Perpustakaan', 'PHA', 'JLP', 'JSDP', 'LSE', 'TIK'],
                 datasets: [
 
                     {
@@ -210,13 +210,13 @@
                         pointHighlightStroke: 'rgba(60,141,188,1)',
                         data: [
                             <?php foreach ($dataUnitKeuangan1920 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
-                            <?php foreach ($dataUnitLpmu1920 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>, 
+                            <?php foreach ($dataUnitLpmu1920 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
                             <?php foreach ($dataUnitBkal1920 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
-                            <?php foreach ($dataUnitJcal1920 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>, 
+                            <?php foreach ($dataUnitJcal1920 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
                             <?php foreach ($dataUnitBp1920 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
-                            <?php foreach ($dataUnitKhi1920 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>, 
-                            <?php foreach ($dataUnitPerpus1920 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>, 
-                            <?php foreach ($dataUnitPha1920 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>, 
+                            <?php foreach ($dataUnitKhi1920 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
+                            <?php foreach ($dataUnitPerpus1920 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
+                            <?php foreach ($dataUnitPha1920 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
                             <?php foreach ($dataUnitJlp1920 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
                             <?php foreach ($dataUnitJsdp1920 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
                             <?php foreach ($dataUnitLse1920 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
@@ -236,13 +236,13 @@
                         pointHighlightStroke: 'rgba(60,141,188,1)',
                         data: [
                             <?php foreach ($dataUnitKeuangan2021 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
-                            <?php foreach ($dataUnitLpmu2021 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>, 
+                            <?php foreach ($dataUnitLpmu2021 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
                             <?php foreach ($dataUnitBkal2021 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
-                            <?php foreach ($dataUnitJcal2021 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>, 
+                            <?php foreach ($dataUnitJcal2021 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
                             <?php foreach ($dataUnitBp2021 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
-                            <?php foreach ($dataUnitKhi2021 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>, 
-                            <?php foreach ($dataUnitPerpus2021 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>, 
-                            <?php foreach ($dataUnitPha2021 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>, 
+                            <?php foreach ($dataUnitKhi2021 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
+                            <?php foreach ($dataUnitPerpus2021 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
+                            <?php foreach ($dataUnitPha2021 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
                             <?php foreach ($dataUnitJlp2021 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
                             <?php foreach ($dataUnitJsdp2021 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
                             <?php foreach ($dataUnitLse2021 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
@@ -261,13 +261,13 @@
                         pointHighlightStroke: 'rgba(60,141,188,1)',
                         data: [
                             <?php foreach ($dataUnitKeuangan2122 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
-                            <?php foreach ($dataUnitLpmu2122 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>, 
+                            <?php foreach ($dataUnitLpmu2122 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
                             <?php foreach ($dataUnitBkal2122 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
-                            <?php foreach ($dataUnitJcal2122 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>, 
+                            <?php foreach ($dataUnitJcal2122 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
                             <?php foreach ($dataUnitBp2122 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
-                            <?php foreach ($dataUnitKhi2122 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>, 
-                            <?php foreach ($dataUnitPerpus2122 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>, 
-                            <?php foreach ($dataUnitPha2122 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>, 
+                            <?php foreach ($dataUnitKhi2122 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
+                            <?php foreach ($dataUnitPerpus2122 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
+                            <?php foreach ($dataUnitPha2122 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
                             <?php foreach ($dataUnitJlp2122 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
                             <?php foreach ($dataUnitJsdp2122 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
                             <?php foreach ($dataUnitLse2122 as $key => $reading) : ?><?= $reading['persenPkOps'] ?><?php endforeach; ?>,
@@ -312,7 +312,7 @@
         const ChartUnitInv = new Chart(ctx1, {
             type: 'bar',
             data: {
-                labels: ['Keuangan', 'LPMU', 'BKAL', 'JCAL', 'KHI', 'Perpustakaan', 'PHA', 'JLP', 'JSDP', 'LSE','TIK'],
+                labels: ['Keuangan', 'LPMU', 'BKAL', 'JCAL', 'KHI', 'Perpustakaan', 'PHA', 'JLP', 'JSDP', 'LSE', 'TIK'],
                 datasets: [
 
                     {
@@ -326,13 +326,13 @@
                         pointHighlightStroke: 'rgba(60,141,188,1)',
                         data: [
                             <?php foreach ($dataUnitKeuangan1920 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
-                            <?php foreach ($dataUnitLpmu1920 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>, 
+                            <?php foreach ($dataUnitLpmu1920 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
                             <?php foreach ($dataUnitBkal1920 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
-                            <?php foreach ($dataUnitJcal1920 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>, 
+                            <?php foreach ($dataUnitJcal1920 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
                             <?php foreach ($dataUnitBp1920 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
-                            <?php foreach ($dataUnitKhi1920 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>, 
-                            <?php foreach ($dataUnitPerpus1920 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>, 
-                            <?php foreach ($dataUnitPha1920 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>, 
+                            <?php foreach ($dataUnitKhi1920 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
+                            <?php foreach ($dataUnitPerpus1920 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
+                            <?php foreach ($dataUnitPha1920 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
                             <?php foreach ($dataUnitJlp1920 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
                             <?php foreach ($dataUnitJsdp1920 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
                             <?php foreach ($dataUnitLse1920 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
@@ -352,13 +352,13 @@
                         pointHighlightStroke: 'rgba(60,141,188,1)',
                         data: [
                             <?php foreach ($dataUnitKeuangan2021 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
-                            <?php foreach ($dataUnitLpmu2021 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>, 
+                            <?php foreach ($dataUnitLpmu2021 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
                             <?php foreach ($dataUnitBkal2021 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
-                            <?php foreach ($dataUnitJcal2021 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>, 
+                            <?php foreach ($dataUnitJcal2021 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
                             <?php foreach ($dataUnitBp2021 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
-                            <?php foreach ($dataUnitKhi2021 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>, 
-                            <?php foreach ($dataUnitPerpus2021 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>, 
-                            <?php foreach ($dataUnitPha2021 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>, 
+                            <?php foreach ($dataUnitKhi2021 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
+                            <?php foreach ($dataUnitPerpus2021 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
+                            <?php foreach ($dataUnitPha2021 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
                             <?php foreach ($dataUnitJlp2021 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
                             <?php foreach ($dataUnitJsdp2021 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
                             <?php foreach ($dataUnitLse2021 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
@@ -377,13 +377,13 @@
                         pointHighlightStroke: 'rgba(60,141,188,1)',
                         data: [
                             <?php foreach ($dataUnitKeuangan2122 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
-                            <?php foreach ($dataUnitLpmu2122 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>, 
+                            <?php foreach ($dataUnitLpmu2122 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
                             <?php foreach ($dataUnitBkal2122 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
-                            <?php foreach ($dataUnitJcal2122 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>, 
+                            <?php foreach ($dataUnitJcal2122 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
                             <?php foreach ($dataUnitBp2122 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
-                            <?php foreach ($dataUnitKhi2122 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>, 
-                            <?php foreach ($dataUnitPerpus2122 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>, 
-                            <?php foreach ($dataUnitPha2122 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>, 
+                            <?php foreach ($dataUnitKhi2122 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
+                            <?php foreach ($dataUnitPerpus2122 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
+                            <?php foreach ($dataUnitPha2122 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
                             <?php foreach ($dataUnitJlp2122 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
                             <?php foreach ($dataUnitJsdp2122 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,
                             <?php foreach ($dataUnitLse2122 as $key => $reading) : ?><?= $reading['persenInv'] ?><?php endforeach; ?>,

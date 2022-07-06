@@ -9,12 +9,9 @@
 	<meta content="Law Firm Website Template" name="description">
 
 	<!-- Favicon -->
-	<link rel="shortcut icon" type="image/png" href="<?php echo base_url(); ?>/public/favicon.ico" />
-
+	<link rel="shortcut icon" type="image/png" href="<?php echo base_url(); ?>/public/img/monev_logo.png" />
 	<!-- Google Font -->
-	<link
-		href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,600;1,700;1,800&family=Roboto:wght@400;500&display=swap"
-		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,600;1,700;1,800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
 	<!-- CSS Libraries -->
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
@@ -34,30 +31,30 @@
 
 <body onload="startTime()">
 	<div class="wrapper">
-        <!-- Top Bar Start -->
-        <div class="top-bar">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-2">
-                        <div class="logo">
-                            <img src="<?php echo base_url(); ?>/public/img/logo-upj.png" alt="Logo">
-                        </div>
-                    </div>
-                    <div class="col-sm-8">
-                        <div class="logo">
-                            <H5 style="text-align: center;">SISTEM INFORMASI MONITORING DAN EVALUASI</H5>
-                            <p style="text-align: center;">UNIVERSITAS PEMBANGUNAN JAYA</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <div class="logo">
-                        <img src="<?php echo base_url(); ?>/public/img/monev_logo.png" alt="Logo" style="float: right;">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+		<!-- Top Bar Start -->
+		<div class="top-bar">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-2">
+						<div class="logo">
+							<img src="<?php echo base_url(); ?>/public/img/logo-upj.png" alt="Logo">
+						</div>
+					</div>
+					<div class="col-sm-8">
+						<div class="logo">
+							<H5 style="text-align: center;">SISTEM INFORMASI MONITORING DAN EVALUASI</H5>
+							<p style="text-align: center;">UNIVERSITAS PEMBANGUNAN JAYA</p>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="logo">
+							<img src="<?php echo base_url(); ?>/public/img/monev_logo.png" alt="Logo" style="float: right;">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<!-- Top Bar End -->
 	<div class="container">
 		<br>
@@ -73,8 +70,8 @@
 					<div class="navbar-nav mr-auto">
 						<a href="<?php echo site_url(); ?>backend/rkat" class="nav-item nav-link active">Home</a>
 						<a href="<?= base_url('/rkat/createbyuser') ?>" class="nav-item nav-link">Rencana Anggaran</a>
-                        <a href="<?= base_url('/CapaianRkat/createcapaianbyuser') ?>" class="nav-item nav-link">Realisasi Anggaran</a>
-                        <a href="<?= base_url('/rkat/indexbyuser') ?>" class="nav-item nav-link">Kesimpulan</a>
+						<a href="<?= base_url('/CapaianRkat/createcapaianbyuser') ?>" class="nav-item nav-link">Realisasi Anggaran</a>
+						<a href="<?= base_url('/rkat/indexbyuser') ?>" class="nav-item nav-link">Kesimpulan</a>
 					</div>
 					<div class="ml-auto">
 						<div class="user-info-dropdown">
@@ -82,14 +79,14 @@
 								<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
 									<span class="user-name">
 										<?php
-                                            $nama_prodi = session('nama_prodi');
-                                            echo "$nama_prodi"
-                                        ?>
+										$nama_prodi = session('nama_prodi');
+										echo "$nama_prodi"
+										?>
 									</span>
 								</a>
 								<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
 									<a class="dropdown-item" href="<?= base_url('/rkat/form_ubahpass') ?>"><i class="fas fa-cog"></i> Ubah Password</a>
-                                    <a class="dropdown-item" href="<?php echo site_url(); ?>backend"><i class="fas fa-long-arrow-alt-left"></i>Kembali Halaman Awal</a>
+									<a class="dropdown-item" href="<?php echo site_url(); ?>backend"><i class="fas fa-long-arrow-alt-left"></i>Kembali Halaman Awal</a>
 									<a class="dropdown-item" href="<?= base_url('/auth/logout') ?>"><i class="fas fa-sign-out-alt"></i> Log
 										Out</a>
 								</div>
@@ -101,7 +98,7 @@
 		</div>
 		<!-- Nav Bar End -->
 		<br>
-        <form action="<?= base_url('rkat/updatebyuser'); ?>" method="POST" enctype="multipart/form-data">
+		<form action="<?= base_url('rkat/updatebyuser'); ?>" method="POST" enctype="multipart/form-data">
 			<div class="card">
 				<div class="card-header"></div>
 				<div class="card-body">
@@ -109,8 +106,7 @@
 					<input required type="hidden" name="id_set" value="<?= $detail_rkat2['id_set']; ?>">
 					<div class="form-group">
 						<label for="nama_kegiatan">Nama Kegiatan</label>
-						<input type="text" class="form-control" id="nama_kegiatan" placeholder="Maksukan Nama Kegiatan" 
-						name="nama_kegiatan" required value="<?= $detail_rkat2['nama_kegiatan']; ?>">
+						<input type="text" class="form-control" id="nama_kegiatan" placeholder="Maksukan Nama Kegiatan" name="nama_kegiatan" required value="<?= $detail_rkat2['nama_kegiatan']; ?>">
 					</div>
 					<div class="form-group">
 						<label for="kategori">Kategori</label>
@@ -140,8 +136,7 @@
 					</div>
 					<div class="form-group">
 						<label for="butir">Butir</label>
-						<input type="text" class="form-control" id="butir" placeholder="Masukan Butir Ke-" name="butir" 
-						required value="<?= $detail_rkat2['butir']; ?>">
+						<input type="text" class="form-control" id="butir" placeholder="Masukan Butir Ke-" name="butir" required value="<?= $detail_rkat2['butir']; ?>">
 					</div>
 					<div class="form-group">
 						<label for="semester">Semester</label>
@@ -155,13 +150,13 @@
 					</div>
 					<div class="form-group">
 						<label for="anggaran">Anggaran Kegiatan</label>
-						<input type="text" class="form-control" id="anggaran" placeholder="Masukan Total Anggaran" 
-						name="anggaran" required value=""><!--?= $detail_rkat2['anggaran']; ?>-->
+						<input type="text" class="form-control" id="anggaran" placeholder="Masukan Total Anggaran" name="anggaran" required value="">
+						<!--?= $detail_rkat2['anggaran']; ?>-->
 					</div>
 					<div class="form-group">
 						<label for="keterangan">Keterangan Kegiatan</label>
-						<textarea class="form-control" rows="5" id="keterangan" placeholder="Masukan Total Biaya" 
-						name="keterangan" required ></textarea><!--?= $detail_rkat2['keterangan']; ?>-->
+						<textarea class="form-control" rows="5" id="keterangan" placeholder="Masukan Total Biaya" name="keterangan" required></textarea>
+						<!--?= $detail_rkat2['keterangan']; ?>-->
 					</div>
 					<div class="form-group">
 						<button type="submit" id="edit" class="btn btn-success">edit</button>
@@ -200,25 +195,23 @@
 			}; // add zero in front of numbers < 10
 			return i;
 		}
-
 	</script>
 
-		<!-- Bootstrap core JavaScript-->
-		<script src="<?php echo base_url(); ?>/public/js/jquery.min.js"></script>
-		<script src="<?php echo base_url(); ?>/public/js/bootstrap.bundle.min.js"></script>
+	<!-- Bootstrap core JavaScript-->
+	<script src="<?php echo base_url(); ?>/public/js/jquery.min.js"></script>
+	<script src="<?php echo base_url(); ?>/public/js/bootstrap.bundle.min.js"></script>
 
-		<!-- Page level plugins -->
-		<script src="<?php echo base_url(); ?>/public/js/jquery.dataTables.min.js"></script>
-		<script src="<?php echo base_url(); ?>/public/js/dataTables.bootstrap4.min.js"></script>
+	<!-- Page level plugins -->
+	<script src="<?php echo base_url(); ?>/public/js/jquery.dataTables.min.js"></script>
+	<script src="<?php echo base_url(); ?>/public/js/dataTables.bootstrap4.min.js"></script>
 
-		<!-- Page level custom scripts -->
-		<script src="<?php echo base_url(); ?>/public/js/datatables-demo.js"></script>
+	<!-- Page level custom scripts -->
+	<script src="<?php echo base_url(); ?>/public/js/datatables-demo.js"></script>
 
 	<script>
-		$(window).load(function () {
+		$(window).load(function() {
 			$(".pre-loader").fadeOut("slow");
 		});
-
 	</script>
 </body>
 

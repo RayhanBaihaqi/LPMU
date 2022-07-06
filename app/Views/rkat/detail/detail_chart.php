@@ -9,7 +9,7 @@
 	<meta content="Law Firm Website Template" name="description">
 
 	<!-- Favicon -->
-	<link rel="shortcut icon" type="image/png" href="<?php echo base_url(); ?>/public/favicon.ico" />
+	<link rel="shortcut icon" type="image/png" href="<?php echo base_url(); ?>/public/img/monev_logo.png" />
 
 	<!-- Google Font -->
 	<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,600;1,700;1,800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
@@ -66,13 +66,13 @@
 						</div>
 					</div>
 					<div class="col-sm-2">
-                        <div class="social">
-                            <a href="https://www.upj.ac.id/"><i class="fas fa-globe"></i></i></a>
-                            <a href="https://twitter.com/upj_bintaro"><i class="fab fa-twitter"></i></a>
-                            <a href="https://web.facebook.com/universitas.pembangunan.jaya?_rdc=1&_rdr"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://www.instagram.com/upj_bintaro/"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
+						<div class="social">
+							<a href="https://www.upj.ac.id/"><i class="fas fa-globe"></i></i></a>
+							<a href="https://twitter.com/upj_bintaro"><i class="fab fa-twitter"></i></a>
+							<a href="https://web.facebook.com/universitas.pembangunan.jaya?_rdc=1&_rdr"><i class="fab fa-facebook-f"></i></a>
+							<a href="https://www.instagram.com/upj_bintaro/"><i class="fab fa-instagram"></i></a>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -98,9 +98,9 @@
 									</span>
 									<span class="user-name">
 										<?php
-                                                $nama_prodi = session('nama_prodi');
-                                                echo "$nama_prodi"
-                                                ?>
+										$nama_prodi = session('nama_prodi');
+										echo "$nama_prodi"
+										?>
 									</span>
 								</a>
 								<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
@@ -116,14 +116,13 @@
 		</div>
 		<!-- Nav Bar End -->
 		<br>
-		
+
 		<form id="satuan" name="formD" action="<?= base_url('rkat/save'); ?>" method="POST" enctype="multipart/form-data">
-		<?= session()->getFlashdata('status'); ?>	
+			<?= session()->getFlashdata('status'); ?>
 			<div class="card">
-					<div class="card-header">Tambah Rencana RKAT</div>
-					<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat'];?>
-						<input type="hidden" class="form-control" id="id_set" value="<?= $id_set ?>" name="id_set[]" 
-						required>
+				<div class="card-header">Tambah Rencana RKAT</div>
+				<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat']; ?>
+					<input type="hidden" class="form-control" id="id_set" value="<?= $id_set ?>" name="id_set[]" required>
 					<br>
 					<div class="card-body">
 						<div class="form-inline">
@@ -137,243 +136,242 @@
 						</div>
 						<div class="form-inline" style="margin-bottom:20px;">
 							<label for="prodiunit" class="mb-2 mr-sm-2" style="width: 150px;">Program Studi/Unit</label>
-							<input type="text" class="form-control mb-2 mr-sm-2" id="prodiunit" value="<?= $value['nama_prodi'] ?>" name="prodiunit"required disabled>
+							<input type="text" class="form-control mb-2 mr-sm-2" id="prodiunit" value="<?= $value['nama_prodi'] ?>" name="prodiunit" required disabled>
 							<label for="pagu" class="mb-2 mr-sm-2">Jumlah Pagu</label>
-							<input type="text" class="form-control mb-2 mr-sm-2" id= "pagu" name="pagu" value="RP. <?= $value['pagu'] ?>" required disabled>
+							<input type="text" class="form-control mb-2 mr-sm-2" id="pagu" name="pagu" value="RP. <?= $value['pagu'] ?>" required disabled>
 						</div>
-						<?php endforeach; ?>
-						<table class="table table-borded table-responsive table-striped">
-							<thead class="table-dark">
-								<tr>
-									<th class="text-center" width="4"> Action </th>
-									<th width="600px">Kategori - Kriteria - Butir</th>
-									<th width="600px">No Kegiatan- Indikator </th>
-									<th width="600px"> Target - Nama Kegiatan</th>
-									<th width="600px">Anggaran Gasal</th>
-									<th width="600px">Anggaran Genap</th>
-									<th>Total</th>
-								</tr>
-							</thead>
-							<tbody id="tbody2">
-								<tr>
-									<td><input name="chk_a[]" type="checkbox" class="checkall_a" value=""/></td>
-									<td>
-										<select class="form-control form-control-sm" id="kategori" name="kategori[]">
-											<option value="" disabled selected>Kategori</option>
-											<option value="PK">PK</option>
-											<option value="OPS">OPS</option>
-											<option value="INV">INV</option>
-										</select>
-										
-										<select class="form-control form-control-sm" id="kpi" name="kpi[]">
-											<option value="" disabled selected>Kriteria KPI</option>
-											<option value="1">1 – Visi Misi Tujuan dan Strategi</option>
-											<option value="2">2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
-											<option value="3">3 - Mahasiswa</option>
-											<option value="4">4 - Sumber Daya Manusia</option>
-											<option value="5">5 - Keuangan, Sarana dan Prasarana</option>
-											<option value="6">6 - Pendidikan</option>
-											<option value="7">7 – Penelitian</option>
-											<option value="8">8 - Pengabdian kepada Masyarakat (PkM)</option>
-											<option value="9">9 - Luaran dan Capaian Tridharma</option>
-										</select>
-										
-										<select class="form-control form-control-sm" id="butir" name="butir[]">
-											<option value="" disabled selected>Butir</option>
-											<option value="1">1</option>
-											<option value="2">2</option>
-											<option value="3">3</option>
-										</select>
-									</td>
-									<td>
-										<input type="text" class="form-control form-control-sm" id="no_kegiatan" placeholder="No Kegiatan" name="no_kegiatan[]" required>
-									
-										<input type="text" class="form-control form-control-sm" id="indikator" placeholder="Indikator" name="indikator[]" required>
-									</td>
-									<td>
-										<input type="text" class="form-control form-control-sm" id="target" placeholder="Masukan Target" name="target[]" required>
-									
-										<input type="text" class="form-control form-control-sm" id="nama_kegiatan" placeholder="Nama Kegiatan" name="nama_kegiatan[]" required>
-									</td>
-									<td>
-										<input type="text" class="form-control form-control-sm" id="anggaranGanjil" placeholder="Rp. 1,000,000" name="anggaranGanjil[]" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" required>
-									</td>
-									<td>
-										<input type="text" class="form-control form-control-sm" id="anggaranGenap" placeholder="Rp. 1,000,000" name="anggaranGenap[]" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" required>
-									</td>
-									<td>
-										<input type="text" class="form-control form-control-sm" id="total" name="total[]" placeholder="Rp. 2,000,000" readonly="readonly" required>
-									</td>	
-									<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat'];?>
-										<input type="hidden" class="form-control" id="id_set" value="<?= $id_set ?>" name="id_set[]" required>	
-									<?php endforeach; ?>
-								</tr>
+					<?php endforeach; ?>
+					<table class="table table-borded table-responsive table-striped">
+						<thead class="table-dark">
+							<tr>
+								<th class="text-center" width="4"> Action </th>
+								<th width="600px">Kategori - Kriteria - Butir</th>
+								<th width="600px">No Kegiatan- Indikator </th>
+								<th width="600px"> Target - Nama Kegiatan</th>
+								<th width="600px">Anggaran Gasal</th>
+								<th width="600px">Anggaran Genap</th>
+								<th>Total</th>
+							</tr>
+						</thead>
+						<tbody id="tbody2">
+							<tr>
+								<td><input name="chk_a[]" type="checkbox" class="checkall_a" value="" /></td>
+								<td>
+									<select class="form-control form-control-sm" id="kategori" name="kategori[]">
+										<option value="" disabled selected>Kategori</option>
+										<option value="PK">PK</option>
+										<option value="OPS">OPS</option>
+										<option value="INV">INV</option>
+									</select>
 
-								
-							</tbody>
-							<tfoot>
-								<td> <button type="button" class="btn btn-danger btn-sm" onclick="deleteRow('tbody2')">Hapus Baris</button> </th>
-								<td><button class="btn btn-success btn-sm" onclick="addRow('tbody2')" id="BarisBaru"><i class="fa fa-plus"></i> Baris Baru</button></td>	
-								<!-- <td><button type="button" class="btn btn-warning" onclick="InsertRow('tbody2')">Sisip Baris</button></td> -->
-								<td></td>
-								<td>Total Keseluruhan</td>
-								<td><input type="text" class="form-control" style="width: 150px;" id="pagu" name="pagu" value="RP. 100000000" required disabled></td>
-								<td><input type="text" class="form-control" style="width: 150px;" id="pagu" name="pagu" value="RP. 100000000" required disabled></td>
-								<td><input type="text" class="form-control" style="width: 150px;" id="pagu" name="pagu" value="RP. 100000000" required disabled></td>
-							</tfoot>
-						</table>
+									<select class="form-control form-control-sm" id="kpi" name="kpi[]">
+										<option value="" disabled selected>Kriteria KPI</option>
+										<option value="1">1 – Visi Misi Tujuan dan Strategi</option>
+										<option value="2">2 - Tata Pamong, Tata Kelola, dan Kerjasama</option>
+										<option value="3">3 - Mahasiswa</option>
+										<option value="4">4 - Sumber Daya Manusia</option>
+										<option value="5">5 - Keuangan, Sarana dan Prasarana</option>
+										<option value="6">6 - Pendidikan</option>
+										<option value="7">7 – Penelitian</option>
+										<option value="8">8 - Pengabdian kepada Masyarakat (PkM)</option>
+										<option value="9">9 - Luaran dan Capaian Tridharma</option>
+									</select>
+
+									<select class="form-control form-control-sm" id="butir" name="butir[]">
+										<option value="" disabled selected>Butir</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+									</select>
+								</td>
+								<td>
+									<input type="text" class="form-control form-control-sm" id="no_kegiatan" placeholder="No Kegiatan" name="no_kegiatan[]" required>
+
+									<input type="text" class="form-control form-control-sm" id="indikator" placeholder="Indikator" name="indikator[]" required>
+								</td>
+								<td>
+									<input type="text" class="form-control form-control-sm" id="target" placeholder="Masukan Target" name="target[]" required>
+
+									<input type="text" class="form-control form-control-sm" id="nama_kegiatan" placeholder="Nama Kegiatan" name="nama_kegiatan[]" required>
+								</td>
+								<td>
+									<input type="text" class="form-control form-control-sm" id="anggaranGanjil" placeholder="Rp. 1,000,000" name="anggaranGanjil[]" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" required>
+								</td>
+								<td>
+									<input type="text" class="form-control form-control-sm" id="anggaranGenap" placeholder="Rp. 1,000,000" name="anggaranGenap[]" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" required>
+								</td>
+								<td>
+									<input type="text" class="form-control form-control-sm" id="total" name="total[]" placeholder="Rp. 2,000,000" readonly="readonly" required>
+								</td>
+								<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat']; ?>
+									<input type="hidden" class="form-control" id="id_set" value="<?= $id_set ?>" name="id_set[]" required>
+								<?php endforeach; ?>
+							</tr>
+
+
+						</tbody>
+						<tfoot>
+							<td> <button type="button" class="btn btn-danger btn-sm" onclick="deleteRow('tbody2')">Hapus Baris</button> </th>
+							<td><button class="btn btn-success btn-sm" onclick="addRow('tbody2')" id="BarisBaru"><i class="fa fa-plus"></i> Baris Baru</button></td>
+							<!-- <td><button type="button" class="btn btn-warning" onclick="InsertRow('tbody2')">Sisip Baris</button></td> -->
+							<td></td>
+							<td>Total Keseluruhan</td>
+							<td><input type="text" class="form-control" style="width: 150px;" id="pagu" name="pagu" value="RP. 100000000" required disabled></td>
+							<td><input type="text" class="form-control" style="width: 150px;" id="pagu" name="pagu" value="RP. 100000000" required disabled></td>
+							<td><input type="text" class="form-control" style="width: 150px;" id="pagu" name="pagu" value="RP. 100000000" required disabled></td>
+						</tfoot>
+					</table>
 					</div>
 					<div class="card-footer" align="center">
-					<button type="submit" class="btn btn-primary" id="tambah">Tambah Data</button>
+						<button type="submit" class="btn btn-primary" id="tambah">Tambah Data</button>
 					</div>
-				</div>
+			</div>
 
 		</form>
 
-	<script>
-		anggaranGanjil = document.formD.anggaranGanjil.value;
-   		document.formD.total.value = anggaranGanjil;
-		anggaranGenap = document.formD.anggaranGenap.value;
-   		document.formD.total.value = anggaranGenap;
-		function OnChange(value){
+		<script>
 			anggaranGanjil = document.formD.anggaranGanjil.value;
+			document.formD.total.value = anggaranGanjil;
 			anggaranGenap = document.formD.anggaranGenap.value;
-			total = parseInt(anggaranGanjil) + parseInt(anggaranGenap);
-     		document.formD.total.value = total;
-		}
-	</script>
-	<script>
-		// JavaScript Document
-		function addRow(tableID) {
-			var table = document.getElementById(tableID);
-			console.log(table);
-			var rowCount = table.rows.length;
-			console.log(rowCount);
-			var row = table.insertRow(rowCount);
-			console.log(row);
-			var colCount = table.rows[0].cells.length;
-			console.log(colCount);
-			for(var i=0; i<colCount; i++) {
-				var newcell = row.insertCell(i);
-				newcell.innerHTML = table.rows[0].cells[i].innerHTML;
-				var child = newcell.children;
-				for(var i2=0; i2<child.length; i2++) {
-					var test = newcell.children[i2].tagName;
-					switch(test) {
-						case "INPUT":
-							if(newcell.children[i2].type=='checkbox'){
-								newcell.children[i2].value = "";
-								newcell.children[i2].checked = false;
-							}else{
-								newcell.children[i2].value = "";
-							}
-						break;
-						case "SELECT":
-							newcell.children[i2].value = "";
-						break;
-						default:
-						break;
-					}
-				}
-			}
-		}
-		function deleteRow(tableID){
-			var table = document.getElementById(tableID);
-			var rowCount = table.rows.length;
-			for(var i=0; i<rowCount; i++){
-				var row = table.rows[i];
-				var chkbox = row.cells[0].childNodes[0];
-				if (null != chkbox && true == chkbox.checked){
-					if (rowCount <= 1){
-						alert("Tidak dapat menghapus semua baris.");
-						break;
-					}
-					table.deleteRow(i);
-					rowCount--;
-					i--;
-				}
-			}
-		}
+			document.formD.total.value = anggaranGenap;
 
-		function InsertRow(tableID){
-			var table = document.getElementById(tableID);
-			console.log(table);
-			var rowCount = table.rows.length;
-			console.log(rowCount);
-			for(var i=0; i<rowCount; i++){
-				var row = table.rows[i];
+			function OnChange(value) {
+				anggaranGanjil = document.formD.anggaranGanjil.value;
+				anggaranGenap = document.formD.anggaranGenap.value;
+				total = parseInt(anggaranGanjil) + parseInt(anggaranGenap);
+				document.formD.total.value = total;
+			}
+		</script>
+		<script>
+			// JavaScript Document
+			function addRow(tableID) {
+				var table = document.getElementById(tableID);
+				console.log(table);
+				var rowCount = table.rows.length;
+				console.log(rowCount);
+				var row = table.insertRow(rowCount);
 				console.log(row);
-				var chkbox = row.cells[0].childNodes[0];
-				if (null != chkbox && true == chkbox.checked){
-					var newRow = table.insertRow(i+1);
-					var colCount = table.rows[0].cells.length;
-					for (h=0; h<colCount; h++){
-						var newCell = newRow.insertCell(h);
-						newCell.innerHTML = table.rows[0].cells[h].innerHTML;
-						var child = newCell.children;
-						for(var i2=0; i2<child.length; i2++) {
-							var test = newCell.children[i2].tagName;
-							switch(test) {
-								case "INPUT":
-									if(newCell.children[i2].type=='checkbox'){
+				var colCount = table.rows[0].cells.length;
+				console.log(colCount);
+				for (var i = 0; i < colCount; i++) {
+					var newcell = row.insertCell(i);
+					newcell.innerHTML = table.rows[0].cells[i].innerHTML;
+					var child = newcell.children;
+					for (var i2 = 0; i2 < child.length; i2++) {
+						var test = newcell.children[i2].tagName;
+						switch (test) {
+							case "INPUT":
+								if (newcell.children[i2].type == 'checkbox') {
+									newcell.children[i2].value = "";
+									newcell.children[i2].checked = false;
+								} else {
+									newcell.children[i2].value = "";
+								}
+								break;
+							case "SELECT":
+								newcell.children[i2].value = "";
+								break;
+							default:
+								break;
+						}
+					}
+				}
+			}
+
+			function deleteRow(tableID) {
+				var table = document.getElementById(tableID);
+				var rowCount = table.rows.length;
+				for (var i = 0; i < rowCount; i++) {
+					var row = table.rows[i];
+					var chkbox = row.cells[0].childNodes[0];
+					if (null != chkbox && true == chkbox.checked) {
+						if (rowCount <= 1) {
+							alert("Tidak dapat menghapus semua baris.");
+							break;
+						}
+						table.deleteRow(i);
+						rowCount--;
+						i--;
+					}
+				}
+			}
+
+			function InsertRow(tableID) {
+				var table = document.getElementById(tableID);
+				console.log(table);
+				var rowCount = table.rows.length;
+				console.log(rowCount);
+				for (var i = 0; i < rowCount; i++) {
+					var row = table.rows[i];
+					console.log(row);
+					var chkbox = row.cells[0].childNodes[0];
+					if (null != chkbox && true == chkbox.checked) {
+						var newRow = table.insertRow(i + 1);
+						var colCount = table.rows[0].cells.length;
+						for (h = 0; h < colCount; h++) {
+							var newCell = newRow.insertCell(h);
+							newCell.innerHTML = table.rows[0].cells[h].innerHTML;
+							var child = newCell.children;
+							for (var i2 = 0; i2 < child.length; i2++) {
+								var test = newCell.children[i2].tagName;
+								switch (test) {
+									case "INPUT":
+										if (newCell.children[i2].type == 'checkbox') {
+											newCell.children[i2].value = "";
+											newCell.children[i2].checked = false;
+										} else {
+											newCell.children[i2].value = "";
+										}
+										break;
+									case "SELECT":
 										newCell.children[i2].value = "";
-										newCell.children[i2].checked = false;
-									}else{
-										newCell.children[i2].value = "";
-									}
-								break;
-								case "SELECT":
-									newCell.children[i2].value = "";
-								break;
-								default:
-								break;
+										break;
+									default:
+										break;
+								}
 							}
 						}
 					}
-				}	
+				}
 			}
-		}
-		
-	</script>
-	<!-- JavaScript Libraries -->
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-	<!-- <script src="?php echo base_url(); ?>/public/lib/easing/easing.min.js"></script>
+		</script>
+		<!-- JavaScript Libraries -->
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+		<!-- <script src="?php echo base_url(); ?>/public/lib/easing/easing.min.js"></script>
 	<script src="?php echo base_url(); ?>/public/lib/owlcarousel/owl.carousel.min.js"></script>
 	<script src="?php echo base_url(); ?>/public/lib/isotope/isotope.pkgd.min.js"></script> -->
-	<script>
-		function startTime() {
-			var today = new Date();
-			var h = today.getHours();
-			var m = today.getMinutes();
-			var s = today.getSeconds();
-			m = checkTime(m);
-			s = checkTime(s);
-			document.getElementById('txt').innerHTML =
-				h + ":" + m + ":" + s;
-			var t = setTimeout(startTime, 500);
-		}
+		<script>
+			function startTime() {
+				var today = new Date();
+				var h = today.getHours();
+				var m = today.getMinutes();
+				var s = today.getSeconds();
+				m = checkTime(m);
+				s = checkTime(s);
+				document.getElementById('txt').innerHTML =
+					h + ":" + m + ":" + s;
+				var t = setTimeout(startTime, 500);
+			}
 
-		function checkTime(i) {
-			if (i < 10) {
-				i = "0" + i
-			}; // add zero in front of numbers < 10
-			return i;
-		}
+			function checkTime(i) {
+				if (i < 10) {
+					i = "0" + i
+				}; // add zero in front of numbers < 10
+				return i;
+			}
+		</script>
 
-	</script>
-
-	<!-- <script src="?php echo base_url(); ?>/public/chart/apexcharts.min.js"></script> -->
-	<!-- <script src="<?php echo base_url(); ?>/public/chart/dashboard.js"></script> -->
-	<script src="<?php echo base_url(); ?>/public/chart/jquery.knob.min.js"></script>
-	<script src="<?php echo base_url(); ?>/public/chart/knob-chart-setting.js"></script>
-	<script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
-	<script>
-		$(window).load(function () {
-			$(".pre-loader").fadeOut("slow");
-		});
-
-	</script>
+		<!-- <script src="?php echo base_url(); ?>/public/chart/apexcharts.min.js"></script> -->
+		<!-- <script src="<?php echo base_url(); ?>/public/chart/dashboard.js"></script> -->
+		<script src="<?php echo base_url(); ?>/public/chart/jquery.knob.min.js"></script>
+		<script src="<?php echo base_url(); ?>/public/chart/knob-chart-setting.js"></script>
+		<script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+		<script>
+			$(window).load(function() {
+				$(".pre-loader").fadeOut("slow");
+			});
+		</script>
 </body>
 
 </html>

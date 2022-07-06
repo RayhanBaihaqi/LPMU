@@ -9,12 +9,10 @@
 	<meta content="Law Firm Website Template" name="description">
 
 	<!-- Favicon -->
-	<link rel="shortcut icon" type="image/png" href="<?php echo base_url(); ?>/public/favicon.ico" />
+	<link rel="shortcut icon" type="image/png" href="<?php echo base_url(); ?>/public/img/monev_logo.png" />
 
 	<!-- Google Font -->
-	<link
-		href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,600;1,700;1,800&family=Roboto:wght@400;500&display=swap"
-		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,600;1,700;1,800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
 	<!-- CSS Libraries -->
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
@@ -36,30 +34,30 @@
 		<div class="spinner-border text-info"></div>
 	</div>
 	<div class="wrapper">
-        <!-- Top Bar Start -->
-        <div class="top-bar">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-2">
-                        <div class="logo">
-                            <img src="<?php echo base_url(); ?>/public/img/logo-upj.png" alt="Logo">
-                        </div>
-                    </div>
-                    <div class="col-sm-8">
-                        <div class="logo">
-                            <H5 style="text-align: center;">SISTEM INFORMASI MONITORING DAN EVALUASI</H5>
-                            <p style="text-align: center;">UNIVERSITAS PEMBANGUNAN JAYA</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <div class="logo">
-                        <img src="<?php echo base_url(); ?>/public/img/monev_logo.png" alt="Logo" style="float: right;">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+		<!-- Top Bar Start -->
+		<div class="top-bar">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-2">
+						<div class="logo">
+							<img src="<?php echo base_url(); ?>/public/img/logo-upj.png" alt="Logo">
+						</div>
+					</div>
+					<div class="col-sm-8">
+						<div class="logo">
+							<H5 style="text-align: center;">SISTEM INFORMASI MONITORING DAN EVALUASI</H5>
+							<p style="text-align: center;">UNIVERSITAS PEMBANGUNAN JAYA</p>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="logo">
+							<img src="<?php echo base_url(); ?>/public/img/monev_logo.png" alt="Logo" style="float: right;">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<!-- Top Bar End -->
 	<div class="container-fluid">
 		<br>
@@ -74,8 +72,8 @@
 					<div class="navbar-nav mr-auto">
 						<a href="<?php echo site_url(); ?>backend/rkat" class="nav-item nav-link active">Home</a>
 						<a href="<?= base_url('/rkat/createbyuser') ?>" class="nav-item nav-link">Rencana Anggaran</a>
-                        <a href="<?= base_url('/CapaianRkat/createcapaianbyuser') ?>" class="nav-item nav-link">Realisasi Anggaran</a>
-                        <a href="<?= base_url('/rkat/indexbyuser') ?>" class="nav-item nav-link">Kesimpulan</a>
+						<a href="<?= base_url('/CapaianRkat/createcapaianbyuser') ?>" class="nav-item nav-link">Realisasi Anggaran</a>
+						<a href="<?= base_url('/rkat/indexbyuser') ?>" class="nav-item nav-link">Kesimpulan</a>
 					</div>
 					<div class="ml-auto">
 						<div class="user-info-dropdown">
@@ -83,14 +81,14 @@
 								<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
 									<span class="user-name">
 										<?php
-                                            $nama_prodi = session('nama_prodi');
-                                            echo "$nama_prodi"
-                                        ?>
+										$nama_prodi = session('nama_prodi');
+										echo "$nama_prodi"
+										?>
 									</span>
 								</a>
 								<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
 									<a class="dropdown-item" href="<?= base_url('/rkat/form_ubahpass') ?>"><i class="fas fa-cog"></i> Ubah Password</a>
-                                    <a class="dropdown-item" href="<?php echo site_url(); ?>backend"><i class="fas fa-long-arrow-alt-left"></i>Kembali Halaman Awal</a>
+									<a class="dropdown-item" href="<?php echo site_url(); ?>backend"><i class="fas fa-long-arrow-alt-left"></i>Kembali Halaman Awal</a>
 									<a class="dropdown-item" href="<?= base_url('/auth/logout') ?>"><i class="fas fa-sign-out-alt"></i> Log
 										Out</a>
 								</div>
@@ -104,17 +102,17 @@
 		<br>
 		<div class="card">
 			<div class="card-header">Tambah Data</div>
-				<div class="card-body">
-					<form action="<?= base_url('setrkat/tambah'); ?>" method="post">
-						<div class="input-group mb-3">
-							<input type="text" class="form-control" placeholder="Jumlah Kegiatan" name="jumlah">
-						</div>
-						<input class="btn btn-primary" type="submit" name="tambah" value="Tambah">
-					</form>
-				</div>
+			<div class="card-body">
+				<form action="<?= base_url('setrkat/tambah'); ?>" method="post">
+					<div class="input-group mb-3">
+						<input type="text" class="form-control" placeholder="Jumlah Kegiatan" name="jumlah">
+					</div>
+					<input class="btn btn-primary" type="submit" name="tambah" value="Tambah">
+				</form>
 			</div>
 		</div>
-	
+	</div>
+
 	<!-- JavaScript Libraries -->
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
@@ -140,7 +138,6 @@
 			}; // add zero in front of numbers < 10
 			return i;
 		}
-
 	</script>
 
 	<!-- <script src="?php echo base_url(); ?>/public/chart/apexcharts.min.js"></script>
@@ -149,10 +146,9 @@
 	<script src="<?php echo base_url(); ?>/public/chart/knob-chart-setting.js"></script>
 	<script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
 	<script>
-		$(window).load(function () {
+		$(window).load(function() {
 			$(".pre-loader").fadeOut("slow");
 		});
-
 	</script>
 </body>
 

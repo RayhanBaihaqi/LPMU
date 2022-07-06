@@ -9,7 +9,7 @@
 	<meta content="Law Firm Website Template" name="description">
 
 	<!-- Favicon -->
-	<link rel="shortcut icon" type="image/png" href="<?php echo base_url(); ?>/public/favicon.ico" />
+	<link rel="shortcut icon" type="image/png" href="<?php echo base_url(); ?>/public/img/monev_logo.png" />
 
 	<!-- Google Font -->
 	<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,600;1,700;1,800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
@@ -69,8 +69,8 @@
 					<div class="navbar-nav mr-auto">
 						<a href="<?php echo site_url(); ?>backend/rkat" class="nav-item nav-link ">Home</a>
 						<a href="<?= base_url('/rkat/createbyuser') ?>" class="nav-item nav-link">Rencana Anggaran</a>
-                        <a href="<?= base_url('/CapaianRkat/createcapaianbyuser') ?>" class="nav-item nav-link active">Realisasi Anggaran</a>
-                        <a href="<?= base_url('/rkat/indexbyuser') ?>" class="nav-item nav-link">Kesimpulan</a>
+						<a href="<?= base_url('/CapaianRkat/createcapaianbyuser') ?>" class="nav-item nav-link active">Realisasi Anggaran</a>
+						<a href="<?= base_url('/rkat/indexbyuser') ?>" class="nav-item nav-link">Kesimpulan</a>
 					</div>
 					<div class="ml-auto">
 						<div class="user-info-dropdown">
@@ -78,14 +78,14 @@
 								<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
 									<span class="user-name">
 										<?php
-                                            $nama_prodi = session('nama_prodi');
-                                            echo "$nama_prodi"
-                                        ?>
+										$nama_prodi = session('nama_prodi');
+										echo "$nama_prodi"
+										?>
 									</span>
 								</a>
 								<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
 									<a class="dropdown-item" href="<?= base_url('/rkat/form_ubahpass') ?>"><i class="fas fa-cog"></i> Ubah Password</a>
-                                    <a class="dropdown-item" href="<?php echo site_url(); ?>backend"><i class="fas fa-long-arrow-alt-left"></i>Kembali Halaman Awal</a>
+									<a class="dropdown-item" href="<?php echo site_url(); ?>backend"><i class="fas fa-long-arrow-alt-left"></i>Kembali Halaman Awal</a>
 									<a class="dropdown-item" href="<?= base_url('/auth/logout') ?>"><i class="fas fa-sign-out-alt"></i> Log
 										Out</a>
 								</div>
@@ -105,59 +105,59 @@
 			</div>
 			<div class="card-body">
 				<form action="<?= base_url('rkat/updatebyuser'); ?>" method="POST" enctype="multipart/form-data">
-				<div class="form-inline">
-					<label class="mb-2 mr-sm-2" for="exampleFormControlSelect1" style="width: 150px;">Tahun Akademik</label>
-					<input type="text" class="form-control mb-2 mr-sm-2" name="tahunAkademik" id="tahunAkademik" value="<?= $tahunAkademik['tahunAkademik'] ?>" disabled>
-				</div>
+					<div class="form-inline">
+						<label class="mb-2 mr-sm-2" for="exampleFormControlSelect1" style="width: 150px;">Tahun Akademik</label>
+						<input type="text" class="form-control mb-2 mr-sm-2" name="tahunAkademik" id="tahunAkademik" value="<?= $tahunAkademik['tahunAkademik'] ?>" disabled>
+					</div>
 					<div class="">
 						<table class="table table-bordered" id="" width="100%" cellspacing="0">
 							<thead>
 								<tr>
-									<th >No Kegiatan</th>
-									<th >KPI-Butir</th>
-									<th >Kategori</th>
+									<th>No Kegiatan</th>
+									<th>KPI-Butir</th>
+									<th>Kategori</th>
 									<th width="600px">Indikator - Nama Kegiatan</th>
-									<th >Target</th>
-									<th >Anggaran Ganjil</th>
+									<th>Target</th>
+									<th>Anggaran Ganjil</th>
 									<th width="600px">Serapan Ganjil</th>
 									<!-- <th >peren Ganjil</th> -->
-									<th >Anggaran Genap</th>
+									<th>Anggaran Genap</th>
 									<th width="600px">Serapan Genap</th>
 									<!-- <th >peren Genap</th> -->
 								</tr>
 							</thead>
 							<tbody id="nilai">
-								
-									<?php
-									$no = 1;
-									foreach ($tahunAkademik2 as $key => $reading) : ?>
-										<input required type="hidden" name="id_user" value="<?= $reading['id_user']; ?>">
-										<tr>
-											<td><?= $no; ?></td>
-											<td><?= $reading['kpi']; ?> . <?= $reading['butir']; ?></td>
-											<td><?= $reading['kategori']; ?></td>
-											<td>
+
+								<?php
+								$no = 1;
+								foreach ($tahunAkademik2 as $key => $reading) : ?>
+									<input required type="hidden" name="id_user" value="<?= $reading['id_user']; ?>">
+									<tr>
+										<td><?= $no; ?></td>
+										<td><?= $reading['kpi']; ?> . <?= $reading['butir']; ?></td>
+										<td><?= $reading['kategori']; ?></td>
+										<td>
 											<input type="hidden" class="form-control" id="id_tahun" value="<?= $tahunAkademik['id_tahun'] ?>" name="id_tahun" required>
-												<ul class="list-group list-group-flush">
-													<li class="list-group-item" width="600px"><?= $reading['indikator']; ?></li>
-													<li class="list-group-item"><?= $reading['nama_kegiatan']; ?></li>
-												</ul>
-											</td>
-											<td><?= $reading['target']; ?></td>
-											<td><input type="text" class="form-control form-control-sm" id="aGanjil<?= $no; ?>" value="<?= $reading['anggaranGanjil']; ?>" disabled /></td>
-											<td>
-												<input style="display: none;" required type="text" name="id[]" id="id" value="<?= $reading['id_rkat']; ?>">
-												<input type="text" class="form-control form-control-sm serapGanjil" id="serapGanjil<?= $no; ?>" placeholder="Rp. 0" name="serapGanjil[]" onkeyup="AddInputs(this.id);" required <?= ($reading['serapGanjil'] != "") ? "value='".$reading['serapGanjil']."' disabled" : "" ?>>
-											</td>
-											<!-- <td></td> -->
-											<td><input type="text" class="form-control form-control-sm" id="aGenap<?= $no; ?>" value="<?= $reading['anggaranGenap']; ?>" disabled /></td>
-											<td>
-											<input type="text" class="form-control form-control-sm serapGenap" id="serapGenap<?= $no; ?>" placeholder="Rp. 0" name="serapGenap[]" onkeyup="AddInputs2(this.id);" required <?= ($reading['serapGenap'] != "") ? "value='".$reading['serapGenap']."' disabled" : "" ?>>
-											</td>
-											<!-- <td></td> -->
-										</tr>
-									<?php $no++;
-									endforeach; ?>
+											<ul class="list-group list-group-flush">
+												<li class="list-group-item" width="600px"><?= $reading['indikator']; ?></li>
+												<li class="list-group-item"><?= $reading['nama_kegiatan']; ?></li>
+											</ul>
+										</td>
+										<td><?= $reading['target']; ?></td>
+										<td><input type="text" class="form-control form-control-sm" id="aGanjil<?= $no; ?>" value="<?= $reading['anggaranGanjil']; ?>" disabled /></td>
+										<td>
+											<input style="display: none;" required type="text" name="id[]" id="id" value="<?= $reading['id_rkat']; ?>">
+											<input type="text" class="form-control form-control-sm serapGanjil" id="serapGanjil<?= $no; ?>" placeholder="Rp. 0" name="serapGanjil[]" onkeyup="AddInputs(this.id);" required <?= ($reading['serapGanjil'] != "") ? "value='" . $reading['serapGanjil'] . "' disabled" : "" ?>>
+										</td>
+										<!-- <td></td> -->
+										<td><input type="text" class="form-control form-control-sm" id="aGenap<?= $no; ?>" value="<?= $reading['anggaranGenap']; ?>" disabled /></td>
+										<td>
+											<input type="text" class="form-control form-control-sm serapGenap" id="serapGenap<?= $no; ?>" placeholder="Rp. 0" name="serapGenap[]" onkeyup="AddInputs2(this.id);" required <?= ($reading['serapGenap'] != "") ? "value='" . $reading['serapGenap'] . "' disabled" : "" ?>>
+										</td>
+										<!-- <td></td> -->
+									</tr>
+								<?php $no++;
+								endforeach; ?>
 							</tbody>
 							<tfoot>
 								<td></td>
@@ -208,15 +208,14 @@
 		document.getElementById("total").innerHTML = "Rp." + sumHsl;
 	</script>
 	<script>
-		function AddInputs(clicked_id)
-		{
+		function AddInputs(clicked_id) {
 			var totalGanjil = 0;
 			var aGanjil = document.getElementById('totalanggaranganjil').innerHTML;
-			
-			var panjangDataSerapGanjil = document.querySelectorAll (".serapGanjil")
+
+			var panjangDataSerapGanjil = document.querySelectorAll(".serapGanjil")
 			// console.log(panjangDataSerapGanjil.length)
 			for (let index = 1; index <= panjangDataSerapGanjil.length; index++) {
-				var nilaiKolomGanjil = document.getElementById("serapGanjil"+index).value;
+				var nilaiKolomGanjil = document.getElementById("serapGanjil" + index).value;
 				totalGanjil += parseInt(nilaiKolomGanjil);
 			}
 			if (isNaN(totalGanjil)) {
@@ -225,21 +224,21 @@
 			} else {
 				console.log(totalGanjil);
 				var tampilTotalGanjil = document.getElementById("tampilTotalGanjil").innerHTML = totalGanjil;
-				
+
 			}
 
 			hitungGanjil = parseInt(totalGanjil) / parseInt(aGanjil) * 100;
 			document.getElementById('persenSerapGanjil').value = hitungGanjil + "%";
 			console.log(persenSerapGanjil);
 		}
-		function AddInputs2(clicked_id)
-		{
+
+		function AddInputs2(clicked_id) {
 			var totalGenap = 0;
 			var aGenap = document.getElementById('totalanggarangenap').innerHTML;
-			var panjangDataSerapGenap = document.querySelectorAll (".serapGenap")
+			var panjangDataSerapGenap = document.querySelectorAll(".serapGenap")
 			console.log(panjangDataSerapGenap.length)
 			for (let index = 1; index <= panjangDataSerapGenap.length; index++) {
-				var nilaiKolomGenap = document.getElementById("serapGenap"+index).value;
+				var nilaiKolomGenap = document.getElementById("serapGenap" + index).value;
 				totalGenap += parseInt(nilaiKolomGenap);
 			}
 			if (isNaN(totalGenap)) {
@@ -292,27 +291,29 @@
 	</script>
 	<script type='text/javascript'>
 		// baseURL variable
-		var baseURL= "<?php echo base_url();?>";
-		$(document).ready(function(){
-		// Department change
-		$('#sel_depart').change(function(){
-		var department = $(this).val();
-		// AJAX request
-		$.ajax({
-		url:'<?=base_url()?>index.php/user/getDepartmentusers',
-		method: 'post',
-		data: {department: department},
-		dataType: 'json',
-		success: function(response){
-		// Remove options
-		$('#sel_user').find('option').not(':first').remove();
-		// Add options
-		$.each(response,function(index,data){
-		$('#sel_user').append('<option value="'+data['id']+'">'+data['name']+'</option>');
-		});
-		}
-		});
-		});
+		var baseURL = "<?php echo base_url(); ?>";
+		$(document).ready(function() {
+			// Department change
+			$('#sel_depart').change(function() {
+				var department = $(this).val();
+				// AJAX request
+				$.ajax({
+					url: '<?= base_url() ?>index.php/user/getDepartmentusers',
+					method: 'post',
+					data: {
+						department: department
+					},
+					dataType: 'json',
+					success: function(response) {
+						// Remove options
+						$('#sel_user').find('option').not(':first').remove();
+						// Add options
+						$.each(response, function(index, data) {
+							$('#sel_user').append('<option value="' + data['id'] + '">' + data['name'] + '</option>');
+						});
+					}
+				});
+			});
 		});
 	</script>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

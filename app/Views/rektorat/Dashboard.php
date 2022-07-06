@@ -10,7 +10,7 @@
 	<meta name="author" content="">
 
 	<title>Grafik Capaian KPI</title>
-
+	<link rel="shortcut icon" type="image/png" href="<?php echo base_url(); ?>/public/img/monev_logo.png" />
 	<!-- Custom fonts for this template-->
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -251,7 +251,7 @@
 							</div>
 						</div>
 					</div> -->
-                    <div class="row" style="margin: 15px auto;">
+					<div class="row" style="margin: 15px auto;">
 
 						<div class="col-md-6">
 							<div class="card-box pd-30 height-100-p">
@@ -355,7 +355,8 @@
 
 		var options = {
 			chart: {
-				title: 'Data Prodi/Unit : <?php $nama_prodi = session('nama_prodi'); echo "$nama_prodi" ?>'
+				title: 'Data Prodi/Unit : <?php $nama_prodi = session('nama_prodi');
+											echo "$nama_prodi" ?>'
 			},
 			bars: 'horizontal' // Required for Material Bar Charts.
 		};

@@ -9,12 +9,10 @@
 	<meta content="Law Firm Website Template" name="description">
 
 	<!-- Favicon -->
-	<link rel="shortcut icon" type="image/png" href="<?php echo base_url(); ?>/public/favicon.ico" />
+	<link rel="shortcut icon" type="image/png" href="<?php echo base_url(); ?>/public/img/monev_logo.png" />
 
 	<!-- Google Font -->
-	<link
-		href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,600;1,700;1,800&family=Roboto:wght@400;500&display=swap"
-		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,600;1,700;1,800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
 	<!-- CSS Libraries -->
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
@@ -68,13 +66,13 @@
 						</div>
 					</div>
 					<div class="col-sm-2">
-                        <div class="social">
-                            <a href="https://www.upj.ac.id/"><i class="fas fa-globe"></i></i></a>
-                            <a href="https://twitter.com/upj_bintaro"><i class="fab fa-twitter"></i></a>
-                            <a href="https://web.facebook.com/universitas.pembangunan.jaya?_rdc=1&_rdr"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://www.instagram.com/upj_bintaro/"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
+						<div class="social">
+							<a href="https://www.upj.ac.id/"><i class="fas fa-globe"></i></i></a>
+							<a href="https://twitter.com/upj_bintaro"><i class="fab fa-twitter"></i></a>
+							<a href="https://web.facebook.com/universitas.pembangunan.jaya?_rdc=1&_rdr"><i class="fab fa-facebook-f"></i></a>
+							<a href="https://www.instagram.com/upj_bintaro/"><i class="fab fa-instagram"></i></a>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -100,9 +98,9 @@
 									</span>
 									<span class="user-name">
 										<?php
-                                                $nama_prodi = session('nama_prodi');
-                                                echo "$nama_prodi"
-                                                ?>
+										$nama_prodi = session('nama_prodi');
+										echo "$nama_prodi"
+										?>
 									</span>
 								</a>
 								<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
@@ -118,30 +116,29 @@
 		</div>
 		<!-- Nav Bar End -->
 		<br>
-		
+
 		<form id="formD" name="formD" action="<?= base_url('rkat/save'); ?>" method="POST" enctype="multipart/form-data">
-			<?= session()->getFlashdata('status'); ?>	
+			<?= session()->getFlashdata('status'); ?>
 			<div class="card">
 				<div class="card-header">Tambah Rencana RKAT</div>
-					<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat'];?>
-						<input type="hidden" class="form-control" id="id_set" value="<?= $id_set ?>" name="id_set[]" 
-						required>
-				<div class="card-body">
-					<div class="form-inline">
-						<label class="mb-2 mr-sm-2" for="exampleFormControlSelect1" style="width: 150px;">Tahun Ajaran</label>
-						<select class="form-control mb-2 mr-sm-2" id="exampleFormControlSelect1">
-							<!-- <option value="<?= $value['tahun_akademik'] ?>" selected><?= $value['tahun_akademik'] ?> </option>-->
-							<option value="" disabled selected>Pilih Tahun</option>
-							<option value="2019/2020">2019/2020</option>
-							<option value="2020/2021">2020/2021</option>
-						</select>
-					</div>
-					<div class="form-inline" style="margin-bottom:20px;">
-						<label for="prodiunit" class="mb-2 mr-sm-2" style="width: 150px;">Program Studi/Unit</label>
-						<input type="text" class="form-control mb-2 mr-sm-2" id="prodiunit" value="<?= $value['nama_prodi'] ?>" name="prodiunit"required disabled>
-						<label for="pagu" class="mb-2 mr-sm-2">Jumlah Pagu</label>
-						<input type="text" class="form-control mb-2 mr-sm-2" id="pagu" name="pagu" value="RP. <?= $value['pagu'] ?>" required disabled>
-					</div>
+				<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat']; ?>
+					<input type="hidden" class="form-control" id="id_set" value="<?= $id_set ?>" name="id_set[]" required>
+					<div class="card-body">
+						<div class="form-inline">
+							<label class="mb-2 mr-sm-2" for="exampleFormControlSelect1" style="width: 150px;">Tahun Ajaran</label>
+							<select class="form-control mb-2 mr-sm-2" id="exampleFormControlSelect1">
+								<!-- <option value="<?= $value['tahun_akademik'] ?>" selected><?= $value['tahun_akademik'] ?> </option>-->
+								<option value="" disabled selected>Pilih Tahun</option>
+								<option value="2019/2020">2019/2020</option>
+								<option value="2020/2021">2020/2021</option>
+							</select>
+						</div>
+						<div class="form-inline" style="margin-bottom:20px;">
+							<label for="prodiunit" class="mb-2 mr-sm-2" style="width: 150px;">Program Studi/Unit</label>
+							<input type="text" class="form-control mb-2 mr-sm-2" id="prodiunit" value="<?= $value['nama_prodi'] ?>" name="prodiunit" required disabled>
+							<label for="pagu" class="mb-2 mr-sm-2">Jumlah Pagu</label>
+							<input type="text" class="form-control mb-2 mr-sm-2" id="pagu" name="pagu" value="RP. <?= $value['pagu'] ?>" required disabled>
+						</div>
 					<?php endforeach; ?>
 					<table class="table table-borded table-responsive table-striped">
 						<thead class="table-dark">
@@ -199,8 +196,8 @@
 								<td>
 									<input type="text" class="form-control form-control-sm" id="total1" name="total1" placeholder="Total" readonly="readonly" required>
 								</td>
-								<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat'];?>
-									<input type="hidden" class="form-control" id="id_set1" value="<?= $id_set ?>" name="id_set1" required>	
+								<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat']; ?>
+									<input type="hidden" class="form-control" id="id_set1" value="<?= $id_set ?>" name="id_set1" required>
 								<?php endforeach; ?>
 							</tr>
 							<tr>
@@ -247,8 +244,8 @@
 								<td>
 									<input type="text" class="form-control form-control-sm" id="total2" name="total2" placeholder="Total" readonly="readonly">
 								</td>
-								<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat'];?>
-									<input type="hidden" class="form-control" id="id_set2" value="<?= $id_set ?>" name="id_set2">	
+								<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat']; ?>
+									<input type="hidden" class="form-control" id="id_set2" value="<?= $id_set ?>" name="id_set2">
 								<?php endforeach; ?>
 							</tr>
 							<tr>
@@ -295,8 +292,8 @@
 								<td>
 									<input type="text" class="form-control form-control-sm" id="total3" name="total3" placeholder="Total" readonly="readonly">
 								</td>
-								<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat'];?>
-									<input type="hidden" class="form-control" id="id_set3" value="<?= $id_set ?>" name="id_set3">	
+								<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat']; ?>
+									<input type="hidden" class="form-control" id="id_set3" value="<?= $id_set ?>" name="id_set3">
 								<?php endforeach; ?>
 							</tr>
 							<tr>
@@ -343,8 +340,8 @@
 								<td>
 									<input type="text" class="form-control form-control-sm" id="total4" name="total4" placeholder="Total" readonly="readonly">
 								</td>
-								<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat'];?>
-									<input type="hidden" class="form-control" id="id_set4" value="<?= $id_set ?>" name="id_set4">	
+								<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat']; ?>
+									<input type="hidden" class="form-control" id="id_set4" value="<?= $id_set ?>" name="id_set4">
 								<?php endforeach; ?>
 							</tr>
 							<tr>
@@ -391,8 +388,8 @@
 								<td>
 									<input type="text" class="form-control form-control-sm" id="total5" name="total5" placeholder="Total" readonly="readonly">
 								</td>
-								<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat'];?>
-									<input type="hidden" class="form-control" id="id_set5" value="<?= $id_set ?>" name="id_set5">	
+								<?php foreach ($set_rkat as $key => $value) : $id_set = $value['id_setrkat']; ?>
+									<input type="hidden" class="form-control" id="id_set5" value="<?= $id_set ?>" name="id_set5">
 								<?php endforeach; ?>
 							</tr>
 						</tbody>
@@ -403,15 +400,15 @@
 							<td><input type="text" class="form-control" style="width: 150px;" id="pagu2" name="pagu2" value="1" disabled></td>
 							<td><input type="text" class="form-control" style="width: 150px;" id="pagu3" name="pagu3" value="1" disabled></td>
 						</tfoot>
-  					</table>
-				</div>
+					</table>
+					</div>
 					<div class="card-footer">
 						<button type="submit" class="btn btn-primary" id="tambah">Tambah Data</button>
 					</div>
-				</div>
+			</div>
 		</form>
 	</div>
-	
+
 	<!-- JavaScript Libraries -->
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
@@ -420,7 +417,7 @@
 	<script src="lib/isotope/isotope.pkgd.min.js"></script> -->
 	<script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
 	<script>
-		$(window).load(function () {
+		$(window).load(function() {
 			$(".pre-loader").fadeOut("slow");
 		});
 
@@ -442,45 +439,59 @@
 			}; // add zero in front of numbers < 10
 			return i;
 		}
-	    // anggaranGanjil = document.formD.anggaranGanjil.value;
-   		// document.formD.total.value = anggaranGanjil;
+		// anggaranGanjil = document.formD.anggaranGanjil.value;
+		// document.formD.total.value = anggaranGanjil;
 		// anggaranGenap = document.formD.anggaranGenap.value;
-   		// document.formD.total.value = anggaranGenap;
+		// document.formD.total.value = anggaranGenap;
 		// function OnChange(value){
 		// 	anggaranGanjil = document.formD.anggaranGanjil.value;
 		// 	anggaranGenap = document.formD.anggaranGenap.value;
 		// 	total = parseInt(anggaranGanjil) + parseInt(anggaranGenap);
-     	// 	document.formD.total.value = total;
+		// 	document.formD.total.value = total;
 		// } 
 		function totalAnggaran1() {
 			var txtFirstNumberValue = document.getElementById('anggaranGanjil1').value;
 			var txtSecondNumberValue = document.getElementById('anggaranGenap1').value;
 			var result = parseInt(txtFirstNumberValue) + parseInt(txtSecondNumberValue);
-			if (!isNaN(result)) { document.getElementById('total1').value = result; }
+			if (!isNaN(result)) {
+				document.getElementById('total1').value = result;
+			}
 		}
+
 		function totalAnggaran2() {
 			var txtFirstNumberValue = document.getElementById('anggaranGanjil2').value;
 			var txtSecondNumberValue = document.getElementById('anggaranGenap2').value;
 			var result = parseInt(txtFirstNumberValue) + parseInt(txtSecondNumberValue);
-			if (!isNaN(result)) { document.getElementById('total2').value = result; }
+			if (!isNaN(result)) {
+				document.getElementById('total2').value = result;
+			}
 		}
+
 		function totalAnggaran3() {
 			var txtFirstNumberValue = document.getElementById('anggaranGanjil3').value;
 			var txtSecondNumberValue = document.getElementById('anggaranGenap3').value;
 			var result = parseInt(txtFirstNumberValue) + parseInt(txtSecondNumberValue);
-			if (!isNaN(result)) { document.getElementById('total3').value = result; }
+			if (!isNaN(result)) {
+				document.getElementById('total3').value = result;
+			}
 		}
+
 		function totalAnggaran4() {
 			var txtFirstNumberValue = document.getElementById('anggaranGanjil4').value;
 			var txtSecondNumberValue = document.getElementById('anggaranGenap4').value;
 			var result = parseInt(txtFirstNumberValue) + parseInt(txtSecondNumberValue);
-			if (!isNaN(result)) { document.getElementById('total4').value = result; }
+			if (!isNaN(result)) {
+				document.getElementById('total4').value = result;
+			}
 		}
+
 		function totalAnggaran5() {
 			var txtFirstNumberValue = document.getElementById('anggaranGanjil5').value;
 			var txtSecondNumberValue = document.getElementById('anggaranGenap5').value;
 			var result = parseInt(txtFirstNumberValue) + parseInt(txtSecondNumberValue);
-			if (!isNaN(result)) { document.getElementById('total5').value = result; }
+			if (!isNaN(result)) {
+				document.getElementById('total5').value = result;
+			}
 		}
 
 		function totalKeseluruhan() {
@@ -499,15 +510,14 @@
 			var result1 = parseInt(anggaranGanjil1) + parseInt(anggaranGanjil2) + parseInt(anggaranGanjil3) + parseInt(anggaranGanjil4) + parseInt(anggaranGanjil5);
 			var result2 = parseInt(anggaranGenap1) + parseInt(anggaranGenap2) + parseInt(anggaranGenap3) + parseInt(anggaranGenap4) + parseInt(anggaranGenap5);
 			var result3 = parseInt(result1) + parseInt(result2);
-			
+
 			document.getElementById('pagu1').value = result1;
 			document.getElementById('pagu2').value = result2;
 			document.getElementById('pagu3').value = result3;
-			
-		}
 
+		}
 	</script>
-	
+
 </body>
 
 </html>

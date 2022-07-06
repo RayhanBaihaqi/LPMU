@@ -17,6 +17,7 @@
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 	<!-- Custom styles for this template-->
 	<link href="<?php echo base_url(); ?>/public/css/style_admin.css" rel="stylesheet">
+	<link rel="shortcut icon" type="image/png" href="<?php echo base_url(); ?>/public/img/monev_logo.png" />
 
 </head>
 

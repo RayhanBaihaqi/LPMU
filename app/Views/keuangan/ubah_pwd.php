@@ -9,7 +9,7 @@
     <meta content="Law Firm Website Template" name="description">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/png" href="<?php echo base_url(); ?>/public/favicon.ico" />
+    <link rel="shortcut icon" type="image/png" href="<?php echo base_url(); ?>/public/img/monev_logo.png" />
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,600;1,700;1,800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
@@ -49,7 +49,7 @@
                     </div>
                     <div class="col-sm-2">
                         <div class="logo">
-                        <img src="<?php echo base_url(); ?>/public/img/monev_logo.png" alt="Logo" style="float: right;">
+                            <img src="<?php echo base_url(); ?>/public/img/monev_logo.png" alt="Logo" style="float: right;">
                         </div>
                     </div>
                 </div>
@@ -60,7 +60,7 @@
     <div class="container">
         <br>
         <!-- Nav Bar Start -->
-		<div class="nav-bar">
+        <div class="nav-bar">
             <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
 
                 <a href="<?php echo site_url(); ?>keuangan/home"><i class="fas fa-long-arrow-alt-left"></i></a>
@@ -108,7 +108,7 @@
                 <div class="card-body">
                     <div class="table-responsive">
                         <form action="<?= base_url('rkat/ubahpwd'); ?>" method="POST" enctype="multipart/form-data">
-                            <input required type="hidden" name="id" value="<?php $id = session('id');?>">
+                            <input required type="hidden" name="id" value="<?php $id = session('id'); ?>">
 
                             <div class="form-group">
                                 <label for="username">username</label>

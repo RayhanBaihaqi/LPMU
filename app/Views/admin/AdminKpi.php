@@ -10,7 +10,7 @@
 	<meta name="author" content="">
 
 	<title>Admin</title>
-
+	<link rel="shortcut icon" type="image/png" href="<?php echo base_url(); ?>/public/img/monev_logo.png" />
 	<!-- Custom fonts for this template-->
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -322,14 +322,14 @@
 					<span>RKAT</span>
 				</a>
 				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-				<div class="bg-white py-2 collapse-inner rounded">
+					<div class="bg-white py-2 collapse-inner rounded">
 						<a class="collapse-item" href="<?= base_url('admin/create') ?>">Tambah Rencana RKAT</a>
 						<a class="collapse-item" href="<?= base_url('admin/listRkatProdi') ?>">Lihat Data Prodi</a>
 						<a class="collapse-item" href="<?= base_url('admin/listRkatUnit') ?>">Lihat Data Unit</a>
 						<a class="collapse-item" href="<?= base_url('pagurkat/index') ?>">List Data Pagu</a>
 						<a class="collapse-item" href="<?= base_url('tahunakademik/indextahun') ?>">Tahun Akademik</a>
 						<a class="collapse-item" href="<?= base_url('admin/grafikSerapProdi') ?>">Grafik Capaian Prodi</a>
-                        <a class="collapse-item" href="<?= base_url('admin/grafikSerapUnit') ?>">Grafik Capaian Unit</a>
+						<a class="collapse-item" href="<?= base_url('admin/grafikSerapUnit') ?>">Grafik Capaian Unit</a>
 					</div>
 				</div>
 			</li>

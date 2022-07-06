@@ -9,7 +9,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>List data user</title>
+	<title>List Tahun Akademik</title>
 
 	<!-- Custom fonts for this template-->
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
@@ -18,7 +18,7 @@
 	<!-- Custom styles for this template-->
 	<link href="<?php echo base_url(); ?>/public/css/style_admin.css" rel="stylesheet">
 	<link href="<?php echo base_url(); ?>/public/css/dataTables.bootstrap4.min.css" rel="stylesheet">
-
+	<link rel="shortcut icon" type="image/png" href="<?php echo base_url(); ?>/public/img/monev_logo.png" />
 </head>
 
 <body id="page-top">
@@ -55,14 +55,14 @@
 					<span>RKAT</span>
 				</a>
 				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-				<div class="bg-white py-2 collapse-inner rounded">
+					<div class="bg-white py-2 collapse-inner rounded">
 						<a class="collapse-item" href="<?= base_url('admin/create') ?>">Tambah Rencana RKAT</a>
 						<a class="collapse-item" href="<?= base_url('admin/listRkatProdi') ?>">Lihat Data Prodi</a>
 						<a class="collapse-item" href="<?= base_url('admin/listRkatUnit') ?>">Lihat Data Unit</a>
 						<a class="collapse-item" href="<?= base_url('pagurkat/index') ?>">List Data Pagu</a>
 						<a class="collapse-item active" href="<?= base_url('tahunakademik/indextahun') ?>">Tahun Akademik</a>
 						<a class="collapse-item" href="<?= base_url('admin/grafikSerapProdi') ?>">Grafik Capaian Prodi</a>
-                        <a class="collapse-item" href="<?= base_url('admin/grafikSerapUnit') ?>">Grafik Capaian Unit</a>
+						<a class="collapse-item" href="<?= base_url('admin/grafikSerapUnit') ?>">Grafik Capaian Unit</a>
 					</div>
 				</div>
 			</li>
@@ -151,38 +151,38 @@
 						</div>
 						<div class="card-body">
 							<div class="table-responsive">
-							<form action="<?= base_url('tahunAkademik/update'); ?>" method="POST" enctype="multipart/form-data">
-								<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-									<thead>
-										<tr>
-											<th>No</th>
-											<th>Tahun</th>
-											<th>Setatus</th>
-										</tr>
-									</thead>
-									<tbody>
-										<?php $i = 1; ?>
-										<?php if ($tahun_Akademik) : ?>
-											<?php foreach ($tahun_Akademik as $reading) : ?>
-												<tr>
-													<td scope="row"><?= $i++; ?></td>
-													<td><?= $reading['tahunAkademik']; ?><input style="display: none;" required type="text" name="id[]" id="id" value="<?= $reading['id_tahun']; ?>"></td>
-													<td><select class="form-control form-control-sm" id="aktif" name="aktif[]" required>
-															<option value="" disabled selected><?= $reading['aktif']; ?></option>
-															<option value="0">0 = Tidak Aktif</option>
-															<option value="1">1 = Aktif</option>
-													</select></td>
-												</tr>
-											<?php endforeach; ?>
-										<?php endif; ?>
-									</tbody>
-									
-								</table>
-								<div class="card-footer" align="center">
+								<form action="<?= base_url('tahunAkademik/update'); ?>" method="POST" enctype="multipart/form-data">
+									<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+										<thead>
+											<tr>
+												<th>No</th>
+												<th>Tahun</th>
+												<th>Setatus</th>
+											</tr>
+										</thead>
+										<tbody>
+											<?php $i = 1; ?>
+											<?php if ($tahun_Akademik) : ?>
+												<?php foreach ($tahun_Akademik as $reading) : ?>
+													<tr>
+														<td scope="row"><?= $i++; ?></td>
+														<td><?= $reading['tahunAkademik']; ?><input style="display: none;" required type="text" name="id[]" id="id" value="<?= $reading['id_tahun']; ?>"></td>
+														<td><select class="form-control form-control-sm" id="aktif" name="aktif[]" required>
+																<option value="" disabled selected><?= $reading['aktif']; ?></option>
+																<option value="0">0 = Tidak Aktif</option>
+																<option value="1">1 = Aktif</option>
+															</select></td>
+													</tr>
+												<?php endforeach; ?>
+											<?php endif; ?>
+										</tbody>
+
+									</table>
+									<div class="card-footer" align="center">
 										<button type="submit" class="btn btn-primary" id="btnJumlah" value="submit">Update Data</button>
 										<span id="textError"></span>
 									</div>
-							</form>
+								</form>
 							</div>
 						</div>
 					</div>

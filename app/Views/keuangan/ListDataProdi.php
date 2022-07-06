@@ -9,12 +9,10 @@
 	<meta content="Law Firm Website Template" name="description">
 
 	<!-- Favicon -->
-	<link rel="shortcut icon" type="image/png" href="<?php echo base_url(); ?>/public//favicon.ico" />
+	<link rel="shortcut icon" type="image/png" href="<?php echo base_url(); ?>/public/img/monev_logo.png" />
 
 	<!-- Google Font -->
-	<link
-		href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,600;1,700;1,800&family=Roboto:wght@400;500&display=swap"
-		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,600;1,700;1,800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
 	<!-- CSS Libraries -->
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
@@ -25,8 +23,8 @@
 
 
 	<!-- Template Stylesheet -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>/public/css/header.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>/public/css/style2.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>/public/css/header.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>/public/css/style2.css">
 	<link href="<?php echo base_url(); ?>/public/css/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 
@@ -34,30 +32,30 @@
 
 <body onload="startTime()">
 	<div class="wrapper">
-        <!-- Top Bar Start -->
-        <div class="top-bar">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-2">
-                        <div class="logo">
-                            <img src="<?php echo base_url(); ?>/public/img/logo-upj.png" alt="Logo">
-                        </div>
-                    </div>
-                    <div class="col-sm-8">
-                        <div class="logo">
-                            <H5 style="text-align: center;">SISTEM INFORMASI MONITORING DAN EVALUASI</H5>
-                            <p style="text-align: center;">UNIVERSITAS PEMBANGUNAN JAYA</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <div class="logo">
-                        <img src="<?php echo base_url(); ?>/public/img/monev_logo.png" alt="Logo" style="float: right;">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+		<!-- Top Bar Start -->
+		<div class="top-bar">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-2">
+						<div class="logo">
+							<img src="<?php echo base_url(); ?>/public/img/logo-upj.png" alt="Logo">
+						</div>
+					</div>
+					<div class="col-sm-8">
+						<div class="logo">
+							<H5 style="text-align: center;">SISTEM INFORMASI MONITORING DAN EVALUASI</H5>
+							<p style="text-align: center;">UNIVERSITAS PEMBANGUNAN JAYA</p>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="logo">
+							<img src="<?php echo base_url(); ?>/public/img/monev_logo.png" alt="Logo" style="float: right;">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<!-- Top Bar End -->
 	<div class="container-fluid">
 		<br>
@@ -69,15 +67,15 @@
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse justify-content-between">
-				<div class="navbar-nav mr-auto">
+					<div class="navbar-nav mr-auto">
 						<a href="<?php echo site_url(); ?>keuangan/home" class="nav-item nav-link">Home</a>
 						<a href="<?= base_url('/keuangan/createbyuser') ?>" class="nav-item nav-link">Rencana Anggaran</a>
-                        <a href="<?= base_url('/CapaianRkat/createcapaianbykeuangan') ?>" class="nav-item nav-link">Realisasi Anggaran</a>
-                        <a href="<?= base_url('/keuangan/indexbyuser') ?>" class="nav-item nav-link">Kesimpulan</a>
-                        <a href="<?= base_url('/keuangan/ListRkatProdi') ?>" class="nav-item nav-link active">List Data Prodi</a>
-                        <a href="<?= base_url('/keuangan/ListRkatUnit') ?>" class="nav-item nav-link">List Data Unit</a>
-                        <a href="<?= base_url('/keuangan/grafikSerapProdi') ?>" class="nav-item nav-link">Grafik Serap Prodi</a>
-                        <a href="<?= base_url('/keuangan/grafikSerapUnit') ?>" class="nav-item nav-link">Grafik Serap Unit</a>
+						<a href="<?= base_url('/CapaianRkat/createcapaianbykeuangan') ?>" class="nav-item nav-link">Realisasi Anggaran</a>
+						<a href="<?= base_url('/keuangan/indexbyuser') ?>" class="nav-item nav-link">Kesimpulan</a>
+						<a href="<?= base_url('/keuangan/ListRkatProdi') ?>" class="nav-item nav-link active">List Data Prodi</a>
+						<a href="<?= base_url('/keuangan/ListRkatUnit') ?>" class="nav-item nav-link">List Data Unit</a>
+						<a href="<?= base_url('/keuangan/grafikSerapProdi') ?>" class="nav-item nav-link">Grafik Serap Prodi</a>
+						<a href="<?= base_url('/keuangan/grafikSerapUnit') ?>" class="nav-item nav-link">Grafik Serap Unit</a>
 					</div>
 					<div class="ml-auto">
 						<div class="user-info-dropdown">
@@ -85,14 +83,14 @@
 								<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
 									<span class="user-name">
 										<?php
-                                            $nama_prodi = session('nama_prodi');
-                                            echo "$nama_prodi"
-                                        ?>
+										$nama_prodi = session('nama_prodi');
+										echo "$nama_prodi"
+										?>
 									</span>
 								</a>
 								<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
 									<a class="dropdown-item" href="<?= base_url('/keuangan/form_ubahpass') ?>"><i class="fas fa-cog"></i> Ubah Password</a>
-                                    <a class="dropdown-item" href="<?php echo site_url(); ?>keuangan/index"><i class="fas fa-long-arrow-alt-left"></i> Kembali Halaman Awal</a>
+									<a class="dropdown-item" href="<?php echo site_url(); ?>keuangan/index"><i class="fas fa-long-arrow-alt-left"></i> Kembali Halaman Awal</a>
 									<a class="dropdown-item" href="<?= base_url('/auth/logout') ?>"><i class="fas fa-sign-out-alt"></i> Log
 										Out</a>
 								</div>
@@ -106,70 +104,70 @@
 		<br>
 		<!-- Responsive tables Start -->
 		<div class="col-lg-12 grid-margin stretch-card">
-		<div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <span></span></a>
-                        </div>
+			<div class="card shadow mb-4">
+				<div class="card-header py-3">
+					<span></span></a>
+				</div>
 
-                        <div class="container-fluid">
-                            <div class="form-group">
-                                <label for="exampleFormControlSelect1">Pilih Nama Prodi</label>
-                                <select class="form-control filter-satuan" id="categoryFilter">
-                                    <option value="" disabled selected>Pilih Nama Prodi</option>
-                                    <?php foreach ($userprodi as $value) : ?>
-                                        <option value="<?= $value['id']; ?>"><?= $value['nama_prodi']; ?></option>
-                                    <?php endforeach; ?>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>id</th>
-                                            <th>Prodi/Unit</th>
-                                            <th>Kategori</th>
-                                            <th>No Kegiatan</th>
-                                            <th>Target</th>
-                                            <th>Indikator</th>
-                                            <th>Nama Kegiatan</th>
-                                            <th>KPI</th>
-                                            <th>Butir</th>
-                                            <th>Anggaran Gasal</th>
-                                            <th>Anggaran Ganjil</th>
-                                            <th>Serap Ganjil</th>
-                                            <th>Serap Genap</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php $i = 1; ?>
-                                        <?php if ($detail_rkat) : ?>
-                                            <?php foreach ($detail_rkat as $value) : ?>
-                                                <tr>
-                                                    <td scope="row"><?= $i++; ?></td>
-                                                    <td><?= $value['id']; ?></td>
-                                                    <td><?= $value['nama_prodi']; ?></td>
-                                                    <td><?= $value['kategori']; ?></td>
-                                                    <td><?= $value['no_kegiatan']; ?></td>
-                                                    <td><?= $value['target']; ?></td>
-                                                    <td><?= $value['indikator']; ?></td>
-                                                    <td><?= $value['nama_kegiatan']; ?></td>
-                                                    <td><?= $value['kpi']; ?></td>
-                                                    <td><?= $value['butir']; ?></td>
-                                                    <td><?= $value['anggaranGanjil']; ?></td>
-                                                    <td><?= $value['anggaranGenap']; ?></td>
-                                                    <td><?= $value['serapGanjil']; ?></td>
-                                                    <td><?= $value['serapGenap']; ?></td>
-                                                </tr>
-                                            <?php endforeach; ?>
-                                        <?php endif; ?>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+				<div class="container-fluid">
+					<div class="form-group">
+						<label for="exampleFormControlSelect1">Pilih Nama Prodi</label>
+						<select class="form-control filter-satuan" id="categoryFilter">
+							<option value="" disabled selected>Pilih Nama Prodi</option>
+							<?php foreach ($userprodi as $value) : ?>
+								<option value="<?= $value['id']; ?>"><?= $value['nama_prodi']; ?></option>
+							<?php endforeach; ?>
+						</select>
+					</div>
+				</div>
+				<div class="card-body">
+					<div class="table-responsive">
+						<table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
+							<thead>
+								<tr>
+									<th>No</th>
+									<th>id</th>
+									<th>Prodi/Unit</th>
+									<th>Kategori</th>
+									<th>No Kegiatan</th>
+									<th>Target</th>
+									<th>Indikator</th>
+									<th>Nama Kegiatan</th>
+									<th>KPI</th>
+									<th>Butir</th>
+									<th>Anggaran Gasal</th>
+									<th>Anggaran Ganjil</th>
+									<th>Serap Ganjil</th>
+									<th>Serap Genap</th>
+								</tr>
+							</thead>
+							<tbody>
+								<?php $i = 1; ?>
+								<?php if ($detail_rkat) : ?>
+									<?php foreach ($detail_rkat as $value) : ?>
+										<tr>
+											<td scope="row"><?= $i++; ?></td>
+											<td><?= $value['id']; ?></td>
+											<td><?= $value['nama_prodi']; ?></td>
+											<td><?= $value['kategori']; ?></td>
+											<td><?= $value['no_kegiatan']; ?></td>
+											<td><?= $value['target']; ?></td>
+											<td><?= $value['indikator']; ?></td>
+											<td><?= $value['nama_kegiatan']; ?></td>
+											<td><?= $value['kpi']; ?></td>
+											<td><?= $value['butir']; ?></td>
+											<td><?= $value['anggaranGanjil']; ?></td>
+											<td><?= $value['anggaranGenap']; ?></td>
+											<td><?= $value['serapGanjil']; ?></td>
+											<td><?= $value['serapGenap']; ?></td>
+										</tr>
+									<?php endforeach; ?>
+								<?php endif; ?>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
 		</div>
 		<!-- Responsive tables End -->
 
