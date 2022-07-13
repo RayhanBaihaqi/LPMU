@@ -45,9 +45,6 @@
 </head>
 
 <body onload="startTime()">
-    <div class="pre-loader">
-        <div class="spinner-border text-info"></div>
-    </div>
     <div class="wrapper">
         <!-- Top Bar Start -->
         <div class="top-bar">
@@ -255,31 +252,6 @@
     </div>
 
     <!-- JavaScript Libraries -->
-
-    <!-- <script src="lib/easing/easing.min.js"></script>
-            <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-            <script src="lib/isotope/isotope.pkgd.min.js"></script> -->
-    <script>
-        function startTime() {
-            var today = new Date();
-            var h = today.getHours();
-            var m = today.getMinutes();
-            var s = today.getSeconds();
-            m = checkTime(m);
-            s = checkTime(s);
-            document.getElementById('txt').innerHTML =
-                h + ":" + m + ":" + s;
-            var t = setTimeout(startTime, 500);
-        }
-
-        function checkTime(i) {
-            if (i < 10) {
-                i = "0" + i
-            }; // add zero in front of numbers < 10
-            return i;
-        }
-    </script>
-
     <!-- jQuery -->
     <script src="<?php echo base_url(); ?>/public/plugins/jquery/jquery.min.js"></script>
     <!-- ChartJS -->
@@ -295,11 +267,6 @@
     <script src="<?php echo base_url(); ?>/public/chart/jquery.knob.min.js"></script>
     <script src="<?php echo base_url(); ?>/public/chart/knob-chart-setting.js"></script>
     <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
-    <script>
-        $(window).load(function() {
-            $(".pre-loader").fadeOut("slow");
-        });
-    </script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <!-- Grafik Persentase capaian -->
     <script type="text/javascript">
@@ -318,8 +285,7 @@
 
             var options = {
                 chart: {
-                    title: 'Data Prodi/Unit : <?php $nama_prodi = session('nama_prodi');
-                                                echo "$nama_prodi" ?>',
+                    title: 'Data Prodi/Unit : <?php $nama_prodi = session('nama_prodi'); echo "$nama_prodi" ?>',
 
                 },
                 bars: 'horizontal' // Required for Material Bar Charts.

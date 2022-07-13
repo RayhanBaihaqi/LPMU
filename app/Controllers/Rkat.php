@@ -18,7 +18,6 @@ class Rkat extends BaseController
         $this->TahunAkademikModel = new TahunAkademikModel();
         $this->PersenSerapModel = new PersenSerapModel();
         $this->PaguModel = new PaguRkatModel();
-        $this->usersModel = new usersModel();
         $this->ModelKpiAdmin = new ModelKpiAdmin();
     }
 
@@ -103,33 +102,6 @@ class Rkat extends BaseController
     public function updateRincian()
     {
         $model = new PersenSerapModel();
-        // $id = $_POST['id'];
-        // $id_tahun = $_POST['id_tahun'];
-        // $id_user = $_POST['id_user'];
-        // $persenPk = $_POST['persenPk'];
-        // $persenOps = $_POST['persenOps'];
-        // $persenInv = $_POST['persenInv'];
-        // $persenPkOps = $_POST['persenPkOps'];
-        
-        // // $bukti = $_POST['bukti'];
-
-        // foreach ($id as $key => $n) {
-            
-        //     $id = $n;
-        //     $data = [
-        //         'id_tahun' => $id_tahun[$key],
-        //         'id_user' => $id_user[$key],
-        //         'persenPk' => $persenPk[$key],
-        //         'persenOps' => $persenOps[$key],
-        //         'persenInv' => $persenInv[$key],
-        //         'persenPkOps' => $persenPkOps[$key],
-
-        //     ];
-
-        //     $save = $model->update($id, $data);
-
-        // }
-        
         $id = $this->request->getVar('id_persen');
 
         $data = [

@@ -225,8 +225,7 @@
 
             var options = {
                 chart: {
-                    title: 'Data Prodi/Unit : <?php $nama_prodi = session('nama_prodi');
-                                                echo "$nama_prodi" ?>',
+                    title: 'Data Prodi/Unit : <?php $nama_prodi = session('nama_prodi'); echo "$nama_prodi" ?>',
 
                 },
                 bars: 'horizontal' // Required for Material Bar Charts.

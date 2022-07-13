@@ -11,7 +11,7 @@ use App\Models\TahunAkademikModel;
 use App\Models\PersenSerapModel;
 use App\Models\PaguRkatModel;
 use App\Models\ModelKpiAdmin;
-use App\Models\usersModel;
+use App\Models\UsersModel;
 
 
 class Keuangan extends BaseController
@@ -22,7 +22,7 @@ class Keuangan extends BaseController
         $this->TahunAkademikModel = new TahunAkademikModel();
         $this->PersenSerapModel = new PersenSerapModel();
         $this->PaguModel = new PaguRkatModel();
-        $this->usersModel = new usersModel();
+        $this->UsersModel = new UsersModel();
         $this->ModelKpiAdmin = new ModelKpiAdmin();
     }
     public function index()
@@ -94,7 +94,7 @@ class Keuangan extends BaseController
         $model = new DetailRkatModel();
         $data = [
             'detail_rkat' => $this->DetailRkatModel->gabungRektor(),
-            'userprodi' => $this->usersModel->where('level', 'prodi')->findAll(),
+            'userprodi' => $this->UsersModel->where('level', 'prodi')->findAll(),
         ];
         echo view('/keuangan/ListDataProdi', $data);
     }
@@ -103,7 +103,7 @@ class Keuangan extends BaseController
         $model = new DetailRkatModel();
         $data = [
             'detail_rkat' => $this->DetailRkatModel->gabungRektor(),
-            'userunit' => $this->usersModel->where('level', 'unit')->findAll(),
+            'userunit' => $this->UsersModel->where('level', 'unit')->findAll(),
         ];
         echo view('/keuangan/ListDataUnit', $data);
     }
@@ -1257,8 +1257,5 @@ class Keuangan extends BaseController
         }
 
         return redirect()->to(base_url('keuangan/inputcapaian/9'));
-        // echo "<br><br>";
-        // print_r($nilai_bobot);
-        // exit();
     }
 }

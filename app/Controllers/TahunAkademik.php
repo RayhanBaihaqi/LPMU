@@ -22,7 +22,7 @@ class TahunAkademik extends BaseController
 			'tahun_Akademik' => $this->TahunAkademikModel->orderBy('id_tahun', 'DESC')->findAll(),
 		];
 
-        return view('admin/listtahunakademik', $data);
+        return view('admin/ListTahunAkademik', $data);
     }
     public function create()
     {
@@ -35,7 +35,7 @@ class TahunAkademik extends BaseController
             'tahunAkademik' => $this->request->getVar('tahunAkademik'),
         ];
         $model->save($data);
-		return redirect()->to(base_url('tahunakademik/create'))->with('status', '
+		return redirect()->to(base_url('TahunaAademik/create'))->with('status', '
         <div class="alert alert-success">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
             <strong>Berhasil!</strong> Data Anda Berhasil Terinput.
@@ -62,7 +62,7 @@ class TahunAkademik extends BaseController
             $save = $model->update($id, $data);
 
         }
-        return redirect()->to(base_url('tahunAkademik/indextahun'));
+        return redirect()->to(base_url('TahunAkademik/indextahun'));
     }
     public function updatecapaianbyuser() {
         $model = new DetailRkatModel();

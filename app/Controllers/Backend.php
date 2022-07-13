@@ -5,7 +5,7 @@ use App\Models\DetailRkatModel;
 use App\Models\TahunAkademikModel;
 use App\Models\PersenSerapModel;
 use App\Models\PaguRkatModel;
-use App\Models\usersModel;
+use App\Models\UsersModel;
 use App\Models\DataModel;
 
 class Backend extends BaseController
@@ -16,7 +16,6 @@ class Backend extends BaseController
         $this->TahunAkademikModel = new TahunAkademikModel();
         $this->PersenSerapModel = new PersenSerapModel();
         $this->PaguModel = new PaguRkatModel();
-        $this->usersModel = new usersModel();
     }
 	public function index()
 	{
@@ -42,11 +41,7 @@ class Backend extends BaseController
         ];
 		return view('/rkat/Dashboard', $data);
 	}
-	/*public function kpi()
-	{
-		return view('/kpi/Dashboard');
-	}*/
-	//RKAT Koneksi
+
 	public function detail_chart()
 	{
 		return view('/rkat/detail/detail_chart');
@@ -59,56 +54,5 @@ class Backend extends BaseController
 	{
 		return view('/rkat/profil');
 	}
-	//KPI koneksi
 
-	/*
-	public function listadmin()
-	{
-		return view('/admin/ListAdmin');
-	}
-	public function inputkpi()
-	{
-		return view('kpi/formkpi');
-	}
-	public function detail_keuangan()
-	{
-		return view('kpi/detail/keuangan');
-	}
-	public function detail_luarantridharma()
-	{
-		return view('kpi/detail/luarantridharma');
-	}
-	public function detail_mahasiswa()
-	{
-		return view('kpi/detail/mahasiswa');
-	}
-	public function detail_pendidikan()
-	{
-		return view('kpi/detail/pendidikan');
-	}
-	public function detail_penelitian()
-	{
-		return view('kpi/detail/penelitian');
-	}
-	public function detail_pengembanganprog()
-	{
-		return view('kpi/detail/pengembanganprog');
-	}
-	public function detail_pengmas()
-	{
-		return view('kpi/detail/pengmas');
-	}
-	public function detail_sdm()
-	{
-		return view('kpi/detail/sdm');
-	}
-	public function detail_tatakelola()
-	{
-		return view('kpi/detail/tatakelola');
-	}
-	public function detail_visimisi()
-	{
-		return view('kpi/detail/visimisi');
-	}
-	*/
 }

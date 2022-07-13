@@ -144,7 +144,7 @@
 					<div class="card shadow mb-4">
 						<div class="card-body">
 							<div class="table-responsive">
-								<form id="satuan" name="formD" action="<?= base_url('rkat/savebyadmin'); ?>" method="POST" enctype="multipart/form-data">
+								<form id="satuan" name="formD" action="<?= base_url('admin/save'); ?>" method="POST" enctype="multipart/form-data">
 									<input type="hidden" name="jumlah" id="jumlah" value="0">
 									<?= session()->getFlashdata('status'); ?>
 									<div class="card">

@@ -11,7 +11,7 @@ use App\Models\TahunAkademikModel;
 use App\Models\PersenSerapModel;
 use App\Models\PaguRkatModel;
 use App\Models\ModelKpiAdmin;
-use App\Models\usersModel;
+use App\Models\UsersModel;
 
 
 class Rektorat extends BaseController
@@ -22,7 +22,7 @@ class Rektorat extends BaseController
         $this->TahunAkademikModel = new TahunAkademikModel();
         $this->PersenSerapModel = new PersenSerapModel();
         $this->PaguModel = new PaguRkatModel();
-        $this->usersModel = new usersModel();
+        $this->UsersModel = new UsersModel();
         $this->ModelKpiAdmin = new ModelKpiAdmin();
     }
     public function index()
@@ -66,7 +66,7 @@ class Rektorat extends BaseController
         $model = new DetailRkatModel();
         $data = [
             'detail_rkat' => $this->DetailRkatModel->gabungRektor(),
-            'userprodi' => $this->usersModel->where('level', 'prodi')->findAll(),
+            'userprodi' => $this->UsersModel->where('level', 'prodi')->findAll(),
         ];
         echo view('/rektorat/ListRkatProdi', $data);
     }
@@ -75,7 +75,7 @@ class Rektorat extends BaseController
         $model = new DetailRkatModel();
         $data = [
             'detail_rkat' => $this->DetailRkatModel->gabungRektor(),
-            'userunit' => $this->usersModel->where('level', 'unit')->findAll(),
+            'userunit' => $this->UsersModel->where('level', 'unit')->findAll(),
         ];
         echo view('/rektorat/ListRkatUnit', $data);
     }
@@ -518,26 +518,6 @@ class Rektorat extends BaseController
     {
         $grafikrencanakpi = new DataCapaianKpiModel();
         $data = [
-            // //'tampilgrafikrencana' => $grafikrencanakpi->get_grafik(),
-            // //standar 1 per TA
-            // 'hasilrencanakpi_1' => $grafikrencanakpi->jml_kpi1()->getResultArray(),
-            // //standar 2 per TA
-            // 'hasilrencanakpi_2' => $grafikrencanakpi->jml_kpi2()->getResultArray(),
-            // //standar 3 per TA
-            // 'hasilrencanakpi_3' => $grafikrencanakpi->jml_kpi3()->getResultArray(),
-            // //standar 4 per TA
-            // 'hasilrencanakpi_4' => $grafikrencanakpi->jml_kpi4()->getResultArray(),
-            // //standar 5 per TA
-            // 'hasilrencanakpi_5' => $grafikrencanakpi->jml_kpi5()->getResultArray(),
-            // //standar 6 per TA
-            // 'hasilrencanakpi_6' => $grafikrencanakpi->jml_kpi6()->getResultArray(),
-            // //standar 7 per TA
-            // 'hasilrencanakpi_7' => $grafikrencanakpi->jml_kpi7()->getResultArray(),
-            // //standar 8 per TA
-            // 'hasilrencanakpi_8' => $grafikrencanakpi->jml_kpi8()->getResultArray(),
-            // //standar 9 per TA
-            // 'hasilrencanakpi_9' => $grafikrencanakpi->jml_kpi9()->getResultArray(),
-            // // 'tampilgrafikkpi' => $this->DataCapaianKpiModel->get_grafik(),
             'averagekpi19prodi' => $grafikrencanakpi->avgkpi19_all()->getResultArray(),
             'averagekpi20prodi' => $grafikrencanakpi->avgkpi20_all()->getResultArray(),
             'averagekpi21prodi' => $grafikrencanakpi->avgkpi21_all()->getResultArray(),
@@ -547,9 +527,6 @@ class Rektorat extends BaseController
             'averagekpi21unit' => $grafikrencanakpi->avgkpi21_unit()->getResultArray(),
 
         ];
-        //}
-        // return view('kpi/grafik3_rencana', $data);
-
         return view('/rektorat/GrafikCapaian', $data);
     }
     public function grafikprodi()
@@ -716,14 +693,14 @@ class Rektorat extends BaseController
     }
     public function form_ubahpass($id = null)
     {
-        $model = new usersModel();
+        $model = new UsersModel();
         $username = session('username');
         $data['user'] = $model->where('id', $id)->first();
         return view('/rektorat/FormUbahPass', $data);
     }
     public function ubahpwd()
     {
-        $model = new usersModel();
+        $model = new UsersModel();
         $id = session('id');
         //exit();
         $data = [
@@ -744,10 +721,6 @@ class Rektorat extends BaseController
 			<strong>Tidak berhasil!</strong> Password anda tidak berubah.
 		</div>');
         }
-        //print_r($save);
-        //exit();
-
-
         return redirect()->to(base_url('rektorat/form_ubahpass'));
     }
 }

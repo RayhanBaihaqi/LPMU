@@ -11,8 +11,7 @@ use App\Models\TahunAkademikModel;
 use App\Models\PersenSerapModel;
 use App\Models\PaguRkatModel;
 use App\Models\ModelKpiAdmin;
-use App\Models\usersModel;
-
+use App\Models\UsersModel;
 
 class Admin extends BaseController
 {
@@ -22,7 +21,7 @@ class Admin extends BaseController
         $this->TahunAkademikModel = new TahunAkademikModel();
         $this->PersenSerapModel = new PersenSerapModel();
         $this->PaguModel = new PaguRkatModel();
-        $this->usersModel = new usersModel();
+        $this->UsersModel = new UsersModel();
         $this->ModelKpiAdmin = new ModelKpiAdmin();
     }
 
@@ -61,7 +60,7 @@ class Admin extends BaseController
         $model = new DetailRkatModel();
         $data = [
             'detail_rkat' => $this->DetailRkatModel->gabungRektor(),
-            'userprodi' => $this->usersModel->where('level', 'prodi')->findAll(),
+            'userprodi' => $this->UsersModel->where('level', 'prodi')->findAll(),
         ];
         echo view('/admin/ListRkatProdi', $data);
     }
@@ -70,7 +69,7 @@ class Admin extends BaseController
         $model = new DetailRkatModel();
         $data = [
             'detail_rkat' => $this->DetailRkatModel->gabungRektor(),
-            'userunit' => $this->usersModel->where('level', 'unit')->findAll(),
+            'userunit' => $this->UsersModel->where('level', 'unit')->findAll(),
         ];
         echo view('/admin/ListRkatUnit', $data);
     }
@@ -119,7 +118,7 @@ class Admin extends BaseController
                 'id_user' => $id_user,
             ]);
         }
-        return redirect()->to(base_url('admin/createbyadmin'))->with('status', '
+        return redirect()->to(base_url('admin/create'))->with('status', '
            <div class="alert alert-success">
                <button type="button" class="close" data-dismiss="alert">&times;</button>
                <strong>Berhasil!</strong> Data Anda Berhasil Terinput.
@@ -599,26 +598,6 @@ class Admin extends BaseController
     {
         $grafikrencanakpi = new DataCapaianKpiModel();
         $data = [
-            // //'tampilgrafikrencana' => $grafikrencanakpi->get_grafik(),
-            // //standar 1 per TA
-            // 'hasilrencanakpi_1' => $grafikrencanakpi->jml_kpi1()->getResultArray(),
-            // //standar 2 per TA
-            // 'hasilrencanakpi_2' => $grafikrencanakpi->jml_kpi2()->getResultArray(),
-            // //standar 3 per TA
-            // 'hasilrencanakpi_3' => $grafikrencanakpi->jml_kpi3()->getResultArray(),
-            // //standar 4 per TA
-            // 'hasilrencanakpi_4' => $grafikrencanakpi->jml_kpi4()->getResultArray(),
-            // //standar 5 per TA
-            // 'hasilrencanakpi_5' => $grafikrencanakpi->jml_kpi5()->getResultArray(),
-            // //standar 6 per TA
-            // 'hasilrencanakpi_6' => $grafikrencanakpi->jml_kpi6()->getResultArray(),
-            // //standar 7 per TA
-            // 'hasilrencanakpi_7' => $grafikrencanakpi->jml_kpi7()->getResultArray(),
-            // //standar 8 per TA
-            // 'hasilrencanakpi_8' => $grafikrencanakpi->jml_kpi8()->getResultArray(),
-            // //standar 9 per TA
-            // 'hasilrencanakpi_9' => $grafikrencanakpi->jml_kpi9()->getResultArray(),
-            // // 'tampilgrafikkpi' => $this->DataCapaianKpiModel->get_grafik(),
             'averagekpi19prodi' => $grafikrencanakpi->avgkpi19_all()->getResultArray(),
             'averagekpi20prodi' => $grafikrencanakpi->avgkpi20_all()->getResultArray(),
             'averagekpi21prodi' => $grafikrencanakpi->avgkpi21_all()->getResultArray(),
@@ -698,12 +677,7 @@ class Admin extends BaseController
             'totalkpi19_ars' => $grafikcapaian_prodi->jmlkpi19prodi('Arsitektur')->getResultArray(),
             'totalkpi20_ars' => $grafikcapaian_prodi->jmlkpi20prodi('Arsitektur')->getResultArray(),
             'totalkpi21_ars' => $grafikcapaian_prodi->jmlkpi21prodi('Arsitektur')->getResultArray(),
-
-
-
         ];
-
-
         return view('/admin/GrafikCapaianProdi', $data);
     }
 
@@ -711,8 +685,6 @@ class Admin extends BaseController
     {
         $grafikrencana = new DataKpiButirModel();
         $grafikcapaian_unit = new DataCapaianKpiModel();
-        $nama_prodi = 'nama_prodi';
-
         $data = [
 
             'hasilrencanakpi_1' => $grafikrencana->jml_kpi1()->getResultArray(),
@@ -810,18 +782,7 @@ class Admin extends BaseController
             'totalkpi19_lp2m' => $grafikcapaian_unit->jmlkpi19unit('Lembaga Penelitian dan Pengabdian kepada Masyarakat')->getResultArray(),
             'totalkpi20_lp2m' => $grafikcapaian_unit->jmlkpi20unit('Lembaga Penelitian dan Pengabdian kepada Masyarakat')->getResultArray(),
             'totalkpi21_lp2m' => $grafikcapaian_unit->jmlkpi21unit('Lembaga Penelitian dan Pengabdian kepada Masyarakat')->getResultArray(),
-
-
-
-
-
         ];
-
-
         return view('/admin/GrafikCapaianUnit', $data);
     }
-
-    //RKAT
-
-
 }

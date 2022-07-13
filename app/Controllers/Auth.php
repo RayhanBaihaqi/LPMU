@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use CodeIgniter\Controller;
-use App\Models\usersModel;
+use App\Models\UsersModel;
 use App\Models\AuthModel;
 use App\Models\PaguRkatModel;
 
@@ -11,7 +11,7 @@ class Auth extends BaseController
 {
     public function index()
     {
-        $model = new usersModel();
+        $model = new UsersModel();
 
         $data['user'] = $model->orderBy('id', 'DESC')->findAll();
 
@@ -19,13 +19,13 @@ class Auth extends BaseController
     }
     public function create()
     {
-        $model = new usersModel();
+        $model = new UsersModel();
         $data['user'] = $model->orderBy('id', 'ASC')->findAll();
-        return view('admin/Tambahusers', $data);
+        return view('admin/TambahUsers', $data);
     }
     public function store()
     {
-        $model = new usersModel();
+        $model = new UsersModel();
         $data = [
             'username' => $this->request->getVar('username'),
             'nama_prodi' => $this->request->getVar('nama_prodi'),
@@ -37,14 +37,14 @@ class Auth extends BaseController
     }
     public function edit($id = null)
     {
-        $model = new usersModel();
+        $model = new UsersModel();
         $data['user'] = $model->where('id', $id)->first();
 
         return view('/admin/Editusers', $data);
     }
     public function update()
     {
-        $model = new usersModel();
+        $model = new UsersModel();
         $id = $this->request->getVar('id');
 
         $data = [
@@ -59,7 +59,7 @@ class Auth extends BaseController
     }
     public function delete($id = null)
     {
-        $model = new usersModel();
+        $model = new UsersModel();
         $data['user'] = $model->where('id', $id)->delete();
 
         return redirect()->to(base_url('auth/index'));
